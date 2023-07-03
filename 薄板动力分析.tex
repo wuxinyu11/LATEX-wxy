@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage{ctex,amsmath,titlesec,amssymb,,graphicx,floatrow}
+\usepackage{ctex,amsmath,titlesec,amssymb,graphicx,floatrow}
 \usepackage[text={140mm,250mm},centering]{geometry}
 \usepackage[margin=20mm]{geometry}
 \begin{document}
@@ -7,12 +7,11 @@
 \date{}
 \maketitle
 \section{薄板方程}
-根据Kirchhoff板假设原理，在求解域$\Omega$内考虑厚度为$t$的薄板控制方程：
-% \begin{displaymath}
+根据Kirchhoff板假设原理，在板的中性面$\Omega$内考虑厚度为$t$的薄板控制方程：
     \begin{equation}
         \begin{split}
         \begin{cases}
-        M_{\alpha\beta,\alpha\beta}+\bar q=\rho t a&\text {in} \; \Omega\\
+        M_{\alpha\beta,\alpha\beta}+\bar q=\rho h \ddot{w}&\text {in} \; \Omega\\
         w=\bar w&\text{on}\;\Gamma_w\\
         \theta_n=w_{,n}=\bar \theta_n&\text{on}\;\Gamma_{\theta}\\
         V_n=Q_n+M_{ns,s}=\bar V_n&\text {on}\;\Gamma_V\\
@@ -22,7 +21,6 @@
         \end{cases}
         \end{split}
     \end{equation}
-% \end{displaymath}
 其中：
 \begin{equation}
 \begin{split}
@@ -33,7 +31,7 @@ M_{nn}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{ns}=M_{\alpha\beta n_{\alpha}s_{\be
     \end{cases}
 \end{split}
 \end{equation}
-其中，$M_{\alpha\beta}$为矩量$M$的弯曲和扭转分量，$\bar q$是施加的作用力，$\rho,t,a$分别表示板的密度，厚度，以及加速度。$\Gamma_w,\Gamma_{\theta},c_w$为强制边界边界条件以及相对应的挠度$\bar w$和转角$\bar \theta_n$,
+其中，$M_{\alpha\beta}$为矩量$M$的弯曲和扭转分量，$\bar q$是表示分布荷载，$\rho,h$分别表示板的密度，厚度。$w$表示薄板中心挠度的位移，$w$上方两点表示两次微分。$\Gamma_w,\Gamma_{\theta},c_w$为强制边界边界条件上的挠度$\bar w$和转角$\bar \theta_n$,
 $\Gamma_V,\Gamma_M,c_P$为自然边界条件，$V_n$表示的是等效剪切力，$M_{nn}$是法向弯矩，$P$是集中力，同时，所有的边界条件都满足如下关系式:
 \begin{equation}
     \begin{split}
@@ -59,25 +57,208 @@ $\Gamma_V,\Gamma_M,c_P$为自然边界条件，$V_n$表示的是等效剪切力�
     \begin{split}
     \bar D=\frac{Et^3}{12(1-\nu^2)}
     \end{split}
+    \end{equation}\par
+% 根据上述公式，$M_{nn},V_n,P$可以改写为：
+% \begin{equation}
+%     \begin{split}
+%     \begin{cases}
+%     M_{nn}=\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}=-\bar D(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})w_{,\alpha\beta}\\
+%     V_n=\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}=-\bar D(\frac{\partial}{\partial x_{\alpha}}n_{\beta}+(1-\nu)\frac{\partial}{\partial x_{\gamma}}s_{\alpha}n_{\beta}s_{\gamma})w_{,\alpha\beta}\\
+%     P=\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}=-(\bar D(1-\nu)n_{\alpha}s_{\beta})w_{,\alpha\beta}
+%     \end{cases}
+%     \end{split}
+%     \end{equation}
+由于无网格形函数的非插值特点导致其无法像有限元法一直直接施加强制边界条件，这里利用再生光滑梯度的内在特点，采用Hellinger-Ressiner方法施加强制边界条件，根据该方法，矩量$M$的弯曲和扭转分量$M_{\alpha\beta}$和挠度$w$为两个独立分量，此时考虑引入边界条件的等效积分弱形式为:
+\begin{equation}
+    \begin{split}
+        \Pi(M_{\alpha\beta,w})&=\frac{1}{2}\int_{\Omega}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega+\int_{\Omega} w\rho h\ddot{w}d\Omega-\int_{\Gamma_w}V_n\bar{w}d\Gamma\\
+        &+\int_{\Gamma_{\theta}}M_{nn}\bar{\theta_n}d\Gamma-P\bar{w}\vert_{x\in c_w} +\int_{\Omega}w(M_{\alpha\beta,\alpha\beta}+\bar q)d\Omega\\
+        &+\int_{\Gamma_M}w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma-\int_{\Gamma_V}w(V_n-\bar{V}_n)d\Gamma-w(P-\bar P)\vert_{x\in c_P}
+    \end{split}
     \end{equation}
-根据上述公式，$M_{nn},V_n,P$可以改写为：
+    同时：
+    \begin{equation}
+    \begin{split}
+        \delta\Pi(M_{\alpha\beta,w})&=\int_{\Omega}\delta M_{\alpha\eta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}\delta V_n\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\delta M_{nn}\bar{\theta_n}d\Gamma\\
+        &-\delta P\bar{w}\vert_{x\in c_w}+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta})wd\Omega+\int_{\Gamma_M}\delta M_{nn}w_{,n}d\Gamma\\
+        &-\int_{\Gamma_V}\delta V_nwd\Gamma-\delta Pw\vert_{x\in c_p}+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega\\
+        &+\int_{\Gamma_M}\d   elta w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma-\int_{\Gamma_V}\delta w(V_n-\bar{V}_n)d\Gamma\\
+        &-\delta w(P-\bar{P})\vert_{x\in c_P}+\int_{\Omega}\delta w\rho h\ddot{w}d\Omega\\
+        &=0
+    \end{split}
+    \end{equation}
+对$\delta M_{\alpha\beta}$和$\delta w$通过上式可以得到以下式子：
+\begin{equation}
+    \begin{split}
+    \int_\Omega ^{}{\delta {M_{\alpha \beta }}D_{\alpha \beta \gamma \eta }^{ - 1}{M_{\gamma \eta }}d\Omega }&=\int_\Gamma ^{} {\delta {V_{\bf{n}}}wd\Gamma }  - \int_\Gamma ^{} {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }+{\left. {\delta Pw} \right|_{{\bf{x}} \in c}} - \int_\Omega ^{} {\delta {M_{\alpha \beta ,\alpha \beta }}wd\Omega } \\
+     &-\int_{{\Gamma _w}}^{} {\delta {V_{\bf{n}}}wd\Gamma }  + \int_{{\Gamma _\theta }}^{} {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }  - {\left. {\delta Pw} \right|_{{\bf{x}} \in {c_w}}}\\
+    &+\int_{{\Gamma _w}}^{} {\delta {V_{\bf{n}}}\bar wd\Gamma }  - \int_{{\Gamma _\theta }}^{} {\delta {M_{{\bf{nn}}}}{{\bar \theta }_{\bf{n}}}d\Gamma }  + {\left. {\delta P\bar w} \right|_{{\bf{x}} \in {c_w}}}
+    \end{split}
+    \end{equation}
+    \begin{equation}
+        \begin{split}
+        \int_\Gamma ^{} {\delta w{V_{\bf{n}}}d\Gamma }&- \int_\Gamma ^{} {\delta {w_{,{\bf{n}}}}{M_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta wP} \right|_{{\bf{x}} \in c}} - \int_\Omega ^{} {\delta w{M_{\alpha \beta ,\alpha\beta}}d\Omega }\\
+         &- \int_{{\Gamma _w}}^{} {\delta w{V_{\bf{n}}}d\Gamma }  + \int_{{\Gamma _\theta }}^{} {\delta {w_{,{\bf{n}}}}{M_{{\bf{nn}}}}d\Gamma }  - {\left. {\delta wP} \right|_{{\bf{x}} \in {c_w}}}+\int_{\Omega}\delta w\rho h\ddot{w}d\Omega\\
+         &= \int_{{\Gamma _V}}^{} {\delta w{{\bar V}_{\bf{n}}}d\Gamma }  - \int_{{\Gamma _M}}^{} {\delta {w_{,{\bf{n}}}}{{\bar M}_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta w\bar P} \right|_{{\bf{x}} \in {c_P}}} + \int_\Omega ^{} {\delta w\bar qd\Omega} 
+    \end{split}
+    \end{equation}
+\section{挠度离散和再生核近似}
+在Hellinger-Ressiner变分原理的弱形式中，薄板的挠度和弯矩分别采用不同的近似方案进行离散。这里，挠度采用基于再生核近似的无网格形函数进行离散。在无网格近似中，板中性面$\Omega$上布置一系列无网格节点$\{\pmb{x}_I\}_{I=1}^{np}$，板挠度$w$的近似表达式$w^h$可表示为：
+\begin{equation}
+\begin{split}
+    w^h(\pmb{x})=\sum_{I=1}^{n_p}\Psi_I(\pmb{x})d_I,\delta w^h(\pmb{x})=\sum_{I=1}^{n_p}\Psi_I(\pmb{x})\delta d_I,\pmb{x}\in\Omega
+\end{split}
+\end{equation}
+式中$d_{I},\delta d_I$为无网格节点$\pmb{x}_I$上的节点系数和虚节点系数，$\Psi_I$为与之相对应的无网格形函数，根据再生核近似理论，无网格形函数具有如下表达式：
+\begin{equation}
+\begin{split}
+    \Psi_I(\pmb{x})=\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{c}(\pmb{x})\phi(\pmb{x}_I-\pmb{x})
+\end{split}
+\end{equation}
+其中$\pmb{c}$是待定系数向量，$\pmb{p}(\pmb{x})$为$p$阶单项式基函数向量：
+\begin{equation}
+\begin{split}
+    \pmb{p}(\pmb{x})=\{1,x,y,\dotsb ,x^2,xy,y^2,\dotsb,x^iy^i,\dotsb,y^p\},0\le i+j\le p
+\end{split}
+\end{equation}
+而$\phi(\pmb{x}_I-\pmb{x})$为核函数，本研究采用基于五次样条函数作为核函数
+\begin{equation}
+\begin{split}
+    \phi(\pmb{x}_I-\pmb{x})=\phi(r_x)\phi(r_y),r_{\alpha}=\frac{x_{\alpha I}-x_{\alpha}}{s_{\alpha I}}
+\end{split}
+\end{equation}
+式中$s_{\alpha I}$为空间方向上的影响域尺寸，$\phi r_{\alpha}$为五次样条函数：
+\begin{equation}
+\begin{split}
+    \phi(r_{\alpha})=\frac{1}{5!}\begin{cases}
+        (3-3r)^5-6(2-3r)^5+15(1-3r)^5&r\le\frac{1}{3}\\
+        (3-3r)^5-6(2-3r)^5&\frac{1}{3}<r\le\frac{2}{3}\\
+        (3-3r)^5&\frac{2}{3}<r\le1\\
+        0&r>1
+    \end{cases}
+\end{split}
+\end{equation}\par
+待定系数向量$\pmb{c}(\pmb{x})$可以通过满足一致性条件得到，进而可以得到无网格形函数表达式为：
+\begin{equation}
+\begin{split}
+\Psi_I(\pmb{x})=\phi(\pmb{x}_I-\pmb{x})\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{A}^{-1}(\pmb{x})(0)
+\end{split}
+\end{equation}
+式中$\pmb{A}(\pmb{x})$为矩量矩阵，且：
+\begin{equation}
+\begin{split}
+    \pmb{A}(\pmb{x})=\sum_{I=1}^{n_p}\phi(\pmb{x}_I-\pmb{x})\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})
+\end{split}
+\end{equation}
+\section{弯矩离散和再生光滑梯度近似}
+根据再生光滑梯度理论，
+如图所示，将求解域$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,n_c$，并且$\cup_{C=1}^{n_c}\Omega_C=\Omega$，在背景积分单元$\Omega_C$内，将弯矩分量$M_{\alpha\beta}$采用$(p-2)$阶次进行离散，并记为$M_{\alpha\beta}^h$
+\begin{equation}
+\begin{split}
+    M_{\alpha\beta}^h(\pmb{x})=\pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x}),\delta M_{\alpha\beta}^h(\pmb{x})=\delta \pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x}),\pmb{x}\in\Omega_C
+\end{split}
+\end{equation}
+其中，$\pmb a_{\alpha\beta},\delta \pmb a_{\alpha\beta}$是常系数向量，$\pmb{q}$是比$\pmb{p}$低两阶的单项式向量：
+\begin{equation}
+\begin{split}
+    \pmb{q}(\pmb{x})=\{1,x,y,\dotsb,x^2,xy,y^2,\dotsb,x^iy^i,\dotsb,y^{p-2}\}^T,0\le i+j\le p-2
+\end{split}
+\end{equation}
+根据式(7)可以得到常系数向量$\pmb{a}_{\alpha\beta}$：
+\begin{equation}
+\begin{split}
+    a_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}G^{-1}(\sum_{I=1}^{n_p}(\tilde{g}_{\alpha\beta I}-\bar{g}_{\alpha\beta I})d_I+\hat{g}_{\alpha\beta})
+\end{split}
+\end{equation}
+其中：
+\begin{equation}
+\begin{split}
+    G=\int_{\Omega_C}\pmb{q}\pmb{q}^Td\Omega
+\end{split}
+\end{equation}
 \begin{equation}
     \begin{split}
     \begin{cases}
-    M_{nn}=\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}=-\bar D(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})w_{,\alpha\beta}\\
-    V_n=\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}=-\bar D(\frac{\partial}{\partial x_{\alpha}}n_{\beta}+(1-\nu)\frac{\partial}{\partial x_{\gamma}}s_{\alpha}n_{\beta}s_{\gamma})w_{,\alpha\beta}\\
-    P=\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}=-(\bar D(1-\nu)n_{\alpha}s_{\beta})w_{,\alpha\beta}
-    \end{cases}
+    {\tilde g}_{\alpha\beta I} = \int_{{\Gamma _C}}^{}{{\Psi _{I,{\bf{n}}}}{\pmb{q}}{n_\alpha }{n_\beta }d\Gamma }-\int_{{\Gamma _C}}^{}{{\Psi _I}({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha}{n_\beta }{s_\gamma})d\Gamma }  + {\left[\kern-0.15em\left[ {{\Psi _I}{\pmb{q}}{n_\alpha }{s_\beta }} 
+     \right]\kern-0.15em\right]_{{{x}} \in {c_C}}} + \int_{{\Omega _C}}^{} {{\Psi _I}{{\pmb{q}}_{,\alpha \beta }}d\Omega } \\
+    {\bar g}_{\alpha \beta I} = \int_{{\Gamma _\theta } \cap {\Gamma _C}}^{} {{\Psi _{I,{\bf{n}}}}{\pmb{q}}{n_\alpha }{n_\beta }d\Gamma }  - \int_{{\Gamma _w} \cap {\Gamma _C}}^{} {{\Psi _I}({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha }{n_\beta }{s_\gamma })d\Gamma }  + {\left[\kern-0.15em\left[ {{\Psi _I}{\pmb{q}}{n_\alpha }{s_\beta }} 
+     \right]\kern-0.15em\right]_{{{x}} \in {c_w} \cap {c_C}}}\\
+    \hat{g}_{\alpha \beta }= \int_{{\Gamma _\theta } \cap {\Gamma _C}}^{} {{\pmb{q}}{n_\alpha }{n_\beta }{{\bar \theta }_{\bf{n}}}d\Gamma }  - \int_{{\Gamma _w} \cap {\Gamma _C}}^{} {({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha }{n_\beta }{s_\gamma })\bar wd\Gamma }  + {\left[\kern-0.15em\left[ {\bar w{\pmb{q}}{n_\alpha }{s_\beta }} 
+     \right]\kern-0.15em\right]_{{{x}} \in {c_w} \cap {c_C}}}
+     \end{cases}
     \end{split}
     \end{equation}
+其中，$\Gamma_C$是$\Omega_C$的边界。\par
+通过对挠度和弯矩进行混合离散，得到离散控制方程：
+\begin{equation}
+\begin{split}
+    \pmb{M}\ddot{\pmb d}+(\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{d}=\pmb{f}+\pmb{\tilde{f}}+\pmb{\bar f}
+\end{split}
+\end{equation}
+其中：
+\begin{equation}
+\begin{split}
+    \pmb{K}_{IJ}=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega  
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+    \pmb{M}_{IJ}=\int_{\Omega}\Psi_I(\pmb{x})\rho h\Psi_J(\pmb{x})d\Omega
+\end{split}
+\end{equation}
+\begin{equation}
+    \begin{split}
+   &{{\pmb{\tilde K}}_{IJ}} =  - \int_{{\Gamma _w}}^{} {{\Psi _I}{{\cal V}_{\alpha \beta }}{{\tilde \Psi }_{J,\alpha \beta }}d\Gamma }  + \int_{{\Gamma _\theta }}^{} {{\Psi _{I,{\bf{n}}}}{{\cal M}_{\alpha \beta }}{{\tilde \Psi }_{J,\alpha \beta }}d\Gamma  + {{\left[\kern-0.15em\left[ {{\Psi _I}{{\cal P}_{\alpha \beta }}{{\tilde \Psi }_{J,\alpha \beta }}} 
+     \right]\kern-0.15em\right]}_{{\bf{x}} \in {c_w}}}} \\
+     &- \int_{{\Gamma _w}}^{} {({{\cal V}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }}){\Psi _J}d\Gamma }  + \int_{{\Gamma _\theta }}^{} {({{\cal M}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }}){\Psi _{J,{\bf{n}}}}d\Gamma }  + {\left[\kern-0.15em\left[ {({{\cal P}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }}){\Psi _J}} 
+     \right]\kern-0.15em\right]_{{\bf{x}} \in {c_w}}}\\
+    &{{{\pmb{\tilde f}_I}} = - \int_{{\Gamma _w}}^{} {({{\cal V}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }})\bar wd\Gamma }  + \int_{{\Gamma _\theta }}^{} {({{\cal M}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }}){{\bar \theta }_{\bf{n}}}d\Gamma }  + {{\left[\kern-0.15em\left[ {({{\cal P}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }})\bar w} 
+     \right]\kern-0.15em\right]}_{{\bf{x}} \in {c_w}}}}
+    \end{split}
+    \end{equation}
+\begin{equation}
+\begin{split}
+        &{{{\pmb{\bar K}_{IJ}}} = \int_{{\Gamma _w}}^{} {({{\cal V}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }}){\Psi _J}d\Gamma }  - \int_{{\Gamma _\theta }}^{} {({{\cal M}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }}){\Psi _{J,{\bf{n}}}}d\Gamma }  - {{\left[\kern-0.15em\left[ {({{\cal P}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }}){\Psi _J}} 
+         \right]\kern-0.15em\right]}_{{\bf{x}} \in {c_w}}}}\\
+        &{{{\pmb{\bar f}_I}} = \int_{{\Gamma _w}}^{} {({{\cal V}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }})\bar wd\Gamma }  - \int_{{\Gamma _\theta }}^{} {({{\cal M}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }}){{\bar \theta }_{\bf{n}}}d\Gamma }  - {{\left[\kern-0.15em\left[ {({{\cal P}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }})\bar w} 
+         \right]\kern-0.15em\right]}_{{\bf{x}} \in {c_w}}}}
+\end{split}
+\end{equation}
+\section{时间域离散}
+本研究采用Newmark法对薄板控制方离散方程进行时间离散：\\
+预测阶段：
+\begin{equation}
+ \begin{split}
+    \begin{cases}
+        \tilde{\pmb{d}}_{n+1}=\pmb{d}_n+(\triangle t_n)v_n+\frac{\triangle (t_n)^2}{2}(1-2\beta)\pmb a_n\\
+        \tilde{\pmb v_{n+1}}=\pmb{v}_n+(\triangle t_n)(1-\gamma)\pmb{a}_n
+    \end{cases}
+  \end{split}
+\end{equation}
+矫正阶段：
+\begin{equation}
+\begin{split}
+    \begin{cases}
+    \pmb{d}_{n+1}=\tilde{d}_{n+1}+\beta(\triangle t_n)^2\pmb a_{n+1}\\
+    \pmb v_{n+1}=\tilde{v}_{n+1}+\gamma(\triangle t_n)\pmb{a}_{n+1}
+    \end{cases}
+\end{split}
+\end{equation}
+其中，$\triangle t_n=t_{n+1}-t_n$，$\pmb{d}_n,\pmb{v}_n,\pmb a_n$表示为时刻为$t_n$的挠度，速度以及加速度。$\beta$和$\gamma$是Nemark参数。将矫正阶段的式子(29)带入到整体离散控制方程(23)可以通过满足一致性条件得到，进而可以得到无网格形函数表达式为：
+\begin{equation}
+\begin{split}
+\pmb{M}+\beta(\triangle t_n)^2(\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{a}_{n+1}=\pmb{f}_{n+1}+\tilde{\pmb{f}_{n+1}}+\bar{\pmb{f}_{n+1}}-(\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{\tilde{d}}_{n+1}
+\end{split}
+\end{equation}
 
 
 
 
 
-\section{数值算例}
-\subsection{一维简支梁问题}
-考虑如图1所示的一维简支梁问题，简支梁在跨中受到谐波点力$F(t)=F_0sin(wt)$，其中$\omega=\pi,F_0=10$。简支梁的几何和材料性质为:长度$L=10$,截面宽度$b=1$,厚度$t=1$,密度$\rho=2500$,一维简支梁的杨氏模量为$E=2\times10^6$。该问题的解析解为：
+
+    \section{数值算例}
+    \subsection{一维简支梁问题}
+考虑如图1所示的一维简支梁问题，简支梁在跨中受到谐波点力$F(t)=F_0sin(wt)$，其中$\omega=\pi,F_0=10$。简支梁的几何和材料性质为：长度$L=10$，截面宽度$b=1$，厚度$t=1$，密度$\rho=2500$，一维简支梁的杨氏模量为$E=2\times10^6$。该问题的解析解为：
 \begin{equation}
 \begin{split}
     w(x,t) = \frac{{2{F_0}}}{{\rho AL}}\sum\limits_{i = 1,3,5...}^\infty  {(\sin (\frac{{i\pi }}{2})\frac{{\sin (i\pi x/L)}}{{{\omega ^2}_i - {\omega ^2}}} \times (\sin (\omega t) - \frac{\omega }{{{\omega _i}}}\sin ({\omega _i}t)))} \\ 
@@ -99,9 +280,9 @@ $\Gamma_V,\Gamma_M,c_P$为自然边界条件，$V_n$表示的是等效剪切力�
 \end{figure}
 一维简支梁的求解域以图2所示采用11个均匀间隔的节点进行离散分析，算例采用具有三次和四次基函数的无网格近似函数计算，核函数的相对影响域分别为3.5\\和4.5。时间设置步长为$triangle t=0.01s$。
 为了方便起见，定义挠度误差$error=\omega^h(x,t)-\omega^{\varepsilon}(x,t)$来定义各种方法的准确性，图和图分别表示的是一维简支梁模型采用三次和四次基函数中心点C的挠度时间历程和挠度误差，
-从图3和图4可以清楚的看出采用RKGSI-HR方法的解精度最好，挠度误差几乎为0，而采用GI-2和GI-5方法的误差几乎相同，相较于RKGSI-HR方法的误差较大，充分说明了RKGSI-HR方法在频率计算方法的精确性。
+从图3和图4可以清楚的看出采用RKGSI方法的解精度最好，挠度误差几乎为0，而采用GI-2和GI-5方法的误差几乎相同，相较于RKGSI-HR方法的误差较大，充分说明了RKGSI方法在频率计算方法的精确性。
 \subsection{简支方板问题}
-如图5所示，二维简支方板在板心处受到正弦集中力的作用，其中几何和材料参数为：长度为$a=10$,厚度$t=0.05$,密度$\rho=2\times 10^{11}$,泊松比$\nu=0.3$,集中力$F_0=1000$,频率$\theta=\pi$,
+如图5所示，二维简支方板在板心处受到正弦集中力的作用，其中几何和材料参数为：长度为$a=10$，厚度$t=0.05$，密度$\rho=2\times 10^{11}$，泊松比$\nu=0.3$，集中力$F_0=1000$，频率$\theta=\pi$，
 简支方板的精确解为：
 \begin{equation}
 \begin{split}
@@ -121,8 +302,8 @@ $\Gamma_V,\Gamma_M,c_P$为自然边界条件，$V_n$表示的是等效剪切力�
 \ffigbox{\caption{简支方板问题离散}}{\includegraphics[scale=0.3]{firgure/plate.mesh.png}}
 \end{floatrow}
 \end{figure}
-简支方板的求解域根据图4所示的采用$11\times 11$的均匀间隔点进行离散分析，算例采用具有三次和四次基函数的无网格近似计算，核函数相对应的影响域分别为3.5\\和4.5.时间设置步长为$\triangle t=0.01s$。
-图和图分别表示的是简支方板用三次和四次基函数时的中心点挠度的时间历程和挠度误差，结果表明在二维情况下采用RKGSI-HR的方法中心挠度误差几乎为0，同时也小于采用高斯积分GI-2和GI-5所得出的挠度误差，
+简支方板的求解域根据图4所示的采用$11\times 11$的均匀间隔点进行离散分析，算例采用具有三次和四次基函数的无网格近似计算，核函数相对应的影响域分别为3.5\\和4.5。时间设置步长为$\triangle t=0.01s$。
+图和图分别表示的是简支方板用三次和四次基函数时的中心点挠度的时间历程和挠度误差，结果表明在二维情况下采用RKGSI的方法中心挠度误差几乎为0，同时也小于采用高斯积分GI-2和GI-5所得出的挠度误差，
 进一步说明了RKGSI-HR方法在计算高阶薄板问题频率计算方面的准确性。
 
 

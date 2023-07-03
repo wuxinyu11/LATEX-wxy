@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.6.6)  21 JUN 2023 15:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.6.6)  3 JUL 2023 16:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -533,72 +533,94 @@ File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdfT
 {C:/Users/PC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
 
 ]
-Overfull \hbox (11.91652pt too wide) in paragraph at lines 80--81
+
+LaTeX Warning: Command \d invalid in math mode on input line 88.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 88.
+
+
+Overfull \hbox (1.01079pt too wide) detected at line 97
+[]
+ []
+
+[2] [3]
+Overfull \hbox (58.45058pt too wide) detected at line 190
+[]
+ []
+
+[4]
+Overfull \hbox (47.87865pt too wide) in paragraph at lines 246--248
+\C70/rm/m/n/10.95/51 v \C70/rm/m/n/10.95/4e -|\C70/rm/m/n/10.95/ff ^^L| $\OMS/cmsy/m/n/10.95 4\OML/cmm/m/it/10.95 t[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 t[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 t[]$|\C70/rm/m/n/10.95/ff ^^L| $[][]\OML/cmm/m/it/10.95 ; [][]; [][]$\C70/rm/m/n/10.95/88 h \C70/rm/m/n/10.95/79 : \C70/rm/m/n/10.95/4e : \C70/rm/m/n/10.95/65 ˆ \C70/rm/m/n/10.95/52 ; \C70/rm/m/n/10.95/4e :$\OML/cmm/m/it/10.95 t[]$\C70/rm/m/n/10.95/76 Ñ \C70/rm/m/n/10.95/63   \C70/rm/m/n/10.95/5e ¶|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/90 ^^_ \C70/rm/m/n/10.95/5e ¶ \C70/rm/m/n/10.95/4e Â \C70/rm/m/n/10.95/53   \C70/rm/m/n/10.95/52 † \C70/rm/m/n/10.95/90 ^^_ \C70/rm/m/n/10.95/5e ¶|\C70/rm/m/n/10.95/30 ^^B| $\OML/cmm/m/it/10.95 ^^L$\C70/rm/m/n/10.95/54 å$\OML/cmm/m/it/10.95 ^^M$\C70/rm/m/n/10.95/66 /\OT1/cmr/m/n/10.95 Nemark\C70/rm/m/n/10.95/53 ¬
+ []
+
+
+Overfull \hbox (11.91652pt too wide) in paragraph at lines 261--262
 []\C70/rm/m/n/10.95/80 ^^C \C70/rm/m/n/10.95/86 Q \C70/rm/m/n/10.95/59 Ç \C70/rm/m/n/10.95/56 ˛\OT1/cmr/m/n/10.95 1\C70/rm/m/n/10.95/62 @ \C70/rm/m/n/10.95/79 : \C70/rm/m/n/10.95/76 Ñ \C70/rm/m/n/10.95/4e ^^@ \C70/rm/m/n/10.95/7e Ù \C70/rm/m/n/10.95/7b Ä \C70/rm/m/n/10.95/65 / \C70/rm/m/n/10.95/68 Å \C70/rm/m/n/10.95/95 Ó \C70/rm/m/n/10.95/98 ò|\C70/rm/m/n/10.95/ff ^^L| \C70/rm/m/n/10.95/7b Ä \C70/rm/m/n/10.95/65 / \C70/rm/m/n/10.95/68 Å \C70/rm/m/n/10.95/57 ( \C70/rm/m/n/10.95/8d Ë \C70/rm/m/n/10.95/4e - \C70/rm/m/n/10.95/53 ◊ \C70/rm/m/n/10.95/52 0 \C70/rm/m/n/10.95/8c ^^P \C70/rm/m/n/10.95/6c ‚ \C70/rm/m/n/10.95/70 π \C70/rm/m/n/10.95/52 õ$\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 F[]sin\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 wt\OT1/cmr/m/n/10.95 )$|\C70/rm/m/n/10.95/ff ^^L|
  []
 
-<firgure/beam.png.png, id=117, 615.2586pt x 205.7286pt>
+<firgure/beam.png.png, id=166, 615.2586pt x 205.7286pt>
 File: firgure/beam.png.png Graphic file (type png)
 <use firgure/beam.png.png>
-Package pdftex.def Info: firgure/beam.png.png  used on input line 93.
+Package pdftex.def Info: firgure/beam.png.png  used on input line 274.
 (pdftex.def)             Requested size: 307.62854pt x 102.86404pt.
-<firgure/beam.mesh.png, id=119, 578.6418pt x 9.636pt>
+<firgure/beam.mesh.png, id=168, 578.6418pt x 9.636pt>
 File: firgure/beam.mesh.png Graphic file (type png)
 <use firgure/beam.mesh.png>
-Package pdftex.def Info: firgure/beam.mesh.png  used on input line 97.
+Package pdftex.def Info: firgure/beam.mesh.png  used on input line 278.
 (pdftex.def)             Requested size: 289.32019pt x 4.81798pt.
-[2 <./firgure/beam.png.png> <./firgure/beam.mesh.png>]
-<firgure/plate.png, id=154, 322.806pt x 254.3904pt>
+[5 <./firgure/beam.png.png> <./firgure/beam.mesh.png>]
+<firgure/plate.png, id=184, 322.806pt x 254.3904pt>
 File: firgure/plate.png Graphic file (type png)
 <use firgure/plate.png>
-Package pdftex.def Info: firgure/plate.png  used on input line 120.
+Package pdftex.def Info: firgure/plate.png  used on input line 301.
 (pdftex.def)             Requested size: 209.82141pt x 165.35179pt.
 
-Overfull \hbox (15.65213pt too wide) in paragraph at lines 120--120
+Overfull \hbox (15.65213pt too wide) in paragraph at lines 301--301
  [][] 
  []
 
 File: firgure/plate.png Graphic file (type png)
 <use firgure/plate.png>
-Package pdftex.def Info: firgure/plate.png  used on input line 120.
+Package pdftex.def Info: firgure/plate.png  used on input line 301.
 (pdftex.def)             Requested size: 209.82141pt x 165.35179pt.
 
-Overfull \hbox (15.65213pt too wide) in paragraph at lines 120--120
+Overfull \hbox (15.65213pt too wide) in paragraph at lines 301--301
  [][] 
  []
 
-<firgure/plate.mesh.png, id=155, 803.0pt x 602.25pt>
+<firgure/plate.mesh.png, id=185, 803.0pt x 602.25pt>
 File: firgure/plate.mesh.png Graphic file (type png)
 <use firgure/plate.mesh.png>
-Package pdftex.def Info: firgure/plate.mesh.png  used on input line 121.
+Package pdftex.def Info: firgure/plate.mesh.png  used on input line 302.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (46.73257pt too wide) in paragraph at lines 121--121
+Overfull \hbox (46.73257pt too wide) in paragraph at lines 302--302
  [][] 
  []
 
 File: firgure/plate.mesh.png Graphic file (type png)
 <use firgure/plate.mesh.png>
-Package pdftex.def Info: firgure/plate.mesh.png  used on input line 121.
+Package pdftex.def Info: firgure/plate.mesh.png  used on input line 302.
 (pdftex.def)             Requested size: 240.90186pt x 180.67639pt.
 
-Overfull \hbox (46.73257pt too wide) in paragraph at lines 121--121
+Overfull \hbox (46.73257pt too wide) in paragraph at lines 302--302
  [][] 
  []
 
-[3 <./firgure/plate.png> <./firgure/plate.mesh.png>] (ËñÑÊùøÂä®ÂäõÂàÜÊûê.aux) ) 
+[6 <./firgure/plate.png> <./firgure/plate.mesh.png>] (ËñÑÊùøÂä®ÂäõÂàÜÊûê.aux) ) 
 Here is how much of TeX's memory you used:
- 9025 strings out of 478351
- 157513 string characters out of 2846877
- 471302 words of memory out of 3000000
- 27112 multiletter control sequences out of 15000+600000
- 499942 words of font info for 139 fonts, out of 8000000 for 9000
+ 9168 strings out of 478351
+ 159943 string characters out of 2846877
+ 482302 words of memory out of 3000000
+ 27222 multiletter control sequences out of 15000+600000
+ 505191 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,23n,80p,756b,468s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ËñÑÊùøÂä®ÂäõÂàÜÊûê.pdf (3 pages, 575406 bytes).
+ 77i,29n,80p,756b,468s stack positions out of 10000i,1000n,20000p,200000b,80000s
+<C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ËñÑÊùøÂä®ÂäõÂàÜÊûê.pdf (6 pages, 680991 bytes).
 PDF statistics:
- 428 PDF objects out of 1000 (max. 8388607)
+ 506 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 277 words of extra memory for PDF output out of 10000 (max. 10000000)
 
