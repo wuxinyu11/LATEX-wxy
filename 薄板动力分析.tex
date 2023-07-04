@@ -1,27 +1,24 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage{ctex,amsmath,titlesec,amssymb,graphicx,floatrow}
-\usepackage[text={140mm,250mm},centering]{geometry}
-\usepackage[margin=20mm]{geometry}
+
+\documentclass[a4paper]{article}
+\usepackage{amsmath,titlesec,amssymb,graphicx,floatrow}
+\usepackage{xeCJK}
 \begin{document}
 \title{Hellinger-Reissner的动力分析}
-\date{}
 \maketitle
 \section{薄板方程}
-根据Kirchhoff板假设原理，在板的中性面$\Omega$内考虑厚度为$t$的薄板控制方程：
-    \begin{equation}
-        \begin{split}
-        \begin{cases}
-        M_{\alpha\beta,\alpha\beta}+\bar q=\rho h \ddot{w}&\text {in} \; \Omega\\
-        w=\bar w&\text{on}\;\Gamma_w\\
-        \theta_n=w_{,n}=\bar \theta_n&\text{on}\;\Gamma_{\theta}\\
-        V_n=Q_n+M_{ns,s}=\bar V_n&\text {on}\;\Gamma_V\\
-        M_{nn}=\bar M_{nn}&\text {on}\; \Gamma_M\\
-        w=\bar w&\text {at} \; c_w\\
-        P=-[[M_{ns}]]\vert_{c_p}=\bar p&\text {at}\; c_P
-        \end{cases}
-        \end{split}
-    \end{equation}
-其中：
+考虑如图所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。根据Kirchhoff薄板假设原理[]，在薄板中面$\Omega$上的控制方程为：(对下方程，有些ns需要加粗)
+\begin{equation}
+    \begin{cases}
+        M_{\alpha\beta,\alpha\beta}+\bar q=\rho h \ddot{w}&\mathrm{in} \; \Omega\\
+        w=\bar w&\mathrm{on}\;\Gamma_w\\
+        \theta_{\boldsymbol n}=w_{,n}=\bar \theta_{\boldsymbol n}&\mathrm{on}\;\Gamma_{\theta}\\
+        V_n=Q_n+M_{ns,s}=\bar V_n&\mathrm{on}\;\Gamma_V\\
+        M_{nn}=\bar M_{nn}&\mathrm{on}\; \Gamma_M\\
+        w=\bar w&\mathrm{at} \; c_w\\
+        P=-[[M_{ns}]]\vert_{c_p}=\bar p&\mathrm{at}\; c_P
+    \end{cases}
+\end{equation}
+其中：(两个其中，不要重复。下面公式代码需要缩紧)
 \begin{equation}
 \begin{split}
     \begin{cases}
@@ -31,28 +28,27 @@ M_{nn}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{ns}=M_{\alpha\beta n_{\alpha}s_{\be
     \end{cases}
 \end{split}
 \end{equation}
-其中，$M_{\alpha\beta}$为矩量$M$的弯曲和扭转分量，$\bar q$是表示分布荷载，$\rho,h$分别表示板的密度，厚度。$w$表示薄板中心挠度的位移，$w$上方两点表示两次微分。$\Gamma_w,\Gamma_{\theta},c_w$为强制边界边界条件上的挠度$\bar w$和转角$\bar \theta_n$,
-$\Gamma_V,\Gamma_M,c_P$为自然边界条件，$V_n$表示的是等效剪切力，$M_{nn}$是法向弯矩，$P$是集中力，同时，所有的边界条件都满足如下关系式:
+其中，$M_{\alpha\beta}$为矩量$\boldsymbol M$的弯曲和扭转分量，$\bar q$为垂直于薄板中面的分布荷载，$\rho$分别表示板的密度，$w$表示薄板中面挠度，$w$上方两点表示对时间$t$的两次微分。$\Gamma_w$、$\Gamma_{\theta}$和$c_w$为强制边界边界条件，$\bar w$和$\bar \theta_n$分别为强制边界条件上给定的挠度和转角。$\Gamma_V$、$\Gamma_M$和$c_P$(三个并列，最后一个用和)为自然边界条件，$V_{\boldsymbol n}$、$M_{\boldsymbol{nn}}$和$P$为自然边界上的等效剪力、法向弯矩和薄板角上的集中荷载。所有的边界条件都满足如下关系式:
 \begin{equation}
     \begin{split}
-    \Gamma=\Gamma_w\cup\Gamma_V\cup\Gamma_{\theta}\cup\Gamma_M,c=c_w\cup c_P\\
-    \Gamma_w\cap\Gamma_V=\Gamma_{\theta}\cap\Gamma_M=c_w\cap c_P=\varnothing
+        \Gamma=\Gamma_w\cup\Gamma_V\cup\Gamma_{\theta}\cup\Gamma_M,c=c_w\cup c_P\\
+        \Gamma_w\cap\Gamma_V=\Gamma_{\theta}\cap\Gamma_M=c_w\cap c_P=\varnothing
     \end{split}
-    \end{equation}
-并且$\pmb{n}=\{n_x,n_y\}^T,\pmb{s}=\{s_x,s_y\}$分别表示所在边界方向上的外法线方向和切线方向的分量\par
-考虑具有线弹性各同向性材料的均匀板，其本构方程为：
+\end{equation}
+并且，$\pmb{n}=\{n_x,\; n_y\}^T$，$\pmb{s}=\{s_x,\; s_y\}^T$分别表示所在边界方向上的外法线方向和切方向的分量。\par
+当薄板为线弹性各同向性材料时，其本构关系如下所示：
 \begin{equation}
     \begin{split}
-    M_{\alpha\beta}=D_{\alpha\beta\gamma\eta}k_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}w_{,\gamma\eta}
+        M_{\alpha\beta}=D_{\alpha\beta\gamma\eta}\kappa_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}w_{,\gamma\eta}
     \end{split}
-    \end{equation}
+\end{equation}
 其中
 \begin{equation}
     \begin{split}
-    D_{\alpha\beta\gamma\eta}=\bar D(\nu\delta_{\alpha\beta}\delta_{\gamma\eta}+\frac{1}{2}(1-\nu)(\delta_{\alpha\gamma}\delta_{\beta\eta}+\delta_{\alpha\gamma}\delta_{\beta\gamma}))
+        D_{\alpha\beta\gamma\eta}=\bar D(\nu\delta_{\alpha\beta}\delta_{\gamma\eta}+\frac{1}{2}(1-\nu)(\delta_{\alpha\gamma}\delta_{\beta\eta}+\delta_{\alpha\gamma}\delta_{\beta\gamma}))
     \end{split}
-    \end{equation}
-并且，$k_{\alpha\beta}=-w_{,\alpha\beta}$为曲率张量$k$的分量，$\bar{D},E,\nu$分别为抗弯刚度，杨氏模量以及泊松比，和板的厚度$t$具有以下关系式：
+\end{equation}
+并且，$\kappa_{\alpha\beta}=-w_{,\alpha\beta}$为曲率张量$\boldsymbol \kappa$的分量。$D_{\alpha \beta \gamma \eta}$为……，$\bar{D}$分为抗弯刚度，其可采用杨氏模量$E$、泊松比$\nu$和板厚$h$表示为：
 \begin{equation}
     \begin{split}
     \bar D=\frac{Et^3}{12(1-\nu^2)}
@@ -68,40 +64,42 @@ $\Gamma_V,\Gamma_M,c_P$为自然边界条件，$V_n$表示的是等效剪切力�
 %     \end{cases}
 %     \end{split}
 %     \end{equation}
-由于无网格形函数的非插值特点导致其无法像有限元法一直直接施加强制边界条件，这里利用再生光滑梯度的内在特点，采用Hellinger-Ressiner方法施加强制边界条件，根据该方法，矩量$M$的弯曲和扭转分量$M_{\alpha\beta}$和挠度$w$为两个独立分量，此时考虑引入边界条件的等效积分弱形式为:
+本文考虑Hellinger-Ressiner变分原理为基础的伽辽金弱形式，其能量泛函中包含薄板中面挠度$w$和弯矩$\boldsymbol M$两个变量，能量泛函分别对这两个变量进行变分可得如下伽辽金弱形式：
+%由于无网格形函数的非插值特点导致其无法像有限元法一直直接施加强制边界条件，这里利用再生光滑梯度的内在特点，采用Hellinger-Ressiner方法施加强制边界条件，根据该方法，矩量$M$的弯曲和扭转分量$M_{\alpha\beta}$和挠度$w$为两个独立分量，此时考虑引入边界条件的等效积分弱形式为:
+%\begin{equation}
+%    \begin{split}
+%        \Pi(M_{\alpha\beta,w})&=\frac{1}{2}\int_{\Omega}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega+\int_{\Omega} w\rho h\ddot{w}d\Omega-\int_{\Gamma_w}V_n\bar{w}d\Gamma\\
+%        &+\int_{\Gamma_{\theta}}M_{nn}\bar{\theta_n}d\Gamma-P\bar{w}\vert_{x\in c_w} +\int_{\Omega}w(M_{\alpha\beta,\alpha\beta}+\bar q)d\Omega\\
+%        &+\int_{\Gamma_M}w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma-\int_{\Gamma_V}w(V_n-\bar{V}_n)d\Gamma-w(P-\bar P)\vert_{x\in c_P}
+%    \end{split}
+%    \end{equation}
+%    同时：
+%    \begin{equation}
+%    \begin{split}
+%        \delta\Pi(M_{\alpha\beta,w})&=\int_{\Omega}\delta M_{\alpha\eta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}\delta V_n\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\delta M_{nn}\bar{\theta_n}d\Gamma\\
+%        &-\delta P\bar{w}\vert_{x\in c_w}+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta})wd\Omega+\int_{\Gamma_M}\delta M_{nn}w_{,n}d\Gamma\\
+%        &-\int_{\Gamma_V}\delta V_nwd\Gamma-\delta Pw\vert_{x\in c_p}+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega\\
+%        &+\int_{\Gamma_M}\d   elta w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma-\int_{\Gamma_V}\delta w(V_n-\bar{V}_n)d\Gamma\\
+%        &-\delta w(P-\bar{P})\vert_{x\in c_P}+\int_{\Omega}\delta w\rho h\ddot{w}d\Omega\\
+%        &=0
+%    \end{split}
+%    \end{equation}
+%对$\delta M_{\alpha\beta}$和$\delta w$通过上式可以得到以下式子：
 \begin{equation}
     \begin{split}
-        \Pi(M_{\alpha\beta,w})&=\frac{1}{2}\int_{\Omega}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega+\int_{\Omega} w\rho h\ddot{w}d\Omega-\int_{\Gamma_w}V_n\bar{w}d\Gamma\\
-        &+\int_{\Gamma_{\theta}}M_{nn}\bar{\theta_n}d\Gamma-P\bar{w}\vert_{x\in c_w} +\int_{\Omega}w(M_{\alpha\beta,\alpha\beta}+\bar q)d\Omega\\
-        &+\int_{\Gamma_M}w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma-\int_{\Gamma_V}w(V_n-\bar{V}_n)d\Gamma-w(P-\bar P)\vert_{x\in c_P}
+        \int_\Omega {\delta {M_{\alpha \beta }}D_{\alpha \beta \gamma \eta }^{ - 1}{M_{\gamma \eta }}d\Omega }&=\int_\Gamma  {\delta {V_{\bf{n}}}wd\Gamma }  - \int_\Gamma  {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }+{\left. {\delta Pw} \right|_{{\bf{x}} \in c}} - \int_\Omega  {\delta {M_{\alpha \beta ,\alpha \beta }}wd\Omega } \\
+        &-\int_{{\Gamma _w}} {\delta {V_{\bf{n}}}wd\Gamma }  + \int_{{\Gamma _\theta }} {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }  - {\left. {\delta Pw} \right|_{{\bf{x}} \in {c_w}}}\\
+        &+\int_{{\Gamma _w}} {\delta {V_{\bf{n}}}\bar wd\Gamma }  - \int_{{\Gamma _\theta }} {\delta {M_{{\bf{nn}}}}{{\bar \theta }_{\bf{n}}}d\Gamma }  + {\left. {\delta P\bar w} \right|_{{\bf{x}} \in {c_w}}}
     \end{split}
-    \end{equation}
-    同时：
-    \begin{equation}
-    \begin{split}
-        \delta\Pi(M_{\alpha\beta,w})&=\int_{\Omega}\delta M_{\alpha\eta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}\delta V_n\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\delta M_{nn}\bar{\theta_n}d\Gamma\\
-        &-\delta P\bar{w}\vert_{x\in c_w}+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta})wd\Omega+\int_{\Gamma_M}\delta M_{nn}w_{,n}d\Gamma\\
-        &-\int_{\Gamma_V}\delta V_nwd\Gamma-\delta Pw\vert_{x\in c_p}+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega\\
-        &+\int_{\Gamma_M}\d   elta w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma-\int_{\Gamma_V}\delta w(V_n-\bar{V}_n)d\Gamma\\
-        &-\delta w(P-\bar{P})\vert_{x\in c_P}+\int_{\Omega}\delta w\rho h\ddot{w}d\Omega\\
-        &=0
-    \end{split}
-    \end{equation}
-对$\delta M_{\alpha\beta}$和$\delta w$通过上式可以得到以下式子：
+\end{equation}
 \begin{equation}
-    \begin{split}
-    \int_\Omega ^{}{\delta {M_{\alpha \beta }}D_{\alpha \beta \gamma \eta }^{ - 1}{M_{\gamma \eta }}d\Omega }&=\int_\Gamma ^{} {\delta {V_{\bf{n}}}wd\Gamma }  - \int_\Gamma ^{} {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }+{\left. {\delta Pw} \right|_{{\bf{x}} \in c}} - \int_\Omega ^{} {\delta {M_{\alpha \beta ,\alpha \beta }}wd\Omega } \\
-     &-\int_{{\Gamma _w}}^{} {\delta {V_{\bf{n}}}wd\Gamma }  + \int_{{\Gamma _\theta }}^{} {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }  - {\left. {\delta Pw} \right|_{{\bf{x}} \in {c_w}}}\\
-    &+\int_{{\Gamma _w}}^{} {\delta {V_{\bf{n}}}\bar wd\Gamma }  - \int_{{\Gamma _\theta }}^{} {\delta {M_{{\bf{nn}}}}{{\bar \theta }_{\bf{n}}}d\Gamma }  + {\left. {\delta P\bar w} \right|_{{\bf{x}} \in {c_w}}}
-    \end{split}
-    \end{equation}
-    \begin{equation}
         \begin{split}
-        \int_\Gamma ^{} {\delta w{V_{\bf{n}}}d\Gamma }&- \int_\Gamma ^{} {\delta {w_{,{\bf{n}}}}{M_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta wP} \right|_{{\bf{x}} \in c}} - \int_\Omega ^{} {\delta w{M_{\alpha \beta ,\alpha\beta}}d\Omega }\\
-         &- \int_{{\Gamma _w}}^{} {\delta w{V_{\bf{n}}}d\Gamma }  + \int_{{\Gamma _\theta }}^{} {\delta {w_{,{\bf{n}}}}{M_{{\bf{nn}}}}d\Gamma }  - {\left. {\delta wP} \right|_{{\bf{x}} \in {c_w}}}+\int_{\Omega}\delta w\rho h\ddot{w}d\Omega\\
-         &= \int_{{\Gamma _V}}^{} {\delta w{{\bar V}_{\bf{n}}}d\Gamma }  - \int_{{\Gamma _M}}^{} {\delta {w_{,{\bf{n}}}}{{\bar M}_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta w\bar P} \right|_{{\bf{x}} \in {c_P}}} + \int_\Omega ^{} {\delta w\bar qd\Omega} 
+            \int_{\Omega}\delta w\rho h\ddot{w}d\Omega &+ \int_\Gamma  {\delta w{V_{\bf{n}}}d\Gamma } - \int_\Gamma  {\delta {w_{,{\bf{n}}}}{M_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta wP} \right|_{{\bf{x}} \in c}} - \int_\Omega  {\delta w{M_{\alpha \beta ,\alpha\beta}}d\Omega }\\
+            &- \int_{{\Gamma _w}} {\delta w{V_{\bf{n}}}d\Gamma }  + \int_{{\Gamma _\theta }} {\delta {w_{,{\bf{n}}}}{M_{{\bf{nn}}}}d\Gamma }  - {\left. {\delta wP} \right|_{{\bf{x}} \in {c_w}}}\\
+            &= \int_{{\Gamma _V}} {\delta w{{\bar V}_{\bf{n}}}d\Gamma }  - \int_{{\Gamma _M}} {\delta {w_{,{\bf{n}}}}{{\bar M}_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta w\bar P} \right|_{{\bf{x}} \in {c_P}}} + \int_\Omega  {\delta w\bar qd\Omega} 
     \end{split}
-    \end{equation}
+\end{equation}
+    值得注意的是，在Hellinger-Reissner为基础的伽辽金弱形式中，强制边界条件[]……明一下弱形式有哪些优点
 \section{挠度离散和再生核近似}
 在Hellinger-Ressiner变分原理的弱形式中，薄板的挠度和弯矩分别采用不同的近似方案进行离散。这里，挠度采用基于再生核近似的无网格形函数进行离散。在无网格近似中，板中性面$\Omega$上布置一系列无网格节点$\{\pmb{x}_I\}_{I=1}^{np}$，板挠度$w$的近似表达式$w^h$可表示为：
 \begin{equation}
@@ -305,6 +303,5 @@ $\Gamma_V,\Gamma_M,c_P$为自然边界条件，$V_n$表示的是等效剪切力�
 简支方板的求解域根据图4所示的采用$11\times 11$的均匀间隔点进行离散分析，算例采用具有三次和四次基函数的无网格近似计算，核函数相对应的影响域分别为3.5\\和4.5。时间设置步长为$\triangle t=0.01s$。
 图和图分别表示的是简支方板用三次和四次基函数时的中心点挠度的时间历程和挠度误差，结果表明在二维情况下采用RKGSI的方法中心挠度误差几乎为0，同时也小于采用高斯积分GI-2和GI-5所得出的挠度误差，
 进一步说明了RKGSI-HR方法在计算高阶薄板问题频率计算方面的准确性。
-
 
 \end{document}
