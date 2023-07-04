@@ -6,29 +6,29 @@
 \title{Hellinger-Reissner的动力分析}
 \maketitle
 \section{薄板方程}
-考虑如图所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。根据Kirchhoff薄板假设原理[]，在薄板中面$\Omega$上的控制方程为：(对下方程，有些ns需要加粗)
+考虑如图1所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。根据Kirchhoff薄板假设原理[]，在薄板中面$\Omega$上的控制方程为：
 \begin{equation}
     \begin{cases}
         M_{\alpha\beta,\alpha\beta}+\bar q=\rho h \ddot{w}&\mathrm{in} \; \Omega\\
         w=\bar w&\mathrm{on}\;\Gamma_w\\
-        \theta_{\boldsymbol n}=w_{,n}=\bar \theta_{\boldsymbol n}&\mathrm{on}\;\Gamma_{\theta}\\
-        V_n=Q_n+M_{ns,s}=\bar V_n&\mathrm{on}\;\Gamma_V\\
-        M_{nn}=\bar M_{nn}&\mathrm{on}\; \Gamma_M\\
+        \theta_{\boldsymbol n}=w_{,\pmb n}=\bar \theta_{\boldsymbol n}&\mathrm{on}\;\Gamma_{\theta}\\
+        V_{\pmb n}=Q_{\pmb n}+M_{\pmb{ns},\pmb s}=\bar V_{\pmb n}&\mathrm{on}\;\Gamma_V\\
+        M_{\pmb{nn}}=\bar M_{\pmb{nn}}&\mathrm{on}\; \Gamma_M\\
         w=\bar w&\mathrm{at} \; c_w\\
         P=-[[M_{ns}]]\vert_{c_p}=\bar p&\mathrm{at}\; c_P
     \end{cases}
 \end{equation}
-其中：(两个其中，不要重复。下面公式代码需要缩紧)
+其中：
 \begin{equation}
 \begin{split}
     \begin{cases}
-    w_{,n}=w_{,\alpha}n_{\alpha}\\
-Q_n=n_{\alpha}M_{\alpha\beta,\beta}\\
-M_{nn}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{ns}=M_{\alpha\beta n_{\alpha}s_{\beta}},M_{ns,s}=M_{\alpha\beta,\gamma}s_{\alpha}n_{\beta}s_{\gamma}
+    w_{,\pmb n}=w_{,\alpha}n_{\alpha}\\
+Q_{\pmb n}=n_{\alpha}M_{\alpha\beta,\beta}\\
+M_{\pmb{nn}}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{\pmb{ns}}=M_{\alpha\beta n_{\alpha}s_{\beta}},M_{\pmb{ns,s}}=M_{\alpha\beta,\gamma}s_{\alpha}n_{\beta}s_{\gamma}
     \end{cases}
 \end{split}
 \end{equation}
-其中，$M_{\alpha\beta}$为矩量$\boldsymbol M$的弯曲和扭转分量，$\bar q$为垂直于薄板中面的分布荷载，$\rho$分别表示板的密度，$w$表示薄板中面挠度，$w$上方两点表示对时间$t$的两次微分。$\Gamma_w$、$\Gamma_{\theta}$和$c_w$为强制边界边界条件，$\bar w$和$\bar \theta_n$分别为强制边界条件上给定的挠度和转角。$\Gamma_V$、$\Gamma_M$和$c_P$(三个并列，最后一个用和)为自然边界条件，$V_{\boldsymbol n}$、$M_{\boldsymbol{nn}}$和$P$为自然边界上的等效剪力、法向弯矩和薄板角上的集中荷载。所有的边界条件都满足如下关系式:
+$M_{\alpha\beta}$为矩量$\boldsymbol M$的弯曲和扭转分量，$\bar q$为垂直于薄板中面的分布荷载，$\rho$分别表示板的密度，$w$表示薄板中面挠度，$w$上方两点表示对时间$t$的两次微分。$\Gamma_w$、$\Gamma_{\theta}$和$c_w$为强制边界边界条件，$\bar w$和$\bar \theta_n$分别为强制边界条件上给定的挠度和转角。$\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_{\boldsymbol{nn}}$和$P$为自然边界上的等效剪力、法向弯矩和薄板角上的集中荷载。所有的边界条件都满足如下关系式:
 \begin{equation}
     \begin{split}
         \Gamma=\Gamma_w\cup\Gamma_V\cup\Gamma_{\theta}\cup\Gamma_M,c=c_w\cup c_P\\
@@ -48,7 +48,7 @@ M_{nn}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{ns}=M_{\alpha\beta n_{\alpha}s_{\be
         D_{\alpha\beta\gamma\eta}=\bar D(\nu\delta_{\alpha\beta}\delta_{\gamma\eta}+\frac{1}{2}(1-\nu)(\delta_{\alpha\gamma}\delta_{\beta\eta}+\delta_{\alpha\gamma}\delta_{\beta\gamma}))
     \end{split}
 \end{equation}
-并且，$\kappa_{\alpha\beta}=-w_{,\alpha\beta}$为曲率张量$\boldsymbol \kappa$的分量。$D_{\alpha \beta \gamma \eta}$为……，$\bar{D}$分为抗弯刚度，其可采用杨氏模量$E$、泊松比$\nu$和板厚$h$表示为：
+并且，$\kappa_{\alpha\beta}=-w_{,\alpha\beta}$为曲率张量$\boldsymbol \kappa$的分量。$D_{\alpha \beta \gamma \eta}$为四阶弹性张量，$\bar{D}$分为抗弯刚度，其可采用杨氏模量$E$、泊松比$\nu$和板厚$h$表示为：
 \begin{equation}
     \begin{split}
     \bar D=\frac{Et^3}{12(1-\nu^2)}
@@ -99,15 +99,20 @@ M_{nn}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{ns}=M_{\alpha\beta n_{\alpha}s_{\be
             &= \int_{{\Gamma _V}} {\delta w{{\bar V}_{\bf{n}}}d\Gamma }  - \int_{{\Gamma _M}} {\delta {w_{,{\bf{n}}}}{{\bar M}_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta w\bar P} \right|_{{\bf{x}} \in {c_P}}} + \int_\Omega  {\delta w\bar qd\Omega} 
     \end{split}
 \end{equation}
-    值得注意的是，在Hellinger-Reissner为基础的伽辽金弱形式中，强制边界条件[]……明一下弱形式有哪些优点
+    值得注意的是，在Hellinger-Reissner为基础[]的伽辽金弱形式中，具有和Nitsche方法相类似的表达式。相较于Nitsche法，稳定性内嵌于HR弱形式中，无需额外增加稳定项，且稳定项无人工经验参数，消除对人工参数的依赖性，使用方便计算稳定。
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.7]{firgure/boban.png}
+    \caption{薄板的相关符号及边界条件}
+\end{figure}\newpage
 \section{挠度离散和再生核近似}
-在Hellinger-Ressiner变分原理的弱形式中，薄板的挠度和弯矩分别采用不同的近似方案进行离散。这里，挠度采用基于再生核近似的无网格形函数进行离散。在无网格近似中，板中性面$\Omega$上布置一系列无网格节点$\{\pmb{x}_I\}_{I=1}^{np}$，板挠度$w$的近似表达式$w^h$可表示为：
+以Hellinger-Ressiner变分原理为基础的弱形式中，薄板的挠度和弯矩分别采用不同的近似方案进行离散。这里，挠度采用基于再生核近似的无网格形函数进行离散。首先，在薄板中面$\Omega$上布置一系列无网格节点$\{\pmb{x}_I\}_{I=1}^{np}$，此时，薄板挠度$w$的近似表达式$w^h$可表示为：
 \begin{equation}
 \begin{split}
     w^h(\pmb{x})=\sum_{I=1}^{n_p}\Psi_I(\pmb{x})d_I,\delta w^h(\pmb{x})=\sum_{I=1}^{n_p}\Psi_I(\pmb{x})\delta d_I,\pmb{x}\in\Omega
 \end{split}
 \end{equation}
-式中$d_{I},\delta d_I$为无网格节点$\pmb{x}_I$上的节点系数和虚节点系数，$\Psi_I$为与之相对应的无网格形函数，根据再生核近似理论，无网格形函数具有如下表达式：
+式中$d_{I},\delta d_I$为无网格节点$\pmb{x}_I$上的节点系数和虚节点系数，$\Psi_I(\pmb{x})$为与之相对应的无网格形函数，根据再生核近似理论，无网格形函数具有如下表达式：
 \begin{equation}
 \begin{split}
     \Psi_I(\pmb{x})=\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{c}(\pmb{x})\phi(\pmb{x}_I-\pmb{x})
@@ -119,13 +124,13 @@ M_{nn}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{ns}=M_{\alpha\beta n_{\alpha}s_{\be
     \pmb{p}(\pmb{x})=\{1,x,y,\dotsb ,x^2,xy,y^2,\dotsb,x^iy^i,\dotsb,y^p\},0\le i+j\le p
 \end{split}
 \end{equation}
-而$\phi(\pmb{x}_I-\pmb{x})$为核函数，本研究采用基于五次样条函数作为核函数
+$\phi(\pmb{x}_I-\pmb{x})$是核函数其影响域也决定了无网格形函数的影响域，本研究采用基于五次样条函数，具有矩形影响域的核函数：
 \begin{equation}
 \begin{split}
     \phi(\pmb{x}_I-\pmb{x})=\phi(r_x)\phi(r_y),r_{\alpha}=\frac{x_{\alpha I}-x_{\alpha}}{s_{\alpha I}}
 \end{split}
 \end{equation}
-式中$s_{\alpha I}$为空间方向上的影响域尺寸，$\phi r_{\alpha}$为五次样条函数：
+式中$s_{\alpha I}$为空间方向上的影响域尺寸，$\phi (r_{\alpha})$为五次样条函数：
 \begin{equation}
 \begin{split}
     \phi(r_{\alpha})=\frac{1}{5!}\begin{cases}
@@ -136,18 +141,24 @@ M_{nn}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{ns}=M_{\alpha\beta n_{\alpha}s_{\be
     \end{cases}
 \end{split}
 \end{equation}\par
-待定系数向量$\pmb{c}(\pmb{x})$可以通过满足一致性条件得到，进而可以得到无网格形函数表达式为：
+待定系数向量$\pmb{c}(\pmb{x})$的表达式可以通过满足一致性条件确定，进而得到无网格形函数的表达式：
 \begin{equation}
 \begin{split}
-\Psi_I(\pmb{x})=\phi(\pmb{x}_I-\pmb{x})\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{A}^{-1}(\pmb{x})(0)
+\Psi_I(\pmb{x})=\phi(\pmb{x}_I-\pmb{x})\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{A}^{-1}(\pmb{x})\pmb{p}(\pmb 0)
 \end{split}
 \end{equation}
-式中$\pmb{A}(\pmb{x})$为矩量矩阵，且：
+式中$\pmb{A}(\pmb{x})$为矩量矩阵：
 \begin{equation}
 \begin{split}
     \pmb{A}(\pmb{x})=\sum_{I=1}^{n_p}\phi(\pmb{x}_I-\pmb{x})\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})
 \end{split}
-\end{equation}
+\end{equation}\par
+图2为二维二次基函数无网格形函数，从图中可以看出，无网格形函数在全域上连续光滑，但在无网格节点处，无论节点在域内还是边界处，形函数都不具有插值性，因此无网格法中基本边界条件都需要特殊处理。
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=1]{firgure/zaishenghe.png}
+    \caption{无网格形函数}
+\end{figure}\newpage
 \section{弯矩离散和再生光滑梯度近似}
 根据再生光滑梯度理论，
 如图所示，将求解域$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,n_c$，并且$\cup_{C=1}^{n_c}\Omega_C=\Omega$，在背景积分单元$\Omega_C$内，将弯矩分量$M_{\alpha\beta}$采用$(p-2)$阶次进行离散，并记为$M_{\alpha\beta}^h$
