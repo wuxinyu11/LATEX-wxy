@@ -117,48 +117,64 @@ $\phi(\pmb{x}_I-\pmb{x})$为核函数，核函数决定了无网格形函数的�
 图2为二维二次基函数无网格形函数，从图中可以看出，无网格形函数在全域上连续光滑，但在无网格节点处，无论节点在域内还是边界处，形函数都不具有插值性，因此无网格法中基本边界条件都需要特殊处理。
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=1]{firgure/zaishenghe.png}
+    \includegraphics[scale=0.7]{firgure/zaishenghe.png}
     \caption{无网格形函数}
 \end{figure}\newpage
 \section{弯矩离散和再生光滑梯度近似}
-根据再生光滑梯度理论，
-如图所示，将求解域$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,n_c$，并且$\cup_{C=1}^{n_c}\Omega_C=\Omega$，在背景积分单元$\Omega_C$内，将弯矩分量$M_{\alpha\beta}$采用$(p-2)$阶次进行离散，并记为$M_{\alpha\beta}^h$
+根据再生光滑梯度理论[]，将薄板中面$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,n_c$，并且$\cup_{C=1}^{n_c}\Omega_C=\Omega$。在背景积分单元$\Omega_C$内，弯矩$\pmb{M}_{\alpha\beta}$的近似表达式$\pmb{M}^h_{\alpha\beta}$可表示为：
 \begin{equation}
 \begin{split}
-    M_{\alpha\beta}^h(\pmb{x})=\pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x}),\delta M_{\alpha\beta}^h(\pmb{x})=\delta \pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x}),\pmb{x}\in\Omega_C
+    \pmb M_{\alpha\beta}^h(\pmb{x})=\pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x})
+    % ,\delta \pmb M_{\alpha\beta}^h(\pmb{x})=\delta \pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x}),\pmb{x}\in\Omega_C
 \end{split}
 \end{equation}
-其中，$\pmb a_{\alpha\beta},\delta \pmb a_{\alpha\beta}$是常系数向量，$\pmb{q}$是比$\pmb{p}$低两阶的单项式向量：
+式中$\pmb a_{\alpha\beta}$是$\pmb M_{\alpha\beta}^h(\pmb{x})$在积分域$\Omega_c$的常系数向量，$\pmb{q}(\pmb{x})$是比基函数向量$\pmb{p}(\pmb{x})$低两阶的单项式向量：
 \begin{equation}
 \begin{split}
     \pmb{q}(\pmb{x})=\{1,x,y,\dotsb,x^2,xy,y^2,\dotsb,x^iy^i,\dotsb,y^{p-2}\}^T,0\le i+j\le p-2
 \end{split}
 \end{equation}
-根据式(7)可以得到常系数向量$\pmb{a}_{\alpha\beta}$：
+常系数向量$\pmb{a}_{\alpha\beta}$的表达式可以通过式(7)确定：
 \begin{equation}
 \begin{split}
     a_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}G^{-1}(\sum_{I=1}^{n_p}(\tilde{g}_{\alpha\beta I}-\bar{g}_{\alpha\beta I})d_I+\hat{g}_{\alpha\beta})
 \end{split}
 \end{equation}
-其中：
+式中：
 \begin{equation}
 \begin{split}
     G=\int_{\Omega_C}\pmb{q}\pmb{q}^Td\Omega
 \end{split}
 \end{equation}
 \begin{equation}
-    \begin{split}
-    \begin{cases}
-    {\tilde g}_{\alpha\beta I} = \int_{{\Gamma _C}}^{}{{\Psi _{I,{\bf{n}}}}{\pmb{q}}{n_\alpha }{n_\beta }d\Gamma }-\int_{{\Gamma _C}}^{}{{\Psi _I}({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha}{n_\beta }{s_\gamma})d\Gamma }  + {\left[\kern-0.15em\left[ {{\Psi _I}{\pmb{q}}{n_\alpha }{s_\beta }} 
+\begin{split}
+% \begin{cases}
+    &{\tilde g}_{\alpha\beta I} = \int_{{\Gamma _C}}^{}{{\Psi _{I,{\bf{n}}}}{\pmb{q}}{n_\alpha }{n_\beta }d\Gamma }-\int_{{\Gamma _C}}^{}{{\Psi _I}({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha}{n_\beta }{s_\gamma})d\Gamma }  + {\left[\kern-0.15em\left[ {{\Psi _I}{\pmb{q}}{n_\alpha }{s_\beta }} 
      \right]\kern-0.15em\right]_{{{x}} \in {c_C}}} + \int_{{\Omega _C}}^{} {{\Psi _I}{{\pmb{q}}_{,\alpha \beta }}d\Omega } \\
-    {\bar g}_{\alpha \beta I} = \int_{{\Gamma _\theta } \cap {\Gamma _C}}^{} {{\Psi _{I,{\bf{n}}}}{\pmb{q}}{n_\alpha }{n_\beta }d\Gamma }  - \int_{{\Gamma _w} \cap {\Gamma _C}}^{} {{\Psi _I}({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha }{n_\beta }{s_\gamma })d\Gamma }  + {\left[\kern-0.15em\left[ {{\Psi _I}{\pmb{q}}{n_\alpha }{s_\beta }} 
+    &{\bar g}_{\alpha \beta I} = \int_{{\Gamma _\theta } \cap {\Gamma _C}}^{} {{\Psi _{I,{\bf{n}}}}{\pmb{q}}{n_\alpha }{n_\beta }d\Gamma }  - \int_{{\Gamma _w} \cap {\Gamma _C}}^{} {{\Psi _I}({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha }{n_\beta }{s_\gamma })d\Gamma }  + {\left[\kern-0.15em\left[ {{\Psi _I}{\pmb{q}}{n_\alpha }{s_\beta }} 
      \right]\kern-0.15em\right]_{{{x}} \in {c_w} \cap {c_C}}}\\
-    \hat{g}_{\alpha \beta }= \int_{{\Gamma _\theta } \cap {\Gamma _C}}^{} {{\pmb{q}}{n_\alpha }{n_\beta }{{\bar \theta }_{\bf{n}}}d\Gamma }  - \int_{{\Gamma _w} \cap {\Gamma _C}}^{} {({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha }{n_\beta }{s_\gamma })\bar wd\Gamma }  + {\left[\kern-0.15em\left[ {\bar w{\pmb{q}}{n_\alpha }{s_\beta }} 
+    &\hat{g}_{\alpha \beta }= \int_{{\Gamma _\theta } \cap {\Gamma _C}}^{} {{\pmb{q}}{n_\alpha }{n_\beta }{{\bar \theta }_{\bf{n}}}d\Gamma }  - \int_{{\Gamma _w} \cap {\Gamma _C}}^{} {({n_\alpha }{{\pmb{q}}_{,\beta }} + {{\pmb{q}}_{,\gamma }}{s_\alpha }{n_\beta }{s_\gamma })\bar wd\Gamma }  + {\left[\kern-0.15em\left[ {\bar w{\pmb{q}}{n_\alpha }{s_\beta }} 
      \right]\kern-0.15em\right]_{{{x}} \in {c_w} \cap {c_C}}}
-     \end{cases}
-    \end{split}
-    \end{equation}
-其中，$\Gamma_C$是$\Omega_C$的边界。\par
+% \end{cases}
+\end{split}
+\end{equation}
+其中，$\Gamma_C$是$\Omega_C$的边界。将式子(19)代入到式子(17)中可以得到$\pmb{M}^h_{\alpha\beta}$的表达式：
+\begin{equation}
+\begin{split}
+M_{\alpha\beta}^h(x)&=q^T(x)a_{\alpha\beta}\\
+&=-D_{\alpha\beta\gamma\eta}(\sum_{I=1}^{n_p}(q^T(x)G^{-1}\tilde{g}g_{\gamma\eta I}-q^T(x)G^{-1}\bar{g}_{\gamma\eta I})d_I+q^T(x)G^{-1}\hat{g}_{\gamma\eta})\\
+&=-D_{\alpha\beta\gamma\eta}(\sum_{I=1}^{n_p}\tilde{\Psi}_{I,\gamma\eta}(x)d_I-\sum_{I=1}^{n_p}\bar{\Psi}_{I,\gamma\eta}(x)d_I+q^T(X)G^{-1}\hat{g}_{\gamma\eta})
+\end{split}
+\end{equation}
+式中：
+\begin{equation}
+\begin{split}
+\begin{cases}
+    \tilde{\Psi}_{I,\alpha\beta}=q^T(x)G^{-1}\tilde{g}_{\alpha\beta I}\\
+    \bar{\Psi}_{I,\alpha\beta}=q^T(x)G^{-1}\bar{g}_{\alpha\beta I}
+\end{cases}
+\end{split}
+\end{equation}\par
 通过对挠度和弯矩进行混合离散，得到离散控制方程：
 \begin{equation}
 \begin{split}
@@ -168,42 +184,33 @@ $\phi(\pmb{x}_I-\pmb{x})$为核函数，核函数决定了无网格形函数的�
 其中：
 \begin{equation}
 \begin{split}
-    \pmb{K}_{IJ}=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega  
+    &\pmb{K}_{I\!J}=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega\\
+    &\pmb{M}_{I\!J}=\int_{\Omega}\Psi_I\rho h\Psi_Jd\Omega\\
+    &\pmb{f}_I=\int_{\Gamma_V}\Psi_I\bar{V}_n\Gamma-\int_{\Gamma_M}\Psi_{I,n}\bar{M}_{nn}d\Gamma+\int_{\Omega}\Psi_I\bar{q}d\Omega+\Psi_I\bar{P}\vert_{x\in c_P}
 \end{split}
 \end{equation}
 \begin{equation}
 \begin{split}
-    \pmb{M}_{IJ}=\int_{\Omega}\Psi_I(\pmb{x})\rho h\Psi_J(\pmb{x})d\Omega
+   \pmb{\tilde{K}}_{I\!J}=\\
+   \pmb{\tilde{f}}_I= 
 \end{split}
 \end{equation}
 \begin{equation}
-    \begin{split}
-   &{{\pmb{\tilde K}}_{IJ}} =  - \int_{{\Gamma _w}}^{} {{\Psi _I}{{\cal V}_{\alpha \beta }}{{\tilde \Psi }_{J,\alpha \beta }}d\Gamma }  + \int_{{\Gamma _\theta }}^{} {{\Psi _{I,{\bf{n}}}}{{\cal M}_{\alpha \beta }}{{\tilde \Psi }_{J,\alpha \beta }}d\Gamma  + {{\left[\kern-0.15em\left[ {{\Psi _I}{{\cal P}_{\alpha \beta }}{{\tilde \Psi }_{J,\alpha \beta }}} 
-     \right]\kern-0.15em\right]}_{{\bf{x}} \in {c_w}}}} \\
-     &- \int_{{\Gamma _w}}^{} {({{\cal V}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }}){\Psi _J}d\Gamma }  + \int_{{\Gamma _\theta }}^{} {({{\cal M}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }}){\Psi _{J,{\bf{n}}}}d\Gamma }  + {\left[\kern-0.15em\left[ {({{\cal P}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }}){\Psi _J}} 
-     \right]\kern-0.15em\right]_{{\bf{x}} \in {c_w}}}\\
-    &{{{\pmb{\tilde f}_I}} = - \int_{{\Gamma _w}}^{} {({{\cal V}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }})\bar wd\Gamma }  + \int_{{\Gamma _\theta }}^{} {({{\cal M}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }}){{\bar \theta }_{\bf{n}}}d\Gamma }  + {{\left[\kern-0.15em\left[ {({{\cal P}_{\alpha \beta }}{{\tilde \Psi }_{I,\alpha \beta }})\bar w} 
-     \right]\kern-0.15em\right]}_{{\bf{x}} \in {c_w}}}}
-    \end{split}
-    \end{equation}
-\begin{equation}
 \begin{split}
-        &{{{\pmb{\bar K}_{IJ}}} = \int_{{\Gamma _w}}^{} {({{\cal V}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }}){\Psi _J}d\Gamma }  - \int_{{\Gamma _\theta }}^{} {({{\cal M}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }}){\Psi _{J,{\bf{n}}}}d\Gamma }  - {{\left[\kern-0.15em\left[ {({{\cal P}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }}){\Psi _J}} 
-         \right]\kern-0.15em\right]}_{{\bf{x}} \in {c_w}}}}\\
-        &{{{\pmb{\bar f}_I}} = \int_{{\Gamma _w}}^{} {({{\cal V}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }})\bar wd\Gamma }  - \int_{{\Gamma _\theta }}^{} {({{\cal M}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }}){{\bar \theta }_{\bf{n}}}d\Gamma }  - {{\left[\kern-0.15em\left[ {({{\cal P}_{\alpha \beta }}{{\bar \Psi }_{I,\alpha \beta }})\bar w} 
-         \right]\kern-0.15em\right]}_{{\bf{x}} \in {c_w}}}}
+     \pmb{\bar{K}}_{I\!J}=\\
+     \pmb{\bar{f}}_I=
 \end{split}
 \end{equation}
 \section{时间域离散}
 本研究采用Newmark法对薄板控制方离散方程进行时间离散：\\
 预测阶段：
 \begin{equation}
- \begin{split}
+\begin{split}
     \begin{cases}
         \tilde{\pmb{d}}_{n+1}=\pmb{d}_n+(\triangle t_n)v_n+\frac{\triangle (t_n)^2}{2}(1-2\beta)\pmb a_n\\
         \tilde{\pmb v_{n+1}}=\pmb{v}_n+(\triangle t_n)(1-\gamma)\pmb{a}_n
     \end{cases}
-  \end{split}
+\end{split}
 \end{equation}
 矫正阶段：
 \begin{equation}
@@ -217,17 +224,11 @@ $\phi(\pmb{x}_I-\pmb{x})$为核函数，核函数决定了无网格形函数的�
 其中，$\triangle t_n=t_{n+1}-t_n$，$\pmb{d}_n,\pmb{v}_n,\pmb a_n$表示为时刻为$t_n$的挠度，速度以及加速度。$\beta$和$\gamma$是Nemark参数。将矫正阶段的式子(29)带入到整体离散控制方程(23)可以通过满足一致性条件得到，进而可以得到无网格形函数表达式为：
 \begin{equation}
 \begin{split}
-\pmb{M}+\beta(\triangle t_n)^2(\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{a}_{n+1}=\pmb{f}_{n+1}+\tilde{\pmb{f}_{n+1}}+\bar{\pmb{f}_{n+1}}-(\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{\tilde{d}}_{n+1}
+\pmb{M}+\beta(\triangle t_n)^2(\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{a}_{n+1}=\pmb{f}_{n+1}+\tilde{\pmb{f}}_{n+1}+\bar{\pmb{f}}_{n+1}-(\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{\tilde{d}}_{n+1}
 \end{split}
 \end{equation}
-
-
-
-
-
-
-    \section{数值算例}
-    \subsection{一维简支梁问题}
+\section{数值算例}
+\subsection{一维简支梁问题}
 考虑如图1所示的一维简支梁问题，简支梁在跨中受到谐波点力$F(t)=F_0sin(wt)$，其中$\omega=\pi,F_0=10$。简支梁的几何和材料性质为：长度$L=10$，截面宽度$b=1$，厚度$t=1$，密度$\rho=2500$，一维简支梁的杨氏模量为$E=2\times10^6$。该问题的解析解为：
 \begin{equation}
 \begin{split}
