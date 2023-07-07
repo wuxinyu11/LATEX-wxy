@@ -1,11 +1,19 @@
 # Fdb version 4
-["xdvipdfmx"] 1688542450 "薄板动力分析.xdv" "薄板动力分析.pdf" "薄板动力分析" 1688542451 0
-  "薄板动力分析.xdv" 1688542450 69632 41761036cafff43da531d427d37459b7 "xelatex"
+["bibtex 薄板动力分析"] 1688699049 "薄板动力分析.aux" "薄板动力分析.bbl" "薄板动力分析" 1688699703 0
+  "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/bibtex/bst/elsarticle/elsarticle-num.bst" 1678549815 29462 43db4fe246825ec69ed81b2463c17f04 ""
+  "reference.bib" 0 -1 0 ""
+  "薄板动力分析.aux" 1688699702 2646 30413db2cafc9997136ab3e2e716d1ef "xelatex"
+  (generated)
+  "薄板动力分析.bbl"
+  "薄板动力分析.blg"
+  (rewritten before read)
+["xdvipdfmx"] 1688699703 "薄板动力分析.xdv" "薄板动力分析.pdf" "薄板动力分析" 1688699703 0
+  "薄板动力分析.xdv" 1688699702 69556 ff176e2f68fbf71d5a9b235d226ad3ac "xelatex"
   (generated)
   "薄板动力分析.pdf"
   (rewritten before read)
-["xelatex"] 1688542449 "/Users/wujc/Documents/LATEX-wxy/薄板动力分析.tex" "薄板动力分析.xdv" "薄板动力分析" 1688542451 0
-  "/Users/wujc/Documents/LATEX-wxy/薄板动力分析.tex" 1688542449 18612 89e24d2ca830e335e4d067b921052885 ""
+["xelatex"] 1688699702 "/Users/wujc/Documents/LATEX-wxy/薄板动力分析.tex" "薄板动力分析.xdv" "薄板动力分析" 1688699703 0
+  "/Users/wujc/Documents/LATEX-wxy/薄板动力分析.tex" 1688699701 17415 983c50dc5f113ae22756463fdd1afd6e ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/fontname/texfonts.map" 1678549815 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1678549815 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1678549815 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -113,9 +121,10 @@
   "firgure/plate.mesh.png" 1687676299 27846 5cef825fb055ffb427a8e6d83e30cc8b ""
   "firgure/plate.png" 1687676299 13034 0ff79a409719f0f262d5e4d0f1c35628 ""
   "firgure/zaishenghe.png" 1688464155 224727 977baedeea7b00b94e6660e4f21a55c4 ""
-  "薄板动力分析.aux" 1688542450 2414 fd98b07e001316dc96eee97eee8fb0b3 "xelatex"
-  "薄板动力分析.out" 1688542450 721 3dd1de6ab1d818b0e6226ee7a0c31983 "xelatex"
-  "薄板动力分析.tex" 1688542449 18612 89e24d2ca830e335e4d067b921052885 ""
+  "薄板动力分析.aux" 1688699702 2646 30413db2cafc9997136ab3e2e716d1ef "xelatex"
+  "薄板动力分析.bbl" 1688435344 0 d41d8cd98f00b204e9800998ecf8427e "bibtex 薄板动力分析"
+  "薄板动力分析.out" 1688699702 721 3dd1de6ab1d818b0e6226ee7a0c31983 "xelatex"
+  "薄板动力分析.tex" 1688699701 17415 983c50dc5f113ae22756463fdd1afd6e ""
   (generated)
   "薄板动力分析.aux"
   "薄板动力分析.log"

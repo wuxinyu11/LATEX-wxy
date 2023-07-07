@@ -2,6 +2,9 @@
 \documentclass[a4paper]{article}
 \usepackage{amsmath,titlesec,amssymb,graphicx,floatrow}
 \usepackage{xeCJK,hyperref}
+
+\bibliographystyle{elsarticle-num}
+
 \begin{document}
 \title{Hellinger-Reissner的动力分析}
 \maketitle
@@ -121,30 +124,22 @@ $\phi(\pmb{x}_I-\pmb{x})$为核函数，核函数决定了无网格形函数的�
     \caption{无网格形函数}
 \end{figure}\newpage
 \section{弯矩离散和再生光滑梯度近似}
-根据再生光滑梯度理论[]，将薄板中面$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,n_c$，并且$\cup_{C=1}^{n_c}\Omega_C=\Omega$。在背景积分单元$\Omega_C$内，弯矩$\pmb{M}_{\alpha\beta}$的近似表达式$\pmb{M}^h_{\alpha\beta}$可表示为：
-\begin{equation}
-\begin{split}
-    \pmb M_{\alpha\beta}^h(\pmb{x})=\pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x})
+针对HR伽辽金弱形式中弯矩的近似\cite{wu2022HR}，首先将薄板中面$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dots,n_c$，并且有$\cup_{C=1}^{n_c}\Omega_C=\Omega$。在背景积分单元$\Omega_C$内，弯矩分量$M_{\alpha\beta}$的近似表达式$M^h_{\alpha\beta}$可表示为：
+\begin{equation}\label{monent}
+    M_{\alpha\beta}^h(\pmb{x})=\pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x})
     % ,\delta \pmb M_{\alpha\beta}^h(\pmb{x})=\delta \pmb{a}^T_{\alpha\beta}\pmb{q}(\pmb{x}),\pmb{x}\in\Omega_C
-\end{split}
 \end{equation}
-式中$\pmb a_{\alpha\beta}$是$\pmb M_{\alpha\beta}^h(\pmb{x})$在积分域$\Omega_c$的常系数向量，$\pmb{q}(\pmb{x})$是比基函数向量$\pmb{p}(\pmb{x})$低两阶的单项式向量：
+式中$\pmb{q}$为比$\pmb{p}$低两阶的单项式向量：
 \begin{equation}
-\begin{split}
-    \pmb{q}(\pmb{x})=\{1,x,y,\dotsb,x^2,xy,y^2,\dotsb,x^iy^i,\dotsb,y^{p-2}\}^T,0\le i+j\le p-2
-\end{split}
+    \pmb{q}(\pmb{x})=\{1,\;x,\;y,\;\dots,\;x^iy^j,\;\dots,\;y^{p-2}\}^T,0 \le i+j \le p-2
 \end{equation}
-常系数向量$\pmb{a}_{\alpha\beta}$的表达式可以通过式(7)确定：
-\begin{equation}
-\begin{split}
+$\pmb a_{\alpha\beta}$是积分域$\Omega_C$的常系数向量，将近似的弯矩式(\ref{monent})代入
+\begin{equation}\label{ca}
     a_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}G^{-1}(\sum_{I=1}^{n_p}(\tilde{g}_{\alpha\beta I}-\bar{g}_{\alpha\beta I})d_I+\hat{g}_{\alpha\beta})
-\end{split}
 \end{equation}
 式中：
 \begin{equation}
-\begin{split}
     G=\int_{\Omega_C}\pmb{q}\pmb{q}^Td\Omega
-\end{split}
 \end{equation}
 \begin{equation}
 \begin{split}
@@ -158,7 +153,7 @@ $\phi(\pmb{x}_I-\pmb{x})$为核函数，核函数决定了无网格形函数的�
 % \end{cases}
 \end{split}
 \end{equation}
-其中，$\Gamma_C$是$\Omega_C$的边界。将式子(19)代入到式子(17)中可以得到$\pmb{M}^h_{\alpha\beta}$的表达式：
+其中，$\Gamma_C$是$\Omega_C$的边界。将式(\ref{ca})代入到式子(17)中可以得到$\pmb{M}^h_{\alpha\beta}$的表达式：
 \begin{equation}
 \begin{split}
 M_{\alpha\beta}^h(x)&=q^T(x)a_{\alpha\beta}\\
@@ -277,4 +272,5 @@ M_{\alpha\beta}^h(x)&=q^T(x)a_{\alpha\beta}\\
 图和图分别表示的是简支方板用三次和四次基函数时的中心点挠度的时间历程和挠度误差，结果表明在二维情况下采用RKGSI的方法中心挠度误差几乎为0，同时也小于采用高斯积分GI-2和GI-5所得出的挠度误差，
 进一步说明了RKGSI-HR方法在计算高阶薄板问题频率计算方面的准确性。
 
+\bibliography{reference}
 \end{document}

@@ -732,6 +732,10 @@ INPUT firgure/plate.mesh.png
 INPUT ./firgure/plate.mesh.png
 INPUT ./firgure/plate.mesh.png
 INPUT firgure/plate.mesh.png
+INPUT ./薄板动力分析.bbl
+INPUT 薄板动力分析.bbl
+INPUT ./薄板动力分析.bbl
+INPUT 薄板动力分析.bbl
 INPUT 薄板动力分析.aux
 INPUT ./薄板动力分析.out
 INPUT ./薄板动力分析.out
