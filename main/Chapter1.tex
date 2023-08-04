@@ -1,0 +1,108 @@
+%! TEX program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[engineeringmaster]{hquThesis}
+\titleZh{论文中文题目}
+\titleEn{English Thesis Title}
+\authorZh{}
+\authorEn{}
+\id{}
+\schoolZh{土木工程学院}
+\schoolEn{}
+\supervisorZh{}
+\supervisorEn{}
+\cosupervisorZh{}
+\fieldZh{}
+\fieldEn{}
+\major{}
+\coverdate{二〇二三年五月二十八日}
+
+\begin{document}
+% \makecover
+% \frontmatter
+% \begin{abstract}
+%     测试摘大大范德萨范德萨范德萨发大水范德萨范德萨范德萨范德萨范德萨范德萨范德萨的撒范德萨范德萨范德萨范德萨范德萨范德萨发大顺丰。\par
+% \end{abstract}
+% \keywords{关键词1；关键词2；关键词3；关键词4；关键词5}
+% \begin{abstractEn}
+%     fdafdsafdsafdsafdsafldsjfkldsjafldsnalfkdks ajfdsklaf dsjakfldsaj fdsjakljf dkslajfdksla jkldsa fjdskalf dsjakflds ajfl dajfklds jfdks fd sjakl dsa\par
+% \end{abstractEn}
+% \keywordsEn{keyword1; keyword2; keyword3; keyword4; keyword5; keyword6; keyword7; keyword8}
+% \tableofcontents
+
+
+\mainmatter
+% \chapter{绪论}
+\chapter{薄板问题}
+\section{薄板控制方程}
+考虑厚度为$h$的薄板，根据kirchhoff薄板假设将薄板$x,y,z$方向上的位移并定义为$\breve{\pmb{u}}(\pmb{x})$：
+根据kirchhoff假设，$z$方向上中面位移$\breve{u}_{\alpha}(\pmb{x})$假设为线性方程：
+\begin{equation}
+\begin{split}
+\breve{u_\alpha}(\pmb{x})&=a_0+a_1x_z\\
+&=u_{\alpha}(x_1,x_2)-x_3w_{,\alpha}\quad \alpha=1,2
+\end{split}
+\end{equation}
+式中$u_{\alpha}(x_1,x_2)$表示为薄板中面处$u$方向上的位移，$w_{,\alpha}$表示为$z$方向上沿中面的一阶导即为斜率\par
+薄板的位移$\breve{\pmb{u}}(\pmb{x})$可以表示为：
+\begin{equation}
+\begin{split}
+\begin{cases}
+    \breve{u}_{\alpha}(\pmb{x})=u_{\alpha}(x_1,x_2)-x_3w_{,\alpha}\quad \alpha=1,2\\
+    \breve{u}_3(\pmb{x})=w(x_1,x_2)
+\end{cases}
+\end{split}
+\end{equation}
+考虑经典的线弹性本构关系：
+\begin{equation}
+\begin{split}
+    \breve{\varepsilon}_{\alpha\beta}&=\frac{1}{2}(\breve{u}_{\alpha,\beta}+\breve{u}_{\beta,\alpha})\\
+    &=\frac{1}{2}(u_{\alpha,\beta}-x_3w_{,\alpha\beta}+u_{\beta,\alpha}-x_3w_{,\beta\alpha})\\
+    &=\frac{1}{2}(u_{\alpha,\beta}+u_{\beta,\alpha})-x_3w_{,\alpha\beta}\\
+    &=\varepsilon_{\alpha\beta}+\kappa_{\alpha\beta}x_3 
+\end{split}
+\end{equation}
+式中$\{\alpha,\beta\}=\{1,2\}$，$\varepsilon$为应变，$\kappa_{\alpha\beta}=-w_{,\alpha\beta}$为曲率张量$\pmb{\kappa}$的分量\par
+\begin{equation}
+\begin{split}
+    \breve{\varepsilon}_{3i}=\breve{\varepsilon}_{i3}=0 \quad i=1,2,3
+\end{split}
+\end{equation}
+由于垂直于薄板中性面的方向上的变形太小几乎等于0，该方向上的位移是忽略不计的\par
+考虑经典的线弹性本构关系：
+\begin{equation}
+\begin{split}
+    \breve{\sigma}_{\alpha\beta}=C_{\alpha\beta\gamma\eta}\breve{\varepsilon}_{\alpha\beta}=C_{\alpha\beta\gamma\eta}(\varepsilon_{\gamma\eta+x_3\kappa_{\gamma\eta}})
+\end{split}
+\end{equation}
+能量关系式(?)：
+\begin{equation}\label{energy relations}
+\begin{split}
+&\int_{\breve{\Omega}}\frac{1}{2}\breve{\varepsilon}_{\alpha\beta}\breve{\sigma}_{\alpha\beta}d\Omega=\int_{\Omega}\int_{\frac{-h}{2}}^{\frac{h}{2}}\frac{1}{2}(\varepsilon_{\alpha\beta}+\kappa_{\alpha\beta}x_3)C_{\alpha\beta\gamma\eta}(\varepsilon_{\gamma\eta}+x_3\kappa_{\gamma\eta})dx_3d\Omega\\
+&=\int_{\Omega}\frac{1}{2}\varepsilon_{\alpha\beta}C_{\alpha\beta\gamma\eta}\varepsilon_{\gamma\eta}d\Omega+\frac{1}{2}\int_{\Omega}(\kappa_{\alpha\beta}C_{\alpha\beta\gamma\eta}\varepsilon_{\gamma\eta}+\varepsilon_{\alpha\beta}C_{\alpha\beta\gamma\eta}\kappa_{\gamma\eta}+\frac{h^3}{12}\kappa_{\alpha\beta}C_{\alpha\beta\gamma\eta}\kappa_{\gamma\eta})d\Omega\\
+&=\int_{\Omega}\frac{1}{2}\varepsilon_{\alpha\beta}\sigma_{\alpha\beta}d\Omega+\int_{\Omega}\frac{1}{2}\kappa_{\alpha\beta}\frac{h^3}{12}C_{\alpha\beta\gamma\eta}\kappa_{\gamma\eta}d\Omega
+\end{split}
+\end{equation}
+(\ref{energy relations})分为弹性力学问题+四阶薄板问题
+\section{弹性力学问题伽辽金弱形式}
+\begin{equation}
+\begin{split}
+\int_{\Omega}\frac{1}{2}\varepsilon_{\alpha\beta}\sigma_{\alpha\beta}d\Omega
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\begin{cases}
+    \sigma_{\alpha\beta,\beta}+b_{\alpha}=0&\text{in}~\Omega\\
+    \sigma_{\alpha\beta}n_{\beta}=t_{\alpha}&\text{on}~\Gamma^t\\
+    u_{\alpha}=g_{\alpha}&\text{on}~\Gamma^g
+\end{cases}
+\end{split}
+\end{equation}
+% \section{二阶弹性力学问题及伽辽金弱形式}
+% \section{四阶薄板问题及伽辽金弱形式}
+
+
+
+
+\end{document}
