@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.6.5)  4 AUG 2023 09:36
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.6.5)  7 AUG 2023 10:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -585,12 +585,12 @@ Package fontspec Info: Font family 'simhei.ttf(0)' created for font
 
 ] [2] (Chapter1.aux) ) 
 Here is how much of TeX's memory you used:
- 7665 strings out of 410670
- 195704 string characters out of 2820972
- 577950 words of memory out of 3000000
- 28617 multiletter control sequences out of 15000+600000
+ 7695 strings out of 410670
+ 197328 string characters out of 2820972
+ 586011 words of memory out of 3000000
+ 28647 multiletter control sequences out of 15000+600000
  470591 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 85i,24n,99p,412b,348s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 85i,24n,99p,355b,348s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 Output written on Chapter1.pdf (2 pages).
