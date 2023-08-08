@@ -1,47 +1,13 @@
-%! TEX program = xelatex
-%!TEX encoding = UTF-8 Unicode
-
-\documentclass[engineeringmaster]{hquThesis}
-\titleZh{论文中文题目}
-\titleEn{English Thesis Title}
-\authorZh{}
-\authorEn{}
-\id{}
-\schoolZh{土木工程学院}
-\schoolEn{}
-\supervisorZh{}
-\supervisorEn{}
-\cosupervisorZh{}
-\fieldZh{}
-\fieldEn{}
-\major{}
-\coverdate{二〇二三年五月二十八日}
-
-\begin{document}
-% \makecover
-% \frontmatter
-% \begin{abstract}
-%     测试摘大大范德萨范德萨范德萨发大水范德萨范德萨范德萨范德萨范德萨范德萨范德萨的撒范德萨范德萨范德萨范德萨范德萨范德萨发大顺丰。\par
-% \end{abstract}
-% \keywords{关键词1；关键词2；关键词3；关键词4；关键词5}
-% \begin{abstractEn}
-%     fdafdsafdsafdsafdsafldsjfkldsjafldsnalfkdks ajfdsklaf dsjakfldsaj fdsjakljf dkslajfdksla jkldsa fjdskalf dsjakflds ajfl dajfklds jfdks fd sjakl dsa\par
-% \end{abstractEn}
-% \keywordsEn{keyword1; keyword2; keyword3; keyword4; keyword5; keyword6; keyword7; keyword8}
-% \tableofcontents
-
-
-\mainmatter
 % \chapter{绪论}
 \chapter{薄板问题}
 \section{薄板控制方程}
-考虑厚度为$h$的薄板，根据kirchhoff薄板假设将薄板$x,y,z$方向上的总位移定义为$\breve{\pmb{u}}(\pmb{x})$：
-此时，位移$\breve{\pmb{u}}(\pmb{x})$可以表示为：
+考虑厚度为$h$的薄板，根据kirchhoff薄板假设将薄板$x,y,z$方向上的总位移定义为$\hat{\pmb{u}}(\pmb{x})$：
+此时，位移$\hat{\pmb{u}}(\pmb{x})$可以表示为：
 \begin{equation}
     \begin{split}
     \begin{cases}
-        \breve{u}_{\alpha}(\pmb{x})=u_{\alpha}(x_1,x_2)-x_3w_{,\alpha}\quad \alpha=1,2\\
-        \breve{u}_3(\pmb{x})=w(x_1,x_2)
+        \hat{u}_{\alpha}(\pmb{x})=u_{\alpha}(x_1,x_2)-x_3w_{,\alpha}\quad \alpha=1,2\\
+        \hat{u}_3(\pmb{x})=w(x_1,x_2)
     \end{cases}
     \end{split}
     \end{equation}
@@ -50,7 +16,7 @@
 \begin{equation}\label{line elasticity}
 \begin{split}
     &\pmb{\sigma}=\pmb{C}\pmb{:}\pmb{\varepsilon}\\
-    &\pmb{\varepsilon}=\frac{1}{2}(\nabla\breve{\pmb{u}}+\breve{\pmb{u}}\nabla)
+    &\pmb{\varepsilon}=\frac{1}{2}(\nabla\hat{\pmb{u}}+\hat{\pmb{u}}\nabla)
 \end{split}
 \end{equation}
 其中，$\pmb{\sigma}$为柯西应力，$\pmb{C}$为四阶弹性张量，$\pmb{\varepsilon}$为应变，$\nabla$为梯度算子，$“\pmb{:}”$为双点积张量缩并运算符号。\par
@@ -58,8 +24,8 @@
 \begin{equation}\label{strain}
 \begin{split}
 \begin{cases}
-    \breve{\varepsilon}_{\alpha\beta}=\frac{1}{2}(\breve{u}_{\alpha,\beta}+\breve{u}_{\beta,\alpha})=\varepsilon_{\alpha\beta}+\kappa_{\alpha\beta}x_3 \quad \alpha,\beta=1,2\\
-    \breve{\varepsilon}_{3i}=\breve{\varepsilon}_{i3}=0 \quad i=1,2,3
+    \hat{\varepsilon}_{\alpha\beta}=\frac{1}{2}(\hat{u}_{\alpha,\beta}+\hat{u}_{\beta,\alpha})=\varepsilon_{\alpha\beta}+\kappa_{\alpha\beta}x_3 \quad \alpha,\beta=1,2\\
+    \hat{\varepsilon}_{3i}=\hat{\varepsilon}_{i3}=0 \quad i=1,2,3
 \end{cases}
 \end{split}
 \end{equation}
@@ -73,55 +39,50 @@
 通过式(\ref{line elasticity})、(\ref{strain})得出有关kirchhoff薄板假设的应力关系式如下：
 \begin{equation}\label{stress}
 \begin{split}
-    \breve{\sigma}_{\alpha\beta}=C_{\alpha\beta\gamma\eta}\breve{\varepsilon}_{\alpha\beta}=C_{\alpha\beta\gamma\eta}(\varepsilon_{\gamma\eta+x_3\kappa_{\gamma\eta}})
+    \hat{\sigma}_{\alpha\beta}=C_{\alpha\beta\gamma\eta}\hat{\varepsilon}_{\alpha\beta}=C_{\alpha\beta\gamma\eta}(\varepsilon_{\gamma\eta+x_3\kappa_{\gamma\eta}})
 \end{split}
 \end{equation}\par
 根据最小势能原理得出的势能泛函关系为：
 \begin{equation}\label{potential energy}
 \begin{split}
-    \Pi(\breve{\pmb{u}})=\frac{1}{2}\int_{\breve{\Omega}}\breve{\pmb{\varepsilon}}\pmb{:}\pmb{C}\pmb{:}\breve{\pmb{\varepsilon}}d\breve{\Omega}-\int_{\breve{\Omega}}\breve{\pmb{u}}~\pmb{b}d\breve{\Omega}-\int_{\Gamma^t}\breve{\pmb{u}}~\pmb{t}d\Gamma
+    \Pi(\hat{\pmb{u}})=\frac{1}{2}\int_{\hat{\Omega}}\hat{\pmb{\varepsilon}}\pmb{:}\pmb{C}\pmb{:}\hat{\pmb{\varepsilon}}d\hat{\Omega}-\int_{\hat{\Omega}}\hat{\pmb{u}}~\pmb{b}d\hat{\Omega}-\int_{\Gamma^t}\hat{\pmb{u}}~\pmb{t}d\Gamma
 \end{split}
 \end{equation}
 将式(\ref{stress})、(\ref{strain})代入式(\ref{potential energy})中的第一项可以得到：
 \begin{equation}\label{energy relations}
 \begin{split}
-&\int_{\breve{\Omega}}\frac{1}{2}\breve{\varepsilon}_{\alpha\beta}\breve{\sigma}_{\alpha\beta}d\Omega=\int_{\Omega}\int_{\frac{-h}{2}}^{\frac{h}{2}}\frac{1}{2}(\varepsilon_{\alpha\beta}+\kappa_{\alpha\beta}x_3)C_{\alpha\beta\gamma\eta}(\varepsilon_{\gamma\eta}+x_3\kappa_{\gamma\eta})dx_3d\Omega\\
+&\int_{\hat{\Omega}}\frac{1}{2}\hat{\varepsilon}_{\alpha\beta}\hat{\sigma}_{\alpha\beta}d\Omega=\int_{\Omega}\int_{\frac{-h}{2}}^{\frac{h}{2}}\frac{1}{2}(\varepsilon_{\alpha\beta}+\kappa_{\alpha\beta}x_3)C_{\alpha\beta\gamma\eta}(\varepsilon_{\gamma\eta}+x_3\kappa_{\gamma\eta})dx_3d\Omega\\
 &=\int_{\Omega}\frac{1}{2}\varepsilon_{\alpha\beta}C_{\alpha\beta\gamma\eta}\varepsilon_{\gamma\eta}d\Omega+\int_{\Omega}\frac{1}{2}\kappa_{\alpha\beta}\frac{h^3}{12}C_{\alpha\beta\gamma\eta}\kappa_{\gamma\eta}d\Omega\\
 &=\int_{\Omega}\frac{1}{2}\varepsilon_{\alpha\beta}\sigma_{\alpha\beta}d\Omega+\int_{\Omega}\frac{1}{2}\kappa_{\alpha\beta}M_{\alpha\beta}d\Omega
 \end{split}
 \end{equation}\par
-根据式(\ref{energy relations})可以划分为两个独立的问题。即具有变量$\breve{u}_{\alpha}$的传统弹性力学问题和具有变量$w$的薄板问题，能量泛函关系式(\ref{potential energy})拆分为：
+根据式(\ref{energy relations})可以划分为两个独立的问题。即具有变量$\hat{u}_{\alpha}$的传统弹性力学问题和具有变量$w$的薄板问题，能量泛函关系式(\ref{potential energy})拆分为：
 \begin{equation}
 \begin{split}
-\Pi(\breve{\pmb{u}})=\Pi^E(\breve{\pmb{u}})+\Pi^P(\breve{\pmb{u}})
+\Pi(\hat{\pmb{u}})=\Pi^E(\hat{\pmb{u}})+\Pi^P(\hat{\pmb{u}})
 \end{split}
 \end{equation}
 \section{弹性力学问题伽辽金弱形式}
 传统弹性力学问题的势能泛函的表达式为：
 \begin{equation}\label{elasticity}
 \begin{split}
-    \Pi^E(\breve{\pmb{u}})=\int_{\breve{\Omega}}\frac{1}{2}\varepsilon_{\alpha\beta}\sigma_{\alpha\beta}d\breve{\Omega}-\int_{\breve{\Omega}}\breve{\pmb{u}}~\pmb{b}d\breve{\Omega}-\int_{\Gamma^t}\breve{\pmb{u}}~\pmb{t}d\Gamma
+    \Pi^E(\hat{\pmb{u}})=\int_{\hat{\Omega}}\frac{1}{2}\varepsilon_{\alpha\beta}\sigma_{\alpha\beta}d\hat{\Omega}-\int_{\hat{\Omega}}\hat{\pmb{u}}~\pmb{b}d\hat{\Omega}-\int_{\Gamma^t}\hat{\pmb{u}}~\pmb{t}d\Gamma
 \end{split}
 \end{equation}
 这里采用拉格朗日乘子法在伽辽金无网格法施加强制边界条件，即在弹性力学问题的势能泛函(\ref{elasticity})中引入位移强制边界条件对应的约束项，相应的势能泛函为：
 \begin{equation}\label{Elambda}
 \begin{split}
-    \bar{\Pi}^E(\breve{\pmb{u}},\lambda)=\Pi^E(\breve{\pmb{u}})-\int_{\Gamma^g}\lambda(\breve{\pmb{u}}-\pmb{g})d\Gamma
+    \bar{\Pi}^E(\hat{\pmb{u}},\lambda)=\Pi^E(\hat{\pmb{u}})-\int_{\Gamma^g}\lambda(\hat{\pmb{u}}-\pmb{g})d\Gamma
 \end{split}
 \end{equation}
-其中$\pmb{\lambda}=\{\lambda_1,\dotsb,\lambda_{n_{sd}}\}^T$为拉格朗日乘子，$\Pi^E(\breve{\pmb{u}})$是式(\ref{elasticity})定义的泛函。式(\ref{Elambda})所表示的泛函的驻值条件为：
+其中$\pmb{\lambda}=\{\lambda_1,\dotsb,\lambda_{n_{sd}}\}^T$为拉格朗日乘子，$\Pi^E(\hat{\pmb{u}})$是式(\ref{elasticity})定义的泛函。式(\ref{Elambda})所表示的泛函的驻值条件为：
 \begin{equation} 
 \begin{split}
-    \delta\bar{\Pi}^E(\breve{\pmb{u}},\lambda)&=\delta\Pi^E(\breve{\pmb{u}})-\int_{\Gamma^u}\delta\breve{\pmb{u}}~\lambda d\Gamma-\int_{\Gamma^g}\delta\lambda~(\breve{\pmb{u}}-\pmb{g})\\
-    &=\int_{\breve{\Omega}}\frac{1}{2}\varepsilon_{\alpha\beta}\sigma_{\alpha\beta}d\breve{\Omega}-\int_{\breve{\Omega}}\breve{\pmb{u}}~\pmb{b}d\breve{\Omega}-\int_{\Gamma^t}\breve{\pmb{u}}~\pmb{t}d\Gamma\\
-    &-\int_{\Gamma^g}\delta\breve{\pmb{u}}\lambda d\Gamma-\int_{\Gamma^g}\delta\lambda~(\breve{\pmb{u}}-\pmb{g})d\Gamma\\
+    \delta\bar{\Pi}^E(\hat{\pmb{u}},\lambda)&=\delta\Pi^E(\hat{\pmb{u}})-\int_{\Gamma^u}\delta\hat{\pmb{u}}~\lambda d\Gamma-\int_{\Gamma^g}\delta\lambda~(\hat{\pmb{u}}-\pmb{g})\\
+    &=\int_{\hat{\Omega}}\frac{1}{2}\varepsilon_{\alpha\beta}\sigma_{\alpha\beta}d\hat{\Omega}-\int_{\hat{\Omega}}\hat{\pmb{u}}~\pmb{b}d\hat{\Omega}-\int_{\Gamma^t}\hat{\pmb{u}}~\pmb{t}d\Gamma\\
+    &-\int_{\Gamma^g}\delta\hat{\pmb{u}}\lambda d\Gamma-\int_{\Gamma^g}\delta\lambda~(\hat{\pmb{u}}-\pmb{g})d\Gamma\\
     &=0
 \end{split}
 \end{equation}
 % \section{二阶弹性力学问题及伽辽金弱形式}
 % \section{四阶薄板问题及伽辽金弱形式}
-
-
-
-
-\end{document}

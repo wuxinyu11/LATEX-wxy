@@ -1,0 +1,16 @@
+# Fdb version 4
+["xdvipdfmx"] 1691464172 "Chapter1.xdv" "Chapter1.pdf" "Chapter1" 1691464174 0
+  "Chapter1.xdv" 1691464172 17044 acf6c993d1871b0a58bf71643b789668 "xelatex"
+  (generated)
+  "Chapter1.pdf"
+  (rewritten before read)
+["xelatex"] 1691464289 "Chapter1.tex" "Chapter1.xdv" "Chapter1" 1691464289 2
+  "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/web2c/texmf.cnf" 1678549815 40748 4081c8bc921e56c865f975bd762e388c ""
+  "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-var/web2c/xetex/xelatex.fmt" 1678549815 10503182 7b7a1723fb2c622d6a47be48ff346427 ""
+  "Chapter1.aux" 1691464174 1197 5fb56cb7f79301292690135f8a79078e "xelatex"
+  "Chapter1.tex" 1691464288 5308 c6fbc9ac2c7f12231dcfbd9473420058 ""
+  (generated)
+  "Chapter1.aux"
+  "Chapter1.log"
+  "Chapter1.xdv"
+  (rewritten before read)

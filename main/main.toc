@@ -1,0 +1,4 @@
+\contentsline {chapter}{\numberline {1}薄板问题}{3}{}%
+\contentsline {section}{\numberline {1.1}薄板控制方程}{3}{}%
+\contentsline {section}{\numberline {1.2}弹性力学问题伽辽金弱形式}{4}{}%
+\contentsfinish 
