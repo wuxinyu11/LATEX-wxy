@@ -76,7 +76,7 @@ $M_{\alpha\beta}$为矩量$\boldsymbol M$的弯曲和扭转分量，$\bar q$为�
 值得注意的是，在Hellinger-Reissner为基础[]的伽辽金弱形式中，强制边界条件自然存在于伽辽金弱形式(\ref{weakform1})中，无需额外施加强制边界条件，且能满足伽辽金弱形式整体的变分一致性。
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.7]{firgure/boban.png}
+    \includegraphics[scale=0.7]{figure/boban.png}
     \caption{薄板的相关符号及边界条件}
 \end{figure}\newpage
 \section{挠度离散和再生核近似}
@@ -120,7 +120,7 @@ $\phi(\pmb{x}_I-\pmb{x})$为核函数，核函数决定了无网格形函数的�
 图2为二维二次基函数无网格形函数，从图中可以看出，无网格形函数在全域上连续光滑，但在无网格节点处，无论节点在域内还是边界处，形函数都不具有插值性，因此无网格法中基本边界条件都需要特殊处理。
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.7]{firgure/zaishenghe.png}
+    \includegraphics[scale=0.7]{figure/zaishenghe.png}
     \caption{无网格形函数}
 \end{figure}\newpage
 \section{弯矩离散和再生光滑梯度近似}
@@ -252,11 +252,11 @@ M_{\alpha\beta}^h(x)&=q^T(x)a_{\alpha\beta}\\
 其中，$A=b\times h$表示为简支梁横截面的面积。\par
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.5]{firgure/beam.png}
+\includegraphics[scale=0.5]{figure/beam.png}
 \caption{一维简支梁问题模型}
 \end{figure}
 \begin{figure}[!h]
-\includegraphics[scale=0.5]{firgure/beam.mesh.png}
+\includegraphics[scale=0.5]{figure/beam.mesh.png}
 \caption{一维简支梁问题模型节点离散}
 \end{figure}
 一维简支梁的求解域以图2所示采用11个均匀间隔的节点进行离散分析，算例采用具有三次和四次基函数的无网格近似函数计算，核函数的相对影响域分别为3.5\\和4.5。时间设置步长为$\triangle t=0.01s$。
@@ -279,8 +279,8 @@ M_{\alpha\beta}^h(x)&=q^T(x)a_{\alpha\beta}\\
 \end{equation}
 \begin{figure}[!h]
 \begin{floatrow}
-\ffigbox{\caption{简支方板问题模型}}{\includegraphics[scale=0.65]{firgure/plate.png}}
-\ffigbox{\caption{简支方板问题离散}}{\includegraphics[scale=0.3]{firgure/plate.mesh.png}}
+\ffigbox{\caption{简支方板问题模型}}{\includegraphics[scale=0.65]{figure/plate.png}}
+\ffigbox{\caption{简支方板问题离散}}{\includegraphics[scale=0.3]{figure/plate.mesh.png}}
 \end{floatrow}
 \end{figure}
 简支方板的求解域根据图4所示的采用$11\times 11$的均匀间隔点进行离散分析，算例采用具有三次和四次基函数的无网格近似计算，核函数相对应的影响域分别为3.5和4.5。时间设置步长为$\triangle t=0.01s$。

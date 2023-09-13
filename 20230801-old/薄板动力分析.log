@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.6.5)  1 AUG 2023 17:24
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.6.5)  6 SEP 2023 15:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -476,7 +476,7 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-No file 薄板动力分析.aux.
+(薄板动力分析.aux)
 \openout1 = `薄板动力分析.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -490,7 +490,7 @@ LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
 .
-(C:\Program Files\MiKTeX\tex/latex/base\ts1cmr.fd
+ (C:\Program Files\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 8.
@@ -573,16 +573,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 8.
 Package hyperref Info: Link coloring OFF on input line 8.
+ (薄板动力分析.out)
+(薄板动力分析.out)
 \@outlinefile=\write3
 \openout3 = `薄板动力分析.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
 
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
@@ -601,151 +599,76 @@ Overfull \hbox (18.57442pt too wide) detected at line 68
 []
  []
 
+File: figure/boban.png Graphic file (type bmp)
+<figure/boban.png>
 
-LaTeX Warning: Reference `weakform1' on page 2 undefined on input line 76.
+Overfull \hbox (33.09863pt too wide) in paragraph at lines 79--80
+ [][] 
+ []
 
-
-LaTeX Warning: File `firgure/boban.png' not found on input line 79.
-
-c:/Users/PC/code/LATEX-article/20230801-old/薄板动力分析.tex:79: Unable to load pictu
-re or PDF file 'firgure/boban.png'.
-<to be read again> 
-                   }
-l.79 ...ludegraphics[scale=0.7]{firgure/boban.png}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
-
-File: firgure/boban.png Graphic file (type bmp)
-<firgure/boban.png>
 [2]
+File: figure/zaishenghe.png Graphic file (type bmp)
+<figure/zaishenghe.png>
 
-LaTeX Warning: Reference `shapefunction' on page 3 undefined on input line 112.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: File `firgure/zaishenghe.png' not found on input line 123.
-
-c:/Users/PC/code/LATEX-article/20230801-old/薄板动力分析.tex:123: Unable to load pict
-ure or PDF file 'firgure/zaishenghe.png'.
-<to be read again> 
-                   }
-l.123 ...aphics[scale=0.7]{firgure/zaishenghe.png}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
-
-File: firgure/zaishenghe.png Graphic file (type bmp)
-<firgure/zaishenghe.png>
 [3]
-
-LaTeX Warning: Reference `moment' on page 4 undefined on input line 136.
-
-
-LaTeX Warning: Reference `weakform1' on page 4 undefined on input line 136.
-
-
 Overfull \hbox (60.21185pt too wide) detected at line 170
 []
  []
 
-
-LaTeX Warning: Reference `ca' on page 4 undefined on input line 171.
-
-
-LaTeX Warning: Reference `moment' on page 4 undefined on input line 171.
-
 [4] [5]
+File: figure/beam.png.png Graphic file (type bmp)
+<figure/beam.png.png>
+File: figure/beam.mesh.png Graphic file (type bmp)
+<figure/beam.mesh.png>
 
-LaTeX Warning: File `firgure/beam.png' not found on input line 255.
 
-c:/Users/PC/code/LATEX-article/20230801-old/薄板动力分析.tex:255: Unable to load pict
-ure or PDF file 'firgure/beam.png'.
-<to be read again> 
-                   }
-l.255 ...ludegraphics[scale=0.5]{firgure/beam.png}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-File: firgure/beam.png Graphic file (type bmp)
-<firgure/beam.png>
+[6]
+File: figure/plate.png Graphic file (type bmp)
+<figure/plate.png>
 
-LaTeX Warning: File `firgure/beam.mesh.png' not found on input line 259.
+Overfull \hbox (12.58621pt too wide) in paragraph at lines 282--282
+ [][] 
+ []
 
-c:/Users/PC/code/LATEX-article/20230801-old/薄板动力分析.tex:259: Unable to load pict
-ure or PDF file 'firgure/beam.mesh.png'.
-<to be read again> 
-                   }
-l.259 ...raphics[scale=0.5]{firgure/beam.mesh.png}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
+File: figure/plate.png Graphic file (type bmp)
+<figure/plate.png>
 
-File: firgure/beam.mesh.png Graphic file (type bmp)
-<firgure/beam.mesh.png>
+Overfull \hbox (12.58621pt too wide) in paragraph at lines 282--282
+ [][] 
+ []
 
-LaTeX Warning: File `firgure/plate.png' not found on input line 282.
+File: figure/plate.mesh.png Graphic file (type bmp)
+<figure/plate.mesh.png>
 
-c:/Users/PC/code/LATEX-article/20230801-old/薄板动力分析.tex:282: Unable to load pict
-ure or PDF file 'firgure/plate.png'.
-<to be read again> 
-                   }
-l.282 ...egraphics[scale=0.65]{firgure/plate.png}}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
+Overfull \hbox (73.40186pt too wide) in paragraph at lines 283--283
+ [][] 
+ []
 
-File: firgure/plate.png Graphic file (type bmp)
-<firgure/plate.png>
+File: figure/plate.mesh.png Graphic file (type bmp)
+<figure/plate.mesh.png>
 
-LaTeX Warning: File `firgure/plate.png' not found on input line 282.
+Overfull \hbox (73.40186pt too wide) in paragraph at lines 283--283
+ [][] 
+ []
 
-File: firgure/plate.png Graphic file (type bmp)
-<firgure/plate.png>
-
-LaTeX Warning: File `firgure/plate.mesh.png' not found on input line 283.
-
-c:/Users/PC/code/LATEX-article/20230801-old/薄板动力分析.tex:283: Unable to load pict
-ure or PDF file 'firgure/plate.mesh.png'.
-<to be read again> 
-                   }
-l.283 ...phics[scale=0.3]{firgure/plate.mesh.png}}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
-
-File: firgure/plate.mesh.png Graphic file (type bmp)
-<firgure/plate.mesh.png>
-
-LaTeX Warning: File `firgure/plate.mesh.png' not found on input line 283.
-
-File: firgure/plate.mesh.png Graphic file (type bmp)
-<firgure/plate.mesh.png>
+[7]
 No file 薄板动力分析.bbl.
-[6] (薄板动力分析.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `薄板动力分析.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `薄板动力分析.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  3DD1DE6AB1D818B0E6226EE7A0C31983;721.
+[8] (薄板动力分析.aux)
+Package rerunfilecheck Info: File `薄板动力分析.out' has not changed.
+(rerunfilecheck)             Checksum: 3DD1DE6AB1D818B0E6226EE7A0C31983;721.
  ) 
 Here is how much of TeX's memory you used:
- 15419 strings out of 410670
- 320282 string characters out of 2820972
- 692239 words of memory out of 3000000
- 36257 multiletter control sequences out of 15000+600000
+ 15151 strings out of 410670
+ 312775 string characters out of 2820972
+ 692605 words of memory out of 3000000
+ 36005 multiletter control sequences out of 15000+600000
  479454 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,26n,81p,461b,469s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,26n,81p,461b,471s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on 薄板动力分析.pdf (6 pages).
+Output written on 薄板动力分析.pdf (8 pages).

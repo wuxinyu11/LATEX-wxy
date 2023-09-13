@@ -2,9 +2,15 @@
 \contentsline {section}{\numberline {1.1}薄板控制方程}{3}{}%
 \contentsline {section}{\numberline {1.2}弹性力学问题伽辽金弱形式}{4}{}%
 \contentsline {section}{\numberline {1.3}薄板问题伽辽金弱形式}{4}{}%
-\contentsline {chapter}{\numberline {2}弹性力学问题HR弱形式}{7}{}%
-\contentsline {section}{\numberline {2.1}Hellinger-Reissner变分原理}{7}{}%
-\contentsline {section}{\numberline {2.2}位移离散和应力离散}{8}{}%
-\contentsline {subsection}{\numberline {2.2.1}位移离散与再生核近似}{8}{}%
-\contentsline {subsection}{\numberline {2.2.2}应力离散与再生光滑梯度近似}{10}{}%
+\contentsline {chapter}{\numberline {2}伽辽金无网格法}{7}{}%
+\contentsline {chapter}{\numberline {3}弹性力学问题HR弱形式}{9}{}%
+\contentsline {section}{\numberline {3.1}Hellinger-Reissner变分原理}{9}{}%
+\contentsline {section}{\numberline {3.2}位移离散和应力离散}{10}{}%
+\contentsline {subsection}{\numberline {3.2.1}位移离散与再生核近似}{10}{}%
+\contentsline {subsection}{\numberline {3.2.2}应力离散与再生光滑梯度近似}{12}{}%
+\contentsline {section}{\numberline {3.3}Hellinger-Reissner变分原理下的本质边界条件施加方法}{14}{}%
+\contentsline {section}{\numberline {3.4}数值算例}{18}{}%
+\contentsline {subsection}{\numberline {3.4.1}分片实验}{18}{}%
+\contentsline {subsection}{\numberline {3.4.2}悬臂梁问题}{19}{}%
+\contentsline {subsection}{\numberline {3.4.3}带孔无限大平板问题}{24}{}%
 \contentsfinish 
