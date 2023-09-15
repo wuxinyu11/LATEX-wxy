@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  13 SEP 2023 16:16
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  15 SEP 2023 16:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -480,7 +480,7 @@ Package fontspec Info: Font family 'simsun.ttc(0)' created for font
 LaTeX Warning: Unused global option(s):
     [UTF8,scheme].
 
-(main.aux (Chapter1.aux) (chapter2.aux) (chapter3.aux
+(main.aux (Chapter1.aux) (chapter2.aux) (C3elastic.aux
 
 LaTeX Warning: Label `strain' multiply defined.
 
@@ -770,38 +770,48 @@ Chapter 1.
 ]
 Chapter 2.
 ) [7]
-\openout2 = `chapter3.aux'.
+\openout2 = `C3elastic.aux'.
 
- (chapter3.tex [8
+ (C3elastic.tex [8
 
 
 
 
 ]
 Chapter 3.
-[9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 184--184
+[9]
+File: figure/PSI.png Graphic file (type bmp)
+<figure/PSI.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10] [11]
+File: figure/detalpsi.png Graphic file (type bmp)
+<figure/detalpsi.png>
+ [12]
+Underfull \hbox (badness 10000) in paragraph at lines 196--199
 
  []
 
-[11]
 File: figure/background.png Graphic file (type bmp)
 <figure/background.png>
- [12] [13]
-Underfull \vbox (badness 1107) has occurred while \output is active []
+[13] [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
-Overfull \hbox (3.12383pt too wide) detected at line 360
+ [15]
+Overfull \hbox (3.12383pt too wide) detected at line 368
 []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-[16]
+ [16]
+[17]
 File: figure/strain.png Graphic file (type bmp)
 <figure/strain.png>
+ [18]
 File: figure/point.png Graphic file (type bmp)
 <figure/point.png>
 File: figure/point2.png Graphic file (type bmp)
@@ -810,87 +820,101 @@ File: figure/point.png Graphic file (type bmp)
 <figure/point.png>
 File: figure/point2.png Graphic file (type bmp)
 <figure/point2.png>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
 File: figure/patchtestmeshfree.png Graphic file (type bmp)
 <figure/patchtestmeshfree.png>
 
-[18] [19]
-File: figure/cantilever.png Graphic file (type bmp)
-<figure/cantilever.png>
-File: figure/cantilever.mesh.png Graphic file (type bmp)
-<figure/cantilever.mesh.png>
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [20]
-File: figure/cantilever/L2.png Graphic file (type bmp)
-<figure/cantilever/L2.png>
+File: figure/cantilever/cantilever.png Graphic file (type bmp)
+<figure/cantilever/cantilever.png>
+File: figure/cantilever/cantilever.mesh.png Graphic file (type bmp)
+<figure/cantilever/cantilever.mesh.png>
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: figure/cantilever/H1.png Graphic file (type bmp)
-<figure/cantilever/H1.png>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [21]
+File: figure/cantilever/L2.png Graphic file (type bmp)
+<figure/cantilever/L2.png>
+File: figure/cantilever/H1.png Graphic file (type bmp)
+<figure/cantilever/H1.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22]
 File: figure/cantilever/CPUTime.png Graphic file (type bmp)
 <figure/cantilever/CPUTime.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22]
+[23]
 File: figure/cantilever/caculate.png Graphic file (type bmp)
 <figure/cantilever/caculate.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23]
-File: figure/hole.png Graphic file (type bmp)
-<figure/hole.png>
+[24]
+File: figure/hole/hole.png Graphic file (type bmp)
+<figure/hole/hole.png>
 
-Overfull \hbox (26.6783pt too wide) in paragraph at lines 650--651
+Overfull \hbox (26.6783pt too wide) in paragraph at lines 656--657
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-File: figure/hole.msh.png Graphic file (type bmp)
-<figure/hole.msh.png>
+File: figure/hole/hole.msh.png Graphic file (type bmp)
+<figure/hole/hole.msh.png>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24]
+[25]
 File: figure/hole/L2.png Graphic file (type bmp)
 <figure/hole/L2.png>
 File: figure/hole/H1.png Graphic file (type bmp)
 <figure/hole/H1.png>
- [25] [26]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[26]
 File: figure/hole/CPUTime.png Graphic file (type bmp)
 <figure/hole/CPUTime.png>
 File: figure/hole/caculate.png Graphic file (type bmp)
 <figure/hole/caculate.png>
- [27]
-File: figure/hole/hole.stress.png Graphic file (type bmp)
-<figure/hole/hole.stress.png>
 
-Overfull \hbox (24.99187pt too wide) in paragraph at lines 688--689
- [][] 
- []
 
-) [28] (main.aux (Chapter1.aux) (chapter2.aux) (chapter3.aux))
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[27]
+File: figure/hole/hole.stress1.png Graphic file (type bmp)
+<figure/hole/hole.stress1.png>
+File: figure/hole/hole.stress2.png Graphic file (type bmp)
+<figure/hole/hole.stress2.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28]) [29] (main.aux (Chapter1.aux) (chapter2.aux) (C3elastic.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -905,12 +929,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9080 strings out of 410379
- 231984 string characters out of 5795143
- 1952432 words of memory out of 5000000
- 30217 multiletter control sequences out of 15000+600000
+ 9109 strings out of 410379
+ 232956 string characters out of 5795143
+ 1949432 words of memory out of 5000000
+ 30243 multiletter control sequences out of 15000+600000
  565918 words of font info for 139 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,25n,99p,357b,392s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (34 pages).
+Output written on main.pdf (35 pages).

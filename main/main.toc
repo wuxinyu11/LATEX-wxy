@@ -7,10 +7,10 @@
 \contentsline {section}{\numberline {3.1}Hellinger-Reissner变分原理}{9}{}%
 \contentsline {section}{\numberline {3.2}位移离散和应力离散}{10}{}%
 \contentsline {subsection}{\numberline {3.2.1}位移离散与再生核近似}{10}{}%
-\contentsline {subsection}{\numberline {3.2.2}应力离散与再生光滑梯度近似}{12}{}%
-\contentsline {section}{\numberline {3.3}Hellinger-Reissner变分原理下的本质边界条件施加方法}{14}{}%
-\contentsline {section}{\numberline {3.4}数值算例}{18}{}%
-\contentsline {subsection}{\numberline {3.4.1}分片实验}{18}{}%
-\contentsline {subsection}{\numberline {3.4.2}悬臂梁问题}{19}{}%
-\contentsline {subsection}{\numberline {3.4.3}带孔无限大平板问题}{24}{}%
+\contentsline {subsection}{\numberline {3.2.2}应力离散与再生光滑梯度近似}{13}{}%
+\contentsline {section}{\numberline {3.3}Hellinger-Reissner变分原理下的本质边界条件施加方法}{15}{}%
+\contentsline {section}{\numberline {3.4}数值算例}{19}{}%
+\contentsline {subsection}{\numberline {3.4.1}分片实验}{19}{}%
+\contentsline {subsection}{\numberline {3.4.2}悬臂梁问题}{21}{}%
+\contentsline {subsection}{\numberline {3.4.3}带孔无限大平板问题}{25}{}%
 \contentsfinish 
