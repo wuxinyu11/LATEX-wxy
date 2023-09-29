@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  15 SEP 2023 16:36
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  27 SEP 2023 15:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -484,6 +484,10 @@ LaTeX Warning: Unused global option(s):
 
 LaTeX Warning: Label `strain' multiply defined.
 
+) (C4plate.aux
+
+LaTeX Warning: Label `moment' multiply defined.
+
 ))
 \openout1 = `main.aux'.
 
@@ -780,27 +784,35 @@ Chapter 2.
 ]
 Chapter 3.
 [9]
-File: figure/PSI.png Graphic file (type bmp)
-<figure/PSI.png>
+File: figure/E/PSI.png Graphic file (type bmp)
+<figure/E/PSI.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [10] [11]
-File: figure/detalpsi.png Graphic file (type bmp)
-<figure/detalpsi.png>
- [12]
-Underfull \hbox (badness 10000) in paragraph at lines 196--199
+File: figure/E/DPASI.png Graphic file (type bmp)
+<figure/E/DPASI.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 193--196
 
  []
 
-File: figure/background.png Graphic file (type bmp)
-<figure/background.png>
-[13] [14]
+File: figure/E/background.png Graphic file (type bmp)
+<figure/E/background.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-Overfull \hbox (3.12383pt too wide) detected at line 368
+ [13]
+[14] [15]
+Overfull \hbox (3.12383pt too wide) detected at line 365
 []
  []
 
@@ -809,19 +821,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
 [17]
-File: figure/strain.png Graphic file (type bmp)
-<figure/strain.png>
+File: figure/E/strain.png Graphic file (type bmp)
+<figure/E/strain.png>
  [18]
-File: figure/point.png Graphic file (type bmp)
-<figure/point.png>
-File: figure/point2.png Graphic file (type bmp)
-<figure/point2.png>
-File: figure/point.png Graphic file (type bmp)
-<figure/point.png>
-File: figure/point2.png Graphic file (type bmp)
-<figure/point2.png>
-File: figure/patchtestmeshfree.png Graphic file (type bmp)
-<figure/patchtestmeshfree.png>
+File: figure/E/point.png Graphic file (type bmp)
+<figure/E/point.png>
+File: figure/E/point2.png Graphic file (type bmp)
+<figure/E/point2.png>
+File: figure/E/point.png Graphic file (type bmp)
+<figure/E/point.png>
+File: figure/E/point2.png Graphic file (type bmp)
+<figure/E/point2.png>
+File: figure/E/patchtestmeshfree.png Graphic file (type bmp)
+<figure/E/patchtestmeshfree.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -831,19 +843,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [20]
-File: figure/cantilever/cantilever.png Graphic file (type bmp)
-<figure/cantilever/cantilever.png>
-File: figure/cantilever/cantilever.mesh.png Graphic file (type bmp)
-<figure/cantilever/cantilever.mesh.png>
+File: figure/E/cantilever/cantilever.png Graphic file (type bmp)
+<figure/E/cantilever/cantilever.png>
+File: figure/E/cantilever/cantilever.mesh.png Graphic file (type bmp)
+<figure/E/cantilever/cantilever.mesh.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [21]
-File: figure/cantilever/L2.png Graphic file (type bmp)
-<figure/cantilever/L2.png>
-File: figure/cantilever/H1.png Graphic file (type bmp)
-<figure/cantilever/H1.png>
+File: figure/E/cantilever/L2.png Graphic file (type bmp)
+<figure/E/cantilever/L2.png>
+File: figure/E/cantilever/H1.png Graphic file (type bmp)
+<figure/E/cantilever/H1.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -852,40 +864,40 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [22]
-File: figure/cantilever/CPUTime.png Graphic file (type bmp)
-<figure/cantilever/CPUTime.png>
+File: figure/E/cantilever/CPUTime.png Graphic file (type bmp)
+<figure/E/cantilever/CPUTime.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [23]
-File: figure/cantilever/caculate.png Graphic file (type bmp)
-<figure/cantilever/caculate.png>
+File: figure/E/cantilever/caculate.png Graphic file (type bmp)
+<figure/E/cantilever/caculate.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24]
-File: figure/hole/hole.png Graphic file (type bmp)
-<figure/hole/hole.png>
+File: figure/E/hole/hole.png Graphic file (type bmp)
+<figure/E/hole/hole.png>
 
-Overfull \hbox (26.6783pt too wide) in paragraph at lines 656--657
+Overfull \hbox (26.6783pt too wide) in paragraph at lines 653--654
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-File: figure/hole/hole.msh.png Graphic file (type bmp)
-<figure/hole/hole.msh.png>
+File: figure/E/hole/hole.msh.png Graphic file (type bmp)
+<figure/E/hole/hole.msh.png>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [25]
-File: figure/hole/L2.png Graphic file (type bmp)
-<figure/hole/L2.png>
-File: figure/hole/H1.png Graphic file (type bmp)
-<figure/hole/H1.png>
+File: figure/E/hole/L2.png Graphic file (type bmp)
+<figure/E/hole/L2.png>
+File: figure/E/hole/H1.png Graphic file (type bmp)
+<figure/E/hole/H1.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -894,10 +906,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [26]
-File: figure/hole/CPUTime.png Graphic file (type bmp)
-<figure/hole/CPUTime.png>
-File: figure/hole/caculate.png Graphic file (type bmp)
-<figure/hole/caculate.png>
+File: figure/E/hole/CPUTime.png Graphic file (type bmp)
+<figure/E/hole/CPUTime.png>
+File: figure/E/hole/caculate.png Graphic file (type bmp)
+<figure/E/hole/caculate.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -906,15 +918,118 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [27]
-File: figure/hole/hole.stress1.png Graphic file (type bmp)
-<figure/hole/hole.stress1.png>
-File: figure/hole/hole.stress2.png Graphic file (type bmp)
-<figure/hole/hole.stress2.png>
+File: figure/E/hole/hole.stress1.png Graphic file (type bmp)
+<figure/E/hole/hole.stress1.png>
+File: figure/E/hole/hole.stress2.png Graphic file (type bmp)
+<figure/E/hole/hole.stress2.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[28]) [29] (main.aux (Chapter1.aux) (chapter2.aux) (C3elastic.aux))
+[28]) [29]
+\openout2 = `C4plate.aux'.
+
+ (C4plate.tex [30
+
+
+
+
+]
+Chapter 4.
+File: figure/P/plate.png Graphic file (type bmp)
+<figure/P/plate.png>
+[31] [32]
+File: figure/P/PSI.png Graphic file (type bmp)
+<figure/P/PSI.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+File: figure/P/background.png Graphic file (type bmp)
+<figure/P/background.png>
+
+Underfull \vbox (badness 7925) has occurred while \output is active []
+
+ [34]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 209
+.
+
+(F:\MikTEX\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+File: figure/P/moment.png Graphic file (type bmp)
+<figure/P/moment.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35] [36]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+[40] [41]
+File: figure/P/R/rectangular.png Graphic file (type bmp)
+<figure/P/R/rectangular.png>
+File: figure/P/R/rectangular.msh.png Graphic file (type bmp)
+<figure/P/R/rectangular.msh.png>
+ [42]
+File: figure/P/R/CLH.png Graphic file (type bmp)
+<figure/P/R/CLH.png>
+File: figure/P/R/QLH.png Graphic file (type bmp)
+<figure/P/R/QLH.png>
+ [43] [44]
+File: figure/P/R/Ralpha.png Graphic file (type bmp)
+<figure/P/R/Ralpha.png>
+
+Overfull \hbox (33.86229pt too wide) in paragraph at lines 455--456
+ [][] 
+ []
+
+File: figure/P/R/cputime.png Graphic file (type bmp)
+<figure/P/R/cputime.png>
+[45]
+File: figure/P/T/triangular.png Graphic file (type bmp)
+<figure/P/T/triangular.png>
+File: figure/P/T/triangular.msh.png Graphic file (type bmp)
+<figure/P/T/triangular.msh.png>
+ [46]
+File: figure/P/T/CLH.png Graphic file (type bmp)
+<figure/P/T/CLH.png>
+File: figure/P/T/QLH.png Graphic file (type bmp)
+<figure/P/T/QLH.png>
+ [47] [48]
+File: figure/P/T/cputime.png Graphic file (type bmp)
+<figure/P/T/cputime.png>
+File: figure/P/T/cauclate.png Graphic file (type bmp)
+<figure/P/T/cauclate.png>
+ [49]
+File: figure/P/T/Mnn.png Graphic file (type bmp)
+<figure/P/T/Mnn.png>
+ [50]
+File: figure/P/A/annular.png Graphic file (type bmp)
+<figure/P/A/annular.png>
+ [51]
+File: figure/P/A/annular.msh.png Graphic file (type bmp)
+<figure/P/A/annular.msh.png>
+File: figure/P/A/QLH.png Graphic file (type bmp)
+<figure/P/A/QLH.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: figure/P/A/Mnn.png Graphic file (type bmp)
+<figure/P/A/Mnn.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[52]) [53] [54] (main.aux (Chapter1.aux) (chapter2.aux) (C3elastic.aux)
+(C4plate.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -929,12 +1044,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9109 strings out of 410379
- 232956 string characters out of 5795143
- 1949432 words of memory out of 5000000
- 30243 multiletter control sequences out of 15000+600000
- 565918 words of font info for 139 fonts, out of 8000000 for 9000
+ 9432 strings out of 410379
+ 241445 string characters out of 5795143
+ 1951432 words of memory out of 5000000
+ 30524 multiletter control sequences out of 15000+600000
+ 569399 words of font info for 153 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,25n,99p,357b,392s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,25n,99p,409b,392s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (35 pages).
+Output written on main.pdf (60 pages).

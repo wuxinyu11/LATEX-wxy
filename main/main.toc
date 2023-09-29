@@ -13,4 +13,15 @@
 \contentsline {subsection}{\numberline {3.4.1}分片实验}{19}{}%
 \contentsline {subsection}{\numberline {3.4.2}悬臂梁问题}{21}{}%
 \contentsline {subsection}{\numberline {3.4.3}带孔无限大平板问题}{25}{}%
+\contentsline {chapter}{\numberline {4}薄板问题HR弱形式}{31}{}%
+\contentsline {section}{\numberline {4.1}Hellinger-Reissner变分原理}{31}{}%
+\contentsline {section}{\numberline {4.2}挠度离散和弯矩离散}{33}{}%
+\contentsline {subsection}{\numberline {4.2.1}挠度离散和再生核近似}{33}{}%
+\contentsline {subsection}{\numberline {4.2.2}弯矩离散和再生光滑梯度近似}{34}{}%
+\contentsline {section}{\numberline {4.3}Hellinger-Reissner变分原理下的本质边界条件施加方法}{36}{}%
+\contentsline {section}{\numberline {4.4}数值算例}{40}{}%
+\contentsline {subsection}{\numberline {4.4.1}分片实验}{40}{}%
+\contentsline {subsection}{\numberline {4.4.2}简支方板问题}{41}{}%
+\contentsline {subsection}{\numberline {4.4.3}简支等边三角形板问题}{46}{}%
+\contentsline {subsection}{\numberline {4.4.4}简支环行板问题}{51}{}%
 \contentsfinish 

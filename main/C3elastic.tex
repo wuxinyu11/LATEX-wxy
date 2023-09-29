@@ -10,30 +10,35 @@
 \end{cases}
 \end{split}
 \end{equation}
-其中，$u_i$和$\sigma_{ij}$为位移和应力分量，$b_i$为求解域$\Omega$上的体力分量。$\Gamma^g$和$\Gamma^t$分别为本质边界条件和自然边界条件,
-并且$\Gamma^g\cup\Gamma^t=\partial\Omega,\Gamma^t\cap\Gamma^g=\varnothing,\partial\Omega$为求解域$\Omega$的边界。$t_i$和$g_i$分别为两类边界上已知的外力和位移分量，$n_i$表示为所在边界的外法向量分量。\par
+其中，$u_i$和$\sigma_{ij}$为位移和应力分量，$b_i$为求解域$\Omega$上的体力分量。$t_i$和$g_i$分别为两类边界上已知的外力和位移分量，$n_i$表示为所在边界的外法向量分量。
+$\Gamma^g$和$\Gamma^t$分别为本质边界条件和自然边界条件,并且存在如下几何关系式：
+\begin{equation}
+\begin{split}\label{Geometric relationships}
+    \Gamma^g\cup\Gamma^t=\partial\Omega,\Gamma^t\cap\Gamma^g=\varnothing
+\end{split}
+\end{equation}
+其中，$\partial\Omega$为求解域$\Omega$的边界。\par
 对于式(\ref{E control equation})定义的弹性力学问题并根据Hellinger-Ressiner原理[]，存在以下余能泛函：
 \begin{equation}
 \begin{split}
-    Pi_c=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma
+    \Pi_c=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma
 \end{split}
 \end{equation}
 其中$W(\sigma_{ij})$为应变余能，其与应力和应变之间的关系式为：
 \begin{equation}
 \begin{split}
-\frac{\partial W(\sigma_{ij})}{\partial\sigma_{ij}}&=\varepsilon_{ij}\\
-&=C^{-1}_{ijkl}\sigma_{kl}
+\frac{\partial W(\sigma_{ij})}{\partial\sigma_{ij}}=C^{-1}_{ijkl}\sigma_{kl}=\varepsilon_{ij}
 \end{split}
 \end{equation}
-式中$C_{ijkl}$为四阶弹性张量\par
-此时用特定的拉格朗日乘子$\lambda_i$和$\eta_i$，建立新的变分泛函
+式中$C_{ijkl}$为四阶弹性张量。\par
+此时采用拉格朗日乘子法施加应力边界条件，建立新的变分泛函：
 \begin{equation}\label{functional1}
 \begin{split}
     \Pi_c^*&=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma\\
     &+\int_{\Omega}\lambda_i(\sigma_{ij,j}+b_i)d\Omega+\int_{\Gamma^t}\eta_i(\sigma_{ij}n_j-t_i)d\Gamma
 \end{split}
 \end{equation}
-将式(\ref{functional1})进行一阶变分，同时把$\sigma_{ij}$和$\lambda_i,\eta_i$看作为独立变量，可以得到：
+将式(\ref{functional1})进行一阶变分，同时引入拉格朗日乘子$\lambda_i$施加到求解域$\Omega$和拉格朗日乘子$\eta_i$到自然边界条件中从而得到：
 \begin{equation}\label{First-order variational}
 \begin{split}
     \delta\Pi_c^*&=\int_{\Omega}(\frac{\partial W}{\partial\sigma_{ij}}\delta\sigma_{ij}+\delta\lambda_i(\sigma_{ij,j}+b_i)+\lambda_i\delta\sigma_{ij,j})d\Omega\\
@@ -57,26 +62,18 @@
 根据泛函驻值条件$\delta\Pi_c^*=0$得出：
 \begin{equation}
 \begin{split}
-    &\lambda_i=g_i=u_i\\
-    &\eta_i=-u_i
+    \lambda_i=g_i=u_i,\eta_i=-u_i
 \end{split}
 \end{equation}\par
-将$\lambda_i=u_i,\eta_i=-u_i$代入式(\ref{functional1})中得到根据存在双变量$(u_i,\sigma_{ij})$的Hellinger-Reissner变分原理，从而强形式(\ref{E control equation})所对应的能量泛函为：
-\begin{equation}\label{energy functional1}
-\begin{split}
-    \Pi_{H\!R}(\sigma_{ij},u_i)&=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma\\
-    &+\int_{\Omega}u_i(\sigma_{ij,j}+b_i)d\Omega-\int_{\Gamma^t}u_i(\sigma_{ij}n_j-t_i)d\Gamma
-\end{split}
-\end{equation}\par
-对式(\ref{energy functional1})进行变分得到相对应的弱形式：
+将$\lambda_i=u_i,\eta_i=-u_i$代入式(\ref{functional1})中得到根据存在双变量$(u_i,\sigma_{ij})$的Hellinger-Reissner变分原理，针对式(\ref{E control equation})得到相对应的弱形式为：
 \begin{equation}\label{weak form1}
 \begin{split} 
     \delta\Pi_{H\!R}(\sigma_{ij},u_i)&=\int_{\Omega}\delta\sigma_{ij}\frac{\partial W}{\partial \sigma_{ij}}d\Omega+\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega-\int_{\Gamma^t}\delta\sigma_{ij}n_ju_id\Gamma\\
     &-\int_{\Gamma^g}\delta\sigma_{ij,j}n_jg_id\Gamma+\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega- \int_{\Gamma^t}\delta u_i\sigma_{ij}n_jd\Gamma\\
     &+\int_{\Omega}\delta u_ib_id\Omega+\int_{\Gamma^t}\delta u_it_id\Gamma=0
 \end{split}
-\end{equation}
-对能量泛函$\Pi_{H\!R}$取极值时，要求对于任意的$\delta u_i$、$\delta\sigma_{ij}$关于$\delta\Pi_{H\!R}$都要恒成立，此时将弱形式(\ref{weak form1})根据$\delta u_i$、$\delta\sigma_{ij}$改写为下列两式：
+\end{equation}\par
+对能量泛函$\Pi_{H\!R}$取极值时，要求对于任意的$\delta u_i$、$\delta\sigma_{ij}$关于$\delta\Pi_{H\!R}$都要恒成立，此时利用几何关系式(\ref{Geometric relationships})将弱形式(\ref{weak form1})根据$\delta u_i$、$\delta\sigma_{ij}$改写为下列两式：
 \begin{equation}\label{deltau}
 \begin{split}
     \int_{\Gamma}\delta u_i\sigma_{ij}n_jd\Gamma&-\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_jd\Gamma
@@ -93,7 +90,7 @@
 \subsection{位移离散与再生核近似}
 位移分量$u_i$采用基于再生核近似的无网格形函数进行离散。无网格法通过如图(\ref{PSI})所示的问题域$\Omega$和边界$\Gamma$上布置一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$进行离散，
 其中$N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形函数为$\Psi(\pmb{x})$，影响域为$supp(\pmb{x}_I)$，
-每一个节点的影响域$supp(\pmb{x}_I)$满足$\Omega\in^{N\!P}_{I=1}supp(\pmb{x}_I)$。不失为一般性，考虑任意位移分量$u_i$，其对应的无网格近似函数$u^h_i$表示为：
+此时所有节点的影响域的总范围超过问题域$\Omega$，即每一个节点的影响域$supp(\pmb{x}_I)$满足$\Omega\subseteq^{N\!P}_{I=1}supp(\pmb{x}_I)$。不失为一般性，考虑任意位移分量$u_i$，其对应的无网格近似函数$u^h_i$表示为：
 \begin{equation}\label{ui}
 \begin{split}
     u^h_i(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{iI}
@@ -102,7 +99,7 @@
 其中，$d_{iI}$表示与无网格节点$\pmb{x}_I$对应的系数\par
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/PSI.png}
+    \includegraphics[scale=0.5]{figure/E/PSI.png}
     \caption{二维无网格离散示意图}\label{PSI}
 \end{figure}\newpage
 根据再生核近似理论[]，无网格形函数可以假设为：
@@ -114,7 +111,7 @@
 式中，$\pmb{p}(\pmb{x})$表示为$p$阶的多项式基函数向量，表达式为：
 \begin{equation}
 \begin{split}
-    \pmb{p}(\pmb{x})=\{1,x,y,\dotsb,x^iy^i,\dotsb,y^p\}.0\le i+j \le p
+    \pmb{p}(\pmb{x})=\{1,x,y,\dotsb,x^iy^i,\dotsb,y^p\},0\le i+j \le p
 \end{split}
 \end{equation}
 而$\phi_s(\pmb{x}_I-\pmb{x})$是附属于节点$\pmb{x}_I$的核函数，其影响域的大小由影响域尺寸$s$决定，核函数以及其影响域的大小共同决定了无网格形函数的局部紧支性和光滑性。对于二维问题，一般情况下核函数$\phi_s(\pmb{x}_I-\pmb{x})$的影响域为圆形域或者矩形域，可由下列公式得到：
@@ -153,7 +150,7 @@
 \end{split}
 \end{equation}\par
 将$\pmb{c}(\pmb{x})$代入到式(\ref{shapefunction})中得到再生核无网格形函数的具体表达式为：
-\begin{equation}
+\begin{equation}\label{Pshapefunction}
 \begin{split}
     \Psi_I(\pmb{x})=\pmb{p}^T(\pmb{0})\pmb{A}^{-1}(\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
 \end{split}
@@ -188,12 +185,12 @@
 式中$\pmb A_{,i}^{-1}=-\pmb A^{-1}\pmb A_{,i}\pmb A^{-1},\pmb A_{,ij}^{-1}=-\pmb A^{-1}(\pmb A_{,ij}\pmb A^{-1}+\pmb A_{,i}\pmb A_{,j}^{-1}+\pmb A_{,j}\pmb A_{,i}^{-1})$，可以看出无网格形函数及其导数的计算都较为复杂。\par
 \begin{figure}[!h]
     \centering
-\includegraphics[scale=0.3]{figure/detalpsi.png}
-\caption{二维无网格形函数导数图}\label{detalpsi}
+\includegraphics[scale=0.5]{figure/E/DPASI.png}
+\caption{二维无网格形函数导数图}\label{DPASI}
 \end{figure}\newpage
-图(\ref{detalpsi})表示为二维情况下的无网格形函数导数图。根据图(\ref{PSI})、(\ref{detalpsi})，可以看出无网格形函数在全域上连续光滑，但在无网格节点处，形函数不具有插值性，因此无法像有限元法一样直接施加本质边界条件。
+图(\ref{DPASI})表示为二维情况下的无网格形函数导数图。根据图(\ref{PSI})、(\ref{DPASI})可以看出无网格形函数在全域上连续光滑，但在无网格节点处，形函数不具有插值性，因此无法像有限元法一样直接施加本质边界条件。
 \subsection{应力离散与再生光滑梯度近似}
-应力分量$\sigma_{ij}$采用在每个背景积分单元内建立局部的多项式进行离散。考虑如图(\ref{background})所示二维三角形背景积分单元，将求解域$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,N\!C$，并且$\cup_{C=1}^{N\!C}\Omega_C=\Omega$。
+应力分量$\sigma_{ij}$采用在每个背景积分单元内建立局部的多项式进行离散。考虑如图(\ref{background})所示二维三角形背景积分单元，将求解域$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,N\!C$，并且存在$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
 在背景积分单元$\Omega_C$内，假设应力分量$\sigma_{ij}$为任意的$p$阶多项式，则将离散后的应力分量$\sigma_{ij}$记为$\sigma^h_{ij}$：
 其中，$\pmb{q}(\pmb{x})$为($p-1$)阶的单项式基向量，即$\pmb{q}(\pmb{x})=\pmb{p}^{[p-1]}(\pmb{x})$。$\pmb{a}_{ij}$为$\sigma_{ij}^h(\pmb{x})$在积分域$\Omega_C$内的常系数向量。\\
 \begin{equation}\label{sigma}
@@ -203,7 +200,7 @@
 \end{equation}
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.7]{figure/background.png}
+    \includegraphics[scale=0.7]{figure/E/background.png}
     \caption{背景积分单元示意图}\label{background}
 \end{figure}
 此时，将(\ref{sigma})、(\ref{ui})代入(\ref{deltasigma})中可以得到：
@@ -272,7 +269,7 @@
     \sigma_{xx}\\\sigma_{yy}\\\sigma_{xy}
     \end{matrix}\right\}=\frac{E}{1-\nu^2}
     \left[\begin{matrix}
-    1&\nu&0\\\nu&1&0\\0&0&\frac{1-nu}{2}
+    1&\nu&0\\\nu&1&0\\0&0&\frac{1-\nu}{2}
     \end{matrix}\right]
     \left\{\begin{matrix}
     \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
@@ -282,7 +279,7 @@
 此时，近似应力分量$\pmb{\sigma}^h(\pmb{x})$式(\ref{sigmah})采用矩阵向量形式可以改写为：
 \begin{equation}
 \begin{split}
-\pmb{\sigma}^h=\pmb{D}\sum_{I=1}^{N\!P}(\tilde{\pmb{B_I}}-\bar{\pmb{B_I}})\pmb{d_I}+\pmb{D}\hat{\pmb{\varepsilon}}
+\pmb{\sigma}^h=\pmb{D}\sum_{I=1}^{N\!P}(\tilde{\pmb{B}}_I-\bar{\pmb{B}}_I)\pmb{d_I}+\pmb{D}\hat{\pmb{\varepsilon}}
 \end{split}
 \end{equation}
 其中：
@@ -293,14 +290,14 @@
         \end{matrix}\right\}\quad
     \pmb{D}=\frac{E}{1-\nu^2}
     \left[\begin{matrix}
-    1&\nu&0\\\nu&1&0\\0&0&\frac{1-nu}{2}
+    1&\nu&0\\\nu&1&0\\0&0&\frac{1-\nu}{2}
     \end{matrix}\right]\quad
     \hat{\pmb{\varepsilon}}=\left\{\begin{matrix}
         \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
      \end{matrix}\right\}
 \end{split}
 \end{equation}
-而$\pmb{d_I}=\{d_{1I},d_{2I}\}^T$为节点系数向量，$\tilde{\pmb{B_I}}\text{、}\bar{\pmb{B_I}}$分别是由再生光滑梯度$\tilde{\Psi}_{I,i}$和$\bar{\Psi}_{I,i}$组成的梯度矩阵，表达式分别为：
+而$\pmb{d}_I=\{d_{1I},d_{2I}\}^T$为节点系数向量，$\tilde{\pmb{B}}_I\text{、}\bar{\pmb{B}}_I$分别是由再生光滑梯度$\tilde{\Psi}_{I,i}$和$\bar{\Psi}_{I,i}$组成的梯度矩阵，表达式分别为：
 \begin{equation}
 \begin{split}
     \tilde{\pmb{B}}_I(\pmb{x})= \left[\begin{matrix}\tilde{\Psi}_{I,x}(\pmb{x})&0\\0&\tilde{\Psi}_{I,y}(\pmb{x})\\\tilde{\Psi}_{I,y}(\pmb{x})&\tilde{\Psi}_{I,x}(\pmb{x}) \end{matrix}\right] 
@@ -424,7 +421,7 @@
 本质边界条件施加方法需要两套数值积分点，$\tilde{g}$和$\bar{g}$中的数值积分方案需要与$\tilde{\pmb{K}}$，$\bar{\pmb{K}}$，$\pmb{f}$，$\tilde{\pmb{f}}$和$\bar{\pmb{f}}$保持一致。\par
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/strain.png}
+    \includegraphics[scale=0.5]{figure/E/strain.png}
     \caption{优化的数值积分方案}\label{strain}
 \end{figure}\newpage
 同时，基于Hellinger-Reissner变分原理的本质边界条件施加方法中的再生光滑梯度构造过程中需要计算积分点处无网格形函数。采用无网格再生光滑梯度积分法，减小形函数的计算量、提高计算效率。
@@ -438,13 +435,13 @@
    \midrule
    \begin{minipage}[b]{0.3\columnwidth}
     \centering
-    \raisebox{-.5\height}{\includegraphics{figure/point.png}}
+    \raisebox{-.5\height}{\includegraphics{figure/E/point.png}}
 \end{minipage}&
    $\frac{2}{3}$ & $\frac{1}{6}$& $\frac{1}{6}$ & $\frac{1}{3}$\\
    \midrule
       \begin{minipage}[b]{0.3\columnwidth}
     \centering
-    \raisebox{-.5\height}{\includegraphics{figure/point2.png}}
+    \raisebox{-.5\height}{\includegraphics{figure/E/point2.png}}
 \end{minipage}&
    $\frac{1}{2}$ & $\frac{1}{2}$ &0 & $\frac{1}{6}$\\
    &1&0&0&$\frac{2}{3}$&$\frac{1}{3}$\\
@@ -460,7 +457,7 @@
    \midrule
 \begin{minipage}[b]{0.3\columnwidth}
     \centering
-    \raisebox{-.5\height}{\includegraphics{figure/point.png}}
+    \raisebox{-.5\height}{\includegraphics{figure/E/point.png}}
 \end{minipage}&
 $\eta_a$&$\frac{1-\xi_a}{2}$&$\frac{1-\xi_a}{2}$&$w_a$\\
 &$\eta_b$&$\eta_b$&$\frac{1-\xi_b}{2}$&$w_b$\\
@@ -469,7 +466,7 @@ $\xi_b=0.816847572980459,w_b=0.109951743655322$\\
 \midrule
 \begin{minipage}[b]{0.3\columnwidth}
     \centering
-    \raisebox{-.5\height}{\includegraphics{figure/point2.png}}
+    \raisebox{-.5\height}{\includegraphics{figure/E/point2.png}}
 \end{minipage}&
 $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 &$1$&$0$&$0$&$-\frac{1}{30}$&$\frac{1}{20}$\\
@@ -494,7 +491,7 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 三次基函数的无网格近似采用二次和三次分片实验进行测试，核函数相对影响域在三次基函数情况下为3.5。\par
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.7]{figure/patchtestmeshfree.png}
+    \includegraphics[scale=0.7]{figure/E/patchtestmeshfree.png}
     \caption{分片实验无网格离散模型}\label{patchtestmeshfree}
 \end{figure}
 分别采用位移误差$L_2$-Error和能量误差$H_1$-Error详细对比所提方法的计算精度
@@ -578,12 +575,12 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 \end{equation}
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.7]{figure/cantilever/cantilever.png}
+    \includegraphics[scale=0.7]{figure/E/cantilever/cantilever.png}
     \caption{悬臂梁问题模型}\label{cantilever}
 \end{figure}
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.7]{figure/cantilever/cantilever.mesh.png}
+    \includegraphics[scale=0.7]{figure/E/cantilever/cantilever.mesh.png}
     \caption{悬臂梁问题节点模型}\label{cantilever.mesh}
 \end{figure}\newpage
 如图(\ref{cantilever})所示，悬臂梁的左端施加自然边界条件$\Gamma^t$，右端施加强制边界条件$\Gamma^g$。
@@ -594,19 +591,19 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 但相较于RKGSI-Nitsche法，所提出的RKGSI-HR法无需引入人工参数。
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/cantilever/L2.png}
+    \includegraphics[scale=0.5]{figure/E/cantilever/L2.png}
     \caption{悬臂梁问题位移误差对比}\label{CL2}
 \end{figure}
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/cantilever/H1.png}
+    \includegraphics[scale=0.5]{figure/E/cantilever/H1.png}
     \caption{悬臂梁问题能量误差对比}\label{CH1}
 \end{figure}\newpage
 图(\ref{CCPUTime})为悬臂梁问题的节点数和计算时间的效率对比图。
 从整体来看采用再生光滑梯度积分法(RKGSI)的计算效率明显高于传统高斯积分法(GI)。\par
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/cantilever/CPUTime.png}
+    \includegraphics[scale=0.5]{figure/E/cantilever/CPUTime.png}
     \caption{计算时间与节点数的关系}\label{CCPUTime}
 \end{figure}\newpage
 图(\ref{Ccaculate})为悬臂梁问题的本质边界条件施加效率分析图。该图为施加强制边界$\Gamma^g$过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量所用时间对比图。
@@ -617,7 +614,7 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 因此，总体来说，相较于传统的本质边界条件施加方法，基于Hellinger-Reissner变分原理的本质边界条件施加方法(RKGSI-HR)能够达到理论误差收敛率，有效提高计算精度，相较于Nitsche法而言计算效率也更高。
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/cantilever/caculate.png}
+    \includegraphics[scale=0.5]{figure/E/cantilever/caculate.png}
     \caption{本质边界条件施加效率分析}\label{Ccaculate}
 \end{figure}\newpage
 \subsection{带孔无限大平板问题}
@@ -653,12 +650,12 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 对于采用三次基函数的带孔无限大平板算例问题，传统高斯积分法采用16点高斯积分，核函数的相对影响域为3.5。\par
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.5]{figure/hole/hole.png}
+\includegraphics[scale=0.5]{figure/E/hole/hole.png}
     \caption{带孔无限大平板问题模型}\label{hole}
 \end{figure}
 \begin{figure}[!h]
 \centering
- \includegraphics[scale=0.7]{figure/hole/hole.msh.png}
+ \includegraphics[scale=0.7]{figure/E/hole/hole.msh.png}
    \caption{带孔无限大平板问题无网格离散}\label{hole.msh}
 \end{figure}\newpage
 图(\ref{HL2})、(\ref{HH1})为带孔无限大平板问题的位移和能量误差对比图。
@@ -667,32 +664,32 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 虽然RKGSI-LM法无法通过分片实验不满足变分一致性，但由于拉格朗日乘子法法具有较高的精度也能达到理论误差收敛率。
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/hole/L2.png}
+    \includegraphics[scale=0.5]{figure/E/hole/L2.png}
     \caption{带孔无限大平板问题位移误差对比}\label{HL2}
 \end{figure}
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/hole/H1.png}
+    \includegraphics[scale=0.5]{figure/E/hole/H1.png}
     \caption{带孔无限大平板问题能量误差对比}\label{HH1}
 \end{figure}\newpage
 图(\ref{HCPUTime})、(\ref{Hcaculate})为带孔无限大平板问题的效率对比图。
 从图中可以看出随着无网格节点数的增加，采用再生光滑梯度积分法(RKGSI)的效率明显高于传统高斯积分法(GI),在施加强制边界条件的过程中，HR法不仅满足变分一致性同时计算效率还高于传统的Nitsche法
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/hole/CPUTime.png}
+    \includegraphics[scale=0.5]{figure/E/hole/CPUTime.png}
     \caption{带孔无限大平板问题计算时间与节点数关系}\label{HCPUTime}
 \end{figure}
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/hole/caculate.png}
+    \includegraphics[scale=0.5]{figure/E/hole/caculate.png}
     \caption{带孔无限大平板问题本质边界条件施加效率分析}\label{Hcaculate}
 \end{figure}\newpage
 最后，图(\ref{Hstress})为带孔无限大平板问题的应力云图，从图中可以看出RKGSI-Penalty法和精确解之间是有差异的，
 而RKGSI-Nitsche法和RKGSI-HR法是和精确解几乎相同。但Nitsche法是需要依靠人工经验参数并且计算效率也低于HR法。
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.5]{figure/hole/hole.stress1.png}
-    \includegraphics[scale=0.5]{figure/hole/hole.stress2.png}
+    \includegraphics[scale=0.5]{figure/E/hole/hole.stress1.png}
+    \includegraphics[scale=0.5]{figure/E/hole/hole.stress2.png}
     \caption{带孔无限大平板问题应力云图}\label{Hstress}
     \end{figure}\newpage
 
