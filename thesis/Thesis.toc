@@ -1,0 +1,13 @@
+\contentsline {chapter}{\numberline {1}无网格近似理论}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}再生核无网格近似}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}伽辽金无网格法}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}弹性力学问题的伽辽金无网格离散}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}薄板问题的伽辽金无网格离散}{7}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}小结}{9}{section.1.3}%
+\contentsline {chapter}{\numberline {2}强制边界条件施加方法}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}拉格朗日乘子法}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}修正变分原理法}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}罚函数法}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Nitsche法}{16}{section.2.4}%
+\contentsline {section}{\numberline {2.5}小结}{18}{section.2.5}%
+\contentsfinish 

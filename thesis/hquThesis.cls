@@ -27,8 +27,7 @@
 \LoadClass[twoside, openright, UTF8, scheme=plain]{book}
 
 \RequirePackage{geometry}
-\RequirePackage{graphicx}
-\RequirePackage{float}
+\RequirePackage{graphicx,float,caption,subcaption,overpic}
 \RequirePackage{xeCJK}
 \RequirePackage{amsmath,amsfonts,amssymb}
 \RequirePackage{indentfirst}
@@ -119,6 +118,8 @@
 }
 \renewcommand\figurename{图}
 \renewcommand\tablename{表}
+\DeclareCaptionFont{captionfont}{\rmfamily\fontsize{11pt}{\baselineskip}\selectfont}
+\captionsetup{font=captionfont,labelsep=quad,skip=6pt,subrefformat=parens}
 \renewcommand{\frontmatter}{
     \cleardoublepage
     \setcounter{page}{1}
