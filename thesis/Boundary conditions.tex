@@ -1,6 +1,7 @@
 \chapter{强制边界条件施加方法}
 \section{拉格朗日乘子法}
-Belytschko等人\cite{}提出采用拉格朗日乘子法施加本质边界条件，是指在原势能泛函中引入位移强制边界条件对应的约束项。\par
+Belytschko等人\cite{}提出采用拉格朗日乘子法施加本质边界条件，拉格朗日乘子法是一种常用的强制边界条件施加方法，用于在数值计算中处理约束条件。
+该方法的基本思想是通过引入拉格朗日乘子，将边界条件转化为约束条件，并将其纳入数值问题的势能泛函中，通过对增广拉格朗日函数进行求解，可以同时求解原始问题和约束条件，从而获得满足边界条件的数值解。\par
 针对弹性力学问题，拉格朗日乘子法的势能泛函表达式为：
 \begin{equation}\label{Elambda}
 \begin{split}
@@ -48,7 +49,7 @@ $N_K(\pmb{x})$为拉格朗日乘子节点之间的插值函数。同时引入式
 \begin{equation}
 \begin{split}
     &G_{IK}=-\int_{\Gamma^g}\Psi_IN_Kd\Gamma\\
-    &\pmb{\Lambda}= \left[\begin{matrix}\lambda_1\;\lambda_2\;\dotsb\;\lambda_{NL}^T\end{matrix}\right]^T\\
+    &\pmb{\Lambda}= \left[\begin{matrix}\lambda_1\;\lambda_2\;\dotsb\;\lambda_{N\!L}^T\end{matrix}\right]^T\\
     &f_K^{\lambda}=-\int_{\Gamma^g}N_K\pmb{g}d\Gamma
 \end{split}
 \end{equation}\par
@@ -83,8 +84,10 @@ $N_K(\pmb{x})$为拉格朗日乘子节点之间的插值函数。同时引入式
     &f_K^{\lambda}=-\int_{\Gamma_w}N_K(x)d\Gamma
 \end{split}
 \end{equation}\par
+拉格朗日乘子法在数值计算中广泛应用，特别适用于处理约束条件。它提供了一种有效的方法来将约束条件纳入优化问题的求解过程中，同时考虑目标函数和约束条件的权衡。通过使用拉格朗日乘子法，可以在数值计算中更准确的施加本质边界条件，并得到满足约束条件的结果。
 \section{修正变分原理法}
-为了消除拉格朗日乘子法中增加的代求未知量，Lu等人\cite{}将拉格朗日乘子替换为相应位置的面力未知量，即$\pmb{\lambda}=t_i=\sigma_{ij}n_i$，提出了施加位移边界条件的修正变分原理方法。\par
+传统的拉格朗日乘子法中，会引入拉格朗日乘子作为边界条件的乘子，用于施加位移边界条件。然而，该方法会增加额外的未知量，导致计算复杂度的增加。
+为了解决这个问题，Lu等人\cite{}提出了修正变分原理方法。在该方法中，他们将拉格朗日乘子替换为相应位置的面力未知量，具体而言，引入了面力未知量 $t_i$，它与拉格朗日乘子 $\lambda$ 相关联，即 $\lambda = t_i = \sigma_{ij}n_i$。\par
 针对弹性力学问题将式(\ref{Elambda weakform})中的拉格朗日乘子用面力$\sigma_{ij}n_i$进行替代从而得到：
 \begin{equation}
 \begin{split}\label{Esigman weakform}
@@ -161,8 +164,10 @@ $N_K(\pmb{x})$为拉格朗日乘子节点之间的插值函数。同时引入式
      f_{I}^n&=-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}
 \end{split}
 \end{equation}\par
+修正变分原理方法可以减少计算复杂度，并能够更直接地施加位移边界条件，在数值计算中具有一定的优势，并且在特定问题的求解中可能更适用。
 \section{罚函数法}
-罚函数法\cite{}是在势能泛函中通过引入一个罚因子$\alpha$引入强制边界条件的残值项，针对弹性力学问题：
+罚函数法\cite{}是在势能泛函中通过引入一个罚因子$\alpha$，将带有罚因子的强制边界条件施加到数值问题的原势能泛函中。\par
+针对弹性力学问题，罚函数法的势能泛函表达式为：
 \begin{equation}\label{Epenalty weakform}
 \begin{split}
     \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
@@ -223,9 +228,13 @@ $N_K(\pmb{x})$为拉格朗日乘子节点之间的插值函数。同时引入式
 &f^{\alpha}_I=\alpha_w\int_{\Gamma_w}\Psi_I\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\bar{\theta}_{\pmb n}d\Gamma+\alpha_c\Psi_I\bar{w}\vert_{x\in c_w}
 \end{split}
 \end{equation}\par
+值得注意的是，罚函数法是一种近似方法，通过对边界条件进行惩罚来近似处理强制边界条件。
+在实际应用中，选择合适的罚因子尤其重要，较大的罚因子可能会导致数值不稳定或者收敛困难，
+而较小的罚因子可能会导致边界条件无法满足。
 \section{Nitsche法}
-Nistche法\cite{}是结合了罚函数法和修正变分原理法的一种满足变分一致性的本质边界条件施加方法。\par
-弹性力学问题其泛函表达式为：
+Nitsche法\cite{}是通过边界积分项引入离散化的方程中，以弱形式的方法施加本质边界条件，
+是结合了罚函数法和修正变分原理法的一种满足变分一致性的本质边界条件施加方法。\par
+根据罚函数法以及修正变分原理法，采用Nitsche法时的弹性力学问题势能泛函表达式为：
 \begin{equation}\label{Enitsche weakform}
 \begin{split}
     \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})-\int_{\Gamma^g}n_i\sigma_{ij}(u_i-g_i)d\Gamma+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
@@ -308,11 +317,11 @@ Nistche法\cite{}是结合了罚函数法和修正变分原理法的一种满足
 &f^{\alpha}_I=\alpha_w\int_{\Gamma_w}\Psi_I\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\bar{\theta}_{\pmb n}d\Gamma+\alpha_c\Psi_I\bar{w}\vert_{x\in c_w}
 \end{split}
 \end{equation}\par
+值得注意的是，Nische法作为目前伽辽金无网格法常采用的满足变分一致性的本质边界条件施加方法，但Nistche法的积分项中包含罚因子，选择不当的罚因子可能会导致数值不稳定性及无法满足收敛率，
+同时Nitsche法中的边界积分项需要进行数值近似计算，可能会降低计算效率。
 \section{小结}
-本章介绍了集中常用的边界条件施加方法。
-采用拉格朗日乘子法进行施加本质边界条件增加了原有刚度矩阵的维数，当过多的自由度$\lambda$会引起整体刚度矩阵的奇异性，不满足高阶的变分一致性。
-采用修正的变分原理施加本质边界条件保持了刚度矩阵的对称性，并且整个求解过程不增加刚度矩阵的维数，但是该方法的计算精度一般低于拉格朗日乘子法。
-罚函数法具有简洁高效的特点，但由于引入了罚因子$\alpha$其计算精度会随着罚因子的改变而改变，选择过大的罚因子会引起计算精度的不稳定，过小则会导致无法准确施加位移边界条件。
-Nitsche法是满足变分一致性，但在数值计算过程中引入了形函数高阶梯度，降低了计算效率，并且为了满足正定性也引入了人工参数。
-
-
+本章介绍了几种常用的边界条件施加方法，并对它们的特点进行了总结。
+首先，采用拉格朗日乘子法进行边界条件施加。这种方法通过引入拉格朗日乘子来处理本质边界条件，保持刚度矩阵的对称性。然而，由于拉格朗日乘子的引入，会增加刚度矩阵的维数，当自由度过多时，可能导致整体刚度矩阵的奇异性，不满足高阶的变分一致性。
+其次，采用修正的变分原理进行边界条件施加。这种方法通过对变分原理进行修正，将边界条件作为修正项引入，从而避免了增加刚度矩阵的维数。修正的变分原理保持了刚度矩阵的对称性，但相对于拉格朗日乘子法，其计算精度一般较低。
+第三种方法是罚函数法。罚函数法通过在变分原理中引入一个罚因子，将边界条件约束项转化为一个惩罚项，从而实现边界条件的施加。罚函数法具有简洁高效的特点，但需要选择合适的罚因子，过大或过小的罚因子都会影响计算精度的稳定性。
+最后，介绍了Nitsche法。Nitsche法是一种满足变分一致性的边界条件施加方法。它通过在变分原理中引入形函数高阶梯度和人工参数，来处理边界条件。然而，由于引入了高阶梯度和人工参数，Nitsche法的计算效率相对较低，并且需要仔细选择参数以满足正定性的要求

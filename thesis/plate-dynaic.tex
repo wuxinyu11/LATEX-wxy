@@ -1,0 +1,187 @@
+\chapter{HR薄板动力分析}
+\section{薄板运动控制方程}
+考虑如图()所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。根据Kirchhoff薄板假设原理[]，在薄板中面$\Omega$上的控制方程为：
+\begin{equation}
+    \begin{cases}
+        M_{\alpha\beta,\alpha\beta}+\bar q=\rho h \ddot{w}&\mathrm{in} \; \Omega\\
+        w=\bar w&\mathrm{on}\;\Gamma_w\\
+        \theta_{\boldsymbol n}=w_{,\pmb n}=\bar \theta_{\boldsymbol n}&\mathrm{on}\;\Gamma_{\theta}\\
+        V_{\pmb n}=Q_{\pmb n}+M_{\pmb{ns},\pmb s}=\bar V_{\pmb n}&\mathrm{on}\;\Gamma_V\\
+        M_{\pmb{nn}}=\bar M_{\pmb{nn}}&\mathrm{on}\; \Gamma_M\\
+        w=\bar w&\mathrm{at} \; c_w\\
+        P=-[[M_{ns}]]\vert_{c_p}=\bar p&\mathrm{at}\; c_P
+    \end{cases}
+\end{equation}
+其中：
+\begin{equation}
+\begin{split}
+    \begin{cases}
+    w_{,\pmb n}=w_{,\alpha}n_{\alpha}\\
+Q_{\pmb n}=n_{\alpha}M_{\alpha\beta,\beta}\\
+M_{\pmb{nn}}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{\pmb{ns}}=M_{\alpha\beta n_{\alpha}s_{\beta}},M_{\pmb{ns,s}}=M_{\alpha\beta,\gamma}s_{\alpha}n_{\beta}s_{\gamma}
+    \end{cases}
+\end{split}
+\end{equation}
+$M_{\alpha\beta}$为矩量$\boldsymbol M$的弯曲和扭转分量，$\bar q$为垂直于薄板中面的分布荷载，$\rho$分别表示板的密度，$w$表示薄板中面挠度，$w$上方两点表示对时间$t$的两次微分。$\Gamma_w$、$\Gamma_{\theta}$和$c_w$为强制边界边界条件，$\bar w$和$\bar \theta_n$分别为强制边界条件上给定的挠度和转角。$\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_{\boldsymbol{nn}}$和$P$为自然边界上的等效剪力、法向弯矩和薄板角上的集中荷载。所有的边界条件都满足如下关系式:
+\begin{equation}
+    \begin{split}
+        \Gamma=\Gamma_w\cup\Gamma_V\cup\Gamma_{\theta}\cup\Gamma_M,c=c_w\cup c_P\\
+        \Gamma_w\cap\Gamma_V=\Gamma_{\theta}\cap\Gamma_M=c_w\cap c_P=\varnothing
+    \end{split}
+\end{equation}
+本文考虑Hellinger-Ressiner变分原理为基础的伽辽金弱形式，其能量泛函中包含薄板中面挠度$w$和弯矩$\boldsymbol M$两个变量，能量泛函分别对这两个变量进行变分可得如下伽辽金弱形式：
+\begin{equation}
+\begin{split}
+    \int_\Omega  {\delta {M_{\alpha \beta }}D_{\alpha \beta \gamma \eta }^{ - 1}{M_{\gamma \eta }}d\Omega }  = \int_\Gamma  {\delta {V_{\pmb{n}}}wd\Gamma }  - \int_\Gamma  {\delta {M_{{\pmb{nn}}}}{w_{{\pmb{,n}}}}d\Gamma }  + {\left. {\delta Pw} \right|_{{\bf{x}} \in c}}\\
+     - \int_\Omega  {\delta {M_{\alpha \beta ,\alpha \beta }}wd\Omega } n - \int_{{\Gamma _w}} {\delta {V_{\pmb{n}}}wd\Gamma }  + \int_{{\Gamma _\theta }} {\delta {M_{{\pmb{nn}}}}{w_{,{\pmb{n}}}}d\Gamma }  - {\left. {\delta Pw} \right|_{{\bf{x}} \in {c_w}}}\\
+     + \int_{{\Gamma _w}} {\delta {V_{\pmb{n}}}\bar wd\Gamma }  - \int_{{\Gamma _\theta }} {\delta {M_{{\pmb{nn}}}}{{\bar \theta }_n}d\Gamma }  + {\left. {\delta P\bar w} \right|_{{\bf{x}} \in {c_w}}}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+    \int_\Omega  \delta  w\rho h\ddot wd\Omega  + \int_\Gamma  {\delta w{V_{\pmb{n}}}d\Gamma }  - \int_\Gamma  {\delta {w_{,{\pmb{n}}}}{M_{{\pmb{nn}}}}d\Gamma }  + {\left. {\delta wP} \right|_{{\bf{x}} \in {c_{}}}}\\
+     - \int_\Omega  {\delta w{M_{\alpha \beta ,\alpha \beta }}d\Omega }  - \int_{{\Gamma _w}} {\delta w{V_{\pmb{n}}}d\Gamma }  + \int_{{\Gamma _\theta }} {\delta {w_{{\pmb{,n}}}}{M_{{\pmb{nn}}}}d\Gamma }  - {\left. {\delta wP} \right|_{{\bf{x}} \in {c_w}}}\\
+     = \int_{{\Gamma _V}} {\delta w{{\bar V}_{\pmb{n}}}d\Gamma }  - \int_{{\Gamma _M}} {\delta {w_{{\pmb{,n}}}}{{\bar M}_{{\pmb{nn}}}}d\Gamma }  + {\left. {\delta w\bar P} \right|_{{\bf{x}} \in {c_P}}} + \int_\Omega  {\delta w\bar qd\Omega } 
+\end{split}
+\end{equation}
+\section{混合离散}
+挠度$w$采用无网格再生核近似离散。\par
+弯矩$M$采用再生光滑梯度近似。
+\section{Hellinger-Reissner变分原理下的本质边界条件施加方法}
+通过式()看出在四阶薄板问题上基于Hellinger-Reissner变分原理得到的弱形式中已经考虑了本质边界条件和自然边界条件。
+为了更好的研究Hellinger-Reissner变分原理在求解薄板问题上的本质边界条件施加方法，此时将挠度离散表达式()和弯矩离散表达式()代入到式()中得到：
+\begin{equation}
+\begin{split}
+    {\pmb{M\ddot d}} - \sum\limits_{C = 1}^{NC} {(\tilde g_{\alpha \beta I}^T - \tilde g_{\alpha \beta I}^T)}\pmb{a}_{\alpha \beta } = \pmb{f}
+\end{split}
+\end{equation}
+其中：
+\begin{equation}
+\begin{split}
+    {M_{IJ}} = \int_\Omega{{\Psi _I}}\rho h{\Psi _J}d\Omega 
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+    {f_I} = \int_{{\Gamma _V}} {{\Psi _I}} {{\bar V}_{\rm{n}}}\Gamma  - \int_{{\Gamma _M}} {{\Psi _{I,n}}} {{\bar M}_{{\rm{nn}}}}d\Gamma  + \int_\Omega  {{\Psi _I}} \bar qd\Omega  + {\Psi _I}\bar P{|_{x \in {c_P}}}    
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+&- \sum\limits_{C = 1}^{NC} {(\tilde g_{\alpha \beta I}^T - \bar g_{\alpha \beta I}^T)} {a_{\alpha \beta }}\\
+&= \sum\limits_{C = 1}^{NC} ( \tilde g_{\alpha \beta I}^T - \bar g_{\alpha \beta I}^T){D_{\alpha \beta \gamma \eta }}{G^{ - 1}}(\sum\limits_{J = 1}^{NP} ( {{\tilde g}_{\gamma \eta J}} - {{\bar g}_{\gamma \eta J}}){d_I} + {{\hat g}_{\gamma \eta }})\\
+&= \sum\limits_{C = 1}^{NC} {\sum\limits_{J = 1}^{NP} {{D_{\alpha \beta \gamma \eta }}} } \tilde g_{\alpha \beta I}^T{G^{ - 1}}{{\tilde g}_{\gamma \eta J}}{d_J} + \sum\limits_{C = 1}^{NC} {\sum\limits_{J = 1}^{NP} {{D_{\alpha \beta \gamma \eta }}} } ( - \bar g_{\alpha \beta I}^T{G^{ - 1}}{{\tilde g}_{\gamma \eta J}} - \tilde g_{\alpha \beta I}^T{G^{ - 1}}{{\tilde g}_{\gamma \eta J}}){d_J}\\
+&- ( - \sum\limits_{C = 1}^{NC} {{D_{\alpha \beta \gamma \eta }}} \tilde g_{\alpha \beta I}^T{G^{ - 1}}{{\hat g}_{\gamma \eta }}) + \sum\limits_{C = 1}^{NC} {\sum\limits_{J = 1}^{NP} {{D_{\alpha \beta \gamma \eta }}} } \bar g_{\alpha \beta I}^T{G^{ - 1}}{{\tilde g}_{\gamma \eta J}}{d_J} - \sum\limits_{C = 1}^{NC} {{D_{\alpha \beta \gamma \eta }}} \bar g_{\alpha \beta I}^T{G^{ - 1}}{{\hat g}_{\gamma \eta }}\\
+&= \sum\limits_{J = 1}^{NP} {(K_{IJ}^{}}  + {{\tilde K}_{IJ}} + {{\bar K}_{IJ}}){d_J} - {{\tilde f}_I} - {{\bar f}_I}
+\end{split}
+\end{equation}
+其中：
+\begin{equation}
+\begin{split}
+    K_{IJ}=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega 
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+    \tilde{K}_{IJ}=&-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{x\in{c_w}}\\
+    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+    \bar{K}_{IJ}=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+    \tilde{f}_I=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+        \bar{f}_I=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}
+\end{split}
+\end{equation}
+得到考虑边界的系统离散方程为：
+\begin{equation}
+\begin{split}
+    \pmb{M}\ddot{\pmb{d}}+(\pmb{K}+\tilde{\pmb{K}}+\bar{\pmb{K}})\pmb{d}=(\pmb{f}+\tilde{\pmb{f}}+\bar{\pmb{f}})
+\end{split}
+\end{equation}
+\section{时间域离散与频散精度分析}
+\subsection{时间域离散}
+对于时间域离散，采用HHT方法，全离散运动方程的表达式为：
+\begin{equation}
+\begin{split}
+\pmb{M}\pmb{a}_{m+1}+(1+\alpha)\pmb{K}\pmb{d}_{m+1}-\alpha\pmb{K}\pmb{d}_{m}=\pmb{f}_{m+\alpha}
+\end{split}
+\end{equation}
+其中：
+\begin{equation}
+\begin{split}
+    &\pmb f_{m+\alpha}=\pmb f(t_{m+\alpha})\\
+    &t_{m+\alpha}=t_{m+1}+\alpha\Delta t
+\end{split}
+\end{equation}
+式中$\alpha$为HHT方法中的参数。\par
+采用的HHT方法仍然采用Newbark法的预测-矫正算法、位移和速度系数向量预测和矫正阶段的表达式分别为：\\
+预测阶段：
+\begin{equation}
+\begin{split}
+\begin{cases}
+    \hat{\pmb{d}}_{m+1}=\pmb{d}_m+(\Delta t)v_m+\frac{(\Delta t)^2}{2}(1-2\beta)\pmb{a}_m\\
+    \hat{\pmb{v}}_{m+1}=\pmb{v}_m+(\Delta t)(1-\gamma)\pmb{a}_m
+\end{cases}  
+\end{split}
+\end{equation}
+矫正阶段：
+\begin{equation}
+\begin{split}
+\begin{cases}
+     \pmb{d}_{m+1}=\hat{\pmb{d}}_{m+1}+\beta(\Delta t)^2\pmb{a}_{m+1}\\
+     \pmb{v}_{m+1}=\hat{\pmb{v}}_{m+1}+\gamma\Delta t\pmb{a}_{m+1}
+\end{cases}  
+\end{split}
+\end{equation}
+其中$\pmb{v}=\dot{\pmb{d}}$、$\pmb{a}=\dot{\pmb{v}}$，$\beta$、$\gamma$为积分参数，$\Delta t$是指从$t_m$到$t_{m+1}$时刻的时间步长，下标“$m$”表示相应时刻的量。
+当选取$\alpha\in[\frac{-1}{3},0]$，$\beta=\frac{(1-\alpha)^2}{4}$，$\gamma=\frac{1-\alpha}{2}$时HHT时间积分方法无条件稳定，
+且当$\alpha=0$时，HHT时间积分方法简化为Newbark法。将式()代入到式()中可得到加速度系数向量的更新方程：
+\begin{equation}
+\begin{split}
+[\pmb{M}+(1+\alpha)\beta(\Delta t)^2\pmb{K}]\pmb{a}_{m+1}=\pmb{f}_{m+1}+\alpha\pmb{K}\pmb{d}_m-(1+\alpha)\pmb{K}\hat{\pmb{d}}_{m+1}
+\end{split}
+\end{equation}
+求得$\pmb{a}_{m+1}$后，可通过式()计算$t_{m+1}$时刻的速度和位移系数向量。
+\subsection{频散精度分析}
+频散特性是度量离散动力系统精度的一种有效方法。在频散特性中，研究对象为自由振动，不考虑外力和边界条件的影响，此时运动方程式()只包含由均匀无网格节点布置得到的
+离散质量矩阵$\pmb{M}$和由再生光滑梯度组成的刚度矩阵$\tilde{\pmb{K}}$,对应的自由振动方程为：
+\begin{equation}
+\begin{split}
+    - {({\omega ^h})^2}\sum\limits_{J \in {S_{JI}}}^{} {{M_{IJ}}{d_J} + \sum\limits_{J \in {S_J}_I}^{} {{{\tilde K}_{IJ}}{d_J} = 0} } 
+\end{split}
+\end{equation}
+其中：$S_{IJ}={J\vert supp(x_J)\cap supp(x_I)\ne \varnothing}$，$\omega^h$为频率数值解。\par
+对节点系数$d_J(t)$引入简谐波假定得到：
+\begin{equation}
+\begin{split}
+    {d_J}(t)={d_0}\exp[\iota({k_x}{x_J}+{k_y}{x_J}-{\omega ^h}t)]
+\end{split}
+\end{equation}
+其中$d_O$为波幅，$\iota=\sqrt{-1}$，$k_x$、$k_y$分别为$x$、$y$方向上的波数，将式()代入到式()中可以得到相速度$c_{np}$：
+\begin{equation}
+\begin{split}
+    {c_{np}} = \frac{{{\omega ^h}}}{\omega } = \sqrt {\frac{{{{(kh)}^{ - 2}}\sum\limits_{J \in {S_{JI}}}^{} {{{\tilde K}_{IJ}}\exp [\iota ({k_x}{x_J} + {k_y}{x_J})]} }}{{\sum\limits_{J \in {S_{JI}}}^{} {{M_{IJ}}{h^{ - 2}}\exp [\iota ({k_x}{x_J} + {k_y}{x_J})]} }}} 
+\end{split}
+\end{equation}
+式中$\omega=c\sqrt{k_x^2+k_y^2}$表示真实频率，$h$为节点间距。频率的相对精度可以表示为：
+\begin{equation}
+\begin{split}
+    {e_f} = {c_{np}} - 1 = \frac{{{\omega ^h}}}{\omega } - 1 \approx O({h^r})
+\end{split}
+\end{equation}
+其中$r$表示频率的收敛阶次
+
+
+
+\section{数值算例}
+

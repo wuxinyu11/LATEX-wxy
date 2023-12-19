@@ -21,7 +21,7 @@
     \Psi_I(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{c}(\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
 \end{split}
 \end{equation}
-式中$\pmb{p}(\pmb{x})$表示为$p$阶的多项式基函数向量，具体表达式为：
+其中$\pmb{p}(\pmb{x})$表示为$p$阶的多项式基函数向量，具体表达式为：
 \begin{equation}
 \begin{split}
     \pmb{p}(\pmb{x})=\{1,x,y,\dotsb,x^iy^i,\dotsb,y^p\},0\le i+j \le p
@@ -74,13 +74,13 @@
     \pmb{A}(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{p}(\pmb{x}_I-\pmb{x})\pmb{p}^T(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
 \end{split}
 \end{equation}\par
-将$\pmb{c}(\pmb{x})$代入到式(\ref{shapefunction})中得到再生核无网格形函数的具体表达式为：
+将$\pmb{c}(\pmb{x})$代入到式(\ref{shapefunction})中得到再生核无网格形函数的具体表达式：
 \begin{equation}\label{Pshapefunction}
 \begin{split}
     \Psi_I(\pmb{x})=\pmb{p}^T(\pmb{0})\pmb{A}^{-1}(\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
 \end{split}
 \end{equation}\par
-对无网格形函数$\Psi_I(\pmb{x})$分别求一阶梯度和二阶梯度得到：
+进一步对无网格形函数$\Psi_I(\pmb{x})$分别求一阶梯度和二阶梯度得到：
 \begin{equation}
 \begin{split}
     \Psi_{I,i}(\pmb{x})=\left(\begin{matrix}
@@ -140,8 +140,9 @@
 \end{subcaptiongroup}
 \caption{二维无网格形函数及其一阶导数}\label{gradient}
 \end{figure}
-图(\ref{gradient})表示为二维无网格形函数及其一阶导数。从图中可以看出无网格形函数具有高阶连续光滑的特点，但无网格形函数一般不具有插值性，即$\Psi_I(\pmb{x})\ne \delta_{IJ}$，因此无法像有限元法一样直接施加本质边界条件(从图中怎么看出的？)
-% \section{边界点处形函数讨论}
+在图(\ref{gradient})中，如果无网格形函数具有插值性，即$\Psi_I(\pmb{x})=\delta_{IJ}$，那么在节点$\pmb{x}_I$处，无网格形函数及其一阶导数应该分别等于1和0。
+然而，从图中可以观察到无网格形函数在节点$\pmb{x}_I$处的值不等于1，且一阶导数不等于0。这表明无网格形函数一般不具有插值性，即无法像有限元法一样直接满足本质边界条件。
+因此，在无网格方法中，需要采用其他方法来施加本质边界条件，以确保问题的准确性和可靠性
 \section{伽辽金无网格法}
 \subsection{弹性力学问题的伽辽金无网格离散}
 不失为一般性，弹性力学问题的基本未知量为位移向量$\pmb{u}=\{u_i\},i=1,\dotsb,n_{sd}$，其静力平衡方程为：
@@ -168,14 +169,14 @@
     \Pi(\pmb{u})=\frac{1}{2}\int_{\Omega}\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}u_ib_id\Omega-\int_{\Gamma^t}u_it_id\Gamma
 \end{split}
 \end{equation}
-对式(\ref{elasticity potential functional})进行变分可以得到式(\ref{elasticity problems})的等效积分弱形式，其表达式为：
+对式(\ref{elasticity potential functional})进行变分可以得到式(\ref{elasticity problems})的等效积分弱形式：
 \begin{equation}\label{elasticity weak form}
 \begin{split}
     \delta\Pi(\pmb{u})&=\int_{\Omega}\delta\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}\delta u_ib_id\Omega-\int_{\Gamma^t}\delta u_it_id\Gamma\\
    &=0
 \end{split}
 \end{equation}\par
-此时引入位移向量$\pmb{u}$，应变向量$\pmb{\varepsilon}$，应力向量$\pmb{\sigma}$的表达式：
+进一步引入位移$\pmb{u}$，应变$\pmb{\varepsilon}$，应力$\pmb{\sigma}$的向量表达式：
 \begin{equation}
 \begin{split}
     \pmb{u}=\left\{\begin{matrix} u_x\\u_y\end{matrix}\right\}
@@ -244,7 +245,7 @@
     &\pmb{K}\pmb{d}=\pmb{f}
 \end{split}
 \end{equation}
-式中$\pmb{d}=\{\pmb d_I\}$表示位移向量，$\pmb{K}=\{K_{I\!J}\}$和$\pmb{f}=\{f_I\}$分别表示刚度矩阵和力向量，具体表达式为：
+其中$\pmb{d}=\{\pmb d_I\}$表示位移向量，$\pmb{K}=\{K_{I\!J}\}$和$\pmb{f}=\{f_I\}$分别表示刚度矩阵和力向量，具体表达式为：
 \begin{equation}
 \begin{split}\label{EKf}
         &K_{I\!J}=\int_{\Omega}\pmb{B}_I^T\pmb{C}\pmb{B}_Jd\Omega\\
@@ -365,5 +366,7 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
 \end{split}
 \end{equation}
 \section{小结}
-本章首先系统地分析了再生核无网格近似理论，讨论再生核无网格形函数的一致性条件。接着以二阶弹性力学问题和四阶薄板问题为例，
-详细介绍了关于这两类问题的伽辽金无网格法的离散平衡控制方程。区别于有限元，无网格形函数通常在节点上不具备插值性，需要采用适当的方法施加强制边界条件。
+本章首先对再生核无网格近似理论进行了系统分析，讨论了再生核无网格形函数的一致性条件。再生核无网格法是一种用于求解偏微分方程的数值积分方法，
+是指通过离散点之间的相对位置关系来进行近似。接下来以二阶弹性力学问题和四阶薄板问题为例，详细介绍了伽辽金无网格法在这两类问题上的离散平衡控制方程。
+在二阶弹性力学问题中，伽辽金无网格法利用再生核无网格形函数近似位移场，在四阶薄板问题中，伽辽金无网格法同样采用再生核无网格形函数近似挠度场。
+与传统有限元法不同，再生核无网格形函数通常不具备插值性，因此需要采用适当的方法进行施加强制边界条件。
