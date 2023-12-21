@@ -1,4 +1,5 @@
 \chapter{无网格近似理论}
+在本章中，以再生核无网格法为例，对伽辽金无网格法进行了比较系统的讨论，并进一步阐述了伽辽金无网格法在二阶弹性力学问题和四阶薄板问题上的离散平衡控制方程。
 \section{再生核无网格近似}
 无网格法通过如图(\ref{nomeshpoint})所示的问题域$\Omega$和边界$\Gamma$上布置一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$进行离散，
 其中$N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形函数为$\Psi_I(\pmb{x})$，影响域为$supp(\pmb{x}_I)$，
@@ -172,8 +173,7 @@
 对式(\ref{elasticity potential functional})进行变分可以得到式(\ref{elasticity problems})的等效积分弱形式：
 \begin{equation}\label{elasticity weak form}
 \begin{split}
-    \delta\Pi(\pmb{u})&=\int_{\Omega}\delta\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}\delta u_ib_id\Omega-\int_{\Gamma^t}\delta u_it_id\Gamma\\
-   &=0
+    \delta\Pi(\pmb{u})&=\int_{\Omega}\delta\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}\delta u_ib_id\Omega-\int_{\Gamma^t}\delta u_it_id\Gamma=0
 \end{split}
 \end{equation}\par
 进一步引入位移$\pmb{u}$，应变$\pmb{\varepsilon}$，应力$\pmb{\sigma}$的向量表达式：
@@ -199,8 +199,8 @@
     \end{matrix}\right]
     \left\{\begin{matrix}
         \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
-    \end{matrix}\right\}\\
-    &=\pmb{D}\left\{\begin{matrix}\varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}\end{matrix}\right\}
+    \end{matrix}\right\}
+    =\pmb{D}\left\{\begin{matrix}\varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}\end{matrix}\right\}
 \end{split}
 \end{equation}\par
 当考虑$xy$平面内的平面应力问题时，弹性本构关系的向量表达式为：
@@ -214,8 +214,8 @@
         \end{matrix}\right]
         \left\{\begin{matrix}
         \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
-    \end{matrix}\right\}\\
-    &=\pmb{D}\left\{\begin{matrix}\varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}\end{matrix}\right\}
+    \end{matrix}\right\}
+    =\pmb{D}\left\{\begin{matrix}\varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}\end{matrix}\right\}
 \end{split}
 \end{equation}
 其中$\pmb{D}$为弹性张量$\pmb{C}$的矩阵表达式，$E$为杨氏模量，$\nu$为泊松比。\par

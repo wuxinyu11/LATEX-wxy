@@ -1,9 +1,15 @@
 \chapter{弹性力学问题HR}
+本章首先介绍了带有位移和应力双变量的Hellinger-Reissner变分原理，其次通过对位移和应力采用混合离散的方式提出了一种
+基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，最后通过数值算例验证所提方法的变分一致性、计算精度和计算效率。
 \section{Hellinger-Reissner变分原理}
-根据Hellinger-Ressiner变分原理\cite{}，对于弹性力学问题的控制方程式(\ref{elasticity problems})存在相应的余能泛函：
+Hellinger-Reissner变分原理也称为混合变分原理是一种用于连续介质力学问题的变分原理，适用于线性弹性力学问题。
+Hellinger-Reissner变分原理基于能量泛函的最小化原理，在弹性力学问题中引入了两个变分函数：位移场的变分函数和应力场的变分函数。
+通过对位移场$\pmb{u}$和应力场$\pmb{\sigma}$进行独立的变分，并利用格林公式，从而得到平衡方程和边界条件的弱形式。\par
+根据Hellinger-Ressiner变分原理\cite{}，对于弹性力学问题的控制方程式(\ref{elasticity problems})所对应的能量泛函表达式为：
 \begin{equation}
-\begin{split}
-    \Pi_c=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma
+\begin{split}\label{Ehellinger}
+    \Pi_{H\!R}(\sigma_{ij},u_i)=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma\\
+    +\int_{\Omega}u_i(\sigma_{ij,j}+b_i)d\Omega-\int_{\Gamma^t}u_i(\sigma_{ij} n_j-t_i)d\Gamma
 \end{split}
 \end{equation}
 其中$W(\sigma_{ij})$为应变余能，与应力和应变之间存在如下关系式：
@@ -13,41 +19,7 @@
 \end{split}
 \end{equation}
 式中$C_{ijkl}$为四阶弹性张量。\par
-此时采用拉格朗日乘子法施加应力边界条件从而建立新的变分泛函\cite{}：
-\begin{equation}\label{functional1}
-\begin{split}
-    \Pi_c^*&=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma\\
-    &+\int_{\Omega}\lambda_i(\sigma_{ij,j}+b_i)d\Omega+\int_{\Gamma^t}\eta_i(\sigma_{ij}n_j-t_i)d\Gamma
-\end{split}
-\end{equation}
-将式(\ref{functional1})进行一阶变分，并引入拉格朗日乘子$\lambda_i$施加到求解域$\Omega$，将拉格朗日乘子$\eta_i$施加到自然边界条件中得到：
-\begin{equation}\label{First-order variational}
-\begin{split}
-    \delta\Pi_c^*&=\int_{\Omega}(\frac{\partial W}{\partial\sigma_{ij}}\delta\sigma_{ij}+\delta\lambda_i(\sigma_{ij,j}+b_i)+\lambda_i\delta\sigma_{ij,j})d\Omega\\
-&-\int_{\Gamma^g}\delta\sigma_{ij}n_jg_id\Gamma+\int_{\Gamma^t}\delta\eta_i(\sigma_{ij}-t_i)d\Gamma+\int_{\Gamma^t}\eta_i\delta\sigma_{ij}n_jd\Gamma
-\end{split}
-\end{equation}
-通过格林公式和$\sigma_{ij}$的对称性得到如下公式：
-\begin{equation}\label{Green formula}
-\begin{split}
-    \int_{\Omega}\lambda_i\delta\sigma_{ij,j}d\Omega&=\int_{\Gamma}\lambda_i\delta\sigma_{ij}n_jd\Gamma-\int_{\Omega}\lambda_{i,j}\delta\sigma_{ij}d\Omega\\
-&=\int_{\Gamma^g}\delta\sigma_{ij}n_j\delta_id\Omega+\int_{\Gamma^t}\delta\sigma_{ij}n_j\delta_id\Omega-\int_{\Omega}\frac{1}{2}(\lambda_{i,j}+\lambda_{j,i})\delta\sigma_{ij}d\Omega
-\end{split}
-\end{equation}
-进一步将式(\ref{Green formula})代入式(\ref{First-order variational})得到：
-\begin{equation}
-\begin{split}
-    \delta\Pi_c^*&=\int_{\Omega}((\frac{\partial W}{\partial\sigma_{ij}}-\frac{1}{2}(\lambda_{i,j}+\lambda_{j,i}))\delta\sigma_{ij}+(\sigma_{ij,j}+b_i)\delta\lambda_i)d\Omega\\
-    &+\int_{\Gamma^g}(\lambda_i-g_i)\delta\sigma_{ij}n_jd\Gamma+\int_{\Gamma^t}((\sigma_{ij}n_j-t_i)\delta\eta_i+(\lambda_i+\eta_i)\delta\sigma_{ij}n_j)d\Gamma
-\end{split}
-\end{equation}\par
-根据泛函驻值条件$\delta\Pi_c^*=0$得出：
-\begin{equation}
-\begin{split}
-    \lambda_i=g_i=u_i,\eta_i=-u_i
-\end{split}
-\end{equation}\par
-将$\lambda_i=u_i,\eta_i=-u_i$代入式(\ref{functional1})中得到存在双变量$(u_i,\sigma_{ij})$的Hellinger-Reissner变分原理，进一步得到式(\ref{elasticity problems})中带有位移和应力双变量的伽辽金弱形式：
+对存在双变量$(u_i,\sigma_{ij})$的式(\ref{Ehellinger})进行变分得到带有位移和应力双变量的伽辽金弱形式表达式：
 \begin{equation}\label{weak form1}
 \begin{split} 
     \delta\Pi_{H\!R}(\sigma_{ij},u_i)&=\int_{\Omega}\delta\sigma_{ij}\frac{\partial W}{\partial \sigma_{ij}}d\Omega+\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega-\int_{\Gamma^t}\delta\sigma_{ij}n_ju_id\Gamma\\
@@ -67,16 +39,63 @@
 进一步将弱形式(\ref{weak form1})根据$\delta u_i$、$\delta\sigma_{ij}$改写为下列两式：
 \begin{equation}\label{deltau}
 \begin{split}
-    \int_{\Gamma}\delta u_i\sigma_{ij}n_jd\Gamma&-\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_jd\Gamma
-    =\int_{\Gamma^t}\delta u_it_id\Gamma+\int_{\Omega}\delta u_ib_id\Omega
+    &\int_{\Gamma}\delta u_i\sigma_{ij}n_jd\Gamma-\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_jd\Gamma\\
+    &=\int_{\Gamma^t}\delta u_it_id\Gamma+\int_{\Omega}\delta u_ib_id\Omega
 \end{split}
 \end{equation} 
 \begin{equation}\label{deltasigma}
 \begin{split}
-    \int_{\Omega}\delta\sigma_{ij}C^{-1}_{ijkl}\sigma_{kl}d\Omega=\int_{\Gamma}\delta\sigma_{ij}n_ju_id\Gamma-\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega
-    -\int_{\Gamma^g}\delta\sigma_{ij}n_ju_id\Gamma+\int_{\Gamma^g}\delta\sigma_{ij}n_jg_id\Gamma
+    \int_{\Omega}\delta\sigma_{ij}C^{-1}_{ijkl}\sigma_{kl}d\Omega&=\int_{\Gamma}\delta\sigma_{ij}n_ju_id\Gamma-\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega\\
+    &-\int_{\Gamma^g}\delta\sigma_{ij}n_ju_id\Gamma+\int_{\Gamma^g}\delta\sigma_{ij}n_jg_id\Gamma
 \end{split}
 \end{equation}    
+% 根据Hellinger-Ressiner变分原理\cite{}，对于弹性力学问题的控制方程式(\ref{elasticity problems})存在相应的余能泛函：
+% \begin{equation}
+% \begin{split}
+%     \Pi_c=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma
+% \end{split}
+% \end{equation}
+% 其中$W(\sigma_{ij})$为应变余能，与应力和应变之间存在如下关系式：
+% \begin{equation}
+% \begin{split}
+% \frac{\partial W(\sigma_{ij})}{\partial\sigma_{ij}}=C^{-1}_{ijkl}\sigma_{kl}=\varepsilon_{ij}
+% \end{split}
+% \end{equation}
+% 式中$C_{ijkl}$为四阶弹性张量。\par
+% 此时采用拉格朗日乘子法施加应力边界条件从而建立新的变分泛函\cite{}：
+% \begin{equation}\label{functional1}
+% \begin{split}
+%     \Pi_c^*&=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma\\
+%     &+\int_{\Omega}\lambda_i(\sigma_{ij,j}+b_i)d\Omega+\int_{\Gamma^t}\eta_i(\sigma_{ij}n_j-t_i)d\Gamma
+% \end{split}
+% \end{equation}
+% 将式(\ref{functional1})进行一阶变分，并引入拉格朗日乘子$\lambda_i$施加到求解域$\Omega$，将拉格朗日乘子$\eta_i$施加到自然边界条件中得到：
+% \begin{equation}\label{First-order variational}
+% \begin{split}
+%     \delta\Pi_c^*&=\int_{\Omega}(\frac{\partial W}{\partial\sigma_{ij}}\delta\sigma_{ij}+\delta\lambda_i(\sigma_{ij,j}+b_i)+\lambda_i\delta\sigma_{ij,j})d\Omega\\
+% &-\int_{\Gamma^g}\delta\sigma_{ij}n_jg_id\Gamma+\int_{\Gamma^t}\delta\eta_i(\sigma_{ij}-t_i)d\Gamma+\int_{\Gamma^t}\eta_i\delta\sigma_{ij}n_jd\Gamma
+% \end{split}
+% \end{equation}
+% 通过格林公式和$\sigma_{ij}$的对称性得到如下公式：
+% \begin{equation}\label{Green formula}
+% \begin{split}
+%     \int_{\Omega}\lambda_i\delta\sigma_{ij,j}d\Omega&=\int_{\Gamma}\lambda_i\delta\sigma_{ij}n_jd\Gamma-\int_{\Omega}\lambda_{i,j}\delta\sigma_{ij}d\Omega\\
+% &=\int_{\Gamma^g}\delta\sigma_{ij}n_j\delta_id\Omega+\int_{\Gamma^t}\delta\sigma_{ij}n_j\delta_id\Omega-\int_{\Omega}\frac{1}{2}(\lambda_{i,j}+\lambda_{j,i})\delta\sigma_{ij}d\Omega
+% \end{split}
+% \end{equation}
+% 进一步将式(\ref{Green formula})代入式(\ref{First-order variational})得到：
+% \begin{equation}
+% \begin{split}
+%     \delta\Pi_c^*&=\int_{\Omega}((\frac{\partial W}{\partial\sigma_{ij}}-\frac{1}{2}(\lambda_{i,j}+\lambda_{j,i}))\delta\sigma_{ij}+(\sigma_{ij,j}+b_i)\delta\lambda_i)d\Omega\\
+%     &+\int_{\Gamma^g}(\lambda_i-g_i)\delta\sigma_{ij}n_jd\Gamma+\int_{\Gamma^t}((\sigma_{ij}n_j-t_i)\delta\eta_i+(\lambda_i+\eta_i)\delta\sigma_{ij}n_j)d\Gamma
+% \end{split}
+% \end{equation}\par
+% 根据泛函驻值条件$\delta\Pi_c^*=0$得出：
+% \begin{equation}
+% \begin{split}
+%     \lambda_i=g_i=u_i,\eta_i=-u_i
+% \end{split}
+% \end{equation}\par   
 \section{位移-应力混合离散}
 位移分量$u_i$采用基于再生核近似的无网格形函数进行离散，考虑任意位移分量$u_i$其对应的无网格近似函数的表达式：
 \begin{equation}\label{ui}
@@ -91,7 +110,7 @@
 \end{split}
 \end{equation}
 其中$\pmb{p}$为$p$阶的多项式基函数向量，$\pmb{A}$为矩量矩阵，核函数$\phi_s(\pmb{x}_I-\pmb{x})$选取三次样条函数。具体求解过程见第一章。\par
-应力分量$\sigma_{ij}$采用在每个背景积分单元内建立局部的多项式进行离散。如图(\ref{background})所示，在二维三角形背景积分单元内将求解域$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,N\!C$，并且存在$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
+应力分量$\sigma_{ij}$采用在每个背景积分单元内建立局部的多项式进行离散。如图(\ref{Eintegralscheme})所示，在二维三角形背景积分单元内将求解域$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,N\!C$，并且存在$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
 在背景积分单元$\Omega_C$内，假设应力分量$\sigma_{ij}$为任意的多项式进行离散，并将离散后的应力分量$\sigma_{ij}$记为$\sigma^h_{ij}$：
 \begin{equation}\label{sigma}
 \begin{split}
@@ -99,11 +118,11 @@
 \end{split}
 \end{equation}
 其中$\pmb{q}(\pmb{x})$为($p-1$)阶的单项式基向量，即$\pmb{q}(\pmb{x})=\pmb{p}^{[p-1]}(\pmb{x})$。$\pmb{a}_{ij}$为$\sigma_{ij}^h(\pmb{x})$在积分域$\Omega_C$内的常系数向量。
-\begin{figure}[H]
-\centering
-    \includegraphics[scale=0.9]{figure/EHR/strain.png}
-    \caption{背景积分单元示意图}\label{background}
-\end{figure}
+% \begin{figure}[H]
+% \centering
+%     \includegraphics[scale=0.9]{figure/EHR/strain.png}
+%     \caption{背景积分单元示意图}\label{background}
+% \end{figure}
 为了得到常系数向量$\pmb{a}_{ij}$的具体表达式，首先将(\ref{sigma})、(\ref{ui})代入(\ref{deltasigma})中得到：
 \begin{equation}
 \begin{split}
@@ -320,8 +339,8 @@
     &(\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{d}=\pmb{f}+\tilde{\pmb{f}}+\bar{\pmb{f}}
 \end{split}
 \end{equation}\par
-Hellinger-Reissner变分原理下的离散平衡控制方程式中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和满足变分一致性的Nitsche法中的$K_{IJ}^n$、$f_I^n$相比，用再生光滑梯度$\tilde{\pmb{B}}_I$替代传统无网格形函数梯度$\pmb{B}_I$，进而提高计算效率。
-Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$和传统的Nitshche法中的$K^{\alpha}_{IJ}$、$f^{\alpha}_I$相比，无限额外施加人工参数，提高计算精度。\par
+Hellinger-Reissner变分原理下的离散平衡控制方程式中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和满足变分一致性的Nitsche法中的$K_{IJ}^v$、$f_I^v$相比，用再生光滑梯度$\tilde{\pmb{B}}_I$替代传统无网格形函数梯度$\pmb{B}_I$，进而提高计算效率。
+Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$和传统的Nitshche法中的$K^s_{IJ}$、$f^s_I$相比，无限额外施加人工参数，提高计算精度。\par
 为了保证离散弱形式的变分一致性在求解式(\ref{equationE})的过程中，引入的数值积分在求解的各个过程也需要保持一致。如图(\ref{Eintegralscheme})所示，基于Hellinger-Reissner变分原理下的本质边界条件施加方法
 需要两套数值积分点\cite{}，$\tilde{\pmb g}$和$\bar{\pmb g}$需要与$\tilde{\pmb{K}}$，$\bar{\pmb{K}}$，$\pmb{f}$，$\tilde{\pmb{f}}$和$\bar{\pmb{f}}$采用相同的一套数值积分点，
 式(\ref{g1})中的$\pmb{G}$和式(\ref{equationE})中$\pmb{K}$采用相同的数值积分方案。\par
@@ -356,6 +375,7 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
    \bottomrule
 \end{tabular}
 \end{table}
+\newpage
 \begin{table}[H]
     \caption{\textbf{三次基函数无网格法优化的数值积分方案}}
     \centering
@@ -515,7 +535,8 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
     \label{dshape}
     \end{subcaptiongroup}
 \caption{悬臂梁问题误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差}
-\end{figure}\newpage
+\end{figure}
+\newpage
 \begin{figure}[H]
 \centering
     \begin{subcaptiongroup}
@@ -597,10 +618,11 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
     \label{dshape}
 \end{subcaptiongroup}
 \caption{带孔无限大平板问题效率对比：\subref{Hcputime} 计算时间与节点数的关系；\subref{Hefficiency} 边界条件施加效率分析}
-\end{figure}\newpage
+\end{figure}
+\newpage
 \begin{figure}[H]
 \centering
-   \includegraphics[scale=0.57]{figure/EHR/hole/sigmaxx.png}
+   \includegraphics[scale=0.5]{figure/EHR/hole/sigmaxx.png}
 \caption{带孔无限大平板问题$\sigma_{xx}$应力云图}\label{sigmaxx}
 \end{figure} 
 \section{小结}
