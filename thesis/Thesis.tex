@@ -18,6 +18,7 @@
 \coverdate{二〇二三年五月二十八日}
 
 \begin{document}
+% \ctexset{bibname=参考文献}
 \makecover
 \frontmatter
 % \abstract
@@ -27,11 +28,13 @@
 
 \include{Introduction}
 \include{Nomesh}
-\include{Boundary conditions}
+\include{Boundaryconditions}
 \include{elasticHR}
 \include{plateHR}
+\include{plate-dynaic}
 \include{Conclusion}
-% \include{plate-dynaic}
+
+% \include{reference}
 
 % \include{elastic}
 % \include{plate}
@@ -39,4 +42,9 @@
 % \include{elasticHR}
 % \include{plate}
 % \include{plateHR}
+
+
+\renewcommand{\bibname}{参考文献}
+\bibliographystyle{unsrt}
+\bibliography{wu.bib}
 \end{document}

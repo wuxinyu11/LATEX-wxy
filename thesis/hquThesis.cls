@@ -38,7 +38,9 @@
 \RequirePackage{hyperref}
 \RequirePackage{booktabs,multirow}
 \RequirePackage{tabularx}
+\RequirePackage{cite}
 \RequirePackage[titles]{tocloft}
+
 
 \geometry{a4paper,top=3.8cm,bottom=3.8cm,left=3.2cm,right=3.2cm,bindingoffset=0cm,voffset=0.3cm,footskip=1cm,headheight=14pt}
 \setmainfont{Times New Roman}
@@ -213,3 +215,4 @@
 \titlespacing{\subsubsection}{0pt}{12pt}{6pt}
 \titleformat{\paragraph}[runin]{\rmfamily\fontsize{12pt}{20pt}\selectfont}{}{}{}
 \titlespacing{\paragraph}{0pt}{0pt}{0pt}
+

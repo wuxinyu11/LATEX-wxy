@@ -57,7 +57,7 @@
 \end{cases}
 \end{split}
 \end{equation}\par
-此外，无网格形函数满足多项式一致性条件：
+此外，无网格形函数满足多项式一致性条件[]：
 \begin{equation}\label{regeneration conditions}
 \begin{split}
     \sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})=\pmb{0}
@@ -164,7 +164,7 @@
         &\pmb{\varepsilon}=\frac{1}{2}(\nabla \pmb{u}+\pmb{u}\nabla),\varepsilon_{ij}=\frac{1}{2}(u_{i,j}+u_{j,i})
 \end{split}
 \end{equation}
-其中$C_{ijkl}$为四阶弹性张量，$\varepsilon$为应变，$\nabla$为梯度算子，“$\pmb{:}$”为双点积张量缩并运算符号。根据最小势能原理，弹性力学问题式(\ref{elasticity problems})的势能泛函表达式为：
+其中$C_{ijkl}$为四阶弹性张量，$\varepsilon$为应变，$\nabla$为梯度算子。根据最小势能原理，弹性力学问题式(\ref{elasticity problems})的势能泛函表达式为：
 \begin{equation}\label{elasticity potential functional}
 \begin{split}
     \Pi(\pmb{u})=\frac{1}{2}\int_{\Omega}\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}u_ib_id\Omega-\int_{\Gamma^t}u_it_id\Gamma
@@ -238,7 +238,7 @@
     \varepsilon^h(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{B}_I(\pmb{x})\pmb{d}_I,\pmb{B}_I(\pmb{x})= \left[\begin{matrix}\Psi_{I,x}&0\\0&\Psi_{I,y}\\\Psi_{I,y}&\Psi_{I,x} \end{matrix}\right] 
 \end{split}
 \end{equation}
-将式(\ref{displacement vector})-(\ref{strain vector})代入到弱形式(\ref{elasticity weak form})中可以得到弹性力学问题离散平衡控制方程：
+将式(\ref{displacement vector})-(\ref{strain vector})代入到弱形式(\ref{elasticity weak form})中可以得到弹性力学问题离散平衡控制方程式：
 \begin{equation}
 \begin{split}
     \delta\pmb{d}^T(\pmb{K}\pmb{d}&-\pmb{f})=0\\

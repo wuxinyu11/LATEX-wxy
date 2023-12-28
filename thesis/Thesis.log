@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  21 DEC 2023 11:09
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  28 DEC 2023 10:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -542,7 +542,11 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \TX@cols=\count331
 \TX@ftn=\toks28
 )
-(F:\MikTEX\tex/latex/tocloft\tocloft.sty
+(F:\MikTEX\tex/latex/cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (F:\MikTEX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
 \cftparskip=\skip77
@@ -736,33 +740,9 @@ LaTeX Warning: Label `dshape' multiply defined.
 
 LaTeX Warning: Label `sub@dshape' multiply defined.
 
-) (Boundary conditions.aux) (elasticHR.aux
+) (Boundaryconditions.aux) (elasticHR.aux
 
 LaTeX Warning: Label `ui' multiply defined.
-
-
-LaTeX Warning: Label `dshape' multiply defined.
-
-
-LaTeX Warning: Label `sub@dshape' multiply defined.
-
-
-LaTeX Warning: Label `dshape' multiply defined.
-
-
-LaTeX Warning: Label `sub@dshape' multiply defined.
-
-
-LaTeX Warning: Label `dshape' multiply defined.
-
-
-LaTeX Warning: Label `sub@dshape' multiply defined.
-
-
-LaTeX Warning: Label `dshape' multiply defined.
-
-
-LaTeX Warning: Label `sub@dshape' multiply defined.
 
 ) (plateHR.aux
 
@@ -776,18 +756,6 @@ LaTeX Warning: Label `CH1' multiply defined.
 
 
 LaTeX Warning: Label `sub@CH1' multiply defined.
-
-
-LaTeX Warning: Label `dshape' multiply defined.
-
-
-LaTeX Warning: Label `sub@dshape' multiply defined.
-
-
-LaTeX Warning: Label `dshape' multiply defined.
-
-
-LaTeX Warning: Label `sub@dshape' multiply defined.
 
 
 LaTeX Warning: Label `Ccputime' multiply defined.
@@ -885,7 +853,7 @@ LaTeX Warning: Label `Qefficiency' multiply defined.
 
 LaTeX Warning: Label `sub@Qefficiency' multiply defined.
 
-) (Conclusion.aux))
+) (plate-dynaic.aux) (Conclusion.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -1075,29 +1043,29 @@ t=0.167;"
 lden=2;slant=0.167;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 21.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 22.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 21.
+(Font)              size <10.95> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 21.
+(Font)              size <10.95> substituted on input line 22.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
 
 (F:\MikTEX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
 
  (F:\MikTEX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 21.
+(Font)              size <10.95> substituted on input line 22.
 
 File: covers/engineering_master.png Graphic file (type bmp)
 <covers/engineering_master.png>
@@ -1125,7 +1093,7 @@ Package fontspec Info: Font family 'simhei.ttf(0)' created for font
 ;slant=0.167;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 21.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 22.
 [1
 
 
@@ -1207,23 +1175,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4])
-[5]
+ [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5])
+[6]
 \openout2 = `Nomesh.aux'.
 
- (Nomesh.tex [6
-
-
-
-
-]
+ (Nomesh.tex
 Chapter 2.
 File: Figure/nomesh/point.png Graphic file (type bmp)
 <Figure/nomesh/point.png>
 
 LaTeX Warning: Citation `Liu' on page 7 undefined on input line 19.
 
-[7] [8]
+[7
+
+
+
+
+] [8]
 File: figure/nomesh/Qd1.png Graphic file (type bmp)
 <figure/nomesh/Qd1.png>
 File: figure/nomesh/Qd2.png Graphic file (type bmp)
@@ -1262,102 +1233,62 @@ Overfull \hbox (6.53552pt too wide) in paragraph at lines 270--271
 LaTeX Warning: Citation `Liu' on page 13 undefined on input line 307.
 
 [13] [14]) [15]
-\openout2 = `"Boundary conditions.aux"'.
+\openout2 = `Boundaryconditions.aux'.
 
- (Boundary conditions.tex [16
+ (Boundaryconditions.tex [16
 
 
 
 
 ]
 Chapter 3.
-
-LaTeX Warning: Citation `' on page 17 undefined on input line 6.
-
-[17] [18]
-
-LaTeX Warning: Citation `' on page 19 undefined on input line 95.
-
-[19]
-
-LaTeX Warning: Citation `' on page 20 undefined on input line 141.
-
-[20]
-
-LaTeX Warning: Citation `' on page 21 undefined on input line 174.
-
-
-LaTeX Warning: Citation `' on page 21 undefined on input line 207.
-
-[21]
-
-LaTeX Warning: Citation `' on page 22 undefined on input line 240.
-
-
+[17] [18] [19] [20] [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-Underfull \vbox (badness 5548) has occurred while \output is active []
-
- [23])
-Underfull \vbox (badness 1087) has occurred while \output is active []
-
- [24]
-[25]
+[23]) [24]
 \openout2 = `elasticHR.aux'.
 
- (elasticHR.tex [26
-
-
-
-
-]
+ (elasticHR.tex
 Chapter 4.
+[25
 
-LaTeX Warning: Citation `' on page 27 undefined on input line 8.
 
-[27] [28] [29]
 
-LaTeX Warning: Citation `' on page 30 undefined on input line 181.
 
-[30]
-Overfull \hbox (6.06525pt too wide) detected at line 264
+] [26] [27] [28]
+Overfull \hbox (6.06525pt too wide) detected at line 262
 []
  []
 
 
-Overfull \hbox (41.3611pt too wide) detected at line 275
+Overfull \hbox (41.3611pt too wide) detected at line 273
 []
  []
 
-[31]
-Overfull \hbox (54.64592pt too wide) detected at line 286
+[29]
+Overfull \hbox (54.64592pt too wide) detected at line 284
 []
  []
 
 
-Overfull \hbox (6.99939pt too wide) detected at line 304
+Overfull \hbox (6.99939pt too wide) detected at line 302
 []
  []
 
-[32] [33]
-
-LaTeX Warning: Citation `' on page 34 undefined on input line 345.
-
+[30] [31]
 File: figure/EHR/Eintegralscheme.png Graphic file (type bmp)
 <figure/EHR/Eintegralscheme.png>
 
 Underfull \vbox (badness 8151) has occurred while \output is active []
 
- [34]
-
-LaTeX Warning: Citation `' on page 35 undefined on input line 353.
-
+ [32]
 File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
 <figure/E/point2.png>
-[35]
+
+[33]
 File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
@@ -1367,33 +1298,33 @@ File: figure/EHR/patchtestmeshfree.png Graphic file (type bmp)
 
 Underfull \vbox (badness 1087) has occurred while \output is active []
 
- [36]
-[37]
+ [34]
+[35]
 File: figure/EHR/cantilever/cantilever.png Graphic file (type bmp)
 <figure/EHR/cantilever/cantilever.png>
- [38]
+ [36]
 File: figure/EHR/cantilever/cantilever.mesh.png Graphic file (type bmp)
 <figure/EHR/cantilever/cantilever.mesh.png>
- [39]
+ [37]
 File: figure/EHR/cantilever/L2.png Graphic file (type bmp)
 <figure/EHR/cantilever/L2.png>
 File: figure/EHR/cantilever/H1.png Graphic file (type bmp)
 <figure/EHR/cantilever/H1.png>
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 537.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 534.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 537.
+(Font)              size <5> substituted on input line 534.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 537.
+(Font)              size <5> substituted on input line 534.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 537.
+(Font)              size <5> substituted on input line 534.
 
-[40]
+[38]
 File: figure/EHR/cantilever/cputime.png Graphic file (type bmp)
 <figure/EHR/cantilever/cputime.png>
 File: figure/EHR/cantilever/efficiency.png Graphic file (type bmp)
@@ -1403,7 +1334,7 @@ File: figure/EHR/hole/hole.png Graphic file (type bmp)
 
 Underfull \vbox (badness 2027) has occurred while \output is active []
 
- [41]
+ [39]
 File: figure/EHR/hole/hole.mesh.png Graphic file (type bmp)
 <figure/EHR/hole/hole.mesh.png>
 File: figure/EHR/hole/L2.png Graphic file (type bmp)
@@ -1411,88 +1342,72 @@ File: figure/EHR/hole/L2.png Graphic file (type bmp)
 File: figure/EHR/hole/H1.png Graphic file (type bmp)
 <figure/EHR/hole/H1.png>
 
-[42]
+[40]
 File: figure/EHR/hole/cputime.png Graphic file (type bmp)
 <figure/EHR/hole/cputime.png>
 File: figure/EHR/hole/efficiency.png Graphic file (type bmp)
 <figure/EHR/hole/efficiency.png>
- [43]
+ [41]
 File: figure/EHR/hole/sigmaxx.png Graphic file (type bmp)
 <figure/EHR/hole/sigmaxx.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44])
-[45]
+ [42])
+[43]
 \openout2 = `plateHR.aux'.
 
- (plateHR.tex [46
+ (plateHR.tex [44
 
 
 
 
 ]
 Chapter 5.
-
-LaTeX Warning: Citation `' on page 47 undefined on input line 9.
-
-[47]
-
-LaTeX Warning: Reference `PPSI' on page 48 undefined on input line 51.
-
-[48]
-
-LaTeX Warning: Citation `' on page 49 undefined on input line 59.
-
-[49]
-Overfull \hbox (48.99626pt too wide) detected at line 129
+[45] [46] [47]
+Overfull \hbox (48.99626pt too wide) detected at line 132
 []
  []
 
-[50]
-
-LaTeX Warning: Citation `' on page 51 undefined on input line 143.
-
-LaTeX Font Info:    Trying to load font information for U+euf on input line 143
+[48]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 146
 .
-(F:\MikTEX\tex/latex/amsfonts\ueuf.fd
+ (F:\MikTEX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 Underfull \vbox (badness 1810) has occurred while \output is active []
 
- [51]
-[52]
-Overfull \hbox (10.53099pt too wide) detected at line 225
+ [49]
+[50]
+Overfull \hbox (10.53099pt too wide) detected at line 228
 []
  []
 
-[53]
+[51]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54]
-
-LaTeX Warning: Citation `' on page 55 undefined on input line 290.
-
+ [52]
 File: figure/PHR/Pintegralscheme.png Graphic file (type bmp)
 <figure/PHR/Pintegralscheme.png>
-[55]
+
+[53]
 File: figure/PHR/fenpian.png Graphic file (type bmp)
 <figure/PHR/fenpian.png>
- [56] [57]
+ [54] [55]
 File: figure/PHR/R/rectangular.png Graphic file (type bmp)
 <figure/PHR/R/rectangular.png>
 
 Underfull \vbox (badness 3291) has occurred while \output is active []
 
- [58]
+ [56]
 File: figure/PHR/R/rectangularmsh.png Graphic file (type bmp)
 <figure/PHR/R/rectangularmsh.png>
 
-Overfull \hbox (9.95195pt too wide) in paragraph at lines 387--388
+Overfull \hbox (9.95195pt too wide) in paragraph at lines 390--391
  [][] 
  []
 
-[59]
+[57]
 File: figure/PHR/R/CL2.png Graphic file (type bmp)
 <figure/PHR/R/CL2.png>
 File: figure/PHR/R/CH1.png Graphic file (type bmp)
@@ -1501,7 +1416,7 @@ File: figure/PHR/R/CH2.png Graphic file (type bmp)
 <figure/PHR/R/CH2.png>
 File: figure/PHR/R/CH3.png Graphic file (type bmp)
 <figure/PHR/R/CH3.png>
- [60]
+ [58]
 File: figure/PHR/R/QL2.png Graphic file (type bmp)
 <figure/PHR/R/QL2.png>
 File: figure/PHR/R/QH1.png Graphic file (type bmp)
@@ -1514,7 +1429,7 @@ File: figure/PHR/R/Ccputime.png Graphic file (type bmp)
 <figure/PHR/R/Ccputime.png>
 File: figure/PHR/R/Cefficiency.png Graphic file (type bmp)
 <figure/PHR/R/Cefficiency.png>
- [61]
+ [59]
 File: figure/PHR/R/Qcputime.png Graphic file (type bmp)
 <figure/PHR/R/Qcputime.png>
 File: figure/PHR/R/Qefficiency.png Graphic file (type bmp)
@@ -1523,7 +1438,7 @@ File: figure/PHR/R/calpha.png Graphic file (type bmp)
 <figure/PHR/R/calpha.png>
 File: figure/PHR/R/qalpha.png Graphic file (type bmp)
 <figure/PHR/R/qalpha.png>
- [62]
+ [60]
 File: figure/PHR/T/triangular.png Graphic file (type bmp)
 <figure/PHR/T/triangular.png>
 File: figure/PHR/T/triangularmsh.png Graphic file (type bmp)
@@ -1536,7 +1451,7 @@ File: figure/PHR/T/CH2.png Graphic file (type bmp)
 <figure/PHR/T/CH2.png>
 File: figure/PHR/T/CH3.png Graphic file (type bmp)
 <figure/PHR/T/CH3.png>
- [63] [64]
+ [61] [62]
 File: figure/PHR/T/QL2.png Graphic file (type bmp)
 <figure/PHR/T/QL2.png>
 File: figure/PHR/T/QH1.png Graphic file (type bmp)
@@ -1549,7 +1464,7 @@ File: figure/PHR/T/Cefficiencyomega.png Graphic file (type bmp)
 <figure/PHR/T/Cefficiencyomega.png>
 File: figure/PHR/T/Cefficiencygamma.png Graphic file (type bmp)
 <figure/PHR/T/Cefficiencygamma.png>
- [65]
+ [63]
 File: figure/PHR/T/Mxy.png Graphic file (type bmp)
 <figure/PHR/T/Mxy.png>
 File: figure/PHR/A/annular.png Graphic file (type bmp)
@@ -1557,11 +1472,11 @@ File: figure/PHR/A/annular.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66]
+ [64]
 File: figure/PHR/A/annularmsh.png Graphic file (type bmp)
 <figure/PHR/A/annularmsh.png>
 
-Overfull \hbox (8.79553pt too wide) in paragraph at lines 567--568
+Overfull \hbox (8.79553pt too wide) in paragraph at lines 568--569
  [][] 
  []
 
@@ -1573,7 +1488,7 @@ File: figure/PHR/A/QH2.png Graphic file (type bmp)
 <figure/PHR/A/QH2.png>
 File: figure/PHR/A/QH3.png Graphic file (type bmp)
 <figure/PHR/A/QH3.png>
-[67]
+[65]
 File: figure/PHR/A/Qcputime.png Graphic file (type bmp)
 <figure/PHR/A/Qcputime.png>
 File: figure/PHR/A/Qefficiency.png Graphic file (type bmp)
@@ -1582,26 +1497,49 @@ File: figure/PHR/A/Mxy.png Graphic file (type bmp)
 <figure/PHR/A/Mxy.png>
 File: figure/PHR/A/alpha.png Graphic file (type bmp)
 <figure/PHR/A/alpha.png>
- [68]
+ [66]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
+ [67]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70])
-[71]
-\openout2 = `Conclusion.aux'.
+ [68])
+[69]
+\openout2 = `plate-dynaic.aux'.
 
- (Conclusion.tex [72
+ (plate-dynaic.tex [70
 
 
 
 
 ]
 Chapter 6.
-) [73] (Thesis.aux (decision.aux) (declaration.aux) (Introduction.aux)
-(Nomesh.aux) (Boundary conditions.aux) (elasticHR.aux) (plateHR.aux)
-(Conclusion.aux))
+[71]
+Overfull \hbox (6.64717pt too wide) detected at line 77
+[]
+ []
+
+
+Underfull \vbox (badness 1902) has occurred while \output is active []
+
+ [72]
+[73] [74]) [75]
+\openout2 = `Conclusion.aux'.
+
+ (Conclusion.tex [76
+
+
+
+
+]
+Chapter 7.
+) [77] (Thesis.bbl [78
+
+
+
+]) [79] (Thesis.aux (decision.aux) (declaration.aux)
+(Introduction.aux) (Nomesh.aux) (Boundaryconditions.aux) (elasticHR.aux)
+(plateHR.aux) (plate-dynaic.aux) (Conclusion.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1618,15 +1556,15 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3A3851436AFACFAD0E619FBAB2817A1B;4376.
+(rerunfilecheck)             Checksum: CB960A628AD08C117DDA108CB4B46647;5296.
  ) 
 Here is how much of TeX's memory you used:
- 18585 strings out of 410379
- 391974 string characters out of 5795143
+ 18740 strings out of 410379
+ 395340 string characters out of 5795143
  1948432 words of memory out of 5000000
- 39509 multiletter control sequences out of 15000+600000
- 577839 words of font info for 198 fonts, out of 8000000 for 9000
+ 39648 multiletter control sequences out of 15000+600000
+ 577855 words of font info for 200 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,30n,99p,413b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,30n,99p,485b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (81 pages).
+Output written on Thesis.pdf (87 pages).

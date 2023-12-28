@@ -48,7 +48,7 @@ Hellinger-Reissner变分原理基于能量泛函的最小化原理，在薄板�
     \end{split}
 \end{equation} 
 \section{挠度-弯矩混合离散}
-薄板挠度$w$采用基于再生核近似的无网格形函数进行离散。无网格法通过如图(\ref{PPSI})所示在薄板中面$\Omega$和边界$\Gamma$上布置一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$进行离散，
+薄板挠度$w$采用基于再生核近似的无网格形函数进行离散。无网格法通过在薄板中面$\Omega$和边界$\Gamma$上布置一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$进行离散，
 不失为一般性，考虑任意薄板挠度$w$的近似表达式$w^h$及其虚位移$\delta w^h$可表示为：
 \begin{equation}\label{w}
 \begin{split}
@@ -123,9 +123,12 @@ $\pmb{a}_{\alpha\beta}$为弯矩分量$M_{\alpha\beta}$在积分域$\Omega_C$内
 其中：
 \begin{align}
 \label{PG}&\tilde{\pmb{G}}=\int_{\Omega_C}\tilde{\pmb{q}}\tilde{\pmb{q}}^Td\Omega\\
-\label{Pg1}&\tilde{g}_{\alpha\beta I}=\int_{\Gamma_C}\Psi_{I,n}\tilde{\pmb{q}}n_{\alpha}n_{\beta}d\Gamma-\int_{\Gamma_C}\Psi_I(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma+[[\Psi_I\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in c_C}+\int_{\Omega_C}\Psi_I\tilde{\pmb{q}}_{,\alpha\beta}d\Omega\\
-\label{Pg2}&\bar{g}_{\alpha\beta I}=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}\tilde{\pmb{q}}n_{\alpha}n_{\beta}d\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma+[[\Psi_I\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}\\
-\label{Pg3}&\hat{g}_{\alpha\beta I}=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\tilde{\pmb{q}}n_{\alpha}n_{\beta}\bar{\theta}_nd\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})\bar{w}d\Gamma+[[\bar{w}\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}
+\label{Pg1}&\tilde{g}_{\alpha\beta I}=\int_{\Gamma_C}\Psi_{I,n}\tilde{\pmb{q}}n_{\alpha}n_{\beta}d\Gamma-\int_{\Gamma_C}\Psi_I(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma
++[[\Psi_I\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in c_C}+\int_{\Omega_C}\Psi_I\tilde{\pmb{q}}_{,\alpha\beta}d\Omega\\
+\label{Pg2}&\bar{g}_{\alpha\beta I}=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}\tilde{\pmb{q}}n_{\alpha}n_{\beta}d\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma
++[[\Psi_I\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}\\
+\label{Pg3}&\hat{g}_{\alpha\beta I}=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\tilde{\pmb{q}}n_{\alpha}n_{\beta}\bar{\theta}_nd\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})\bar{w}d\Gamma
++[[\bar{w}\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}
 \end{align}
 式中$\Gamma_C$是$\Omega_C$的边界，此时将$\pmb{a}_{\alpha\beta}$代入到式(\ref{moment})中得到近似的弯矩分量$M^h_{\alpha\beta}(\pmb{x})$的表达式：
 \begin{equation}
@@ -329,7 +332,7 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
     \centering\label{cubic}
    \begin{tabular}{ccccc}
    \toprule
-   &$\quad$ &二次分片实验 &$\quad$ &三次分片实验\\
+    $\quad$&\multicolumn{2}{c}{二次分片实验}&\multicolumn{2}{c}{三次分片实验}\\
    \midrule
    &$L_2$-Error$\quad$&$H_2$-Error&$L_2$-Error$\quad$&$H_2$-Error\\
    \midrule
@@ -346,7 +349,7 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
     \centering\label{quartic}
    \begin{tabular}{ccccc}
    \toprule
-   &$\quad$ &三次分片实验 &$\quad$ &四次分片实验\\
+   $\quad$&\multicolumn{2}{c}{三次分片实验}&\multicolumn{2}{c}{四次分片实验}\\
    \midrule
    &$L_2$-Error$\quad$&$H_1$-Error&$L_2$-Error$\quad$&$H_1$-Error\\
    \midrule
@@ -416,14 +419,12 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
     \phantomcaption\label{QL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH1.png}
     \phantomcaption\label{QH1}
-    \label{dshape}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH2.png}
     \phantomcaption\label{QH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH3.png}
     \phantomcaption\label{QH3}
-    \label{dshape}
     \end{subcaptiongroup}
 \caption{简支方板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$误差；\subref{QH2}；$H_2$误差；\subref{QH3} $H_3$误差}
 \label{RQLH}
