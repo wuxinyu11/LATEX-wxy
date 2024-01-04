@@ -523,26 +523,47 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 组装相应的刚度矩阵和力向量这部分所用的时间上，“RKGSI-Nitshe”法和“RKGSI-HR”法计算效率基本相同。
 从整体上来看，拉格朗日乘子法和罚函数法的效率优于“HR”法和“Nitsche”法，但拉格朗日乘子法和罚函数法不具有变分一致性无法达到理论误差收敛率。
 因此，总体来说，相较于传统的本质边界条件施加方法，基于Hellinger-Reissner变分原理的本质边界条件施加方法“RKGSI-HR”能够达到理论误差收敛率，有效提高计算精度，相较于“RKGSI-Nitsche”法而言计算效率也更高。
+% \begin{figure}[H]
+% \centering
+% \begin{subcaptiongroup}
+%     \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/L2.png}
+%     \phantomcaption\label{CL2}
+%     \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/H1.png}
+%     \phantomcaption\label{CH1}
+%     \end{subcaptiongroup}
+% \caption{悬臂梁问题误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差}
+% \end{figure}
+% \newpage
+% \begin{figure}[H]
+% \centering
+%     \begin{subcaptiongroup}
+%         \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/cputime.png}
+%         \phantomcaption\label{Ccputime}
+%         \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/efficiency.png}
+%         \phantomcaption\label{Cefficiency}
+%         \end{subcaptiongroup}
+% \caption{悬臂梁问题效率对比：\subref{Ccputime} 计算时间与节点数的关系；\subref{Cefficiency} 边界条件施加效率分析}
+% \end{figure}
 \begin{figure}[H]
-\centering
-\begin{subcaptiongroup}
-    \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/L2.png}
-    \phantomcaption\label{CL2}
-    \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/H1.png}
-    \phantomcaption\label{CH1}
-    \end{subcaptiongroup}
-\caption{悬臂梁问题误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差}
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/cantilever/L2.png}
+    \caption{悬臂梁$L_2$误差对比}\label{CL2}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/cantilever/H1.png}
+    \caption{悬臂梁$H_1$误差对比}\label{CH1}
 \end{figure}
 \newpage
 \begin{figure}[H]
-\centering
-    \begin{subcaptiongroup}
-        \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/cputime.png}
-        \phantomcaption\label{Ccputime}
-        \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/efficiency.png}
-        \phantomcaption\label{Cefficiency}
-        \end{subcaptiongroup}
-\caption{悬臂梁问题效率对比：\subref{Ccputime} 计算时间与节点数的关系；\subref{Cefficiency} 边界条件施加效率分析}
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/cantilever/cputime.png}
+    \caption{计算时间与节点数的关系}\label{Ccputime}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/cantilever/efficiency.png}
+    \caption{边界条件施加效率分析}\label{Cefficiency}
 \end{figure}
 \subsection{带孔无限大平板问题}
 考虑经典的带孔无限大平板问题，如图(\ref{hole})所示，板的的中心存在一半径为$a=1$的圆形小孔，同时平板的无穷远处沿$x$轴方向施加均布荷载$T=1000$。
@@ -593,25 +614,47 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 从图中可以看出随着无网格节点数的增加，采用再生光滑梯度积分法“RKGSI”的效率明显高于传统高斯积分法“GI”,在施加强制边界条件的过程中，“HR”法不仅满足变分一致性同时计算效率还高于传统的“Nitsche”法。
 最后，图(\ref{sigmaxx})为带孔无限大平板问题的应力云图，从图中可以看出“RKGSI-Penalty”法和精确解之间是有差异的，
 而“RKGSI-Nitsche”法和“RKGSI-HR”法是和精确解几乎相同。但“Nitsche”法是需要依靠人工经验参数并且计算效率也低于“HR”法。
+\newpage
+% \begin{figure}[H]
+% \centering
+% \begin{subcaptiongroup}
+%         \includegraphics[width=0.49\textwidth]{figure/EHR/hole/L2.png}
+%         \phantomcaption\label{HL2}
+%         \includegraphics[width=0.49\textwidth]{figure/EHR/hole/H1.png}
+%         \phantomcaption\label{HH1}
+%         \end{subcaptiongroup}
+%     \caption{带孔无限大平板问题误差对比：\subref{HL2} $L_2$误差；\subref{HH1} $H_1$误差}
+%     \end{figure}
+% \begin{figure}[H]
+% \centering
+%     \begin{subcaptiongroup}
+%     \includegraphics[width=0.49\textwidth]{figure/EHR/hole/cputime.png}
+%     \phantomcaption\label{Hcputime}
+%     \includegraphics[width=0.49\textwidth]{figure/EHR/hole/efficiency.png}
+%     \phantomcaption\label{Hefficiency}
+% \end{subcaptiongroup}
+% \caption{带孔无限大平板问题效率对比：\subref{Hcputime} 计算时间与节点数的关系；\subref{Hefficiency} 边界条件施加效率分析}
+% \end{figure}
 \begin{figure}[H]
-\centering
-\begin{subcaptiongroup}
-        \includegraphics[width=0.49\textwidth]{figure/EHR/hole/L2.png}
-        \phantomcaption\label{HL2}
-        \includegraphics[width=0.49\textwidth]{figure/EHR/hole/H1.png}
-        \phantomcaption\label{HH1}
-        \end{subcaptiongroup}
-    \caption{带孔无限大平板问题误差对比：\subref{HL2} $L_2$误差；\subref{HH1} $H_1$误差}
-    \end{figure}
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/hole/L2.png}
+    \caption{带孔无限大平板问题$L_2$误差对比}\label{HL2}
+\end{figure}
 \begin{figure}[H]
-\centering
-    \begin{subcaptiongroup}
-    \includegraphics[width=0.49\textwidth]{figure/EHR/hole/cputime.png}
-    \phantomcaption\label{Hcputime}
-    \includegraphics[width=0.49\textwidth]{figure/EHR/hole/efficiency.png}
-    \phantomcaption\label{Hefficiency}
-\end{subcaptiongroup}
-\caption{带孔无限大平板问题效率对比：\subref{Hcputime} 计算时间与节点数的关系；\subref{Hefficiency} 边界条件施加效率分析}
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/hole/H1.png}
+    \caption{带孔无限大平板问题$H_1$误差对比}\label{HH1}
+\end{figure}
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/hole/cputime.png}
+    \caption{计算时间与节点数的关系}\label{Hcputime}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/hole/efficiency.png}
+    \caption{边界条件施加效率分析}\label{Hefficiency}
 \end{figure}
 \newpage
 \begin{figure}[H]

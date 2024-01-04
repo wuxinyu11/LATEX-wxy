@@ -15,8 +15,6 @@ Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: elasticHR.aux
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: plateHR.aux
-Reallocating 'name_of_file' (item size: 1) to 17 items.
-A level-1 auxiliary file: plate-dynaic.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: Conclusion.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
@@ -27,7 +25,7 @@ Warning--I didn't find a database entry for "Liu"
 Warning--I didn't find a database entry for ""
 You've used 3 entries,
             1791 wiz_defined-function locations,
-            482 strings with 4442 characters,
+            481 strings with 4426 characters,
 and the built_in function-call counts, 832 in all, are:
 = -- 76
 > -- 36
