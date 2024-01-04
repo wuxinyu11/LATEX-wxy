@@ -6,7 +6,7 @@
 \contentsline {chapter}{\numberline {2}无网格近似理论}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}再生核无网格近似}{7}{section.2.1}%
 \contentsline {section}{\numberline {2.2}伽辽金无网格法}{10}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}弹性力学问题的伽辽金无网格离散}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.1}弹性力学问题}{10}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}薄板问题的伽辽金无网格离散}{12}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}小结}{15}{section.2.3}%
 \contentsline {chapter}{\numberline {3}强制边界条件施加方法}{17}{chapter.3}%

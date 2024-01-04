@@ -1,53 +1,44 @@
 \chapter{无网格近似理论}
-在本章中，以再生核无网格法为例，对伽辽金无网格法进行了比较系统的讨论，并进一步阐述了伽辽金无网格法在二阶弹性力学问题和四阶薄板问题上的离散平衡控制方程。
+本章以再生核无网格法为例对伽辽金无网格法进行介绍，详细说明无网格形函数及其导数的构造过程，讨论无网格形函数的插值性。同时，介绍伽辽金无网格法在弹性力学问题和薄板问题上的应用。
 \section{再生核无网格近似}
-无网格法通过如图(\ref{nomeshpoint})所示的问题域$\Omega$和边界$\Gamma$上布置一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$进行离散，
-其中$N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形函数为$\Psi_I(\pmb{x})$，影响域为$supp(\pmb{x}_I)$，
-此时所有节点的影响域的总范围超过问题域$\Omega$，即每一个节点的影响域$supp(\pmb{x}_I)$满足$\Omega\subseteq^{N\!P}_{I=1}supp(\pmb{x}_I)$。
-考虑任意变量$u(\pmb{x})$，其对应的无网格近似函数$u^h(\pmb{x})$表示为：
+如图(\ref{nomeshpoint})所示的问题为例，无网格近似将求解域$\Omega$及其边界$\Gamma$离散为一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$，
+$N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形函数为$\Psi_I(\pmb{x})$，形函数影响域为$supp(\pmb{x}_I)$，
+并要求影响域的覆盖域需包含求解域$\Omega$，即$\Omega\subseteq^{N\!P}_{I=1}supp(\pmb{x}_I)$。
+考虑求解域$\Omega$内的一个变量$u(\pmb{x})$，其对应的无网格近似函数$u^h(\pmb{x})$可表示为：
 \begin{equation}\label{ui}
 \begin{split}
     u^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{I}
 \end{split}
 \end{equation}
-其中$d_{I}$表示与无网格节点$\pmb{x}_I$对应的系数。\par
+其中$d_{I}$表示与无网格节点$\pmb{x}_I$对应的节点系数。\par
 \begin{figure}[H]
 \centering
     \includegraphics[scale=0.6]{Figure/nomesh/point.png}
     \caption{无网格离散示意图}\label{nomeshpoint}
 \end{figure}\par
-根据再生核近似理论\cite{Liu}，无网格形函数可以假设为：
+根据再生核近似理论\cite{liuReproducingKernelParticle1995}，无网格形函数可以假设为如下再生核形式：
 \begin{equation}\label{shapefunction}
-\begin{split}
-    \Psi_I(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{p}^T(\pmb{x}_I-\pmb{x})\pmb{c}(\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
-\end{split}
+        \Psi_I(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{p}^{[p]T}(\pmb{x}_I-\pmb{x})\pmb{c}(\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
 \end{equation}
-其中$\pmb{p}(\pmb{x})$表示为$p$阶的多项式基函数向量，具体表达式为：
+其中$\pmb{p}^{[p]}(\pmb{x})$为$p$阶的多项式基函数向量，其表达式为：
 \begin{equation}
-\begin{split}
-    \pmb{p}(\pmb{x})=\{1,x,y,\dotsb,x^iy^i,\dotsb,y^p\},0\le i+j \le p
-\end{split}
+    \pmb{p}^{[p]}(\pmb{x})=\{1,\;x,\;y,\;\dotsb,\;x^iy^i,\;\dotsb,\;y^p\},\quad 0\le i+j \le p
 \end{equation}
-而$\phi_s(\pmb{x}_I-\pmb{x})$为附属于节点$\pmb{x}_I$的核函数，其影响域的大小由影响域尺寸$s$决定，核函数以及其影响域的大小共同决定了无网格形函数的局部紧支性和光滑性。对于二维问题，一般情况下核函数$\phi_s(\pmb{x}_I-\pmb{x})$的影响域为圆形域或者矩形域，可由下列公式得到：
+而$\phi_s(\pmb{x}_I-\pmb{x})$为附属于节点$\pmb{x}_I$的核函数，其影响域的大小由影响域尺寸$s$决定，核函数及其影响域的大小共同决定了无网格形函数的局部紧支性和光滑性。在二维情况下，核函数$\phi_s(\pmb{x}_I-\pmb{x})$的影响域通常为圆形域或者矩形域[]。本文的影响域形状均为矩形，矩形影响域的和函数可由下列公式计算得到：
 \begin{equation}
-\begin{split}
-    \phi_s(\pmb{x}_I-\pmb{x})=\varphi_{s_x}(r_x)\varphi_{s_y}(r_y),r_x=\frac{\lvert x_I-x\rvert}{s_x},r_y=\frac{\lvert y_I-y \rvert}{s_y}
-\end{split}
+    \phi_s(\pmb{x}_I-\pmb{x})=\varphi(r_x)\varphi(r_y),\quad r_x=\frac{\lvert x_I-x\rvert}{s_x},r_y=\frac{\lvert y_I-y \rvert}{s_y}
 \end{equation}
-其中$s_x$和$s_y$分别为$x$和$y$方向上影响域的大小，计算时一般使得两个方向上的影响域大小相等即$s_x=s_y=s$。选取核函数时一般遵循核函数阶次$m$大于等于基函数阶次$p(m\ge p)$的原则。针对二阶的弹性力学问题，无网格基函数一般选择二阶或者三阶，核函数$\phi_s(\pmb{x}_I-\pmb{x})$选取三次样条函数：
+其中$s_x$和$s_y$分别为$x$和$y$方向上影响域尺寸的大小，在均匀布置的节点下，计算时一般使得两个方向上的影响域大小相等即$s_x=s_y=s$。为保证紧支性和光滑性，$\varphi$通常取为阶次大于$p$的紧支函数。本文针对弹性力学问题，无网格基函数一般选择二阶或者三阶多项式基函数，核函数$\phi_s(\pmb{x}_I-\pmb{x})$取为三次样条函数：
 \begin{equation}
-\begin{split}
     \varphi(r)=\frac{1}{3!}
 \begin{cases}
     (2-2r)^3-4(1-2r)^3 &r\le \frac{1}{2}\\
     (2-2r)^3&\frac{1}{2}<r\le 1\\
     0&r>1
 \end{cases}
-\end{split}
-\end{equation}
-针对四阶的薄板问题，无网格基函数一般选择三阶或四阶，核函数$\phi_s(\pmb{x}_I-\pmb{x})$选取五次样条函数构造无网格形函数：
+\end{equation}\par
+针对薄板和薄壳问题，无网格基函数一般选择三阶或四阶多项式基函数，核函数$\phi_s(\pmb{x}_I-\pmb{x})$取为五次样条函数：
 \begin{equation}
-\begin{split}
         \varphi(r)=\frac{1}{5!}
 \begin{cases}
         (3-3r)^5-6(2-3r)^5+15(1-3r)^5&r\le\frac{1}{3}\\
@@ -55,43 +46,35 @@
         (3-3r)^5&\frac{2}{3}<r\le1\\
         0&r>1
 \end{cases}
-\end{split}
 \end{equation}\par
-此外，无网格形函数满足多项式一致性条件[]：
+最后，无网格形函数表达式(\ref{shapefunction})中$\pmb{c}$为待定系数向量，该待定系数通过满足下列一致性条件[]确定：
 \begin{equation}\label{regeneration conditions}
-\begin{split}
     \sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})=\pmb{0}
-\end{split}
 \end{equation}
-通过满足一致性条件，将式(\ref{shapefunction})代入到式(\ref{regeneration conditions})中得到待定系数向量$\pmb{c}(\pmb{x})$的具体表达式：
-\begin{equation}
-\begin{split}
+将式(\ref{shapefunction})代入到式(\ref{regeneration conditions})中即可得到待定系数向量$\pmb{c}(\pmb{x})$的具体表达式：
+\begin{equation}\label{c}
     \pmb{c}(\pmb{x})=\pmb{A}^{-1}(\pmb{x})\pmb{p}(\pmb{0})
-\end{split}
 \end{equation}
-其中$\pmb{A}(\pmb{x})$表示矩量矩阵，表达式为：
+式中$\pmb{A}$为矩量矩阵：
 \begin{equation}
-\begin{split}
-    \pmb{A}(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{p}(\pmb{x}_I-\pmb{x})\pmb{p}^T(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
-\end{split}
+        \pmb{A}(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{p}^{[p]}(\pmb{x}_I-\pmb{x})\pmb{p}^{[p]T}(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
 \end{equation}\par
-将$\pmb{c}(\pmb{x})$代入到式(\ref{shapefunction})中得到再生核无网格形函数的具体表达式：
+将(\ref{c})代入到式(\ref{shapefunction})中得到最终的再生核无网格形函数的表达式：
 \begin{equation}\label{Pshapefunction}
 \begin{split}
-    \Psi_I(\pmb{x})=\pmb{p}^T(\pmb{0})\pmb{A}^{-1}(\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
+        \Psi_I(\pmb{x})=\pmb{p}^{[p]T}(\pmb{0})\pmb{A}^{-1}(\pmb{x})\pmb{p}^{[p]}(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
 \end{split}
 \end{equation}\par
-进一步对无网格形函数$\Psi_I(\pmb{x})$分别求一阶梯度和二阶梯度得到：
+无网格形函数的一阶梯度可通过对无网格形函数$\Psi_I$求导得到：
 \begin{equation}
-\begin{split}
-    \Psi_{I,i}(\pmb{x})=\left(\begin{matrix}
-    \pmb p_{,i}^{T}(x_I-x)\pmb A^{-1}(x)\phi_s(x_I-x)\\
-    +\pmb p^{T}(x_I-x)\pmb A_{,i}^{-1}\phi_s(x_I-x)\\
-    \pmb p^{T}(x_I-x)\pmb A^{-1}(x)\phi _{s,i}(x_I-x)\\
-    \end{matrix}\right)
+    \Psi_{I,i}(\pmb{x})=\left ( \begin{aligned}
+    &\pmb p_{,i}^{T}(\pmb x_I-\pmb x)\pmb A^{-1}(\pmb x)\phi_s(\pmb x_I-\pmb x)\\
+    +&\pmb p^{T}(\pmb x_I-\pmb x)\pmb A_{,i}^{-1}\phi_s(\pmb x_I-\pmb x)\\
+    +&\pmb p^{T}(\pmb x_I-\pmb x)\pmb A^{-1}(\pmb x)\phi _{s,i}(\pmb x_I-\pmb x)\\
+    \end{aligned} \right)
     \pmb p(\pmb 0)
-\end{split}
 \end{equation}
+其中，下标“$,i$”表示对坐标$x_i$求导。进一步对上式再求一次导数可得形函数的二阶梯度为：
 \begin{equation}
 \begin{split}
     \Psi_{I,ij}(\pmb{x})=\left(\begin{matrix}
@@ -141,30 +124,32 @@
 \end{subcaptiongroup}
 \caption{二维无网格形函数及其一阶导数}\label{gradient}
 \end{figure}
-在图(\ref{gradient})中，如果无网格形函数具有插值性，即$\Psi_I(\pmb{x})=\delta_{IJ}$，那么在节点$\pmb{x}_I$处，无网格形函数及其一阶导数应该分别等于1和0。
-然而，从图中可以观察到无网格形函数在节点$\pmb{x}_I$处的值不等于1，且一阶导数不等于0。这表明无网格形函数一般不具有插值性，即无法像有限元法一样直接满足本质边界条件。
-因此，在无网格方法中，需要采用其他方法来施加本质边界条件，以确保问题的准确性和可靠性
+图(\ref{gradient})、(\ref{})分别为内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)=\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
+
 \section{伽辽金无网格法}
-\subsection{弹性力学问题的伽辽金无网格离散}
-不失为一般性，弹性力学问题的基本未知量为位移向量$\pmb{u}=\{u_i\},i=1,\dotsb,n_{sd}$，其静力平衡方程为：
+\subsection{弹性力学问题}
+不失为一般性，弹性力学问题的平衡微分方程为：
 \begin{equation}\label{elasticity problems}
-\begin{split}
 \begin{cases}
     \sigma_{ij,j}+b_i=0&\text{in}\;\Omega\\
     \sigma_{ij}n_j=t_i&\text{on}\;\Gamma^t\\
     u_i=g_i&\text{on}\;\Gamma^g
 \end{cases}
-\end{split}
 \end{equation}
-其中$\pmb \sigma=[\sigma_{ij}]$为柯西应力，$\pmb{b}=\{b_i\}$为体力，$\Gamma^t \text{、}\Gamma^g$分别表示为自然和强制边界条件，$\Gamma^t\cup \Gamma^g=\Gamma,\Gamma^t\cap \Gamma^g=\varnothing$，$\pmb{t}=\{t_i\}$和$\pmb{g}=\{g_i\}$分别为自然边界和强制边界上给定的面力和位移，$\pmb{n}=\{n_i\}$是$\Gamma^{t}$的外法线方向。\par
-考虑经典的线弹性本构关系：
+其中$\sigma_{ij}$为应力张量$\pmb \sigma$的分量，$u_i$为位移张量$\pmb{u}$的分量，$b_i$为体力张量$\pmb{b}$的分量。$\Gamma^t \text{、}\Gamma^g$分别表示自然和强制边界条件，并满足下列关系式：
+\begin{equation}
+\Gamma^t\cup \Gamma^g=\Gamma,\Gamma^t\cap \Gamma^g=\varnothing
+\end{equation}
+在自然和强制边界上具有给定的面力$\pmb{t}$和位移$\pmb{g}$，其分量分别为$t_i$和$g_i$。$n_i$为$\Gamma^{t}$上外法向量$\pmb{n}$的分量。\par
+对于线弹性各向同性材料，其本构关系为：
 \begin{equation}\label{constitutive relation}
-\begin{split}
-        &\pmb{\sigma}=\pmb{C}\pmb{:}\pmb{\varepsilon},\sigma_{ij}=C_{ijkl}\varepsilon_{kl}\\
-        &\pmb{\varepsilon}=\frac{1}{2}(\nabla \pmb{u}+\pmb{u}\nabla),\varepsilon_{ij}=\frac{1}{2}(u_{i,j}+u_{j,i})
-\end{split}
+    \sigma_{ij}=C_{ijkl}\varepsilon_{kl}
 \end{equation}
-其中$C_{ijkl}$为四阶弹性张量，$\varepsilon$为应变，$\nabla$为梯度算子。根据最小势能原理，弹性力学问题式(\ref{elasticity problems})的势能泛函表达式为：
+其中$C_{ijkl}$为四阶弹性张量，$\varepsilon_{ij}$为应变张量的分量，根据小变形假设，应变$\varepsilon_{ij}$为：
+\begin{equation}\label{strain}
+    \varepsilon_{ij}=\frac{1}{2}(u_{i,j}+u_{j,i})
+\end{equation} \par
+根据最小势能原理，强形式(\ref{elasticity problems})所对应的势能泛函表达式为：
 \begin{equation}\label{elasticity potential functional}
 \begin{split}
     \Pi(\pmb{u})=\frac{1}{2}\int_{\Omega}\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}u_ib_id\Omega-\int_{\Gamma^t}u_it_id\Gamma
@@ -176,82 +161,39 @@
     \delta\Pi(\pmb{u})&=\int_{\Omega}\delta\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}\delta u_ib_id\Omega-\int_{\Gamma^t}\delta u_it_id\Gamma=0
 \end{split}
 \end{equation}\par
-进一步引入位移$\pmb{u}$，应变$\pmb{\varepsilon}$，应力$\pmb{\sigma}$的向量表达式：
-\begin{equation}
-\begin{split}
-    \pmb{u}=\left\{\begin{matrix} u_x\\u_y\end{matrix}\right\}
-    \pmb{\varepsilon}=\left\{\begin{matrix}  
-        \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
-    \end{matrix}\right\}
-    \pmb{\sigma}=\left\{\begin{matrix}
-        \sigma_{xx}\\\sigma_{yy}\\\sigma_{xy}
-    \end{matrix}\right\}
-\end{split}
-\end{equation}\par
-当考虑$xy$平面内的平面应变问题时，弹性本构关系的向量表达式为：
-\begin{equation}
-\begin{split}
-    \left\{\begin{matrix}
-        \sigma_{xx}\\\sigma_{yy}\\\sigma_{xy}
-    \end{matrix}\right\}&=\frac{E}{(1+\nu)(1-2\nu)}
-    \left[\begin{matrix}
-        1-\nu&\nu&0\\\nu&1-\nu&0\\0&0&\frac{1-2\nu}{2}
-    \end{matrix}\right]
-    \left\{\begin{matrix}
-        \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
-    \end{matrix}\right\}
-    =\pmb{D}\left\{\begin{matrix}\varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}\end{matrix}\right\}
-\end{split}
-\end{equation}\par
-当考虑$xy$平面内的平面应力问题时，弹性本构关系的向量表达式为：
-\begin{equation}
-\begin{split}
-    \left\{\begin{matrix}
-        \sigma_{xx}\\\sigma_{yy}\\\sigma_{xy}
-        \end{matrix}\right\}&=\frac{E}{1-\nu^2}
-        \left[\begin{matrix}
-        1&\nu&0\\\nu&1&0\\0&0&\frac{1-\nu}{2}
-        \end{matrix}\right]
-        \left\{\begin{matrix}
-        \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
-    \end{matrix}\right\}
-    =\pmb{D}\left\{\begin{matrix}\varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}\end{matrix}\right\}
-\end{split}
-\end{equation}
-其中$\pmb{D}$为弹性张量$\pmb{C}$的矩阵表达式，$E$为杨氏模量，$\nu$为泊松比。\par
-在无网格近似中，一般将求解域$\Omega$用一组节点$\{\pmb{x}_I\}_{I=1}^{N\!P}$进行离散，此时位移无网格离散的表达式为：
+在伽辽金无网格法中，引入无网格近似离散位移$\pmb u$及其变分$\delta \pmb u$，其近似函数$\pmb u^h$和$\delta \pmb u^h$的分量为：
 \begin{equation}\label{displacement vector}
-\begin{split}
-    \pmb{u}^h(\pmb{x})=\left\{\begin{matrix}u_1^h(\pmb{x})\\u_2^h(\pmb{x})
-    \end{matrix}\right\}=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\pmb d_I,\pmb{d}_I=\left\{\begin{matrix}d_{I1}\\d_{I2}\end{matrix}\right\}
-\end{split}
+    u^h_{i}(\pmb x) = \sum_{I=1}^{N\!P}\Psi_I(\pmb x) d_{iI}, \quad \delta u^h_{i}(\pmb x) = \sum_{I=1}^{N\!P}\Psi_I(\pmb x) \delta d_{iI}
 \end{equation}
-伽辽金法对应的无网格离散权函数为：
+式中$d_{iI}$、$\delta d_{iI}$分别为近似位移分量$u^h_i$、$\delta u^h_i$在$\pmb x_I$处的节点系数。进一步将位移表达式\ref{displacement vector}代入应变表达式\ref{strain}中可得：
+\begin{equation}\label{strainh}
+\varepsilon^h_{ij} = \sum_{I=1}^{N\!P} (\Psi_{I,i}d_{jI}+\Psi_{I,j}d_{iI})
+\end{equation}
+将式(\ref{displacement vector})、(\ref{strainh})代入到弱形式(\ref{elasticity weak form})中可以得到弹性力学问题离散控制方程式：
 \begin{equation}
-\begin{split}
-    \delta\pmb{u}^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\delta\pmb{d}_I
-\end{split}
+    \pmb{K}\pmb{d}=\pmb{f}
 \end{equation}
-将式(\ref{displacement vector})代入式(\ref{constitutive relation})可以得到离散的应变向量：
+其中$\pmb{d}=\{d_{iI}\}$表示位移节点系数向量，$\pmb{K}=\{\pmb K_{I\!J}\}$和$\pmb{f}=\{\pmb f_I\}$分别表示刚度矩阵和力向量，其分量具有表达式为：
+\begin{subequations}\label{EKf}
+\begin{align}
+        \pmb K_{I\!J}&=\int_{\Omega}\pmb{B}_I^T\pmb{D}\pmb{B}_Jd\Omega\label{EKf1}\\
+        \pmb f_I&=\int_{\Omega}\Psi_I\pmb{b}d\Omega+\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma\label{EKf2}
+\end{align}
+\end{subequations}
+式中$\pmb B_I$为形函数梯度矩阵，$\pmb D$为材料系数矩阵。在二维平面应力和平面应变问题中，$\pmb B_I$和$\pmb D$具有如下表达式：
 \begin{equation}\label{strain vector}
-\begin{split}
-    \varepsilon^h(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{B}_I(\pmb{x})\pmb{d}_I,\pmb{B}_I(\pmb{x})= \left[\begin{matrix}\Psi_{I,x}&0\\0&\Psi_{I,y}\\\Psi_{I,y}&\Psi_{I,x} \end{matrix}\right] 
-\end{split}
+    \pmb{B}_I= \left[\begin{matrix}\Psi_{I,x}&0\\0&\Psi_{I,y}\\\Psi_{I,y}&\Psi_{I,x} \end{matrix}\right] 
 \end{equation}
-将式(\ref{displacement vector})-(\ref{strain vector})代入到弱形式(\ref{elasticity weak form})中可以得到弹性力学问题离散平衡控制方程式：
+\begin{itemize}
+    \item 平面应力问题
 \begin{equation}
-\begin{split}
-    \delta\pmb{d}^T(\pmb{K}\pmb{d}&-\pmb{f})=0\\
-    &\pmb{K}\pmb{d}=\pmb{f}
-\end{split}
+\pmb D = 
 \end{equation}
-其中$\pmb{d}=\{\pmb d_I\}$表示位移向量，$\pmb{K}=\{K_{I\!J}\}$和$\pmb{f}=\{f_I\}$分别表示刚度矩阵和力向量，具体表达式为：
+\item 平面应变问题
 \begin{equation}
-\begin{split}\label{EKf}
-        &K_{I\!J}=\int_{\Omega}\pmb{B}_I^T\pmb{C}\pmb{B}_Jd\Omega\\
-        &f_I=\int_{\Omega}\Psi_I\pmb{b}d\Omega+\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma
-\end{split}
+\pmb D = 
 \end{equation}
+\end{itemize}
 \subsection{薄板问题的伽辽金无网格离散}
 考虑如图(\ref{plate})所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。根据Kirchhoff薄板假设原理\cite{Liu}，在薄板中面$\Omega$上的控制方程为：
 \begin{equation}
