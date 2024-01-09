@@ -3,19 +3,16 @@
 \bibitem{belytschkoElementFreeGalerkin1994}
 T.~Belytschko, Y.~Y. Lu, and L.~Gu.
 \newblock Element-free {{Galerkin}} methods.
-\newblock {\em International Journal for Numerical Methods in Engineering},
-  37(2):229--256, 1994.
+\newblock {\em International Journal for Numerical Methods in Engineering}, 37(2):229--256, 1994.
 
 \bibitem{wuJiYuHeLinGeLaiSiNaBianFenYuanLiDeYiZhiGaoXiaoWuWangGeBenZhiBianJieTiaoJianShiJiaFangFa2022}
 俊超 吴, 新瑜 吴, 珧冰 赵, and 东东 王.
-\newblock
-  基于赫林格-赖斯纳变分原理的一致高效无网格本质边界条件施加方法.
+\newblock 基于赫林格-赖斯纳变分原理的一致高效无网格本质边界条件施加方法.
 \newblock {\em 力学学报}, 54(12):3283--3296, December 2022.
 
 \bibitem{liuReproducingKernelParticle1995}
 Wing~Kam Liu, Sukky Jun, and Yi~Fei Zhang.
 \newblock Reproducing kernel particle methods.
-\newblock {\em International Journal for Numerical Methods in Fluids},
-  20(8-9):1081--1106, April 1995.
+\newblock {\em International Journal for Numerical Methods in Fluids}, 20(8-9):1081--1106, April 1995.
 
 \end{thebibliography}

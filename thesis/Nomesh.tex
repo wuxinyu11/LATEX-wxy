@@ -210,7 +210,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \end{equation}
 \begin{itemize}
     \item 平面应力问题
-\begin{equation}
+\begin{equation}\label{Dplanestress}
 \pmb D = \frac{E}{1-\nu^2}\left[\begin{matrix}1&\nu&0\\\nu&1&0\\0&0&\frac{1-\nu}{2}
 \end{matrix}\right] 
 \end{equation}
@@ -220,8 +220,8 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \end{matrix}\right] 
 \end{equation}
 \end{itemize}
-\subsection{薄板问题的伽辽金无网格离散}
-考虑如图(\ref{plate})所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。根据Kirchhoff薄板假设原理\cite{Liu}，在薄板中面$\Omega$上的控制方程为：
+\subsection{薄板问题}
+考虑如图(\ref{plate})所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。在Kirchhoff薄板假设下\cite{Liu}，薄板中面的剪切变形可忽略不计，此时平衡微分方程可退化为如下形式：
 \begin{equation}
     \begin{cases}\label{P control equation}
         M_{\alpha\beta,\alpha\beta}+\bar q=0&\mathrm{in} \; \Omega\\
@@ -230,7 +230,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
         V_{\pmb n}=Q_{\pmb n}+M_{\pmb{ns},\pmb s}=\bar V_{\pmb n}&\mathrm{on}\;\Gamma_V\\
         M_{\pmb{nn}}=\bar M_{\pmb{nn}}&\mathrm{on}\; \Gamma_M\\
         w=\bar w&\mathrm{at} \; c_w\\
-        P=-M_{ns}\vert_{c_p}=\bar P&\mathrm{at}\; c_P
+        P=-\left .M_{ns} \right \vert_{c_p}=\bar P&\mathrm{at}\; c_P
     \end{cases}
 \end{equation}
 \begin{figure}[H]
@@ -239,7 +239,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
     \caption{薄板运动学及边界条件}\label{plate}
 \end{figure}
 \noindent
-其中式(\ref{P control equation})存在如下关系式：
+其中
 \begin{subequations}
 \begin{align}
 \label{wn} &w_{,\pmb n}=w_{,\alpha}n_{\alpha}\\
@@ -247,8 +247,8 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \label{Mn} &M_{\pmb{nn}}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{\pmb{ns}}=M_{\alpha\beta n_{\alpha}s_{\beta}},M_{\pmb{ns,s}}=M_{\alpha\beta,\gamma}s_{\alpha}n_{\beta}s_{\gamma}
 \end{align}
 \end{subequations}
-式中$M_{\alpha\beta}$为矩量$\boldsymbol M$的弯曲和扭转分量，$\bar q$为垂直于薄板中面的分布荷载。$\Gamma_w$、$\Gamma_{\theta}$和$c_w$为本质边界条件，$\bar w$和$\bar \theta_n$分别为本质边界条件上给定的挠度和转角。
-$\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_{\boldsymbol{nn}}$和$P$为自然边界上的等效剪力、法向弯矩和薄板角上的集中荷载。$\pmb{n}=\{n_x,\; n_y\}^T$，$\pmb{s}=\{s_x,\; s_y\}^T$分别表示所在边界方向上的外法线方向和切方向的分量。
+式中$M_{\alpha\beta}$可表示弯矩张量$\boldsymbol M$的弯曲和扭转部分的分量，$\bar q$为垂直于薄板中面的分布荷载。$\Gamma_w$、$\Gamma_{\theta}$和$c_w$为本质边界条件，$\bar w$和$\bar \theta_n$分别为本质边界条件上给定的挠度和转角。
+$\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_{\boldsymbol{nn}}$和$P$为自然边界上的等效剪力、法向弯矩和薄板角上的集中荷载。$n_\alpha$和$s_\alpha$分别为边界上外法线方向$\pmb{n}$和切方向$\pmb{s}$的分量。
 所有的边界条件都满足如下关系式:
 \begin{equation}\label{PGeometric relationships}
     \begin{split}
@@ -266,7 +266,7 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
 \begin{equation}\label{kappa}
     \kappa_{\alpha\beta}=-w_{,\alpha\beta}
 \end{equation}
-式中$D_{\alpha \beta \gamma \eta}$为四阶弹性张量的分量，表达式如下：
+式中$D_{\alpha \beta \gamma \eta}$为薄板问题四阶弹性张量的分量，表达式如下：
 \begin{equation}
     \begin{split}\label{Dalphabeta}
         D_{\alpha\beta\gamma\eta}=\bar D(\nu\delta_{\alpha\beta}\delta_{\gamma\eta}+\frac{1}{2}(1-\nu)(\delta_{\alpha\gamma}\delta_{\beta\eta}+\delta_{\alpha\gamma}\delta_{\beta\gamma}))
@@ -314,30 +314,29 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
 在伽辽金无网格法中，引入无网格近似离散挠度$w$及其变分$\delta w$，其近似函数$w^h$和$\delta w^h$的分量为：
 \begin{equation}
 \label{Pwuwangelisan}
-    w_{\alpha\beta}^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{\alpha\beta I},\quad \delta w_{\alpha\beta}^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\delta d_{\alpha\beta I}
+    w_{\alpha\beta}^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_I,\quad \delta w_{\alpha\beta}^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\delta d_I
 \end{equation}
-式中$d_{\alpha\beta I}$、$\delta d_{\alpha\beta I}$分别为近似挠度分量$w_{\alpha\beta}^h$、$\delta w_{\alpha\beta}^h$在$w$处的节点系数。进一步将挠度表达式(\ref{Pwuwangelisan})代入曲率张量表达式(\ref{kappa})中可得：
+式中$d_I$、$\delta d_I$分别为近似挠度分量$w_{\alpha\beta}^h$、$\delta w_{\alpha\beta}^h$在$w$处的节点系数。进一步将挠度表达式(\ref{Pwuwangelisan})代入曲率张量表达式(\ref{kappa})中可得：
 \begin{equation}
-\kappa_{\alpha\beta}=\sum_{I=1}^{N\!P}\Psi_{I,\alpha\beta}d_{\alpha\beta I}
+\kappa_{\alpha\beta}=-\sum_{I=1}^{N\!P}\Psi_{I,\alpha\beta}d_I
 % \pmb{B}_I(\pmb{x})= \left[\begin{matrix}\Psi_{I,xx}\\\Psi_{I,yy}\\2\Psi_{I,xy}\end{matrix}\right] 
-\end{equation}
-将式(\ref{wn})、(\ref{Malphabeta})和(\ref{Pwuwangelisan})代入到弱形式(\ref{Pweakform})中得到薄板问题伽辽金无网格法离散平衡控制方程：
+\end{equation}\par
+将式(\ref{wn})、(\ref{Malphabeta})和(\ref{Pwuwangelisan})代入到伽辽金弱形式(\ref{Pweakform})中得到薄板问题离散平衡控制方程：
 \begin{equation}
      \pmb{K}\pmb{d}=\pmb{f}
 \end{equation}
-其中$\pmb{d}=\{d_{\alpha\beta I}\}$表示挠度节点系数向量，$\pmb{K}=\{\pmb{K}_{I\!J}\}$和$\pmb{f}=\{\pmb{f}_I\}$分别表示刚度矩阵和力向量，其分量具有表达式为：
+其中刚度矩阵$\boldsymbol K$和力向量$\pmb f$的分量$K_{IJ}$、$f_I$分别为：
 \begin{subequations}\label{PKf}
 \begin{align}
-    \label{PKf1}\pmb K_{I\!J}&=\int_{\Omega}\pmb{B}^T_I\pmb{D}\pmb{B}_Jd\Omega\\
-    \label{PKf2}\pmb f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{x\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
+    \label{PKf1}K_{I\!J}&=\frac{h^3}{12}\int_{\Omega}\pmb{B}^T_I\pmb{D}\pmb{B}_Jd\Omega\\
+    \label{PKf2}f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{x\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
 \end{align}
 \end{subequations}
-式中$\pmb{D}$为四阶弹性张量，$\pmb{B}_I$为形函数梯度矩阵，其形函数梯度矩阵具有如下表达式：
+式中$\pmb{D}$为式\ref{Dplanestress}中的材料系数矩阵，$\pmb{B}_I$为形函数梯度向量，其形函数梯度矩阵具有如下表达式：
 \begin{equation}
-\pmb{B}_I(\pmb{x})= \left[\begin{matrix}\Psi_{I,xx}\\\Psi_{I,yy}\\2\Psi_{I,xy}\end{matrix}\right] 
+\pmb{B}_I(\pmb{x})= \begin{Bmatrix}\Psi_{I,xx}\\\Psi_{I,yy}\\2\Psi_{I,xy}\end{Bmatrix} 
 \end{equation}
 \section{小结}
-本章首先对再生核无网格近似理论进行了系统分析，讨论了再生核无网格形函数的一致性条件。再生核无网格法是一种用于求解偏微分方程的数值积分方法，
-是指通过离散点之间的相对位置关系来进行近似。接下来以弹性力学问题和薄板问题为例，详细介绍了伽辽金无网格法在这两类问题上的离散平衡控制方程。
-在弹性力学问题中，伽辽金无网格法利用再生核无网格形函数近似位移场，在薄板问题中，伽辽金无网格法同样采用再生核无网格形函数近似挠度场。
-与传统有限元法不同，再生核无网格形函数通常不具备插值性，因此需要采用适当的方法进行施加强制边界条件。
+本章首先对再生核无网格近似理论进行了系统讨论，详细说明了无网格形函数及其梯度的构造过程，验证了再生核近似形函数的一致性条件。
+与传统有限元形函数不同，无论是内部节点还是边界节点，再生核无网格形函数通常不具备插值性。在伽辽金法的求解过程中，无法直接施加本质边界条件，需采用弱形式的途径进行施加。
+最后，以弹性力学问题和薄板问题为例，详细介绍了伽辽金无网格法在这两类问题上的离散控制方程。下一章节将以这两类问题为例，介绍主要的无网格本质边界施加方案。

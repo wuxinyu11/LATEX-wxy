@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {2.1}再生核无网格近似}{7}{section.2.1}%
 \contentsline {section}{\numberline {2.2}伽辽金无网格法}{12}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}弹性力学问题}{12}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}薄板问题的伽辽金无网格离散}{14}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.2}薄板问题}{13}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}小结}{16}{section.2.3}%
 \contentsline {chapter}{\numberline {3}本质边界条件施加方法}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}拉格朗日乘子法}{17}{section.3.1}%

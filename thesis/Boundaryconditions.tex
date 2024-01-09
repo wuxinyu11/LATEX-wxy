@@ -1,35 +1,27 @@
 \chapter{本质边界条件施加方法}
-由于无网格形函数通常不具备插值特性，因此在使用无网格方法进行离散化时，需要采用适当的方法来施加本质边界条件。
-在本章中，将以弹性力学问题和薄板问题为例，对常见的边界条件施加方法进行详细讨论，了解在无网格方法中如何适应边界条件的施加。
+由于无网格形函数通常不具备插值特性，因此伽辽金无网格法需要通过弱形式施加本质边界条件。
+在本章中，将以弹性力学问题和薄板问题为例，对常见的3种无网格法本质边界条件施加方法进行详细讨论，包括拉格朗日乘子法、罚函数法、Nitsche法。
 
 \section{拉格朗日乘子法}
-Belytschko等人\cite{}提出采用拉格朗日乘子法施加本质边界条件，拉格朗日乘子法是一种常用的强制边界条件施加方法，用于在数值计算中处理约束条件。
-该方法的基本思想是通过引入拉格朗日乘子，将边界条件转化为约束条件，并将其纳入数值问题的势能泛函中，通过对增广拉格朗日函数进行求解，可以同时求解原始问题和约束条件，从而获得满足边界条件的数值解。\par
-弹性力学问题势能泛函表达式(\ref{elasticity potential functional})通过引入拉格朗日乘子$\lambda_i$施加本质边界条件，可以得到如下表达式：
+拉格朗日乘子法最早由Belytschko等人\cite{}引入伽辽金无网格法中施加本质边界条件，该方法在原有的势能泛函的基础上引入拉格朗日乘子项施加本质边界条件。在弹性力学问题中，在势能泛函(\ref{elasticity potential functional})的基础上增加拉格朗日乘子项有：
 \begin{equation}\label{Elambda}
 \begin{split}
     \bar{\Pi}(\pmb{u},\pmb \lambda)=\Pi(\pmb{u})-\int_{\Gamma^g}\lambda_i(u_i-g_i)d\Gamma
 \end{split}
 \end{equation}   
 % 其中$\pmb{\lambda}=\{\lambda_1,\dotsb,\lambda_{n_{sd}}\}^T$。
-\par
-对式(\ref{Elambda})进行变分可以得到施加本质边界条件拉格朗日乘子法的等效积分弱形式：
+对式(\ref{Elambda})进行变分可以得到拉格朗日乘子法的等效积分弱形式：
 \begin{equation}\label{Elambda weakform}
-\begin{split}
-        \delta\bar{\Pi}(\pmb{u},\pmb{\lambda})&=\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_i\lambda_id\Gamma-\int_{\Gamma^g}\delta\lambda_i(u_i-g_i)d\Gamma\\
-       &=\int_{\Omega}\delta\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}-\int_{\Omega}\delta u_ib_id\Omega-\int_{\Gamma^t}\delta u_it_id\Gamma\\
-       &-\int_{\Gamma^g}\delta u_i\lambda_id\Gamma-\int_{\Gamma^g}\delta\lambda_i(u_i-g_i)d\Gamma\\
-       &=0
-\end{split}
+        \delta\bar{\Pi}(\pmb{u},\pmb{\lambda})=\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_i\lambda_id\Gamma-\int_{\Gamma^g}\delta\lambda_i(u_i-g_i)d\Gamma=0
 \end{equation}\par
-在伽辽金无网格法，引入无网格近似离散拉格朗日乘子$\pmb{\lambda}$及其变分$\delta\pmb{\lambda}$，其函数$\pmb \lambda(\pmb{x})$和$\delta\pmb \lambda(\pmb{x})$的分量为：
+通常情况下拉格朗日乘子$\pmb{\lambda}$及其变分$\delta\pmb{\lambda}$可采用有限元形函数进行离散，相应的分量为：
 \begin{equation}\label{lambdalisan}
 \lambda_i(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\lambda_{iI},\quad
 \delta\lambda_i(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\delta\lambda_{iI}
 \end{equation}
 % 其中$\lambda_i=\{\lambda_{i1},\;\dotsb,\;\lambda_{in_{sd}}\}^T$，$\delta\pmb \lambda_I=\{\delta\lambda_{I1},\dotsb,\delta\lambda_{In_{sd}}\}^T$，
-其中$N\!L$表示离散拉格朗日乘子的个数，$N_I(\pmb{x})$为拉格朗日乘子节点之间的插值函数。\par
-引入拉格朗日乘子节点之间的插值函数$N_I(\pmb{x})$，及引入式(\ref{displacement vector})、(\ref{strainh})和(\ref{strain vector})代入到弱形式(\ref{Elambda weakform})中得到弹性力学问题施加本质边界条件拉格朗日乘子法的离散平衡控制方程式：
+其中$N\!L$表示离散拉格朗日乘子的个数，$N_I(\pmb{x})$为有限元函数。\par
+将式(\ref{displacement vector})、(\ref{strainh})、(\ref{strain vector})和(\ref{lambdalisan})代入到弱形式(\ref{Elambda weakform})中得弹性力学问题的离散平衡控制方程式：
 % \begin{equation}
 % \begin{split}
 %   \left\{\begin{matrix}\delta\pmb{d}\\\delta\pmb{\lambda}\end{matrix}\right\}^T
@@ -42,28 +34,24 @@ Belytschko等人\cite{}提出采用拉格朗日乘子法施加本质边界条件
 % \end{equation}
 % 引入了拉格朗日乘子使得弱形式(\ref{Elambda weakform})中包含强制边界条件，通过上式进一步得到：
 \begin{equation}
-\begin{split}
-    \left[\begin{matrix}\pmb{K}&\pmb{K}^{\lambda}\\\pmb{K}^{\lambda T}&\pmb{0}\end{matrix}\right]
+    \begin{bmatrix}\pmb{K}&\pmb{K}^{(u\lambda)}\\\pmb{K}^{(u\lambda) T}&\pmb{0}\end{bmatrix}
     \left\{\begin{matrix}\pmb{d}\\\pmb{\lambda}\end{matrix}\right\}=
     \left\{\begin{matrix}\pmb{f}\\\pmb{f}^{\lambda}\end{matrix}\right\}
-\end{split}
 \end{equation}
-其中$\pmb{K}$、$\pmb{f}$见式(\ref{EKf})，$\pmb{K}^{\lambda}$、$\pmb{\lambda}$和$\pmb{f}^{\lambda}$的具体表达式如下：
-\begin{subequations}
+其中$\pmb{K}$、$\pmb{f}$为传统的刚度矩阵和力向量，其表达式见式(\ref{EKf})。$\pmb{K}^{(u\lambda)}$和$\pmb{f}^{\lambda}$的分量具体表达式如下：
 \begin{align}
-    \pmb K_{I\!J}^{\lambda}&=-\int_{\Gamma^g}\Psi_IN_Jd\Gamma\\
-    \pmb{\lambda}&=\left[\begin{matrix}\lambda_1\;\lambda_2\;\dotsb\;\lambda_{N\!L}^T\end{matrix}\right]^T\\
+    \pmb K_{I\!J}^{\lambda}&=-\int_{\Gamma^g}\Psi_IN_J \boldsymbol 1d\Gamma\\
     \pmb f_I^{\lambda}&=-\int_{\Gamma^g}N_I\pmb{g}d\Gamma
 \end{align}
-\end{subequations}\par
-薄板问题势能泛函表达式(\ref{Pshineng})通过引入拉格朗日乘子$\lambda_w$、$\lambda_\theta$、$\lambda_c$施加本质边界条件，可以得到如下表达式：
-\begin{equation}\label{Plambda}
-\begin{split}
-    \bar{\Pi}(w,\lambda_w,\lambda_{\theta},\lambda_c)&=\Pi(w)-\int_{\Gamma_w}\lambda_w(w-\bar{w})d\Gamma\\
-    &+\int_{\Gamma_{\theta}}\lambda_{\theta}(\theta_{\pmb n}-\bar{\theta}_{\pmb n})d\Gamma-\lambda_c(w-\bar{w})\vert_{x\in c_w}
-\end{split}
-\end{equation}
-对式(\ref{Plambda})进行变分可以得到施加本质边界条件拉格朗日乘子法的等效积分弱形式：
+式中$\boldsymbol 1$为$2\times2$单位矩阵。
+\par
+同样地在薄板问题势能泛函中(\ref{Pshineng})引入拉格朗日乘子$\lambda_w$、$\lambda_\theta$、$\lambda_c$施加本质边界条件，可得到如下表达式：
+\begin{multline}\label{Plambda}
+    \bar{\Pi}(w,\lambda_w,\lambda_{\theta},\lambda_c)=\Pi(w) \\ -\int_{\Gamma_w}\lambda_w(w-\bar{w})d\Gamma
+    +\int_{\Gamma_{\theta}}\lambda_{\theta}(\theta_{\pmb n}-\bar{\theta}_{\pmb n})d\Gamma
+    -\lambda_c(w-\bar{w})\vert_{x\in c_w}
+\end{multline}
+对式(\ref{Plambda})进行变分可以得到相应的等效积分弱形式：
 \begin{equation}\label{Plambda weakform}
 \begin{split}
     \delta\bar{\Pi}(w,\lambda_w,\lambda_{\theta},\lambda_c)&=\delta\Pi(w)-\int_{\Gamma_w}(\delta\lambda_w w+\lambda_w\delta w)d\Gamma+\int_{\Gamma_w}\delta\lambda_w\bar{w}d\Gamma\\
@@ -72,7 +60,13 @@ Belytschko等人\cite{}提出采用拉格朗日乘子法施加本质边界条件
 &=0
 \end{split}
 \end{equation}\par
-引入拉格朗日乘子的无网格近似离散式(\ref{lambdalisan}),及引入式(\ref{wn})、(\ref{Malphabeta})和(\ref{Pwuwangelisan})代入到弱形式(\ref{Plambda weakform})中得到薄板问题施加本质边界条件拉格朗日乘子法的离散平衡控制方程式：
+进一步采用有限元形函数离散拉格朗日乘子$\lambda_w$、$\lambda_\theta$和$\lambda_c$：
+\begin{equation}\label{lambda_3}
+\lambda_w(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\lambda_{wI},\quad
+\lambda_\theta(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\lambda_{\theta I},\quad
+\lambda_c(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\lambda_{cI}
+\end{equation}
+将式(\ref{wn})、(\ref{Malphabeta})、(\ref{Pwuwangelisan})和(\ref{lambda_3})代入到弱形式(\ref{Plambda weakform})中可得薄板问题拉格朗日乘子法的离散控制方程式：
 \begin{equation}
     \begin{split}
      \left[\begin{matrix}\pmb{K}&\pmb{K}^{\lambda w}&\pmb{K}^{\lambda\theta}&\pmb{K}^{\lambda c}\\
@@ -88,23 +82,19 @@ Belytschko等人\cite{}提出采用拉格朗日乘子法施加本质边界条件
      \end{matrix}\right\}
 \end{split}
 \end{equation}
-其中$\pmb{K}$、$\pmb{f}$见式(\ref{PKf})，$\pmb K_{I\!J}^{\lambda_w}$、$\pmb K_{I\!J}^{\lambda_\theta}$、$\pmb K_{I\!J}^{\lambda_c}$、$\pmb f_I^{\lambda_w}$、$\pmb f_I^{\lambda_\theta}$、$\pmb f_I^{\lambda_c}$、$\lambda_w$、$\lambda_\theta$、$\lambda_c$的表达式如下：
-\begin{subequations}
-    \begin{align}
-    \pmb K_{I\!J}^{\lambda_w}&=-\int_{\Gamma_w}\Psi_I(\pmb{x})N_J^{\lambda_w}d\Gamma\\
-    \pmb K_{I\!J}^{\lambda_\theta}&=\int_{\Gamma_\theta}\Psi_{I,x}(\pmb{x})N_J^{\lambda_\theta}d\Gamma\\
-    \pmb K_{I\!J}^{\lambda_c}&=-\Psi_I(\pmb{x})N_J^{\lambda_c}\vert_{c\in c_w}\\
-    \pmb f_I^{\lambda_w}&=\int_{\Gamma_w}N_I^{\lambda_w}\bar{w}d\Gamma\\
-    \pmb f_I^{\lambda_\theta}&=-\int_{\Gamma_\theta}N_I^{\lambda_\theta}\bar{\theta}_nd\Gamma\\
-    \pmb f_I^{\lambda_c}&=-N_I^{\lambda_c}\bar{w}\vert_{c\in c_w}\\
-    \lambda_w=\lambda_\theta=\lambda_c&=\left[\begin{matrix}\lambda_1\;\lambda_2\;\dotsb\;\lambda_{N\!L}^T\end{matrix}\right]^T
-   \end{align}
-\end{subequations}\par
-拉格朗日乘子法在数值计算中广泛应用，特别适用于处理约束条件。它提供了一种有效的方法来将约束条件纳入优化问题的求解过程中，同时考虑目标函数和约束条件的权衡。通过使用拉格朗日乘子法，可以在数值计算中更准确的施加本质边界条件，并得到满足约束条件的结果。
-但薄板问题中通常涉及大量的自由度和约束条件，使用拉格朗日乘子法处理时容易引起整体刚度矩阵的奇异性，不具有高阶的变分一致性。
+其中刚度矩阵$\pmb{K}$、力向量$\pmb{f}$表达式见式(\ref{PKf})。$\pmb K^{\lambda_w}$、$\pmb K^{\lambda_\theta}$、$\pmb K^{\lambda_c}$、$\pmb f^{\lambda_w}$、$\pmb f^{\lambda_\theta}$、$\pmb f^{\lambda_c}$分量的表达式分别为：
+\begin{align}
+    K_{IJ}^{\lambda_w}&=-\int_{\Gamma_w}\Psi_IN_J^{\lambda_w}d\Gamma\\
+    K_{IJ}^{\lambda_\theta}&=\int_{\Gamma_\theta}\Psi_{I,\alpha}n_\alpha(\pmb{x})N_J^{\lambda_\theta}d\Gamma\\
+    K_{IJ}^{\lambda_c}&=-\Psi_I(\pmb{x})N_J^{\lambda_c}\vert_{c\in c_w}\\
+    f_I^{\lambda_w}&=\int_{\Gamma_w}N_I^{\lambda_w}\bar{w}d\Gamma\\
+    f_I^{\lambda_\theta}&=-\int_{\Gamma_\theta}N_I^{\lambda_\theta}\bar{\theta}_nd\Gamma\\
+    f_I^{\lambda_c}&=-N_I^{\lambda_c}\bar{w}\vert_{c\in c_w}
+\end{align}\par
+拉格朗日乘子法在数值计算中广泛应用，特别适用于处理约束条件，在伽辽金无网格法求解过程中应用广泛，可满足变分的一致性[]。
+然而，拉格朗日乘子法需引入额外自由度离散朗哥朗日乘子，其刚度矩阵也变成了奇异矩阵。当拉格朗日乘子自由度过多时，将增加整体刚度矩阵的奇异性，导致计算精度下降。尤其在薄板问题中通常涉及大量的自由度和约束条件，刚度矩阵奇异性问题更为显著。
 \section{罚函数法}
-罚函数法\cite{}是在势能泛函中通过引入一个罚因子$\alpha$，将带有罚因子的强制边界条件施加到数值问题的原势能泛函中。\par
-弹性力学问题势能泛函表达式(\ref{elasticity potential functional})通过引入罚因子$\alpha$施加边界条件，可以得到如下表达式：
+罚函数法\cite{}是在势能泛函中通过引入罚函数项进行本质边界条件的施加，罚函数项为罚因子$\alpha$乘以边界条件残差的平方。在弹性力学问题势能泛函表达式(\ref{elasticity potential functional})中引入罚函数项有：
 \begin{equation}\label{Epenalty}
     \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
 \end{equation}
@@ -123,18 +113,14 @@ Belytschko等人\cite{}提出采用拉格朗日乘子法施加本质边界条件
 % \end{equation}
 % 同样由于$\delta\pmb{d}$的任意性可以得到罚函数法的无网格离散平衡控制方程式：
 \begin{equation}
-\begin{split}
     (\pmb{K}+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^s
-\end{split}
 \end{equation}
 其中$\pmb{K}$、$\pmb{f}$见式(\ref{EKf})，$\pmb K^s_{I\!J}$和$\pmb f^s_I$的具体表达式为：
-\begin{subequations}
 \begin{align}
-  \pmb K^s_{I\!J}&=\alpha\int_{\Gamma^g}\Psi_I\Psi_Jd\Gamma\\
+  \pmb K^s_{I\!J}&=\alpha\int_{\Gamma^g}\Psi_I\Psi_J\boldsymbol 1d\Gamma\\
   \pmb f^s_I&=\alpha\int_{\Gamma^g}N_I\pmb{g}d\Gamma
-\end{align}
-\end{subequations}\par
-薄板问题势能泛函表达式(\ref{Pshineng})通过引入罚因子$\alpha$施加本质边界条件，可以得到如下表达式：
+\end{align}\par
+薄板问题势能泛函表达式(\ref{Pshineng})通过引入3个不通的罚因子$\alpha_w$、$\alpha_\theta$和$\alpha_c$施加本质边界条件，其表达式为：
 \begin{equation}\label{Ppenalty}
 \begin{split}
         \bar{\Pi}(w)&=\frac{1}{2}\int_{\Omega}\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega+\int_{\Gamma_M}\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}w\bar{V}_{\pmb{n}}d\Gamma-w\bar{P}\vert_{x\in c_P}+\int_{\Omega}w\bar{q}d\Omega\\
@@ -154,21 +140,18 @@ Belytschko等人\cite{}提出采用拉格朗日乘子法施加本质边界条件
 \begin{equation}
     (\pmb{K}+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^s
 \end{equation}
-其中$\pmb{K}$、$\pmb{f}$见式(\ref{PKf})，$\pmb K^s_{I\!J}$和$\pmb f^s_I$的具体表达式为：
-\begin{subequations}
+其中刚度矩阵$\pmb{K}$、力向量$\pmb{f}$见式(\ref{PKf})，$\pmb K^s_{I\!J}$和$\pmb f^s_I$的具体表达式为：
 \begin{align}
-   \pmb K^s_{I\!J}&=\alpha_w\int_{\Gamma_w}\Psi_I\Psi_Jd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\Psi_{J,\pmb n}d\Gamma+\alpha_c\Psi_I\Psi_J\vert_{x\in c_w}\\
-\pmb f^s_I&=\alpha_w\int_{\Gamma_w}\Psi_I\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\bar{\theta}_{\pmb n}d\Gamma+\alpha_c\Psi_I\bar{w}\vert_{x\in c_w}
-\end{align}
-\end{subequations}\par
-值得注意的是，罚函数法是一种近似方法，通过对边界条件进行惩罚来近似处理强制边界条件。
-在实际应用中，选择合适的罚因子尤其重要，较大的罚因子可能会导致数值不稳定或者收敛困难，
-而较小的罚因子可能会导致边界条件无法满足并且罚函数法不具有变分一致性，无法保证计算精度。
+   K^s_{I\!J}&=\alpha_w\int_{\Gamma_w}\Psi_I\Psi_Jd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\Psi_{J,\pmb n}d\Gamma+\alpha_c\Psi_I\Psi_J\vert_{x\in c_w}\\
+f^s_I&=\alpha_w\int_{\Gamma_w}\Psi_I\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\bar{\theta}_{\pmb n}d\Gamma+\alpha_c\Psi_I\bar{w}\vert_{x\in c_w}
+\end{align}\par
+值得注意的是，罚函数法不满足变分一致性，并且在使用过程中罚因子大小决定了伽辽金法的计算精度。
+较大的罚因子可能会导致数值不稳定或者收敛困难，而较小的罚因子可能会导致边界条件无法满足。
+尤其在薄板问题中，最优的罚因子取值跟节点离散尺寸相关，且3种罚因子跟节点离散尺寸的相关性不同，难以保证计算精度。
 \section{Nitsche法}
-Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界条件施加方法。\par
-首先是为了保持刚度矩阵的对称性，将拉格朗日乘子提换成相应位置的面力未知量，
-具体而言，引入面力未知量$t_i$，即$\lambda=t_i=\sigma_{ij}n_i$，该方法也称为修正变分原理法[]。
-将拉格朗日乘子法的等效积分弱形式(\ref{Elambda weakform})中的拉格朗日乘子$\lambda_i$用面力$\sigma_{ij}n_i$进行替代得到如下表达式：
+Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界条件施加方法，其可视为拉格朗日乘子法与罚函数法相结合。首先将拉格朗日乘子采用相对应的物理意义表示，此时拉格朗日乘子可用传统位移节点进行离散，无需引入额外自由度，保证了变分一致性和刚度矩阵对称性。然而，此时刚度矩阵通常不具有正定性，需引入罚函数项进行稳定，保证计算精度。\par
+在弹性力学问题中，拉格朗日乘子的物理意义为约束反力，即$\lambda_i=\sigma_{ij}n_i$。
+并引入罚函数法，此时等效积分弱形式(\ref{Elambda weakform})中可改写为：
 \begin{equation}\label{Esigman}
     \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})-\int_{\Gamma^g}\sigma_{ij}n_i(u_i-g_i)d\Gamma
 \end{equation}
@@ -296,10 +279,10 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
 值得注意的是，Nische法作为目前伽辽金无网格法常采用的满足变分一致性的本质边界条件施加方法，但Nistche法的稳定项中包含罚因子，选择不当的罚因子可能会导致数值不稳定性，
 同时修正变分项中需要计算无网格形函数梯度$\pmb{B}$，会引起计算效率的降低。
 \section{小结}
-本章介绍了几种常用的边界条件施加方法，并对它们的特点进行了总结。
-首先，采用拉格朗日乘子法进行边界条件施加。这种方法通过引入拉格朗日乘子来处理本质边界条件，保持刚度矩阵的对称性。然而，由于拉格朗日乘子的引入，会增加刚度矩阵的维数，当自由度过多时，可能导致整体刚度矩阵的奇异性，不满足高阶的变分一致性。
-其次是罚函数法。罚函数法通过在变分原理中引入一个罚因子，将边界条件约束项转化为一个惩罚项，从而实现边界条件的施加。罚函数法具有简洁高效的特点，但需要选择合适的罚因子，过大或过小的罚因子都会影响计算精度的稳定性。
-最后，介绍了Nitsche法。Nitsche法是一种满足变分一致性的边界条件施加方法，通过结合修正变分原理法和罚函数法，在变分原理中引入形函数高阶梯度和人工参数来处理边界条件。然而，由于引入了高阶梯度导致Nitsche法的计算效率相对较低，并且由于人工参数会引起计算精度的不稳定性。
+本章介绍了3种伽辽金无网格法本质边界条件施加方法，包括拉格朗日乘子法、罚函数法和Nitsche法，并对这些方法的特点进行了总结。
+首先是拉格朗日乘子法，拉格朗日乘子法通过引入拉格朗日乘子来处理本质边界条件，满足刚度矩阵的对称性和变分一致性。然而，该方法需引入额外自由度离散拉格朗日乘子，当自由度过多时，可能导致整体刚度矩阵的奇异性增加。
+其次是罚函数法。罚函数法通过在变分原理中引入一个罚因子，将边界条件约束项转化为一个惩罚项，从而实现边界条件的施加。罚函数法具有简洁高效的特点，但需要选择合适的罚因子，过大或过小的罚因子都会影响计算精度的稳定性，并且该方法无法满足变分一致性。
+最后是Nitsche法。Nitsche法是一种满足变分一致性的本质边界条件施加方法，通过结拉格朗日乘子法和罚函数法，在变分原理中引入形函数高阶梯度和人工参数来处理边界条件。然而，由于引入了高阶梯度导致Nitsche法的计算效率相对较低，并且由于人工参数会引起计算精度的不稳定性。
 
 
 
