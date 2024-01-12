@@ -1,7 +1,6 @@
 \chapter{本质边界条件施加方法}
 由于无网格形函数通常不具备插值特性，因此伽辽金无网格法需要通过弱形式施加本质边界条件。
 在本章中，将以弹性力学问题和薄板问题为例，对常见的3种无网格法本质边界条件施加方法进行详细讨论，包括拉格朗日乘子法、罚函数法、Nitsche法。
-
 \section{拉格朗日乘子法}
 拉格朗日乘子法最早由Belytschko等人\cite{}引入伽辽金无网格法中施加本质边界条件，该方法在原有的势能泛函的基础上引入拉格朗日乘子项施加本质边界条件。在弹性力学问题中，在势能泛函(\ref{elasticity potential functional})的基础上增加拉格朗日乘子项有：
 \begin{equation}\label{Elambda}
@@ -9,7 +8,6 @@
     \bar{\Pi}(\pmb{u},\pmb \lambda)=\Pi(\pmb{u})-\int_{\Gamma^g}\lambda_i(u_i-g_i)d\Gamma
 \end{split}
 \end{equation}   
-% 其中$\pmb{\lambda}=\{\lambda_1,\dotsb,\lambda_{n_{sd}}\}^T$。
 对式(\ref{Elambda})进行变分可以得到拉格朗日乘子法的等效积分弱形式：
 \begin{equation}\label{Elambda weakform}
         \delta\bar{\Pi}(\pmb{u},\pmb{\lambda})=\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_i\lambda_id\Gamma-\int_{\Gamma^g}\delta\lambda_i(u_i-g_i)d\Gamma=0
@@ -19,30 +17,20 @@
 \lambda_i(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\lambda_{iI},\quad
 \delta\lambda_i(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\delta\lambda_{iI}
 \end{equation}
-% 其中$\lambda_i=\{\lambda_{i1},\;\dotsb,\;\lambda_{in_{sd}}\}^T$，$\delta\pmb \lambda_I=\{\delta\lambda_{I1},\dotsb,\delta\lambda_{In_{sd}}\}^T$，
 其中$N\!L$表示离散拉格朗日乘子的个数，$N_I(\pmb{x})$为有限元函数。\par
 将式(\ref{displacement vector})、(\ref{strainh})、(\ref{strain vector})和(\ref{lambdalisan})代入到弱形式(\ref{Elambda weakform})中得弹性力学问题的离散平衡控制方程式：
-% \begin{equation}
-% \begin{split}
-%   \left\{\begin{matrix}\delta\pmb{d}\\\delta\pmb{\lambda}\end{matrix}\right\}^T
-%   \left\{\begin{matrix}
-%   \left[\begin{matrix}\pmb{K}&\pmb{K}^{\lambda}\\\pmb{K}^{\lambda T}&\pmb{0}\end{matrix}\right]
-%   \left\{\begin{matrix}\pmb{d}\\\pmb{\lambda}\end{matrix}\right\}-
-%   \left\{\begin{matrix}\pmb{f}\\\pmb{f}^{\lambda}\end{matrix}\right\}
-%   \end{matrix}\right\}=0
-% \end{split}
-% \end{equation}
-% 引入了拉格朗日乘子使得弱形式(\ref{Elambda weakform})中包含强制边界条件，通过上式进一步得到：
 \begin{equation}
     \begin{bmatrix}\pmb{K}&\pmb{K}^{(u\lambda)}\\\pmb{K}^{(u\lambda) T}&\pmb{0}\end{bmatrix}
     \left\{\begin{matrix}\pmb{d}\\\pmb{\lambda}\end{matrix}\right\}=
     \left\{\begin{matrix}\pmb{f}\\\pmb{f}^{\lambda}\end{matrix}\right\}
 \end{equation}
 其中$\pmb{K}$、$\pmb{f}$为传统的刚度矩阵和力向量，其表达式见式(\ref{EKf})。$\pmb{K}^{(u\lambda)}$和$\pmb{f}^{\lambda}$的分量具体表达式如下：
+\begin{subequations}
 \begin{align}
-    \pmb K_{I\!J}^{\lambda}&=-\int_{\Gamma^g}\Psi_IN_J \boldsymbol 1d\Gamma\\
+    \pmb K_{IJ}^{u\lambda}&=-\int_{\Gamma^g}\Psi_IN_J \boldsymbol 1d\Gamma\\
     \pmb f_I^{\lambda}&=-\int_{\Gamma^g}N_I\pmb{g}d\Gamma
 \end{align}
+\end{subequations}
 式中$\boldsymbol 1$为$2\times2$单位矩阵。
 \par
 同样地在薄板问题势能泛函中(\ref{Pshineng})引入拉格朗日乘子$\lambda_w$、$\lambda_\theta$、$\lambda_c$施加本质边界条件，可得到如下表达式：
@@ -54,12 +42,12 @@
 对式(\ref{Plambda})进行变分可以得到相应的等效积分弱形式：
 \begin{equation}\label{Plambda weakform}
 \begin{split}
-    \delta\bar{\Pi}(w,\lambda_w,\lambda_{\theta},\lambda_c)&=\delta\Pi(w)-\int_{\Gamma_w}(\delta\lambda_w w+\lambda_w\delta w)d\Gamma+\int_{\Gamma_w}\delta\lambda_w\bar{w}d\Gamma\\
-&+\int_{\Gamma_{\theta}}(\delta\lambda_{\theta}\theta_{\pmb n}+\delta\theta_{\pmb n}\lambda_{\theta})d\Gamma-\int_{\Gamma_{\theta}}\delta\lambda_{\theta}\bar{\theta}_{\pmb n}d\Gamma\\
-&+(\delta\lambda_c w-\lambda_c\delta w)\vert_{x\in c_w}-\delta\lambda_c\bar{w}\vert_{x\in c_w}\\
-&=0
+    \delta\bar{\Pi}(w,\lambda_w,\lambda_{\theta},\lambda_c)&=\delta\Pi(w)\\
+    &-\int_{\Gamma_w}\delta w\lambda_wd\Gamma+\int_{\Gamma_{\theta}}\delta\theta_{\pmb n}\lambda_\theta d\Gamma-\delta w\lambda_c\vert_{x\in c_w}\\
+    &-\int_{\Gamma_w}\delta\lambda_w(w-\bar{w})d\Gamma+\int_{\Gamma_{\theta}}\delta\lambda_\theta(\theta_{\pmb n}-\bar{\theta}_{\pmb n})d\Gamma-\delta\lambda_c(w-\bar{w})\vert_{x\in c_w}\\
+    &=0
 \end{split}
-\end{equation}\par
+\end{equation}
 进一步采用有限元形函数离散拉格朗日乘子$\lambda_w$、$\lambda_\theta$和$\lambda_c$：
 \begin{equation}\label{lambda_3}
 \lambda_w(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\lambda_{wI},\quad
@@ -69,11 +57,11 @@
 将式(\ref{wn})、(\ref{Malphabeta})、(\ref{Pwuwangelisan})和(\ref{lambda_3})代入到弱形式(\ref{Plambda weakform})中可得薄板问题拉格朗日乘子法的离散控制方程式：
 \begin{equation}
     \begin{split}
-     \left[\begin{matrix}\pmb{K}&\pmb{K}^{\lambda w}&\pmb{K}^{\lambda\theta}&\pmb{K}^{\lambda c}\\
-     \pmb{K}^{\lambda_wT}&0&0&0\\
-     \pmb{K}^{\lambda_\theta T}&0&0&0\\
-     \pmb{K}^{\lambda_c T}&0&0&0\\
-     \end{matrix}\right]
+     \begin{bmatrix}\pmb{K}&\pmb{K}^{w\lambda_w}&\pmb{K}^{w\lambda_\theta}&\pmb{K}^{w\lambda_c}\\
+     \pmb{K}^{w\lambda_w T}&\pmb 0&\pmb 0&\pmb 0\\
+     \pmb{K}^{w\lambda\theta T}&\pmb 0&\pmb 0&\pmb 0\\
+     \pmb{K}^{w\lambda_c T}&\pmb 0&\pmb 0&\pmb 0\\
+     \end{bmatrix}
      \left\{\begin{matrix}
      \pmb{d}\\\pmb \lambda_w\\\pmb \lambda_{\theta}\\\pmb\lambda_c
      \end{matrix}\right\}=
@@ -82,15 +70,17 @@
      \end{matrix}\right\}
 \end{split}
 \end{equation}
-其中刚度矩阵$\pmb{K}$、力向量$\pmb{f}$表达式见式(\ref{PKf})。$\pmb K^{\lambda_w}$、$\pmb K^{\lambda_\theta}$、$\pmb K^{\lambda_c}$、$\pmb f^{\lambda_w}$、$\pmb f^{\lambda_\theta}$、$\pmb f^{\lambda_c}$分量的表达式分别为：
+其中刚度矩阵$\pmb{K}$、力向量$\pmb{f}$表达式见式(\ref{PKf})。$\pmb K^{w\lambda_w}$、$\pmb K^{w\lambda_\theta}$、$\pmb K^{w\lambda_c}$、$\pmb f^{\lambda_w}$、$\pmb f^{\lambda_\theta}$、$\pmb f^{\lambda_c}$分量的表达式分别为：
+\begin{subequations}
 \begin{align}
-    K_{IJ}^{\lambda_w}&=-\int_{\Gamma_w}\Psi_IN_J^{\lambda_w}d\Gamma\\
-    K_{IJ}^{\lambda_\theta}&=\int_{\Gamma_\theta}\Psi_{I,\alpha}n_\alpha(\pmb{x})N_J^{\lambda_\theta}d\Gamma\\
-    K_{IJ}^{\lambda_c}&=-\Psi_I(\pmb{x})N_J^{\lambda_c}\vert_{c\in c_w}\\
+    K_{IJ}^{w\lambda_w}&=-\int_{\Gamma_w}\Psi_IN_J^{\lambda_w}d\Gamma\\
+    K_{IJ}^{w\lambda_\theta}&=\int_{\Gamma_\theta}\Psi_{I,\alpha}n_\alpha(\pmb{x})N_J^{\lambda_\theta}d\Gamma\\
+    K_{IJ}^{w\lambda_c}&=-\Psi_I(\pmb{x})N_J^{\lambda_c}\vert_{c\in c_w}\\
     f_I^{\lambda_w}&=\int_{\Gamma_w}N_I^{\lambda_w}\bar{w}d\Gamma\\
     f_I^{\lambda_\theta}&=-\int_{\Gamma_\theta}N_I^{\lambda_\theta}\bar{\theta}_nd\Gamma\\
     f_I^{\lambda_c}&=-N_I^{\lambda_c}\bar{w}\vert_{c\in c_w}
-\end{align}\par
+\end{align}
+\end{subequations}\par
 拉格朗日乘子法在数值计算中广泛应用，特别适用于处理约束条件，在伽辽金无网格法求解过程中应用广泛，可满足变分的一致性[]。
 然而，拉格朗日乘子法需引入额外自由度离散朗哥朗日乘子，其刚度矩阵也变成了奇异矩阵。当拉格朗日乘子自由度过多时，将增加整体刚度矩阵的奇异性，导致计算精度下降。尤其在薄板问题中通常涉及大量的自由度和约束条件，刚度矩阵奇异性问题更为显著。
 \section{罚函数法}
@@ -100,51 +90,44 @@
 \end{equation}
 对式(\ref{Epenalty})进行变分可以得到施加本质边界条件罚函数法的等效积分弱形式：
 \begin{equation}\label{Epenalty weakform}
-\begin{split}
-    \delta\bar{\Pi}(\pmb{u})&=\delta\Pi(\pmb{u})+\alpha\int_{\Gamma^g}\delta u_iu_id\Gamma-\alpha\int_{\Gamma^g}\delta u_ig_id\Gamma
-    =0
-\end{split}                                                 
+    \delta\bar{\Pi}(\pmb{u})=\delta\Pi(\pmb{u})+\alpha\int_{\Gamma^g}\delta u_iu_id\Gamma-\alpha\int_{\Gamma^g}\delta u_ig_id\Gamma
+    =0                                              
 \end{equation}\par
 引入无网格离散式(\ref{displacement vector})、(\ref{strainh})和(\ref{strain vector})代入到弱形式(\ref{Epenalty weakform})中得到弹性力学问题施加本质边界条件罚函数法的离散平衡控制方程式：
-% \begin{equation}
-% \begin{split}
-%       \delta\pmb{d}^T\{(\pmb{K}+\pmb{K}^s)\pmb{d}-(\pmb{f}+\pmb{f}^s)\}=0
-% \end{split}                                                 
-% \end{equation}
-% 同样由于$\delta\pmb{d}$的任意性可以得到罚函数法的无网格离散平衡控制方程式：
 \begin{equation}
     (\pmb{K}+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^s
 \end{equation}
-其中$\pmb{K}$、$\pmb{f}$见式(\ref{EKf})，$\pmb K^s_{I\!J}$和$\pmb f^s_I$的具体表达式为：
+其中$\pmb{K}$、$\pmb{f}$见式(\ref{EKf})，$\pmb K^s_{IJ}$和$\pmb f^s_I$的具体表达式为：
+\begin{subequations}\label{EKFs}
 \begin{align}
-  \pmb K^s_{I\!J}&=\alpha\int_{\Gamma^g}\Psi_I\Psi_J\boldsymbol 1d\Gamma\\
+  \pmb K^s_{IJ}&=\alpha\int_{\Gamma^g}\Psi_I\Psi_J\boldsymbol 1d\Gamma\\
   \pmb f^s_I&=\alpha\int_{\Gamma^g}N_I\pmb{g}d\Gamma
-\end{align}\par
+\end{align}
+\end{subequations}\par
 薄板问题势能泛函表达式(\ref{Pshineng})通过引入3个不通的罚因子$\alpha_w$、$\alpha_\theta$和$\alpha_c$施加本质边界条件，其表达式为：
-\begin{equation}\label{Ppenalty}
-\begin{split}
-        \bar{\Pi}(w)&=\frac{1}{2}\int_{\Omega}\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega+\int_{\Gamma_M}\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}w\bar{V}_{\pmb{n}}d\Gamma-w\bar{P}\vert_{x\in c_P}+\int_{\Omega}w\bar{q}d\Omega\\
-    &+\frac{\alpha_w}{2}\int_{\Gamma_w}(w-\bar{w})^2d\Gamma+\frac{\alpha_{\theta}}{2}\int_{\Gamma_{\theta}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})^2d\Gamma+\frac{\alpha_c}{2}(w-\bar{w})^2\vert_{x\in c_w}
-\end{split}
-\end{equation}
+\begin{multline}\label{Ppenalty}
+        \bar{\Pi}(w)=\Pi(w)\\
+    +\frac{\alpha_w}{2}\int_{\Gamma_w}(w-\bar{w})^2d\Gamma+\frac{\alpha_{\theta}}{2}\int_{\Gamma_{\theta}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})^2d\Gamma+\frac{\alpha_c}{2}(w-\bar{w})^2\vert_{x\in c_w}
+\end{multline}
 对式(\ref{Ppenalty})进行变分可以得到施加本质边界条件罚函数法的等效积分弱形式：
 \begin{equation}\label{Ppenalty weakform}
 \begin{split}
-    &\int_{\Omega}\delta\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega
-    +\alpha_w\int_{\Gamma_w}\delta wwd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\delta\theta_{\pmb{n}}\theta_{\pmb{n}}d\Gamma+\alpha_c\delta ww\vert_{x\in c_w}\\
-    &=\int_{\Gamma_M}\delta\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}\delta w\bar{V}_{\pmb{n}}d\Gamma-\delta w\bar{P}\vert_{x\in c_P}+\int_{\Omega}\delta w\bar{q}d\Omega\\
-    &+\alpha_w\int_{\Gamma_w}\delta w\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\delta\theta_{\pmb{n}}\bar{\theta}_{\pmb{n}}d\Gamma+\alpha_c\delta w\bar{w}\vert_{x\in c_w}
+  \delta\bar{\Pi}(w)&=\delta\Pi(w)\\
+  &+\alpha_w\int_{\Gamma_w}\delta w(w-\bar{w})d\Gamma+\alpha_\theta\int_{\Gamma_{\theta}}\delta\theta_{\pmb n}(\theta_{\pmb n}-\bar{\theta}_{\pmb n})d\Gamma+\alpha_c(w-\bar{w})\vert_{x\in c_w}\\
+  &=0
 \end{split}
 \end{equation}\par
 引入式(\ref{wn})、(\ref{Malphabeta})和(\ref{Pwuwangelisan})代入到弱形式(\ref{Ppenalty weakform})中得到薄板问题施加本质边界条件罚函数法的离散平衡控制方程式：
 \begin{equation}
     (\pmb{K}+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^s
 \end{equation}
-其中刚度矩阵$\pmb{K}$、力向量$\pmb{f}$见式(\ref{PKf})，$\pmb K^s_{I\!J}$和$\pmb f^s_I$的具体表达式为：
+其中刚度矩阵$\pmb{K}$、力向量$\pmb{f}$见式(\ref{PKf})，$\pmb K^s_{IJ}$和$\pmb f^s_I$的具体表达式为：
+\begin{subequations}\label{PKFs}
 \begin{align}
-   K^s_{I\!J}&=\alpha_w\int_{\Gamma_w}\Psi_I\Psi_Jd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\Psi_{J,\pmb n}d\Gamma+\alpha_c\Psi_I\Psi_J\vert_{x\in c_w}\\
+   K^s_{IJ}&=\alpha_w\int_{\Gamma_w}\Psi_I\Psi_Jd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\Psi_{J,\pmb n}d\Gamma+\alpha_c\Psi_I\Psi_J\vert_{x\in c_w}\\
 f^s_I&=\alpha_w\int_{\Gamma_w}\Psi_I\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\bar{\theta}_{\pmb n}d\Gamma+\alpha_c\Psi_I\bar{w}\vert_{x\in c_w}
-\end{align}\par
+\end{align}
+\end{subequations}\par
 值得注意的是，罚函数法不满足变分一致性，并且在使用过程中罚因子大小决定了伽辽金法的计算精度。
 较大的罚因子可能会导致数值不稳定或者收敛困难，而较小的罚因子可能会导致边界条件无法满足。
 尤其在薄板问题中，最优的罚因子取值跟节点离散尺寸相关，且3种罚因子跟节点离散尺寸的相关性不同，难以保证计算精度。
@@ -152,98 +135,85 @@ f^s_I&=\alpha_w\int_{\Gamma_w}\Psi_I\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{
 Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界条件施加方法，其可视为拉格朗日乘子法与罚函数法相结合。首先将拉格朗日乘子采用相对应的物理意义表示，此时拉格朗日乘子可用传统位移节点进行离散，无需引入额外自由度，保证了变分一致性和刚度矩阵对称性。然而，此时刚度矩阵通常不具有正定性，需引入罚函数项进行稳定，保证计算精度。\par
 在弹性力学问题中，拉格朗日乘子的物理意义为约束反力，即$\lambda_i=\sigma_{ij}n_i$。
 并引入罚函数法，此时等效积分弱形式(\ref{Elambda weakform})中可改写为：
-\begin{equation}\label{Esigman}
-    \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})-\int_{\Gamma^g}\sigma_{ij}n_i(u_i-g_i)d\Gamma
-\end{equation}
-对式(\ref{Esigman})进行变分得到施加本质边界条件修正变分原理法的等效积分弱形式：
-\begin{equation}\label{Esigman weakform}
-    \delta\bar{\Pi}(\pmb{u})=\delta\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_in_i\sigma_{ij}d\Gamma-\int_{\Gamma^g}n_i\delta\sigma_{ij}(u_i-g_i)d\Gamma
-    =0
-\end{equation}\par
-在伽辽金无网格法中，面力$\sigma_{ij}n_i$的无网格离散形式可以表示为：
-\begin{equation}\label{Esigman wuwanggelisan}
-    n_i\sigma_{ij}=\bar{n}_i^T\sigma_{ij}=\bar{n}_i^T\pmb{D}\varepsilon^h=\sum_{I=1}^{N\!P}\bar{\pmb n}^T\pmb D\pmb{B}_I\pmb{d}_I
-\end{equation}
-其中$\bar{\pmb{n}}$在平面问题中的表达式为：
-\begin{equation}
-\begin{split}
-    \bar{\pmb n}=\left[\begin{matrix}n_1&0\\0&n_2\\n_2&n_1
-    \end{matrix}\right]
-\end{split}
-\end{equation}\par
-其次为了满足正定性，通过引入罚因子$\alpha$结合罚函数法得到如下表达式：
 \begin{equation}\label{Enitsche}
-\begin{split}
     \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})-\int_{\Gamma^g}n_i\sigma_{ij}(u_i-g_i)d\Gamma+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
-\end{split}
 \end{equation}
-对式(\ref{Enitsche})进行变分得到弹性力学问题施加本质边界条件Nistche法的等效积分弱形式：
+对式(\ref{Enitsche})进行变分得到相对应的等效积分弱形式：
 \begin{equation}\label{Enitsche weakform}
 \begin{split}
     \delta\bar{\Pi}(\pmb{u})&=\delta\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_id\Gamma-\int_{\Gamma^g}n_i\delta\sigma_{ij}(u_i-g_i)d\Gamma\\
-&+\alpha\int_{\Gamma^g}\delta u_iu_id\Gamma-\alpha\int_{\Gamma^g}\delta u_i g_id\Gamma\\
-&=0
+    &+\alpha\int_{\Gamma^g}\delta u_iu_id\Gamma-\alpha\int_{\Gamma^g}\delta u_i g_id\Gamma\\
+    &=0
 \end{split}
 \end{equation}\par
-最后引入无网格离散式(\ref{Esigman wuwanggelisan})以及式(\ref{displacement vector})、式(\ref{strainh})和(\ref{strain vector})代入到弱形式(\ref{Enitsche weakform})中得到弹性力学问题施加本质边界条件Nitsche法的离散平衡控制方程式：
+% 在伽辽金无网格法中，面力$\sigma_{ij}n_i$的无网格离散形式可以表示为：
+% \begin{equation}\label{Esigman wuwanggelisan}
+%     n_i\sigma_{ij}=\bar{n}_i^T\sigma_{ij}=\bar{n}_i^T\pmb{D}\varepsilon^h=\sum_{I=1}^{N\!P}\bar{\pmb n}^T\pmb D\pmb{B}_I\pmb{d}_I
+% \end{equation}
+% 其中$\bar{\pmb{n}}$在平面问题中的表达式为：
+% \begin{equation}
+% \begin{split}
+%     \bar{\pmb n}=\left[\begin{matrix}n_1&0\\0&n_2\\n_2&n_1
+%     \end{matrix}\right]
+% \end{split}
+% \end{equation}\par
+% 其次为了满足正定性，通过引入罚因子$\alpha$结合罚函数法得到如下表达式：
+% \begin{equation}\label{Enitsche}
+% \begin{split}
+%     \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})-\int_{\Gamma^g}n_i\sigma_{ij}(u_i-g_i)d\Gamma+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
+% \end{split}
+% \end{equation}
+% 对式(\ref{Enitsche})进行变分得到弹性力学问题施加本质边界条件Nistche法的等效积分弱形式：
+% \begin{equation}\label{Enitsche weakform}
+% \begin{split}
+%     \delta\bar{\Pi}(\pmb{u})&=\delta\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_id\Gamma-\int_{\Gamma^g}n_i\delta\sigma_{ij}(u_i-g_i)d\Gamma\\
+% &+\alpha\int_{\Gamma^g}\delta u_iu_id\Gamma-\alpha\int_{\Gamma^g}\delta u_i g_id\Gamma\\
+% &=0
+% \end{split}
+% \end{equation}\par
+引入无网格离散式(\ref{displacement vector})、式(\ref{strainh})和(\ref{strain vector})代入到弱形式(\ref{Enitsche weakform})中得到弹性力学问题施加本质边界条件Nitsche法的离散控制方程式：
 \begin{equation}
-\begin{split}
     (\pmb{K}+\pmb{K}^v+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^v+\pmb{f}^s
-\end{split}
 \end{equation}
-其中：
+其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{EKf})，通过罚函数法满足正定性得到的稳定项$\pmb{K}^s$和$\pmb{f}^s$见式(\ref{EKFs})，结合拉格朗日乘子法满足变分一致性的修正变分项$\pmb{K}^v$和$\pmb{f}^v$，其具体表达式如下：
 \begin{subequations}
-\begin{align}
-   \pmb K_{I\!J}&=\int_{\Omega}\pmb{B}_I^T\pmb{D}\pmb{B}_Jd\Omega\\
-   \pmb f_I&=\int_{\Omega}\Psi_I\pmb{b}d\Omega+\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma\\
-% \end{align}
-% \end{subequations}
-% \begin{subequations}
-% \begin{align}    
+\begin{align} 
     \pmb K^v_{I\!J}&=-\int_{\Gamma^g}\Psi_I\bar{\pmb{n}}^T\pmb{D}\pmb{B}_Jd\Gamma-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\Psi_Jd\Gamma\\
-    \pmb f^v_I&=-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\pmb{g}d\Gamma\\
-% \end{align}
-% \end{subequations}
-% \begin{subequations}
-% \begin{align}   
-   \pmb K^s_{I\!J}&=\alpha\int_{\Gamma^g}\Psi_I\Psi_Jd\Gamma\\
-   \pmb f^s_I&=\alpha\int_{\Gamma^g}N_I\pmb{g}d\Gamma
+    \pmb f^v_I&=-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\pmb{g}d\Gamma
 \end{align}
-\end{subequations}\par
-薄板问题拉格朗日乘子法的等效积分弱形式(\ref{Plambda weakform})中的拉格朗日乘子$\lambda_w$、$\lambda_\theta$和$\lambda_c$分别用等效剪力$V_{\pmb n}$、法向弯矩$M_{pmb{nn}}$和薄板角上的集中荷载$P$替代得到如下表达式：
-\begin{equation}\label{Psigman}
-\begin{split}
-    \bar{\Pi}(w)&=\frac{1}{2}\int_{\Omega}\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega+\int_{\Gamma_M}\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}w\bar{V}_{\pmb{n}}d\Gamma-w\bar{P}\vert_{x\in c_P}+\int_{\Omega}w\bar{q}d\Omega\\
-    &-\int_{\Gamma_w}V_{\pmb{n}}(w-\bar{w})d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})d\Gamma-P(w-\bar{w})\vert_{x\in c_w}\\
-\end{split}
-\end{equation}
-对式(\ref{Psigman})进行变分得到施加本质边界条件修正变分原理法的等效积分弱形式：
+\end{subequations}
+式中矩阵$\bar{\pmb{n}}$在平面问题中的表达式为：
 \begin{equation}
 \begin{split}
-    &\int_{\Omega}\delta\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega-\int_{\Gamma_w}(\delta V_{\pmb{n}}w+\delta wV_{\pmb{n}})d\Gamma+\int_{\Gamma_{\theta}}(\delta M_{\pmb{nn}}\theta_{\pmb{n}}+\delta\theta_{\pmb{n}}M_{\pmb{nn}})d\Gamma\\
-    &-(\delta Pw+\delta wP)\vert_{x\in c_w}=\int_{\Gamma_M}\delta\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}\delta w\bar{V}_{\pmb{n}}d\Gamma-\delta w\bar{P}\vert_{x\in c_P}\\
-    &+\int_{\Omega}\delta w\bar{q}d\Omega-\int_{\Gamma_w}\delta V_{\pmb{n}}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\delta M_{\pmb{nn}}\bar{\theta}_{\pmb{n}}d\Gamma-\delta P\bar{w}\vert_{x\in c_w}
+    \bar{\pmb n}=\begin{bmatrix}n_1&0\\0&n_2\\n_2&n_1
+    \end{bmatrix}
 \end{split}
 \end{equation}\par
-为了满足正定性，进一步引入罚因子$\alpha_w$、$\alpha_\theta$和$\alpha_c$结合罚函数法得到如下表达式：
+同样地在薄板问题中，拉格朗日乘子$\lambda_w$、$\lambda_\theta$和$\lambda_c$分别用等效剪力$V_{\pmb n}$、法向弯矩$M_{\pmb{nn}}$和薄板角上的集中荷载$P$进行替换，并通过罚函数法引入三个不同的罚因子$\alpha_w$、$\alpha_\theta$和$\alpha_c$，此时等效积分弱形式(\ref{Pweakform})可改写：
 \begin{equation}\label{Pnitsche}
 \begin{split}
-    \bar{\Pi}(w)&=\frac{1}{2}\int_{\Omega}\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega+\int_{\Gamma_M}\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}w\bar{V}_{\pmb{n}}d\Gamma-w\bar{P}\vert_{x\in c_P}+\int_{\Omega}w\bar{q}d\Omega\\
-&-\int_{\Gamma_w}V_{\pmb{n}}(w-\bar{w})d\Gamma+\int_{\theta}M_{\pmb{nn}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})d\Gamma-P(w-\bar{w})\vert_{x\in c_w}\\
-&+\frac{\alpha_w}{2}\int_{\Gamma_w}(w-\bar{w})^2d\Gamma+\frac{\alpha_{\theta}}{2}\int_{\Gamma_{\theta}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})^2d\Gamma+\frac{\alpha_c}{2}(w-\bar{w})^2\vert_{x\in c_w}
+    \bar{\Pi}(w)&=\Pi(w)\\
+    &-\int_{\Gamma_w}V_{\pmb{n}}(w-\bar{w})d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})d\Gamma-P(w-\bar{w})\vert_{x\in c_w}\\
+    &+\frac{\alpha_w}{2}\int_{\Gamma_w}(w-\bar{w})^2d\Gamma+\frac{\alpha_{\theta}}{2}\int_{\Gamma_{\theta}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})^2d\Gamma+\frac{\alpha_c}{2}(w-\bar{w})^2\vert_{x\in c_w}
 \end{split}
 \end{equation}
-对式(\ref{Pnitsche})进行变分得到薄板问题施加本质边界条件Nitshce法的等效积分弱形式为：
-\begin{equation}\label{Pitsche weakform}
-\begin{split}
-&\int_{\Omega}\delta\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega-\int_{\Gamma_w}(\delta V_{\pmb{n}}w+\delta wV_{\pmb{n}})d\Gamma+\int_{\Gamma_{\theta}}(\delta M_{\pmb{nn}}\theta_{\pmb{n}}+\delta\theta_{\pmb{n}}M_{\pmb{nn}})d\Gamma\\&-(\delta Pw+\delta wP)\vert_{x\in c_w}
-+\alpha_w\int_{\Gamma_w}\delta wwd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\delta\theta_{\pmb{n}}\theta_{\pmb{n}}d\Gamma+\alpha_c\delta ww\vert_{x\in c_w}\\
-&=\int_{\Gamma_M}\delta\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}\delta w\bar{V}_{\pmb{n}}d\Gamma-\delta w\bar{P}\vert_{x\in c_P}+\int_{\Omega}\delta w\bar{q}d\Omega
--\int_{\Gamma_w}\delta V_{\pmb{n}}\bar{w}d\Gamma\\&+\int_{\Gamma_{\theta}}\delta M_{\pmb{nn}}\bar{\theta}_{\pmb{n}}d\Gamma-\delta P\bar{w}\vert_{x\in c_w}
-+\alpha_w\int_{\Gamma_w}\delta w\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\delta\theta_{\pmb{n}}\bar{\theta}_{\pmb{n}}d\Gamma+\alpha_c\delta w\bar{w}\vert_{x\in c_w}
-\end{split}
-\end{equation}\par
-薄板问题Nische法的弱形式(\ref{Pitsche weakform})中的法向弯矩$M_{\pmb{nn}}$、等效剪力$V_{\pmb n}$和薄板角上的集中荷载$P$可根据尺寸相关弹性[]，通过将式(\ref{Qn})、(\ref{Mn})、(\ref{Malphabeta})、(\ref{Dalphabeta})代入式(\ref{P control equation})中得到具体表达式：
+% 对式(\ref{Psigman})进行变分得到施加本质边界条件修正变分原理法的等效积分弱形式：
+% \begin{equation}
+% \begin{split}
+%     &\int_{\Omega}\delta\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega-\int_{\Gamma_w}(\delta V_{\pmb{n}}w+\delta wV_{\pmb{n}})d\Gamma+\int_{\Gamma_{\theta}}(\delta M_{\pmb{nn}}\theta_{\pmb{n}}+\delta\theta_{\pmb{n}}M_{\pmb{nn}})d\Gamma\\
+%     &-(\delta Pw+\delta wP)\vert_{x\in c_w}=\int_{\Gamma_M}\delta\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}\delta w\bar{V}_{\pmb{n}}d\Gamma-\delta w\bar{P}\vert_{x\in c_P}\\
+%     &+\int_{\Omega}\delta w\bar{q}d\Omega-\int_{\Gamma_w}\delta V_{\pmb{n}}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\delta M_{\pmb{nn}}\bar{\theta}_{\pmb{n}}d\Gamma-\delta P\bar{w}\vert_{x\in c_w}
+% \end{split}
+% \end{equation}\par
+% 为了满足正定性，进一步引入罚因子$\alpha_w$、$\alpha_\theta$和$\alpha_c$结合罚函数法得到如下表达式：
+% \begin{equation}\label{Pnitsche}
+% \begin{split}
+%     \bar{\Pi}(w)&=\frac{1}{2}\int_{\Omega}\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega+\int_{\Gamma_M}\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}w\bar{V}_{\pmb{n}}d\Gamma-w\bar{P}\vert_{x\in c_P}+\int_{\Omega}w\bar{q}d\Omega\\
+% &-\int_{\Gamma_w}V_{\pmb{n}}(w-\bar{w})d\Gamma+\int_{\theta}M_{\pmb{nn}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})d\Gamma-P(w-\bar{w})\vert_{x\in c_w}\\
+% &+\frac{\alpha_w}{2}\int_{\Gamma_w}(w-\bar{w})^2d\Gamma+\frac{\alpha_{\theta}}{2}\int_{\Gamma_{\theta}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})^2d\Gamma+\frac{\alpha_c}{2}(w-\bar{w})^2\vert_{x\in c_w}
+% \end{split}
+% \end{equation}
+其中法向弯矩$M_{\pmb{nn}}$、等效剪力$V_{\pmb n}$和薄板角上的集中荷载$P$可根据尺寸相关弹性[]，通过将式(\ref{Qn})、(\ref{Mn})、(\ref{Malphabeta})、(\ref{Dalphabeta})代入式(\ref{P control equation})中得到具体表达式为：
 \begin{equation}
 \begin{cases}\label{MVP}
         M_{\pmb{nn}}=\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}=-\bar{D}(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})w_{,\alpha\beta}\\
@@ -251,7 +221,7 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
         P=\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}=-[[(\bar{D}(1-\nu)n_{\alpha}s_{\beta})w_{,\alpha\beta}]]
 \end{cases}
 \end{equation}
-其中：
+其中
 \begin{equation}
 \begin{cases}\label{MVP1}
  \mathcal{M}_{\alpha\beta}w_{,\alpha\beta}=-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta}=-\bar{D}(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})\\
@@ -260,24 +230,39 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
  \mathcal{P}_{\alpha\beta}w_{,\alpha\beta}=-[[D_{\alpha\beta}n_{\gamma}s_{\eta}]]=-[[\bar{D}(1-\nu)n_{\alpha}s_{\beta}]]
 \end{cases}
 \end{equation}\par
-引入无网格离散式(\ref{Pwuwangelisan})、式(\ref{wn})-(\ref{kangwangangdu})和式(\ref{MVP})、(\ref{MVP1})得到薄板问题施加本质边界条件Nitsche法的离散平衡控制方程式：
+对式(\ref{Pnitsche})进行变分得到薄板问题施加本质边界条件Nitshce法的等效积分弱形式为：
+% \begin{equation}\label{Pitsche weakform}
+% \begin{split}
+% &\int_{\Omega}\delta\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega-\int_{\Gamma_w}(\delta V_{\pmb{n}}w+\delta wV_{\pmb{n}})d\Gamma+\int_{\Gamma_{\theta}}(\delta M_{\pmb{nn}}\theta_{\pmb{n}}+\delta\theta_{\pmb{n}}M_{\pmb{nn}})d\Gamma\\&-(\delta Pw+\delta wP)\vert_{x\in c_w}
+% +\alpha_w\int_{\Gamma_w}\delta wwd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\delta\theta_{\pmb{n}}\theta_{\pmb{n}}d\Gamma+\alpha_c\delta ww\vert_{x\in c_w}\\
+% &=\int_{\Gamma_M}\delta\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}\delta w\bar{V}_{\pmb{n}}d\Gamma-\delta w\bar{P}\vert_{x\in c_P}+\int_{\Omega}\delta w\bar{q}d\Omega
+% -\int_{\Gamma_w}\delta V_{\pmb{n}}\bar{w}d\Gamma\\&+\int_{\Gamma_{\theta}}\delta M_{\pmb{nn}}\bar{\theta}_{\pmb{n}}d\Gamma-\delta P\bar{w}\vert_{x\in c_w}
+% +\alpha_w\int_{\Gamma_w}\delta w\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\delta\theta_{\pmb{n}}\bar{\theta}_{\pmb{n}}d\Gamma+\alpha_c\delta w\bar{w}\vert_{x\in c_w}
+% \end{split}
+% \end{equation}\par
+\begin{equation}\label{Pitsche weakform}
+\begin{split}
+    \delta\bar{\Pi}(w)&=\delta\Pi(w)\\
+ &-\int_{\Gamma_w}\delta V_{\pmb n}(w-\bar{w})d\Gamma+\int_{\Gamma_{\theta}}\delta M_{\pmb{nn}}(\theta_{\pmb n}-\bar{\theta}_{\pmb n})d\Gamma-\delta P(w-\bar{w})\vert_{x\in c_w}\\
+ &-\int_{\Gamma_w}\delta wV_{\pmb n}d\Gamma+\int_{\Gamma_{\theta}}\delta\theta_{\pmb n}M_{\pmb{nn}}d\Gamma-\delta wP\vert_{x\in c_w}\\
+ &+\alpha_w\int_{\Gamma_w}\delta w(w-\bar{w})d\Gamma+\alpha_\theta\int_{\Gamma_{\theta}}\delta\theta_{\pmb n}(\theta_{\pmb n}-\bar{\theta}_{\pmb n})d\Gamma+\alpha_c(w-\bar{w})\vert_{x\in c_w}
+\end{split}
+\end{equation}\par
+进一步引入无网格离散式(\ref{Pwuwangelisan})、式(\ref{wn})-(\ref{kangwangangdu})和式(\ref{MVP})、(\ref{MVP1})得到薄板问题施加本质边界条件Nitsche法的离散控制方程式：
 \begin{equation}
     (\pmb{K}+\pmb{K}^v+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^v+\pmb{f}^s
 \end{equation}
-其中：
+其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{PKf})，同样根据罚函数项得到的稳定项$\pmb{K}^s$和$\pmb{f}^s$见式(\ref{PKFs})，结合拉格朗日乘子项满足变分一致性地修正变分项$\pmb{K}^v$和$\pmb{f}^v$的具体表达式如下：
 \begin{subequations}
 \begin{align}
-    \pmb K_{I\!J}&=\int_{\Omega}\pmb{B}^T_I\pmb{D}\pmb{B}_Jd\Omega\\
-    \pmb f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{x\in C_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega\\
-     \pmb K^v_{I\!J}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\Psi_{J,\alpha\beta}]]_{x\in{c_w}}\\
-     &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\Psi_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\Psi_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
-     \pmb f_{I}^v&=-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}\\
-    \pmb K^s_{I\!J}&=\alpha_w\int_{\Gamma_w}\Psi_I\Psi_Jd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\Psi_{J,\pmb n}d\Gamma+\alpha_c\Psi_I\Psi_J\vert_{x\in c_w}\\
-   \pmb f^s_I&=\alpha_w\int_{\Gamma_w}\Psi_I\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\Psi_{I,\pmb n}\bar{\theta}_{\pmb n}d\Gamma+\alpha_c\Psi_I\bar{w}\vert_{x\in c_w}
+ K^v_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\Psi_{J,\alpha\beta}]]_{x\in{c_w}}\nonumber\\
+     &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\Psi_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\Psi_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\Psi_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
+ f_{I}^v&=-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\Psi_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}
 \end{align}
-\end{subequations}\par
+\end{subequations}
+\par
 值得注意的是，Nische法作为目前伽辽金无网格法常采用的满足变分一致性的本质边界条件施加方法，但Nistche法的稳定项中包含罚因子，选择不当的罚因子可能会导致数值不稳定性，
-同时修正变分项中需要计算无网格形函数梯度$\pmb{B}$，会引起计算效率的降低。
+同时修正变分项中需要计算无网格形函数梯度，会引起计算效率的降低。
 \section{小结}
 本章介绍了3种伽辽金无网格法本质边界条件施加方法，包括拉格朗日乘子法、罚函数法和Nitsche法，并对这些方法的特点进行了总结。
 首先是拉格朗日乘子法，拉格朗日乘子法通过引入拉格朗日乘子来处理本质边界条件，满足刚度矩阵的对称性和变分一致性。然而，该方法需引入额外自由度离散拉格朗日乘子，当自由度过多时，可能导致整体刚度矩阵的奇异性增加。

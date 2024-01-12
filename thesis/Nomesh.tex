@@ -6,9 +6,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 并要求影响域的覆盖域需包含求解域$\Omega$，即$\Omega\subseteq^{N\!P}_{I=1}supp(\pmb{x}_I)$。
 考虑求解域$\Omega$内的一个变量$u(\pmb{x})$，其对应的无网格近似函数$u^h(\pmb{x})$可表示为：
 \begin{equation}\label{ui}
-\begin{split}
     u^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{I}
-\end{split}
 \end{equation}
 其中$d_{I}$表示与无网格节点$\pmb{x}_I$对应的节点系数。\par
 \begin{figure}[H]
@@ -29,7 +27,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
     \phi_s(\pmb{x}_I-\pmb{x})=\varphi(r_x)\varphi(r_y),\quad r_x=\frac{\lvert x_I-x\rvert}{s_x},r_y=\frac{\lvert y_I-y \rvert}{s_y}
 \end{equation}
 其中$s_x$和$s_y$分别为$x$和$y$方向上影响域尺寸的大小，在均匀布置的节点下，计算时一般使得两个方向上的影响域大小相等即$s_x=s_y=s$。为保证紧支性和光滑性，$\varphi$通常取为阶次大于$p$的紧支函数。本文针对弹性力学问题，无网格基函数一般选择二阶或者三阶多项式基函数，核函数$\phi_s(\pmb{x}_I-\pmb{x})$取为三次样条函数：
-\begin{equation}
+\begin{equation}\label{3B}
     \varphi(r)=\frac{1}{3!}
 \begin{cases}
     (2-2r)^3-4(1-2r)^3 &r\le \frac{1}{2}\\
@@ -61,9 +59,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \end{equation}\par
 将(\ref{c})代入到式(\ref{shapefunction})中得到最终的再生核无网格形函数的表达式：
 \begin{equation}\label{Pshapefunction}
-\begin{split}
         \Psi_I(\pmb{x})=\pmb{p}^{[p]T}(\pmb{0})\pmb{A}^{-1}(\pmb{x})\pmb{p}^{[p]}(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
-\end{split}
 \end{equation}\par
 无网格形函数的一阶梯度可通过对无网格形函数$\Psi_I$求导得到：
 \begin{equation}
@@ -90,66 +86,123 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
     \pmb p(\pmb 0)
 \end{equation}
 式中$\pmb A_{,i}^{-1}=-\pmb A^{-1}\pmb A_{,i}\pmb A^{-1},\pmb A_{,ij}^{-1}=-\pmb A^{-1}(\pmb A_{,ij}\pmb A^{-1}+\pmb A_{,i}\pmb A_{,j}^{-1}+\pmb A_{,j}\pmb A_{,i}^{-1})$。\par
-\begin{figure}[H]
+\begin{table}[H]
 \centering
-\begin{subcaptiongroup}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/1.png}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/C41/1.png}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/1.png}
-\end{subcaptiongroup}
- \begin{subcaptiongroup}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/2.png}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/C41/2.png}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/2.png}
-\end{subcaptiongroup}
-\begin{subcaptiongroup}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/3.png}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/C41/3.png}
-\includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/3.png}
-\end{subcaptiongroup}
-\begin{subcaptiongroup}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/4.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/4.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/4.png}
-\end{subcaptiongroup}
-\begin{subcaptiongroup}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/5.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/5.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/5.png}
-\end{subcaptiongroup}
-\caption{二维内部节点无网格形函数及其一阶导数}\label{gradient1}
-\end{figure}
-\begin{figure}[H]
+\caption{\textbf{二维内部节点无网格形函数及其导数图}}
+\label{gradient1}
+\begin{tabular}{cccc}
+\toprule
+$\quad$&$p=2$&$p=3$&$p=4$\\
+\midrule
+$\Psi$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic25/1.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic41/1.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic61/1.png}}\end{subcaptiongroup}\\
+$\Psi_{,x}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic25/2.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic41/2.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic61/2.png}}\end{subcaptiongroup}\\
+$\Psi_{,y}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic25/3.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic41/3.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic61/3.png}}\end{subcaptiongroup}\\
+$\Psi_{,xx}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic25/4.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic41/4.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic61/4.png}}\end{subcaptiongroup}\\
+$\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic25/5.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic41/5.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic61/5.png}}\end{subcaptiongroup}\\
+$\Psi_{,xy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic25/6.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic41/6.png}}\end{subcaptiongroup}
+&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic61/6.png}}\end{subcaptiongroup}\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[H]
     \centering
-    \begin{subcaptiongroup}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/1.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/1.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/1.png}
-    \end{subcaptiongroup}
-     \begin{subcaptiongroup}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/2.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/2.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/2.png}
-    \end{subcaptiongroup}
-    \begin{subcaptiongroup}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/3.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/3.png}
-    \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/3.png}
-    \end{subcaptiongroup}
-    \begin{subcaptiongroup}
-        \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/4.png}
-        \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/4.png}
-        \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/4.png}
-    \end{subcaptiongroup}
-    \begin{subcaptiongroup}
-        \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/5.png}
-        \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/5.png}
-        \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/5.png}
-    \end{subcaptiongroup}
-\caption{二维边界点处无网格形函数及其一阶导数}\label{gradient2}
-\end{figure}
-图(\ref{gradient1})、(\ref{gradient2})分别为内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)=\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
-\newpage
+    \caption{\textbf{二维边界点无网格形函数及其导数图}}
+    \label{gradient2}
+    \begin{tabular}{cccc}
+    \toprule
+    $\quad$&$p=2$&$p=3$&$p=4$\\
+    \midrule
+    $\Psi$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic46/1.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic77/1.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic116/1.png}}\end{subcaptiongroup}\\
+    $\Psi_{,x}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic46/2.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic77/2.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic116/2.png}}\end{subcaptiongroup}\\
+    $\Psi_{,y}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic46/3.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic77/3.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic116/3.png}}\end{subcaptiongroup}\\
+    $\Psi_{,xx}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic46/4.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic77/4.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic116/4.png}}\end{subcaptiongroup}\\
+    $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic46/5.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic77/5.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic116/5.png}}\end{subcaptiongroup}\\
+    $\Psi_{,xy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic46/6.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic77/6.png}}\end{subcaptiongroup}
+    &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic116/6.png}}\end{subcaptiongroup}\\
+   \bottomrule
+\end{tabular}
+\end{table}
+% \begin{figure}[H]
+% \centering
+% \begin{subcaptiongroup}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/1.png}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/1.png}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/1.png}
+% \end{subcaptiongroup}
+%  \begin{subcaptiongroup}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/2.png}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/2.png}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/2.png}
+% \end{subcaptiongroup}
+% \begin{subcaptiongroup}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/3.png}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/3.png}
+% \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/3.png}
+% \end{subcaptiongroup}
+% \begin{subcaptiongroup}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/4.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/4.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/4.png}
+% \end{subcaptiongroup}
+% \begin{subcaptiongroup}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/5.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/5.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/5.png}
+% \end{subcaptiongroup}
+% \caption{二维内部节点无网格形函数及其一阶导数}\label{gradient1}
+% \end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \begin{subcaptiongroup}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/1.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/1.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/1.png}
+%     \end{subcaptiongroup}
+%      \begin{subcaptiongroup}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/2.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/2.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/2.png}
+%     \end{subcaptiongroup}
+%     \begin{subcaptiongroup}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/3.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/3.png}
+%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/3.png}
+%     \end{subcaptiongroup}
+%     \begin{subcaptiongroup}
+%         \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/4.png}
+%         \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/4.png}
+%         \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/4.png}
+%     \end{subcaptiongroup}
+%     \begin{subcaptiongroup}
+%         \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/5.png}
+%         \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/5.png}
+%         \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/5.png}
+%     \end{subcaptiongroup}
+% \caption{二维边界点处无网格形函数及其一阶导数}\label{gradient2}
+% \end{figure}
+表(\ref{gradient1})、(\ref{gradient2})中分别存在内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)=\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
 \section{伽辽金无网格法}
 \subsection{弹性力学问题}
 不失为一般性，弹性力学问题的平衡微分方程为：
@@ -161,7 +214,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \end{cases}
 \end{equation}
 其中$\sigma_{ij}$为应力张量$\pmb \sigma$的分量，$u_i$为位移张量$\pmb{u}$的分量，$b_i$为体力张量$\pmb{b}$的分量。$\Gamma^t \text{、}\Gamma^g$分别表示自然和本质边界条件，并满足下列关系式：
-\begin{equation}
+\begin{equation}\label{EGeometric relationships}
 \Gamma^t\cup \Gamma^g=\Gamma,\Gamma^t\cap \Gamma^g=\varnothing
 \end{equation}
 在自然和本质边界上具有给定的面力$\pmb{t}$和位移$\pmb{g}$，其分量分别为$t_i$和$g_i$。$n_i$为$\Gamma^{t}$上外法向量$\pmb{n}$的分量。\par
@@ -175,15 +228,11 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \end{equation} \par
 根据最小势能原理，强形式(\ref{elasticity problems})所对应的势能泛函表达式为：
 \begin{equation}\label{elasticity potential functional}
-\begin{split}
     \Pi(\pmb{u})=\frac{1}{2}\int_{\Omega}\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}u_ib_id\Omega-\int_{\Gamma^t}u_it_id\Gamma
-\end{split}
 \end{equation}
 对式(\ref{elasticity potential functional})进行变分可以得到式(\ref{elasticity problems})的等效积分弱形式：
 \begin{equation}\label{elasticity weak form}
-\begin{split}
-    \delta\Pi(\pmb{u})&=\int_{\Omega}\delta\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}\delta u_ib_id\Omega-\int_{\Gamma^t}\delta u_it_id\Gamma=0
-\end{split}
+    \delta\Pi(\pmb{u})=\int_{\Omega}\delta\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}d\Omega-\int_{\Omega}\delta u_ib_id\Omega-\int_{\Gamma^t}\delta u_it_id\Gamma=0
 \end{equation}\par
 在伽辽金无网格法中，引入无网格近似离散位移$\pmb u$及其变分$\delta \pmb u$，其近似函数$\pmb u^h$和$\delta \pmb u^h$的分量为：
 \begin{equation}\label{displacement vector}
@@ -197,10 +246,10 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \begin{equation}
     \pmb{K}\pmb{d}=\pmb{f}
 \end{equation}
-其中$\pmb{d}=\{d_{iI}\}$表示位移节点系数向量，$\pmb{K}=\{\pmb K_{I\!J}\}$和$\pmb{f}=\{\pmb f_I\}$分别表示刚度矩阵和力向量，其分量具有表达式为：
+其中$\pmb{d}=\{d_{iI}\}$表示位移节点系数向量，$\pmb{K}=\{\pmb K_{IJ}\}$和$\pmb{f}=\{\pmb f_I\}$分别表示刚度矩阵和力向量，其分量具有表达式为：
 \begin{subequations}\label{EKf}
 \begin{align}
-        \pmb K_{I\!J}&=\int_{\Omega}\pmb{B}_I^T\pmb{D}\pmb{B}_Jd\Omega\label{EKf1}\\
+        \pmb K_{IJ}&=\int_{\Omega}\pmb{B}_I^T\pmb{D}\pmb{B}_Jd\Omega\label{EKf1}\\
         \pmb f_I&=\int_{\Omega}\Psi_I\pmb{b}d\Omega+\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma\label{EKf2}
 \end{align}
 \end{subequations}
@@ -257,48 +306,22 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
     \end{split}
 \end{equation}\par
 当薄板为线弹性各同向性材料时，其本构关系为：
-\begin{equation}
-    \begin{split}\label{Malphabeta}
-        M_{\alpha\beta}=D_{\alpha\beta\gamma\eta}\kappa_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}w_{,\gamma\eta}
-    \end{split}
+\begin{equation}\label{Malphabeta}
+    M_{\alpha\beta}=D_{\alpha\beta\gamma\eta}\kappa_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}w_{,\gamma\eta}
 \end{equation}
 其中$\kappa_{\alpha\beta}$为曲率张量$\pmb{\kappa}$的分量，表达式如下：
 \begin{equation}\label{kappa}
     \kappa_{\alpha\beta}=-w_{,\alpha\beta}
 \end{equation}
 式中$D_{\alpha \beta \gamma \eta}$为薄板问题四阶弹性张量的分量，表达式如下：
-\begin{equation}
-    \begin{split}\label{Dalphabeta}
+\begin{equation}\label{Dalphabeta}
         D_{\alpha\beta\gamma\eta}=\bar D(\nu\delta_{\alpha\beta}\delta_{\gamma\eta}+\frac{1}{2}(1-\nu)(\delta_{\alpha\gamma}\delta_{\beta\eta}+\delta_{\alpha\gamma}\delta_{\beta\gamma}))
-    \end{split}
 \end{equation}
 其中$\bar{D}$为抗弯刚度，抗弯刚度可由杨氏模量$E$、泊松比$\nu$和板厚$h$计算得到：
 \begin{equation}\label{kangwangangdu}
-    \begin{split}
     \bar D=\frac{Eh^3}{12(1-\nu^2)}
-\end{split}
 \end{equation}
 \par
-% 根据尺寸相关弹性\cite{Liu}，将式(\ref{Qn})、(\ref{Mn})、(\ref{Malphabeta})、(\ref{Dalphabeta})代入式(\ref{P control equation})中可以得到自然边界上的法向弯矩$M_{\pmb{nn}}$、等效剪力$V_{\pmb{n}}$和薄板角上的集中荷载$P$的具体表达式：
-% \begin{equation}
-% \begin{split}\label{MVP}
-%     \begin{cases}
-%         M_{\pmb{nn}}=\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}=-\bar{D}(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})w_{,\alpha\beta}\\
-%         V_{\pmb{n}}=\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}=-\bar{D}(\frac{\partial}{\partial x_{\alpha}}n_{\beta}+(1-\nu)n_{\alpha}\frac{\partial}{\partial y_{\gamma}}s_{\alpha}n_{\beta}s_{\gamma})w_{,\alpha\beta}\\
-%         P=\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}=-[[(\bar{D}(1-\nu)n_{\alpha}s_{\beta})w_{,\alpha\beta}]]
-%     \end{cases}
-% \end{split}
-% \end{equation}
-% 其中：
-% \begin{equation}
-% \begin{split}\label{MVP1}
-%     \begin{cases}
-%  \mathcal{M}_{\alpha\beta}w_{,\alpha\beta}=-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta}=-\bar{D}(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})\\
-%   \mathcal{V}_{\alpha\beta}w_{,\alpha\beta}=-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}})=-\bar{D}(\frac{\partial}{\partial x_{\alpha}}n_{\beta}+(1-\nu)n_{\alpha}\frac{\partial}{\partial y_{\gamma}}s_{\alpha}n_{\beta}s_{\gamma})\\
-%  \mathcal{P}_{\alpha\beta}w_{,\alpha\beta}=-[[D_{\alpha\beta}n_{\gamma}s_{\eta}]]=-[[\bar{D}(1-\nu)n_{\alpha}s_{\beta}]]
-%     \end{cases}
-% \end{split}
-% \end{equation}\par
 根据最小势能原理，强形式(\ref{P control equation})所对应的的势能泛函表达式为：
 \begin{equation}\label{Pshineng}
     \Pi(w)=\int_{\Omega}\frac{1}{2}\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega+\int_{\Gamma_M}\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma
@@ -319,7 +342,6 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
 式中$d_I$、$\delta d_I$分别为近似挠度分量$w_{\alpha\beta}^h$、$\delta w_{\alpha\beta}^h$在$w$处的节点系数。进一步将挠度表达式(\ref{Pwuwangelisan})代入曲率张量表达式(\ref{kappa})中可得：
 \begin{equation}
 \kappa_{\alpha\beta}=-\sum_{I=1}^{N\!P}\Psi_{I,\alpha\beta}d_I
-% \pmb{B}_I(\pmb{x})= \left[\begin{matrix}\Psi_{I,xx}\\\Psi_{I,yy}\\2\Psi_{I,xy}\end{matrix}\right] 
 \end{equation}\par
 将式(\ref{wn})、(\ref{Malphabeta})和(\ref{Pwuwangelisan})代入到伽辽金弱形式(\ref{Pweakform})中得到薄板问题离散平衡控制方程：
 \begin{equation}
@@ -328,7 +350,7 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
 其中刚度矩阵$\boldsymbol K$和力向量$\pmb f$的分量$K_{IJ}$、$f_I$分别为：
 \begin{subequations}\label{PKf}
 \begin{align}
-    \label{PKf1}K_{I\!J}&=\frac{h^3}{12}\int_{\Omega}\pmb{B}^T_I\pmb{D}\pmb{B}_Jd\Omega\\
+    \label{PKf1}K_{IJ}&=\frac{h^3}{12}\int_{\Omega}\pmb{B}^T_I\pmb{D}\pmb{B}_Jd\Omega\\
     \label{PKf2}f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{x\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
 \end{align}
 \end{subequations}
