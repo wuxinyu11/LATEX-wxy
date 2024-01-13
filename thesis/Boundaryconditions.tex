@@ -136,12 +136,12 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
 在弹性力学问题中，拉格朗日乘子的物理意义为约束反力，即$\lambda_i=\sigma_{ij}n_i$。
 并引入罚函数法，此时等效积分弱形式(\ref{Elambda weakform})中可改写为：
 \begin{equation}\label{Enitsche}
-    \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})-\int_{\Gamma^g}n_i\sigma_{ij}(u_i-g_i)d\Gamma+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
+    \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})-\int_{\Gamma^g}\sigma_{ij}n_j(u_i-g_i)d\Gamma+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
 \end{equation}
 对式(\ref{Enitsche})进行变分得到相对应的等效积分弱形式：
 \begin{equation}\label{Enitsche weakform}
 \begin{split}
-    \delta\bar{\Pi}(\pmb{u})&=\delta\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_id\Gamma-\int_{\Gamma^g}n_i\delta\sigma_{ij}(u_i-g_i)d\Gamma\\
+    \delta\bar{\Pi}(\pmb{u})&=\delta\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_jd\Gamma-\int_{\Gamma^g}\delta\sigma_{ij}n_j(u_i-g_i)d\Gamma\\
     &+\alpha\int_{\Gamma^g}\delta u_iu_id\Gamma-\alpha\int_{\Gamma^g}\delta u_i g_id\Gamma\\
     &=0
 \end{split}
@@ -182,7 +182,7 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
     \pmb f^v_I&=-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\pmb{g}d\Gamma
 \end{align}
 \end{subequations}
-式中矩阵$\bar{\pmb{n}}$在平面问题中的表达式为：
+式中矩阵$\bar{\pmb{n}}$为法向量矩阵，在平面问题中的表达式为：
 \begin{equation}
 \begin{split}
     \bar{\pmb n}=\begin{bmatrix}n_1&0\\0&n_2\\n_2&n_1
@@ -213,7 +213,7 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
 % &+\frac{\alpha_w}{2}\int_{\Gamma_w}(w-\bar{w})^2d\Gamma+\frac{\alpha_{\theta}}{2}\int_{\Gamma_{\theta}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})^2d\Gamma+\frac{\alpha_c}{2}(w-\bar{w})^2\vert_{x\in c_w}
 % \end{split}
 % \end{equation}
-其中法向弯矩$M_{\pmb{nn}}$、等效剪力$V_{\pmb n}$和薄板角上的集中荷载$P$可根据尺寸相关弹性[]，通过将式(\ref{Qn})、(\ref{Mn})、(\ref{Malphabeta})、(\ref{Dalphabeta})代入式(\ref{P control equation})中得到具体表达式为：
+将式(\ref{Qn})、(\ref{Mn})、(\ref{Malphabeta})、(\ref{Dalphabeta})代入式(\ref{P control equation})中，从而将$M_{\pmb{nn}}$、$V_{\pmb n}$和$P$采用挠度$w$表示为：
 \begin{equation}
 \begin{cases}\label{MVP}
         M_{\pmb{nn}}=\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}=-\bar{D}(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})w_{,\alpha\beta}\\
@@ -224,10 +224,10 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
 其中
 \begin{equation}
 \begin{cases}\label{MVP1}
- \mathcal{M}_{\alpha\beta}w_{,\alpha\beta}=-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta}=-\bar{D}(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})\\
-  \mathcal{V}_{\alpha\beta}w_{,\alpha\beta}=-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}})
+ \mathcal{M}_{\alpha\beta}=-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta}=-\bar{D}(\nu\delta_{\alpha\beta}+(1-\nu)n_{\alpha}n_{\beta})\\
+  \mathcal{V}_{\alpha\beta}=-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}})
   =-\bar{D}(\frac{\partial}{\partial x_{\alpha}}n_{\beta}+(1-\nu)n_{\alpha}\frac{\partial}{\partial y_{\gamma}}s_{\alpha}n_{\beta}s_{\gamma})\\
- \mathcal{P}_{\alpha\beta}w_{,\alpha\beta}=-[[D_{\alpha\beta}n_{\gamma}s_{\eta}]]=-[[\bar{D}(1-\nu)n_{\alpha}s_{\beta}]]
+ \mathcal{P}_{\alpha\beta}=-[[D_{\alpha\beta}n_{\gamma}s_{\eta}]]=-[[\bar{D}(1-\nu)n_{\alpha}s_{\beta}]]
 \end{cases}
 \end{equation}\par
 对式(\ref{Pnitsche})进行变分得到薄板问题施加本质边界条件Nitshce法的等效积分弱形式为：
@@ -252,7 +252,7 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
 \begin{equation}
     (\pmb{K}+\pmb{K}^v+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^v+\pmb{f}^s
 \end{equation}
-其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{PKf})，同样根据罚函数项得到的稳定项$\pmb{K}^s$和$\pmb{f}^s$见式(\ref{PKFs})，结合拉格朗日乘子项满足变分一致性地修正变分项$\pmb{K}^v$和$\pmb{f}^v$的具体表达式如下：
+其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{PKf})。$\pmb{K}^s$和$\pmb{f}^s$的表达式与罚函数法式(\ref{PKFs})相同，该项使得伽辽金弱形式(\ref{Pitsche weakform})满足正定性条件，稳定求解精度，故称之为\textbf{稳定项}。$\pmb{K}^v$和$\pmb{f}^v$可使伽辽金弱形式整体满足变分一致性，故称之为\textbf{一致项}，一致项的具体表达式如下：
 \begin{subequations}
 \begin{align}
  K^v_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\Psi_{J,\alpha\beta}]]_{x\in{c_w}}\nonumber\\
@@ -262,12 +262,12 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
 \end{subequations}
 \par
 值得注意的是，Nische法作为目前伽辽金无网格法常采用的满足变分一致性的本质边界条件施加方法，但Nistche法的稳定项中包含罚因子，选择不当的罚因子可能会导致数值不稳定性，
-同时修正变分项中需要计算无网格形函数梯度，会引起计算效率的降低。
+同时修正变分项中需要计算无网格形函数梯度，特别是薄板问题Nitche法中的一致项需要原本不需要计算的形函数三阶导数。形函数高阶导数计算复杂耗时，将引起计算效率的降低。
 \section{小结}
 本章介绍了3种伽辽金无网格法本质边界条件施加方法，包括拉格朗日乘子法、罚函数法和Nitsche法，并对这些方法的特点进行了总结。
 首先是拉格朗日乘子法，拉格朗日乘子法通过引入拉格朗日乘子来处理本质边界条件，满足刚度矩阵的对称性和变分一致性。然而，该方法需引入额外自由度离散拉格朗日乘子，当自由度过多时，可能导致整体刚度矩阵的奇异性增加。
 其次是罚函数法。罚函数法通过在变分原理中引入一个罚因子，将边界条件约束项转化为一个惩罚项，从而实现边界条件的施加。罚函数法具有简洁高效的特点，但需要选择合适的罚因子，过大或过小的罚因子都会影响计算精度的稳定性，并且该方法无法满足变分一致性。
-最后是Nitsche法。Nitsche法是一种满足变分一致性的本质边界条件施加方法，通过结拉格朗日乘子法和罚函数法，在变分原理中引入形函数高阶梯度和人工参数来处理边界条件。然而，由于引入了高阶梯度导致Nitsche法的计算效率相对较低，并且由于人工参数会引起计算精度的不稳定性。
+最后是Nitsche法，Nitsche法是一种满足变分一致性的本质边界条件施加方法，通过结合拉格朗日乘子法和罚函数法施加边界条件，既能满足变分一致性又可保证正定性。然而，该方法引入了形函数高阶梯度导致计算效率相对较低，并且该方法中存在人工经验参数，该参数选取不当将引起计算精度下降。
 
 
 

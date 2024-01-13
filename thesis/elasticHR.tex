@@ -1,25 +1,18 @@
 \chapter{弹性力学问题HR}
-目前亟待一种具有高效、鲁棒的具有变分一致性的本质边界施加新方案，在本章中提出了一种新方法。
-首先介绍了弹性力学问题中带有位移和应力双变量的Hellinger-Reissner变分原理，
-其次通过对位移采用传统无网格形函数进行离散、应力则在背景积分域中近似为相应阶次的多项式，通过混合离散提出了一种
-基于Hellinger-Reissner变分原理的一致型本质边界条件施加方法，最后通过数值算例验证所提方法的变分一致性、计算精度和计算效率。
+本章针对弹性力学问题，基于Hellinger-Reissner变分原理提出了一种新型满足变分一致性的伽辽金无网格法。
+首先介绍Hellinger-Reissner变分原理及其所提方法的混合离散过程，其次介绍该方法的本质边界条件施加过程并与传统Nitsche法进行对比，最后通过典型弹性力学算例验证该方法的有效性。
 \section{Hellinger-Reissner变分原理}
-Hellinger-Reissner变分原理也称为混合变分原理是一种用于连续介质力学问题的变分原理，适用于线弹性力学问题。
-Hellinger-Reissner变分原理基于能量泛函的最小化原理，在弹性力学问题中引入了两个变分函数：位移场的变分函数和应力场的变分函数。
-通过对位移场$\pmb{u}$和应力场$\pmb{\sigma}$进行独立的变分，并利用格林公式，从而得到平衡方程和边界条件的伽辽金弱形式。\par
-根据Hellinger-Ressiner变分原理\cite{}，弹性力学问题的强形式(\ref{elasticity problems})所对应的能量泛函表达式为：
+Hellinger-Ressiner变分原理\cite{}是基于最小余能原理提出的，弹性力学问题强形式(\ref{elasticity problems})所对应的余能泛函表达式为：
 \begin{equation}
-\begin{split}\label{Ehellinger}
-    \Pi_{H\!R}(\sigma_{ij},u_i)=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma\\
+\Pi_C(\sigma_{ij}) = \int_\Omega \frac{1}{2}\sigma_{ij}C_{ijkl}^{-1}\sigma_{kl} d\Omega - \int_{\Gamma^g} \sigma_{ij} n_j g_i d\Gamma
+\end{equation}
+式中$C_{ijkl}^{-1}$为四阶弹性张量\ref{}的逆。从式中可知，本质边界条件已存在能量泛函中。而外力边界条件则通过拉格朗日乘子法进行施加，包括体力项$\pmb b$和外力项$\pmb t$，此时Hellinger-Reissner的能量泛函为：
+\begin{equation}
+\label{Ehellinger}
+    \Pi_{H\!R}(\sigma_{ij},u_i)=\Pi_C(\sigma_{ij})
     +\int_{\Omega}u_i(\sigma_{ij,j}+b_i)d\Omega-\int_{\Gamma^t}u_i(\sigma_{ij} n_j-t_i)d\Gamma
-\end{split}
 \end{equation}
-其中$W(\sigma_{ij})$为应变余能，与应力和应变之间存在如下关系式：
-\begin{equation}
-\frac{\partial W(\sigma_{ij})}{\partial\sigma_{ij}}=C^{-1}_{ijkl}\sigma_{kl}=\varepsilon_{ij}
-\end{equation}
-式中$C_{ijkl}$为四阶弹性张量。\par
-通过对式(\ref{Ehellinger})进行变分可以得到带有位移和应力双变量的伽辽金弱形式：
+需要注意的是，$\Pi_{HR}$中包含$\sigma_{ij}$和$u_i$双变量。式(\ref{Ehellinger})分别对$\sigma_{ij}$和$u_i$进行变分得到的伽辽金弱形式：
 \begin{equation}\label{weak form1}
 \begin{split} 
     \delta\Pi_{H\!R}(\sigma_{ij},u_i)&=\int_{\Omega}\delta\sigma_{ij}\frac{\partial W}{\partial \sigma_{ij}}d\Omega+\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega-\int_{\Gamma^t}\delta\sigma_{ij}n_ju_id\Gamma\\
@@ -27,20 +20,18 @@ Hellinger-Reissner变分原理基于能量泛函的最小化原理，在弹性�
     &+\int_{\Omega}\delta u_ib_id\Omega+\int_{\Gamma^t}\delta u_it_id\Gamma\\
     &=0
 \end{split}
-\end{equation}
-进一步根据式(\ref{EGeometric relationships})，将弱形式(\ref{weak form1})分别以位移分量$u_i$和应力分量$\sigma_{ij}$改写为如下表达式：
-\begin{equation}\label{deltau}
-\begin{split}
-    \int_{\Gamma}\delta u_i\sigma_{ij}n_jd\Gamma&-\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_jd\Gamma\\
-    &=\int_{\Gamma^t}\delta u_it_id\Gamma+\int_{\Omega}\delta u_ib_id\Omega
-\end{split}
-\end{equation} 
-\begin{equation}\label{deltasigma}
-\begin{split}
-    \int_{\Omega}\delta\sigma_{ij}C^{-1}_{ijkl}\sigma_{kl}d\Omega&=\int_{\Gamma}\delta\sigma_{ij}n_ju_id\Gamma-\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega\\
-    &-\int_{\Gamma^g}\delta\sigma_{ij}n_ju_id\Gamma+\int_{\Gamma^g}\delta\sigma_{ij}n_jg_id\Gamma
-\end{split}
-\end{equation}    
+\end{equation}\par
+根据变分项$\delta \sigma_{ij}$和$\delta u_i$的任意性和几何关系式(\ref{EGeometric relationships})，可将上式改写为下面两式：
+\begin{subequations}
+\begin{multline}\label{deltasigma}
+    \int_{\Omega}\delta\sigma_{ij}C^{-1}_{ijkl}\sigma_{kl}d\Omega-\int_{\Gamma}\delta\sigma_{ij}n_ju_id\Gamma+\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega+\int_{\Gamma^g}\delta\sigma_{ij}n_ju_id\Gamma =\\
+    \int_{\Gamma^g}\delta\sigma_{ij}n_jg_id\Gamma
+\end{multline}    
+\begin{multline}\label{deltau}
+    \int_{\Gamma}\delta u_i\sigma_{ij}n_jd\Gamma-\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_jd\Gamma=\\
+    \int_{\Gamma^t}\delta u_it_id\Gamma+\int_{\Omega}\delta u_ib_id\Omega
+\end{multline} 
+\end{subequations}
 % 根据Hellinger-Ressiner变分原理\cite{}，对于弹性力学问题的控制方程式(\ref{elasticity problems})存在相应的余能泛函：
 % \begin{equation}
 % \begin{split}
@@ -89,22 +80,14 @@ Hellinger-Reissner变分原理基于能量泛函的最小化原理，在弹性�
 % \end{split}
 % \end{equation}\par   
 \section{位移-应力混合离散}
-采用混合离散的方式近似Hellinger-Reissner变分原理弱形式中的位移和应力。
-首先，位移分量$u_i$通过传统无网格形函数的方式近似，采用基于再生核近似的无网格形函数进行离散，
-任意位移分量$u_i$的近似表达式$u^h_i$可表示为：
+Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散的方式进行近似。
+首先，位移分量$u_i$通过无网格形函数\ref{}进行近似，近似的位移$u^h_i$可表示为：
 \begin{equation}\label{CH4-ui}
     u^h_i(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{iI}
 \end{equation}
-其中$d_{iI}$表示与无网格节点$\pmb{x}_I$对应的系数，$\Psi_I$为每个无网格节点$x_I$对应的形函数，根据再生核近似理论和满足多项式一致性条件，
-可以得到Hellinger-Reissner变分原理弱形式中的位移分量所需要的无网格形函数$\Psi$，具体表达式为：
-\begin{equation}
-    \Psi_I(\pmb{x})=\pmb{p}^{[p]T}(\pmb{0})\pmb{A}^{-1}(\pmb{x})\pmb{p}^{[p]}(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
-\end{equation}
-其中$\pmb{p}^{[p]}$表示为$p$阶的多项式基函数向量，$\pmb{A}$为矩量矩阵，核函数$\phi_s(\pmb{x}_I-\pmb{x})$选取三次样条函数(\ref{3B})。具体求解过程详见第一章。\par
-而Hellinger-Reissner变分原理弱形式中的应力分量$\sigma_{ij}$则通过在每个背景积分单元中建立局部的多项式进行离散。
-如图(\ref{Eintegralscheme})所示，在二维三角形背景积分单元内将求解域$\Omega$划分为一系列背景积分单元$\Omega_C$，$C=1,2,\dotsb,N\!C$，并且存在$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
-在背景积分单元$\Omega_C$内，假设应力分量$\sigma_{ij}$为任意的多项式进行离散，
-此时，应力分量$\sigma_{ij}$的近似应力分量表达式$\sigma^h_{ij}$可表示为：
+其中$d_{iI}$表示与无网格节点$\pmb{x}_I$对应的节点系数。\par
+其次，应力$\sigma_{ij}$在每个背景积分域内假设为$(p-1)$ 阶多项式。在二维情况下，如图(\ref{Eintegralscheme})所示，将求解域$\Omega$划分为一系列背景积分域$\Omega_C$，$C=1,2,\dotsb,N\!C$，$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
+在背景积分域$\Omega_C$内，应力分量$\sigma_{ij}$的近似应力分量表达式$\sigma^h_{ij}$可表示为：
 \begin{equation}\label{CH4-sigma}
 \begin{split}
     \sigma^h_{ij}(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{a}_{ij}^T\pmb{p}^{[p-1]}(\pmb{x}),\quad\text{in}\;\Omega_C
@@ -123,8 +106,15 @@ Hellinger-Reissner变分原理基于能量泛函的最小化原理，在弹性�
 进一步将等式两边同时消掉$\delta\pmb{a}_{ij}$得到：
 \begin{equation}\label{a}
 \begin{split}
-        \int_{\Omega_C}\pmb{p}^{[p-1]}C^{-1}_{ijkl}\pmb{p}^{[p-1]T}d\Omega\pmb{a}_{kl}&=\sum_{I=1}^{N\!P}\int_{\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_jd\Gamma d_{iI}-\sum_{I=1}^{N\!P}\int_{\Omega_C}\pmb{p}_{,j}^{[p-1]}\Psi_{I}(\pmb{x})d\Omega d_{iI}\\
-         &-\sum_{I=1}^{N\!P}\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_jd\Gamma d_{iI}+\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_jg_id\Gamma
+        \int_{\Omega_C}\pmb{p}^{[p-1]}C^{-1}_{ijkl}\pmb{p}^{[p-1]T}d\Omega\pmb{a}_{kl}&=\sum_{I=1}^{N\!P}
+        \left (
+            \begin{split}
+                &\int_{\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_jd\Gamma d_{iI} \\
+               -&\int_{\Omega_C}\pmb{p}_{,j}^{[p-1]}\Psi_{I}(\pmb{x})d\Omega d_{iI}\\
+               -&\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_jd\Gamma d_{iI}
+            \end{split}
+         \right ) \\
+         &+\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_jg_id\Gamma
 \end{split}
 \end{equation}
 再对式(\ref{a})进行移项得到常系数向量$\pmb{a}_{ij}$的具体表达式：
@@ -159,9 +149,9 @@ Hellinger-Reissner变分原理基于能量泛函的最小化原理，在弹性�
 \end{equation}
 \begin{equation}\label{case3}
     \hat{\varepsilon}_{ij}(\pmb{x})=\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\hat{g}_{ij}
-\end{equation}
-式中$\tilde{\Psi}_{I,i}$称为再生光滑梯度，根据再生光滑梯度理论\cite{},可以通过直接构造获得再生光滑梯度，从而避免了传统无网格形函数梯度的复杂计算，提高了梯度计算效率。并且再生光滑梯度
-内嵌局部积分约束条件$\tilde{g}_{iI}$，进而满足全域积分约束条件，从而保证算法的计算精度和误差收敛性。这意味着通过构造再生光滑梯度，可以确保在进行全域积分时满足积分约束条件，从而得到准确的结果，并保证算法的计算精度和误差收敛性。\par
+\end{equation} \par
+值得注意的是，式中$\tilde{\Psi}_{I,i}$即为再生光滑梯度\cite{}。根据再生光滑梯度理论框架，可以直接通过无网格形函数显式构造再生光滑梯度，从而避免了传统无网格形函数导数的复杂计算，提高了梯度计算效率。并且再生光滑梯度
+内嵌局部积分约束条件$\tilde{g}_{iI}$，进而满足全域积分约束条件，从而保证算法的计算精度和误差收敛性。这意味着通过构造再生光滑梯度，可以确保在进行全域积分时满足积分约束条件，从而得到准确的结果，并保证算法的计算精度和误差收敛性。反之，Hellinger-Reissner变分原理的混合离散框架也完备了再生光滑梯度法的变分理论基础。\par
 % 在实际计算分析中一般将张量表示转换为矩阵和向量表示，但两者完全等价。当考虑$xy$平面内的平面应力问题时，弹性本构关系为：
 % \begin{equation}
 % \begin{split}
@@ -212,11 +202,15 @@ Hellinger-Reissner变分原理基于能量泛函的最小化原理，在弹性�
 基于Hellinger-Reissner变分原理得到的弱形式(\ref{weak form1})中的积分项包括了在本质边界条件下的位移和应力的约束项，以及在自然边界条件下的外力和强制位移项。
 此时，通过对位移采用再生核近似，应力通过局部多项式近似的混合离散方式对Hellinger-Reissner变分原理的等效积分弱形式进行组装刚度矩阵。
 首先，将式(\ref{CH4-ui})、(\ref{CH4-sigma})代入弱形式(\ref{deltau})中得到：
-\begin{equation}
-\begin{split}\label{CH4-1}
-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\int_{\partial\Omega_C}\Psi_I\pmb{p}^{[p-1]T}n_jd\Gamma&-\int_{\Omega_C}\Psi_I\pmb{p}_{,j}^{[p-1]T}d\Omega-\int_{\Gamma^g\cap\partial\Omega_C}\Psi_I\pmb{p}^{[p-1]T}n_jd\Gamma)\pmb{a}_{ij}=\\
-&\sum_{I=1}^{N\!P}\delta d_{iI}(\int_{\Gamma^t}\Psi_It_id\Gamma+\int_{\Omega}\Psi_Ib_id\Omega)
-\end{split}
+\begin{equation}\label{CH4-1}
+\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI} \left (
+        \begin{split}
+        &\int_{\partial\Omega_C}\Psi_I\pmb{p}^{[p-1]T}n_jd\Gamma \\
+        -&\int_{\Omega_C}\Psi_I\pmb{p}_{,j}^{[p-1]T}d\Omega \\
+        -&\int_{\Gamma^g\cap\partial\Omega_C}\Psi_I\pmb{p}^{[p-1]T}n_jd\Gamma
+        \end{split}
+        \right )\pmb{a}_{ij}=
+\sum_{I=1}^{N\!P}\delta d_{iI}(\int_{\Gamma^t}\Psi_It_id\Gamma+\int_{\Omega}\Psi_Ib_id\Omega)
 \end{equation}
 进一步通过式(\ref{g2})和(\ref{g3})可以将式(\ref{CH4-1})的左侧改写为：
 \begin{equation}\label{1}
