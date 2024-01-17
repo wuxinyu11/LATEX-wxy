@@ -39,6 +39,7 @@
 \RequirePackage{booktabs,multirow}
 \RequirePackage{tabularx}
 \RequirePackage{cite}
+\RequirePackage{appendix}
 \RequirePackage[titles]{tocloft}
 
 

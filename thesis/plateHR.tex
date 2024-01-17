@@ -1,38 +1,31 @@
 \chapter{薄板问题HR}
-本章进一步介绍了带有挠度和弯矩双变量时薄板问题Hellinger-Reissner变分原理，随后通过对挠度采用再生核近似离散，弯矩在每个背景积分单元建立局部多项式离散的方式
-构造了一种基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，最后通过数值算例进一步验证在高阶薄板问题时所提方法的变分一致性、计算精度和计算效率。
+本章进一步针对薄板问题，基于Hellinger-Reissner变分原理提出了一种满足变分一致性的伽辽金无网格法。首先介绍了薄板问题时Hellinger-Reissner变分原理及其所提方法的混合离散过程，
+其次介绍该方法的本质边界条件施加过程并与传统Nitsche法进行对比，最后通过薄板算例验证该方法的变分一致性、计算精度和计算效率
 \section{Hellinger-Reissner变分原理}
-Hellinger-Reissner变分原理不仅适用于解决弹性力学问题中的位移和应力之间的耦合现象，并且在结构力学中也广泛应用于薄板和壳体等问题的数值求解，
-Hellinger-Reissner变分原理基于能量泛函的最小化原理，在薄板问题中引入了两个变分函数：挠度场的变分函数和弯矩场的变分函数。
-通过构造能量泛函和变分操作，得到平衡方程和边界条件的弱形式，并通过数值方法求解离散化的方程组获得薄板的挠度和弯矩分布。
-\par
-基于Hellinger-Ressiner变分原理\cite{}，四阶薄板问题控制方程式(\ref{P control equation})对应的余能泛函表达式为：
+根据最小余能原理，薄板问题强形式(\ref{P control equation})所对应的余能泛函表达式为：
+\begin{equation}
+\Pi_C(M_{\alpha\beta})=\int_{\Omega}\frac{1}{2}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}\bar{\theta}_nd\Gamma-p\bar{w}\vert_{x\in{c_w}}
+\end{equation}
+根据式中可知，薄板问题中的本质边界条件$\Gamma_w$、$\Gamma_\theta$和$c_w$也已存在于能量泛函表达式中。
+而自然边界$\Gamma_V$、$\Gamma_M$和$c_P$则通过薄板中面的分布荷载$\bar{q}$和挠度$w$进行施加，此时薄板问题Hellinger-Reissner变分原理的能量泛函表达式为：
 \begin{equation}\label{pfanhan}
 \begin{split}
-    \Pi_{H\!R}(M_{\alpha\beta},w)&=\int_{\Omega}\frac{1}{2}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}\bar{\theta}_nd\Gamma-p\bar{w}\vert_{x\in{c_w}}\\
-&+\int_{\Omega}w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega+\int_{\Gamma_M}w_{,\pmb n}(M_{\pmb{nn}}-\bar{M}_{\pmb{nn}})d\Gamma\\
-&-\int_{\Gamma_V}w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-w(P-\bar{P})\vert_{x\in{c_P}}
+    \Pi_{H\!R}(M_{\alpha\beta},w)&=\Pi_C(M_{\alpha\beta})+\int_{\Omega}w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega\\
+    &+\int_{\Gamma_M}w_{,\pmb n}(M_{\pmb{nn}}-\bar{M}_{\pmb{nn}})d\Gamma
+    -\int_{\Gamma_V}w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-w(P-\bar{P})\vert_{x\in{c_P}}
 \end{split}
-\end{equation}\par
-对余能泛函$\Pi_{H\!R}$进行变分得到式(\ref{P control equation})中带有挠度$w$和弯矩$M$双变量的伽辽金弱形式：
-\newpage
+\end{equation}
+薄板问题的Hellinger-Reissner变分原理的泛函表达式中$\Pi_{H\!R}$中也包含$M_{\alpha\beta}$和$w$双变量。式(\ref{pfanhan})分别对$M_{\alpha\beta}$和$w$进行变分得到薄板问题Hellinger-Reissner变分原理的伽辽金弱形式：
 \begin{equation}\label{Pweakfrom}
 \begin{split}
-    \delta\Pi_{H\!R}(M_{\alpha\beta,w})&=\int_{\Omega}\delta M_{\alpha\beta}D^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}\delta V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\delta M_{\pmb{nn}}\bar{\theta}_nd\Gamma-\delta P\bar{w}_{x\in{c_w}}\\
+    \delta\Pi_{H\!R}(M_{\alpha\beta,w})=&\delta\Pi_C(M_{\alpha\beta})\\
     &+\int_{\Omega}\delta M_{\alpha\beta,\alpha\beta}wd\Omega+\int_{\Gamma_M}\delta M_{\pmb{nn}}w_{,\pmb n}d\Gamma-\int_{\Gamma_V}\delta V_{\pmb n}wd\Gamma-\delta Pw\vert_{x\in{c_P}}\\
     &+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega+\int_{\Gamma_M}\delta w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma\\
     &-\int_{\Gamma_V}\delta w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-\delta w(P-\bar{P})\vert_{x\in{c_P}}\\
     &=0
 \end{split}
 \end{equation}\par
-对能量泛函$\Pi_{H\!R}$取极值时，要求对任意的$\delta w$、$\delta M_{\alpha\beta}$关于$\delta\Pi_{H\!R}$都要恒成立，此时利用几何关系式：
-\begin{equation}
-    \begin{split}
-    \Gamma=\Gamma_w\cup\Gamma_V\cup\Gamma_{\theta}\cup\Gamma_M,c=c_w\cup c_P\\
-    \Gamma_w\cap\Gamma_V=\Gamma_{\theta}\cap\Gamma_M=c_w\cap c_P=\varnothing
-\end{split}
-\end{equation}
-进一步将弱形式(\ref{Pweakfrom})根据$\delta w$、$\delta M_{\alpha\beta}$改写为下列两式：
+根据变分项$\delta M_{\alpha\beta}$和$\delta w$的任意性和几何关系式(\ref{PGeometric relationships})进一步将上式改写为以下两式：
 \begin{equation}\label{Pweakform1}
     \begin{split}
         \int_\Omega {\delta {M_{\alpha \beta }}D_{\alpha \beta \gamma \eta }^{ - 1}{M_{\gamma \eta }}d\Omega }&=\int_\Gamma  {\delta {V_{\bf{n}}}wd\Gamma }  - \int_\Gamma  {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }+{\left. {\delta Pw} \right|_{{\bf{x}} \in c}} - \int_\Omega  {\delta {M_{\alpha \beta ,\alpha \beta }}wd\Omega } \\
@@ -48,254 +41,151 @@ Hellinger-Reissner变分原理基于能量泛函的最小化原理，在薄板�
     \end{split}
 \end{equation} 
 \section{挠度-弯矩混合离散}
-薄板挠度$w$采用基于再生核近似的无网格形函数进行离散。无网格法通过在薄板中面$\Omega$和边界$\Gamma$上布置一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$进行离散，
-不失为一般性，考虑任意薄板挠度$w$的近似表达式$w^h$及其虚位移$\delta w^h$可表示为：
+Hellinger-Reissner变分原理薄板弱形式中的挠度和弯矩采用混合离散的方式进行近似。
+首先，薄板挠度$w$采用无网格形函数(\ref{Pshapefunction})进行近似离散，近似的挠度$w^h$表达式可表示为：
 \begin{equation}\label{w}
-\begin{split}
-    w^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{I},\delta w^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\delta d_I
-\end{split}
+    w^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{I}
 \end{equation}
-其中$N\!P$表示无网格节点数量，$d_I$、$\Psi_I(\pmb{x})$为无网格节点$\pmb{x}_I$上的节点系数和无网格形函数。
-根据再生核近似理论\cite{}以及满足多项式一致性条件，无网格形函数的表达式为：
-\begin{equation}
-\begin{split}
-    \Psi_I(\pmb{x})=\pmb{p}^T(\pmb{0})\pmb{A}^{-1}(\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
-\end{split}
-\end{equation}
-其中$\pmb{p}$为$p$阶的多项式基函数向量，$\pmb{A}$为矩量矩阵，核函数$\phi_s(\pmb{x}_I-\pmb{x})$选取五次样条函数。具体求解过程见第一章。\par
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[scale=0.6]{figure/PHR/PSI.png}
-%     \caption{薄板无网格离散}\label{PPSI}
-% \end{figure}
-弯矩分量$M_{\alpha\beta}$在每个背景积分单元建立局部的多项式进行离散。
-如图(\ref{Pintegralscheme})所示，将薄板中面$\Omega$划分为一系列背景积分单元$\Omega_C,C=1,2,\dotsb,n_C$，并且存在$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
-在背景积分单元$\Omega_C$内，假定弯矩分量$M_{\alpha\beta}$以任意的多项式进行离散，并将离散后的弯矩分量$M_{\alpha\beta}$记为$M_{\alpha\beta}^h$
+其中$d_I$表示与无网格节点$\pmb{x}_I$对应的节点系数。\par
+其次，弯矩分量$M_{\alpha\beta}$在每个背景积分域内假设为$(p-2)$阶多项式。
+如图(\ref{Pintegralscheme})所示，将薄板中面$\Omega$划分为一系列背景积分域$\Omega_C,C=1,2,\dotsb,n_C$，并且存在$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
+在背景积分单元$\Omega_C$内，假定弯矩分量$M_{\alpha\beta}$以多项式进行离散，并将离散后的弯矩分量$M_{\alpha\beta}$记为$M_{\alpha\beta}^h$：
 \begin{equation}\label{moment}
 \begin{split}
-    M^h_{\alpha\beta}(\pmb{x})=\pmb{a}_{\alpha\beta}^T\tilde{\pmb{q}}(\pmb{x})
+    M^h_{\alpha\beta}(\pmb{x})=\pmb{a}_{\alpha\beta}^T\pmb{p}^{[p-2]}(\pmb{x})
 \end{split}
 \end{equation}
-$\tilde{\pmb{q}}(\pmb{x})$是比多阶基函数向量$\pmb{p}(\pmb{x})$低两阶的单项式向量，具体表达式为：
+其中$\pmb{p}^{[p-2]}(\pmb x)$是比多阶基函数向量$\pmb{p}(\pmb{x})$低两阶的单项式向量，$\pmb{a}_{\alpha\beta}$为弯矩分量$M_{\alpha\beta}$在积分域$\Omega_C$内的常系数向量，此时将离散的弯矩分量表达式(\ref{moment})代入式(\ref{Pweakform1})同时根据式(\ref{MVP})和线弹性本构关系式(\ref{Malphabeta})可以得到：
 \begin{equation}
 \begin{split}
-    \tilde{\pmb{q}}(\pmb{x})=\{1,\;x,\;y,\;\dots,\;x^iy^j,\;\dots,\;y^{p-2}\}^T,0 \le i+j \le p-2
-\end{split}
-\end{equation}\par
-$\pmb{a}_{\alpha\beta}$为弯矩分量$M_{\alpha\beta}$在积分域$\Omega_C$内的常系数向量，此时将离散的弯矩分量表达式(\ref{moment})代入式(\ref{Pweakform1})同时根据式(\ref{MVP})和线弹性本构关系式(\ref{Malphabeta})可以得到：
-\begin{equation}
-\begin{split}
-    \int_{\Omega}\delta\pmb{a}_{\alpha\beta}^T\tilde{\pmb{q}}D^{-1}_{\alpha\beta\gamma\eta}\pmb{a}_{\gamma\eta}^T\tilde{\pmb{q}}d\Omega&=
-    -\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}wd\Gamma
-    +\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}w_{,\pmb{n}}d\Gamma\\
-    &-D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}w\vert_{x\in c}
-    -\int_{\Omega}\delta\pmb{a}_{\alpha\beta,\alpha\beta}^T\tilde{\pmb{q}}wd\Omega\\
-    &+\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}d\Gamma
-    -\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}w_{,\pmb{n}}d\Gamma\\
-    &+D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}wx\vert_{x\in{c_w}}
-    -\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}\bar{w}d\Gamma\\
-    &+\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}\bar{\theta}_{\pmb{n}}d\Gamma
-    -D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\tilde{\pmb{q}}\bar{w}\vert_{x\in{c_w}}
+    &\int_{\Omega}\delta\pmb{a}_{\alpha\beta}^T\pmb{p}^{[p-2]}D^{-1}_{\alpha\beta\gamma\eta}\pmb{a}_{\gamma\eta}^T\pmb{p}^{[p-2]}d\Omega=\\
+    &-\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}wd\Gamma
+    +\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}w_{,\pmb{n}}d\Gamma\\
+    &-D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}w\vert_{x\in c}
+    -\int_{\Omega}\delta\pmb{a}_{\alpha\beta,\alpha\beta}^T\pmb{p}^{[p-2]}wd\Omega\\
+    &+\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}d\Gamma
+    -\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}w_{,\pmb{n}}d\Gamma\\
+    &+D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}wx\vert_{x\in{c_w}}
+    -\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}\bar{w}d\Gamma\\
+    &+\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}\bar{\theta}_{\pmb{n}}d\Gamma
+    -D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}\bar{w}\vert_{x\in{c_w}}
 \end{split}
 \end{equation}
-进一步将等式两边同时消去$\delta\pmb{a}^T_{\alpha\beta}$：
+进一步将等式两边同时消去$\delta\pmb{a}^T_{\alpha\beta}$得到：
 \begin{equation}
 \begin{split}
-        \int_{\Omega}\tilde{\pmb{q}}D^{-1}_{\alpha\beta\gamma\eta}\pmb{a}_{\gamma\eta}^T\tilde{\pmb{q}}d\Omega&=
-        -\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\tilde{\pmb{q}}wd\Gamma
-        +\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\tilde{\pmb{q}}w_{,\pmb{n}}d\Gamma\\
-        &-D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\tilde{\pmb{q}}w\vert_{x\in c}
-        -\int_{\Omega}\delta\tilde{\pmb{a}}_{\alpha\beta,\alpha\beta}^T\tilde{\pmb{q}}wd\Omega\\
-        &+\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\tilde{\pmb{q}}d\Gamma
-        -\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\tilde{\pmb{q}}w_{,\pmb{n}}d\Gamma\\
-        &+D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\tilde{\pmb{q}}wx\vert_{x\in{c_w}}
-        -\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\tilde{\pmb{q}}\bar{w}d\Gamma\\
-        &+\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\tilde{\pmb{q}}\bar{\theta}_{\pmb{n}}d\Gamma
-        -D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\tilde{\pmb{q}}\bar{w}\vert_{x\in{c_w}}
+        &\int_{\Omega}\pmb{p}^{[p-2]}D^{-1}_{\alpha\beta\gamma\eta}\pmb{a}_{\gamma\eta}^T\pmb{p}^{[p-2]}d\Omega=\\
+        &-\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\pmb{p}^{[p-2]}wd\Gamma
+        +\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\pmb{p}^{[p-2]}w_{,\pmb{n}}d\Gamma\\
+        &-D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}w\vert_{x\in c}
+        -\int_{\Omega}\delta\pmb{a}_{\alpha\beta,\alpha\beta}^T\pmb{p}^{[p-2]}wd\Omega\\
+        &+\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\pmb{p}^{[p-2]}d\Gamma
+        -\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\pmb{p}^{[p-2]}w_{,\pmb{n}}d\Gamma\\
+        &+D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}wx\vert_{x\in{c_w}}
+        -\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\pmb{p}^{[p-2]}\bar{w}d\Gamma\\
+        &+\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\pmb{p}^{[p-2]}\bar{\theta}_{\pmb{n}}d\Gamma
+        -D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}\bar{w}\vert_{x\in{c_w}}
 \end{split}
 \end{equation}
-对上式进行移项得到常系数向量$\pmb{a}_{\alpha\beta}$的具体表达式：
+对上式进行移项可以得到常系数向量$\pmb{a}_{\alpha\beta}$的具体表达式：
 \begin{equation}\label{aalphabeta}
 \begin{split}
-    \pmb{a}_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}\tilde{\pmb{G}}^{-1}(\sum_{I=1}^{N\!P}(\tilde{g}_{\alpha\beta I}-\bar{g}_{\alpha\beta I})d_I+\hat{g}_{\alpha\beta})
+    \pmb{a}_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}\pmb{G}^{-1}(\sum_{I=1}^{N\!P}(\tilde{\pmb g}_{\alpha\beta I}-\bar{\pmb g}_{\alpha\beta I})d_I+\hat{\pmb g}_{\alpha\beta})
 \end{split}
 \end{equation}
-其中：
+其中
 \begin{align}
-\label{PG}&\tilde{\pmb{G}}=\int_{\Omega_C}\tilde{\pmb{q}}\tilde{\pmb{q}}^Td\Omega\\
-\label{Pg1}&\tilde{g}_{\alpha\beta I}=\int_{\Gamma_C}\Psi_{I,n}\tilde{\pmb{q}}n_{\alpha}n_{\beta}d\Gamma-\int_{\Gamma_C}\Psi_I(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma
-+[[\Psi_I\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in c_C}+\int_{\Omega_C}\Psi_I\tilde{\pmb{q}}_{,\alpha\beta}d\Omega\\
-\label{Pg2}&\bar{g}_{\alpha\beta I}=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}\tilde{\pmb{q}}n_{\alpha}n_{\beta}d\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma
-+[[\Psi_I\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}\\
-\label{Pg3}&\hat{g}_{\alpha\beta I}=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\tilde{\pmb{q}}n_{\alpha}n_{\beta}\bar{\theta}_nd\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\alpha}\tilde{\pmb{q}}_{,\beta}+\tilde{\pmb q}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})\bar{w}d\Gamma
-+[[\bar{w}\tilde{\pmb q}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}
+\label{PG}\pmb{G}&=\int_{\Omega_C}\pmb{p}^{[p-2]}\pmb{p}^{[p-2]T}d\Omega\\
+\label{Pg1}\tilde{\pmb g}_{\alpha\beta I}&=\int_{\Gamma_C}\Psi_{I,n}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}d\Gamma-\int_{\Gamma_C}\Psi_I(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma \nonumber\\
+&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{x\in c_C}+\int_{\Omega_C}\Psi_I\pmb{p}^{[p-2]}_{,\alpha\beta}d\Omega\\
+\label{Pg2}\bar{\pmb g}_{\alpha\beta I}&=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}d\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma\nonumber\\
+&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}\\
+\label{Pg3}\hat{\pmb g}_{\alpha\beta I}&=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}\bar{\theta}_nd\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})\bar{w}d\Gamma\nonumber\\
+&+[[\bar{w}\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}
 \end{align}
 式中$\Gamma_C$是$\Omega_C$的边界，此时将$\pmb{a}_{\alpha\beta}$代入到式(\ref{moment})中得到近似的弯矩分量$M^h_{\alpha\beta}(\pmb{x})$的表达式：
 \begin{equation}
 \begin{split}
-M^h_{\alpha\beta}(\pmb{x})&=\tilde{\pmb{q}}^T(\pmb{x})\pmb a_{\alpha\beta}\\
-&=-D_{\alpha\beta\gamma\eta}(\sum_{I=1}^{N\!P}(\tilde{\pmb q}^T(\pmb x)\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta I}-\tilde{\pmb q}^T(\pmb x)\tilde{\pmb G}^{-1}\bar{g}_{\gamma\eta I})d_I+\tilde{\pmb q}^T(\pmb x)\tilde{\pmb G}^{-1}\hat{g}_{\gamma\eta})\\
-&=-D_{\alpha\beta\gamma\eta}(\sum_{I=1}^{N\!P}\tilde{\Psi}_{I,\gamma\eta}(\pmb x)d_I-\sum_{I=1}^{N\!P}\bar{\Psi}_{I,\gamma\eta}(\pmb{x})d_I+\tilde{\pmb q}^T(\pmb x)\tilde{\pmb G}^{-1}\hat{g}_{\gamma\eta})
+M^h_{\alpha\beta}(\pmb{x})&=\pmb{p}^{[p-2]T}(\pmb{x})\pmb a_{\alpha\beta}\\
+&=-D_{\alpha\beta\gamma\eta}(\sum_{I=1}^{N\!P}\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta I}-\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\bar{\pmb g}_{\gamma\eta I})d_I+\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\hat{\pmb g}_{\gamma\eta})\\
+&=-D_{\alpha\beta\gamma\eta}(\sum_{I=1}^{N\!P}\tilde{\Psi}_{I,\gamma\eta}(\pmb x)d_I-\sum_{I=1}^{N\!P}\bar{\Psi}_{I,\gamma\eta}(\pmb{x})d_I+\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\hat{\pmb g}_{\gamma\eta})
 \end{split}
 \end{equation}
-其中：
+其中
 \begin{align}
- \label{PTPSI}&\tilde{\Psi}_{I,\alpha\beta}=\tilde{\pmb q}^T(\pmb x)\tilde{\pmb G}^{-1}\tilde{g}_{\alpha\beta I}\\
- \label{PBPSI}&\bar{\Psi}_{i,\alpha\beta}=\tilde{\pmb q}^T(\pmb x)\tilde{\pmb G}^{-1}\bar{g}_{\alpha\beta I}\quad \pmb{x}\in\Omega_C
+ \label{PTPSI}&\tilde{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\tilde{\pmb g}_{\alpha\beta I}\\
+ \label{PBPSI}&\bar{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\bar{\pmb g}_{\alpha\beta I}\quad \pmb{x}\in\Omega_C
 \end{align}\par
-此时，弯矩分量表达式中的$\tilde{\Psi}_{I,\alpha\beta}$是根据再生光滑梯度理论\cite{}构造的二阶再生光滑梯度，可以避免传统无网格形函数梯度的复杂计算从而提高梯度计算效率，而$\tilde{\mathfrak{g}}_{\alpha\beta I}$是满足Galerkin变分一致性的积分约束条件，进而保证算法的计算精度和误差收敛性。
-同时$\bar{\Psi}_{I,\alpha\beta}$为在本质边界条件上求值的新型光滑梯度表达式。
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[scale=0.6]{figure/PHR/momentlisan.png}
-%     \caption{背景积分单元示意图}\label{momentlisan}
-% \end{figure}
-\section{Hellinger-Reissner变分原理下的本质边界条件施加方法}
-通过式(\ref{Pweakfrom})看出在四阶薄板问题上基于Hellinger-Reissner变分原理得到的弱形式中已经考虑了本质边界条件和自然边界条件。
-为了更好的研究Hellinger-Reissner变分原理在求解薄板问题上的本质边界条件施加方法，此时将挠度离散表达式(\ref{w})和弯矩离散表达式(\ref{moment})代入到式(\ref{Pweakform2})中得到：
-{\setlength\abovedisplayskip{0.5cm}
-\setlength\belowdisplayskip{0.5cm}
-\begin{equation}
-\begin{split}
-    &\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma-\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma+\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{x\in c}\\
-    &-\int_{\Omega}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\pmb{a}^T_{\alpha\beta,\alpha\beta}\tilde{\pmb q}d\Omega-\int_{\Gamma_w}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma\\
-    &+\int_{\Gamma_{\theta}}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma
-    -\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{x\in c_w}\\
-    &=\sum_{I=1}^{N\!P}\int_{\Gamma_V}\Psi_I\delta{d_I}\bar{V}_{\pmb n}d\Gamma-\sum_{I=1}^{N\!P}\int_{\Gamma_M}\Psi_{I,n}\delta{d_I}\bar{M}_{\pmb{nn}}d\Gamma\\
-    &+\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\bar{P}\vert_{x\in{c_P}}+\sum_{I=1}^{N\!P}\int_{\Omega}\Psi_I\delta{d_I}\bar{q}d\Omega
-\end{split}
-\end{equation}}
-此时引入式(\ref{MVP1})并根据薄板问题线弹性本构关系式(\ref{Malphabeta})得出：
-\begin{equation}\label{2}
-\begin{split}
-  -\sum_{C=1}^{N\!C}(\tilde{g}_{\alpha\beta I}^T-\tilde{g}_{\alpha\beta I}^T)\pmb a_{\alpha\beta}=\pmb{f}
-\end{split}
-\end{equation}
-其中$\pmb{f}$为外力向量，具体表达式为：
-\begin{equation}
-\begin{split}
-    \pmb{f}=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb n}d\Gamma-\int_{\Gamma_M}\Psi_{I,n}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{x\in{c_P}}+\int_{\Omega}\Psi_I\bar{q}d\Omega
-\end{split}
-\end{equation}
-此时，进一步将式(\ref{aalphabeta})中的$\pmb{a}_{\alpha\beta}$代入到式(\ref{2})中可以得到：
-\begin{equation}
-\begin{split}\label{Pzuzhuang}
-    &-\sum_{C=1}^{N\!C}(\tilde{g}_{\alpha\beta I}^T-\bar{g}_{\alpha\beta I}^T)a_{\alpha\beta}\\
-    &=\sum_{C=1}^{N\!C}(\tilde{g}_{\alpha\beta I}^T-\bar{g}_{\alpha\beta I}^T)D_{\alpha\beta\gamma\eta}\tilde{\pmb{G}}^{-1}(\sum_{J=1}^{N\!P}(\tilde{g}_{\gamma\eta J}-\bar{g}_{\gamma\eta J})d_I+\hat{g}_{\gamma\eta})\\
-    &=\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}\tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}d_J\\
-    &+\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}(-\bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}-\tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J})d_J\\
-    &-(-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\hat{g}_{\gamma\eta })\\
-    &+\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}\bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}d_J\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\hat{g}_{\gamma\eta }
-\end{split}
-\end{equation}
-通过引入式(\ref{PG})、(\ref{PTPSI})对式(\ref{Pzuzhuang})中的第一项进行推导可以得到：
-\begin{equation}
-\begin{split}
-    &\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}\\
-    &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\int_{\Omega_C}\tilde{\pmb q}\tilde{\pmb q}^Td\Omega\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}\\
-    &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{\Omega_C}\tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{\pmb q}\tilde{\pmb q}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}d\Omega \\
-    &=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega \\
-    &=\pmb{K}
-\end{split}
-\end{equation}
-\newpage
-通过引入式(\ref{PTPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第二项进行推导可以得到：
-\begin{equation}
-\begin{split}
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}(\bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}+\tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J})\\
-    &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(n_{\alpha}
-    \tilde{\pmb q}_{,\beta}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}+\tilde{\pmb q}_{,\xi}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}s_{\alpha}n_{\beta}s_{\xi})d\Gamma\\
-    &+\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\gamma}
-    \tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{\pmb q}_{,\eta}+\tilde{g}_{\alpha\beta I}^T
-    \tilde{\pmb G}^{-1}\tilde{\pmb q}_{,\xi}s_{\gamma}n_{\eta}s_{\xi})\Psi_Jd\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}
-    \tilde{\pmb q}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}n_{\alpha}n_{\beta}d\Gamma
-    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}
-    \tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{\pmb q}n_{\gamma}n_{
-    \eta}\Psi_{J,n}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\Psi_I\tilde{\pmb q}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}n_{\alpha}s_{\beta}]]_{x\in{c_w}\cap{c_C}}
-    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{\pmb q}n_{\gamma}s_{\eta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
-    &=-\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(-D_{\alpha\beta\gamma\eta}(n_{\alpha}\frac{\partial}{\partial x_{\beta}}+s_{\alpha}n_{\beta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\tilde{\Psi}_{J,\gamma\eta}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma\\
-    &+\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}(-D_{\alpha\beta\gamma\eta}n_{\alpha}n_{\beta})\tilde{\Psi}_{J,\gamma\eta}d\Gamma
-    +\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma\\
-    &+\sum_{C=1}^{N\!C}[[\Psi_I(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\tilde{\Psi}_{J,\gamma\eta}]]_{x\in{c_w}\cap{c_C}}+\sum_{C=1}^{N\!C}[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
-    &=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{x\in{c_w}}\\
-    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
-    &=\tilde{\pmb K}
-\end{split}
-\end{equation}
-\newpage
-通过引入式(\ref{PTPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第三项进行推导可以得到：
-\begin{equation}
-\begin{split}
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{g}^T_{\alpha\beta I}\tilde{\pmb G}^{-1}\hat{g}_{\gamma\eta}\\
-    &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\gamma}
-    \tilde{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{\pmb q}_{,\eta}+\tilde{g}_{\alpha\beta I}^T
-    \tilde{\pmb G}^{-1}\tilde{\pmb q}_{,\xi}s_{\gamma}n_{\eta}s_{\xi})\bar{w}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_{C}}}\tilde{g}^T_{\alpha\beta I}\tilde{\pmb G}^{-1}\tilde{\pmb q}n_{\gamma}n_{\eta}\bar{\theta}_nd\Gamma-[[\tilde{g}_{\alpha\beta I}\tilde{\pmb G}^{-1}\tilde{\pmb q}n_{\gamma}s_{\eta}\bar{w}]]_{x\in{c_w}\cap{c_C}}\\
-    &=-\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma\\
-    &+\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma-[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta}\tilde{\Psi}_{I,\alpha\beta}\bar{w})]]_{x\in{c_w}\cap{c_C}}\\
-    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}\\
-    &=\tilde{\pmb f}
-\end{split}
-\end{equation}
-通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第四项进行推导可以得到：
-\begin{equation}
-\begin{split}
-    &\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{g}_{\gamma\eta J}\\
-    &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\gamma}
-    \bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\bar{\pmb q}_{,\eta}+\tilde{g}_{\alpha\beta I}^T
-    \tilde{\pmb G}^{-1}\tilde{\pmb q}_{,\xi}s_{\gamma}n_{\eta}s_{\xi})\Psi_Jd\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}
-    \bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{\pmb q}n_{\gamma}n_{
-    \eta}\Psi_{J,n}d\Gamma
-    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{\pmb q}n_{\gamma}s_{\eta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
-    &=\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma\\
-    &-\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma
-    -[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
-    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
-    &=\bar{\pmb K}
-\end{split}
-\end{equation}
-通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第五项进行推导可以得到：
-\begin{equation}
- \begin{split}
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\hat{g}_{\gamma\eta }\\
-    &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\eta}
-    \bar{g}_{\alpha\beta I}^T\tilde{\pmb G}^{-1}\tilde{\pmb q}_{,\gamma}+\bar{g}_{\alpha\beta I}^T
-    \tilde{\pmb G}^{-1}\tilde{\pmb q}_{,\xi}s_{\gamma}n_{\eta}s_{\xi})\bar{w}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_{C}}}\bar{g}^T_{\alpha\beta I}\tilde{\pmb G}^{-1}\tilde{\pmb q}n_{\gamma}n_{\eta}\bar{\theta}_nd\Gamma-[[\bar{g}_{\alpha\beta I}\tilde{\pmb G}^{-1}\tilde{\pmb q}n_{\gamma}s_{\eta}\bar{w}]]_{x\in{c_w}\cap{c_C}}\\
-    &=\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma-[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta}\bar{\Psi}_{I,\alpha\beta}\bar{w})]]_{x\in{c_w}\cap{c_C}}\\
-    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}\\
-    &=\bar{\pmb f}
-\end{split}
-\end{equation}
-通过上述所进行的推导,式(\ref{Pzuzhuang})通过化简可以得到：
-\begin{equation}
-\begin{split}
-    &-\sum_{C=1}^{N\!C}(\tilde{g}_{\alpha\beta I}^T-\bar{g}_{\alpha\beta I}^T)a_{\alpha\beta}\\
-    &=\sum_{C=1}^{N\!C}(\tilde{g}_{\alpha\beta I}^T-\bar{g}_{\alpha\beta I}^T)D_{\alpha\beta\gamma\eta}\tilde{\pmb{G}}^{-1}(\sum_{J=1}^{N\!P}(\tilde{g}_{\gamma\eta J}-\bar{g}_{\gamma\eta J})d_I+\hat{g}_{\gamma\eta})\\
-    &=\sum_{J=1}^{N\!P}(\pmb{K}+\tilde{\pmb K}+\bar{\pmb K})d_J-\tilde{\pmb f}-\bar{\pmb f}
-\end{split}
-\end{equation}
-将上式带入到式(\ref{2})得到薄板问题的离散平衡方程为：
-\begin{equation}\label{equationP}
-\begin{split}
-    (\pmb{K}+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}=\pmb{f}+\tilde{\pmb f}+\bar{\pmb f}
-\end{split}
-\end{equation}\par
-同样，Hellinger-Reissner变分原理下的薄板问题离散平衡控制方程式中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和满足变分一致性的Nitsche法中的$K_{IJ}^n$、$f_I^n$相比，用再生光滑梯度$\tilde{\pmb{B}}_I$替代传统无网格形函数梯度$\pmb{B}_I$，进而提高计算效率。
-Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$和传统的Nitshche法中的$K^{\alpha}_{IJ}$、$f^{\alpha}_I$相比，无限额外施加人工参数，提高计算精度。\par
-为了保证离散弱形式的变分一致性在求解式(\ref{equationP})的过程中，同样引入的数值积分在求解的各个过程中也需要保存一致。
-如图(\ref{Pintegralscheme})所示，求解薄板问题时基于Hellinger-Reissner变分原理下的本质边界条件施加方法需要两套数值积分点\cite{}。
+此时，弯矩分量表达式中的$\tilde{\Psi}_{I,\alpha\beta}$是根据再生光滑梯度理论\cite{}构造的二阶再生光滑梯度。
+根据再生光滑梯度理论框架，直接通过无网格形函数显式构造再生光滑梯度，可以避免传统无网格形函数梯度的复杂计算从而提高梯度计算效率。
+薄板问题中再生光滑梯度内嵌局部积分约束条件$\tilde{g}_{\alpha\beta I}$，进而满足全域积分约束条件，在求解高阶薄板问题时可以保证算法的计算精度和误差收敛性。
+表示在求解薄板问题时，可以通过构造再生光滑梯度，保证在进行全域积分时满足积分约束条件，得到准确的计算结果，保证算法的计算精度和误差收敛性。
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/Pintegralscheme.png}
-    \caption{优化的数值积分方案}\label{Pintegralscheme}
+    \includegraphics[scale=0.5]{figure/PHR/momentlisan.png}
+    \caption{背景积分域示意图}\label{Pintegralscheme}
 \end{figure}
+\section{Hellinger-Reissner变分原理下的本质边界条件施加方法}
+基于Hellinger-Reissner变分原理的薄板问题伽辽金弱形式(\ref{Pweakform})中的积分项包括了在本质边界条件下的弯矩的约束项，以及在自然边界条件下的挠度和集中荷载外力项。
+此时，通过对挠度采用再生核近似，弯矩通过局部多项式近似的混合离散方式对Hellinger-Reissner变分原理的薄板问题等效积分弱形式进行组装刚度矩阵。
+首先，将挠度离散表达式(\ref{w})和弯矩离散表达式(\ref{moment})代入到弱形式(\ref{Pweakform2})中得到：
+\begin{equation}\label{CH5-1}
+\begin{split}
+    &\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma-\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma+\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{x\in c}\\
+    &-\int_{\Omega}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\pmb{a}^T_{\alpha\beta,\alpha\beta}\pmb{p}^{[p-2]}d\Omega-\int_{\Gamma_w}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma\\
+    &+\int_{\Gamma_{\theta}}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma
+    -\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{x\in c_w}\\
+    &=\sum_{I=1}^{N\!P}\int_{\Gamma_V}\Psi_I\delta{d_I}\bar{V}_{\pmb n}d\Gamma-\sum_{I=1}^{N\!P}\int_{\Gamma_M}\Psi_{I,n}\delta{d_I}\bar{M}_{\pmb{nn}}d\Gamma
+    +\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\bar{P}\vert_{x\in{c_P}}+\sum_{I=1}^{N\!P}\int_{\Omega}\Psi_I\delta{d_I}\bar{q}d\Omega
+\end{split}
+\end{equation}
+其次引入式(\ref{MVP1})并根据薄板问题线弹性本构关系式(\ref{Malphabeta})将上式改写为：
+\begin{equation}\label{CH5-2}
+\begin{split}
+  -\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)\pmb a_{\alpha\beta}=\pmb{f}
+\end{split}
+\end{equation}
+进一步再将式(\ref{aalphabeta})中的$\pmb{a}_{\alpha\beta}$代入到式(\ref{CH5-2})中进而得到：
+\begin{equation}
+\begin{split}\label{Pzuzhuang}
+    &-\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)\pmb a_{\alpha\beta}
+    =\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)D_{\alpha\beta\gamma\eta}\pmb{G}^{-1}(\sum_{J=1}^{N\!P}(\tilde{\pmb g}_{\gamma\eta J}-\bar{\pmb g}_{\gamma\eta J})d_I+\hat{\pmb g}_{\gamma\eta})\\
+    &=\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}d_J
+    +\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}(-\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}-\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J})d_J\\
+    &-(-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta })
+    +\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}d_J
+    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta }\\
+    &=\sum_{J=1}^{N\!P}(\pmb{K}+\tilde{\pmb{K}}+\bar{\pmb{K}})\pmb d_J-\tilde{\pmb f}-\bar{\pmb f}
+\end{split}
+\end{equation}
+式中的最后一个等式通过引入式(\ref{PG})-(\ref{PBPSI})和(\ref{MVP})进行化简得到，具体详细的推导可参考附录B。根据式(\ref{CH5-2})和(\ref{Pzuzhuang})代入到式(\ref{CH5-1})中可得到Hellinger-Reissner变分原理下的薄板问题离散控制方程：
+\begin{equation}\label{equationP}
+    (\pmb{K}+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}=\pmb{f}+\tilde{\pmb f}+\bar{\pmb f}
+\end{equation}
+其中刚度矩阵$\pmb K$、$\tilde{\pmb K}$和$\bar{\pmb K}$，力向量$\pmb f$、$\tilde{\pmb f}$和$\bar{\pmb f}$的具体表达式如下：
+\begin{subequations}\label{PHR1}
+\begin{align}
+K_{IJ}&=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega \\
+f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{x\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
+\end{align}
+\end{subequations}
+\begin{subequations}\label{PHR2}
+\begin{align}
+  \tilde{K}_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{x\in{c_w}}\nonumber\\
+    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}} \\
+    \tilde{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}
+\end{align}
+\end{subequations}
+\begin{subequations}\label{PHR3}
+\begin{align}
+    \bar{K}_{IJ}&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
+    \bar{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}
+\end{align}
+\end{subequations}
+\par
+Hellinger-Reissner变分原理下的薄板问题离散控制方程式中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$(\ref{PHR2})和常用于解决薄板问题的满足变分一致性的本质边界条件施加方案Nitsche法中的$K_{IJ}^n$、$f_I^n$(\ref{Pkv})相比，具有相类似的表达式，
+同样都满足变分一致性，不同的是在Hellinger-Reissner变分原理离散过程中，用再生光滑梯度$\tilde{\Psi}_{I,\alpha\beta}$替换传统无网格形函数梯度$\Psi_{I,\alpha\beta}$，使得该方法无需计算复杂耗时的无网格形函数梯度，在处理薄板问题时有效提高计算效率。
+同样，基于Hellinger-Reissner变分原理的特点，薄板的离散控制方程式中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$(\ref{PHR3})中已经内嵌，相较于Nistche法中的稳定项$K^s_{IJ}$、$f^s_I$(\ref{PKFs})而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
 \section{数值算例}
 \subsection{分片实验}
 关于薄板问题，采用二次、三次和四次高阶薄板分片实验验证采用传统高斯积分法和再生光滑梯度积分法的不同本质边界条件施加方法是否和二阶弹性力学问题相同
@@ -326,7 +216,6 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
 针对薄板问题，三次基函数的求解计算时高斯积分法“GI”的求解域$\Omega$的积分采用13点高斯积分，边界$\Gamma$积分采用3点高斯积分；
 四次基函数的求解计算时高斯积分法“GI”的求解域$\Omega$的积分采用16点高斯积分，边界$\Gamma$积分采用5点高斯积分；
 再生光滑梯度积分法“RKGSI”计算时采用的积分点数和高斯积分法一致。三次和四次基函数的无网格分片试验结果如下表：
-\newpage
 \begin{table}[H]
     \caption{\textbf{三次基函数无网格法分片实验结果}}
     \centering\label{cubic}
@@ -377,6 +266,7 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
     w=-sin(\frac{\pi}{a}x)sin(\frac{\pi}{b}y)
 \end{split}
 \end{equation}
+\newpage
 \begin{figure}[H]
 \centering
     \includegraphics[scale=0.7]{figure/PHR/R/rectangular.png}
@@ -390,72 +280,16 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
       \includegraphics[scale=0.4]{figure/PHR/R/rectangularmsh.png}
     \caption{简支方板问题节点离散}\label{rectangularmsh}
 \end{figure}
+\newpage
  图(\ref{RCLH})-图(\ref{RQLH})分别为简支方板问题在三次基函数和四次基函数时的位移误差和能量误差对比图。从图中可以明显看出即使采用高阶高斯积分法“GI”如三次基函数的13点高斯积分法和四次基函数的16点高斯积分，
 计算精度都低于再生光滑梯度法“RKGSI”，并且和同样不满足变分一致性的罚函数法一样都无法达到理论误差收敛率。而“RKGSI-Nitsche”和“RKGSI-HR”法不管是在三次基函数还是四次基函数时都达到了误差收敛率。
 图(\ref{RCcputime})-(\ref{RQcputime})是简支方板问题在三次基函数和四次基函数时分别计算节点数和与使用“GI”和“RKGSI”不同数值积分方法时的效率图。从整体来看采用“RKGSI”时的计算效率在三次基函数和四次基函数时都明显高于“GI”。  
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/CL2.png}
-%     \phantomcaption\label{CL2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH1.png}
-%     \phantomcaption\label{CH1}
-%     \end{subcaptiongroup}
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH2.png}
-%     \phantomcaption\label{CH2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH3.png}
-%     \phantomcaption\label{CH3}
-%     \end{subcaptiongroup}
-% \caption{简支方板问题三次基函数误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$；误差\subref{CH2}；$H_2$误差；\subref{CH3} $H_3$误差}
-% \label{RCLH}
-% \end{figure}
-% \newpage
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QL2.png}
-%     \phantomcaption\label{QL2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH1.png}
-%     \phantomcaption\label{QH1}
-%     \end{subcaptiongroup}
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH2.png}
-%     \phantomcaption\label{QH2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH3.png}
-%     \phantomcaption\label{QH3}
-%     \end{subcaptiongroup}
-% \caption{简支方板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$误差；\subref{QH2}；$H_2$误差；\subref{QH3} $H_3$误差}
-% \label{RQLH}
-% \end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Ccputime.png}
-%     \phantomcaption\label{Ccputime}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Cefficiency.png}
-%     \phantomcaption\label{Cefficiency}
-%     \end{subcaptiongroup}
-% \caption{简支方板问题三次基函数效率对比：\subref{Ccputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
-% \label{RCcputime}
-% \end{figure}
-% \newpage
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Qcputime.png}
-%     \phantomcaption\label{Qcputime}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Qefficiency.png}
-%     \phantomcaption\label{Qefficiency}
-%     \end{subcaptiongroup}
-% \caption{简支方板问题四次基函数效率对比：\subref{Qcputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
-% \label{RQcputime}
-% \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/CL2.png}
     \caption{简支方板问题三次基函数$L_2$误差对比}\label{RCLH}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/CH1.png}
@@ -466,50 +300,51 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
     \includegraphics[scale=0.5]{figure/PHR/R/CH2.png}
     \caption{简支方板问题三次基函数$H_2$误差对比}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/CH3.png}
     \caption{简支方板问题三次基函数$H_3$误差对比}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/QL2.png}
     \caption{简支方板问题四次基函数$L_2$误差对比}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/QH1.png}
     \caption{简支方板问题四次基函数$H_1$误差对比}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/QH2.png}
     \caption{简支方板问题四次基函数$H_2$误差对比}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/QH3.png}
     \caption{简支方板问题四次基函数$H_3$误差对比}\label{RQLH}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/Ccputime.png}
     \caption{简支方板问题三次基函数计算时间与节点数的关系}\label{RCcputime}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/Cefficiency.png}
     \caption{简支方板问题三次基函数本质边界条件施加效率对比}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/Qcputime.png}
     \caption{简支方板问题四次基函数计算时间与节点数的关系}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/Qefficiency.png}
@@ -520,24 +355,12 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
 Nitsche法的最优误差的人工经验参数的范围比较大，但人工经验参数值的大小仍然会影响误差结果的变化，
 并且随着网格的加密，人工经验参数的最优结果是在发生改变的。此时，提出的基于Hellinger-Reissner变分原理
 中由于内嵌了本质边界条件，无需人工经验参数来满足正定性，相较于同样满足积分约束条件的“RKGSI-Nitsche”法，提出的“RKGSI-HR”法的不因人工参数值的变化影响最优误差。
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/calpha.png}
-%     \phantomcaption\label{calpha}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/R/qalpha.png}
-%     \phantomcaption\label{qalpha}
-%     \end{subcaptiongroup}
-% \caption{人工参数$\alpha$敏感度分析：\subref{calpha}三次基函数；\subref{qalpha}四次基函数}
-% \label{Ralpha}
-% \end{figure}
-% \newpage
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/calpha.png}
     \caption{简支方板问题三次基函数人工参数$\alpha$敏感性分析}\label{calpha}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/R/qalpha.png}
@@ -551,7 +374,6 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 \end{split}
 \end{equation}\par
 如图(\ref{triangularmsh})所示，简支等边三角形板求解域分布采用均布离散的66、231、861和3321的四个疏密不同的节点进行离散。同样采用三次基函数时，简支等边三角形板问题的相对影响域取为3.5，四次基函数时其相对应影响域取为4.5进行数值分析。\par
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{figure/PHR/T/triangular.png}
@@ -569,108 +391,61 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 虽然“RKGSI-HR”和“RKGSI-Penalty”的计算效率相差不大，但“RKGSI-Penalty”由于不具有变分一致性无法达到理论误差收敛率。因此相较于传统的本质边界条件施加方法，
 “RKGSI-HR”不仅满足积分约束条件能够达到理论误差收敛率，提高计算精度，在计算时间上也用时较短，有效提高计算效率。
 图(\ref{TMxy})为简支等边三角形板问题的弯矩云图。从图中可以看出“RKGSI-HR”、“RKGSI-Nitsche”和“RKGSI-Penalty”和精确解之间非常一致，进一步验证了所提方法能够有效提高计算精度。
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CL2.png}
-%     \phantomcaption\label{CL2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH1.png}
-%     \phantomcaption\label{CH1}
-%     \end{subcaptiongroup}
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH2.png}
-%     \phantomcaption\label{CH2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH3.png}
-%     \phantomcaption\label{CH3}
-%     \end{subcaptiongroup}
-% \caption{简支等边三角形板问题三次基函数误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$；误差\subref{CH2}；$H_2$误差；\subref{CH3} $H_3$误差}
-% \label{TCLH}
-% \end{figure}
-% \newpage
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QL2.png}
-%     \phantomcaption\label{QL2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH1.png}
-%     \phantomcaption\label{QH1}
-%     \end{subcaptiongroup}
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH2.png}
-%     \phantomcaption\label{QH2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH3.png}
-%     \phantomcaption\label{QH3}
-%     \end{subcaptiongroup}
-% \caption{简支等边三角形板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$；误差\subref{QH2}；$H_2$误差；\subref{QH3} $H_3$误差}
-% \label{TQLH}
-% \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/CL2.png}
     \caption{简支等边三角形板问题三次基函数$L_2$误差对比}\label{TCLH}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/CH1.png}
     \caption{简支等边三角形板问题三次基函数$H_1$误差对比}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/CH2.png}
     \caption{简支等边三角形板问题三次基函数$H_2$误差对比}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/CH3.png}
     \caption{简支等边三角形板问题三次基函数$H_3$误差对比}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/QL2.png}
     \caption{简支等边三角形板问题四次基函数$L_2$误差对比}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/QH1.png}
     \caption{简支等边三角形板问题四次基函数$H_1$误差对比}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/QH2.png}
     \caption{简支等边三角形板问题四次基函数$H_2$误差对比}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/QH3.png}
     \caption{简支等边三角形板问题四次基函数$H_3$误差对比}\label{TQLH}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/Cefficiencyomega.png}
     \caption{简支等边三角形板问题薄板中面$\Omega$效率对比}\label{Tefficiency1}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/T/Cefficiencygamma.png}
     \caption{简支等边三角形板问题本质边界条件$\Gamma_w,c_w$效率对比}\label{Tefficiency2}
 \end{figure}
-\newpage
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/Cefficiencyomega.png}
-%     \phantomcaption\label{Cefficiencyomega}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/T/Cefficiencygamma.png}
-%     \phantomcaption\label{Cefficiencygamma}
-%     \end{subcaptiongroup}
-% \caption{简支等边三角形问题效率对比：\subref{Cefficiencyomega}薄板中面$\Omega$；\subref{Cefficiencygamma}本质边界条件$\Gamma_w,c_w$}
-% \label{Tefficiency}
-% \end{figure}
-% \newpage
 \begin{figure}[H]
 \centering
     \includegraphics[scale=0.5]{figure/PHR/T/Mxy.png}
@@ -704,23 +479,6 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 同样根据简支环行板的弯矩云图(\ref{AMxy})也可以更进一步说明在解决薄板问题上，基于Hellinger-Reissner变分原理的本质边界条件施加方法拥有着更高的计算精度。
 在简支环行板问题中，存在两个人工参数影响计算精度。从图(\ref{Aalpha})中可以看出，随着节点数的变化“RKGSI-Nitsche”法和“RKGSI-Penalty”法在达到最优精度时的人工参数值也在发生变化。
 而“RKGSI-HR”法中不涉及人工参数，因此随着节点数的增加，计算精度不会受到人工参数的影响，从而提高了一种更稳定和高效的计算方法。
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QL2.png}
-%     \phantomcaption\label{QL2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH1.png}
-%     \phantomcaption\label{QH1}
-%     \end{subcaptiongroup}
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH2.png}
-%     \phantomcaption\label{QH2}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH3.png}
-%     \phantomcaption\label{QH3}
-%     \end{subcaptiongroup}
-% \caption{简支环行板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$；误差\subref{QH2}；$H_2$误差；\subref{QH3} $H_3$误差}
-% \label{AQLH}
-% \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/A/QL2.png}
@@ -731,7 +489,6 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.5]{figure/PHR/A/QH1.png}
     \caption{简支环行板问题四次基函数$H_1$误差}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/A/QH2.png}
@@ -742,18 +499,6 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.5]{figure/PHR/A/QH3.png}
     \caption{简支环行板问题四次基函数$H_3$误差}\label{AQLH2}
 \end{figure}
-\newpage
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/A/Qcputime.png}
-%     \phantomcaption\label{Qcputime}
-%     \includegraphics[width=0.49\textwidth]{figure/PHR/A/Qefficiency.png}
-%     \phantomcaption\label{Qefficiency}
-%     \end{subcaptiongroup}
-% \caption{简支环形板问题四次基函数效率对比：\subref{Qcputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
-% \label{AQcputime}
-% \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/A/Qcputime.png}
@@ -764,7 +509,6 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.5]{figure/PHR/A/Qefficiency.png}
     \caption{简支环行板问题四次基函数本质边界条件施加效率分析}\label{AQefficiency}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/A/Mxy.png}

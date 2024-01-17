@@ -6,7 +6,7 @@ Hellinger-Ressiner变分原理\cite{}是基于最小余能原理提出的，弹�
 \begin{equation}
 \Pi_C(\sigma_{ij}) = \int_\Omega \frac{1}{2}\sigma_{ij}C_{ijkl}^{-1}\sigma_{kl} d\Omega - \int_{\Gamma^g} \sigma_{ij} n_j g_i d\Gamma
 \end{equation}
-式中$C_{ijkl}^{-1}$为四阶弹性张量\ref{}的逆。从式中可知，本质边界条件已存在能量泛函中。而外力边界条件则通过拉格朗日乘子法进行施加，包括体力项$\pmb b$和外力项$\pmb t$，此时Hellinger-Reissner的能量泛函为：
+式中$C_{ijkl}^{-1}$为四阶弹性张量(\ref{Dalphabeta})的逆。从式中可知，本质边界条件已存在能量泛函中。而外力边界条件则通过拉格朗日乘子法进行施加，包括体力项$\pmb b$和外力项$\pmb t$，此时Hellinger-Reissner的能量泛函为：
 \begin{equation}
 \label{Ehellinger}
     \Pi_{H\!R}(\sigma_{ij},u_i)=\Pi_C(\sigma_{ij})
@@ -15,8 +15,8 @@ Hellinger-Ressiner变分原理\cite{}是基于最小余能原理提出的，弹�
 需要注意的是，$\Pi_{HR}$中包含$\sigma_{ij}$和$u_i$双变量。式(\ref{Ehellinger})分别对$\sigma_{ij}$和$u_i$进行变分得到的伽辽金弱形式：
 \begin{equation}\label{weak form1}
 \begin{split} 
-    \delta\Pi_{H\!R}(\sigma_{ij},u_i)&=\int_{\Omega}\delta\sigma_{ij}\frac{\partial W}{\partial \sigma_{ij}}d\Omega+\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega-\int_{\Gamma^t}\delta\sigma_{ij}n_ju_id\Gamma\\
-    &-\int_{\Gamma^g}\delta\sigma_{ij,j}n_jg_id\Gamma+\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega- \int_{\Gamma^t}\delta u_i\sigma_{ij}n_jd\Gamma\\
+    \delta\Pi_{H\!R}(\sigma_{ij},u_i)&=\delta\Pi_C(\sigma_{ij})+\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega-\int_{\Gamma^t}\delta\sigma_{ij}n_ju_id\Gamma\\
+    &+\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega-\int_{\Gamma^t}\delta u_i\sigma_{ij}n_jd\Gamma\\
     &+\int_{\Omega}\delta u_ib_id\Omega+\int_{\Gamma^t}\delta u_it_id\Gamma\\
     &=0
 \end{split}
@@ -31,57 +31,10 @@ Hellinger-Ressiner变分原理\cite{}是基于最小余能原理提出的，弹�
     \int_{\Gamma}\delta u_i\sigma_{ij}n_jd\Gamma-\int_{\Omega}\delta u_i\sigma_{ij,j}d\Omega-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_jd\Gamma=\\
     \int_{\Gamma^t}\delta u_it_id\Gamma+\int_{\Omega}\delta u_ib_id\Omega
 \end{multline} 
-\end{subequations}
-% 根据Hellinger-Ressiner变分原理\cite{}，对于弹性力学问题的控制方程式(\ref{elasticity problems})存在相应的余能泛函：
-% \begin{equation}
-% \begin{split}
-%     \Pi_c=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma
-% \end{split}
-% \end{equation}
-% 其中$W(\sigma_{ij})$为应变余能，与应力和应变之间存在如下关系式：
-% \begin{equation}
-% \begin{split}
-% \frac{\partial W(\sigma_{ij})}{\partial\sigma_{ij}}=C^{-1}_{ijkl}\sigma_{kl}=\varepsilon_{ij}
-% \end{split}
-% \end{equation}
-% 式中$C_{ijkl}$为四阶弹性张量。\par
-% 此时采用拉格朗日乘子法施加应力边界条件从而建立新的变分泛函\cite{}：
-% \begin{equation}\label{functional1}
-% \begin{split}
-%     \Pi_c^*&=\int_{\Omega}W(\sigma_{ij})d\Omega-\int_{\Gamma^g}\sigma_{ij}n_jg_id\Gamma\\
-%     &+\int_{\Omega}\lambda_i(\sigma_{ij,j}+b_i)d\Omega+\int_{\Gamma^t}\eta_i(\sigma_{ij}n_j-t_i)d\Gamma
-% \end{split}
-% \end{equation}
-% 将式(\ref{functional1})进行一阶变分，并引入拉格朗日乘子$\lambda_i$施加到求解域$\Omega$，将拉格朗日乘子$\eta_i$施加到自然边界条件中得到：
-% \begin{equation}\label{First-order variational}
-% \begin{split}
-%     \delta\Pi_c^*&=\int_{\Omega}(\frac{\partial W}{\partial\sigma_{ij}}\delta\sigma_{ij}+\delta\lambda_i(\sigma_{ij,j}+b_i)+\lambda_i\delta\sigma_{ij,j})d\Omega\\
-% &-\int_{\Gamma^g}\delta\sigma_{ij}n_jg_id\Gamma+\int_{\Gamma^t}\delta\eta_i(\sigma_{ij}-t_i)d\Gamma+\int_{\Gamma^t}\eta_i\delta\sigma_{ij}n_jd\Gamma
-% \end{split}
-% \end{equation}
-% 通过格林公式和$\sigma_{ij}$的对称性得到如下公式：
-% \begin{equation}\label{Green formula}
-% \begin{split}
-%     \int_{\Omega}\lambda_i\delta\sigma_{ij,j}d\Omega&=\int_{\Gamma}\lambda_i\delta\sigma_{ij}n_jd\Gamma-\int_{\Omega}\lambda_{i,j}\delta\sigma_{ij}d\Omega\\
-% &=\int_{\Gamma^g}\delta\sigma_{ij}n_j\delta_id\Omega+\int_{\Gamma^t}\delta\sigma_{ij}n_j\delta_id\Omega-\int_{\Omega}\frac{1}{2}(\lambda_{i,j}+\lambda_{j,i})\delta\sigma_{ij}d\Omega
-% \end{split}
-% \end{equation}
-% 进一步将式(\ref{Green formula})代入式(\ref{First-order variational})得到：
-% \begin{equation}
-% \begin{split}
-%     \delta\Pi_c^*&=\int_{\Omega}((\frac{\partial W}{\partial\sigma_{ij}}-\frac{1}{2}(\lambda_{i,j}+\lambda_{j,i}))\delta\sigma_{ij}+(\sigma_{ij,j}+b_i)\delta\lambda_i)d\Omega\\
-%     &+\int_{\Gamma^g}(\lambda_i-g_i)\delta\sigma_{ij}n_jd\Gamma+\int_{\Gamma^t}((\sigma_{ij}n_j-t_i)\delta\eta_i+(\lambda_i+\eta_i)\delta\sigma_{ij}n_j)d\Gamma
-% \end{split}
-% \end{equation}\par
-% 根据泛函驻值条件$\delta\Pi_c^*=0$得出：
-% \begin{equation}
-% \begin{split}
-%     \lambda_i=g_i=u_i,\eta_i=-u_i
-% \end{split}
-% \end{equation}\par   
+\end{subequations}   
 \section{位移-应力混合离散}
 Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散的方式进行近似。
-首先，位移分量$u_i$通过无网格形函数\ref{}进行近似，近似的位移$u^h_i$可表示为：
+首先，位移分量$u_i$通过无网格形函数(\ref{Pshapefunction})进行近似，近似的位移$u^h_i$可表示为：
 \begin{equation}\label{CH4-ui}
     u^h_i(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{iI}
 \end{equation}
@@ -95,6 +48,7 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 \end{equation}
 其中$\pmb{p}^{[p-1]}$为($p-1$)阶的单项式基向量，$\pmb{a}_{ij}$为$\sigma_{ij}^h(\pmb{x})$在积分域$\Omega_C$内的常系数向量。
 为了得到常系数向量$\pmb{a}_{ij}$的具体表达式，首先将式(\ref{CH4-sigma})和(\ref{CH4-ui})代入式(\ref{deltasigma})中可以得到：
+\newpage
 \begin{equation}
 \begin{split}
     \int_{\Omega_C}\delta\pmb{a}_{ij}\pmb{p}^{[p-1]}C^{-1}_{ijkl}\pmb{a}_{kl}\pmb{p}^{[p-1]T}d\Omega&=\sum_{I=1}^{N\!P}\int_{\partial\Omega_C}\delta\pmb{a}_{ij}\pmb{p}^{[p-1]}n_j\Psi_I(\pmb{x})d\Gamma d_{iI}\\
@@ -124,9 +78,9 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 其中
 \begin{align}
     \label{g1}&\pmb{G}=\int_{\Omega_C}\pmb{p}^{[p-1]}\pmb{p}^{[p-1]T}d\Omega\\
-    \label{g2} &\tilde{g}_{iI}=\int_{\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_id\Gamma-\int_{\Omega_C}\pmb{p}_{,i}^{[p-1]}\Psi_{I}(\pmb{x})d\Omega\\
-    \label{g3} &\bar{g}_{iI}=\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_id\Gamma\\
-   \label{g4} &\hat{g}_{iI}=\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_jg_id\Gamma
+    \label{g2} &\tilde{\pmb g}_{iI}=\int_{\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_id\Gamma-\int_{\Omega_C}\pmb{p}_{,i}^{[p-1]}\Psi_{I}(\pmb{x})d\Omega\\
+    \label{g3} &\bar{\pmb g}_{iI}=\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_id\Gamma\\
+   \label{g4} &\hat{\pmb g}_{iI}=\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_jg_id\Gamma
 \end{align}\par
 将常系数向量$\pmb{a}_{ij}$的表达式(\ref{aij})代入到式(\ref{CH4-sigma})中，
 同时根据线弹性本构关系式(\ref{constitutive relation})和小变形假设(\ref{CH2-strain})
@@ -138,66 +92,20 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 \begin{equation}
 \begin{cases}\label{case1}
     \tilde{\varepsilon}^h_{ij}(\pmb{x})=\displaystyle\sum_{I=1}^{N\!P}\frac{1}{2}(\tilde{\Psi}_{I,i}(\pmb{x})d_{jI}+\tilde{\Psi}_{I,j}(\pmb{x})d_{iI})\\
-    \tilde{\Psi}_{I,i}(\pmb{x})=\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\tilde{g}_{iI}
+    \tilde{\Psi}_{I,i}(\pmb{x})=\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\tilde{\pmb g}_{iI}
 \end{cases}
 \end{equation}
 \begin{equation}
 \begin{cases}\label{case2}
     \bar{\varepsilon}^h_{ij}(\pmb{x})=\displaystyle\sum_{I=1}^{N\!P}\frac{1}{2}(\bar{\Psi}_{I,i}(\pmb{x})d_{jI}+\bar{\Psi}_{I,j}(\pmb{x})d_{iI})\\
-    \bar{\Psi}_{I,i}(\pmb{x})=\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\bar{g}_{iI}
+    \bar{\Psi}_{I,i}(\pmb{x})=\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\bar{\pmb g}_{iI}
 \end{cases}
 \end{equation}
 \begin{equation}\label{case3}
-    \hat{\varepsilon}_{ij}(\pmb{x})=\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\hat{g}_{ij}
+    \hat{\varepsilon}_{ij}(\pmb{x})=\frac{1}{2}\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}(\hat{\pmb g}_{ij}+\hat{\pmb g}_{ji})
 \end{equation} \par
 值得注意的是，式中$\tilde{\Psi}_{I,i}$即为再生光滑梯度\cite{}。根据再生光滑梯度理论框架，可以直接通过无网格形函数显式构造再生光滑梯度，从而避免了传统无网格形函数导数的复杂计算，提高了梯度计算效率。并且再生光滑梯度
-内嵌局部积分约束条件$\tilde{g}_{iI}$，进而满足全域积分约束条件，从而保证算法的计算精度和误差收敛性。这意味着通过构造再生光滑梯度，可以确保在进行全域积分时满足积分约束条件，从而得到准确的结果，并保证算法的计算精度和误差收敛性。反之，Hellinger-Reissner变分原理的混合离散框架也完备了再生光滑梯度法的变分理论基础。\par
-% 在实际计算分析中一般将张量表示转换为矩阵和向量表示，但两者完全等价。当考虑$xy$平面内的平面应力问题时，弹性本构关系为：
-% \begin{equation}
-% \begin{split}
-%     \left\{\begin{matrix}
-%     \sigma_{xx}\\\sigma_{yy}\\\sigma_{xy}
-%     \end{matrix}\right\}=\frac{E}{1-\nu^2}
-%     \left[\begin{matrix}
-%     1&\nu&0\\\nu&1&0\\0&0&\frac{1-\nu}{2}
-%     \end{matrix}\right]
-%     \left\{\begin{matrix}
-%     \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
-%  \end{matrix}\right\}
-% \end{split}
-% \end{equation}
-% 此时，采用矩阵向量形式的近似应力分量$\pmb{\sigma}^h(\pmb{x})$的表达式为：
-% \begin{equation}
-% \begin{split}
-% \pmb{\sigma}^h=\pmb{D}\sum_{I=1}^{N\!P}(\tilde{\pmb{B}}_I-\bar{\pmb{B}}_I)\pmb{d_I}+\pmb{D}\hat{\pmb{\varepsilon}}
-% \end{split}
-% \end{equation}
-% 其中：
-% \begin{equation}
-% \begin{split}
-%     \pmb{\sigma}^h=\left\{\begin{matrix}
-%         \sigma_{xx}\\\sigma_{yy}\\\sigma_{xy}
-%         \end{matrix}\right\}\quad
-%     \pmb{D}=\frac{E}{1-\nu^2}
-%     \left[\begin{matrix}
-%     1&\nu&0\\\nu&1&0\\0&0&\frac{1-\nu}{2}
-%     \end{matrix}\right]\quad
-%     \hat{\pmb{\varepsilon}}=\left\{\begin{matrix}
-%         \varepsilon_{xx}\\\varepsilon_{yy}\\\gamma_{xy}
-%      \end{matrix}\right\}
-% \end{split}
-% \end{equation}
-% 式中$\pmb{d}_I=\{d_{1I},d_{2I}\}^T$为节点系数向量，$\tilde{\pmb{B}}_I\text{、}\bar{\pmb{B}}_I$分别是由再生光滑梯度$\tilde{\Psi}_{I,i}$和$\bar{\Psi}_{I,i}$组成的梯度矩阵，表达式分别为：
-% \begin{equation}
-% \begin{split}
-%     \tilde{\pmb{B}}_I(\pmb{x})= \left[\begin{matrix}\tilde{\Psi}_{I,x}(\pmb{x})&0\\0&\tilde{\Psi}_{I,y}(\pmb{x})\\\tilde{\Psi}_{I,y}(\pmb{x})&\tilde{\Psi}_{I,x}(\pmb{x}) \end{matrix}\right] 
-% \end{split}
-% \end{equation}
-% \begin{equation}
-% \begin{split}
-%     \bar{\pmb{B}}_I(\pmb{x})= \left[\begin{matrix}\bar{\Psi}_{I,x}(\pmb{x})&0\\0&\bar{\Psi}_{I,y}(\pmb{x})\\\bar{\Psi}_{I,y}(\pmb{x})&\bar{\Psi}_{I,x}(\pmb{x}) \end{matrix}\right] 
-% \end{split}
-% \end{equation}
+内嵌局部积分约束条件$\tilde{\pmb g}_{iI}$，进而满足全域积分约束条件，从而保证算法的计算精度和误差收敛性。这意味着通过构造再生光滑梯度，可以确保在进行全域积分时满足积分约束条件，从而得到准确的结果，并保证算法的计算精度和误差收敛性。反之，Hellinger-Reissner变分原理的混合离散框架也完备了再生光滑梯度法的变分理论基础。\par
 \section{Hellinger-Reissner变分原理下的本质边界条件施加方法}
 基于Hellinger-Reissner变分原理得到的弱形式(\ref{weak form1})中的积分项包括了在本质边界条件下的位移和应力的约束项，以及在自然边界条件下的外力和强制位移项。
 此时，通过对位移采用再生核近似，应力通过局部多项式近似的混合离散方式对Hellinger-Reissner变分原理的等效积分弱形式进行组装刚度矩阵。
@@ -212,92 +120,26 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
         \right )\pmb{a}_{ij}=
 \sum_{I=1}^{N\!P}\delta d_{iI}(\int_{\Gamma^t}\Psi_It_id\Gamma+\int_{\Omega}\Psi_Ib_id\Omega)
 \end{equation}
-进一步通过式(\ref{g2})和(\ref{g3})可以将式(\ref{CH4-1})的左侧改写为：
+其次通过式(\ref{g2})和(\ref{g3})可以将式(\ref{CH4-1})改写为：
 \begin{equation}\label{1}
-    % \sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{g}_{jI}^T-\bar{g}_{jI}^T)\pmb{a}_{ij}=\sum_{I=1}^{N\!P}\delta\pmb{d}_I^T\pmb{f}_I
-    \sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{g}_{jI}^T-\bar{g}_{jI}^T)\pmb{a}_{ij}
+    \sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{\pmb g}_{jI}^T-\bar{\pmb g}_{jI}^T)\pmb{a}_{ij}=\sum_{I=1}^{N\!P}\delta\pmb{d}_I^T\pmb{f}_I
 \end{equation}
-% 其中力向量$\pmb{f}$的具体表达式为：
-% \begin{equation}\label{CH4-f}
-%     \pmb{f}_I=\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma+\int_{\Omega}\Psi_I\pmb{b}d\Omega
-% \end{equation}\par
-% 式中$\pmb{t}=\{t_x,t_y\}^T\text{、}\pmb{b}=\{b_x,b_y\}^T$分别为外力向量和体力向量。\par
-将式(\ref{aij})中的$\pmb{a}_{ij}$代入式(\ref{1})中可得到：
+进一步将式(\ref{aij})中的$\pmb{a}_{ij}$代入式(\ref{1})等式左边可得到：
 \begin{equation}\label{inference}
 \begin{split}
-    &\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{g}_{jI}^T-\bar{g}_{jI}^T)\pmb{a}_{ij}=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{g}_{jI}^T-\bar{g}_{jI}^T)C_{ijkl}\pmb{G}^{-1}(\sum_{J=1}^{N\!P}(\tilde{g}_{kJ}-\bar{g}_{kJ})d_{lJ}+\hat{g}_{kl})\\
-    &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{g}_{kJ}d_{lJ}
-    -\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{g}_{kJ}d_{lJ}\\
-    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\bar{g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{g}_{kJ}d_{lJ}
-    +\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\bar{g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{g}_{kJ}d_{lJ}\\
-    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}\tilde{g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{g}_{kl}
-    +\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}\bar{g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{g}_{kl}
+    &\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{\pmb g}_{jI}^T-\bar{\pmb g}_{jI}^T)\pmb{a}_{ij}\\
+    &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{\pmb g}_{jI}^T-\bar{\pmb g}_{jI}^T)C_{ijkl}\pmb{G}^{-1}(\sum_{J=1}^{N\!P}(\tilde{\pmb g}_{kJ}-\bar{\pmb g}_{kJ})d_{lJ}+\hat{\pmb g}_{kl})\\
+    &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}d_{lJ}
+    -\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{\pmb g}_{kJ}d_{lJ}\\
+    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\bar{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}d_{lJ}
+    +\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\bar{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{\pmb g}_{kJ}d_{lJ}\\
+    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}\tilde{\pmb g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{\pmb g}_{kl}
+    +\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}\bar{\pmb g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{\pmb g}_{kl}\\
+    &=\delta\pmb{d}^T(\pmb K+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}-\delta\pmb{d}^T(\tilde{\pmb f}+\bar{\pmb f})
 \end{split}
 \end{equation}
-通过引入式(\ref{g1})、(\ref{case1})对式(\ref{inference})中的第一项进行推导得到：
-\begin{equation}\label{CH4-K}
-\begin{split}
-    &\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{g}_{kJ}d_{lJ}=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\pmb{G}\pmb{G}^{-1}\tilde{g}_{kJ}d_{lJ}\\
-&=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\int_{\Omega_C}\tilde{g}_{jI}^T\pmb{G}^{-1}\pmb{p}^{[p-1]}(\pmb x)C_{ijkl}\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\tilde{g}_{kJ}d\Omega d_{lJ}\\
-&=\sum_{C=1}^{N\!C}\int_{\Omega_C}\sum_{I=1}^{N\!P}\tilde{\Psi}_{I,j}\delta d_{iI}C_{ijkl}\sum_{J=1}^{N\!P}\tilde{\Psi}_{I,k}d_{lJ}d\Omega\\
-&=\sum_{C=1}^{N\!C}\int_{\Omega_C}\delta\tilde{\varepsilon}_{ij}^hC_{ijkl}\tilde{\varepsilon}_{kl}^hd\Omega\\
-% &=\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta\pmb{d}^T_I\int_{\Omega}\tilde{\pmb{B}}_I^T\pmb{D}\tilde{\pmb{B}}_Jd\Omega\pmb{d}_J\\
-\end{split}
-\end{equation}
-% 其中$\tilde{\pmb{B}}_I$是由再生光滑梯度$\tilde{\Psi}_{I,i}$组成的梯度矩阵，其具体表达式为：
-% \begin{equation}
-%     \tilde{\pmb{B}}_I(\pmb{x})= \begin{bmatrix}\tilde{\Psi}_{I,x}(\pmb{x})&0\\0&\tilde{\Psi}_{I,y}(\pmb{x})\\\tilde{\Psi}_{I,y}(\pmb{x})&\tilde{\Psi}_{I,x}(\pmb{x}) \end{bmatrix} 
-% \end{equation}
-通过引入式(\ref{g3})、(\ref{case1})、(\ref{CH4-ui})对式(\ref{inference})中的第二、三项进行推导得到：
-\begin{equation}\label{CH4-tildeK}
-\begin{split}
-    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}C_{ijkl}(\bar{g}_{jI}^T\pmb{G}^{-1}\tilde{g}_{kJ}+\tilde{g}_{jI}^T\pmb{G}^{-1}\bar{g}_{kJ})d_{lJ}\\
-    &=-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}(\int_{\Gamma^g\cap\partial\Omega_C}\Psi_In_jC_{ijkl}\pmb{p}^{[p-1]}\pmb{G}^{-1}\tilde{g}_{kJ}d\Gamma+\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\pmb{p}^{[p-1]}\pmb{G}^{-1}\tilde{g}_{jI}n_k\Psi_Jd\Gamma)d_{lJ}\\
-    &=-\sum_{C=1}^{N\!C}(\int_{\Gamma^g\cap\partial\Omega_C}\sum_{I=1}^{N\!P}\Psi_I\delta d_{iI}n_jC_{ijkl}\sum_{J=1}^{N\!P}\tilde{\Psi}_{J,k}d_{lJ}d\Gamma+\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\sum_{J=1}^{N\!P}\tilde{\Psi}_{I,j}\delta d_{iI}n_k\sum_{I=1}^{N\!P}\Psi_Jd_{lJ}d\Gamma)\\
-    &=-\sum_{C=1}^{N\!C}(\int_{\Gamma^g\cap\partial\Omega}\delta u_i^hn_jC_{ijkl}\tilde{\varepsilon}_{kl}^hd\Gamma+\int_{\Gamma^g\cap\partial\Omega_C}\delta\tilde{\varepsilon}_{ij}^hC_{ijkl}n_ku^h_ld\Gamma)\\
-    % &=-\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta\pmb{d}_I^T(\int_{\Gamma^g}\Psi_I\pmb{N}\pmb{D}\tilde{\pmb{B}}_Jd\Gamma+\int_{\Gamma^g}\tilde{\pmb{B}}_I^T\pmb{D}\pmb{N}^T\Psi_Jd\Gamma)\pmb d_J\\
-\end{split}
-\end{equation}
-% 其中$\pmb{N}$为法向量矩阵：
-% \begin{equation}
-%     \pmb{N}=\begin{bmatrix}n_x&0&n_y\\0&n_y&n_x
-%     \end{bmatrix}
-% \end{equation}
-通过引入式(\ref{g3})、(\ref{case2})对式(\ref{inference})中的第四项进行推导得到：
-\begin{equation}\label{CH4-barK}
-\begin{split}
-    &\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}C_{ijkl}\bar{g}^T_{jI}\pmb{G}^{-1}\bar{g}_{kJ}d_{lJ}\\
-    &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\bar{g}_{jI}^T\pmb{G}^{-1}\pmb{p}^{[p-1]}\Psi_Jn_kd\Gamma d_{lJ}\\
-    &=\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\sum_{J=1}^{N\!P}\bar{\Psi}_{I,j}\delta d_{iI}n_k\sum_{J=1}^{N\!P}\Psi_{J}d_{lJ}d\Gamma\\
-    &=\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\delta\bar{\varepsilon}_{ij}^hn_ku_ld\Gamma\\
-    % &=\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta\pmb{d}_I^T\int_{\Gamma^g\cap\partial\Omega_C}\bar{\pmb{B}}_I^T\pmb{D}\pmb{N}^T\Psi_Jd\Gamma\pmb{d}_J\\
-\end{split}
-\end{equation}
-% 其中$\bar{\pmb{B}}_I$是由再生光滑梯度$\bar{\Psi}_I$组成的梯度矩阵，其具体表达式为：
-% \begin{equation}
-%     \bar{\pmb{B}}_I(\pmb{x})= \begin{bmatrix}\bar{\Psi}_{I,x}(\pmb{x})&0\\0&\bar{\Psi}_{I,y}(\pmb{x})\\\bar{\Psi}_{I,y}(\pmb{x})&\bar{\Psi}_{I,x}(\pmb{x}) \end{bmatrix}
-% \end{equation}
-通过引入式(\ref{g4})、(\ref{case1})对式(\ref{inference})中的第五项进行推导得到：
-\begin{equation}\label{CH4-tildef}
-\begin{split}
-    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}C_{ijkl}\tilde{g}^T_{jI}\pmb{G}^{-1}\hat{g}_{kl}\\
-    &=-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}C_{ijkl}\tilde{g}^T_{jI}\pmb{G}^{-1}\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_lg_kd\Gamma\\
-    &=-\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\sum_{I=1}^{N\!P}\tilde{\Psi}_{I,j}\delta d_{iI}n_lg_kd\Gamma\\
-    &=-\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\delta\tilde{\varepsilon}_{ij}^hn_lg_kd\Gamma\\
-    % &=-\sum_{I=1}^{N\!P}\delta\pmb{d}_I^T\int_{\Gamma^g\cap\partial\Omega_C}\tilde{\pmb{B}}_I^T\pmb{D}\pmb{N}^T\pmb{g}d\Gamma\\
-\end{split}
-\end{equation}
-通过引入式(\ref{g4})、(\ref{case2})对式(\ref{inference})中的第六项进行推导得到：
-\begin{equation}\label{CH4-barf}
-\begin{split}
-    \sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}C_{ijkl}\bar{g}^T_{jI}\pmb{G}^{-1}\hat{g}_{kl}
-    &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}C_{ijkl}\bar{g}^T_{jI}\pmb{G}^{-1}\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_lg_kd\Gamma\\
-    &=\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\sum_{I=1}^{N\!P}\bar{\Psi}_{I,j}\delta d_{iI}n_lg_kd\Gamma\\
-    &=\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\delta\bar{\varepsilon}_{ij}^hn_lg_kd\Gamma\\
-    % &=\sum_{I=1}^{N\!P}\delta\pmb{d}_I^T\int_{\Gamma^g\cap\partial\Omega_C}\bar{\pmb{B}}_I^T\pmb{D}\pmb{N}^T\pmb{g}d\Gamma\\
-\end{split}
-\end{equation}
-通过式(\ref{CH4-K})-(\ref{CH4-barf})代入到式(\ref{CH4-1})中得到Hellinger-Reissner变分原理下的弹性力学问题控制方程式：
+式中的最后一个等式通过引入式(\ref{g1})-(\ref{case2})进行化简得到，具体详细的推导过程可参考附录A。
+根据式(\ref{1})和(\ref{inference})代入到式(\ref{CH4-1})中可得到Hellinger-Reissner变分原理下的弹性力学问题离散控制方程：
 \begin{equation}\label{equationE}
     (\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{d}=\pmb{f}+\tilde{\pmb{f}}+\bar{\pmb{f}}
 \end{equation}
@@ -308,14 +150,32 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 % \end{split}
 % \end{equation}
 其中刚度矩阵$\pmb K$、$\tilde{\pmb K}$和$\bar{\pmb K}$和力向量$\pmb f$、$\tilde{\pmb f}$和$\bar{\pmb f}$的具体表达式如下：
-\begin{subequations}
-\begin{align}
+% \begin{subequations}
+% \begin{align}
+%    \pmb{K}_{IJ}&=\int_{\Omega}\tilde{\pmb{B}}_I^T\pmb{D}\tilde{\pmb{B}}_Jd\Omega\\
+%    \tilde{\pmb{K}}_{IJ}&=-\int_{\Gamma^g}\Psi_I\pmb{N}^T\pmb{D}\tilde{\pmb B}_Jd\Gamma-\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb{D}\pmb{N}\Psi_Jd\Gamma\\
+%    \bar{\pmb K}_{IJ}&=\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb D\pmb N\Psi_Jd\Gamma\\
+%   \pmb{f}_I&=\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma+\int_{\Omega}\Psi_I\pmb{b}d\Omega\\
+%    \tilde{\pmb f}_I&=-\int_{\Gamma^g}\tilde{\pmb B}_I^T\pmb D\pmb N\pmb{g}d\Gamma\\
+%    \bar{\pmb f}_I&=\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb D\pmb N \pmb{g}d\Gamma
+% \end{align}
+% \end{subequations}
+\begin{subequations}\label{Ehr1}
+\begin{align}    
     \pmb{K}_{IJ}&=\int_{\Omega}\tilde{\pmb{B}}_I^T\pmb{D}\tilde{\pmb{B}}_Jd\Omega\\
-    \tilde{\pmb{K}}_{IJ}&=-\int_{\Gamma^g}\Psi_I\pmb{N}\pmb{D}\tilde{\pmb B}_Jd\Gamma-\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb{D}\pmb{N}^T\Psi_Jd\Gamma\\
-    \bar{\pmb K}_{IJ}&=\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb D\pmb N^T\Psi_Jd\Gamma\\
-    \pmb{f}_I&=\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma+\int_{\Omega}\Psi_I\pmb{b}d\Omega\\
-    \tilde{\pmb f}_I&=-\int_{\Gamma^g}\tilde{\pmb B}_I^T\pmb D\pmb N^T\pmb{g}d\Gamma\\
-    \bar{\pmb f}_I&=\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb D\pmb N^T \pmb{g}d\Gamma
+    \pmb f_I&=\int_{\Omega}\Psi_I\pmb{b}d\Omega+\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma
+\end{align}
+\end{subequations}
+\begin{subequations}\label{Ehr2}  
+\begin{align}   
+    \tilde{\pmb{K}}_{IJ}&=-\int_{\Gamma^g}\Psi_I\pmb{N}^T\pmb{D}\tilde{\pmb B}_Jd\Gamma-\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb{D}\pmb{N}\Psi_Jd\Gamma\\
+    \tilde{\pmb f}_I&=-\int_{\Gamma^g}\tilde{\pmb B}_I^T\pmb D\pmb N\pmb{g}d\Gamma
+\end{align}
+\end{subequations}
+\begin{subequations}\label{Ehr3}
+\begin{align} 
+    \bar{\pmb K}_{IJ}&=\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb D\pmb N\Psi_Jd\Gamma\\
+    \bar{\pmb f}_I&=\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb D\pmb N \pmb{g}d\Gamma
 \end{align}
 \end{subequations}
 式中$\tilde{\pmb B}_I$和$\bar{\pmb B}_I$分别由再生光滑梯度$\tilde{\Psi}_{I,i}$和$\bar{\Psi}_{I,i}$组成的梯度矩阵，
@@ -327,26 +187,16 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 \end{equation}
 $\pmb N$为法向量矩阵，其表达式为：
 \begin{equation}
-    \pmb{N}=\begin{bmatrix}n_x&0&n_y\\0&n_y&n_x
+    \pmb{N}=\begin{bmatrix} 0&n_x\\n_y&0\\n_y&n_x
     \end{bmatrix}
 \end{equation}\par
-% 此时，将式(\ref{CH4-1})的右侧改写为如下形式：
-% \begin{equation}
-%     \sum_{I=1}^{N\!P}\delta\pmb{d}^T\pmb{f}
-% \end{equation}
-% 其中力向量$\pmb{f}_I$的具体表达式为：
-% \begin{equation}\label{CH4-f}
-%     \pmb{f}_I=\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma+\int_{\Omega}\Psi_I\pmb{b}d\Omega
-% \end{equation}
-% 进一步引入力向量$\pmb{f}_I$表达式(\ref{CH4-f})和式(\ref{simplify})代入到式(\ref{CH4-1})中得到
-% Hellinger-Reissner变分原理下的弹性力学问题离散控制方程式：
-% \begin{equation}\label{equationE}
-% (\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{d}=\pmb{f}+\tilde{\pmb{f}}+\bar{\pmb{f}}
-% \end{equation}\par
-Hellinger-Reissner变分原理下的离散平衡控制方程式中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和满足变分一致性的Nitsche法中的$K_{IJ}^v$、$f_I^v$相比，用再生光滑梯度$\tilde{\pmb{B}}_I$替代传统无网格形函数梯度$\pmb{B}_I$，进而提高计算效率。
-Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$和传统的Nitshche法中的$K^s_{IJ}$、$f^s_I$相比，无需额外施加人工参数，提高计算精度。\par
-为了保证离散弱形式的变分一致性在求解式(\ref{equationE})的过程中，引入的数值积分在求解的各个过程也需要保持一致。如图(\ref{Eintegralscheme})所示，基于Hellinger-Reissner变分原理下的本质边界条件施加方法
-需要两套数值积分点\cite{}，$\tilde{\pmb g}$和$\bar{\pmb g}$需要与$\tilde{\pmb{K}}$，$\bar{\pmb{K}}$，$\pmb{f}$，$\tilde{\pmb{f}}$和$\bar{\pmb{f}}$采用相同的一套数值积分点，
+值得注意的是，Hellinger-Reissner变分原理离散控制方程式中的修正变分项$\tilde{\pmb K}$、$\tilde{\pmb f}$(\ref{Ehr2})和弹性力学问题Nitsche法中的修正变分项$\pmb K^v$、$\pmb f^v$(\ref{Enitschekv})具有相类似的表达式，同样都是为了满足变分一致性，
+但在Hellinger-Reissner变分原理离散平衡过程中，用再生光滑梯度$\tilde{\Psi}_I$替代Nitsche法中的传统无网格形函数梯度$\pmb{B}_I$，从而无需计算复杂耗时的无网格形函数梯度，相较于传统的Nistche法能够有效的提高计算效率。
+更重要的是，Hellinger-Reissner变分原理离散控制方程式中的稳定项$\bar{\pmb K}$、$\bar{\pmb f}$(\ref{Ehr3})和传统的Nitshche法中的稳定项$\pmb{K}^s$、$\pmb f^s$(\ref{EKFs})相比，无需引入罚函数项来满足正定性，不会因为人工参数的存在继而影响计算精度。
+\section{优化的数值积分方案}
+根据Hellinger-Reissner变分原理在求解数值问题过程中是有一套优化过后的数值积分方案[]，该数值积分方案是通过两个原则来优化的：(1)通过优化全局数值积分采样点总数确定局部背景积分域内积分采样点的数量；(2)通过满足变分一致性确定数值积分采样点位置和权重。
+如图(\ref{Eintegralscheme})所示，基于Hellinger-Reissner变分原理下的本质边界条件施加方法
+需要两套数值积分点，$\tilde{\pmb g}$和$\bar{\pmb g}$需要与$\tilde{\pmb{K}}$，$\bar{\pmb{K}}$，$\pmb{f}$，$\tilde{\pmb{f}}$和$\bar{\pmb{f}}$采用相同的一套数值积分点，
 式(\ref{g1})中的$\pmb{G}$和式(\ref{equationE})中$\pmb{K}$采用相同的数值积分方案。\par
 \begin{figure}[H]
     \centering
@@ -379,6 +229,7 @@ Hellinger-Reissner变分原理下的离散平衡控制方程式中的稳定项$\
    \bottomrule
 \end{tabular}
 \end{table}
+\newpage
 \begin{table}[H]
     \caption{\textbf{三次基函数无网格法优化的数值积分方案}}
     \centering
@@ -440,7 +291,6 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 基于Hellinger-Reissner变分原理的本质边界条件施加方法。\par
 在数值求解过程中，为了保证拉格朗日乘子法的稳定性，拉格朗日乘子统一采用线性有限元形函数进行离散。针对二次基函数的求解，高斯积分法“GI”的求解域$\Omega$的积分采用13点高斯积分，边界$\Gamma$积分采用3点高斯积分
 ；针对三次基函数的求解，高斯积分法“GI”的求解域$\Omega$的积分采用16点高斯积分，边界$\Gamma$积分采用5点高斯积分。二次和三次基函数的无网格法分片试验结果如下：\par
-\newpage
 \begin{table}[H]
 \caption{\textbf{二次基函数无网格法分片实验结果}}
 \centering
@@ -460,6 +310,7 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 \bottomrule
 \end{tabular}
 \end{table}
+\newpage
 \begin{table}[H]
 \caption{\textbf{三次基函数无网格法分片实验结果}}
 \centering
@@ -495,7 +346,7 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
     v = \frac{P}{6EI}[3\nu y^2(L-x) + (4+5\nu)\frac{D^2x}{4} + (3L-x)x^2]
 \end{cases}
 \end{split}
-\end{equation}\par
+\end{equation}
 与之相对应的应力分量为：
 \begin{equation}
 \begin{split}
@@ -512,16 +363,15 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
     \caption{悬臂梁问题模型}\label{cantilever}
 \end{figure}
 如图(\ref{cantilever})所示，悬臂梁的左端施加自然边界条件$\Gamma^t$，右端施加强制边界条件$\Gamma^g$。
-悬臂梁求解域分别通过图(\ref{cantilever.mesh})所示采用$\text{(a)}5\times7$、$\text{(b)}9\times33$、$\text{(c)}17\times65$、$\text{(d)}33\times129$的
-四个疏密不同的节点进行离散。对于采用二次基函数的悬臂梁算例问题，传统高斯积分法采用13点高斯积分，核函数的相对影响域为2.5。
-\newpage
+悬臂梁求解域分别通过图(\ref{cantilever.mesh})所示采用四个疏密不同的节点进行离散。对于采用二次基函数的悬臂梁算例问题，传统高斯积分法采用13点高斯积分，核函数的相对影响域为2.5。
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{figure/EHR/cantilever/cantilever.mesh.png}
     \caption{悬臂梁问题节点模型}\label{cantilever.mesh}
 \end{figure}
 图(\ref{CL2})、图(\ref{CH1})为悬臂梁问题的位移误差和能量误差对比图。从图中可以看出采用再生光滑梯度积分法“RKGSI”的本质边界条件施加方法的计算精度优于采用高斯积分法“GI”的本质条件施加方法，
-并且由于传统高斯积分法和采用再生光滑梯度积分法的罚函数法“RKGSI-Penalty”和拉格朗日乘子法“RKGSI-LM”不具有变分一致性，无法达到理论误差收敛率，而基于Hellinger-Reissner变分原理下的本质边界条件施加方法“RKGSI-HR”和Nitshce法“RKGSI-Nitsche”均可达到理论误差收敛率，但相较于“RKGSI-Nitsche”法，所提出的“RKGSI-HR”法无需引入人工参数。\par
+并且由于传统高斯积分法和采用再生光滑梯度积分法的罚函数法“RKGSI-Penalty”和拉格朗日乘子法“RKGSI-LM”不具有变分一致性，无法达到理论误差收敛率，而基于Hellinger-Reissner变分原理下的本质边界条件施加方法“RKGSI-HR”和Nitshce法“RKGSI-Nitsche”均可达到理论误差收敛率，但相较于“RKGSI-Nitsche”法，所提出的“RKGSI-HR”法无需引入人工参数。
+\par
 图(\ref{Ccputime})为悬臂梁问题的节点数和计算时间的效率对比图。从整体来看采用再生光滑梯度积分法“RKGSI”的计算效率明显高于传统高斯积分法“GI”。
 图(\ref{Cefficiency})为悬臂梁问题的本质边界条件施加效率分析图。该图为施加强制边界$\Gamma^g$过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量所用时间对比图。
 从图中可以看出，罚函数法和拉格朗日乘子法在计算形函数及其梯度所用的时间相同且所用时间最少，这是由于罚函数法和拉格朗日乘子法在计算过程中只需要计算无网格形函数本身，无需计算无网格形函数梯度，
@@ -529,44 +379,23 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 组装相应的刚度矩阵和力向量这部分所用的时间上，“RKGSI-Nitshe”法和“RKGSI-HR”法计算效率基本相同。
 从整体上来看，拉格朗日乘子法和罚函数法的效率优于“HR”法和“Nitsche”法，但拉格朗日乘子法和罚函数法不具有变分一致性无法达到理论误差收敛率。
 因此，总体来说，相较于传统的本质边界条件施加方法，基于Hellinger-Reissner变分原理的本质边界条件施加方法“RKGSI-HR”能够达到理论误差收敛率，有效提高计算精度，相较于“RKGSI-Nitsche”法而言计算效率也更高。
-% \begin{figure}[H]
-% \centering
-% \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/L2.png}
-%     \phantomcaption\label{CL2}
-%     \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/H1.png}
-%     \phantomcaption\label{CH1}
-%     \end{subcaptiongroup}
-% \caption{悬臂梁问题误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差}
-% \end{figure}
-% \newpage
-% \begin{figure}[H]
-% \centering
-%     \begin{subcaptiongroup}
-%         \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/cputime.png}
-%         \phantomcaption\label{Ccputime}
-%         \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/efficiency.png}
-%         \phantomcaption\label{Cefficiency}
-%         \end{subcaptiongroup}
-% \caption{悬臂梁问题效率对比：\subref{Ccputime} 计算时间与节点数的关系；\subref{Cefficiency} 边界条件施加效率分析}
-% \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/EHR/cantilever/L2.png}
     \caption{悬臂梁$L_2$误差对比}\label{CL2}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/EHR/cantilever/H1.png}
     \caption{悬臂梁$H_1$误差对比}\label{CH1}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/EHR/cantilever/cputime.png}
     \caption{计算时间与节点数的关系}\label{Ccputime}
 \end{figure}
-\newpage
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/EHR/cantilever/efficiency.png}
@@ -606,11 +435,11 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 \includegraphics[scale=0.5]{figure/EHR/hole/hole.png}
     \caption{带孔无限大平板问题模型}\label{hole}
 \end{figure}
-该求解域分别通过图(\ref{hole.mesh})所示采用$\text{(a)}112$、$\text{(b)}403$、$\text{(c)}1525$、$\text{(d)}5929$的四个疏密不同的节点进行离散。
+该求解域分别通过图(\ref{hole.mesh})所示采用的四个疏密不同的节点进行离散。
 对于采用三次基函数的带孔无限大平板算例问题，传统高斯积分法采用16点高斯积分，核函数的相对影响域为3.5。\par
 \begin{figure}[H]
 \centering
- \includegraphics[scale=0.6]{figure/EHR/hole/hole.mesh.png}
+ \includegraphics[scale=0.7]{figure/EHR/hole/hole.mesh.png}
    \caption{带孔无限大平板问题无网格离散}\label{hole.mesh}
 \end{figure}
 图(\ref{HL2})、(\ref{HH1})为带孔无限大平板问题的位移和能量误差对比图。
@@ -621,55 +450,36 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 从图中可以看出随着无网格节点数的增加，采用再生光滑梯度积分法“RKGSI”的效率明显高于传统高斯积分法“GI”,在施加强制边界条件的过程中，“HR”法不仅满足变分一致性同时计算效率还高于传统的“Nitsche”法。
 最后，图(\ref{sigmaxx})为带孔无限大平板问题的应力云图，从图中可以看出“RKGSI-Penalty”法和精确解之间是有差异的，
 而“RKGSI-Nitsche”法和“RKGSI-HR”法是和精确解几乎相同。但“Nitsche”法是需要依靠人工经验参数并且计算效率也低于“HR”法。
-% \begin{figure}[H]
-% \centering
-% \begin{subcaptiongroup}
-%         \includegraphics[width=0.49\textwidth]{figure/EHR/hole/L2.png}
-%         \phantomcaption\label{HL2}
-%         \includegraphics[width=0.49\textwidth]{figure/EHR/hole/H1.png}
-%         \phantomcaption\label{HH1}
-%         \end{subcaptiongroup}
-%     \caption{带孔无限大平板问题误差对比：\subref{HL2} $L_2$误差；\subref{HH1} $H_1$误差}
-%     \end{figure}
-% \begin{figure}[H]
-% \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.49\textwidth]{figure/EHR/hole/cputime.png}
-%     \phantomcaption\label{Hcputime}
-%     \includegraphics[width=0.49\textwidth]{figure/EHR/hole/efficiency.png}
-%     \phantomcaption\label{Hefficiency}
-% \end{subcaptiongroup}
-% \caption{带孔无限大平板问题效率对比：\subref{Hcputime} 计算时间与节点数的关系；\subref{Hefficiency} 边界条件施加效率分析}
-% \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/EHR/hole/L2.png}
     \caption{带孔无限大平板问题$L_2$误差对比}\label{HL2}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/EHR/hole/H1.png}
     \caption{带孔无限大平板问题$H_1$误差对比}\label{HH1}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/EHR/hole/cputime.png}
     \caption{计算时间与节点数的关系}\label{Hcputime}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/EHR/hole/efficiency.png}
     \caption{边界条件施加效率分析}\label{Hefficiency}
 \end{figure}
+\newpage
 \begin{figure}[H]
 \centering
    \includegraphics[scale=0.5]{figure/EHR/hole/sigmaxx.png}
 \caption{带孔无限大平板问题$\sigma_{xx}$应力云图}\label{sigmaxx}
 \end{figure} 
 \section{小结}
-本章介绍了一种基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解二阶弹性力学问题。该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的位移和应力，实现了满足积分约束条件的一种本质边界条件施加方法。
+本章介绍了一种基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解弹性力学问题。该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的位移和应力，实现了满足积分约束条件的一种本质边界条件施加方法。
 具体来说，该方法在离散平衡方程中，采用传统无网格形函数对位移进行离散，而将应力在每个背景积分单元上近似为对应阶次的多项式。在Hellinger-Reissner分原理的框架下，该方法的离散平衡方程具有类似传统Nitsche法的格式，可以视为再生光滑梯度积分法的一种新型Nitsche法。
 相较于传统Nitsche法，该方法的修正变分项采用了无网格形函数和再生光滑梯度的混合离散，从而在确保变分一致性的同时避免了复杂且耗时的形函数导数计算，明显提高了计算效率。
 与此同时该方法中的稳定项直接源于Hellinger-Reissner变分原理的弱形式，无需额外增加稳定项，并且稳定项中不包含任何人工参数。

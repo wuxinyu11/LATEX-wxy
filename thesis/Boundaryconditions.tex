@@ -176,7 +176,7 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
     (\pmb{K}+\pmb{K}^v+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^v+\pmb{f}^s
 \end{equation}
 其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{EKf})，通过罚函数法满足正定性得到的稳定项$\pmb{K}^s$和$\pmb{f}^s$见式(\ref{EKFs})，结合拉格朗日乘子法满足变分一致性的修正变分项$\pmb{K}^v$和$\pmb{f}^v$，其具体表达式如下：
-\begin{subequations}
+\begin{subequations}\label{Enitschekv}
 \begin{align} 
     \pmb K^v_{I\!J}&=-\int_{\Gamma^g}\Psi_I\bar{\pmb{n}}^T\pmb{D}\pmb{B}_Jd\Gamma-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\Psi_Jd\Gamma\\
     \pmb f^v_I&=-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\pmb{g}d\Gamma
@@ -253,7 +253,7 @@ Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界
     (\pmb{K}+\pmb{K}^v+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^v+\pmb{f}^s
 \end{equation}
 其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{PKf})。$\pmb{K}^s$和$\pmb{f}^s$的表达式与罚函数法式(\ref{PKFs})相同，该项使得伽辽金弱形式(\ref{Pitsche weakform})满足正定性条件，稳定求解精度，故称之为\textbf{稳定项}。$\pmb{K}^v$和$\pmb{f}^v$可使伽辽金弱形式整体满足变分一致性，故称之为\textbf{一致项}，一致项的具体表达式如下：
-\begin{subequations}
+\begin{subequations}\label{Pkv}
 \begin{align}
  K^v_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\Psi_{J,\alpha\beta}]]_{x\in{c_w}}\nonumber\\
      &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\Psi_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\Psi_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\Psi_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
