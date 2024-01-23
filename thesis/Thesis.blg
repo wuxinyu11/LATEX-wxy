@@ -17,8 +17,10 @@ Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: plateHR.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: Conclusion.aux
-Reallocating 'name_of_file' (item size: 1) to 13 items.
-A level-1 auxiliary file: appendix.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendixA.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendixB.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 7 items.
@@ -27,7 +29,7 @@ Warning--I didn't find a database entry for "Liu"
 Warning--I didn't find a database entry for ""
 You've used 3 entries,
             1791 wiz_defined-function locations,
-            482 strings with 4438 characters,
+            483 strings with 4452 characters,
 and the built_in function-call counts, 832 in all, are:
 = -- 76
 > -- 36

@@ -35,5 +35,7 @@
 \contentsline {subsection}{\numberline {5.4.4}简支环行板问题}{70}{subsection.5.4.4}%
 \contentsline {section}{\numberline {5.5}小结}{78}{section.5.5}%
 \contentsline {chapter}{\numberline {6}结论与展望}{79}{chapter.6}%
-\contentsline {chapter}{\numberline {7}附录}{81}{chapter.7}%
+\contentsline {chapter}{附录A}{80}{chapter.6}%
+\contentsline {chapter}{附录B}{84}{equation.Alph0.0.5}%
+\contentsline {chapter}{参考文献}{89}{equation.Alph0.0.10}%
 \contentsfinish 

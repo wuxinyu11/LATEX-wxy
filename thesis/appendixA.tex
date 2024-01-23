@@ -1,0 +1,60 @@
+\chapter*{附录A}\label{A}
+通过引入式(\ref{g1})、(\ref{case1})对式(\ref{inference})中的第一项进行推导得到：
+\begin{equation}\label{CH4-K}
+\begin{split}
+    &\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{g}_{kJ}d_{lJ}=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\pmb{G}\pmb{G}^{-1}\tilde{g}_{kJ}d_{lJ}\\
+&=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\int_{\Omega_C}\tilde{g}_{jI}^T\pmb{G}^{-1}\pmb{p}^{[p-1]}(\pmb x)C_{ijkl}\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\tilde{g}_{kJ}d\Omega d_{lJ}\\
+&=\sum_{C=1}^{N\!C}\int_{\Omega_C}\sum_{I=1}^{N\!P}\tilde{\Psi}_{I,j}\delta d_{iI}C_{ijkl}\sum_{J=1}^{N\!P}\tilde{\Psi}_{I,k}d_{lJ}d\Omega\\
+&=\sum_{C=1}^{N\!C}\int_{\Omega_C}\delta\tilde{\varepsilon}_{ij}^hC_{ijkl}\tilde{\varepsilon}_{kl}^hd\Omega\\
+&=\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta\pmb{d}^T_I\int_{\Omega}\tilde{\pmb{B}}_I^T\pmb{D}\tilde{\pmb{B}}_Jd\Omega\pmb{d}_J\\
+&=\delta\pmb{d}^T\pmb{K}\pmb{d}
+\end{split}
+\end{equation}
+\newpage
+通过引入式(\ref{g3})、(\ref{case1})、(\ref{CH4-ui})对式(\ref{inference})中的第二、三项进行推导得到：
+\begin{equation}\label{CH4-tildeK}
+\begin{split}
+    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}C_{ijkl}(\bar{g}_{jI}^T\pmb{G}^{-1}\tilde{g}_{kJ}+\tilde{g}_{jI}^T\pmb{G}^{-1}\bar{g}_{kJ})d_{lJ}\\
+    &=-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}(\int_{\Gamma^g\cap\partial\Omega_C}\Psi_In_jC_{ijkl}\pmb{p}^{[p-1]}\pmb{G}^{-1}\tilde{g}_{kJ}d\Gamma\\
+    &+\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\pmb{p}^{[p-1]}\pmb{G}^{-1}\tilde{g}_{jI}n_k\Psi_Jd\Gamma)d_{lJ}\\
+    &=-\sum_{C=1}^{N\!C}(\int_{\Gamma^g\cap\partial\Omega_C}\sum_{I=1}^{N\!P}\Psi_I\delta d_{iI}n_jC_{ijkl}\sum_{J=1}^{N\!P}\tilde{\Psi}_{J,k}d_{lJ}d\Gamma\\
+    &+\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\sum_{J=1}^{N\!P}\tilde{\Psi}_{I,j}\delta d_{iI}n_k\sum_{I=1}^{N\!P}\Psi_Jd_{lJ}d\Gamma)\\
+    &=-\sum_{C=1}^{N\!C}(\int_{\Gamma^g\cap\partial\Omega}\delta u_i^hn_jC_{ijkl}\tilde{\varepsilon}_{kl}^hd\Gamma+\int_{\Gamma^g\cap\partial\Omega_C}\delta\tilde{\varepsilon}_{ij}^hC_{ijkl}n_ku^h_ld\Gamma)\\
+    &=-\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta\pmb{d}_I^T(\int_{\Gamma^g}\Psi_I\pmb{N}\pmb{D}\tilde{\pmb{B}}_Jd\Gamma+\int_{\Gamma^g}\tilde{\pmb{B}}_I^T\pmb{D}\pmb{N}^T\Psi_Jd\Gamma)\pmb d_J\\
+    &=\delta\pmb{d}^T\tilde{\pmb{K}}\pmb{d}
+\end{split}
+\end{equation}
+通过引入式(\ref{g3})、(\ref{case2})对式(\ref{inference})中的第四项进行推导得到：
+\begin{equation}\label{CH4-barK}
+\begin{split}
+    &\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}C_{ijkl}\bar{g}^T_{jI}\pmb{G}^{-1}\bar{g}_{kJ}d_{lJ}\\
+    &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\bar{g}_{jI}^T\pmb{G}^{-1}\pmb{p}^{[p-1]}\Psi_Jn_kd\Gamma d_{lJ}\\
+    &=\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\sum_{J=1}^{N\!P}\bar{\Psi}_{I,j}\delta d_{iI}n_k\sum_{J=1}^{N\!P}\Psi_{J}d_{lJ}d\Gamma\\
+    &=\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\delta\bar{\varepsilon}_{ij}^hn_ku_ld\Gamma\\
+    &=\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta\pmb{d}_I^T\int_{\Gamma^g\cap\partial\Omega_C}\bar{\pmb{B}}_I^T\pmb{D}\pmb{N}^T\Psi_Jd\Gamma\pmb{d}_J\\
+    &=\delta\pmb{d}^T\bar{\pmb{K}}\pmb{d}
+\end{split}
+\end{equation}
+通过引入式(\ref{g4})、(\ref{case1})对式(\ref{inference})中的第五项进行推导得到：
+\begin{equation}\label{CH4-tildef}
+\begin{split}
+    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}C_{ijkl}\tilde{g}^T_{jI}\pmb{G}^{-1}\hat{g}_{kl}\\
+    &=-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}C_{ijkl}\tilde{g}^T_{jI}\pmb{G}^{-1}\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_lg_kd\Gamma\\
+    &=-\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\sum_{I=1}^{N\!P}\tilde{\Psi}_{I,j}\delta d_{iI}n_lg_kd\Gamma\\
+    &=-\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\delta\tilde{\varepsilon}_{ij}^hn_lg_kd\Gamma\\
+    &=-\sum_{I=1}^{N\!P}\delta\pmb{d}_I^T\int_{\Gamma^g\cap\partial\Omega_C}\tilde{\pmb{B}}_I^T\pmb{D}\pmb{N}^T\pmb{g}d\Gamma\\
+    &=\delta\pmb{d}^T\tilde{\pmb f}
+\end{split}
+\end{equation}
+通过引入式(\ref{g4})、(\ref{case2})对式(\ref{inference})中的第六项进行推导得到：
+\begin{equation}\label{CH4-barf}
+\begin{split}
+    \sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}C_{ijkl}\bar{g}^T_{jI}\pmb{G}^{-1}\hat{g}_{kl}
+    &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}C_{ijkl}\bar{g}^T_{jI}\pmb{G}^{-1}\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_lg_kd\Gamma\\
+    &=\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\sum_{I=1}^{N\!P}\bar{\Psi}_{I,j}\delta d_{iI}n_lg_kd\Gamma\\
+    &=\sum_{C=1}^{N\!C}\int_{\Gamma^g\cap\partial\Omega_C}C_{ijkl}\delta\bar{\varepsilon}_{ij}^hn_lg_kd\Gamma\\
+    &=\sum_{I=1}^{N\!P}\delta\pmb{d}_I^T\int_{\Gamma^g\cap\partial\Omega_C}\bar{\pmb{B}}_I^T\pmb{D}\pmb{N}^T\pmb{g}d\Gamma\\
+    &=\delta\pmb{d}^T\bar{\pmb f}
+\end{split}
+\end{equation}
+

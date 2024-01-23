@@ -217,3 +217,6 @@
 \titleformat{\paragraph}[runin]{\rmfamily\fontsize{12pt}{20pt}\selectfont}{}{}{}
 \titlespacing{\paragraph}{0pt}{0pt}{0pt}
 
+
+
+

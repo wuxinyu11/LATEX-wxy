@@ -17,6 +17,8 @@
 \major{}
 \coverdate{二〇二三年五月二十八日}
 
+
+
 \begin{document}
 \makecover
 \frontmatter
@@ -52,24 +54,17 @@
 \include{plateHR}
 % \include{plate-dynaic}
 \include{Conclusion}
-\include{appendix}
+\addcontentsline{toc}{chapter}{附录A}
+\appendix
+\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+\include{appendixA}
+\addcontentsline{toc}{chapter}{附录B}
+\appendix
+\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+\include{appendixB}
 
 
-
-% \appendix
-% % \chapter{附录}
-
-% % \setcounter{equation}{0}
-% % \renewcommand\theequation{A\arabic{equation}}
-% \renewcommand{\appendixname}{Appendix~\Alph{section}}
-% \section{附录A}
-% 附录A
-% \section{附录B}
-
-
-
-
-
+\addcontentsline{toc}{chapter}{参考文献}
 \renewcommand{\bibname}{参考文献}
 \bibliographystyle{unsrt}
 \bibliography{wu.bib}
