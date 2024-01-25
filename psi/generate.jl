@@ -3,6 +3,14 @@ using ApproxOperator
 
 function generate2D(ni::Int,ns::Int)
 
+    # etype = (:Quadratic2D,:□,:CubicSpline,:Shape)
+    # s = 2.1/(ni-1)
+    # nm = 21
+
+    # etype = (:Cubic2D,:□,:CubicSpline,:Shape)
+    # s = 3.1/(ni-1)
+    # nm = 55
+
     etype = (:Quartic2D,:□,:CubicSpline,:Shape)
     s = 4.1/(ni-1)
     nm = 120

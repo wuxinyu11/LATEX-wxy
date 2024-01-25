@@ -3,13 +3,17 @@ include("generate.jl")
 
 using  CairoMakie
 
-ni = 20
+# 7 25 46
+# 9 41 77
+# 11 61 116
+
+ni = 11
 ns = 100
 a = generate2D(ni,ns)
 set∇𝝭!(a)
 set∇²𝝭!(a)
 
-I = 190
+I = 66
 p = collect(a.𝓒)[I]
 xi = p.x
 yi = p.y
@@ -62,19 +66,27 @@ ylims!(ax, (0.0,1.0))
 scatter!(xi, yi, zi, color=:black, markersize = 40, marker=:circle)
 
 # zlims!(ax, (-0.1,1.0))
-# surface!(xs, ys, 𝝭, colormap=:jet, alpha=0.6)
+# surface!(xs, ys, 𝝭, colormap=:jet, alpha=0.9, colorrange=(-0.5,0.5))
 # save("𝝭.png",f)
 
-zlims!(ax, (-10.0,10.0))
-surface!(xs, ys, ∂𝝭∂y, colormap=:jet, alpha=0.6)
-save("∂𝝭∂y.png",f)
+# zlims!(ax, (-10.0,10.0))
+# surface!(xs, ys, ∂𝝭∂y, colormap=:jet, alpha=0.8, colorrange=(-5,5))
+# save("∂𝝭∂y.png",f)
+
+# zlims!(ax, (-100.0,100.0))
+# surface!(xs, ys, ∂²𝝭∂x∂y, colormap=:jet, alpha=0.8,colorrange=(-40,40))
+# save("∂²𝝭∂x∂y.png",f)
 
 # zlims!(ax, (-40.0,40.0))
-# surface!(xs, ys, ∂²𝝭∂x∂y, colormap=:jet, alpha=0.6)
+# surface!(xs, ys, ∂²𝝭∂x∂y, colormap=:jet, alpha=0.8,colorrange=(-30,30))
 # save("∂²𝝭∂x∂y.png",f)
 
 zlims!(ax, (-50,50.0))
-surface!(xs, ys, ∂²𝝭∂y², colormap=:jet, alpha=0.6)
+surface!(xs, ys, ∂²𝝭∂y², colormap=:jet, alpha=0.8,colorrange=(-20,20))
 save("∂²𝝭∂y².png",f)
+
+# zlims!(ax, (-20,20.0))
+# surface!(xs, ys, ∂²𝝭∂y², colormap=:jet, alpha=0.8,colorrange=(-10,10))
+# save("∂²𝝭∂y².png",f)
 
 f
