@@ -16,6 +16,7 @@
 \end{split}
 \end{equation}
 薄板问题的Hellinger-Reissner变分原理的泛函表达式中$\Pi_{H\!R}$中也包含$M_{\alpha\beta}$和$w$双变量。式(\ref{pfanhan})分别对$M_{\alpha\beta}$和$w$进行变分得到薄板问题Hellinger-Reissner变分原理的伽辽金弱形式：
+\newpage
 \begin{equation}\label{Pweakfrom}
 \begin{split}
     \delta\Pi_{H\!R}(M_{\alpha\beta,w})=&\delta\Pi_C(M_{\alpha\beta})\\
@@ -484,6 +485,7 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.5]{figure/PHR/A/QL2.png}
     \caption{简支环行板问题四次基函数$L_2$误差}\label{AQLH1}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/A/QH1.png}
@@ -494,6 +496,7 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.5]{figure/PHR/A/QH2.png}
     \caption{简支环行板问题四次基函数$H_2$误差}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/A/QH3.png}
@@ -504,11 +507,20 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.5]{figure/PHR/A/Qcputime.png}
     \caption{简支环行板问题四次基函数计算时间与节点数对比}\label{AQcputime}
 \end{figure}
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/A/Qefficiency.png}
     \caption{简支环行板问题四次基函数本质边界条件施加效率分析}\label{AQefficiency}
 \end{figure}
+\section{小结}
+本章进一步介绍了基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解薄板问题。
+该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。
+其中，在离散平衡控制方程中，采用传统无网格形函数对挠度进行离散，弯矩则在每个背景积分单元上以再生光滑梯度独立逼近。
+通过采用再生光滑梯度积分法，该方法内嵌了局部积分约束条件，因此严格满足了每个积分单元的变分一致性。此外，由于二阶光滑梯度的计算只涉及无网格形函数及其一阶导数，有效的提高了计算效率。 
+之后通过典型的数值算例进一步表明所提方法基于Hellinger-Reissner变分原理无网格薄板公式在满足变分一致性，计算精度以及计算效率方面优于采用传统高斯积分法的Nitsche法、罚函数法以及采用再生光滑梯度积分法的Nitsche法，罚函数法。
+基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法在解决薄板问题上提供了一种高效精确的边界条件施加方法。
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/A/Mxy.png}
@@ -519,13 +531,13 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.5]{figure/PHR/A/alpha.png}
     \caption{简支环形板问题人工参数敏感性分析}\label{Aalpha}
 \end{figure}
-\section{小结}
-本章进一步介绍了基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解四阶薄板问题。
-该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。
-其中，在离散平衡控制方程中，采用传统无网格形函数对挠度进行离散，弯矩则在每个背景积分单元上以再生光滑梯度独立逼近。
-通过采用再生光滑梯度积分法，该方法内嵌了局部积分约束条件，因此严格满足了每个积分单元的变分一致性。此外，由于二阶光滑梯度的计算只涉及无网格形函数及其一阶导数，有效的提高了计算效率。 
-之后通过典型的数值算例进一步表明所提方法基于Hellinger-Reissner变分原理无网格薄板公式在满足变分一致性，计算精度以及计算效率方面优于采用传统高斯积分法的Nitsche法、罚函数法以及采用再生光滑梯度积分法的Nitsche法，罚函数法。
-基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法在解决薄板问题上提供了一种高效精确的边界条件施加方法。
+% \section{小结}
+% 本章进一步介绍了基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解薄板问题。
+% 该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。
+% 其中，在离散平衡控制方程中，采用传统无网格形函数对挠度进行离散，弯矩则在每个背景积分单元上以再生光滑梯度独立逼近。
+% 通过采用再生光滑梯度积分法，该方法内嵌了局部积分约束条件，因此严格满足了每个积分单元的变分一致性。此外，由于二阶光滑梯度的计算只涉及无网格形函数及其一阶导数，有效的提高了计算效率。 
+% 之后通过典型的数值算例进一步表明所提方法基于Hellinger-Reissner变分原理无网格薄板公式在满足变分一致性，计算精度以及计算效率方面优于采用传统高斯积分法的Nitsche法、罚函数法以及采用再生光滑梯度积分法的Nitsche法，罚函数法。
+% 基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法在解决薄板问题上提供了一种高效精确的边界条件施加方法。
 
 
 

@@ -14,7 +14,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
     \includegraphics[scale=0.6]{Figure/nomesh/point.png}
     \caption{无网格离散示意图}\label{nomeshpoint}
 \end{figure}\par
-根据再生核近似理论\textsuperscript{\cite{liuReproducingKernelParticle1995}}，无网格形函数可以假设为如下再生核形式：
+根据再生核近似理论\textsuperscript{\cite{liu1995}}，无网格形函数可以假设为如下再生核形式：
 \begin{equation}\label{shapefunction}
         \Psi_I(\pmb{x})=\sum_{I=1}^{N\!P}\pmb{p}^{[p]T}(\pmb{x}_I-\pmb{x})\pmb{c}(\pmb{x})\phi_s(\pmb{x}_I-\pmb{x})
 \end{equation}
@@ -22,7 +22,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \begin{equation}
     \pmb{p}^{[p]}(\pmb{x})=\{1,\;x,\;y,\;\dotsb,\;x^iy^i,\;\dotsb,\;y^p\},\quad 0\le i+j \le p
 \end{equation}
-而$\phi_s(\pmb{x}_I-\pmb{x})$为附属于节点$\pmb{x}_I$的核函数，其影响域的大小由影响域尺寸$s$决定，核函数及其影响域的大小共同决定了无网格形函数的局部紧支性和光滑性。在二维情况下，核函数$\phi_s(\pmb{x}_I-\pmb{x})$的影响域通常为圆形域或者矩形域[]。本文的影响域形状均为矩形，矩形影响域的核函数可由下列公式计算得到：
+而$\phi_s(\pmb{x}_I-\pmb{x})$为附属于节点$\pmb{x}_I$的核函数，其影响域的大小由影响域尺寸$s$决定，核函数及其影响域的大小共同决定了无网格形函数的局部紧支性和光滑性。在二维情况下，核函数$\phi_s(\pmb{x}_I-\pmb{x})$的影响域通常为圆形域或者矩形域。本文的影响域形状均为矩形，矩形影响域的核函数可由下列公式计算得到：
 \begin{equation}
     \phi_s(\pmb{x}_I-\pmb{x})=\varphi(r_x)\varphi(r_y),\quad r_x=\frac{\lvert x_I-x\rvert}{s_x},r_y=\frac{\lvert y_I-y \rvert}{s_y}
 \end{equation}
@@ -45,7 +45,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
         0&r>1
 \end{cases}
 \end{equation}\par
-最后，无网格形函数表达式(\ref{shapefunction})中$\pmb{c}$为待定系数向量，该待定系数通过满足下列一致性条件[]确定：
+最后，无网格形函数表达式(\ref{shapefunction})中$\pmb{c}$为待定系数向量，该待定系数通过满足下列一致性条件确定：
 \begin{equation}\label{regeneration conditions}
     \sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})=\pmb{0}
 \end{equation}
@@ -270,7 +270,7 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
 \end{equation}
 \end{itemize}
 \subsection{薄板问题}
-考虑如图(\ref{plate})所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。在Kirchhoff薄板假设下\cite{Liu}，薄板中面的剪切变形可忽略不计，此时平衡微分方程可退化为如下形式：
+考虑如图(\ref{plate})所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。在Kirchhoff薄板假设下\textsuperscript{\cite{ventsel2002}}，薄板中面的剪切变形可忽略不计，此时平衡微分方程可退化为如下形式：
 \begin{equation}
     \begin{cases}\label{P control equation}
         M_{\alpha\beta,\alpha\beta}+\bar q=0&\mathrm{in} \; \Omega\\

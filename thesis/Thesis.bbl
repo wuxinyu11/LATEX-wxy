@@ -1,21 +1,492 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{72}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
 
-\bibitem{belytschkoElementFreeGalerkin1994}
-T.~Belytschko, Y.~Y. Lu, and L.~Gu.
-\newblock Element-free {{Galerkin}} methods.
-\newblock {\em International Journal for Numerical Methods in Engineering},
-  37(2):229--256, 1994.
+\bibitem[Hughes(2000)]{hughes2000}
+Hughes T~J.
+\newblock The {{Finite Element Method}}: {{Linear Static}} and {{Dynamic Finite
+  Element Analysis}}\allowbreak[M].
+\newblock {Mineola, New York}: {Dover Publications}, 2000.
 
-\bibitem{wuJiYuHeLinGeLaiSiNaBianFenYuanLiDeYiZhiGaoXiaoWuWangGeBenZhiBianJieTiaoJianShiJiaFangFa2022}
-俊超 吴, 新瑜 吴, 珧冰 赵, and 东东 王.
+\bibitem[Zienkiewicz et~al.(2014)Zienkiewicz, Taylor, and Fox]{2014Computer}
+Zienkiewicz O~C, Taylor R~L, Fox D.
+\newblock Computer procedures for finite element analysis\allowbreak[M].
+\newblock {The Finite Element Method for Solid and Structural Mechanics}, 2014.
+
+\bibitem[Stein et~al.(2018)Stein, {de Borst}, and
+  Hughes]{steinEncyclopediaComputationalMechanics2018}
+Stein E, {de Borst} R, Hughes T~J~R.
+\newblock Encyclopedia of {{Computational Mechanics Second Edition}}
+  {\textbar}{\textbar} {{Identification}} of {{Material Parameters}} for
+  {{Constitutive Equations}}\allowbreak[Z].
+\newblock 2018: 1-21.
+
+\bibitem[Bessa et~al.(2013)Bessa, Elkhodary, Liu, Belytschko, and
+  Moran]{2013Nonlinear}
+Bessa M, Elkhodary K~I, Liu W~K, et~al.
+\newblock Nonlinear finite elements for continua and structures, second
+  edition. {{Solution}} manual\allowbreak[M].
+\newblock {Nonlinear Finite Elements for Continua and Structures}, 2013.
+
+\bibitem[Chen et~al.(2017)Chen, Hillman, and
+  Chi]{chenMeshfreeMethodsProgress2017}
+Chen J~S, Hillman M, Chi S~W.
+\newblock {Meshfree methods: Progress made after 20 Years}\allowbreak[J].
+\newblock Journal of Engineering Mechanics, 2017, 143\allowbreak (4): 04017001.
+
+\bibitem[Belytschko et~al.(1996)Belytschko, Krongauz, Organ, Fleming, and
+  Krysl]{belytschkoMeshlessMethodsOverview1996b}
+Belytschko T, Krongauz Y, Organ D, et~al.
+\newblock Meshless methods: {{An}} overview and recent
+  developments\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 1996,
+  139\allowbreak (1-4): 3-47.
+
+\bibitem[{陈嵩涛}\ 等(2020){陈嵩涛}, {段庆林}, and
+  {马今伟}]{陈嵩涛2020几何非线性分析的高效高阶无网格法}
+{陈嵩涛}, {段庆林}, {马今伟}.
+\newblock 几何非线性分析的高效高阶无网格法\allowbreak[J].
+\newblock 计算力学学报, 2020\allowbreak (006): 037.
+
+\bibitem[高欣\ 等(2018)高欣, 段庆林, 李书卉, and
+  陈飙松]{GaoXin2018}
+高欣, 段庆林, 李书卉, 等.
+\newblock {裂纹问题的一致性高阶无网格法}\allowbreak[J].
+\newblock 计算力学学报, 2018\allowbreak (3): 275-282.
+
+\bibitem[{邓立克}\ 等(2019){邓立克}, {王东东}, {王家睿}, and
+  {吴俊超}]{邓立克2019薄板分析的线性基梯度光滑伽辽金无网格法}
+{邓立克}, {王东东}, {王家睿}, 等.
 \newblock
-  基于赫林格-赖斯纳变分原理的一致高效无网格本质边界条件施加方法.
-\newblock {\em 力学学报}, 54(12):3283--3296, December 2022.
+  薄板分析的线性基梯度光滑伽辽金无网格法\allowbreak[J].
+\newblock 力学学报, 2019\allowbreak (3): 13.
 
-\bibitem{liuReproducingKernelParticle1995}
-Wing~Kam Liu, Sukky Jun, and Yi~Fei Zhang.
-\newblock Reproducing kernel particle methods.
-\newblock {\em International Journal for Numerical Methods in Fluids},
-  20(8-9):1081--1106, April 1995.
+\bibitem[Lucy(1977)]{1977A}
+Lucy L.
+\newblock A numerical approach to the testing of the fission
+  hypothesis\allowbreak[J].
+\newblock Astrophys Journal, 1977, 82.
+
+\bibitem[Gingold et~al.(1977)Gingold and Monaghan]{gingold1977}
+Gingold R~A, Monaghan J~J.
+\newblock Smoothed particle hydrodynamics: Theory and application to
+  non-spherical stars\allowbreak[J].
+\newblock Monthly Notices of the Royal Astronomical Society, 1977,
+  181\allowbreak (3): 375-389.
+
+\bibitem[Auricchio et~al.(2010)Auricchio, Da~Veiga, Hughes, Reali, and
+  Sangalli]{auricchio2010a}
+Auricchio F, Da~Veiga L~B, Hughes T~J~R, et~al.
+\newblock Isogeometric collocation methods\allowbreak[J].
+\newblock Mathematical Models and Methods in Applied Sciences, 2010,
+  20\allowbreak (11): 2075-2107.
+
+\bibitem[Wang et~al.(2018)Wang, Wang, and Wu]{wang2018a}
+Wang D, Wang J, Wu J.
+\newblock Superconvergent gradient smoothing meshfree collocation
+  method\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2018, 340:
+  728-766.
+
+\bibitem[Wang et~al.(2020)Wang, Wang, and Wu]{wang2020}
+Wang D, Wang J, Wu J.
+\newblock Arbitrary order recursive formulation of meshfree gradients with
+  application to superconvergent collocation analysis of {{Kirchhoff}}
+  plates\allowbreak[J].
+\newblock Computational Mechanics, 2020, 65\allowbreak (3): 877-903.
+
+\bibitem[Gomez et~al.(2016)Gomez and Lorenzis]{gomez2016}
+Gomez H, Lorenzis L~D.
+\newblock The variational collocation method\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2016, 309:
+  152-181.
+
+\bibitem[Nayroles et~al.(1992)Nayroles, Touzot, and Villon]{nayroles1992}
+Nayroles B, Touzot G, Villon P.
+\newblock Generalizing the finite element method: {{Diffuse}} approximation and
+  diffuse elements\allowbreak[J].
+\newblock Computational Mechanics, 1992, 10\allowbreak (5): 307-318.
+
+\bibitem[Belytschko et~al.(1994)Belytschko, Lu, and Gu]{belytschko1994}
+Belytschko T, Lu Y~Y, Gu L.
+\newblock Element-free {{Galerkin}} methods\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 1994,
+  37\allowbreak (2): 229-256.
+
+\bibitem[De et~al.(2001)De and Bathe]{de2001}
+De S, Bathe K~J.
+\newblock The method of finite spheres with improved numerical
+  integration\allowbreak[J].
+\newblock Computers \& Structures, 2001, 79\allowbreak (22): 2183-2196.
+
+\bibitem[Carpinteri et~al.(2002)Carpinteri, Ferro, and Ventura]{carpinteri2002}
+Carpinteri A, Ferro G, Ventura G.
+\newblock The partition of unity quadrature in meshless methods\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 2002, 54:
+  987-1006.
+
+\bibitem[王冰冰\ 等(2019)王冰冰, 段庆林, 李书卉, and
+  杨迪雄]{WangBingBing2019}
+王冰冰, 段庆林, 李书卉, 等.
+\newblock {薄板弯曲分析的节点积分高阶无网格法}\allowbreak[J].
+\newblock 计算力学学报, 2019, 36\allowbreak (1): 103-109.
+
+\bibitem[Melenk et~al.(1996)Melenk and Babu{\v s}ka]{melenk1996}
+Melenk J~M, Babu{\v s}ka I.
+\newblock The partition of unity finite element method: {{Basic}} theory and
+  applications\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 1996,
+  139\allowbreak (1): 289-314.
+
+\bibitem[吴俊超\ 等()吴俊超, 邓俊俊, 王家睿, and
+  王东东]{WuJunChao}
+吴俊超, 邓俊俊, 王家睿, 等.
+\newblock {伽辽金型无网格法的数值积分方法}\allowbreak[J].
+\newblock 固体力学学报, 37\allowbreak (3): 208-233.
+
+\bibitem[Wang et~al.(2016)Wang and Wu]{wang2016}
+Wang D, Wu J.
+\newblock An efficient nesting sub-domain gradient smoothing integration
+  algorithm with quadratic exactness for {{Galerkin}} meshfree
+  methods\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2016, 298:
+  485-519.
+
+\bibitem[Wang et~al.(2019)Wang and Wu]{wang2019}
+Wang D, Wu J.
+\newblock An inherently consistent reproducing kernel gradient smoothing
+  framework toward efficient {{Galerkin}} meshfree formulation with explicit
+  quadrature\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2019, 349:
+  628-672.
+
+\bibitem[Chen et~al.(2001)Chen, Wu, Yoon, and You]{chen2001}
+Chen J~S, Wu C~T, Yoon S, et~al.
+\newblock A stabilized conforming nodal integration for {{Galerkin}} mesh-free
+  methods\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 2001,
+  50\allowbreak (2): 435-466.
+
+\bibitem[Chen et~al.(2013)Chen, Hillman, and R{\"u}ter]{chen2013}
+Chen J~S, Hillman M, R{\"u}ter M.
+\newblock An arbitrary order variationally consistent integration for
+  {{Galerkin}} meshfree methods\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 2013,
+  95\allowbreak (5): 387-418.
+
+\bibitem[Duan et~al.(2012)Duan, Li, Zhang, and Belytschko]{duan2012}
+Duan Q, Li X, Zhang H, et~al.
+\newblock Second-order accurate derivatives and integration schemes for
+  meshfree methods\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 2012,
+  92\allowbreak (4): 399-424.
+
+\bibitem[Duan et~al.(2014)Duan, Gao, Wang, Li, Zhang, Belytschko, and
+  Shao]{duan2014}
+Duan Q, Gao X, Wang B, et~al.
+\newblock Consistent element-free {{Galerkin}} method\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 2014,
+  99\allowbreak (2): 79-101.
+
+\bibitem[Liu et~al.(1995)Liu, Jun, and Zhang]{liu1995}
+Liu W~K, Jun S, Zhang Y~F.
+\newblock Reproducing kernel particle methods\allowbreak[J].
+\newblock International Journal for Numerical Methods in Fluids, 1995,
+  20\allowbreak (8-9): 1081-1106.
+
+\bibitem[Babu{\v s}ka et~al.(1997)Babu{\v s}ka and Melenk]{babuska1997}
+Babu{\v s}ka I, Melenk J~M.
+\newblock The partition of unity method\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 1997,
+  40\allowbreak (4): 727-758.
+
+\bibitem[Strouboulis et~al.(2001)Strouboulis, Copps, and Babu{\v
+  s}ka]{strouboulis2001}
+Strouboulis T, Copps K, Babu{\v s}ka I.
+\newblock The generalized finite element method\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2001,
+  190\allowbreak (32): 4081-4193.
+
+\bibitem[Sukumar et~al.(1998)Sukumar, Moran, and Belytschko]{sukumar1998}
+Sukumar N, Moran B, Belytschko T.
+\newblock The natural element method in solid mechanics\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 1998,
+  43\allowbreak (5): 839-887.
+
+\bibitem[Long et~al.(2002)Long and Atluri]{long2002}
+Long S, Atluri S~N.
+\newblock A {{Meshless Local Petrov-Galerkin Method}} for {{Solving}} the
+  {{Bending Problem}} of a {{Thin Plate}}\allowbreak[Z].
+\newblock 2002.
+
+\bibitem[Liu et~al.(2006)Liu, Hon, and Liew]{liu2006}
+Liu Y, Hon Y~C, Liew K~M.
+\newblock A meshfree {{Hermite-type}} radial point interpolation method for
+  {{Kirchhoff}} plate problems\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 2006,
+  66\allowbreak (7): 1153-1178.
+
+\bibitem[Mill{\'a}n et~al.(2011)Mill{\'a}n, Rosolen, and Arroyo]{millan2011}
+Mill{\'a}n D, Rosolen A, Arroyo M.
+\newblock Thin shell analysis from scattered points with maximum-entropy
+  approximants\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 2011,
+  85\allowbreak (6): 723-751.
+
+\bibitem[Oh et~al.(2012)Oh, Davis, and Jeong]{oh2012}
+Oh H~S, Davis C, Jeong J~W.
+\newblock Meshfree particle methods for thin plates\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2012,
+  209--212: 156-171.
+
+\bibitem[Chen et~al.(2015)Chen, Cheng, and Ma]{chen2015}
+Chen L, Cheng Y~M, Ma H~P.
+\newblock The complex variable reproducing kernel particle method for the
+  analysis of {{Kirchhoff}} plates\allowbreak[J].
+\newblock Computational Mechanics, 2015, 55\allowbreak (3): 591-602.
+
+\bibitem[Thai et~al.(2016)Thai, Nguyen, Rabczuk, and {Nguyen-Xuan}]{thai2016}
+Thai C~H, Nguyen T~N, Rabczuk T, et~al.
+\newblock An improved moving {{Kriging}} meshfree method for plate analysis
+  using a refined plate theory\allowbreak[J].
+\newblock Computers \& Structures, 2016, 176: 34-49.
+
+\bibitem[Wang et~al.(2021)Wang, Liu, Zhou, and Yang]{wang2021}
+Wang L, Liu Y, Zhou Y, et~al.
+\newblock A gradient reproducing kernel based stabilized collocation method for
+  the static and dynamic problems of thin elastic beams and
+  plates\allowbreak[J].
+\newblock Computational Mechanics, 2021, 68\allowbreak (4): 709-739.
+
+\bibitem[程玉民\ 等(Fri Nov 18 00:00:00 CST 2005)程玉民, 彭妙娟, and
+  李九红]{ChengYuMin2005}
+程玉民, 彭妙娟, 李九红.
+\newblock {复变量移动最小二乘法及其应用}\allowbreak[J].
+\newblock 力学学报, Fri Nov 18 00:00:00 CST 2005, 37\allowbreak (6):
+  719-723.
+
+\bibitem[覃先云\ 等(Fri Oct 28 00:00:00 CST 2011)覃先云, 张见明,
+  李光耀, and 张正]{TanXianYun2011}
+覃先云, 张见明, 李光耀, 等.
+\newblock {边界面法分析三维实体线弹性问题}\allowbreak[J].
+\newblock 固体力学学报, Fri Oct 28 00:00:00 CST 2011, 32\allowbreak (5):
+  500-506.
+
+\bibitem[廉艳平\ 等(Mon Mar 25 00:00:00 CST 2013)廉艳平, 张帆, 刘岩,
+  and 张雄]{LianYanPing2013}
+廉艳平, 张帆, 刘岩, 等.
+\newblock {物质点法的理论和应用}\allowbreak[J].
+\newblock 力学进展, Mon Mar 25 00:00:00 CST 2013, 43\allowbreak (2):
+  237-264.
+
+\bibitem[张雄\ 等(2017)张雄, 刘岩, 张帆, and
+  陈镇鹏]{ZhangXiong2017}
+张雄, 刘岩, 张帆, 等.
+\newblock {极端变形问题的物质点法研究进展{$<$}br{$>$}Recent
+  progress of material point method for extreme deformation
+  problems}\allowbreak[J].
+\newblock 计算力学学报, 2017\allowbreak (1): 1-16.
+
+\bibitem[高效伟\ 等(Sat May 18 00:00:00 CST 2019)高效伟, 徐兵兵,
+  吕军, and 彭海峰]{GaoXiaoWei2019}
+高效伟, 徐兵兵, 吕军, 等.
+\newblock {自由单元法及其在结构分析中的应用}\allowbreak[J].
+\newblock 力学学报, Sat May 18 00:00:00 CST 2019, 51\allowbreak (3):
+  703-713.
+
+\bibitem[Nguyen et~al.(2008)Nguyen, Rabczuk, Bordas, and Duflot]{nguyen2008}
+Nguyen V~P, Rabczuk T, Bordas S, et~al.
+\newblock Meshless methods: {{A}} review and computer implementation
+  aspects\allowbreak[J].
+\newblock Mathematics and Computers in Simulation, 2008, 79\allowbreak (3):
+  763-813.
+
+\bibitem[Liu(2009)]{liu2009}
+Liu G~R.
+\newblock Meshfree {{Methods}}: {{Moving Beyond}} the {{Finite Element
+  Method}}, {{Second Edition}}\allowbreak[M].
+\newblock 2nd ed.
+\newblock {Boca Raton}: {CRC Press}, 2009.
+
+\bibitem[{张雄}\ 等(2009){张雄}, {刘岩}, and
+  {马上}]{张雄2009无网格法的理论及应用}
+{张雄}, {刘岩}, {马上}.
+\newblock 无网格法的理论及应用\allowbreak[J].
+\newblock 力学进展, 2009\allowbreak (1): 36.
+
+\bibitem[Wang et~al.(2014)Wang and Zhang]{wang2014}
+Wang D, Zhang H.
+\newblock A consistently coupled isogeometric{\textendash}meshfree
+  method\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2014, 268:
+  843-870.
+
+\bibitem[Yreux et~al.(2017)Yreux and Chen]{yreux2017}
+Yreux E, Chen J~S.
+\newblock A quasi-linear reproducing kernel particle method\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 2017,
+  109\allowbreak (7): 1045-1064.
+
+\bibitem[Koester et~al.(2019)Koester and Chen]{koester2019}
+Koester J~J, Chen J~S.
+\newblock Conforming window functions for meshfree methods\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2019, 347:
+  588-621.
+
+\bibitem[Rohit et~al.(2018)Rohit, Prajapati, and Patel]{rohit2018}
+Rohit G, Prajapati J, Patel V.
+\newblock Coupling of {{Finite Element}} and {{Meshfree Method}} for
+  {{Structure Mechanics Application}}: {{A Review}}\allowbreak[J].
+\newblock International Journal of Computational Methods, 2018, 17.
+
+\bibitem[{王莉华}\ 等(2021){王莉华} and
+  {阮剑武}]{王莉华2021配点型无网格法理论和研究进展}
+{王莉华}, {阮剑武}.
+\newblock 配点型无网格法理论和研究进展\allowbreak[J].
+\newblock 力学季刊, 2021, 42\allowbreak (4): 20.
+
+\bibitem[刘宇翔\ 等(Mon Jun 28 00:00:00 CST 2021)刘宇翔, 王东东,
+  樊礼恒, 陈健, and 侯松阳]{LiuYuXiang2021}
+刘宇翔, 王东东, 樊礼恒, 等.
+\newblock
+  {基于卷积神经网络的无网格形函数影响域优化研究}\allowbreak[J].
+\newblock 固体力学学报, Mon Jun 28 00:00:00 CST 2021, 42\allowbreak (3):
+  302-319.
+
+\bibitem[{朱志辉}\ 等(2021){朱志辉}, {冯乾朔}, {肖权清},
+  {罗思慧}, and {王凡}]{朱志辉2021基于}
+{朱志辉}, {冯乾朔}, {肖权清}, 等.
+\newblock
+  {{基于DIC技术和无网格法的裂尖应变场分析方法}}\allowbreak[J].
+\newblock 土木工程学报, 2021, 54\allowbreak (6): 11.
+
+\bibitem[Sriram et~al.(2021)Sriram and Ma]{sriram2021}
+Sriram V, Ma Q~W.
+\newblock Review on the local weak form-based meshless method ({{MLPG}}):
+  {{Developments}} and {{Applications}} in {{Ocean Engineering}}\allowbreak[J].
+\newblock Applied Ocean Research, 2021, 116: 102883.
+
+\bibitem[陈健\ 等(2022)陈健, 王东东, 刘宇翔, and
+  陈俊]{ChenJian2022}
+陈健, 王东东, 刘宇翔, 等.
+\newblock
+  {无网格动力分析的循环卷积神经网络代理模型}\allowbreak[J].
+\newblock 力学学报, 2022, 54\allowbreak (3): 732-745.
+
+\bibitem[李煜冬\ 等(Fri Feb 18 00:00:00 CST 2022)李煜冬, 傅卓佳, and
+  汤卓超]{LiYuDong2022}
+李煜冬, 傅卓佳, 汤卓超.
+\newblock
+  {功能梯度碳纳米管增强复合材料板弯曲和模态的广义有限差分法}\allowbreak[J].
+\newblock 力学学报, Fri Feb 18 00:00:00 CST 2022, 54\allowbreak (2):
+  414-424.
+
+\bibitem[Chen et~al.(1996)Chen, Pan, Wu, and Liu]{chen1996}
+Chen J~S, Pan C, Wu C~T, et~al.
+\newblock Reproducing {{Kernel Particle Methods}} for large deformation
+  analysis of non-linear structures\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 1996,
+  139\allowbreak (1): 195-227.
+
+\bibitem[Wang et~al.(2023)Wang and Ren]{wang2023}
+Wang J, Ren X.
+\newblock A consistent projection integration for {{Galerkin}} meshfree
+  methods\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2023, 414:
+  116143.
+
+\bibitem[曹阳\ 等(2020)曹阳, 陈莹婷, and 姚林泉]{CaoYang2020}
+曹阳, 陈莹婷, 姚林泉.
+\newblock
+  {无单元Galerkin方法施加本质边界条件研究进展}\allowbreak[J].
+\newblock 力学季刊, 2020, 41\allowbreak (4): 591-612.
+
+\bibitem[{Fern{\'a}ndez-M{\'e}ndez} et~al.(2004){Fern{\'a}ndez-M{\'e}ndez} and
+  Huerta]{fernandez-mendez2004}
+{Fern{\'a}ndez-M{\'e}ndez} S, Huerta A.
+\newblock Imposing essential boundary conditions in mesh-free
+  methods\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2004,
+  193\allowbreak (12): 1257-1275.
+
+\bibitem[Kaljevi{\'c} et~al.(1997)Kaljevi{\'c} and Saigal]{kaljevic1997}
+Kaljevi{\'c} I, Saigal S.
+\newblock An improved element free {{Galerkin}} formulation\allowbreak[J].
+\newblock International Journal for Numerical Methods in Engineering, 1997,
+  40\allowbreak (16): 2953-2974.
+
+\bibitem[Liu et~al.(2019)Liu and Cheng]{liu2019}
+Liu D, Cheng Y~M.
+\newblock The interpolating element-free {{Galerkin}} ({{IEFG}}) method for
+  three-dimensional potential problems\allowbreak[J].
+\newblock Engineering Analysis with Boundary Elements, 2019, 108: 115-123.
+
+\bibitem[陈莘莘\ 等(2021)陈莘莘, 周文博, and
+  胡常福]{ChenXinXin2021}
+陈莘莘, 周文博, 胡常福.
+\newblock
+  {基于插值型无单元Galerkin法的复合材料层合板自由振动分析}\allowbreak[J].
+\newblock 应用力学学报, 2021, 38\allowbreak (3): 1280-1285.
+
+\bibitem[黄娟\ 等(2007)黄娟 and 姚林泉]{HuangJuan2007}
+黄娟, 姚林泉.
+\newblock {改进广义移动最小二乘近似的无网格法}\allowbreak[J].
+\newblock 力学季刊, 2007, 28\allowbreak (3): 461-470.
+
+\bibitem[Chen et~al.(2000)Chen and Wang]{chen2000}
+Chen J~S, Wang H~P.
+\newblock New boundary condition treatments in meshfree computation of contact
+  problems\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2000,
+  187\allowbreak (3): 441-468.
+
+\bibitem[Hillman et~al.(2021)Hillman and Lin]{hillman2021}
+Hillman M, Lin K~C.
+\newblock Consistent weak forms for meshfree methods: {{Full}} realization of
+  h-refinement, p-refinement, and a-refinement in strong-type essential
+  boundary condition enforcement\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 2021, 373:
+  113448.
+
+\bibitem[Lu et~al.(1994)Lu, Belytschko, and Gu]{lu1994}
+Lu Y~Y, Belytschko T, Gu L.
+\newblock A new implementation of the element free {{Galerkin}}
+  method\allowbreak[J].
+\newblock Computer Methods in Applied Mechanics and Engineering, 1994,
+  113\allowbreak (3): 397-414.
+
+\bibitem[Zhu et~al.(1998)Zhu and Atluri]{zhu1998}
+Zhu T, Atluri S.
+\newblock A modified collocation method and a penalty formulation for enforcing
+  the essential boundary conditions in the element free {{Galerkin}}
+  method\allowbreak[J].
+\newblock Computational Mechanics, 1998, 21: 211-222.
+
+\bibitem[Wang et~al.(2015)Wang, Sun, and Xie]{wang2015}
+Wang D, Sun M, Xie P.
+\newblock A {{Boundary Enhancement}} for the {{Stabilized Conforming Nodal
+  Integration}} of {{Galerkin Meshfree Methods}}\allowbreak[J].
+\newblock International Journal of Computational Methods, 2015, 12\allowbreak
+  (02): 1550009.
+
+\bibitem[Ventsel et~al.(2002)Ventsel, Krauthammer, and Carrera]{ventsel2002}
+Ventsel E, Krauthammer T, Carrera E.
+\newblock Thin {{Plates}} and {{Shells}}: {{Theory}}, {{Analysis}}, and
+  {{Applications}}\allowbreak[M].
+\newblock {American Society of Mechanical Engineers Digital Collection}, 2002.
+
+\bibitem[{钱伟长}(1985)]{钱伟长1985广义变分原理}
+{钱伟长}.
+\newblock 广义变分原理\allowbreak[M].
+\newblock {广义变分原理}, 1985.
 
 \end{thebibliography}

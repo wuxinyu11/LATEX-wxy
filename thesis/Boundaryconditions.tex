@@ -2,7 +2,7 @@
 由于无网格形函数通常不具备插值特性，因此伽辽金无网格法需要通过弱形式施加本质边界条件。
 在本章中，将以弹性力学问题和薄板问题为例，对常见的3种无网格法本质边界条件施加方法进行详细讨论，包括拉格朗日乘子法、罚函数法、Nitsche法。
 \section{拉格朗日乘子法}
-拉格朗日乘子法最早由Belytschko等人\cite{}引入伽辽金无网格法中施加本质边界条件，该方法在原有的势能泛函的基础上引入拉格朗日乘子项施加本质边界条件。在弹性力学问题中，在势能泛函(\ref{elasticity potential functional})的基础上增加拉格朗日乘子项有：
+拉格朗日乘子法最早由Belytschko等人\textsuperscript{\cite{belytschko1994} }引入伽辽金无网格法中施加本质边界条件，该方法在原有的势能泛函的基础上引入拉格朗日乘子项施加本质边界条件。在弹性力学问题中，在势能泛函(\ref{elasticity potential functional})的基础上增加拉格朗日乘子项有：
 \begin{equation}\label{Elambda}
 \begin{split}
     \bar{\Pi}(\pmb{u},\pmb \lambda)=\Pi(\pmb{u})-\int_{\Gamma^g}\lambda_i(u_i-g_i)d\Gamma
@@ -84,7 +84,7 @@
 拉格朗日乘子法在数值计算中广泛应用，特别适用于处理约束条件，在伽辽金无网格法求解过程中应用广泛，可满足变分的一致性[]。
 然而，拉格朗日乘子法需引入额外自由度离散朗哥朗日乘子，其刚度矩阵也变成了奇异矩阵。当拉格朗日乘子自由度过多时，将增加整体刚度矩阵的奇异性，导致计算精度下降。尤其在薄板问题中通常涉及大量的自由度和约束条件，刚度矩阵奇异性问题更为显著。
 \section{罚函数法}
-罚函数法\cite{}是在势能泛函中通过引入罚函数项进行本质边界条件的施加，罚函数项为罚因子$\alpha$乘以边界条件残差的平方。在弹性力学问题势能泛函表达式(\ref{elasticity potential functional})中引入罚函数项有：
+罚函数法\textsuperscript{\cite{zhu1998}}是在势能泛函中通过引入罚函数项进行本质边界条件的施加，罚函数项为罚因子$\alpha$乘以边界条件残差的平方。在弹性力学问题势能泛函表达式(\ref{elasticity potential functional})中引入罚函数项有：
 \begin{equation}\label{Epenalty}
     \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
 \end{equation}
@@ -132,7 +132,7 @@ f^s_I&=\alpha_w\int_{\Gamma_w}\Psi_I\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{
 较大的罚因子可能会导致数值不稳定或者收敛困难，而较小的罚因子可能会导致边界条件无法满足。
 尤其在薄板问题中，最优的罚因子取值跟节点离散尺寸相关，且3种罚因子跟节点离散尺寸的相关性不同，难以保证计算精度。
 \section{Nitsche法}
-Nitsche法\cite{}是目前变分一致型无网格法最常采用的本质边界条件施加方法，其可视为拉格朗日乘子法与罚函数法相结合。首先将拉格朗日乘子采用相对应的物理意义表示，此时拉格朗日乘子可用传统位移节点进行离散，无需引入额外自由度，保证了变分一致性和刚度矩阵对称性。然而，此时刚度矩阵通常不具有正定性，需引入罚函数项进行稳定，保证计算精度。\par
+Nitsche法\textsuperscript{\cite{fernandez-mendez2004}}是目前变分一致型无网格法最常采用的本质边界条件施加方法，其可视为拉格朗日乘子法与罚函数法相结合。首先将拉格朗日乘子采用相对应的物理意义表示，此时拉格朗日乘子可用传统位移节点进行离散，无需引入额外自由度，保证了变分一致性和刚度矩阵对称性。然而，此时刚度矩阵通常不具有正定性，需引入罚函数项进行稳定，保证计算精度。\par
 在弹性力学问题中，拉格朗日乘子的物理意义为约束反力，即$\lambda_i=\sigma_{ij}n_i$。
 并引入罚函数法，此时等效积分弱形式(\ref{Elambda weakform})中可改写为：
 \begin{equation}\label{Enitsche}

@@ -21,51 +21,65 @@ Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: appendixA.aux
 Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: appendixB.aux
-Reallocating 'name_of_file' (item size: 1) to 6 items.
-The style file: unsrt.bst
-Reallocating 'name_of_file' (item size: 1) to 7 items.
-Database file #1: wu.bib
-Warning--I didn't find a database entry for "Liu"
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+The style file: gbt7714-numerical.bst
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 150 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: Introduction.bib
 Warning--I didn't find a database entry for ""
-You've used 3 entries,
-            1791 wiz_defined-function locations,
-            483 strings with 4452 characters,
-and the built_in function-call counts, 832 in all, are:
-= -- 76
-> -- 36
-< -- 0
-+ -- 13
-- -- 10
-* -- 78
-:= -- 136
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 3
-chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 27
-empty$ -- 77
-format.name$ -- 10
-if$ -- 173
-int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 3
-newline$ -- 18
-num.names$ -- 3
-pop$ -- 3
+Warning--empty year in WuJunChao
+Warning--empty year in WuJunChao
+Warning--empty year in WuJunChao
+You've used 72 entries,
+            5374 wiz_defined-function locations,
+            1475 strings with 19584 characters,
+and the built_in function-call counts, 417751 in all, are:
+= -- 11884
+> -- 44991
+< -- 56742
++ -- 17581
+- -- 4526
+* -- 3260
+:= -- 59213
+add.period$ -- 217
+call.type$ -- 72
+change.case$ -- 188
+chr.to.int$ -- 14230
+cite$ -- 75
+duplicate$ -- 1724
+empty$ -- 4823
+format.name$ -- 2062
+if$ -- 108332
+int.to.chr$ -- 1
+int.to.str$ -- 73
+missing$ -- 0
+newline$ -- 375
+num.names$ -- 216
+pop$ -- 17798
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 72
 quote$ -- 0
-skip$ -- 9
+skip$ -- 43162
 stack$ -- 0
-substring$ -- 87
-swap$ -- 3
-text.length$ -- 0
+substring$ -- 20973
+swap$ -- 72
+text.length$ -- 1576
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 9
-width$ -- 4
-write$ -- 35
-(There were 2 warnings)
+type$ -- 768
+warning$ -- 3
+while$ -- 1695
+width$ -- 0
+write$ -- 1046
+(There were 4 warnings)
