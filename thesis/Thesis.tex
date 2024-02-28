@@ -52,8 +52,10 @@
 \include{Boundaryconditions}
 \include{elasticHR}
 \include{plateHR}
-% % \include{plate-dynaic}
 \include{Conclusion}
+% \include{1}
+
+
 \setcounter{equation}{0}
 \renewcommand\theequation{A.\arabic{equation}}
 \addcontentsline{toc}{chapter}{附录A：弹性力学问题HR变分原理的本质边界条件施加方法推导过程}
@@ -64,13 +66,18 @@
 \appendix
 \renewcommand{\appendixname}{Appendix~\Alph{chapter}}
 \include{appendixB}
+\addcontentsline{toc}{chapter}{附录C：无网格法优化的数值积分方案}
+\appendix
+\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+\include{appendixC}
+
+
 
 
 \addcontentsline{toc}{chapter}{参考文献}
 \renewcommand{\bibname}{参考文献}
 % \bibliographystyle{unsrt}
 \bibliographystyle{gbt7714-numerical}
-
 \bibliography{Introduction.bib}
 
 

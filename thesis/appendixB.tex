@@ -36,21 +36,7 @@
 \end{split}
 \end{equation}
 \newpage
-通过引入式(\ref{PTPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第三项进行推导可以得到：
-\begin{equation}
-\begin{split}
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\hat{\pmb g}_{\gamma\eta}\\
-    &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\gamma}
-    \tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}_{,\eta}+\tilde{\pmb g}_{\alpha\beta I}^T
-    \pmb G^{-1}\pmb{p}^{[p-2]}_{,\xi}s_{\gamma}n_{\eta}s_{\xi})\bar{w}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_{C}}}\tilde{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}n_{\eta}\bar{\theta}_nd\Gamma-[[\tilde{\pmb g}_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\bar{w}]]_{x\in{c_w}\cap{c_C}}\\
-    &=-\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma\\
-    &+\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma-[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta}\tilde{\Psi}_{I,\alpha\beta}\bar{w})]]_{x\in{c_w}\cap{c_C}}\\
-    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}\\
-    &=\tilde{\pmb f}
-\end{split}
-\end{equation}
-通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第四项进行推导可以得到：
+通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第三项进行推导可以得到：
 \begin{equation}
 \begin{split}
     &\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}\\
@@ -66,6 +52,20 @@
     -[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
     &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
     &=\bar{\pmb K}
+\end{split}
+\end{equation}
+通过引入式(\ref{PTPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第四项进行推导可以得到：
+\begin{equation}
+\begin{split}
+    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\hat{\pmb g}_{\gamma\eta}\\
+    &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\gamma}
+    \tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}_{,\eta}+\tilde{\pmb g}_{\alpha\beta I}^T
+    \pmb G^{-1}\pmb{p}^{[p-2]}_{,\xi}s_{\gamma}n_{\eta}s_{\xi})\bar{w}d\Gamma\\
+    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_{C}}}\tilde{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}n_{\eta}\bar{\theta}_nd\Gamma-[[\tilde{\pmb g}_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\bar{w}]]_{x\in{c_w}\cap{c_C}}\\
+    &=-\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma\\
+    &+\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma-[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta}\tilde{\Psi}_{I,\alpha\beta}\bar{w})]]_{x\in{c_w}\cap{c_C}}\\
+    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}\\
+    &=\tilde{\pmb f}
 \end{split}
 \end{equation}
 通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第五项进行推导可以得到：

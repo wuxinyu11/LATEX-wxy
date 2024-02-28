@@ -104,8 +104,8 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 \begin{equation}\label{case3}
     \hat{\varepsilon}_{ij}(\pmb{x})=\frac{1}{2}\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}(\hat{\pmb g}_{ij}+\hat{\pmb g}_{ji})
 \end{equation} \par
-值得注意的是，式中$\tilde{\Psi}_{I,i}$即为再生光滑梯度\cite{}。根据再生光滑梯度理论框架，可以直接通过无网格形函数显式构造再生光滑梯度，从而避免了传统无网格形函数导数的复杂计算，提高了梯度计算效率。并且再生光滑梯度
-内嵌局部积分约束条件$\tilde{\pmb g}_{iI}$，进而满足全域积分约束条件，从而保证算法的计算精度和误差收敛性。这意味着通过构造再生光滑梯度，可以确保在进行全域积分时满足积分约束条件，从而得到准确的结果，并保证算法的计算精度和误差收敛性。反之，Hellinger-Reissner变分原理的混合离散框架也完备了再生光滑梯度法的变分理论基础。\par
+值得注意的是，式中$\tilde{\Psi}_{I,i}$即为再生光滑梯度。根据再生光滑梯度理论框架，可以直接通过无网格形函数显式构造再生光滑梯度，从而避免了传统无网格形函数导数的复杂计算，提高了梯度计算效率。并且再生光滑梯度
+内嵌局部积分约束条件$\tilde{\pmb g}_{iI}$，从而保证算法的计算精度和误差收敛性。这意味着通过构造再生光滑梯度，可以确保在进行全域积分时满足积分约束条件，从而得到准确的结果，并保证算法的计算精度和误差收敛性。反之，Hellinger-Reissner变分原理的混合离散框架也完备了再生光滑梯度法的变分理论基础。\par
 \section{Hellinger-Reissner变分原理下的本质边界条件施加方法}
 基于Hellinger-Reissner变分原理得到的弱形式(\ref{weak form1})中的积分项包括了在本质边界条件下的位移和应力的约束项，以及在自然边界条件下的外力和强制位移项。
 此时，通过对位移采用再生核近似，应力通过局部多项式近似的混合离散方式对Hellinger-Reissner变分原理的等效积分弱形式进行组装刚度矩阵。
@@ -129,12 +129,16 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 \begin{split}
     &\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{\pmb g}_{jI}^T-\bar{\pmb g}_{jI}^T)\pmb{a}_{ij}\\
     &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{\pmb g}_{jI}^T-\bar{\pmb g}_{jI}^T)C_{ijkl}\pmb{G}^{-1}(\sum_{J=1}^{N\!P}(\tilde{\pmb g}_{kJ}-\bar{\pmb g}_{kJ})d_{lJ}+\hat{\pmb g}_{kl})\\
-    &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}d_{lJ}
-    -\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{\pmb g}_{kJ}d_{lJ}\\
-    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\bar{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}d_{lJ}
-    +\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\bar{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{\pmb g}_{kJ}d_{lJ}\\
-    &-\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}\tilde{\pmb g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{\pmb g}_{kl}
-    +\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}\bar{\pmb g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{\pmb g}_{kl}\\
+    &=\sum_{C=1}^{N\!C}
+    \left(\begin{split}
+    &\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\underbrace{\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}}_{\pmb{K}}d_{lJ}\\
+    &-\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\underbrace{(\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{\pmb g}_{kJ}
+    +\bar{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ})}_{\tilde{\pmb K}}d_{lJ}\\
+    &+\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\underbrace{\bar{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{\pmb g}_{kJ}}_{\bar{\pmb K}}d_{lJ}\\
+    &-\sum_{I=1}^{N\!P}\delta d_{iI}\underbrace{\tilde{\pmb g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{\pmb g}_{kl}}_{\tilde{\pmb f}}\\
+    &+\sum_{I=1}^{N\!P}\delta d_{iI}\underbrace{\bar{\pmb g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{\pmb g}_{kl}}_{\bar{\pmb f}}\\
+    \end{split}
+    \right)\\
     &=\delta\pmb{d}^T(\pmb K+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}-\delta\pmb{d}^T(\tilde{\pmb f}+\bar{\pmb f})
 \end{split}
 \end{equation}
@@ -143,23 +147,7 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 \begin{equation}\label{equationE}
     (\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{d}=\pmb{f}+\tilde{\pmb{f}}+\bar{\pmb{f}}
 \end{equation}
-% \begin{equation}\label{simplify}
-% \begin{split}
-%     \sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{g}_{jI}^T-\bar{g}_{jI}^T)\pmb{a}_{ij}=
-%     \delta\pmb{d}^T(\pmb{K}+\tilde{\pmb{K}}+\bar{\pmb{K}})\pmb{d}-\delta\pmb{d}^T(\tilde{\pmb{f}}+\bar{\pmb{f}})
-% \end{split}
-% \end{equation}
 其中刚度矩阵$\pmb K$、$\tilde{\pmb K}$和$\bar{\pmb K}$和力向量$\pmb f$、$\tilde{\pmb f}$和$\bar{\pmb f}$的具体表达式如下：
-% \begin{subequations}
-% \begin{align}
-%    \pmb{K}_{IJ}&=\int_{\Omega}\tilde{\pmb{B}}_I^T\pmb{D}\tilde{\pmb{B}}_Jd\Omega\\
-%    \tilde{\pmb{K}}_{IJ}&=-\int_{\Gamma^g}\Psi_I\pmb{N}^T\pmb{D}\tilde{\pmb B}_Jd\Gamma-\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb{D}\pmb{N}\Psi_Jd\Gamma\\
-%    \bar{\pmb K}_{IJ}&=\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb D\pmb N\Psi_Jd\Gamma\\
-%   \pmb{f}_I&=\int_{\Gamma^t}\Psi_I\pmb{t}d\Gamma+\int_{\Omega}\Psi_I\pmb{b}d\Omega\\
-%    \tilde{\pmb f}_I&=-\int_{\Gamma^g}\tilde{\pmb B}_I^T\pmb D\pmb N\pmb{g}d\Gamma\\
-%    \bar{\pmb f}_I&=\int_{\Gamma^g}\bar{\pmb B}_I^T\pmb D\pmb N \pmb{g}d\Gamma
-% \end{align}
-% \end{subequations}
 \begin{subequations}\label{Ehr1}
 \begin{align}    
     \pmb{K}_{IJ}&=\int_{\Omega}\tilde{\pmb{B}}_I^T\pmb{D}\tilde{\pmb{B}}_Jd\Omega\\
@@ -190,11 +178,11 @@ $\pmb N$为法向量矩阵，其表达式为：
     \pmb{N}=\begin{bmatrix} 0&n_x\\n_y&0\\n_y&n_x
     \end{bmatrix}
 \end{equation}\par
-值得注意的是，Hellinger-Reissner变分原理离散控制方程式中的修正变分项$\tilde{\pmb K}$、$\tilde{\pmb f}$(\ref{Ehr2})和弹性力学问题Nitsche法中的修正变分项$\pmb K^v$、$\pmb f^v$(\ref{Enitschekv})具有相类似的表达式，同样都是为了满足变分一致性，
+值得注意的是，Hellinger-Reissner变分原理离散控制方程式(\ref{Ehr2})中的修正变分项$\tilde{\pmb K}$、$\tilde{\pmb f}$和弹性力学问题Nitsche法(\ref{Enitschekv})中的修正变分项$\pmb K^v$、$\pmb f^v$具有相类似的表达式，同样都是为了满足变分一致性，
 但在Hellinger-Reissner变分原理离散平衡过程中，用再生光滑梯度$\tilde{\Psi}_I$替代Nitsche法中的传统无网格形函数梯度$\pmb{B}_I$，从而无需计算复杂耗时的无网格形函数梯度，相较于传统的Nistche法能够有效的提高计算效率。
-更重要的是，Hellinger-Reissner变分原理离散控制方程式中的稳定项$\bar{\pmb K}$、$\bar{\pmb f}$(\ref{Ehr3})和传统的Nitshche法中的稳定项$\pmb{K}^s$、$\pmb f^s$(\ref{EKFs})相比，无需引入罚函数项来满足正定性，不会因为人工参数的存在继而影响计算精度。
+更重要的是，Hellinger-Reissner变分原理离散控制方程式(\ref{Ehr3})中的稳定项$\bar{\pmb K}$、$\bar{\pmb f}$和传统的Nitshche法(\ref{EKFs})中的稳定项$\pmb{K}^s$、$\pmb f^s$相比，无需引入罚函数项来满足正定性，不会因为人工参数的存在继而影响计算精度。
 \section{优化的数值积分方案}
-根据Hellinger-Reissner变分原理在求解数值问题过程中是有一套优化过后的数值积分方案[]，该数值积分方案是通过两个原则来优化的：(1)通过优化全局数值积分采样点总数确定局部背景积分域内积分采样点的数量；(2)通过满足变分一致性确定数值积分采样点位置和权重。
+根据Hellinger-Reissner变分原理在求解数值问题过程中是有一套优化过后的数值积分方案\textsuperscript{\cite{wang2019}}，该数值积分方案是通过两个原则来优化的：(1)通过优化全局数值积分采样点总数确定局部背景积分域内积分采样点的数量；(2)通过满足变分一致性确定数值积分采样点位置和权重。
 如图(\ref{Eintegralscheme})所示，基于Hellinger-Reissner变分原理下的本质边界条件施加方法
 需要两套数值积分点，$\tilde{\pmb g}$和$\bar{\pmb g}$需要与$\tilde{\pmb{K}}$，$\bar{\pmb{K}}$，$\pmb{f}$，$\tilde{\pmb{f}}$和$\bar{\pmb{f}}$采用相同的一套数值积分点，
 式(\ref{g1})中的$\pmb{G}$和式(\ref{equationE})中$\pmb{K}$采用相同的数值积分方案。\par
@@ -204,59 +192,59 @@ $\pmb N$为法向量矩阵，其表达式为：
     \caption{优化的数值积分方案}\label{Eintegralscheme}
 \end{figure}
 基于Hellinger-Reissner变分原理的本质边界条件施加方法中，再生光滑梯度的构造过程需要计算积分点处的无网格形函数，此时为了减少形函数的计算量提高计算效率，采用无网格再生核光滑梯度积分法。
-无网格再生核光滑梯度积分法\cite{}利用积分点在背景积分单元间的共享特性，优化整体求解数值过程中积分点的数量，从而提高计算效率。
+无网格再生核光滑梯度积分法利用积分点在背景积分单元间的共享特性，优化整体求解数值过程中积分点的数量，从而提高计算效率。
 再生核光滑梯度积分法通过在背景积分单元上选择合适的积分点分布，使得积分点在不同单元之间共享，减少需要计算的积分点数量，进而保证计算精度的前提下进一步提高计算效率，
-具体的数值积分方案如下表：
-\begin{table}[H]
-\caption{\textbf{二次基函数无网格法优化的数值积分方案}}
-\centering
-\begin{tabular}{cccccc}
-   \toprule
-   数值积分点&$\xi$ & $\eta$ & $\gamma$ & $w$ & $w_B$\\
-   \midrule
-   \begin{minipage}[b]{0.3\columnwidth}
-    \centering
-    \raisebox{-.5\height}{\includegraphics{figure/E/point.png}}
-\end{minipage}&
-   $\frac{2}{3}$ & $\frac{1}{6}$& $\frac{1}{6}$ & $\frac{1}{3}$\\
-   \midrule
-      \begin{minipage}[b]{0.3\columnwidth}
-    \centering
-    \raisebox{-.5\height}{\includegraphics{figure/E/point2.png}}
-\end{minipage}&
-   $\frac{1}{2}$ & $\frac{1}{2}$ &0 & $\frac{1}{6}$\\
-   &1&0&0&$\frac{2}{3}$&$\frac{1}{3}$\\
-   \bottomrule
-\end{tabular}
-\end{table}
-\newpage
-\begin{table}[H]
-    \caption{\textbf{三次基函数无网格法优化的数值积分方案}}
-    \centering
-    \begin{tabular}{cccccc}
-   \toprule
-   数值积分点&$\xi$ & $\eta$ & $\gamma$ & $w$ & $w_B$\\
-   \midrule
-\begin{minipage}[b]{0.3\columnwidth}
-    \centering
-    \raisebox{-.5\height}{\includegraphics{figure/E/point.png}}
-\end{minipage}&
-$\eta_a$&$\frac{1-\xi_a}{2}$&$\frac{1-\xi_a}{2}$&$w_a$\\
-&$\eta_b$&$\eta_b$&$\frac{1-\xi_b}{2}$&$w_b$\\
-$\xi_a=0.10810301816870,w_a=0.223381589678011$\\
-$\xi_b=0.816847572980459,w_b=0.109951743655322$\\
-\midrule
-\begin{minipage}[b]{0.3\columnwidth}
-    \centering
-    \raisebox{-.5\height}{\includegraphics{figure/E/point2.png}}
-\end{minipage}&
-$\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
-&$1$&$0$&$0$&$-\frac{1}{30}$&$\frac{1}{20}$\\
-&$\frac{1}{2}$&$\frac{1}{2}$&$0$&$\frac{4}{135}$&$\frac{16}{46}$\\
-&$\frac{7+\sqrt{21}}{14}$&$\frac{7+\sqrt{21}}{14}$&$0$&$\frac{49}{540}$&$\frac{49}{180}$\\
-\bottomrule
-\end{tabular}
-\end{table}
+具体的数值积分方案见\nameref{C}。
+% \newpage
+% \begin{table}[H]
+% \caption{\textbf{无网格法优化的数值积分方案——二次梯度}}
+% \centering
+% \begin{tabular}{cccccc}
+%    \toprule
+%    数值积分点&$\xi$ & $\eta$ & $\gamma$ & $w$ & $w_B$\\
+%    \midrule
+%    \begin{minipage}[b]{0.3\columnwidth}
+%     \centering
+%     \raisebox{-.5\height}{\includegraphics{figure/E/point.png}}
+% \end{minipage}&
+%    $\frac{2}{3}$ & $\frac{1}{6}$& $\frac{1}{6}$ & $\frac{1}{3}$\\
+%    \midrule
+%       \begin{minipage}[b]{0.3\columnwidth}
+%     \centering
+%     \raisebox{-.5\height}{\includegraphics{figure/E/point2.png}}
+% \end{minipage}&
+%    $\frac{1}{2}$ & $\frac{1}{2}$ &0 & $\frac{1}{6}$\\
+%    &1&0&0&$\frac{2}{3}$&$\frac{1}{3}$\\
+%    \bottomrule
+% \end{tabular}
+% \end{table}
+% \begin{table}[H]
+%     \caption{\textbf{无网格法优化的数值积分方案——四次梯度}}
+%     \centering
+%     \begin{tabular}{cccccc}
+%    \toprule
+%    数值积分点&$\xi$ & $\eta$ & $\gamma$ & $w$ & $w_B$\\
+%    \midrule
+% \begin{minipage}[b]{0.3\columnwidth}
+%     \centering
+%     \raisebox{-.5\height}{\includegraphics{figure/E/point.png}}
+% \end{minipage}&
+% $\eta_a$&$\frac{1-\xi_a}{2}$&$\frac{1-\xi_a}{2}$&$w_a$\\
+% &$\eta_b$&$\eta_b$&$\frac{1-\xi_b}{2}$&$w_b$\\
+% $\xi_a=0.10810301816870,w_a=0.223381589678011$\\
+% $\xi_b=0.816847572980459,w_b=0.109951743655322$\\
+% \midrule
+% \begin{minipage}[b]{0.3\columnwidth}
+%     \centering
+%     \raisebox{-.5\height}{\includegraphics{figure/E/point2.png}}
+% \end{minipage}&
+% $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
+% &$1$&$0$&$0$&$-\frac{1}{30}$&$\frac{1}{20}$\\
+% &$\frac{1}{2}$&$\frac{1}{2}$&$0$&$\frac{4}{135}$&$\frac{16}{46}$\\
+% &$\frac{7+\sqrt{21}}{14}$&$\frac{7+\sqrt{21}}{14}$&$0$&$\frac{49}{540}$&$\frac{49}{180}$\\
+% \bottomrule
+% \end{tabular}
+% \end{table}
 \section{数值算例}
 \subsection{分片实验}
 首先采用线性、二次和三次弹性力学分片实验验证采用传统高斯积分法和再生光滑梯度积分法的不同本质边界条件施加方法下是否满足积分约束条件的情况。
@@ -294,10 +282,9 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 \begin{table}[H]
 \caption{\textbf{二次基函数无网格法分片实验结果}}
 \centering
-\begin{tabular}{ccccc}
+\begin{tabular}{lcccc}
    \toprule
-   $\quad$&\multicolumn{2}{c}{线性分片实验}&\multicolumn{2}{c}{二次分片实验}\\
-   \midrule
+& \multicolumn{2}{c}{线性分片实验} & \multicolumn{2}{c}{二次分片实验} \\ \cline{2-5}
    &$L_2$-Error$\quad$&$H_1$-Error&$L_2$-Error$\quad$&$H_1$-Error\\
    \midrule
    GI-Penalty&$7.7\times10^{-6}$&$2.7\times10^{-4}$&$1.2\times10^{-5}$&$2.6\times10^{-4}$\\
@@ -310,14 +297,12 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\newpage
 \begin{table}[H]
 \caption{\textbf{三次基函数无网格法分片实验结果}}
 \centering
-\begin{tabular}{ccccc}
+\begin{tabular}{lcccc}
    \toprule
-   $\quad$&\multicolumn{2}{c}{二次分片实验}&\multicolumn{2}{c}{三次分片实验}\\
-   \midrule
+& \multicolumn{2}{c}{二次分片实验} & \multicolumn{2}{c}{三次分片实验} \\ \cline{2-5}
    &$L_2$-Error$\quad$&$H_1$-Error&$L_2$-Error$\quad$&$H_1$-Error\\
    \midrule
    GI-Penalty&$9.1\times10^{-6}$&$2.1\times10^{-4}$&$1.2\times10^{-5}$&$2.0\times10^{-4}$\\
@@ -369,37 +354,36 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
     \includegraphics[scale=0.7]{figure/EHR/cantilever/cantilever.mesh.png}
     \caption{悬臂梁问题节点模型}\label{cantilever.mesh}
 \end{figure}
-图(\ref{CL2})、图(\ref{CH1})为悬臂梁问题的位移误差和能量误差对比图。从图中可以看出采用再生光滑梯度积分法“RKGSI”的本质边界条件施加方法的计算精度优于采用高斯积分法“GI”的本质条件施加方法，
+图(\ref{ECLH})为悬臂梁问题的位移误差和能量误差对比图。从图中可以看出采用再生光滑梯度积分法“RKGSI”的本质边界条件施加方法的计算精度优于采用高斯积分法“GI”的本质条件施加方法，
 并且由于传统高斯积分法和采用再生光滑梯度积分法的罚函数法“RKGSI-Penalty”和拉格朗日乘子法“RKGSI-LM”不具有变分一致性，无法达到理论误差收敛率，而基于Hellinger-Reissner变分原理下的本质边界条件施加方法“RKGSI-HR”和Nitshce法“RKGSI-Nitsche”均可达到理论误差收敛率，但相较于“RKGSI-Nitsche”法，所提出的“RKGSI-HR”法无需引入人工参数。
 \par
-图(\ref{Ccputime})为悬臂梁问题的节点数和计算时间的效率对比图。从整体来看采用再生光滑梯度积分法“RKGSI”的计算效率明显高于传统高斯积分法“GI”。
-图(\ref{Cefficiency})为悬臂梁问题的本质边界条件施加效率分析图。该图为施加强制边界$\Gamma^g$过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量所用时间对比图。
+图(\ref{ECcputime})为悬臂梁问题的节点数和计算时间的效率对比和本质边界条件施加效率对比图。从整体来看采用再生光滑梯度积分法“RKGSI”的计算效率明显高于传统高斯积分法“GI”。
+图(\ref{ECefficiency})为悬臂梁问题的本质边界条件施加效率分析图。该图为施加强制边界$\Gamma^g$过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量所用时间对比图。
 从图中可以看出，罚函数法和拉格朗日乘子法在计算形函数及其梯度所用的时间相同且所用时间最少，这是由于罚函数法和拉格朗日乘子法在计算过程中只需要计算无网格形函数本身，无需计算无网格形函数梯度，
 而“RKGSI-HR”法也无需计算无网格形函数梯度，但需要计算再生光滑梯度，“RKGSI-Nitshe”法这部分所用的时间是罚函数法和拉格朗日乘子法的5.6倍，而“RKGSI-HR”法是1.6倍，“RKGSI-HR”法的计算效率高于“RKGSI-Nitshce”法。
 组装相应的刚度矩阵和力向量这部分所用的时间上，“RKGSI-Nitshe”法和“RKGSI-HR”法计算效率基本相同。
 从整体上来看，拉格朗日乘子法和罚函数法的效率优于“HR”法和“Nitsche”法，但拉格朗日乘子法和罚函数法不具有变分一致性无法达到理论误差收敛率。
 因此，总体来说，相较于传统的本质边界条件施加方法，基于Hellinger-Reissner变分原理的本质边界条件施加方法“RKGSI-HR”能够达到理论误差收敛率，有效提高计算精度，相较于“RKGSI-Nitsche”法而言计算效率也更高。
 \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/EHR/cantilever/L2.png}
-    \caption{悬臂梁$L_2$误差对比}\label{CL2}
+\centering
+\begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/L2.png}
+    \phantomcaption\label{CL2}
+    \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/H1.png}
+    \phantomcaption\label{CH1}
+    \end{subcaptiongroup}
+\caption{悬臂梁问题误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差}
+\label{ECLH}
 \end{figure}
 \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/EHR/cantilever/H1.png}
-    \caption{悬臂梁$H_1$误差对比}\label{CH1}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/EHR/cantilever/cputime.png}
-    \caption{计算时间与节点数的关系}\label{Ccputime}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/EHR/cantilever/efficiency.png}
-    \caption{边界条件施加效率分析}\label{Cefficiency}
+\centering
+    \begin{subcaptiongroup}
+        \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/cputime.png}
+        \phantomcaption\label{ECcputime}
+        \includegraphics[width=0.49\textwidth]{figure/EHR/cantilever/efficiency.png}
+        \phantomcaption\label{ECefficiency}
+        \end{subcaptiongroup}
+\caption{悬臂梁问题效率对比：\subref{ECcputime} 计算时间与节点数的关系；\subref{ECefficiency} 边界条件施加效率分析}
 \end{figure}
 \subsection{带孔无限大平板问题}
 考虑经典的带孔无限大平板问题，如图(\ref{hole})所示，板的的中心存在一半径为$a=1$的圆形小孔，同时平板的无穷远处沿$x$轴方向施加均布荷载$T=1000$。
@@ -442,7 +426,7 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
  \includegraphics[scale=0.7]{figure/EHR/hole/hole.mesh.png}
    \caption{带孔无限大平板问题无网格离散}\label{hole.mesh}
 \end{figure}
-图(\ref{HL2})、(\ref{HH1})为带孔无限大平板问题的位移和能量误差对比图。
+图(\ref{EHLH}为带孔无限大平板问题的位移和能量误差对比图。
 从图中可以看出传统高斯积分法由于不具有变分一致性，导致“GI-Penalty”法、“GI-LM”法、“GI-Nistche”法均无法达到理论误差收敛率。
 基于Hellinger-Reissner变分原理的本质边界条件施加方法“RKGSI-HR”和“RKGSI-Nitsche”法满足变分一致性能够达到理论误差收敛率。
 虽然“RKGSI-LM”法无法通过分片实验不满足变分一致性，但由于拉格朗日乘子法法具有较高的精度也能达到理论误差收敛率。
@@ -452,31 +436,25 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 而“RKGSI-Nitsche”法和“RKGSI-HR”法是和精确解几乎相同。但“Nitsche”法是需要依靠人工经验参数并且计算效率也低于“HR”法。
 \newpage
 \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/EHR/hole/L2.png}
-    \caption{带孔无限大平板问题$L_2$误差对比}\label{HL2}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/EHR/hole/H1.png}
-    \caption{带孔无限大平板问题$H_1$误差对比}\label{HH1}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/EHR/hole/cputime.png}
-    \caption{计算时间与节点数的关系}\label{Hcputime}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/EHR/hole/efficiency.png}
-    \caption{边界条件施加效率分析}\label{Hefficiency}
-\end{figure}
-\newpage
+\centering
+\begin{subcaptiongroup}
+        \includegraphics[width=0.49\textwidth]{figure/EHR/hole/L2.png}
+        \phantomcaption\label{HL2}
+        \includegraphics[width=0.49\textwidth]{figure/EHR/hole/H1.png}
+        \phantomcaption\label{HH1}
+        \end{subcaptiongroup}
+    \caption{带孔无限大平板问题误差对比：\subref{HL2} $L_2$误差；\subref{HH1} $H_1$误差}
+    \label{EHLH}
+    \end{figure}
 \begin{figure}[H]
 \centering
-   \includegraphics[scale=0.5]{figure/EHR/hole/sigmaxx.png}
-\caption{带孔无限大平板问题$\sigma_{xx}$应力云图}\label{sigmaxx}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/EHR/hole/cputime.png}
+    \phantomcaption\label{Hcputime}
+    \includegraphics[width=0.49\textwidth]{figure/EHR/hole/efficiency.png}
+    \phantomcaption\label{Hefficiency}
+\end{subcaptiongroup}
+\caption{带孔无限大平板问题效率对比：\subref{Hcputime} 计算时间与节点数的关系；\subref{Hefficiency} 边界条件施加效率分析}
 \end{figure} 
 \section{小结}
 本章介绍了一种基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解弹性力学问题。该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的位移和应力，实现了满足积分约束条件的一种本质边界条件施加方法。
@@ -486,4 +464,8 @@ $\frac{1}{3}$&$\frac{1}{3}$&$\frac{1}{3}$&$\frac{9}{20}$\\
 这有效消除了传统Nitsche法中人工参数依赖性的问题。
 之后进一步通过典型算例的系统验证所提方法基于Hellinger-Reissner变分原理施加本质边界条件的变分一致性、计算精度和计算效率。
 结果表明，该方法在保持变分一致性的同时，能够提供较高的计算精度，并且相比传统Nitsche法也有效的提高了计算效率。
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figure/EHR/hole/sigmaxx.png}
+\caption{带孔无限大平板问题$\sigma_{xx}$应力云图}\label{sigmaxx}
+\end{figure}

@@ -88,7 +88,6 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 式中$\pmb A_{,i}^{-1}=-\pmb A^{-1}\pmb A_{,i}\pmb A^{-1},\pmb A_{,ij}^{-1}=-\pmb A^{-1}(\pmb A_{,ij}\pmb A^{-1}+\pmb A_{,i}\pmb A_{,j}^{-1}+\pmb A_{,j}\pmb A_{,i}^{-1})$。\par
 \begin{figure}
 \centering
-\label{gradient1}
 \begin{tabular}{cccc}
 $\quad$&$p=2$&$p=3$&$p=4$\\
 $\Psi$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic25/1.png}}\end{subcaptiongroup}
@@ -110,12 +109,11 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
 &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic41/6.png}}\end{subcaptiongroup}
 &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic61/6.png}}\end{subcaptiongroup}\\
 \end{tabular}
-\caption{\textbf{二维内部节点无网格形函数及其导数图}}
+\caption{\textbf{二维内部节点无网格形函数及其导数图}}\label{gradient1}
 \end{figure}
 \begin{figure}
     \centering
-    \label{gradient2}
-    \begin{tabular}{cccc}
+\begin{tabular}{cccc}
     $\quad$&$p=2$&$p=3$&$p=4$\\
     $\Psi$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quadratic46/1.png}}\end{subcaptiongroup}
     &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic77/1.png}}\end{subcaptiongroup}
@@ -136,67 +134,9 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
     &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/cubic77/6.png}}\end{subcaptiongroup}
     &\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{figure/nomesh/quartic116/6.png}}\end{subcaptiongroup}\\
 \end{tabular}
-\caption{\textbf{二维边界点无网格形函数及其导数图}}
+\caption{\textbf{二维边界点无网格形函数及其导数图}}\label{gradient2}
 \end{figure}
-% \begin{figure}[H]
-% \centering
-% \begin{subcaptiongroup}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/1.png}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/1.png}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/1.png}
-% \end{subcaptiongroup}
-%  \begin{subcaptiongroup}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/2.png}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/2.png}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/2.png}
-% \end{subcaptiongroup}
-% \begin{subcaptiongroup}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/3.png}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/3.png}
-% \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/3.png}
-% \end{subcaptiongroup}
-% \begin{subcaptiongroup}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/4.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/4.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/4.png}
-% \end{subcaptiongroup}
-% \begin{subcaptiongroup}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD41/5.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C41/5.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT41/5.png}
-% \end{subcaptiongroup}
-% \caption{二维内部节点无网格形函数及其一阶导数}\label{gradient1}
-% \end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/1.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/1.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/1.png}
-%     \end{subcaptiongroup}
-%      \begin{subcaptiongroup}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/2.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/2.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/2.png}
-%     \end{subcaptiongroup}
-%     \begin{subcaptiongroup}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/3.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/3.png}
-%     \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/3.png}
-%     \end{subcaptiongroup}
-%     \begin{subcaptiongroup}
-%         \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/4.png}
-%         \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/4.png}
-%         \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/4.png}
-%     \end{subcaptiongroup}
-%     \begin{subcaptiongroup}
-%         \includegraphics[width=0.3\textwidth]{figure/nomesh/QD77/5.png}
-%         \includegraphics[width=0.3\textwidth]{figure/nomesh/C77/5.png}
-%         \includegraphics[width=0.3\textwidth]{figure/nomesh/QT77/5.png}
-%     \end{subcaptiongroup}
-% \caption{二维边界点处无网格形函数及其一阶导数}\label{gradient2}
-% \end{figure}
-表(\ref{gradient1})、(\ref{gradient2})中分别存在内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)=\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
+图(\ref{gradient1})、(\ref{gradient2})中分别为内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)=\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
 \section{伽辽金无网格法}
 \subsection{弹性力学问题}
 不失为一般性，弹性力学问题的平衡微分方程为：

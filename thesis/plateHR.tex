@@ -2,6 +2,10 @@
 本章进一步针对薄板问题，基于Hellinger-Reissner变分原理提出了一种满足变分一致性的伽辽金无网格法。首先介绍了薄板问题时Hellinger-Reissner变分原理及其所提方法的混合离散过程，
 其次介绍该方法的本质边界条件施加过程并与传统Nitsche法进行对比，最后通过薄板算例验证该方法的变分一致性、计算精度和计算效率
 \section{Hellinger-Reissner变分原理}
+根据最小余能原理，薄板问题强形式(\ref{P control equation})所对应的余能泛函表达式为：
+\begin{equation}
+\Pi_C(M_{\alpha\beta})=\int_{\Omega}\frac{1}{2}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}\bar{\theta}_nd\Gamma-p\bar{w}\vert_{x\in{c_w}}
+\end{equation}
 与弹性力学问题类似，薄板问题的Hellinger-Reissner变分原理余能泛函具有挠度和弯矩两个变量\cite{}，四阶薄板问题控制方程式(\ref{P control equation})对应的余能泛函表达式为：
 \begin{equation}\label{pfanhan}
 \begin{split}
@@ -10,8 +14,7 @@
     -\int_{\Gamma_V}w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-w(P-\bar{P})\vert_{x\in{c_P}}
 \end{split}
 \end{equation}
-薄板问题的Hellinger-Reissner变分原理的泛函表达式中$\Pi_{H\!R}$中也包含$M_{\alpha\beta}$和$w$双变量。式(\ref{pfanhan})分别对$M_{\alpha\beta}$和$w$进行变分得到薄板问题Hellinger-Reissner变分原理的伽辽金弱形式：
-\newpage
+式(\ref{pfanhan})分别对$M_{\alpha\beta}$和$w$进行变分得到薄板问题Hellinger-Reissner变分原理的伽辽金弱形式：
 \begin{equation}\label{Pweakfrom}
 \begin{split}
     \delta\Pi_{H\!R}(M_{\alpha\beta,w})=&\delta\Pi_C(M_{\alpha\beta})\\
@@ -110,12 +113,12 @@ M^h_{\alpha\beta}(\pmb{x})&=\pmb{p}^{[p-2]T}(\pmb{x})\pmb a_{\alpha\beta}\\
 其中
 \begin{align}
  \label{PTPSI}&\tilde{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\tilde{\pmb g}_{\alpha\beta I}\\
- \label{PBPSI}&\bar{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\bar{\pmb g}_{\alpha\beta I}\quad \pmb{x}\in\Omega_C
+ \label{PBPSI}&\bar{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\bar{\pmb g}_{\alpha\beta I}
 \end{align}\par
 此时，弯矩分量表达式中的$\tilde{\Psi}_{I,\alpha\beta}$是根据再生光滑梯度理论\cite{}构造的二阶再生光滑梯度。
 根据再生光滑梯度理论框架，直接通过无网格形函数显式构造再生光滑梯度，可以避免传统无网格形函数梯度的复杂计算从而提高梯度计算效率。
-薄板问题中再生光滑梯度内嵌局部积分约束条件$\tilde{g}_{\alpha\beta I}$，进而满足全域积分约束条件，在求解高阶薄板问题时可以保证算法的计算精度和误差收敛性。
-表示在求解薄板问题时，可以通过构造再生光滑梯度，保证在进行全域积分时满足积分约束条件，得到准确的计算结果，保证算法的计算精度和误差收敛性。
+$\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法内嵌的局部积分约束条件，在求解高阶薄板问题时可以保证算法的计算精度和误差收敛性。
+表示在求解薄板问题时，可以通过构造再生光滑梯度，保证误差收敛性提高计算精度。
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/PHR/momentlisan.png}
@@ -144,13 +147,16 @@ M^h_{\alpha\beta}(\pmb{x})&=\pmb{p}^{[p-2]T}(\pmb{x})\pmb a_{\alpha\beta}\\
 进一步再将式(\ref{aalphabeta})中的$\pmb{a}_{\alpha\beta}$代入到式(\ref{CH5-2})中进而得到：
 \begin{equation}
 \begin{split}\label{Pzuzhuang}
-    &-\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)\pmb a_{\alpha\beta}
-    =\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)D_{\alpha\beta\gamma\eta}\pmb{G}^{-1}(\sum_{J=1}^{N\!P}(\tilde{\pmb g}_{\gamma\eta J}-\bar{\pmb g}_{\gamma\eta J})d_I+\hat{\pmb g}_{\gamma\eta})\\
-    &=\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}d_J
-    +\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}(-\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}-\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J})d_J\\
-    &-(-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta })
-    +\sum_{C=1}^{N\!C}\sum_{J=1}^{N\!P}D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}d_J
-    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta }\\
+    &-\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)\pmb a_{\alpha\beta}\\
+    &=\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)D_{\alpha\beta\gamma\eta}\pmb{G}^{-1}(\sum_{J=1}^{N\!P}(\tilde{\pmb g}_{\gamma\eta J}-\bar{\pmb g}_{\gamma\eta J})d_I+\hat{\pmb g}_{\gamma\eta})\\
+    &=\sum_{C=1}^{N\!C}
+    \left(\begin{split}
+    &\sum_{J=1}^{N\!P}\underbrace{D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}}_{\pmb{K}}d_J\\
+    &+\sum_{J=1}^{N\!P}\underbrace{D_{\alpha\beta\gamma\eta}(-\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}-\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J})}_{\tilde{\pmb K}}d_J\\
+    &+\sum_{J=1}^{N\!P}\underbrace{D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}}_{\bar{\pmb K}}d_J\\
+    &-\underbrace{(-D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta })}_{\tilde{\pmb f}}\\
+    &-\underbrace{D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta }}_{\bar{\pmb f}}\\
+    \end{split}\right)\\
     &=\sum_{J=1}^{N\!P}(\pmb{K}+\tilde{\pmb{K}}+\bar{\pmb{K}})\pmb d_J-\tilde{\pmb f}-\bar{\pmb f}
 \end{split}
 \end{equation}
@@ -179,9 +185,10 @@ f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n
 \end{align}
 \end{subequations}
 \par
-Hellinger-Reissner变分原理下的薄板问题离散控制方程式中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$(\ref{PHR2})和常用于解决薄板问题的满足变分一致性的本质边界条件施加方案Nitsche法中的$K_{IJ}^n$、$f_I^n$(\ref{Pkv})相比，具有相类似的表达式，
+Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2})中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和常用于解决薄板问题的满足变分一致性的本质边界条件施加方案Nitsche法(\ref{Pkv})中的$K_{IJ}^n$、$f_I^n$相比，具有相类似的表达式，
 同样都满足变分一致性，不同的是在Hellinger-Reissner变分原理离散过程中，用再生光滑梯度$\tilde{\Psi}_{I,\alpha\beta}$替换传统无网格形函数梯度$\Psi_{I,\alpha\beta}$，使得该方法无需计算复杂耗时的无网格形函数梯度，在处理薄板问题时有效提高计算效率。
-同样，基于Hellinger-Reissner变分原理的特点，薄板的离散控制方程式中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$(\ref{PHR3})中已经内嵌，相较于Nistche法中的稳定项$K^s_{IJ}$、$f^s_I$(\ref{PKFs})而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
+同样，基于Hellinger-Reissner变分原理的特点，薄板的离散控制方程式(\ref{PHR3})中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$中已经内嵌，相较于Nistche法(\ref{PKFs})中的稳定项$K^s_{IJ}$、$f^s_I$而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
+同样，根据Hellinger-Reissner变分原理在求解薄板问题过程中也用到了优化的数值积分方案见\nameref{C}。
 \section{数值算例}
 \subsection{分片实验}
 关于薄板问题，采用二次、三次和四次高阶薄板分片实验验证采用传统高斯积分法和再生光滑梯度积分法的不同本质边界条件施加方法是否和二阶弹性力学问题相同
@@ -215,10 +222,9 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式中的修�
 \begin{table}[H]
     \caption{\textbf{三次基函数无网格法分片实验结果}}
     \centering\label{cubic}
-   \begin{tabular}{ccccc}
+   \begin{tabular}{lcccc}
    \toprule
-    $\quad$&\multicolumn{2}{c}{二次分片实验}&\multicolumn{2}{c}{三次分片实验}\\
-   \midrule
+   & \multicolumn{2}{c}{二次分片实验} & \multicolumn{2}{c}{三次分片实验} \\ \cline{2-5}
    &$L_2$-Error$\quad$&$H_2$-Error&$L_2$-Error$\quad$&$H_2$-Error\\
    \midrule
    GI-Penalty&$4.27\times10^{-2}$&$3.82\times10^{-1}$&$9.54\times10^{-2}$&$5.12\times10^{-1}$\\
@@ -232,10 +238,9 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式中的修�
 \begin{table}[H]
     \caption{\textbf{四次基函数无网格法分片实验结果}}
     \centering\label{quartic}
-   \begin{tabular}{ccccc}
+   \begin{tabular}{lcccc}
    \toprule
-   $\quad$&\multicolumn{2}{c}{三次分片实验}&\multicolumn{2}{c}{四次分片实验}\\
-   \midrule
+   & \multicolumn{2}{c}{三次分片实验} & \multicolumn{2}{c}{四次分片实验} \\ \cline{2-5}
    &$L_2$-Error$\quad$&$H_1$-Error&$L_2$-Error$\quad$&$H_1$-Error\\
    \midrule
    GI-Penalty&$1.08\times10^{-1}$&$5.44\times10^{-1}$&$1.84\times10^{-1}$&$6.32\times10^{-1}$\\
@@ -253,13 +258,13 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式中的修�
 如图(\ref{rectangular})所示，一简支方板的中性面区域为$\Omega=(0,1)\otimes(0,1)$，此时$\Omega$的长为$a=1$宽为$b=1$，材料系数分别为弯曲刚度$\bar{D}=1$、$\nu=0.3$。板面内分布如图所示纵向荷载:
 \begin{equation}
 \begin{split}
-    \bar q=-\bar D(\frac{\pi^2}{a^2}+\frac{\pi^2}{b^2})sin(\frac{\pi}{a}x)sin(\frac{\pi}{b}y)
+    \bar q=-\bar D(\frac{\pi^2}{a^2}+\frac{\pi^2}{b^2})\sin(\frac{\pi}{a}x)\sin(\frac{\pi}{b}y)
 \end{split}
 \end{equation}
 该简支方板问题的精确解为：
 \begin{equation}
 \begin{split}
-    w=-sin(\frac{\pi}{a}x)sin(\frac{\pi}{b}y)
+    w=-\sin(\frac{\pi}{a}x)\sin(\frac{\pi}{b}y)
 \end{split}
 \end{equation}
 \newpage
@@ -270,100 +275,92 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式中的修�
 \end{figure}
 如图所示(\ref{rectangularmsh})，简支方板求解域采用均布的$11\times 11$、$21\times 21$、$41\times 41$、$81\times 81$的四个疏密不同的节点进行离散。
 此时对于采用三次基函数的简支方板问题其相对影响域取为3.5，采用四次基函数时其相对影响域则取为4.5。\par
-
 \begin{figure}[H]
 \centering
       \includegraphics[scale=0.4]{figure/PHR/R/rectangularmsh.png}
     \caption{简支方板问题节点离散}\label{rectangularmsh}
 \end{figure}
 \newpage
- 图(\ref{RCLH})-图(\ref{RQLH})分别为简支方板问题在三次基函数和四次基函数时的位移误差和能量误差对比图。从图中可以明显看出即使采用高阶高斯积分法“GI”如三次基函数的13点高斯积分法和四次基函数的16点高斯积分，
+ 图(\ref{RCLH})、图(\ref{RQLH})分别为简支方板问题在三次基函数和四次基函数时的位移误差和能量误差对比图。从图中可以明显看出即使采用高阶高斯积分法“GI”如三次基函数的13点高斯积分法和四次基函数的16点高斯积分，
 计算精度都低于再生光滑梯度法“RKGSI”，并且和同样不满足变分一致性的罚函数法一样都无法达到理论误差收敛率。而“RKGSI-Nitsche”和“RKGSI-HR”法不管是在三次基函数还是四次基函数时都达到了误差收敛率。
-图(\ref{RCcputime})-(\ref{RQcputime})是简支方板问题在三次基函数和四次基函数时分别计算节点数和与使用“GI”和“RKGSI”不同数值积分方法时的效率图。从整体来看采用“RKGSI”时的计算效率在三次基函数和四次基函数时都明显高于“GI”。  
+图(\ref{RCcputime})、图(\ref{RQcputime})是简支方板问题在三次基函数和四次基函数时分别计算节点数和与使用“GI”和“RKGSI”不同数值积分方法时的效率图。从整体来看采用“RKGSI”时的计算效率在三次基函数和四次基函数时都明显高于“GI”。  
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/CL2.png}
-    \caption{简支方板问题三次基函数$L_2$误差对比}\label{RCLH}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/CL2.png}
+    \phantomcaption\label{CL2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH1.png}
+    \phantomcaption\label{CH1}
+    \end{subcaptiongroup}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH2.png}
+    \phantomcaption\label{CH2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH3.png}
+    \phantomcaption\label{CH3}
+    \end{subcaptiongroup}
+\caption{简支方板问题三次基函数误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差；\subref{CH2}$H_2$误差；\subref{CH3} $H_3$误差}
+\label{RCLH}
 \end{figure}
 \newpage
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/CH1.png}
-    \caption{简支方板问题三次基函数$H_1$误差对比}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/QL2.png}
+    \phantomcaption\label{QL2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH1.png}
+    \phantomcaption\label{QH1}
+    \end{subcaptiongroup}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH2.png}
+    \phantomcaption\label{QH2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH3.png}
+    \phantomcaption\label{QH3}
+    \end{subcaptiongroup}
+\caption{简支方板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$误差；\subref{QH2}$H_2$误差；\subref{QH3} $H_3$误差}
+\label{RQLH}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/CH2.png}
-    \caption{简支方板问题三次基函数$H_2$误差对比}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/Ccputime.png}
+    \phantomcaption\label{Ccputime}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/Cefficiency.png}
+    \phantomcaption\label{Cefficiency}
+    \end{subcaptiongroup}
+\caption{简支方板问题三次基函数效率对比：\subref{Ccputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
+\label{RCcputime}
 \end{figure}
 \newpage
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/CH3.png}
-    \caption{简支方板问题三次基函数$H_3$误差对比}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/Qcputime.png}
+    \phantomcaption\label{Qcputime}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/Qefficiency.png}
+    \phantomcaption\label{Qefficiency}
+    \end{subcaptiongroup}
+\caption{简支方板问题四次基函数效率对比：\subref{Qcputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
+\label{RQcputime}
 \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/QL2.png}
-    \caption{简支方板问题四次基函数$L_2$误差对比}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/QH1.png}
-    \caption{简支方板问题四次基函数$H_1$误差对比}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/QH2.png}
-    \caption{简支方板问题四次基函数$H_2$误差对比}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/QH3.png}
-    \caption{简支方板问题四次基函数$H_3$误差对比}\label{RQLH}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/Ccputime.png}
-    \caption{简支方板问题三次基函数计算时间与节点数的关系}\label{RCcputime}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/Cefficiency.png}
-    \caption{简支方板问题三次基函数本质边界条件施加效率对比}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/Qcputime.png}
-    \caption{简支方板问题四次基函数计算时间与节点数的关系}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/Qefficiency.png}
-    \caption{简支方板问题四次基函数本质边界条件施加效率对比}\label{RQcputime}
-\end{figure}
-图(\ref{calpha})、图(\ref{qalpha})是分别验证简支方板问题在三次基函数和四次基函数时带有人工经验参数的罚函数法和Nitsche法的敏感度分析。
+图(\ref{Ralpha})是分别验证简支方板问题在三次基函数和四次基函数时带有人工经验参数的罚函数法和Nitsche法的敏感度分析。
 从图中可以明显的看出，不同的经验参数对罚函数法的误差有着很大的影响，并且它的最优误差只在一小部分。
 Nitsche法的最优误差的人工经验参数的范围比较大，但人工经验参数值的大小仍然会影响误差结果的变化，
 并且随着网格的加密，人工经验参数的最优结果是在发生改变的。此时，提出的基于Hellinger-Reissner变分原理
 中由于内嵌了本质边界条件，无需人工经验参数来满足正定性，相较于同样满足积分约束条件的“RKGSI-Nitsche”法，提出的“RKGSI-HR”法的不因人工参数值的变化影响最优误差。
+\begin{figure}[H]
+    \centering
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/calpha.png}
+    \phantomcaption\label{calpha}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/R/qalpha.png}
+    \phantomcaption\label{qalpha}
+    \end{subcaptiongroup}
+\caption{人工参数$\alpha$敏感度分析：\subref{calpha}三次基函数；\subref{qalpha}四次基函数}
+\label{Ralpha}
+\end{figure}
 \newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/calpha.png}
-    \caption{简支方板问题三次基函数人工参数$\alpha$敏感性分析}\label{calpha}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/R/qalpha.png}
-    \caption{简支方板问题四次基函数人工参数$\alpha$敏感性分析}\label{qalpha}
-\end{figure}
 \subsection{简支等边三角形板问题}
-一简支等边三角形板如图(\ref{triangular})所示，其中，三角形板的高为$a=10$，均布荷载作用在板面内为$\bar{q}=1$，材料系数分别为弯曲刚度$\bar{D}=1$、泊松比$\nu=0.3$。该简支三角形板的精确解为：
+考虑如图(\ref{triangular})所示简支等边三角形板，其中三角形板的高为$a=10$，均布荷载作用在板面内为$\bar{q}=1$，材料系数分别为弯曲刚度$\bar{D}=1$、泊松比$\nu=0.3$。该简支三角形板的精确解为：
 \begin{equation}
 \begin{split}
     w=\frac{\bar q}{64a\bar D}[x^3-3y^3x-a(x^2+y^2)+\frac{4}{27}a^3](\frac{4}{9}a^2-x^2-y^2)
@@ -380,71 +377,62 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.4]{figure/PHR/T/triangularmsh.png}
     \caption{简支等边三角形问题节点离散}\label{triangularmsh}
 \end{figure}
-图(\ref{TCLH})-图(\ref{TQLH})为简支等边三角形板问题分别在三次基函数和四次基函数的位移误差和能量误差对比图。从图中可以明显看出采用“RKGSI”得出的计算精度优于“GI”法。
-并且不管是三次基函数还是四次基函数“RKGSI-Nitsche”、“RKGSI-HR”都能够达到理论误差收敛率，满足积分约束条件。
-图(\ref{Tefficiency1})、图(\ref{Tefficiency2})是简支等边三角形板的薄板中面和本质边界条件施加效率分析图，从图中可以看出在薄板中面施加过程中，“RKGSI”所用的时间都明显少于“GI”；
-而针对“RKGSI”在施加本质边界过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量中可以明显看出“RKGSI-Nistche”法所用的时间明显多于“RKGSI-HR”和“RKGSI-Penalty”，
-虽然“RKGSI-HR”和“RKGSI-Penalty”的计算效率相差不大，但“RKGSI-Penalty”由于不具有变分一致性无法达到理论误差收敛率。因此相较于传统的本质边界条件施加方法，
-“RKGSI-HR”不仅满足积分约束条件能够达到理论误差收敛率，提高计算精度，在计算时间上也用时较短，有效提高计算效率。
+图(\ref{TCLH})、图(\ref{TQLH})为简支等边三角形板问题分别在三次基函数和四次基函数的位移误差和能量误差对比图。
+从图中可以明显看出采用“RKGSI”得出的计算精度优于“GI”法，
+并且“RKGSI-HR”法都能够达到理论误差收敛率，满足积分约束条件。
+图(\ref{Tefficiency})是简支等边三角形板的薄板中面和本质边界条件施加效率分析图，从图中可以看出在薄板中面施加过程中，“RKGSI”所用的时间都明显少于“GI”；
+而针对“RKGSI”在施加本质边界过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量中可以明显看出“RKGSI-Nistche”法所用的时间明显多于“RKGSI-HR”法，
+% 虽然“RKGSI-HR”和“RKGSI-Penalty”的计算效率相差不大，但“RKGSI-Penalty”由于不具有变分一致性无法达到理论误差收敛率。
+% 因此相较于传统的本质边界条件施加方法，“RKGSI-HR”不仅满足积分约束条件能够达到理论误差收敛率，提高计算精度，在计算时间上也用时较短，有效提高计算效率。
 图(\ref{TMxy})为简支等边三角形板问题的弯矩云图。从图中可以看出“RKGSI-HR”、“RKGSI-Nitsche”和“RKGSI-Penalty”和精确解之间非常一致，进一步验证了所提方法能够有效提高计算精度。
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/CL2.png}
-    \caption{简支等边三角形板问题三次基函数$L_2$误差对比}\label{TCLH}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/CH1.png}
-    \caption{简支等边三角形板问题三次基函数$H_1$误差对比}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/CH2.png}
-    \caption{简支等边三角形板问题三次基函数$H_2$误差对比}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/CH3.png}
-    \caption{简支等边三角形板问题三次基函数$H_3$误差对比}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/CL2.png}
+    \phantomcaption\label{CL2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH1.png}
+    \phantomcaption\label{CH1}
+    \end{subcaptiongroup}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH2.png}
+    \phantomcaption\label{CH2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH3.png}
+    \phantomcaption\label{CH3}
+    \end{subcaptiongroup}
+\caption{简支等边三角形板问题三次基函数误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差；\subref{CH2}$H_2$误差；\subref{CH3} $H_3$误差}
+\label{TCLH}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/QL2.png}
-    \caption{简支等边三角形板问题四次基函数$L_2$误差对比}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/QH1.png}
-    \caption{简支等边三角形板问题四次基函数$H_1$误差对比}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/QH2.png}
-    \caption{简支等边三角形板问题四次基函数$H_2$误差对比}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/QH3.png}
-    \caption{简支等边三角形板问题四次基函数$H_3$误差对比}\label{TQLH}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/QL2.png}
+    \phantomcaption\label{QL2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH1.png}
+    \phantomcaption\label{QH1}
+    \end{subcaptiongroup}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH2.png}
+    \phantomcaption\label{QH2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH3.png}
+    \phantomcaption\label{QH3}
+    \end{subcaptiongroup}
+\caption{简支等边三角形板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$；误差\subref{QH2}；$H_2$误差；\subref{QH3} $H_3$误差}
+\label{TQLH}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/Cefficiencyomega.png}
-    \caption{简支等边三角形板问题薄板中面$\Omega$效率对比}\label{Tefficiency1}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/Cefficiencygamma.png}
-    \caption{简支等边三角形板问题本质边界条件$\Gamma_w,c_w$效率对比}\label{Tefficiency2}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/Cefficiencyomega.png}
+    \phantomcaption\label{Cefficiencyomega}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/T/Cefficiencygamma.png}
+    \phantomcaption\label{Cefficiencygamma}
+    \end{subcaptiongroup}
+\caption{简支等边三角形问题效率对比：\subref{Cefficiencyomega}薄板中面$\Omega$；\subref{Cefficiencygamma}本质边界条件$\Gamma_w,c_w$}
+\label{Tefficiency}
 \end{figure}
 \begin{figure}[H]
 \centering
-    \includegraphics[scale=0.5]{figure/PHR/T/Mxy.png}
+    \includegraphics[scale=0.1]{figure/PHR/T/Mxy.png}
 \caption{简支等边三角形板问题弯矩云图$\sigma_{xx}$应力云图}
 \label{TMxy}
 \end{figure}  
@@ -469,51 +457,46 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.4]{figure/PHR/A/annularmsh.png}
     \caption{简支环形板问题节点离散}\label{annularmsh}
 \end{figure}
-图(\ref{AQLH1})-图(\ref{AQLH2})为简支环行板问题的位移误差和能量误差对比图，从图中可以看出“RKGSI-HR”和“RKGSI-Nitsche”同样可以达到理论误差收敛率。
-图(\ref{AQcputime})、图(\ref{AQefficiency})为简支环行板问题在计算时间节点数和施加不同本质边界条件上的效率对比，从图中可以看出采用“RKGSI”时的效率明显高于“GI”法，
+图(\ref{AQLH})为简支环行板问题的位移误差和能量误差对比图，从图中可以看出“RKGSI-HR”和“RKGSI-Nitsche”同样可以达到理论误差收敛率。
+图(\ref{AQcputime})为简支环行板问题在计算时间节点数和施加不同本质边界条件上的效率对比，从图中可以看出采用“RKGSI”时的效率明显高于“GI”法，
 与同样满足变分一致性的“RKGSI-Nitsche”法相比，“RKGSI-HR”法在施加过程中效率明显更高。
 同样根据简支环行板的弯矩云图(\ref{AMxy})也可以更进一步说明在解决薄板问题上，基于Hellinger-Reissner变分原理的本质边界条件施加方法拥有着更高的计算精度。
 在简支环行板问题中，存在两个人工参数影响计算精度。从图(\ref{Aalpha})中可以看出，随着节点数的变化“RKGSI-Nitsche”法和“RKGSI-Penalty”法在达到最优精度时的人工参数值也在发生变化。
 而“RKGSI-HR”法中不涉及人工参数，因此随着节点数的增加，计算精度不会受到人工参数的影响，从而提高了一种更稳定和高效的计算方法。
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/A/QL2.png}
-    \caption{简支环行板问题四次基函数$L_2$误差}\label{AQLH1}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/A/QH1.png}
-    \caption{简支环行板问题四次基函数$H_1$误差}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/A/QH2.png}
-    \caption{简支环行板问题四次基函数$H_2$误差}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/A/QH3.png}
-    \caption{简支环行板问题四次基函数$H_3$误差}\label{AQLH2}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/A/QL2.png}
+    \phantomcaption\label{QL2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH1.png}
+    \phantomcaption\label{QH1}
+    \end{subcaptiongroup}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH2.png}
+    \phantomcaption\label{QH2}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH3.png}
+    \phantomcaption\label{QH3}
+    \end{subcaptiongroup}
+\caption{简支环行板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$；误差\subref{QH2}；$H_2$误差；\subref{QH3} $H_3$误差}
+\label{AQLH}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/PHR/A/Qcputime.png}
-    \caption{简支环行板问题四次基函数计算时间与节点数对比}\label{AQcputime}
-\end{figure}
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/PHR/A/Qefficiency.png}
-    \caption{简支环行板问题四次基函数本质边界条件施加效率分析}\label{AQefficiency}
+    \begin{subcaptiongroup}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/A/Qcputime.png}
+    \phantomcaption\label{Qcputime}
+    \includegraphics[width=0.49\textwidth]{figure/PHR/A/Qefficiency.png}
+    \phantomcaption\label{Qefficiency}
+    \end{subcaptiongroup}
+\caption{简支环形板问题四次基函数效率对比：\subref{Qcputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
+\label{AQcputime}
 \end{figure}
 \section{小结}
 本章进一步介绍了基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解薄板问题。
 该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。
 其中，在离散平衡控制方程中，采用传统无网格形函数对挠度进行离散，弯矩则在每个背景积分单元上以再生光滑梯度独立逼近。
 通过采用再生光滑梯度积分法，该方法内嵌了局部积分约束条件，因此严格满足了每个积分单元的变分一致性。此外，由于二阶光滑梯度的计算只涉及无网格形函数及其一阶导数，有效的提高了计算效率。 
-之后通过典型的数值算例进一步表明所提方法基于Hellinger-Reissner变分原理无网格薄板公式在满足变分一致性，计算精度以及计算效率方面优于采用传统高斯积分法的Nitsche法、罚函数法以及采用再生光滑梯度积分法的Nitsche法，罚函数法。
+之后通过典型的数值算例进一步表明所提方法基于Hellinger-Reissner变分原理无网格薄板公式在满足变分一致性，计算精度以及计算效率方面优于采用传统高斯积分法的Nitsche法、罚函数法以及采用再生光滑梯度积分法的Nitsche法、罚函数法。
 基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法在解决薄板问题上提供了一种高效精确的边界条件施加方法。
 \newpage
 \begin{figure}[H]
@@ -526,13 +509,6 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.5]{figure/PHR/A/alpha.png}
     \caption{简支环形板问题人工参数敏感性分析}\label{Aalpha}
 \end{figure}
-% \section{小结}
-% 本章进一步介绍了基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解薄板问题。
-% 该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。
-% 其中，在离散平衡控制方程中，采用传统无网格形函数对挠度进行离散，弯矩则在每个背景积分单元上以再生光滑梯度独立逼近。
-% 通过采用再生光滑梯度积分法，该方法内嵌了局部积分约束条件，因此严格满足了每个积分单元的变分一致性。此外，由于二阶光滑梯度的计算只涉及无网格形函数及其一阶导数，有效的提高了计算效率。 
-% 之后通过典型的数值算例进一步表明所提方法基于Hellinger-Reissner变分原理无网格薄板公式在满足变分一致性，计算精度以及计算效率方面优于采用传统高斯积分法的Nitsche法、罚函数法以及采用再生光滑梯度积分法的Nitsche法，罚函数法。
-% 基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法在解决薄板问题上提供了一种高效精确的边界条件施加方法。
 
 
 

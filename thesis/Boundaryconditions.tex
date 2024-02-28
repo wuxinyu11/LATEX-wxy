@@ -82,7 +82,7 @@
 \end{align}
 \end{subequations}\par
 拉格朗日乘子法在数值计算中广泛应用，特别适用于处理约束条件，在伽辽金无网格法求解过程中应用广泛，可满足变分的一致性[]。
-然而，拉格朗日乘子法需引入额外自由度离散朗哥朗日乘子，其刚度矩阵也变成了奇异矩阵。当拉格朗日乘子自由度过多时，将增加整体刚度矩阵的奇异性，导致计算精度下降。尤其在薄板问题中通常涉及大量的自由度和约束条件，刚度矩阵奇异性问题更为显著。
+然而，拉格朗日乘子法需引入额外自由度离散拉格朗日乘子，其刚度矩阵也变成了奇异矩阵。当拉格朗日乘子自由度过多时，将增加整体刚度矩阵的奇异性，导致计算精度下降。尤其在薄板问题中通常涉及大量的自由度和约束条件，刚度矩阵奇异性问题更为显著。
 \section{罚函数法}
 罚函数法\textsuperscript{\cite{zhu1998}}是在势能泛函中通过引入罚函数项进行本质边界条件的施加，罚函数项为罚因子$\alpha$乘以边界条件残差的平方。在弹性力学问题势能泛函表达式(\ref{elasticity potential functional})中引入罚函数项有：
 \begin{equation}\label{Epenalty}
@@ -178,7 +178,7 @@ Nitsche法\textsuperscript{\cite{fernandez-mendez2004}}是目前变分一致型�
 其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{EKf})，通过罚函数法满足正定性得到的稳定项$\pmb{K}^s$和$\pmb{f}^s$见式(\ref{EKFs})，结合拉格朗日乘子法满足变分一致性的修正变分项$\pmb{K}^v$和$\pmb{f}^v$，其具体表达式如下：
 \begin{subequations}\label{Enitschekv}
 \begin{align} 
-    \pmb K^v_{I\!J}&=-\int_{\Gamma^g}\Psi_I\bar{\pmb{n}}^T\pmb{D}\pmb{B}_Jd\Gamma-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\Psi_Jd\Gamma\\
+    \pmb K^v_{IJ}&=-\int_{\Gamma^g}\Psi_I\bar{\pmb{n}}^T\pmb{D}\pmb{B}_Jd\Gamma-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\Psi_Jd\Gamma\\
     \pmb f^v_I&=-\int_{\Gamma^g}\pmb{B}_I^T\pmb{D}\bar{\pmb{n}}\pmb{g}d\Gamma
 \end{align}
 \end{subequations}

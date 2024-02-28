@@ -1,73 +1,87 @@
-This is BibTeX, Version 0.99d (TeX Live 2023/Homebrew)
+This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 13 items.
 A level-1 auxiliary file: decision.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
 A level-1 auxiliary file: declaration.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Introduction.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
 A level-1 auxiliary file: Nomesh.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: Boundaryconditions.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: elasticHR.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: plateHR.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: Conclusion.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: appendixA.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: appendixB.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendixC.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
 The style file: gbt7714-numerical.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 150 items from 100.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 150 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Introduction.bib
 Warning--I didn't find a database entry for ""
 Warning--empty year in WuJunChao
 Warning--empty year in WuJunChao
 Warning--empty year in WuJunChao
-You've used 72 entries,
+You've used 74 entries,
             5374 wiz_defined-function locations,
-            1475 strings with 19584 characters,
-and the built_in function-call counts, 417751 in all, are:
-= -- 11884
-> -- 44991
-< -- 56742
-+ -- 17581
-- -- 4526
-* -- 3260
-:= -- 59213
-add.period$ -- 217
-call.type$ -- 72
-change.case$ -- 460
-chr.to.int$ -- 14230
-cite$ -- 75
-duplicate$ -- 1724
-empty$ -- 4823
-format.name$ -- 2062
-if$ -- 108332
+            1488 strings with 19875 characters,
+and the built_in function-call counts, 430777 in all, are:
+= -- 12194
+> -- 46467
+< -- 58571
++ -- 18102
+- -- 4639
+* -- 3350
+:= -- 61008
+add.period$ -- 223
+call.type$ -- 74
+change.case$ -- 194
+chr.to.int$ -- 14674
+cite$ -- 77
+duplicate$ -- 1772
+empty$ -- 4960
+format.name$ -- 2115
+if$ -- 111736
 int.to.chr$ -- 1
-int.to.str$ -- 73
+int.to.str$ -- 75
 missing$ -- 0
-newline$ -- 375
-num.names$ -- 216
-pop$ -- 17798
+newline$ -- 385
+num.names$ -- 222
+pop$ -- 18566
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 74
 quote$ -- 0
-skip$ -- 42890
+skip$ -- 44408
 stack$ -- 0
-substring$ -- 20973
-swap$ -- 72
-text.length$ -- 1576
+substring$ -- 21591
+swap$ -- 74
+text.length$ -- 1617
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 768
+type$ -- 790
 warning$ -- 3
-while$ -- 1695
+while$ -- 1739
 width$ -- 0
-write$ -- 1046
+write$ -- 1075
 (There were 4 warnings)
