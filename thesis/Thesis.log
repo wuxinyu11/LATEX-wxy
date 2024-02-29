@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  28 FEB 2024 21:01
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  29 FEB 2024 16:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1451,11 +1451,12 @@ File: figure/PHR/T/Mxy.png Graphic file (type bmp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
+File: figure/PHR/A/annular.png Graphic file (type bmp)
+<figure/PHR/A/annular.png>
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-File: figure/PHR/A/annular.png Graphic file (type bmp)
-<figure/PHR/A/annular.png>
 File: figure/PHR/A/annularmsh.png Graphic file (type bmp)
 <figure/PHR/A/annularmsh.png>
 File: figure/PHR/A/QL2.png Graphic file (type bmp)
