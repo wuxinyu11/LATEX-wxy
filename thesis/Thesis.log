@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  29 FEB 2024 16:06
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  6 MAR 2024 18:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -800,7 +800,8 @@ LaTeX Warning: Label `Qefficiency' multiply defined.
 
 LaTeX Warning: Label `sub@Qefficiency' multiply defined.
 
-) (Conclusion.aux) (appendixA.aux) (appendixB.aux) (appendixC.aux))
+) (Conclusion.aux) (appendixA.aux) (appendixB.aux) (appendixC.aux) (thanks.aux)
+(paper.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -814,8 +815,7 @@ LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
 2.
-
-(F:\MikTEX\tex/latex/base\ts1cmr.fd
+ (F:\MikTEX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 22.
@@ -1260,7 +1260,7 @@ Chapter 3.
 ]
 Chapter 4.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2809) has occurred while \output is active []
 
  [27]
 [28] [29]
@@ -1559,9 +1559,24 @@ File: figure/E/point2.png Graphic file (type bmp)
 
 
 ] [79] [80] [81] [82] [83] [84])
-[85] (Thesis.aux (decision.aux) (declaration.aux) (Introduction.aux)
-(Nomesh.aux) (Boundaryconditions.aux) (elasticHR.aux) (plateHR.aux)
-(Conclusion.aux) (appendixA.aux) (appendixB.aux) (appendixC.aux))
+[85]
+\openout2 = `thanks.aux'.
+
+ (thanks.tex [86
+
+
+]) [87]
+\openout2 = `paper.aux'.
+
+ (paper.tex [88
+
+
+
+
+]) [89] (Thesis.aux (decision.aux)
+(declaration.aux) (Introduction.aux) (Nomesh.aux) (Boundaryconditions.aux)
+(elasticHR.aux) (plateHR.aux) (Conclusion.aux) (appendixA.aux) (appendixB.aux)
+(appendixC.aux) (thanks.aux) (paper.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1575,15 +1590,15 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AFB4EB062D088DDAB9DE8910106842A4;5221.
+(rerunfilecheck)             Checksum: E711FC614C104C2B5639957FCF7C8170;5739.
  ) 
 Here is how much of TeX's memory you used:
- 20125 strings out of 410379
- 426711 string characters out of 5795143
+ 20174 strings out of 410379
+ 427724 string characters out of 5795143
  1957432 words of memory out of 5000000
- 41014 multiletter control sequences out of 15000+600000
+ 41050 multiletter control sequences out of 15000+600000
  575723 words of font info for 190 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,34n,99p,575b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (97 pages).
+Output written on Thesis.pdf (101 pages).

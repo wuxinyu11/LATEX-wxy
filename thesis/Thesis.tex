@@ -24,14 +24,14 @@
 \frontmatter
 \begin{abstract}
 无网格法是一类根据离散节点信息直接建立形函数的方法，其形函数具有高阶光滑的特点，适用于薄板等高阶问题。
-本论文讨论的是具有变分一致性的伽辽金无网格法，目前具有变分一致型的伽辽金无网格法主要是通过假定应变理论构造匹配的光滑梯度，
+本论文讨论的是具有变分一致性的伽辽金无网格法，目前具有变分一致性的伽辽金无网格法主要是通过假定应变理论构造匹配的光滑梯度，
 再生光滑梯度理论框架为假定应变的光滑梯度提供了一个通用的表达式，并在伽辽金弱形式中直接将光滑梯度替换成传统无网格形函数梯度。
 但光滑梯度并不等于传统无网格形函数梯度，该过程缺乏完备的变分原理理论基础。为了满足全域的变分一致性，满足积分约束条件的无网格数值积分方案需要配合具有变分一致性的本质边界条件施加方案，
 现有的本质边界条件施加方法还存在诸多问题，亟待发展一种全新变分一致本质边界条件施加方案。\par
 首先，基于Hellinger-Reissner变分原理推导余能泛函，分别对位移和应力变分可以得到Hellinger-Reissner原理弱形式。其中位移采用传统无网格形函数进行离散，而应力采用在每个积分域中假设为多项式，以满足局部的变分一致性。
 随后，根据Hellinger-Reissner变分原理弱形式中内嵌本质边界条件的特点，以Hellinger-Reissner变分原理弱形式为基础系统推导本质边界条件施加过程中的离散控制方程。
 此时的无网格离散方程可看作为一种新型的Nitsche法施加本质边界条件，其中修正变分项采用再生光滑梯度和无网格形函数进行混合离散，稳定项则内嵌于Hellinger-Reissner变分原理弱形式中，无需额外增加稳定项。
-最后，详细分析该方法的变分一致性，并详细对比所提方法和传统Nitsche法，罚函数法，拉格朗日乘子法之间的差别，并通过传统弹性力学问题和薄板问题验证所提方法的计算精度和效率。
+最后，详细分析该方法的变分一致性，并详细对比所提方法和传统Nitsche法、罚函数法、拉格朗日乘子法之间的差别，并通过传统弹性力学问题和薄板问题验证所提方法的计算精度和效率。
 该方法消除了对人工参数的依赖性，也无需计算复杂耗时的形函数梯度，并满足积分约束条件，有效的提高计算精度和计算效率。
 \par
 \end{abstract}
@@ -52,8 +52,15 @@
 \include{Boundaryconditions}
 \include{elasticHR}
 \include{plateHR}
+% \include{TADAS}
 \include{Conclusion}
+
+
 % \include{1}
+
+
+
+
 
 
 \setcounter{equation}{0}
@@ -81,5 +88,15 @@
 \bibliography{Introduction.bib}
 
 
+
+\addcontentsline{toc}{chapter}{致谢}
+\appendix
+\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+\include{thanks}
+
+\addcontentsline{toc}{chapter}{作者攻读硕士学位期间的科研成果}
+\appendix
+\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+\include{paper}
 
 \end{document}

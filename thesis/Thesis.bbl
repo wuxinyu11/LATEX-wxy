@@ -51,6 +51,13 @@ Belytschko T, Krongauz Y, Organ D, et~al.
 \newblock Computer Methods in Applied Mechanics and Engineering, 1996,
   139\allowbreak (1-4): 3-47.
 
+\bibitem[{邓立克}\ 等(2019){邓立克}, {王东东}, {王家睿}, and
+  {吴俊超}]{邓立克2019薄板分析的线性基梯度光滑伽辽金无网格法}
+{邓立克}, {王东东}, {王家睿}, 等.
+\newblock
+  薄板分析的线性基梯度光滑伽辽金无网格法\allowbreak[J].
+\newblock 力学学报, 2019\allowbreak (3): 13.
+
 \bibitem[{陈嵩涛}\ 等(2020){陈嵩涛}, {段庆林}, and
   {马今伟}]{陈嵩涛2020几何非线性分析的高效高阶无网格法}
 {陈嵩涛}, {段庆林}, {马今伟}.
@@ -62,13 +69,6 @@ Belytschko T, Krongauz Y, Organ D, et~al.
 高欣, 段庆林, 李书卉, 等.
 \newblock {裂纹问题的一致性高阶无网格法}\allowbreak[J].
 \newblock 计算力学学报, 2018\allowbreak (3): 275-282.
-
-\bibitem[{邓立克}\ 等(2019){邓立克}, {王东东}, {王家睿}, and
-  {吴俊超}]{邓立克2019薄板分析的线性基梯度光滑伽辽金无网格法}
-{邓立克}, {王东东}, {王家睿}, 等.
-\newblock
-  薄板分析的线性基梯度光滑伽辽金无网格法\allowbreak[J].
-\newblock 力学学报, 2019\allowbreak (3): 13.
 
 \bibitem[Lucy(1977)]{1977A}
 Lucy L.
@@ -147,11 +147,11 @@ Melenk J~M, Babu{\v s}ka I.
 \newblock Computer Methods in Applied Mechanics and Engineering, 1996,
   139\allowbreak (1): 289-314.
 
-\bibitem[吴俊超\ 等()吴俊超, 邓俊俊, 王家睿, and
-  王东东]{WuJunChao}
+\bibitem[吴俊超\ 等(2016)吴俊超, 邓俊俊, 王家睿, and
+  王东东]{WuJunChao2016}
 吴俊超, 邓俊俊, 王家睿, 等.
 \newblock {伽辽金型无网格法的数值积分方法}\allowbreak[J].
-\newblock 固体力学学报, 37\allowbreak (3): 208-233.
+\newblock 固体力学学报, 2016, 37\allowbreak (3): 208-233.
 
 \bibitem[Wang et~al.(2016)Wang and Wu]{wang2016}
 Wang D, Wu J.
@@ -267,26 +267,23 @@ Wang L, Liu Y, Zhou Y, et~al.
   plates\allowbreak[J].
 \newblock Computational Mechanics, 2021, 68\allowbreak (4): 709-739.
 
-\bibitem[程玉民\ 等(Fri Nov 18 00:00:00 CST 2005)程玉民, 彭妙娟, and
+\bibitem[程玉民\ 等(2005)程玉民, 彭妙娟, and
   李九红]{ChengYuMin2005}
 程玉民, 彭妙娟, 李九红.
 \newblock {复变量移动最小二乘法及其应用}\allowbreak[J].
-\newblock 力学学报, Fri Nov 18 00:00:00 CST 2005, 37\allowbreak (6):
-  719-723.
+\newblock 力学学报, 2005, 37\allowbreak (6): 719-723.
 
-\bibitem[覃先云\ 等(Fri Oct 28 00:00:00 CST 2011)覃先云, 张见明,
-  李光耀, and 张正]{TanXianYun2011}
+\bibitem[覃先云\ 等(2011)覃先云, 张见明, 李光耀, and
+  张正]{TanXianYun2011}
 覃先云, 张见明, 李光耀, 等.
 \newblock {边界面法分析三维实体线弹性问题}\allowbreak[J].
-\newblock 固体力学学报, Fri Oct 28 00:00:00 CST 2011, 32\allowbreak (5):
-  500-506.
+\newblock 固体力学学报, 2011, 32\allowbreak (5): 500-506.
 
-\bibitem[廉艳平\ 等(Mon Mar 25 00:00:00 CST 2013)廉艳平, 张帆, 刘岩,
-  and 张雄]{LianYanPing2013}
+\bibitem[廉艳平\ 等(2013)廉艳平, 张帆, 刘岩, and
+  张雄]{LianYanPing2013}
 廉艳平, 张帆, 刘岩, 等.
 \newblock {物质点法的理论和应用}\allowbreak[J].
-\newblock 力学进展, Mon Mar 25 00:00:00 CST 2013, 43\allowbreak (2):
-  237-264.
+\newblock 力学进展, 2013, 43\allowbreak (2): 237-264.
 
 \bibitem[张雄\ 等(2017)张雄, 刘岩, 张帆, and
   陈镇鹏]{ZhangXiong2017}
@@ -296,12 +293,11 @@ Wang L, Liu Y, Zhou Y, et~al.
   problems}\allowbreak[J].
 \newblock 计算力学学报, 2017\allowbreak (1): 1-16.
 
-\bibitem[高效伟\ 等(Sat May 18 00:00:00 CST 2019)高效伟, 徐兵兵,
-  吕军, and 彭海峰]{GaoXiaoWei2019}
+\bibitem[高效伟\ 等(2019)高效伟, 徐兵兵, 吕军, and
+  彭海峰]{GaoXiaoWei2019}
 高效伟, 徐兵兵, 吕军, 等.
 \newblock {自由单元法及其在结构分析中的应用}\allowbreak[J].
-\newblock 力学学报, Sat May 18 00:00:00 CST 2019, 51\allowbreak (3):
-  703-713.
+\newblock 力学学报, 2019, 51\allowbreak (3): 703-713.
 
 \bibitem[Nguyen et~al.(2008)Nguyen, Rabczuk, Bordas, and Duflot]{nguyen2008}
 Nguyen V~P, Rabczuk T, Bordas S, et~al.
@@ -353,13 +349,12 @@ Rohit G, Prajapati J, Patel V.
 \newblock 配点型无网格法理论和研究进展\allowbreak[J].
 \newblock 力学季刊, 2021, 42\allowbreak (4): 20.
 
-\bibitem[刘宇翔\ 等(Mon Jun 28 00:00:00 CST 2021)刘宇翔, 王东东,
-  樊礼恒, 陈健, and 侯松阳]{LiuYuXiang2021}
+\bibitem[刘宇翔\ 等(2021)刘宇翔, 王东东, 樊礼恒, 陈健, and
+  侯松阳]{LiuYuXiang2021}
 刘宇翔, 王东东, 樊礼恒, 等.
 \newblock
   {基于卷积神经网络的无网格形函数影响域优化研究}\allowbreak[J].
-\newblock 固体力学学报, Mon Jun 28 00:00:00 CST 2021, 42\allowbreak (3):
-  302-319.
+\newblock 固体力学学报, 2021, 42\allowbreak (3): 302-319.
 
 \bibitem[{朱志辉}\ 等(2021){朱志辉}, {冯乾朔}, {肖权清},
   {罗思慧}, and {王凡}]{朱志辉2021基于}
@@ -381,13 +376,11 @@ Sriram V, Ma Q~W.
   {无网格动力分析的循环卷积神经网络代理模型}\allowbreak[J].
 \newblock 力学学报, 2022, 54\allowbreak (3): 732-745.
 
-\bibitem[李煜冬\ 等(Fri Feb 18 00:00:00 CST 2022)李煜冬, 傅卓佳, and
-  汤卓超]{LiYuDong2022}
+\bibitem[李煜冬\ 等(2022)李煜冬, 傅卓佳, and 汤卓超]{LiYuDong2022}
 李煜冬, 傅卓佳, 汤卓超.
 \newblock
   {功能梯度碳纳米管增强复合材料板弯曲和模态的广义有限差分法}\allowbreak[J].
-\newblock 力学学报, Fri Feb 18 00:00:00 CST 2022, 54\allowbreak (2):
-  414-424.
+\newblock 力学学报, 2022, 54\allowbreak (2): 414-424.
 
 \bibitem[Babu{\v s}ka et~al.(2008)Babu{\v s}ka, Banerjee, Osborn, and
   Li]{babuska2008}
