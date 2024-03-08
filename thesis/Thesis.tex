@@ -2,19 +2,19 @@
 %!TEX encoding = UTF-8 Unicode
 
 \documentclass[engineeringmaster]{hquThesis}
-\titleZh{论文中文题目}
-\titleEn{English Thesis Title}
+\titleZh{基于Hellinger-Reissner原理的变分一致型伽辽金无网格法}
+\titleEn{Variational consistent Galerkin meshless method based on the Hellinger-Reissner principle}
 \authorZh{吴新瑜}
 \authorEn{}
 \id{}
 \schoolZh{土木工程学院}
 \schoolEn{}
-\supervisorZh{}
+\supervisorZh{赵珧冰}
 \supervisorEn{}
-\cosupervisorZh{}
-\fieldZh{}
+\cosupervisorZh{吴俊超}
+\fieldZh{结构体系创新与应用}
 \fieldEn{}
-\major{}
+\major{土木水利}
 \coverdate{二〇二三年五月二十八日}
 
 
@@ -33,6 +33,7 @@
 此时的无网格离散方程可看作为一种新型的Nitsche法施加本质边界条件，其中修正变分项采用再生光滑梯度和无网格形函数进行混合离散，稳定项则内嵌于Hellinger-Reissner变分原理弱形式中，无需额外增加稳定项。
 最后，详细分析该方法的变分一致性，并详细对比所提方法和传统Nitsche法、罚函数法、拉格朗日乘子法之间的差别，并通过传统弹性力学问题和薄板问题验证所提方法的计算精度和效率。
 该方法消除了对人工参数的依赖性，也无需计算复杂耗时的形函数梯度，并满足积分约束条件，有效的提高计算精度和计算效率。
+
 \par
 \end{abstract}
 \keywords{无网格法；Hellinger-Reissner变分原理；本质边界条件；再生光滑梯度；变分一致性}
@@ -52,7 +53,7 @@
 \include{Boundaryconditions}
 \include{elasticHR}
 \include{plateHR}
-% \include{TADAS}
+\include{TADAS}
 \include{Conclusion}
 
 
@@ -62,40 +63,36 @@
 
 
 
-
 \setcounter{equation}{0}
 \renewcommand\theequation{A.\arabic{equation}}
-\addcontentsline{toc}{chapter}{附录A：弹性力学问题HR变分原理的本质边界条件施加方法推导过程}
-\appendix
 \renewcommand{\appendixname}{Appendix~\Alph{chapter}}
 \include{appendixA}
-\addcontentsline{toc}{chapter}{附录B：薄板问题HR变分原理的本质边界条件施加方法推导过程}
-\appendix
 \renewcommand{\appendixname}{Appendix~\Alph{chapter}}
 \include{appendixB}
-\addcontentsline{toc}{chapter}{附录C：无网格法优化的数值积分方案}
-\appendix
 \renewcommand{\appendixname}{Appendix~\Alph{chapter}}
 \include{appendixC}
 
 
 
-
-\addcontentsline{toc}{chapter}{参考文献}
-\renewcommand{\bibname}{参考文献}
-% \bibliographystyle{unsrt}
-\bibliographystyle{gbt7714-numerical}
-\bibliography{Introduction.bib}
+\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+\include{references}
 
 
+% \addcontentsline{toc}{chapter}{参考文献}
+% \renewcommand{\bibname}{参考文献}
+% \bibliographystyle{gbt7714-numerical}
+% \bibliography{Introduction.bib}
 
-\addcontentsline{toc}{chapter}{致谢}
+
+
+
 \appendix
 \renewcommand{\appendixname}{Appendix~\Alph{chapter}}
 \include{thanks}
 
-\addcontentsline{toc}{chapter}{作者攻读硕士学位期间的科研成果}
-\appendix
+
+
+
 \renewcommand{\appendixname}{Appendix~\Alph{chapter}}
 \include{paper}
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  6 MAR 2024 19:37
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  8 MAR 2024 10:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -800,8 +800,12 @@ LaTeX Warning: Label `Qefficiency' multiply defined.
 
 LaTeX Warning: Label `sub@Qefficiency' multiply defined.
 
-) (Conclusion.aux) (appendixA.aux) (appendixB.aux) (appendixC.aux) (thanks.aux)
-(paper.aux))
+) (TADAS.aux
+
+LaTeX Warning: Label `TADAS2' multiply defined.
+
+) (Conclusion.aux) (appendixA.aux) (appendixB.aux) (appendixC.aux)
+(references.aux) (thanks.aux) (paper.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -829,7 +833,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1487,10 +1490,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65])
 [66]
-\openout2 = `Conclusion.aux'.
+\openout2 = `TADAS.aux'.
 
- (Conclusion.tex
+ (TADAS.tex
 Chapter 6.
+File: figure/TADAS/1.png Graphic file (type bmp)
+<figure/TADAS/1.png>
+File: figure/TADAS/2.png Graphic file (type bmp)
+<figure/TADAS/2.png>
+File: figure/TADAS/3.png Graphic file (type bmp)
+<figure/TADAS/3.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1501,12 +1510,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ])
 [68]
+\openout2 = `Conclusion.aux'.
+
+ (Conclusion.tex
+Chapter 7.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69
+
+
+
+
+])
+[70]
 \openout2 = `appendixA.aux'.
 
  (appendixA.tex
 Underfull \vbox (badness 5637) has occurred while \output is active []
 
- [69
+ [71
 
 
 
@@ -1514,30 +1537,30 @@ Underfull \vbox (badness 5637) has occurred while \output is active []
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70])
-[71]
+ [72])
+[73]
 \openout2 = `appendixB.aux'.
 
- (appendixB.tex [72
+ (appendixB.tex [74
 
 
 
 
-] [73]
-Overfull \hbox (52.13057pt too wide) detected at line 37
+] [75]
+Overfull \hbox (52.13057pt too wide) detected at line 38
 []
  []
 
-[74]
-Overfull \hbox (34.9277pt too wide) detected at line 56
+[76]
+Overfull \hbox (34.9277pt too wide) detected at line 57
 []
  []
 
 
 Underfull \vbox (badness 3343) has occurred while \output is active []
 
- [75])
-[76]
+ [77])
+[78]
 \openout2 = `appendixC.aux'.
 
  (appendixC.tex
@@ -1549,34 +1572,42 @@ File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
 <figure/E/point2.png>
-) [77
+) [79
 
 
 
 
-] (Thesis.bbl [78
+]
+\openout2 = `references.aux'.
+
+ (references.tex (Thesis.bbl [80
 
 
 
-] [79] [80] [81] [82] [83] [84])
-[85]
+
+
+] [81] [82] [83]
+[84] [85] [86] [87])) [88]
 \openout2 = `thanks.aux'.
 
- (thanks.tex [86
+ (thanks.tex) [89
 
 
-]) [87]
+
+
+]
 \openout2 = `paper.aux'.
 
- (paper.tex [88
+ (paper.tex [90
 
 
 
 
-]) [89] (Thesis.aux (decision.aux)
-(declaration.aux) (Introduction.aux) (Nomesh.aux) (Boundaryconditions.aux)
-(elasticHR.aux) (plateHR.aux) (Conclusion.aux) (appendixA.aux) (appendixB.aux)
-(appendixC.aux) (thanks.aux) (paper.aux))
+]) [91] (Thesis.aux
+(decision.aux) (declaration.aux) (Introduction.aux) (Nomesh.aux)
+(Boundaryconditions.aux) (elasticHR.aux) (plateHR.aux) (TADAS.aux)
+(Conclusion.aux) (appendixA.aux) (appendixB.aux) (appendixC.aux)
+(references.aux) (thanks.aux) (paper.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1590,15 +1621,15 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E711FC614C104C2B5639957FCF7C8170;5739.
+(rerunfilecheck)             Checksum: 4B22DFBE17BC1CDEF2442A747D302393;5920.
  ) 
 Here is how much of TeX's memory you used:
- 20174 strings out of 410379
- 427724 string characters out of 5795143
- 1957432 words of memory out of 5000000
- 41050 multiletter control sequences out of 15000+600000
+ 20261 strings out of 410379
+ 429599 string characters out of 5795143
+ 1956432 words of memory out of 5000000
+ 41122 multiletter control sequences out of 15000+600000
  575723 words of font info for 190 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,34n,99p,575b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,34n,99p,575b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (101 pages).
+Output written on Thesis.pdf (103 pages).
