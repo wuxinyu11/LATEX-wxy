@@ -123,6 +123,16 @@
 \renewcommand{\chaptermark}[1]{
     \markboth{第\ \thechapter\ 章\ #1}{}
 }
+\renewcommand\appendix{\par
+    \setcounter{chapter}{0}
+    \gdef\thechapter{\Alph{chapter}}
+    \titleformat{\chapter}[block]{\centering\sffamily\bfseries\fontsize{16pt}{\baselineskip}\selectfont}{附录\ \Alph{chapter}}{16pt}{}
+    \fancyhf{}
+    \fancyfoot[C]{\rmfamily\fontsize{10.5pt}{\baselineskip}\selectfont \@arabic\thepage}
+    \fancyhead[CO]{\rmfamily\fontsize{10.5pt}{\baselineskip}\selectfont 附录\thechapter\ \rightmark}
+    \fancyhead[CE]{\rmfamily\fontsize{10.5pt}{\baselineskip}\selectfont 华侨大学\degree 学位论文}
+    \rmfamily\fontsize{12pt}{20pt}\selectfont
+}
 \renewcommand\figurename{图}
 \renewcommand\tablename{表}
 \DeclareCaptionFont{captionfont}{\rmfamily\fontsize{11pt}{\baselineskip}\selectfont}
@@ -163,14 +173,14 @@
     \setlength{\parindent}{24pt}
     \vspace*{24pt}\begin{center}\noindent\sffamily\fontsize{16pt}{\baselineskip}\selectfont 摘\hspace{16pt}要\end{center}\par\vspace{18pt}
     \indent\rmfamily\fontsize{12pt}{20pt}\selectfont
-}{\vspace{20pt}}
+}{\vspace{20pt}\par}
 
 \newenvironment{abstractEn}{
     \markboth{Abstract}{}
     \setlength{\parindent}{24pt}
     \vspace*{24pt}\begin{center}\noindent\sffamily\bfseries\fontsize{16pt}{\baselineskip}\selectfont Abstract\end{center}\par\vspace{18pt}
     \indent\rmfamily\fontsize{12pt}{20pt}\selectfont
-}{\vspace{20pt}}
+}{\vspace{20pt}\par}
 
 \newcommand\keywords[1]{
     \hangafter 1
@@ -220,7 +230,5 @@
 \titlespacing{\subsubsection}{0pt}{12pt}{6pt}
 \titleformat{\paragraph}[runin]{\rmfamily\fontsize{12pt}{20pt}\selectfont}{}{}{}
 \titlespacing{\paragraph}{0pt}{0pt}{0pt}
-
-
 
 

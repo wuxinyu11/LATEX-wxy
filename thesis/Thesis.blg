@@ -15,8 +15,6 @@ Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: elasticHR.aux
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 A level-1 auxiliary file: plateHR.aux
-Reallocating 'name_of_file' (item size: 1) to 10 items.
-A level-1 auxiliary file: TADAS.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: Conclusion.aux
 Reallocating 'name_of_file' (item size: 1) to 14 items.
@@ -47,10 +45,9 @@ Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Introduction.bib
-Warning--I didn't find a database entry for ""
 You've used 76 entries,
             5374 wiz_defined-function locations,
-            1494 strings with 20122 characters,
+            1493 strings with 20113 characters,
 and the built_in function-call counts, 443589 in all, are:
 = -- 12559
 > -- 47887
@@ -89,4 +86,3 @@ warning$ -- 0
 while$ -- 1792
 width$ -- 0
 write$ -- 1106
-(There was 1 warning)

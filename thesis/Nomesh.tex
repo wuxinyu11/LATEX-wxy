@@ -35,7 +35,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
     0&r>1
 \end{cases}
 \end{equation}\par
-针对薄板和薄壳问题，无网格基函数一般选择三阶或四阶多项式基函数，核函数$\phi_s(\pmb{x}_I-\pmb{x})$取为五次样条函数：
+针对薄板问题，无网格基函数一般选择三阶或四阶多项式基函数，核函数$\phi_s(\pmb{x}_I-\pmb{x})$取为五次样条函数：
 \begin{equation}
         \varphi(r)=\frac{1}{5!}
 \begin{cases}
@@ -47,11 +47,11 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
 \end{equation}\par
 最后，无网格形函数表达式(\ref{shapefunction})中$\pmb{c}$为待定系数向量，该待定系数通过满足下列一致性条件确定：
 \begin{equation}\label{regeneration conditions}
-    \sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\pmb{p}(\pmb{x}_I-\pmb{x})=\pmb{0}
+    \sum_{I=1}^{N\!P}\Psi_I(\pmb{x})\pmb{p}^{[p]}(\pmb{x}_I-\pmb{x})=\pmb{0}
 \end{equation}
 将式(\ref{shapefunction})代入到式(\ref{regeneration conditions})中即可得到待定系数向量$\pmb{c}(\pmb{x})$的具体表达式：
 \begin{equation}\label{c}
-    \pmb{c}(\pmb{x})=\pmb{A}^{-1}(\pmb{x})\pmb{p}(\pmb{0})
+    \pmb{c}(\pmb{x})=\pmb{A}^{-1}(\pmb{x})\pmb{p}^{[p]}(\pmb{0})
 \end{equation}
 式中$\pmb{A}$为矩量矩阵：
 \begin{equation}
@@ -68,7 +68,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
     +&\pmb p^{[p]T}(\pmb x_I-\pmb x)\pmb A_{,i}^{-1}\phi_s(\pmb x_I-\pmb x)\\
     +&\pmb p^{[p]T}(\pmb x_I-\pmb x)\pmb A^{-1}(\pmb x)\phi _{s,i}(\pmb x_I-\pmb x)\\
     \end{aligned} \right)
-    \pmb p(\pmb 0)
+    \pmb p^{[p]}(\pmb 0)
 \end{equation}
 其中，下标“$,i$”表示对坐标$x_i$求导。进一步对上式再求一次导数可得形函数的二阶梯度为：
 \begin{equation}
@@ -83,7 +83,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
     +\pmb p_{,j}^{[p]T}(\pmb x_I-\pmb x)\pmb A^{-1}(\pmb x)\phi_{s,i}(\pmb x_I-\pmb x)\\
     +\pmb p^{[p]T}(\pmb x_I-\pmb x)\pmb A_{,j}^{-1}(\pmb x)\phi_{s,i}(\pmb x_I-\pmb x)\\
    \end{aligned} \right)
-    \pmb p(\pmb 0)
+    \pmb p^{[p]}(\pmb 0)
 \end{equation}
 式中$\pmb A_{,i}^{-1}=-\pmb A^{-1}\pmb A_{,i}\pmb A^{-1},\pmb A_{,ij}^{-1}=-\pmb A^{-1}(\pmb A_{,ij}\pmb A^{-1}+\pmb A_{,i}\pmb A_{,j}^{-1}+\pmb A_{,j}\pmb A_{,i}^{-1})$。\par
 \begin{figure}
@@ -136,7 +136,7 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
 \end{tabular}
 \caption{\textbf{二维边界点无网格形函数及其导数图}}\label{gradient2}
 \end{figure}
-图(\ref{gradient1})、(\ref{gradient2})中分别为内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)=\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
+图(\ref{gradient1})、(\ref{gradient2})中分别为内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)\ne\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
 \section{伽辽金无网格法}
 \subsection{弹性力学问题}
 不失为一般性，弹性力学问题的平衡微分方程为：
@@ -172,7 +172,7 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
 \begin{equation}\label{displacement vector}
     u^h_{i}(\pmb x) = \sum_{I=1}^{N\!P}\Psi_I(\pmb x) d_{iI}, \quad \delta u^h_{i}(\pmb x) = \sum_{I=1}^{N\!P}\Psi_I(\pmb x) \delta d_{iI}
 \end{equation}
-式中$d_{iI}$、$\delta d_{iI}$分别为近似位移分量$u^h_i$、$\delta u^h_i$在$\pmb x_I$处的节点系数。进一步将位移表达式\ref{displacement vector}代入应变表达式\ref{CH2-strain}中可得：
+式中$d_{iI}$、$\delta d_{iI}$分别为近似位移分量$u^h_i$、$\delta u^h_i$在$\pmb x_I$处的节点系数。进一步将位移表达式(\ref{displacement vector})代入应变表达式(\ref{CH2-strain})中可得：
 \begin{equation}\label{strainh}
 \varepsilon^h_{ij} = \sum_{I=1}^{N\!P} (\Psi_{I,i}d_{jI}+\Psi_{I,j}d_{iI})
 \end{equation}
@@ -288,7 +288,7 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
     \label{PKf2}f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{x\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
 \end{align}
 \end{subequations}
-式中$\pmb{D}$为式\ref{Dplanestress}中的材料系数矩阵，$\pmb{B}_I$为形函数梯度向量，其形函数梯度矩阵具有如下表达式：
+式中$\pmb{D}$为式(\ref{Dplanestress})中的材料系数矩阵，$\pmb{B}_I$为形函数梯度向量，其形函数梯度矩阵具有如下表达式：
 \begin{equation}
 \pmb{B}_I(\pmb{x})= \begin{Bmatrix}\Psi_{I,xx}\\\Psi_{I,yy}\\2\Psi_{I,xy}\end{Bmatrix} 
 \end{equation}

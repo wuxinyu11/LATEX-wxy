@@ -76,12 +76,14 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
  \pmb{a}_{ij}=C_{ijkl}\pmb{G}^{-1}(\sum_{I=1}^{N\!P}(\tilde{g}_{iI}-\bar{g}_{iI})d_{iI}+\hat{g}_{iI})
 \end{equation}
 其中
+\begin{subequations}
 \begin{align}
     \label{g1}&\pmb{G}=\int_{\Omega_C}\pmb{p}^{[p-1]}\pmb{p}^{[p-1]T}d\Omega\\
     \label{g2} &\tilde{\pmb g}_{iI}=\int_{\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_id\Gamma-\int_{\Omega_C}\pmb{p}_{,i}^{[p-1]}\Psi_{I}(\pmb{x})d\Omega\\
     \label{g3} &\bar{\pmb g}_{iI}=\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}\Psi_I(\pmb{x})n_id\Gamma\\
    \label{g4} &\hat{\pmb g}_{iI}=\int_{\Gamma^g\cap\partial\Omega_C}\pmb{p}^{[p-1]}n_jg_id\Gamma
-\end{align}\par
+\end{align}
+\end{subequations}\par
 将常系数向量$\pmb{a}_{ij}$的表达式(\ref{aij})代入到式(\ref{CH4-sigma})中，
 同时根据线弹性本构关系式(\ref{constitutive relation})和小变形假设(\ref{CH2-strain})
 可以得到Hellinger-Reissner变分原理弱形式中的近似应力分量$\sigma^h_{ij}$，其具体表达式为：
@@ -104,7 +106,7 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 \begin{equation}\label{case3}
     \hat{\varepsilon}_{ij}(\pmb{x})=\frac{1}{2}\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}(\hat{\pmb g}_{ij}+\hat{\pmb g}_{ji})
 \end{equation} \par
-值得注意的是，式中$\tilde{\Psi}_{I,i}$即为再生光滑梯度。根据再生光滑梯度理论框架，可以直接通过无网格形函数显式构造再生光滑梯度，从而避免了传统无网格形函数导数的复杂计算，提高了梯度计算效率。并且再生光滑梯度
+值得注意的是，式中$\tilde{\Psi}_{I,i}$即为再生光滑梯度\textsuperscript{\cite{wang2019}}。根据再生光滑梯度理论框架，可以直接通过无网格形函数显式构造再生光滑梯度，从而避免了传统无网格形函数导数的复杂计算，提高了梯度计算效率。并且再生光滑梯度
 内嵌局部积分约束条件$\tilde{\pmb g}_{iI}$，从而保证算法的计算精度和误差收敛性。这意味着通过构造再生光滑梯度，可以确保在进行全域积分时满足积分约束条件，从而得到准确的结果，并保证算法的计算精度和误差收敛性。反之，Hellinger-Reissner变分原理的混合离散框架也完备了再生光滑梯度法的变分理论基础。\par
 \section{Hellinger-Reissner变分原理下的本质边界条件施加方法}
 基于Hellinger-Reissner变分原理得到的弱形式(\ref{weak form1})中的积分项包括了在本质边界条件下的位移和应力的约束项，以及在自然边界条件下的外力和强制位移项。
@@ -347,7 +349,7 @@ $\pmb N$为法向量矩阵，其表达式为：
     \includegraphics[scale=0.7]{figure/EHR/cantilever/cantilever.png}
     \caption{悬臂梁问题模型}\label{cantilever}
 \end{figure}
-如图(\ref{cantilever})所示，悬臂梁的左端施加自然边界条件$\Gamma^t$，右端施加强制边界条件$\Gamma^g$。
+如图(\ref{cantilever})所示，悬臂梁的左端施加自然边界条件$\Gamma^t$，右端施加本质边界条件$\Gamma^g$。
 悬臂梁求解域分别通过图(\ref{cantilever.mesh})所示采用四个疏密不同的节点进行离散。对于采用二次基函数的悬臂梁算例问题，传统高斯积分法采用13点高斯积分，核函数的相对影响域为2.5。
 \begin{figure}[H]
     \centering
@@ -358,10 +360,10 @@ $\pmb N$为法向量矩阵，其表达式为：
 并且由于传统高斯积分法和采用再生光滑梯度积分法的罚函数法“RKGSI-Penalty”和拉格朗日乘子法“RKGSI-LM”不具有变分一致性，无法达到理论误差收敛率，而基于Hellinger-Reissner变分原理下的本质边界条件施加方法“RKGSI-HR”和Nitshce法“RKGSI-Nitsche”均可达到理论误差收敛率，但相较于“RKGSI-Nitsche”法，所提出的“RKGSI-HR”法无需引入人工参数。
 \par
 图(\ref{ECcputime})为悬臂梁问题的节点数和计算时间的效率对比和本质边界条件施加效率对比图。从整体来看采用再生光滑梯度积分法“RKGSI”的计算效率明显高于传统高斯积分法“GI”。
-图(\ref{ECefficiency})为悬臂梁问题的本质边界条件施加效率分析图。该图为施加强制边界$\Gamma^g$过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量所用时间对比图。
+图(\ref{ECefficiency})为悬臂梁问题的本质边界条件施加效率分析图。该图为施加本质边界$\Gamma^g$过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量所用时间对比图。
 从图中可以看出，罚函数法和拉格朗日乘子法在计算形函数及其梯度所用的时间相同且所用时间最少，这是由于罚函数法和拉格朗日乘子法在计算过程中只需要计算无网格形函数本身，无需计算无网格形函数梯度，
-而“RKGSI-HR”法也无需计算无网格形函数梯度，但需要计算再生光滑梯度，“RKGSI-Nitshe”法这部分所用的时间是罚函数法和拉格朗日乘子法的5.6倍，而“RKGSI-HR”法是1.6倍，“RKGSI-HR”法的计算效率高于“RKGSI-Nitshce”法。
-组装相应的刚度矩阵和力向量这部分所用的时间上，“RKGSI-Nitshe”法和“RKGSI-HR”法计算效率基本相同。
+而“RKGSI-HR”法也无需计算无网格形函数梯度，但需要计算再生光滑梯度，“RKGSI-Nitsche”法这部分所用的时间是罚函数法和拉格朗日乘子法的5.6倍，而“RKGSI-HR”法是1.6倍，“RKGSI-HR”法的计算效率高于“RKGSI-Nitsche”法。
+组装相应的刚度矩阵和力向量这部分所用的时间上，“RKGSI-Nitsche”法和“RKGSI-HR”法计算效率基本相同。
 从整体上来看，拉格朗日乘子法和罚函数法的效率优于“HR”法和“Nitsche”法，但拉格朗日乘子法和罚函数法不具有变分一致性无法达到理论误差收敛率。
 因此，总体来说，相较于传统的本质边界条件施加方法，基于Hellinger-Reissner变分原理的本质边界条件施加方法“RKGSI-HR”能够达到理论误差收敛率，有效提高计算精度，相较于“RKGSI-Nitsche”法而言计算效率也更高。
 \begin{figure}[H]
@@ -399,7 +401,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 其中，$k$和$\mu$分别为：
 \begin{equation}
 \begin{split}
-    k=\frac{3-\nu}{1+\nu}\quad \text{、}\mu=\frac{E}{2(1+\nu)}
+    k=\frac{3-\nu}{1+\nu}\quad \text{，}\mu=\frac{E}{2(1+\nu)}
 \end{split}
 \end{equation}
 与之相对应的应力分量为：
@@ -413,7 +415,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 \end{split}
 \end{equation}\par
 如图(\ref{hole})所示，根据带孔无限大平板的对称性，取边长$b=5$的四分之一的方形域作为研究对象。
-方形域的上端和右端以及圆孔的边界施加自然边界条件$\Gamma^t$，而方形域的左端和下端约束法向位移，施加强制边界条件$\Gamma^g$。
+方形域的上端和右端以及圆孔的边界施加自然边界条件$\Gamma^t$，而方形域的左端和下端约束法向位移，施加本质边界条件$\Gamma^g$。
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{figure/EHR/hole/hole.png}
@@ -426,12 +428,12 @@ $\pmb N$为法向量矩阵，其表达式为：
  \includegraphics[scale=0.7]{figure/EHR/hole/hole.mesh.png}
    \caption{带孔无限大平板问题无网格离散}\label{hole.mesh}
 \end{figure}
-图(\ref{EHLH}为带孔无限大平板问题的位移和能量误差对比图。
-从图中可以看出传统高斯积分法由于不具有变分一致性，导致“GI-Penalty”法、“GI-LM”法、“GI-Nistche”法均无法达到理论误差收敛率。
+图(\ref{EHLH})为带孔无限大平板问题的位移和能量误差对比图。
+从图中可以看出传统高斯积分法由于不具有变分一致性，导致“GI-Penalty”法、“GI-LM”法、“GI-Nitsche”法均无法达到理论误差收敛率。
 基于Hellinger-Reissner变分原理的本质边界条件施加方法“RKGSI-HR”和“RKGSI-Nitsche”法满足变分一致性能够达到理论误差收敛率。
-虽然“RKGSI-LM”法无法通过分片实验不满足变分一致性，但由于拉格朗日乘子法法具有较高的精度也能达到理论误差收敛率。
+虽然“RKGSI-LM”法无法通过分片实验不满足变分一致性，但由于拉格朗日乘子法具有较高的精度也能达到理论误差收敛率。
 图(\ref{Hcputime})、(\ref{Hefficiency})为带孔无限大平板问题的效率对比图。
-从图中可以看出随着无网格节点数的增加，采用再生光滑梯度积分法“RKGSI”的效率明显高于传统高斯积分法“GI”,在施加强制边界条件的过程中，“HR”法不仅满足变分一致性同时计算效率还高于传统的“Nitsche”法。
+从图中可以看出随着无网格节点数的增加，采用再生光滑梯度积分法“RKGSI”的效率明显高于传统高斯积分法“GI”,在施加本质边界条件的过程中，“HR”法不仅满足变分一致性同时计算效率还高于传统的“Nitsche”法。
 最后，图(\ref{sigmaxx})为带孔无限大平板问题的应力云图，从图中可以看出“RKGSI-Penalty”法和精确解之间是有差异的，
 而“RKGSI-Nitsche”法和“RKGSI-HR”法是和精确解几乎相同。但“Nitsche”法是需要依靠人工经验参数并且计算效率也低于“HR”法。
 \newpage
@@ -458,7 +460,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 \end{figure} 
 \section{小结}
 本章介绍了一种基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解弹性力学问题。该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的位移和应力，实现了满足积分约束条件的一种本质边界条件施加方法。
-具体来说，该方法在离散平衡方程中，采用传统无网格形函数对位移进行离散，而将应力在每个背景积分单元上近似为对应阶次的多项式。在Hellinger-Reissner分原理的框架下，该方法的离散平衡方程具有类似传统Nitsche法的格式，可以视为再生光滑梯度积分法的一种新型Nitsche法。
+具体来说，该方法在离散平衡方程中，采用传统无网格形函数对位移进行离散，而将应力在每个背景积分域上近似为对应阶次的多项式。在Hellinger-Reissner变分原理的框架下，该方法的离散平衡方程具有类似传统Nitsche法的格式，可以视为再生光滑梯度积分法的一种新型Nitsche法。
 相较于传统Nitsche法，该方法的修正变分项采用了无网格形函数和再生光滑梯度的混合离散，从而在确保变分一致性的同时避免了复杂且耗时的形函数导数计算，明显提高了计算效率。
 与此同时该方法中的稳定项直接源于Hellinger-Reissner变分原理的弱形式，无需额外增加稳定项，并且稳定项中不包含任何人工参数。
 这有效消除了传统Nitsche法中人工参数依赖性的问题。

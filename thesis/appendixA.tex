@@ -1,10 +1,10 @@
-\chapter*{附录A：弹性力学问题HR变分原理的本质边界条件施加方法推导过程}\label{A}
-\addcontentsline{toc}{chapter}{附录A：弹性力学问题HR变分原理的本质边界条件施加方法推导过程}
+\chapter{弹性力学问题HR变分原理的本质边界条件施加方法推导过程}\label{A}
+% \addcontentsline{toc}{chapter}{附录A：弹性力学问题HR变分原理的本质边界条件施加方法推导过程}
 通过引入式(\ref{g1})、(\ref{case1})对式(\ref{inference})中的第一项进行推导得到：
 \begin{equation}\label{CH4-K}
 \begin{split}
-    &\sum_{C=1}^{N\!C}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}
-=\sum_{C=1}^{N\!C}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\pmb{G}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}\\
+    &\sum_{C=1}^{N\!C}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}\\
+&=\sum_{C=1}^{N\!C}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\pmb{G}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}\\
 &=\sum_{C=1}^{N\!C}\int_{\Omega_C}\tilde{\pmb g}_{jI}^T\pmb{G}^{-1}\pmb{p}^{[p-1]}(\pmb x)C_{ijkl}\pmb{p}^{[p-1]T}(\pmb{x})\pmb{G}^{-1}\tilde{\pmb g}_{kJ}d\Omega\\
 &=\sum_{C=1}^{N\!C}\int_{\Omega_C}\tilde{\Psi}_{I,j}C_{ijkl}\tilde{\Psi}_{I,k}d\Omega\\
 &=\sum_{C=1}^{N\!C}\int_{\Omega_C}\delta\tilde{\varepsilon}_{ij}^hC_{ijkl}\tilde{\varepsilon}_{kl}^hd\Omega\\
@@ -12,6 +12,7 @@
 &=\pmb{K}
 \end{split}
 \end{equation}
+\newpage
 通过引入式(\ref{g3})、(\ref{case1})、(\ref{CH4-ui})对式(\ref{inference})中的第二、三项进行推导得到：
 \begin{equation}\label{CH4-tildeK}
 \begin{split}
@@ -36,6 +37,7 @@
     &=\bar{\pmb{K}}
 \end{split}
 \end{equation}
+\newpage
 通过引入式(\ref{g4})、(\ref{case1})对式(\ref{inference})中的第五项进行推导得到：
 \begin{equation}\label{CH4-tildef}
 \begin{split}

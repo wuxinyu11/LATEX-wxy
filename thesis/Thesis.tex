@@ -6,7 +6,7 @@
 \titleEn{Variational consistent Galerkin meshless method based on the Hellinger-Reissner principle}
 \authorZh{吴新瑜}
 \authorEn{}
-\id{}
+\id{21014086095}
 \schoolZh{土木工程学院}
 \schoolEn{}
 \supervisorZh{赵珧冰}
@@ -14,8 +14,9 @@
 \cosupervisorZh{吴俊超}
 \fieldZh{结构体系创新与应用}
 \fieldEn{}
-\major{土木水利}
-\coverdate{二〇二三年五月二十八日}
+\major{全日制专业学位硕士}
+
+\coverdate{二〇二四年三月十六日}
 
 
 
@@ -38,9 +39,17 @@
 \end{abstract}
 \keywords{无网格法；Hellinger-Reissner变分原理；本质边界条件；再生光滑梯度；变分一致性}
 \begin{abstractEn}
-    hjrfjhfj\par
+    Meshless methods are a class of methods that directly construct shape functions based on discrete node information. These shape functions possess high-order smoothness characteristics, making them suitable for high-order problems such as thin plates.
+The paper discusses the Galerkin meshless method with variational consistency. Currently, the Galerkin meshless method with variational consistency is mainly achieved by assuming strain theory to construct matching smooth gradients. The regenerative smooth gradient theory provides a universal expression for the smooth gradient of the assumed strain and directly replaces the smooth gradient with the gradient of traditional meshless shape functions in the Galerkin weak form.
+However, the smooth gradient is not equivalent to the gradient of traditional meshless shape functions, and this process lacks a complete theoretical foundation based on variational principles. In order to achieve global variational consistency, meshless numerical integration schemes that satisfy the integral constraint need to be combined with essential boundary condition enforcement schemes that have variational consistency. Existing methods for enforcing essential boundary conditions still have several issues, highlighting the urgent need for the development of a novel variational-consistent essential boundary condition enforcement scheme.
+\par
+Firstly, by deriving the complementary energy functional based on the Hellinger-Reissner variational principle, the weak form of the Hellinger-Reissner principle can be obtained through separate variations of displacement and stress. In this approach, the displacement is discretized using traditional meshless shape functions, while the stress is assumed to be polynomial within each integration domain to satisfy local variational consistency.
+Subsequently, based on the embedded essential boundary condition characteristics in the weak form of the Hellinger-Reissner variational principle, the discrete control equations for enforcing essential boundary conditions are systematically derived using the weak form of the Hellinger-Reissner variational principle as a foundation.
+The meshless discretization equations at this stage can be regarded as a novel form of enforcing essential boundary conditions, resembling a Nitsche method. In this approach, the modified variational term is discretized using a combination of regenerative smooth gradients and meshless shape functions, while the stabilization term is embedded within the weak form of the Hellinger-Reissner variational principle, eliminating the need for additional stabilization terms.
+Finally, the variational consistency of this method is analyzed in detail. A comprehensive comparison is made between the proposed method and traditional Nitsche method, penalty function method, and Lagrange multiplier method, highlighting the differences between them. The proposed method is then validated for computational accuracy and efficiency through traditional elasticity problems and thin plate problems.
+This method eliminates the reliance on artificial parameters and avoids the computation of complex and time-consuming shape function gradients. It also satisfies integral constraint conditions, effectively enhancing both computational accuracy and efficiency.
 \end{abstractEn}
-\keywordsEn{keyword1;keyword2;keyword3;keyword3}
+\keywordsEn{Meshless method;Hellinger-Reissner variational principle;essential boundary condition;regenerative smooth gradient;variational consistency}
 \tableofcontents
 
 
@@ -53,28 +62,24 @@
 \include{Boundaryconditions}
 \include{elasticHR}
 \include{plateHR}
-\include{TADAS}
+% % \include{TADAS}
 \include{Conclusion}
 
-
-% \include{1}
-
-
-
-
-
+\appendix
 \setcounter{equation}{0}
 \renewcommand\theequation{A.\arabic{equation}}
 \renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+
 \include{appendixA}
-\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+\renewcommand\theequation{B.\arabic{equation}}
 \include{appendixB}
-\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
 \include{appendixC}
 
 
 
-\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+
+
+
 \include{references}
 
 
@@ -86,8 +91,7 @@
 
 
 
-\appendix
-\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
+
 \include{thanks}
 
 

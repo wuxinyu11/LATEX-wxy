@@ -81,7 +81,7 @@
     f_I^{\lambda_c}&=-N_I^{\lambda_c}\bar{w}\vert_{c\in c_w}
 \end{align}
 \end{subequations}\par
-拉格朗日乘子法在数值计算中广泛应用，特别适用于处理约束条件，在伽辽金无网格法求解过程中应用广泛，可满足变分的一致性[]。
+拉格朗日乘子法在数值计算中广泛应用，特别适用于处理约束条件，在伽辽金无网格法求解过程中应用广泛，可满足变分的一致性。
 然而，拉格朗日乘子法需引入额外自由度离散拉格朗日乘子，其刚度矩阵也变成了奇异矩阵。当拉格朗日乘子自由度过多时，将增加整体刚度矩阵的奇异性，导致计算精度下降。尤其在薄板问题中通常涉及大量的自由度和约束条件，刚度矩阵奇异性问题更为显著。
 \section{罚函数法}
 罚函数法\textsuperscript{\cite{zhu1998}}是在势能泛函中通过引入罚函数项进行本质边界条件的施加，罚函数项为罚因子$\alpha$乘以边界条件残差的平方。在弹性力学问题势能泛函表达式(\ref{elasticity potential functional})中引入罚函数项有：
@@ -252,7 +252,7 @@ Nitsche法\textsuperscript{\cite{fernandez-mendez2004}}是目前变分一致型�
 \begin{equation}
     (\pmb{K}+\pmb{K}^v+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^v+\pmb{f}^s
 \end{equation}
-其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{PKf})。$\pmb{K}^s$和$\pmb{f}^s$的表达式与罚函数法式(\ref{PKFs})相同，该项使得伽辽金弱形式(\ref{Pitsche weakform})满足正定性条件，稳定求解精度，故称之为\textbf{稳定项}。$\pmb{K}^v$和$\pmb{f}^v$可使伽辽金弱形式整体满足变分一致性，故称之为\textbf{一致项}，一致项的具体表达式如下：
+其中刚度矩阵$\pmb{K}$和力向量$\pmb{f}$见式(\ref{PKf})。$\pmb{K}^s$和$\pmb{f}^s$的表达式与罚函数法式(\ref{PKFs})相同，该项使得伽辽金弱形式(\ref{Pitsche weakform})满足正定性条件，稳定求解精度，故称之为\textbf{稳定项}。$\pmb{K}^v$和$\pmb{f}^v$可使伽辽金弱形式整体满足变分一致性，故称之为\textbf{修正变分项}，修正变分项的具体表达式如下：
 \begin{subequations}\label{Pkv}
 \begin{align}
  K^v_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\Psi_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\Psi_{J,\alpha\beta}]]_{x\in{c_w}}\nonumber\\
@@ -262,7 +262,7 @@ Nitsche法\textsuperscript{\cite{fernandez-mendez2004}}是目前变分一致型�
 \end{subequations}
 \par
 值得注意的是，Nische法作为目前伽辽金无网格法常采用的满足变分一致性的本质边界条件施加方法，但Nistche法的稳定项中包含罚因子，选择不当的罚因子可能会导致数值不稳定性，
-同时修正变分项中需要计算无网格形函数梯度，特别是薄板问题Nitche法中的一致项需要原本不需要计算的形函数三阶导数。形函数高阶导数计算复杂耗时，将引起计算效率的降低。
+同时修正变分项中需要计算无网格形函数梯度，特别是薄板问题Nitsche法中的修正变分项需要原本不需要计算的形函数三阶导数。形函数高阶导数计算复杂耗时，将引起计算效率的降低。
 \section{小结}
 本章介绍了3种伽辽金无网格法本质边界条件施加方法，包括拉格朗日乘子法、罚函数法和Nitsche法，并对这些方法的特点进行了总结。
 首先是拉格朗日乘子法，拉格朗日乘子法通过引入拉格朗日乘子来处理本质边界条件，满足刚度矩阵的对称性和变分一致性。然而，该方法需引入额外自由度离散拉格朗日乘子，当自由度过多时，可能导致整体刚度矩阵的奇异性增加。
