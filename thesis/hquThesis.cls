@@ -101,7 +101,7 @@
             \textsf{指导教师：} \underline{\makebox[182pt]{\textrm{\textbf{\@supervisorZh}}}}\par
             \textsf{合作教师：} \underline{\makebox[182pt]{\textrm{\textbf{\@cosupervisorZh}}}}\par
             \ifisengineer
-                \textsf{专业学位类别：} \underline{\makebox[154pt]{\textrm{\textbf{\@major}}}}\par
+                % \textsf{专业学位类别：} \underline{\makebox[154pt]{\textrm{\textbf{\@major}}}}\par
                 \textsf{专业学位领域：} \underline{\makebox[154pt]{\textrm{\textbf{\@major}}}}\par
             \else
                 \textsf{学\hspace{28pt}科：} \underline{\makebox[182pt]{\textrm{\textbf{\@major}}}}\par

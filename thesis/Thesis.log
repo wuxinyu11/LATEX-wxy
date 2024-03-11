@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  10 MAR 2024 16:52
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  11 MAR 2024 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -800,6 +800,7 @@ LaTeX Warning: Label `Qefficiency' multiply defined.
 
 LaTeX Warning: Label `sub@Qefficiency' multiply defined.
 
+) (TADAS.aux
 
 LaTeX Warning: Label `TADAS2' multiply defined.
 
@@ -1472,55 +1473,73 @@ File: figure/PHR/A/alpha.png Graphic file (type bmp)
  [64]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
+ [65])
+[66]
+\openout2 = `TADAS.aux'.
+
+ (TADAS.tex
+Chapter 6.
 File: figure/TADAS/1.png Graphic file (type bmp)
 <figure/TADAS/1.png>
-
-[66]
 File: figure/TADAS/2.png Graphic file (type bmp)
 <figure/TADAS/2.png>
 File: figure/TADAS/3.png Graphic file (type bmp)
 <figure/TADAS/3.png>
-) [67]
-\openout2 = `Conclusion.aux'.
-
- (Conclusion.tex [68
-
-
-
-
-]
-Chapter 6.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69])
-[70]
-\openout2 = `appendixA.aux'.
-
- (appendixA.tex
-Chapter A.
-[71
-
-
-
-
-] [72]) [73]
-\openout2 = `appendixB.aux'.
-
- (appendixB.tex [74
+ [67
 
 
 
 
 ]
-Chapter B.
-[75]
+File: figure/TADAS/4.png Graphic file (type bmp)
+<figure/TADAS/4.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68])
+[69]
+\openout2 = `Conclusion.aux'.
+
+ (Conclusion.tex [70
+
+
+
+
+]
+Chapter 7.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71])
+[72]
+\openout2 = `appendixA.aux'.
+
+ (appendixA.tex
+Appendix A.
+[73
+
+
+
+
+] [74]) [75]
+\openout2 = `appendixB.aux'.
+
+ (appendixB.tex [76
+
+
+
+
+]
+Appendix B.
+[77]
 Overfull \hbox (52.13057pt too wide) detected at line 38
 []
  []
 
-[76]
+[78]
 Overfull \hbox (34.9277pt too wide) detected at line 57
 []
  []
@@ -1528,12 +1547,12 @@ Overfull \hbox (34.9277pt too wide) detected at line 57
 
 Underfull \vbox (badness 3343) has occurred while \output is active []
 
- [77])
-[78]
+ [79])
+[80]
 \openout2 = `appendixC.aux'.
 
  (appendixC.tex
-Chapter C.
+Appendix C.
 File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
@@ -1542,7 +1561,7 @@ File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
 <figure/E/point2.png>
-) [79
+) [81
 
 
 
@@ -1550,16 +1569,16 @@ File: figure/E/point2.png Graphic file (type bmp)
 ]
 \openout2 = `references.aux'.
 
- (references.tex (Thesis.bbl [80
+ (references.tex (Thesis.bbl [82
 
 
 
 
-] [81] [82] [83] [84] [85] [86] [87]))
-[88]
+] [83] [84] [85] [86] [87])) [88]
 \openout2 = `thanks.aux'.
 
- (thanks.tex) [89
+
+(thanks.tex) [89
 
 
 
@@ -1574,8 +1593,8 @@ File: figure/E/point2.png Graphic file (type bmp)
 
 ]) [91] (Thesis.aux (decision.aux)
 (declaration.aux) (Introduction.aux) (Nomesh.aux) (Boundaryconditions.aux)
-(elasticHR.aux) (plateHR.aux) (Conclusion.aux) (appendixA.aux) (appendixB.aux)
-(appendixC.aux) (references.aux) (thanks.aux) (paper.aux))
+(elasticHR.aux) (plateHR.aux) (TADAS.aux) (Conclusion.aux) (appendixA.aux)
+(appendixB.aux) (appendixC.aux) (references.aux) (thanks.aux) (paper.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1589,15 +1608,15 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7F5593700FBB951C4B1D07BAC0528049;5740.
+(rerunfilecheck)             Checksum: 0E5FF5B6231314458A50A1E5FFA6B09E;5908.
  ) 
 Here is how much of TeX's memory you used:
- 20235 strings out of 410379
- 429073 string characters out of 5795143
+ 20306 strings out of 410379
+ 431880 string characters out of 5795143
  1956432 words of memory out of 5000000
- 41103 multiletter control sequences out of 15000+600000
- 575723 words of font info for 190 fonts, out of 8000000 for 9000
+ 41162 multiletter control sequences out of 15000+600000
+ 575763 words of font info for 195 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,34n,99p,729b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,34n,99p,729b,787s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Thesis.pdf (103 pages).
