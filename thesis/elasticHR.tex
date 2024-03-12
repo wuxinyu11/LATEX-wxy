@@ -144,7 +144,7 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
     &=\delta\pmb{d}^T(\pmb K+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}-\delta\pmb{d}^T(\tilde{\pmb f}+\bar{\pmb f})
 \end{split}
 \end{equation}
-式中的最后一个等式通过引入式(\ref{g1})-(\ref{case2})进行化简得到，具体详细的推导过程可参考\nameref{A}。
+式中的最后一个等式通过引入式(\ref{g1})-(\ref{case2})进行化简得到，具体详细的推导过程可参考附录A弹性力学问题HR变分原理的本质边界条件施加方法推导过程。
 根据式(\ref{1})和(\ref{inference})代入到式(\ref{CH4-1})中可得到Hellinger-Reissner变分原理下的弹性力学问题离散控制方程：
 \begin{equation}\label{equationE}
     (\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{d}=\pmb{f}+\tilde{\pmb{f}}+\bar{\pmb{f}}
@@ -196,7 +196,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 基于Hellinger-Reissner变分原理的本质边界条件施加方法中，再生光滑梯度的构造过程需要计算积分点处的无网格形函数，此时为了减少形函数的计算量提高计算效率，采用无网格再生核光滑梯度积分法。
 无网格再生核光滑梯度积分法利用积分点在背景积分单元间的共享特性，优化整体求解数值过程中积分点的数量，从而提高计算效率。
 再生核光滑梯度积分法通过在背景积分单元上选择合适的积分点分布，使得积分点在不同单元之间共享，减少需要计算的积分点数量，进而保证计算精度的前提下进一步提高计算效率，
-具体的数值积分方案见\nameref{C}。
+具体的数值积分方案见附录C无网格法优化的数值积分方案。
 % \newpage
 % \begin{table}[H]
 % \caption{\textbf{无网格法优化的数值积分方案——二次梯度}}
