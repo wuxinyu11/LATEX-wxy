@@ -118,7 +118,7 @@ M^h_{\alpha\beta}(\pmb{x})&=\pmb{p}^{[p-2]T}(\pmb{x})\pmb a_{\alpha\beta}\\
  \label{PTPSI}&\tilde{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\tilde{\pmb g}_{\alpha\beta I}\\
  \label{PBPSI}&\bar{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\bar{\pmb g}_{\alpha\beta I}
 \end{align}\par
-此时，弯矩分量表达式中的$\tilde{\Psi}_{I,\alpha\beta}$是根据再生光滑梯度理论\textsuperscript{\cite{wang2019}}构造的二阶再生光滑梯度。
+此时，弯矩分量表达式中的$\tilde{\Psi}_{I,\alpha\beta}$是根据再生光滑梯度理论\cite{wang2019}构造的二阶再生光滑梯度。
 根据再生光滑梯度理论框架，直接通过无网格形函数显式构造再生光滑梯度，可以避免传统无网格形函数梯度的复杂计算从而提高梯度计算效率。
 $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法内嵌的局部积分约束条件，在求解高阶薄板问题时可以保证算法的计算精度和误差收敛性。
 表示在求解薄板问题时，可以通过构造再生光滑梯度，保证误差收敛性提高计算精度。
@@ -338,11 +338,11 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Qcputime.png}
-    \phantomcaption\label{Qcputime}
+    \phantomcaption\label{PHRRQcputime}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Qefficiency.png}
-    \phantomcaption\label{Qefficiency}
+    \phantomcaption\label{PHRRQefficiency}
     \end{subcaptiongroup}
-\caption{简支方板问题四次基函数效率对比：\subref{Qcputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
+\caption{简支方板问题四次基函数效率对比：\subref{PHRRQcputime}计算时间与节点数的关系；\subref{PHRRQefficiency}本质边界条件施加效率分析}
 \label{RQcputime}
 \end{figure}
 图(\ref{Ralpha})是分别验证简支方板问题在三次基函数和四次基函数时带有人工经验参数的罚函数法和Nitsche法的敏感度分析。
@@ -388,42 +388,42 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 % 虽然“RKGSI-HR”和“RKGSI-Penalty”的计算效率相差不大，但“RKGSI-Penalty”由于不具有变分一致性无法达到理论误差收敛率。
 % 因此相较于传统的本质边界条件施加方法，“RKGSI-HR”不仅满足积分约束条件能够达到理论误差收敛率，提高计算精度，在计算时间上也用时较短，有效提高计算效率。
 图(\ref{TMxy})为简支等边三角形板问题的弯矩云图。从图中可以看出“RKGSI-HR”、“RKGSI-Nitsche”和“RKGSI-Penalty”和精确解之间几乎一致，进一步验证了所提方法能够有效提高计算精度。
-\begin{figure}[H]
+\begin{figure}[!ht]
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CL2.png}
-    \phantomcaption\label{CL2}
+    \phantomcaption\label{PHRTCL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH1.png}
-    \phantomcaption\label{CH1}
+    \phantomcaption\label{PHRTCH1}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH2.png}
-    \phantomcaption\label{CH2}
+    \phantomcaption\label{PHRTCH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH3.png}
-    \phantomcaption\label{CH3}
+    \phantomcaption\label{PHRTCH3}
     \end{subcaptiongroup}
-\caption{简支等边三角形板问题三次基函数误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差；\subref{CH2}$H_2$误差；\subref{CH3} $H_3$误差}
+\caption{简支等边三角形板问题三次基函数误差对比：\subref{PHRTCL2} $L_2$误差；\subref{PHRTCH1} $H_1$误差；\subref{PHRTCH2}$H_2$误差；\subref{PHRTCH3} $H_3$误差}
 \label{TCLH}
 \end{figure}
 \newpage
-\begin{figure}[H]
+\begin{figure}[!ht]
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QL2.png}
-    \phantomcaption\label{QL2}
+    \phantomcaption\label{PHRTQL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH1.png}
-    \phantomcaption\label{QH1}
+    \phantomcaption\label{PHRTQH1}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH2.png}
-    \phantomcaption\label{QH2}
+    \phantomcaption\label{PHRTQH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH3.png}
-    \phantomcaption\label{QH3}
+    \phantomcaption\label{PHRTQH3}
     \end{subcaptiongroup}
-\caption{简支等边三角形板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$误差；\subref{QH2}$H_2$误差；\subref{QH3} $H_3$误差}
+\caption{简支等边三角形板问题四次基函数误差对比：\subref{PHRTQL2} $L_2$误差；\subref{PHRTQH1} $H_1$误差；\subref{PHRTQH2}$H_2$误差；\subref{PHRTQH3} $H_3$误差}
 \label{TQLH}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[!ht]
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/Cefficiencyomega.png}
@@ -472,17 +472,17 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QL2.png}
-    \phantomcaption\label{QL2}
+    \phantomcaption\label{PHRAQL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH1.png}
-    \phantomcaption\label{QH1}
+    \phantomcaption\label{PHRAQH1}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH2.png}
-    \phantomcaption\label{QH2}
+    \phantomcaption\label{PHRAQH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH3.png}
-    \phantomcaption\label{QH3}
+    \phantomcaption\label{PHRAQH3}
     \end{subcaptiongroup}
-\caption{简支环行板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$误差；\subref{QH2}$H_2$误差；\subref{QH3} $H_3$误差}
+\caption{简支环行板问题四次基函数误差对比：\subref{PHRAQL2} $L_2$误差；\subref{PHRAQH1} $H_1$误差；\subref{PHRAQH2}$H_2$误差；\subref{PHRAQH3} $H_3$误差}
 \label{AQLH}
 \end{figure}
 \newpage
@@ -507,36 +507,7 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=1.0]{figure/PHR/A/alpha.png}
     \caption{简支环形板问题人工参数敏感性分析}\label{Aalpha}
 \end{figure}
-% \subsection{TADAS阻尼器}
-% 在建筑和工程结构中，振动是一个常见的问题，其可能会导致结构的疲劳破坏等问题，传统方法中通过采用增加结构的刚度或使用液体阻尼器、摩擦阻尼器减小结构的振动响应，然而在传统方法中或多或少的存在有效性不高，经济适用性低等问题。
-% 为了克服传统方法的限制，三角板减振刚度阻尼器被引入(TADAS)，TADAS阻尼器是一种基于能量耗散原理的被动控制装置，通过在结构中引入附加的阻尼力来吸收和耗散结构的振动能量，能够有效地减小结构地的振动幅值和振动周期，从而显著改善结构的振动响应，
-% 并且TADAS阻尼器的设计相对简单，通常由一块或多块金属材料制成，安装简易、价格低廉，是一种在结构工程中广泛应用于减震和控制结构的被动控制装置。\par
-% 图(\ref{TADAS1})为一个带有TADAS阻尼器的实验装置\textsuperscript{\cite{mohammadi2017,kim2016}}，为常在道路、住房和城市中心建造的一层框架大比例模型，
-% 该框架高3米，跨度4米，框架柱采用标准的双IPE180型钢材，梁的工字截面由三块4000*200*12mm的钢板连续焊接而成。支撑体系统一采用双100*100*20mm角度，柱基座使用销连接。
-% 如图(\ref{TADAS2})所示，TADAS阻尼器中的三角形板的上端设为简支固定，下端施加$P=100000$的力。三角形钢板的材料系数为杨氏模量$E=2\times 10^{11}$、泊松比$\nu=0.3$。
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[scale=0.4]{figure/TADAS/1.png}
-%     \caption{实验装置示意图}\label{TADAS1}
-% \end{figure}
-% \newpage
-% \begin{figure}[H]
-%     \centering
-%     \begin{subcaptiongroup}
-%             \includegraphics[width=0.69\textwidth]{figure/TADAS/2.png}
-%             \phantomcaption\label{TADAS2}
-%             \includegraphics[width=0.29\textwidth]{figure/TADAS/3.png}
-%             \phantomcaption\label{TADAS3}
-%             \end{subcaptiongroup}
-%         \caption{TADAS阻尼器示意图：\subref{TADAS2} 钢板焊接TADAS装置详图；\subref{TADAS3} 三角形钢板横截面图}
-%     \label{TADAS2}
-% \end{figure}
-% 图(\ref{TADAS4})为弯矩云图。
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[scale=0.7]{figure/TADAS/4.png}
-%     \caption{TADAS阻尼器弯矩云图}\label{TADAS4}
-% \end{figure}
+
 \section{小结}
 本章进一步介绍了基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解薄板问题。
 该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。

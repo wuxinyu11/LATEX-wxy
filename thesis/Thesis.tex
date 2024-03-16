@@ -1,60 +1,33 @@
 %! TEX program = xelatex
-%!TEX encoding = UTF-8 Unicode
+%! TEX encoding = UTF-8 Unicode
 
 \documentclass[engineeringmaster]{hquThesis}
-\titleZh{基于Hellinger-Reissner原理的变分一致型伽辽金无网格法}
-\titleEn{Variational consistent Galerkin meshless method based on the Hellinger-Reissner principle}
-\authorZh{吴新瑜}
-\authorEn{}
-\id{21014086095}
-\schoolZh{土木工程学院}
-\schoolEn{}
-\supervisorZh{赵珧冰教授}
-\supervisorEn{}
-\cosupervisorZh{吴俊超讲师}
-\fieldZh{结构体系创新与工程应用}
-\fieldEn{}
-\major{全日制专业学位硕士}
 
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{booktabs,multirow,tabularx,float}
+
+\titleZh{基于赫林格-赖斯纳原理的变分一致型伽辽金无网格法}
+\titleEn{Variational consistent Galerkin meshfree method based on the Hellinger-Reissner principle}
+\id{21014086095}
+\authorZh{吴新瑜}
+\supervisorZh{赵珧冰}{教授}
+\cosupervisorZh{吴俊超}{讲师}
+\practicevisorZh{陈连健}{工程师}
+\departmentZh{土木工程学院}
+\fieldZh{结构体系创新与工程应用}
+\majortype{全日制专业学位硕士}
+\major{土木水利}
 \coverdate{二〇二四年三月XX日}
 
-
-
 \begin{document}
+
 \makecover
+
 \frontmatter
-\begin{abstract}
-无网格法是一类根据离散节点信息直接建立形函数的方法，其形函数具有高阶光滑的特点，适用于薄板等高阶问题。
-本论文讨论的是具有变分一致性的伽辽金无网格法，目前具有变分一致性的伽辽金无网格法主要是通过假定应变理论构造匹配的光滑梯度，
-再生光滑梯度理论框架为假定应变的光滑梯度提供了一个通用的表达式，并在伽辽金弱形式中直接将光滑梯度替换成传统无网格形函数梯度。
-但光滑梯度并不等于传统无网格形函数梯度，该过程缺乏完备的变分原理理论基础。为了满足全域的变分一致性，满足积分约束条件的无网格数值积分方案需要配合具有变分一致性的本质边界条件施加方案，
-现有的本质边界条件施加方法还存在诸多问题，亟待发展一种全新变分一致本质边界条件施加方案。\par
-首先，基于Hellinger-Reissner变分原理推导余能泛函，分别对位移和应力变分可以得到Hellinger-Reissner原理弱形式。其中位移采用传统无网格形函数进行离散，而应力采用在每个积分域中假设为多项式，以满足局部的变分一致性。
-随后，根据Hellinger-Reissner变分原理弱形式中内嵌本质边界条件的特点，以Hellinger-Reissner变分原理弱形式为基础系统推导本质边界条件施加过程中的离散控制方程。
-此时的无网格离散方程可看作为一种新型的Nitsche法施加本质边界条件，其中修正变分项采用无网格形函数和再生光滑梯度进行混合离散，稳定项则内嵌于Hellinger-Reissner变分原理弱形式中，无需额外增加稳定项。
-最后，详细分析该方法的变分一致性，并详细对比所提方法和传统Nitsche法、罚函数法、拉格朗日乘子法之间的差别，并通过传统弹性力学问题和薄板问题验证所提方法的计算精度和效率。
-该方法消除了对人工参数的依赖性，也无需计算复杂耗时的形函数梯度，并满足积分约束条件，有效的提高计算精度和计算效率。
 
-\par
-\end{abstract}
-\keywords{无网格法；Hellinger-Reissner变分原理；本质边界条件；再生光滑梯度；变分一致性}
-\begin{abstractEn}
-    Meshless methods are a class of methods that directly construct shape functions based on discrete node information. These shape functions possess high-order smoothness characteristics, making them suitable for high-order problems such as thin plates.
-The paper discusses the Galerkin meshless method with variational consistency. Currently, the Galerkin meshless method with variational consistency is mainly achieved by assuming strain theory to construct matching smooth gradients. The regenerative smooth gradient theory provides a universal expression for the smooth gradient of the assumed strain and directly replaces the smooth gradient with the gradient of traditional meshless shape functions in the Galerkin weak form.
-However, the smooth gradient is not equivalent to the gradient of traditional meshless shape functions, and this process lacks a complete theoretical foundation based on variational principles. In order to achieve global variational consistency, meshless numerical integration schemes that satisfy the integral constraint need to be combined with essential boundary condition enforcement schemes that have variational consistency. Existing methods for enforcing essential boundary conditions still have several issues, highlighting the urgent need for the development of a novel variational-consistent essential boundary condition enforcement scheme.
-\par
-Firstly, by deriving the complementary energy functional based on the Hellinger-Reissner variational principle, the weak form of the Hellinger-Reissner principle can be obtained through separate variations of displacement and stress. In this approach, the displacement is discretized using traditional meshless shape functions, while the stress is assumed to be polynomial within each integration domain to satisfy local variational consistency.
-Subsequently, based on the embedded essential boundary condition characteristics in the weak form of the Hellinger-Reissner variational principle, the discrete control equations for enforcing essential boundary conditions are systematically derived using the weak form of the Hellinger-Reissner variational principle as a foundation.
-The meshless discretization equations at this stage can be regarded as a novel form of enforcing essential boundary conditions, resembling a Nitsche method. In this approach, the modified variational term is discretized using a combination of regenerative smooth gradients and meshless shape functions, while the stabilization term is embedded within the weak form of the Hellinger-Reissner variational principle, eliminating the need for additional stabilization terms.
-Finally, the variational consistency of this method is analyzed in detail. A comprehensive comparison is made between the proposed method and traditional Nitsche method, penalty function method, and Lagrange multiplier method, highlighting the differences between them. The proposed method is then validated for computational accuracy and efficiency through traditional elasticity problems and thin plate problems.
-This method eliminates the reliance on artificial parameters and avoids the computation of complex and time-consuming shape function gradients. It also satisfies integral constraint conditions, effectively enhancing both computational accuracy and efficiency.
-\end{abstractEn}
-\keywordsEn{Meshless method;Hellinger-Reissner variational principle;essential boundary condition;regenerative smooth gradient;variational consistency}
+\include{abstract}
+
 \tableofcontents
-
-
-
-
 
 \mainmatter
 \include{Introduction}
@@ -65,27 +38,18 @@ This method eliminates the reliance on artificial parameters and avoids the comp
 \include{TADAS}
 \include{Conclusion}
 
+\bibliography{references}
 
-\begin{appendices}
+\include{acknowledgments}
+
 \appendix
-\setcounter{equation}{0}
-\renewcommand\theequation{A.\arabic{equation}}
+
 \include{appendixA}
-\renewcommand\theequation{B.\arabic{equation}}
 \include{appendixB}
 \include{appendixC}
-\end{appendices}
 
+\backmatter
 
-
-\include{references}
-
-\include{thanks}
-
-
-
-
-\renewcommand{\appendixname}{Appendix~\Alph{chapter}}
-\include{paper}
+\include{cv}
 
 \end{document}
