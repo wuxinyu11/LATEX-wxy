@@ -4,23 +4,23 @@
 \section{Hellinger-Reissner变分原理}
 根据最小余能原理，薄板问题强形式(\ref{P control equation})所对应的余能泛函表达式为：
 \begin{equation}
-\Pi_C(M_{\alpha\beta})=\int_{\Omega}\frac{1}{2}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}\bar{\theta}_nd\Gamma-p\bar{w}\vert_{x\in{c_w}}
+\Pi_C(M_{\alpha\beta})=\int_{\Omega}\frac{1}{2}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}\bar{\theta}_nd\Gamma-p\bar{w}\vert_{\bf{x}\in{c_w}}
 \end{equation}
 与弹性力学问题类似，薄板问题的Hellinger-Reissner变分原理余能泛函具有挠度和弯矩两个变量，四阶薄板问题控制方程式(\ref{P control equation})对应的余能泛函表达式为：
 \begin{equation}\label{pfanhan}
 \begin{split}
     \Pi_{H\!R}(M_{\alpha\beta},w)&=\Pi_C(M_{\alpha\beta})+\int_{\Omega}w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega\\
     &+\int_{\Gamma_M}w_{,\pmb n}(M_{\pmb{nn}}-\bar{M}_{\pmb{nn}})d\Gamma
-    -\int_{\Gamma_V}w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-w(P-\bar{P})\vert_{x\in{c_P}}
+    -\int_{\Gamma_V}w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-w(P-\bar{P})\vert_{\bf{x}\in{c_P}}
 \end{split}
 \end{equation}
 式(\ref{pfanhan})分别对$M_{\alpha\beta}$和$w$进行变分得到薄板问题Hellinger-Reissner变分原理的伽辽金弱形式：
 \begin{equation}\label{Pweakfrom}
 \begin{split}
-    \delta\Pi_{H\!R}(M_{\alpha\beta,w})=&\delta\Pi_C(M_{\alpha\beta})\\
-    &+\int_{\Omega}\delta M_{\alpha\beta,\alpha\beta}wd\Omega+\int_{\Gamma_M}\delta M_{\pmb{nn}}w_{,\pmb n}d\Gamma-\int_{\Gamma_V}\delta V_{\pmb n}wd\Gamma-\delta Pw\vert_{x\in{c_P}}\\
+    \delta\Pi_{H\!R}(M_{\alpha\beta},w)=&\delta\Pi_C(M_{\alpha\beta})\\
+    &+\int_{\Omega}\delta M_{\alpha\beta,\alpha\beta}wd\Omega+\int_{\Gamma_M}\delta M_{\pmb{nn}}w_{,\pmb n}d\Gamma-\int_{\Gamma_V}\delta V_{\pmb n}wd\Gamma-\delta Pw\vert_{\bf{x}\in{c_P}}\\
     &+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega+\int_{\Gamma_M}\delta w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma\\
-    &-\int_{\Gamma_V}\delta w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-\delta w(P-\bar{P})\vert_{x\in{c_P}}\\
+    &-\int_{\Gamma_V}\delta w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-\delta w(P-\bar{P})\vert_{\bf{x}\in{c_P}}\\
     &=0
 \end{split}
 \end{equation}\par
@@ -98,11 +98,11 @@ Hellinger-Reissner变分原理薄板弱形式中的挠度和弯矩采用混合�
 \begin{align}
 \label{PG}\pmb{G}&=\int_{\Omega_C}\pmb{p}^{[p-2]}\pmb{p}^{[p-2]T}d\Omega\\
 \label{Pg1}\tilde{\pmb g}_{\alpha\beta I}&=\int_{\Gamma_C}\Psi_{I,n}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}d\Gamma-\int_{\Gamma_C}\Psi_I(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma \nonumber\\
-&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{x\in c_C}+\int_{\Omega_C}\Psi_I\pmb{p}^{[p-2]}_{,\alpha\beta}d\Omega\\
+&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\bf{x}\in c_C}+\int_{\Omega_C}\Psi_I\pmb{p}^{[p-2]}_{,\alpha\beta}d\Omega\\
 \label{Pg2}\bar{\pmb g}_{\alpha\beta I}&=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}d\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma\nonumber\\
-&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}\\
+&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\bf{x}\in{c_w}\cap{c_C}}\\
 \label{Pg3}\hat{\pmb g}_{\alpha\beta I}&=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}\bar{\theta}_nd\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})\bar{w}d\Gamma\nonumber\\
-&+[[\bar{w}\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{x\in{c_w}\cap{c_C}}
+&+[[\bar{w}\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\bf{x}\in{c_w}\cap{c_C}}
 \end{align}
 \end{subequations}
 式中$\Gamma_C$是$\Omega_C$的边界，此时将$\pmb{a}_{\alpha\beta}$代入到式(\ref{moment})中得到近似的弯矩分量$M^h_{\alpha\beta}(\pmb{x})$的表达式：
@@ -118,7 +118,7 @@ M^h_{\alpha\beta}(\pmb{x})&=\pmb{p}^{[p-2]T}(\pmb{x})\pmb a_{\alpha\beta}\\
  \label{PTPSI}&\tilde{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\tilde{\pmb g}_{\alpha\beta I}\\
  \label{PBPSI}&\bar{\Psi}_{I,\alpha\beta}=\pmb{p}^{[p-2]T}(\pmb x)\pmb G^{-1}\bar{\pmb g}_{\alpha\beta I}
 \end{align}\par
-此时，弯矩分量表达式中的$\tilde{\Psi}_{I,\alpha\beta}$是根据再生光滑梯度理论\cite{wang2019}构造的二阶再生光滑梯度。
+此时，弯矩分量表达式中的$\tilde{\Psi}_{I,\alpha\beta}$是根据再生光滑梯度理论\textsuperscript{\cite{wang2019}}构造的二阶再生光滑梯度。
 根据再生光滑梯度理论框架，直接通过无网格形函数显式构造再生光滑梯度，可以避免传统无网格形函数梯度的复杂计算从而提高梯度计算效率。
 $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法内嵌的局部积分约束条件，在求解高阶薄板问题时可以保证算法的计算精度和误差收敛性。
 表示在求解薄板问题时，可以通过构造再生光滑梯度，保证误差收敛性提高计算精度。
@@ -133,12 +133,12 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 首先，将挠度离散表达式(\ref{w})和弯矩离散表达式(\ref{moment})代入到弱形式(\ref{Pweakform2})中得到：
 \begin{equation}\label{CH5-1}
 \begin{split}
-    &\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma-\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma+\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{x\in c}\\
+    &\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma-\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma+\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{\bf{x}\in c}\\
     &-\int_{\Omega}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\pmb{a}^T_{\alpha\beta,\alpha\beta}\pmb{p}^{[p-2]}d\Omega-\int_{\Gamma_w}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma\\
     &+\int_{\Gamma_{\theta}}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma
-    -\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{x\in c_w}\\
+    -\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{\bf{x}\in c_w}\\
     &=\sum_{I=1}^{N\!P}\int_{\Gamma_V}\Psi_I\delta{d_I}\bar{V}_{\pmb n}d\Gamma-\sum_{I=1}^{N\!P}\int_{\Gamma_M}\Psi_{I,n}\delta{d_I}\bar{M}_{\pmb{nn}}d\Gamma
-    +\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\bar{P}\vert_{x\in{c_P}}+\sum_{I=1}^{N\!P}\int_{\Omega}\Psi_I\delta{d_I}\bar{q}d\Omega
+    +\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\bar{P}\vert_{\bf{x}\in{c_P}}+\sum_{I=1}^{N\!P}\int_{\Omega}\Psi_I\delta{d_I}\bar{q}d\Omega
 \end{split}
 \end{equation}
 其次引入式(\ref{MVP1})并根据薄板问题线弹性本构关系式(\ref{Malphabeta})将上式改写为：
@@ -170,28 +170,28 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 其中刚度矩阵$\pmb K$、$\tilde{\pmb K}$和$\bar{\pmb K}$，力向量$\pmb f$、$\tilde{\pmb f}$和$\bar{\pmb f}$的具体表达式如下：
 \begin{subequations}\label{PHR1}
 \begin{align}
-K_{IJ}&=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega \\
-f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{x\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
+    \label{PHR11}K_{IJ}&=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega \\
+    \label{PHR12}f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{\bf{x}\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
 \end{align}
 \end{subequations}
 \begin{subequations}\label{PHR2}
 \begin{align}
-  \tilde{K}_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{x\in{c_w}}\nonumber\\
-    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}} \\
-    \tilde{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}
+    \label{PHR21} \tilde{K}_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{\bf{x}\in{c_w}}\nonumber\\
+    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{\bf{x}\in{c_w}} \\
+    \label{PHR22}   \tilde{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{\bf{x}\in{c_w}}
 \end{align}
 \end{subequations}
 \begin{subequations}\label{PHR3}
 \begin{align}
-    \bar{K}_{IJ}&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
-    \bar{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}
+    \label{PHR31}   \bar{K}_{IJ}&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{\bf{x}\in{c_w}}\\
+    \label{PHR32}  \bar{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{\bf{x}\in{c_w}}
 \end{align}
 \end{subequations}
 \par
 Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2})中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和常用于解决薄板问题的满足变分一致性的本质边界条件施加方案Nitsche法(\ref{Pkv})中的$K_{IJ}^n$、$f_I^n$相比，具有相类似的表达式，
 同样都满足变分一致性，不同的是在Hellinger-Reissner变分原理离散过程中，用再生光滑梯度$\tilde{\Psi}_{I,\alpha\beta}$替换传统无网格形函数梯度$\Psi_{I,\alpha\beta}$，使得该方法无需计算复杂耗时的无网格形函数梯度，在处理薄板问题时有效提高计算效率。
 同样，基于Hellinger-Reissner变分原理的特点，薄板的离散控制方程式(\ref{PHR3})中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$中已经内嵌，相较于Nistche法(\ref{PKFs})中的稳定项$K^s_{IJ}$、$f^s_I$而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
-同样，根据Hellinger-Reissner变分原理在求解薄板问题过程中也用到了优化的数值积分方案见\nameref{C}。
+同样，根据Hellinger-Reissner变分原理在求解薄板问题过程中也用到了优化的数值积分方案见附录C无网格法优化的数值积分方案。
 \section{数值算例}
 \subsection{分片实验}
 关于薄板问题，采用二次、三次和四次高阶薄板分片实验验证采用传统高斯积分法和再生光滑梯度积分法的不同本质边界条件施加方法是否和二阶弹性力学问题相同
@@ -212,11 +212,11 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
     \includegraphics[scale=0.7]{figure/PHR/fenpian.png}
     \caption{分片实验无网格离散模型}\label{fenpian}
 \end{figure}
-为了更好的对比所提方法的计算精度，针对四阶薄板问题分别采用如下位移误差$L_2-\text{Error}$和能量误差$H_i-\text{Error}$进行分析：
+为了更好的对比所提方法的计算精度，针对四阶薄板问题分别采用如下位移误差$L_2\mbox{-}\text{Error}$和能量误差$H_i\mbox{-}\text{Error}$进行分析：
 \begin{equation}
 \begin{split}
-    &L_2-\text{Error}=\frac{\sqrt{\int_{\Omega}(w-w^h)^2d\Omega}}{\sqrt{\int_{\Omega}w^2d\Omega}}\\
-    &H_i-\text{Error}=\frac{\sum_{j=0}^{i}\sqrt{\int_{\Omega}(w_{,\alpha_1\dotsb \alpha_j}-w_{,\alpha_1\dotsb \alpha_j})^2}d\Omega}{\sum_{j=0}^{i}\sqrt{\int_{\Omega}w_{,\alpha_1\dotsb \alpha_j}w_{,\alpha_1\dotsb \alpha_j}d\Omega}}
+    &L_2\mbox{-}\text{Error}=\frac{\sqrt{\int_{\Omega}(w-w^h)^2d\Omega}}{\sqrt{\int_{\Omega}w^2d\Omega}}\\
+    &H_i\mbox{-}\text{Error}=\frac{\sum_{j=0}^{i}\sqrt{\int_{\Omega}(w_{,\alpha_1\dotsb \alpha_j}-w_{,\alpha_1\dotsb \alpha_j})^2}d\Omega}{\sum_{j=0}^{i}\sqrt{\int_{\Omega}w_{,\alpha_1\dotsb \alpha_j}w_{,\alpha_1\dotsb \alpha_j}d\Omega}}
 \end{split}
 \end{equation}\par
 针对薄板问题，三次基函数的求解计算时高斯积分法“GI”的求解域$\Omega$的积分采用13点高斯积分，边界$\Gamma$积分采用3点高斯积分；
@@ -273,14 +273,14 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
 \newpage
 \begin{figure}[H]
 \centering
-    \includegraphics[scale=0.7]{figure/PHR/R/rectangular.png}
+    \includegraphics[scale=0.8]{figure/PHR/R/rectangular.png}
     \caption{简支方板问题模型}\label{rectangular}
 \end{figure}
 如图所示(\ref{rectangularmsh})，简支方板求解域采用均布的$11\times 11$、$21\times 21$、$41\times 41$、$81\times 81$的四个疏密不同的节点进行离散。
 此时对于采用三次基函数的简支方板问题其相对影响域取为3.5，采用四次基函数时其相对影响域则取为4.5。\par
 \begin{figure}[H]
 \centering
-      \includegraphics[scale=0.4]{figure/PHR/R/rectangularmsh.png}
+      \includegraphics[scale=0.5]{figure/PHR/R/rectangularmsh.png}
     \caption{简支方板问题节点离散}\label{rectangularmsh}
 \end{figure}
 \newpage
@@ -291,17 +291,17 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/CL2.png}
-    \phantomcaption\label{CL2}
+    \phantomcaption\label{RCL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH1.png}
-    \phantomcaption\label{CH1}
+    \phantomcaption\label{RCH1}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH2.png}
-    \phantomcaption\label{CH2}
+    \phantomcaption\label{RCH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/CH3.png}
-    \phantomcaption\label{CH3}
+    \phantomcaption\label{RCH3}
     \end{subcaptiongroup}
-\caption{简支方板问题三次基函数误差对比：\subref{CL2} $L_2$误差；\subref{CH1} $H_1$误差；\subref{CH2}$H_2$误差；\subref{CH3} $H_3$误差}
+\caption{\centering{简支方板问题三次基函数误差对比：\\\subref{RCL2} $L_2$误差；\subref{RCH1} $H_1$误差；\subref{RCH2}$H_2$误差；\subref{RCH3} $H_3$误差}}
 \label{RCLH}
 \end{figure}
 \newpage
@@ -309,17 +309,17 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QL2.png}
-    \phantomcaption\label{QL2}
+    \phantomcaption\label{RQL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH1.png}
-    \phantomcaption\label{QH1}
+    \phantomcaption\label{RQH1}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH2.png}
-    \phantomcaption\label{QH2}
+    \phantomcaption\label{RQH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/QH3.png}
-    \phantomcaption\label{QH3}
+    \phantomcaption\label{RQH3}
     \end{subcaptiongroup}
-\caption{简支方板问题四次基函数误差对比：\subref{QL2} $L_2$误差；\subref{QH1} $H_1$误差；\subref{QH2}$H_2$误差；\subref{QH3} $H_3$误差}
+\caption{\centering{简支方板问题四次基函数误差对比：\\\subref{RQL2} $L_2$误差；\subref{RQH1} $H_1$误差；\subref{RQH2}$H_2$误差；\subref{RQH3} $H_3$误差}}
 \label{RQLH}
 \end{figure}
 \begin{figure}[H]
@@ -330,7 +330,7 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Cefficiency.png}
     \phantomcaption\label{Cefficiency}
     \end{subcaptiongroup}
-\caption{简支方板问题三次基函数效率对比：\subref{Ccputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
+\caption{\centering{简支方板问题三次基函数效率对比：\\\subref{Ccputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}}
 \label{RCcputime}
 \end{figure}
 \newpage
@@ -338,11 +338,11 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Qcputime.png}
-    \phantomcaption\label{PHRRQcputime}
+    \phantomcaption\label{Qcputime}
     \includegraphics[width=0.49\textwidth]{figure/PHR/R/Qefficiency.png}
-    \phantomcaption\label{PHRRQefficiency}
+    \phantomcaption\label{Qefficiency}
     \end{subcaptiongroup}
-\caption{简支方板问题四次基函数效率对比：\subref{PHRRQcputime}计算时间与节点数的关系；\subref{PHRRQefficiency}本质边界条件施加效率分析}
+\caption{\centering{简支方板问题四次基函数效率对比：\\\subref{Qcputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}}
 \label{RQcputime}
 \end{figure}
 图(\ref{Ralpha})是分别验证简支方板问题在三次基函数和四次基函数时带有人工经验参数的罚函数法和Nitsche法的敏感度分析。
@@ -388,42 +388,42 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 % 虽然“RKGSI-HR”和“RKGSI-Penalty”的计算效率相差不大，但“RKGSI-Penalty”由于不具有变分一致性无法达到理论误差收敛率。
 % 因此相较于传统的本质边界条件施加方法，“RKGSI-HR”不仅满足积分约束条件能够达到理论误差收敛率，提高计算精度，在计算时间上也用时较短，有效提高计算效率。
 图(\ref{TMxy})为简支等边三角形板问题的弯矩云图。从图中可以看出“RKGSI-HR”、“RKGSI-Nitsche”和“RKGSI-Penalty”和精确解之间几乎一致，进一步验证了所提方法能够有效提高计算精度。
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CL2.png}
-    \phantomcaption\label{PHRTCL2}
+    \phantomcaption\label{TCL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH1.png}
-    \phantomcaption\label{PHRTCH1}
+    \phantomcaption\label{TCH1}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH2.png}
-    \phantomcaption\label{PHRTCH2}
+    \phantomcaption\label{TCH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/CH3.png}
-    \phantomcaption\label{PHRTCH3}
+    \phantomcaption\label{TCH3}
     \end{subcaptiongroup}
-\caption{简支等边三角形板问题三次基函数误差对比：\subref{PHRTCL2} $L_2$误差；\subref{PHRTCH1} $H_1$误差；\subref{PHRTCH2}$H_2$误差；\subref{PHRTCH3} $H_3$误差}
+\caption{\centering{简支等边三角形板问题三次基函数误差对比：\\\subref{TCL2} $L_2$误差；\subref{TCH1} $H_1$误差；\subref{TCH2}$H_2$误差；\subref{TCH3} $H_3$误差}}
 \label{TCLH}
 \end{figure}
 \newpage
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QL2.png}
-    \phantomcaption\label{PHRTQL2}
+    \phantomcaption\label{TQL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH1.png}
-    \phantomcaption\label{PHRTQH1}
+    \phantomcaption\label{TQH1}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH2.png}
-    \phantomcaption\label{PHRTQH2}
+    \phantomcaption\label{TQH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/QH3.png}
-    \phantomcaption\label{PHRTQH3}
+    \phantomcaption\label{TQH3}
     \end{subcaptiongroup}
-\caption{简支等边三角形板问题四次基函数误差对比：\subref{PHRTQL2} $L_2$误差；\subref{PHRTQH1} $H_1$误差；\subref{PHRTQH2}$H_2$误差；\subref{PHRTQH3} $H_3$误差}
+\caption{\centering{简支等边三角形板问题四次基函数误差对比：\\\subref{TQL2} $L_2$误差；\subref{TQH1} $H_1$误差；\subref{TQH2}$H_2$误差；\subref{TQH3} $H_3$误差}}
 \label{TQLH}
 \end{figure}
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/Cefficiencyomega.png}
@@ -431,13 +431,13 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/Cefficiencygamma.png}
     \phantomcaption\label{Cefficiencygamma}
     \end{subcaptiongroup}
-\caption{简支等边三角形问题效率对比：\subref{Cefficiencyomega}薄板中面$\Omega$；\subref{Cefficiencygamma}本质边界条件$\Gamma_w,c_w$}
+\caption{\centering{简支等边三角形问题效率对比：\\\subref{Cefficiencyomega}薄板中面$\Omega$；\subref{Cefficiencygamma}本质边界条件$\Gamma_w,c_w$}}
 \label{Tefficiency}
 \end{figure}
 \newpage
 \begin{figure}[H]
 \centering
-    \includegraphics[scale=0.7]{figure/PHR/T/Mxy.png}
+    \includegraphics[scale=0.8]{figure/PHR/T/Mxy.png}
 \caption{简支等边三角形板问题弯矩云图$\sigma_{xx}$应力云图}
 \label{TMxy}
 \end{figure}  
@@ -459,7 +459,7 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 该简支环行板采用四次基函数，取相对影响域为4.5进行数值分析。\par
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{figure/PHR/A/annularmsh.png}
+    \includegraphics[scale=0.45]{figure/PHR/A/annularmsh.png}
     \caption{简支环形板问题节点离散}\label{annularmsh}
 \end{figure}
 图(\ref{AQLH})为简支环行板问题的位移误差和能量误差对比图，从图中可以看出“RKGSI-HR”和“RKGSI-Nitsche”同样可以达到理论误差收敛率。
@@ -472,17 +472,17 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QL2.png}
-    \phantomcaption\label{PHRAQL2}
+    \phantomcaption\label{AQL2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH1.png}
-    \phantomcaption\label{PHRAQH1}
+    \phantomcaption\label{AQH1}
     \end{subcaptiongroup}
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH2.png}
-    \phantomcaption\label{PHRAQH2}
+    \phantomcaption\label{AQH2}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/QH3.png}
-    \phantomcaption\label{PHRAQH3}
+    \phantomcaption\label{AQH3}
     \end{subcaptiongroup}
-\caption{简支环行板问题四次基函数误差对比：\subref{PHRAQL2} $L_2$误差；\subref{PHRAQH1} $H_1$误差；\subref{PHRAQH2}$H_2$误差；\subref{PHRAQH3} $H_3$误差}
+\caption{\centering{简支环行板问题四次基函数误差对比：\\\subref{AQL2} $L_2$误差；\subref{AQH1} $H_1$误差；\subref{AQH2}$H_2$误差；\subref{AQH3} $H_3$误差}}
 \label{AQLH}
 \end{figure}
 \newpage
@@ -490,11 +490,11 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \centering
     \begin{subcaptiongroup}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/Qcputime.png}
-    \phantomcaption\label{Qcputime}
+    \phantomcaption\label{aQcputime}
     \includegraphics[width=0.49\textwidth]{figure/PHR/A/Qefficiency.png}
-    \phantomcaption\label{Qefficiency}
+    \phantomcaption\label{aQefficiency}
     \end{subcaptiongroup}
-\caption{简支环形板问题四次基函数效率对比：\subref{Qcputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}
+\caption{\centering{简支环形板问题四次基函数效率对比：\\\subref{aQcputime}计算时间与节点数的关系；\subref{aQefficiency}本质边界条件施加效率分析}}
 \label{AQcputime}
 \end{figure}
 \begin{figure}[H]
@@ -504,10 +504,9 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=1.0]{figure/PHR/A/alpha.png}
+    \includegraphics[scale=1.1]{figure/PHR/A/alpha.png}
     \caption{简支环形板问题人工参数敏感性分析}\label{Aalpha}
 \end{figure}
-
 \section{小结}
 本章进一步介绍了基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解薄板问题。
 该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。

@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+The style file: gbt7714-2005-numerical.bst
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+A level-1 auxiliary file: abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: Introduction.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+A level-1 auxiliary file: Nomesh.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: Boundaryconditions.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: elasticHR.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+A level-1 auxiliary file: plateHR.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+A level-1 auxiliary file: TADAS.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: Conclusion.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+A level-1 auxiliary file: acknowledgments.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendixA.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendixB.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendixC.aux
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+A level-1 auxiliary file: cv.aux
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 150 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: references.bib
+You've used 76 entries,
+            5374 wiz_defined-function locations,
+            1491 strings with 20092 characters,
+and the built_in function-call counts, 443361 in all, are:
+= -- 12559
+> -- 47887
+< -- 60312
++ -- 18620
+- -- 4772
+* -- 3454
+:= -- 62804
+add.period$ -- 229
+call.type$ -- 76
+change.case$ -- 200
+chr.to.int$ -- 15091
+cite$ -- 76
+duplicate$ -- 1821
+empty$ -- 5018
+format.name$ -- 2184
+if$ -- 114911
+int.to.chr$ -- 1
+int.to.str$ -- 77
+missing$ -- 0
+newline$ -- 395
+num.names$ -- 228
+pop$ -- 19223
+preamble$ -- 1
+purify$ -- 76
+quote$ -- 0
+skip$ -- 45683
+stack$ -- 0
+substring$ -- 22211
+swap$ -- 76
+text.length$ -- 1666
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 812
+warning$ -- 0
+while$ -- 1792
+width$ -- 0
+write$ -- 1106

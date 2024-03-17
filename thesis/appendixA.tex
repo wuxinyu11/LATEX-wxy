@@ -1,5 +1,25 @@
 \chapter{弹性力学问题HR变分原理的本质边界条件施加方法推导过程}\label{A}
-通过引入式(\ref{g1})、(\ref{case1})对式(\ref{inference})中的第一项进行推导得到：
+在本附录中详细推导了第三章方程式(\ref{inference})中的刚度矩阵和力向量的推导过程，该等式为：
+\begin{equation}
+    \begin{split}
+        &\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{\pmb g}_{jI}^T-\bar{\pmb g}_{jI}^T)\pmb{a}_{ij}\\
+        &=\sum_{C=1}^{N\!C}\sum_{I=1}^{N\!P}\delta d_{iI}(\tilde{\pmb g}_{jI}^T-\bar{\pmb g}_{jI}^T)C_{ijkl}\pmb{G}^{-1}(\sum_{J=1}^{N\!P}(\tilde{\pmb g}_{kJ}-\bar{\pmb g}_{kJ})d_{lJ}+\hat{\pmb g}_{kl})\\
+        &=\sum_{C=1}^{N\!C}
+        \left(\begin{split}
+        &\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\underbrace{\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}}_{\pmb{K}}d_{lJ}\\
+        &-\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\underbrace{(\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{\pmb g}_{kJ}
+        +\bar{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ})}_{\tilde{\pmb K}}d_{lJ}\\
+        &+\sum_{I=1}^{N\!P}\sum_{J=1}^{N\!P}\delta d_{iI}\underbrace{\bar{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\bar{\pmb g}_{kJ}}_{\bar{\pmb K}}d_{lJ}\\
+        &-\sum_{I=1}^{N\!P}\delta d_{iI}\underbrace{\tilde{\pmb g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{\pmb g}_{kl}}_{\tilde{\pmb f}}\\
+        &+\sum_{I=1}^{N\!P}\delta d_{iI}\underbrace{\bar{\pmb g}_{jI}^TC_{ijkl}\pmb{G}^{-1}\hat{\pmb g}_{kl}}_{\bar{\pmb f}}\\
+        \end{split}
+        \right)\\
+        &=\delta\pmb{d}^T(\pmb K+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}-\delta\pmb{d}^T(\tilde{\pmb f}+\bar{\pmb f})
+    \end{split}
+    \end{equation}\par
+\newpage
+式(\ref{Ehr11})中的常规刚度矩阵$\pmb{K}$：
+% 通过引入式(\ref{g1})、(\ref{case1})对式(\ref{inference})中的第一项进行推导得到：
 \begin{equation}\label{CH4-K}
 \begin{split}
     &\sum_{C=1}^{N\!C}\tilde{\pmb g}^T_{jI}C_{ijkl}\pmb{G}^{-1}\tilde{\pmb g}_{kJ}\\
@@ -11,8 +31,9 @@
 &=\pmb{K}
 \end{split}
 \end{equation}
-\newpage
-通过引入式(\ref{g3})、(\ref{case1})、(\ref{CH4-ui})对式(\ref{inference})中的第二、三项进行推导得到：
+\par
+式(\ref{Ehr21})中的一致性刚度矩阵$\tilde{\pmb{K}}$：
+% 通过引入式(\ref{g3})、(\ref{case1})、(\ref{CH4-ui})对式(\ref{inference})中的第二项进行推导得到：
 \begin{equation}\label{CH4-tildeK}
 \begin{split}
     &-\sum_{C=1}^{N\!C}C_{ijkl}(\bar{\pmb g}_{jI}^T\pmb{G}^{-1}\tilde{\pmb g}_{kJ}+\tilde{\pmb g}_{jI}^T\pmb{G}^{-1}\bar{\pmb g}_{kJ})\\
@@ -25,7 +46,9 @@
     &=\tilde{\pmb{K}}
 \end{split}
 \end{equation}
-通过引入式(\ref{g3})、(\ref{case2})对式(\ref{inference})中的第四项进行推导得到：
+\newpage
+式(\ref{Ehr31})中的稳定刚度矩阵$\bar{\pmb{K}}$：
+% 通过引入式(\ref{g3})、(\ref{case2})对式(\ref{inference})中的第三项进行推导得到：
 \begin{equation}\label{CH4-barK}
 \begin{split}
     &\sum_{C=1}^{N\!C}C_{ijkl}\bar{\pmb g}^T_{jI}\pmb{G}^{-1}\bar{\pmb g}_{kJ}\\
@@ -36,8 +59,9 @@
     &=\bar{\pmb{K}}
 \end{split}
 \end{equation}
-\newpage
-通过引入式(\ref{g4})、(\ref{case1})对式(\ref{inference})中的第五项进行推导得到：
+\par
+式(\ref{Ehr22})中的一致性力向量$\tilde{\pmb{f}}$：
+% 通过引入式(\ref{g4})、(\ref{case1})对式(\ref{inference})中的第四项进行推导得到：
 \begin{equation}\label{CH4-tildef}
 \begin{split}
     &-\sum_{C=1}^{N\!C}C_{ijkl}\tilde{\pmb g}^T_{jI}\pmb{G}^{-1}\hat{\pmb g}_{kl}\\
@@ -48,7 +72,9 @@
     &=\tilde{\pmb f}
 \end{split}
 \end{equation}
-通过引入式(\ref{g4})、(\ref{case2})对式(\ref{inference})中的第六项进行推导得到：
+\newpage
+式(\ref{Ehr32})中的稳定力向量$\bar{\pmb{f}}$：
+% 通过引入式(\ref{g4})、(\ref{case2})对式(\ref{inference})中的第五项进行推导得到：
 \begin{equation}\label{CH4-barf}
 \begin{split}
     &\sum_{C=1}^{N\!C}C_{ijkl}\bar{\pmb g}^T_{jI}\pmb{G}^{-1}\hat{\pmb g}_{kl}\\
