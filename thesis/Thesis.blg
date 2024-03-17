@@ -45,42 +45,42 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: references.bib
 You've used 76 entries,
             5374 wiz_defined-function locations,
-            1491 strings with 20092 characters,
-and the built_in function-call counts, 443361 in all, are:
-= -- 12559
-> -- 47887
-< -- 60312
-+ -- 18620
-- -- 4772
-* -- 3454
-:= -- 62804
-add.period$ -- 229
+            1488 strings with 19607 characters,
+and the built_in function-call counts, 437533 in all, are:
+= -- 12037
+> -- 47542
+< -- 59615
++ -- 18122
+- -- 4627
+* -- 3502
+:= -- 62078
+add.period$ -- 228
 call.type$ -- 76
-change.case$ -- 200
-chr.to.int$ -- 15091
+change.case$ -- 201
+chr.to.int$ -- 15022
 cite$ -- 76
-duplicate$ -- 1821
-empty$ -- 5018
+duplicate$ -- 1816
+empty$ -- 5031
 format.name$ -- 2184
-if$ -- 114911
+if$ -- 113397
 int.to.chr$ -- 1
 int.to.str$ -- 77
 missing$ -- 0
-newline$ -- 395
+newline$ -- 394
 num.names$ -- 228
-pop$ -- 19223
+pop$ -- 19093
 preamble$ -- 1
 purify$ -- 76
 quote$ -- 0
-skip$ -- 45683
+skip$ -- 44951
 stack$ -- 0
-substring$ -- 22211
+substring$ -- 21696
 swap$ -- 76
-text.length$ -- 1666
+text.length$ -- 1664
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 812
+type$ -- 808
 warning$ -- 0
-while$ -- 1792
+while$ -- 1799
 width$ -- 0
-write$ -- 1106
+write$ -- 1115

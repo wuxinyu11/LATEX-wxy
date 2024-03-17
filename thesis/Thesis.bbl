@@ -15,30 +15,27 @@
 Hughes T~J.
 \newblock The {{Finite Element Method}}: {{Linear Static}} and {{Dynamic Finite
   Element Analysis}}\allowbreak[M].
-\newblock Mineola, New York: Dover Publications, 2000.
+\newblock Dover Publications, 2000.
 
 \bibitem[Zienkiewicz et~al.(2014)Zienkiewicz, Taylor, and Fox]{2014Computer}
 Zienkiewicz O~C, Taylor R~L, Fox D.
 \newblock Computer procedures for finite element analysis\allowbreak[M].
 \newblock {The Finite Element Method for Solid and Structural Mechanics}, 2014.
 
-\bibitem[Stein et~al.(2018)Stein, {de Borst}, and
-  Hughes]{steinEncyclopediaComputationalMechanics2018}
+\bibitem[Stein et~al.(2018)Stein, {de Borst}, and Hughes]{stein2018}
 Stein E, {de Borst} R, Hughes T~J~R.
-\newblock Encyclopedia of {{Computational Mechanics Second Edition}}
-  {\textbar}{\textbar} {{Identification}} of {{Material Parameters}} for
-  {{Constitutive Equations}}\allowbreak[M].
-\newblock 2018: 1-21.
+\newblock Encyclopedia of {{Computational Mechanics}} ({{Second
+  Edition}})\allowbreak[M].
+\newblock John Wiley \& Sons Inc, 2018.
 
-\bibitem[Bessa et~al.(2013)Bessa, Elkhodary, Liu, Belytschko, and
+\bibitem[Bessa et~al.(2014)Bessa, Elkhodary, Liu, Belytschko, and
   Moran]{2013Nonlinear}
 Bessa M, Elkhodary K~I, Liu W~K, et~al.
 \newblock Nonlinear finite elements for continua and structures, second
   edition. {{Solution}} manual\allowbreak[M].
-\newblock {Nonlinear Finite Elements for Continua and Structures}, 2013.
+\newblock John Wiley \& Sons Inc, 2014.
 
-\bibitem[Chen et~al.(2017)Chen, Hillman, and
-  Chi]{chenMeshfreeMethodsProgress2017}
+\bibitem[Chen et~al.(2017)Chen, Hillman, and Chi]{chen2017}
 Chen J~S, Hillman M, Chi S~W.
 \newblock {Meshfree methods: Progress made after 20 Years}\allowbreak[J].
 \newblock Journal of Engineering Mechanics, 2017, 143\allowbreak (4): 04017001.
@@ -56,13 +53,13 @@ Belytschko T, Krongauz Y, Organ D, et~al.
 {邓立克}, {王东东}, {王家睿}, 等.
 \newblock
   薄板分析的线性基梯度光滑伽辽金无网格法\allowbreak[J].
-\newblock 力学学报, 2019\allowbreak (3): 13.
+\newblock 力学学报, 2019, 51\allowbreak (3): 690-702.
 
 \bibitem[{陈嵩涛}\ 等(2020){陈嵩涛}, {段庆林}, and
   {马今伟}]{陈嵩涛2020几何非线性分析的高效高阶无网格法}
 {陈嵩涛}, {段庆林}, {马今伟}.
 \newblock 几何非线性分析的高效高阶无网格法\allowbreak[J].
-\newblock 计算力学学报, 2020\allowbreak (006): 037.
+\newblock 计算力学学报, 2020\allowbreak (6): 694-699.
 
 \bibitem[高欣\ 等(2018)高欣, 段庆林, 李书卉, and
   陈飙松]{GaoXin2018}
@@ -74,7 +71,7 @@ Belytschko T, Krongauz Y, Organ D, et~al.
 Lucy L.
 \newblock A numerical approach to the testing of the fission
   hypothesis\allowbreak[J].
-\newblock Astrophys Journal, 1977, 82.
+\newblock Astrophys Journal, 1977, 8\allowbreak (12): 1013-1024.
 
 \bibitem[Gingold et~al.(1977)Gingold and Monaghan]{gingold1977}
 Gingold R~A, Monaghan J~J.
@@ -225,8 +222,9 @@ Sukumar N, Moran B, Belytschko T.
 \bibitem[Long et~al.(2002)Long and Atluri]{long2002}
 Long S, Atluri S~N.
 \newblock A {{Meshless Local Petrov-Galerkin Method}} for {{Solving}} the
-  {{Bending Problem}} of a {{Thin Plate}}\allowbreak[M].
-\newblock 2002.
+  {{Bending Problem}} of a {{Thin Plate}}\allowbreak[J].
+\newblock Computer Modeling in Engineering \& Sciences, 2002, 3\allowbreak (1):
+  53-63.
 
 \bibitem[Liu et~al.(2006)Liu, Hon, and Liew]{liu2006}
 Liu Y, Hon Y~C, Liew K~M.
@@ -267,41 +265,35 @@ Wang L, Liu Y, Zhou Y, et~al.
   plates\allowbreak[J].
 \newblock Computational Mechanics, 2021, 68\allowbreak (4): 709-739.
 
-\bibitem[程玉民\ 等(Fri Nov 18 00:00:00 CST 2005)程玉民, 彭妙娟, and
+\bibitem[程玉民\ 等(2005)程玉民, 彭妙娟, and
   李九红]{ChengYuMin2005}
 程玉民, 彭妙娟, 李九红.
 \newblock {复变量移动最小二乘法及其应用}\allowbreak[J].
-\newblock 力学学报, Fri Nov 18 00:00:00 CST 2005, 37\allowbreak (6):
-  719-723.
+\newblock 力学学报, 2005, 37\allowbreak (6): 719-723.
 
-\bibitem[覃先云\ 等(Fri Oct 28 00:00:00 CST 2011)覃先云, 张见明,
-  李光耀, and 张正]{TanXianYun2011}
+\bibitem[覃先云\ 等(2011)覃先云, 张见明, 李光耀, and
+  张正]{TanXianYun2011}
 覃先云, 张见明, 李光耀, 等.
 \newblock {边界面法分析三维实体线弹性问题}\allowbreak[J].
-\newblock 固体力学学报, Fri Oct 28 00:00:00 CST 2011, 32\allowbreak (5):
-  500-506.
+\newblock 固体力学学报, 2011, 32\allowbreak (5): 500-506.
 
-\bibitem[廉艳平\ 等(Mon Mar 25 00:00:00 CST 2013)廉艳平, 张帆, 刘岩,
-  and 张雄]{LianYanPing2013}
+\bibitem[廉艳平\ 等(2013)廉艳平, 张帆, 刘岩, and
+  张雄]{LianYanPing2013}
 廉艳平, 张帆, 刘岩, 等.
 \newblock {物质点法的理论和应用}\allowbreak[J].
-\newblock 力学进展, Mon Mar 25 00:00:00 CST 2013, 43\allowbreak (2):
-  237-264.
+\newblock 力学进展, 2013, 43\allowbreak (2): 237-264.
 
 \bibitem[张雄\ 等(2017)张雄, 刘岩, 张帆, and
   陈镇鹏]{ZhangXiong2017}
 张雄, 刘岩, 张帆, 等.
-\newblock {极端变形问题的物质点法研究进展{$<$}br{$>$}Recent
-  progress of material point method for extreme deformation
-  problems}\allowbreak[J].
-\newblock 计算力学学报, 2017\allowbreak (1): 1-16.
+\newblock {极端变形问题的物质点法研究进展}\allowbreak[J].
+\newblock 计算力学学报, 2017, 34\allowbreak (1): 1-16.
 
-\bibitem[高效伟\ 等(Sat May 18 00:00:00 CST 2019)高效伟, 徐兵兵,
-  吕军, and 彭海峰]{GaoXiaoWei2019}
+\bibitem[高效伟\ 等(2019)高效伟, 徐兵兵, 吕军, and
+  彭海峰]{GaoXiaoWei2019}
 高效伟, 徐兵兵, 吕军, 等.
 \newblock {自由单元法及其在结构分析中的应用}\allowbreak[J].
-\newblock 力学学报, Sat May 18 00:00:00 CST 2019, 51\allowbreak (3):
-  703-713.
+\newblock 力学学报, 2019, 51\allowbreak (3): 703-713.
 
 \bibitem[Nguyen et~al.(2008)Nguyen, Rabczuk, Bordas, and Duflot]{nguyen2008}
 Nguyen V~P, Rabczuk T, Bordas S, et~al.
@@ -313,15 +305,14 @@ Nguyen V~P, Rabczuk T, Bordas S, et~al.
 \bibitem[Liu(2009)]{liu2009}
 Liu G~R.
 \newblock Meshfree {{Methods}}: {{Moving Beyond}} the {{Finite Element
-  Method}}, {{Second Edition}}\allowbreak[M].
-\newblock 2nd ed.
-\newblock Boca Raton: CRC Press, 2009.
+  Method}}({{Second Edition}})\allowbreak[M].
+\newblock CRC Press, 2009.
 
 \bibitem[{张雄}\ 等(2009){张雄}, {刘岩}, and
   {马上}]{张雄2009无网格法的理论及应用}
 {张雄}, {刘岩}, {马上}.
 \newblock 无网格法的理论及应用\allowbreak[J].
-\newblock 力学进展, 2009\allowbreak (1): 36.
+\newblock 力学进展, 2009, 39\allowbreak (1): 1-36.
 
 \bibitem[Wang et~al.(2014)Wang and Zhang]{wang2014}
 Wang D, Zhang H.
@@ -341,32 +332,32 @@ Koester J~J, Chen J~S.
 \newblock Computer Methods in Applied Mechanics and Engineering, 2019, 347:
   588-621.
 
-\bibitem[Rohit et~al.(2018)Rohit, Prajapati, and Patel]{rohit2018}
+\bibitem[Rohit et~al.(2020)Rohit, Prajapati, and Patel]{rohit2020}
 Rohit G, Prajapati J, Patel V.
 \newblock Coupling of {{Finite Element}} and {{Meshfree Method}} for
   {{Structure Mechanics Application}}: {{A Review}}\allowbreak[J].
-\newblock International Journal of Computational Methods, 2018, 17.
+\newblock International Journal of Computational Methods, 2020, 17\allowbreak
+  (4): 1850151.
 
 \bibitem[{王莉华}\ 等(2021){王莉华} and
   {阮剑武}]{王莉华2021配点型无网格法理论和研究进展}
 {王莉华}, {阮剑武}.
 \newblock 配点型无网格法理论和研究进展\allowbreak[J].
-\newblock 力学季刊, 2021, 42\allowbreak (4): 20.
+\newblock 力学季刊, 2021, 42\allowbreak (4): 613-632.
 
-\bibitem[刘宇翔\ 等(Mon Jun 28 00:00:00 CST 2021)刘宇翔, 王东东,
-  樊礼恒, 陈健, and 侯松阳]{LiuYuXiang2021}
+\bibitem[刘宇翔\ 等(2021)刘宇翔, 王东东, 樊礼恒, 陈健, and
+  侯松阳]{LiuYuXiang2021}
 刘宇翔, 王东东, 樊礼恒, 等.
 \newblock
   {基于卷积神经网络的无网格形函数影响域优化研究}\allowbreak[J].
-\newblock 固体力学学报, Mon Jun 28 00:00:00 CST 2021, 42\allowbreak (3):
-  302-319.
+\newblock 固体力学学报, 2021, 42\allowbreak (3): 302-319.
 
 \bibitem[{朱志辉}\ 等(2021){朱志辉}, {冯乾朔}, {肖权清},
   {罗思慧}, and {王凡}]{朱志辉2021基于}
 {朱志辉}, {冯乾朔}, {肖权清}, 等.
 \newblock
   {{基于DIC技术和无网格法的裂尖应变场分析方法}}\allowbreak[J].
-\newblock 土木工程学报, 2021, 54\allowbreak (6): 11.
+\newblock 土木工程学报, 2021, 54\allowbreak (6): 99-109.
 
 \bibitem[Sriram et~al.(2021)Sriram and Ma]{sriram2021}
 Sriram V, Ma Q~W.
@@ -381,13 +372,11 @@ Sriram V, Ma Q~W.
   {无网格动力分析的循环卷积神经网络代理模型}\allowbreak[J].
 \newblock 力学学报, 2022, 54\allowbreak (3): 732-745.
 
-\bibitem[李煜冬\ 等(Fri Feb 18 00:00:00 CST 2022)李煜冬, 傅卓佳, and
-  汤卓超]{LiYuDong2022}
+\bibitem[李煜冬\ 等(2022)李煜冬, 傅卓佳, and 汤卓超]{LiYuDong2022}
 李煜冬, 傅卓佳, 汤卓超.
 \newblock
   {功能梯度碳纳米管增强复合材料板弯曲和模态的广义有限差分法}\allowbreak[J].
-\newblock 力学学报, Fri Feb 18 00:00:00 CST 2022, 54\allowbreak (2):
-  414-424.
+\newblock 力学学报, 2022, 54\allowbreak (2): 414-424.
 
 \bibitem[Babu{\v s}ka et~al.(2008)Babu{\v s}ka, Banerjee, Osborn, and
   Li]{babuska2008}
@@ -488,18 +477,18 @@ Wang D, Sun M, Xie P.
 \newblock A {{Boundary Enhancement}} for the {{Stabilized Conforming Nodal
   Integration}} of {{Galerkin Meshfree Methods}}\allowbreak[J].
 \newblock International Journal of Computational Methods, 2015, 12\allowbreak
-  (02): 1550009.
+  (2): 1550009.
 
 \bibitem[Ventsel et~al.(2002)Ventsel, Krauthammer, and Carrera]{ventsel2002}
 Ventsel E, Krauthammer T, Carrera E.
 \newblock Thin {{Plates}} and {{Shells}}: {{Theory}}, {{Analysis}}, and
   {{Applications}}\allowbreak[M].
-\newblock American Society of Mechanical Engineers Digital Collection, 2002.
+\newblock CRC Press, 2002.
 
 \bibitem[{钱伟长}(1985)]{钱伟长1985广义变分原理}
 {钱伟长}.
 \newblock 广义变分原理\allowbreak[M].
-\newblock 广义变分原理, 1985.
+\newblock 知识出版社, 1985.
 
 \bibitem[Mohammadi et~al.(2017)Mohammadi, Nasri, and Ghaffary]{mohammadi2017}
 Mohammadi R~K, Nasri A, Ghaffary A.

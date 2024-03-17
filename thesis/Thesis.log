@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  17 MAR 2024 15:07
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  17 MAR 2024 18:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1473,7 +1473,7 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  19638 strings out of 410379
- 416562 string characters out of 5795143
+ 416391 string characters out of 5795143
  1955432 words of memory out of 5000000
  40536 multiletter control sequences out of 15000+600000
  653073 words of font info for 180 fonts, out of 8000000 for 9000
