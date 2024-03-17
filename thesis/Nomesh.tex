@@ -9,7 +9,7 @@ $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形
     u^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{I}
 \end{equation}
 其中$d_{I}$表示与无网格节点$\pmb{x}_I$对应的节点系数。\par
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
     \includegraphics[scale=0.6]{Figure/nomesh/point.png}
     \caption{无网格离散示意图}\label{nomeshpoint}
@@ -156,7 +156,15 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
 \begin{equation}\label{constitutive relation}
     \sigma_{ij}=C_{ijkl}\varepsilon_{kl}
 \end{equation}
-其中$C_{ijkl}$为四阶弹性张量，$\varepsilon_{ij}$为应变张量的分量，根据小变形假设，应变$\varepsilon_{ij}$为：
+其中$C_{ijkl}$为四阶弹性张量，具体表达式为：
+\begin{equation}
+    C_{ijkl}=\lambda\delta_{ij}\delta_{kl}+\mu(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})
+\end{equation}
+式中$\lambda$和$\mu$为拉梅常数，与杨氏模量$E$和泊松比$\nu$之间存在如下关系式：
+\begin{equation}
+    \lambda=\frac{E\nu}{(1+\nu)(1-2\nu)},\quad \mu=\frac{E}{2(1+\nu)}
+\end{equation}
+$\varepsilon_{ij}$为应变张量的分量，根据小变形假设，应变$\varepsilon_{ij}$为：
 \begin{equation}\label{CH2-strain}
     \varepsilon_{ij}=\frac{1}{2}(u_{i,j}+u_{j,i})
 \end{equation} \par
@@ -216,7 +224,7 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
         P=-\left .M_{ns} \right \vert_{c_p}=\bar P&\mathrm{at}\; c_P
     \end{cases}
 \end{equation}
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{figure/nomesh/plate.png}
     \caption{薄板运动学及边界条件}\label{plate}
@@ -230,7 +238,7 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
 \label{Mn} &M_{\pmb{nn}}=M_{\alpha\beta}n_{\alpha}n_{\beta},M_{\pmb{ns}}=M_{\alpha\beta n_{\alpha}s_{\beta}},M_{\pmb{ns,s}}=M_{\alpha\beta,\gamma}s_{\alpha}n_{\beta}s_{\gamma}
 \end{align}
 \end{subequations}
-式中$M_{\alpha\beta}$可表示弯矩张量$\boldsymbol M$的弯曲和扭转部分的分量，$\bar q$为垂直于薄板中面的分布荷载。$\Gamma_w$、$\Gamma_{\theta}$和$c_w$为本质边界条件，$\bar w$和$\bar \theta_n$分别为本质边界条件上给定的挠度和转角。
+式中$M_{\alpha\beta}$可表示弯矩张量$\boldsymbol M$的弯曲或扭转部分的分量，$\bar q$为垂直于薄板中面的分布荷载。$\Gamma_w$、$\Gamma_{\theta}$和$c_w$为本质边界条件，$\bar w$和$\bar \theta_n$分别为本质边界条件上给定的挠度和转角。
 $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_{\boldsymbol{nn}}$和$P$为自然边界上的等效剪力、法向弯矩和薄板角上的集中荷载。$n_\alpha$和$s_\alpha$分别为边界上外法线方向$\pmb{n}$和切方向$\pmb{s}$的分量。
 所有的边界条件都满足如下关系式:
 \begin{equation}\label{PGeometric relationships}
@@ -239,7 +247,7 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
         \Gamma_w\cap\Gamma_V=\Gamma_{\theta}\cap\Gamma_M=c_w\cap c_P=\varnothing
     \end{split}
 \end{equation}\par
-当薄板为线弹性各同向性材料时，其本构关系为：
+在平面应力假设下，当薄板为线弹性各同向性材料时，其本构关系为：
 \begin{equation}\label{Malphabeta}
     M_{\alpha\beta}=D_{\alpha\beta\gamma\eta}\kappa_{\gamma\eta}=-D_{\alpha\beta\gamma\eta}w_{,\gamma\eta}
 \end{equation}
@@ -247,7 +255,7 @@ $\Gamma_V$、$\Gamma_M$和$c_P$为自然边界条件，$V_{\boldsymbol n}$、$M_
 \begin{equation}\label{kappa}
     \kappa_{\alpha\beta}=-w_{,\alpha\beta}
 \end{equation}
-式中$D_{\alpha \beta \gamma \eta}$为薄板问题四阶弹性张量的分量，表达式如下：
+式中$D_{\alpha \beta \gamma \eta}$为在平面应力假设下薄板问题四阶弹性张量的分量，表达式如下：
 \begin{equation}\label{Dalphabeta}
         D_{\alpha\beta\gamma\eta}=\bar D(\nu\delta_{\alpha\beta}\delta_{\gamma\eta}+\frac{1}{2}(1-\nu)(\delta_{\alpha\gamma}\delta_{\beta\eta}+\delta_{\alpha\gamma}\delta_{\beta\gamma}))
 \end{equation}

@@ -1,4 +1,4 @@
-\chapter{本质边界条件施加方法}
+\chapter{伽辽金无网格法}
 由于无网格形函数通常不具备插值特性，因此伽辽金无网格法需要通过弱形式施加本质边界条件。
 在本章中，将以弹性力学问题和薄板问题为例，对常见的3种无网格法本质边界条件施加方法进行详细讨论，包括拉格朗日乘子法、罚函数法、Nitsche法。
 \section{拉格朗日乘子法}
@@ -17,7 +17,7 @@
 \lambda_i(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\lambda_{iI},\quad
 \delta\lambda_i(\pmb{x})=\sum_{I=1}^{N\!L}N_I(\pmb{x})\delta\lambda_{iI}
 \end{equation}
-其中$N\!L$表示离散拉格朗日乘子的个数，$N_I(\pmb{x})$为有限元函数。\par
+其中$N\!L$表示离散拉格朗日乘子的自由度个数，$N_I(\pmb{x})$为有限元函数。\par
 将式(\ref{displacement vector})、(\ref{strainh})、(\ref{strain vector})和(\ref{lambdalisan})代入到弱形式(\ref{Elambda weakform})中得弹性力学问题的离散平衡控制方程式：
 \begin{equation}
     \begin{bmatrix}\pmb{K}&\pmb{K}^{(u\lambda)}\\\pmb{K}^{(u\lambda) T}&\pmb{0}\end{bmatrix}
@@ -146,31 +146,6 @@ Nitsche法\cite{fernandez-mendez2004}是目前变分一致型无网格法最常�
     &=0
 \end{split}
 \end{equation}\par
-% 在伽辽金无网格法中，面力$\sigma_{ij}n_i$的无网格离散形式可以表示为：
-% \begin{equation}\label{Esigman wuwanggelisan}
-%     n_i\sigma_{ij}=\bar{n}_i^T\sigma_{ij}=\bar{n}_i^T\pmb{D}\varepsilon^h=\sum_{I=1}^{N\!P}\bar{\pmb n}^T\pmb D\pmb{B}_I\pmb{d}_I
-% \end{equation}
-% 其中$\bar{\pmb{n}}$在平面问题中的表达式为：
-% \begin{equation}
-% \begin{split}
-%     \bar{\pmb n}=\left[\begin{matrix}n_1&0\\0&n_2\\n_2&n_1
-%     \end{matrix}\right]
-% \end{split}
-% \end{equation}\par
-% 其次为了满足正定性，通过引入罚因子$\alpha$结合罚函数法得到如下表达式：
-% \begin{equation}\label{Enitsche}
-% \begin{split}
-%     \bar{\Pi}(\pmb{u})=\Pi(\pmb{u})-\int_{\Gamma^g}n_i\sigma_{ij}(u_i-g_i)d\Gamma+\frac{1}{2}\alpha\int_{\Gamma^g}(u_i-g_i)(u_i-g_i)d\Gamma
-% \end{split}
-% \end{equation}
-% 对式(\ref{Enitsche})进行变分得到弹性力学问题施加本质边界条件Nistche法的等效积分弱形式：
-% \begin{equation}\label{Enitsche weakform}
-% \begin{split}
-%     \delta\bar{\Pi}(\pmb{u})&=\delta\Pi(\pmb{u})-\int_{\Gamma^g}\delta u_i\sigma_{ij}n_id\Gamma-\int_{\Gamma^g}n_i\delta\sigma_{ij}(u_i-g_i)d\Gamma\\
-% &+\alpha\int_{\Gamma^g}\delta u_iu_id\Gamma-\alpha\int_{\Gamma^g}\delta u_i g_id\Gamma\\
-% &=0
-% \end{split}
-% \end{equation}\par
 引入无网格离散式(\ref{displacement vector})、式(\ref{strainh})和(\ref{strain vector})代入到弱形式(\ref{Enitsche weakform})中得到弹性力学问题施加本质边界条件Nitsche法的离散控制方程式：
 \begin{equation}
     (\pmb{K}+\pmb{K}^v+\pmb{K}^s)\pmb{d}=\pmb{f}+\pmb{f}^v+\pmb{f}^s
@@ -197,22 +172,6 @@ Nitsche法\cite{fernandez-mendez2004}是目前变分一致型无网格法最常�
     &+\frac{\alpha_w}{2}\int_{\Gamma_w}(w-\bar{w})^2d\Gamma+\frac{\alpha_{\theta}}{2}\int_{\Gamma_{\theta}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})^2d\Gamma+\frac{\alpha_c}{2}(w-\bar{w})^2\vert_{x\in c_w}
 \end{split}
 \end{equation}
-% 对式(\ref{Psigman})进行变分得到施加本质边界条件修正变分原理法的等效积分弱形式：
-% \begin{equation}
-% \begin{split}
-%     &\int_{\Omega}\delta\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega-\int_{\Gamma_w}(\delta V_{\pmb{n}}w+\delta wV_{\pmb{n}})d\Gamma+\int_{\Gamma_{\theta}}(\delta M_{\pmb{nn}}\theta_{\pmb{n}}+\delta\theta_{\pmb{n}}M_{\pmb{nn}})d\Gamma\\
-%     &-(\delta Pw+\delta wP)\vert_{x\in c_w}=\int_{\Gamma_M}\delta\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}\delta w\bar{V}_{\pmb{n}}d\Gamma-\delta w\bar{P}\vert_{x\in c_P}\\
-%     &+\int_{\Omega}\delta w\bar{q}d\Omega-\int_{\Gamma_w}\delta V_{\pmb{n}}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\delta M_{\pmb{nn}}\bar{\theta}_{\pmb{n}}d\Gamma-\delta P\bar{w}\vert_{x\in c_w}
-% \end{split}
-% \end{equation}\par
-% 为了满足正定性，进一步引入罚因子$\alpha_w$、$\alpha_\theta$和$\alpha_c$结合罚函数法得到如下表达式：
-% \begin{equation}\label{Pnitsche}
-% \begin{split}
-%     \bar{\Pi}(w)&=\frac{1}{2}\int_{\Omega}\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega+\int_{\Gamma_M}\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}w\bar{V}_{\pmb{n}}d\Gamma-w\bar{P}\vert_{x\in c_P}+\int_{\Omega}w\bar{q}d\Omega\\
-% &-\int_{\Gamma_w}V_{\pmb{n}}(w-\bar{w})d\Gamma+\int_{\theta}M_{\pmb{nn}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})d\Gamma-P(w-\bar{w})\vert_{x\in c_w}\\
-% &+\frac{\alpha_w}{2}\int_{\Gamma_w}(w-\bar{w})^2d\Gamma+\frac{\alpha_{\theta}}{2}\int_{\Gamma_{\theta}}(\theta_{\pmb{n}}-\bar{\theta}_{\pmb{n}})^2d\Gamma+\frac{\alpha_c}{2}(w-\bar{w})^2\vert_{x\in c_w}
-% \end{split}
-% \end{equation}
 将式(\ref{Qn})、(\ref{Mn})、(\ref{Malphabeta})、(\ref{Dalphabeta})代入式(\ref{P control equation})中，从而将$M_{\pmb{nn}}$、$V_{\pmb n}$和$P$采用挠度$w$表示为：
 \begin{equation}
 \begin{cases}\label{MVP}
@@ -231,15 +190,6 @@ Nitsche法\cite{fernandez-mendez2004}是目前变分一致型无网格法最常�
 \end{cases}
 \end{equation}\par
 对式(\ref{Pnitsche})进行变分得到薄板问题施加本质边界条件Nitshce法的等效积分弱形式为：
-% \begin{equation}\label{Pitsche weakform}
-% \begin{split}
-% &\int_{\Omega}\delta\kappa_{,\alpha\beta}M_{\alpha\beta}d\Omega-\int_{\Gamma_w}(\delta V_{\pmb{n}}w+\delta wV_{\pmb{n}})d\Gamma+\int_{\Gamma_{\theta}}(\delta M_{\pmb{nn}}\theta_{\pmb{n}}+\delta\theta_{\pmb{n}}M_{\pmb{nn}})d\Gamma\\&-(\delta Pw+\delta wP)\vert_{x\in c_w}
-% +\alpha_w\int_{\Gamma_w}\delta wwd\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\delta\theta_{\pmb{n}}\theta_{\pmb{n}}d\Gamma+\alpha_c\delta ww\vert_{x\in c_w}\\
-% &=\int_{\Gamma_M}\delta\theta_{\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma-\int_{\Gamma_V}\delta w\bar{V}_{\pmb{n}}d\Gamma-\delta w\bar{P}\vert_{x\in c_P}+\int_{\Omega}\delta w\bar{q}d\Omega
-% -\int_{\Gamma_w}\delta V_{\pmb{n}}\bar{w}d\Gamma\\&+\int_{\Gamma_{\theta}}\delta M_{\pmb{nn}}\bar{\theta}_{\pmb{n}}d\Gamma-\delta P\bar{w}\vert_{x\in c_w}
-% +\alpha_w\int_{\Gamma_w}\delta w\bar{w}d\Gamma+\alpha_{\theta}\int_{\Gamma_{\theta}}\delta\theta_{\pmb{n}}\bar{\theta}_{\pmb{n}}d\Gamma+\alpha_c\delta w\bar{w}\vert_{x\in c_w}
-% \end{split}
-% \end{equation}\par
 \begin{equation}\label{Pitsche weakform}
 \begin{split}
     \delta\bar{\Pi}(w)&=\delta\Pi(w)\\

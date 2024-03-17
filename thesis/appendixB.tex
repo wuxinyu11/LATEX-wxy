@@ -1,5 +1,23 @@
 \chapter{薄板问题HR变分原理的本质边界条件施加方法推导过程}\label{B}
-通过引入式(\ref{PG})、(\ref{PTPSI})对式(\ref{Pzuzhuang})中的第一项进行推导可以得到：
+在本附录中详细推导了第四章方程式(\ref{Pzuzhuang})中的刚度矩阵和力向量的推导过程，该等式为：
+\begin{equation}
+    \begin{split}
+        &-\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)\pmb a_{\alpha\beta}\\
+        &=\sum_{C=1}^{N\!C}(\tilde{\pmb g}_{\alpha\beta I}^T-\bar{\pmb g}_{\alpha\beta I}^T)D_{\alpha\beta\gamma\eta}\pmb{G}^{-1}(\sum_{J=1}^{N\!P}(\tilde{\pmb g}_{\gamma\eta J}-\bar{\pmb g}_{\gamma\eta J})d_I+\hat{\pmb g}_{\gamma\eta})\\
+        &=\sum_{C=1}^{N\!C}
+        \left(\begin{split}
+        &\sum_{J=1}^{N\!P}\underbrace{D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}}_{\pmb{K}}d_J\\
+        &+\sum_{J=1}^{N\!P}\underbrace{D_{\alpha\beta\gamma\eta}(-\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}-\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J})}_{\tilde{\pmb K}}d_J\\
+        &+\sum_{J=1}^{N\!P}\underbrace{D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}}_{\bar{\pmb K}}d_J\\
+        &-\underbrace{(-D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta })}_{\tilde{\pmb f}}\\
+        &-\underbrace{D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta }}_{\bar{\pmb f}}\\
+        \end{split}\right)\\
+        &=\sum_{J=1}^{N\!P}(\pmb{K}+\tilde{\pmb{K}}+\bar{\pmb{K}})\pmb d_J-\tilde{\pmb f}-\bar{\pmb f}
+\end{split}
+\end{equation}
+\newpage
+式(\ref{PHR11})中的常规刚度矩阵$\pmb{K}$：
+% 通过引入式(\ref{PG})、(\ref{PTPSI})对式(\ref{Pzuzhuang})中的第一项进行推导可以得到：
 \begin{equation}
 \begin{split}
     &\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}\\
@@ -10,7 +28,8 @@
 \end{split}
 \end{equation}
 \newpage
-通过引入式(\ref{PTPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第二项进行推导可以得到：
+式(\ref{PHR21})中的一致性刚度矩阵$\tilde{\pmb{K}}$：
+% 通过引入式(\ref{PTPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第二项进行推导可以得到：
 \begin{equation}
 \begin{split}
     &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}(\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}+\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J})\\
@@ -36,7 +55,8 @@
 \end{split}
 \end{equation}
 \newpage
-通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第三项进行推导可以得到：
+式(\ref{PHR31})中的稳定刚度矩阵$\bar{\pmb{K}}$：
+% 通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第三项进行推导可以得到：
 \begin{equation}
 \begin{split}
     &\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}\\
@@ -54,7 +74,9 @@
     &=\bar{\pmb K}
 \end{split}
 \end{equation}
-通过引入式(\ref{PTPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第四项进行推导可以得到：
+\par
+式(\ref{PHR22})中的一致性力向量$\tilde{\pmb{f}}$：
+% 通过引入式(\ref{PTPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第四项进行推导可以得到：
 \begin{equation}
 \begin{split}
     &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\tilde{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\hat{\pmb g}_{\gamma\eta}\\
@@ -68,7 +90,9 @@
     &=\tilde{\pmb f}
 \end{split}
 \end{equation}
-通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第五项进行推导可以得到：
+\newpage
+式(\ref{PHR32})中的稳定力向量$\bar{\pmb{f}}$：
+% 通过引入式(\ref{PBPSI})、(\ref{MVP1})对式(\ref{Pzuzhuang})中的第五项进行推导可以得到：
 \begin{equation}
  \begin{split}
     &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\hat{\pmb g}_{\gamma\eta }\\

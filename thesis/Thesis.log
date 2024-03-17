@@ -1,54 +1,45 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2024.2.23)  15 MAR 2024 11:26
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  17 MAR 2024 18:01
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/wujc/Documents/LATEX-wxy/thesis/Thesis.tex
-(/Users/wujc/Documents/LATEX-wxy/thesis/Thesis.tex
-LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-02-22> (./hquThesis.cls
+**c:/Users/PC/code/LATEX-article/thesis/Thesis.tex
+(c:/Users/PC/code/LATEX-article/thesis/Thesis.tex
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2023-08-29>
+(hquThesis.cls
 Document Class: hquThesis 
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/book.c
-ls
-Document Class: book 2022/07/02 v1.4n Standard LaTeX document class
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/bk10.c
-lo
-File: bk10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+(F:\MikTEX\tex/latex/base\book.cls
+Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
+(F:\MikTEX\tex/latex/base\bk10.clo
+File: bk10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@chapter=\count186
-\c@section=\count187
-\c@subsection=\count188
-\c@subsubsection=\count189
-\c@paragraph=\count190
-\c@subparagraph=\count191
-\c@figure=\count192
-\c@table=\count193
+\c@part=\count181
+\c@chapter=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\c@figure=\count188
+\c@table=\count189
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-)
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/geometry/ge
-ometry.sty
+) (F:\MikTEX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/graphics/ke
-yval.sty
+(F:\MikTEX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks17
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/iftex/ifv
-tex.sty
+(F:\MikTEX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/iftex/ift
-ex.sty
+ (F:\MikTEX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count194
-\Gm@cntv=\count195
-\c@Gm@tempcnt=\count196
+\Gm@cnth=\count190
+\Gm@cntv=\count191
+\c@Gm@tempcnt=\count192
 \Gm@bindingoffset=\dimen141
 \Gm@wd@mp=\dimen142
 \Gm@odd@mp=\dimen143
@@ -57,35 +48,29 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutheight=\dimen146
 \Gm@layouthoffset=\dimen147
 \Gm@layoutvoffset=\dimen148
-\Gm@dimlist=\toks17
-)
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/graphics/gr
-aphicx.sty
+\Gm@dimlist=\toks18
+ (F:\MikTEX\tex/latex/geometry\geometry.cfg))
+(F:\MikTEX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/graphics/gr
-aphics.sty
+(F:\MikTEX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/graphics/tr
-ig.sty
+(F:\MikTEX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/graphics-cf
-g/graphics.cfg
+(F:\MikTEX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
+Package graphics Info: Driver file: xetex.def on input line 107.
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/graphics-de
-f/pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+(F:\MikTEX\tex/latex/graphics-def\xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen149
 \Gin@req@width=\dimen150
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/fancyhdr/fa
-ncyhdr.sty
+(F:\MikTEX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip50
@@ -98,46 +83,121 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@olf=\skip57
 \f@nch@O@orf=\skip58
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/xelatex/xecjk/xeC
-JK.sty
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/l3kernel/ex
-pl3.sty
-Package: expl3 2023-02-22 L3 programming layer (loader) 
+(F:\MikTEX\tex/xelatex/xecjk\xeCJK.sty (F:\MikTEX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2023-08-29 L3 programming layer (loader) 
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/l3backend/l
-3backend-pdftex.def
-File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count197
+(F:\MikTEX\tex/latex/l3backend\l3backend-xetex.def
+File: l3backend-xetex.def 2023-04-19 L3 backend support: XeTeX
+\g__graphics_track_int=\count193
 \l__pdf_internal_box=\box51
+\g__pdf_backend_object_int=\count194
+\g__pdf_backend_annotation_int=\count195
+\g__pdf_backend_link_int=\count196
 ))
 Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
 
-
-! Critical Package xeCJK Error: The xeCJK package requires XeTeX to function.
-(xeCJK)                         
-(xeCJK)                         You must change your typesetting engine to
-(xeCJK)                         "xelatex"
-(xeCJK)                         instead of plain "latex" or "pdflatex" or
-(xeCJK)                         "lualatex".
-(xeCJK)                         Loading xeCJK will abort!
-
-Type <return> to continue.
- ...                                              
-                                                  
-l.43 ..._critical:nn { xeCJK } { Require-XeTeX } }
-                                                  
-
-LaTeX does not know anything more about this error, sorry.
-
-Try typing <return> to proceed.
-If that doesn't work, type X <return> to quit.
-
-Reading the current file 'xeCJK' will stop.
-
-
+(F:\MikTEX\tex/latex/ctex\ctexhook.sty
+Package: ctexhook 2022/07/14 v2.5.10 Document and package hooks (CTEX)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/lm/lmodern.
-sty
+(F:\MikTEX\tex/latex/l3packages/xtemplate\xtemplate.sty
+Package: xtemplate 2023-08-29 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen151
+\l__xtemplate_tmp_int=\count197
+\l__xtemplate_tmp_muskip=\muskip16
+\l__xtemplate_tmp_skip=\skip59
+)
+\l__xeCJK_tmp_int=\count198
+\l__xeCJK_tmp_box=\box52
+\l__xeCJK_tmp_dim=\dimen152
+\l__xeCJK_tmp_skip=\skip60
+\g__xeCJK_space_factor_int=\count199
+\l__xeCJK_begin_int=\count266
+\l__xeCJK_end_int=\count267
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+\l__xeCJK_last_skip=\skip61
+\c__xeCJK_none_node=\count268
+\g__xeCJK_node_int=\count269
+\c__xeCJK_CJK_node_dim=\dimen153
+\c__xeCJK_CJK-space_node_dim=\dimen154
+\c__xeCJK_default_node_dim=\dimen155
+\c__xeCJK_CJK-widow_node_dim=\dimen156
+\c__xeCJK_normalspace_node_dim=\dimen157
+\c__xeCJK_default-space_node_skip=\skip62
+\l__xeCJK_ccglue_skip=\skip63
+\l__xeCJK_ecglue_skip=\skip64
+\l__xeCJK_punct_kern_skip=\skip65
+\l__xeCJK_indent_box=\box53
+\l__xeCJK_last_penalty_int=\count270
+\l__xeCJK_last_bound_dim=\dimen158
+\l__xeCJK_last_kern_dim=\dimen159
+\l__xeCJK_widow_penalty_int=\count271
+
+Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
+(xtemplate)             argument(s) on line 2396.
+
+\l__xeCJK_fixed_punct_width_dim=\dimen160
+\l__xeCJK_mixed_punct_width_dim=\dimen161
+\l__xeCJK_middle_punct_width_dim=\dimen162
+\l__xeCJK_fixed_margin_width_dim=\dimen163
+\l__xeCJK_mixed_margin_width_dim=\dimen164
+\l__xeCJK_middle_margin_width_dim=\dimen165
+\l__xeCJK_bound_punct_width_dim=\dimen166
+\l__xeCJK_bound_margin_width_dim=\dimen167
+\l__xeCJK_margin_minimum_dim=\dimen168
+\l__xeCJK_kerning_total_width_dim=\dimen169
+\l__xeCJK_same_align_margin_dim=\dimen170
+\l__xeCJK_different_align_margin_dim=\dimen171
+\l__xeCJK_kerning_margin_width_dim=\dimen172
+\l__xeCJK_kerning_margin_minimum_dim=\dimen173
+\l__xeCJK_bound_dim=\dimen174
+\l__xeCJK_reverse_bound_dim=\dimen175
+\l__xeCJK_margin_dim=\dimen176
+\l__xeCJK_minimum_bound_dim=\dimen177
+\l__xeCJK_kerning_margin_dim=\dimen178
+\g__xeCJK_family_int=\count272
+\l__xeCJK_fam_int=\count273
+\g__xeCJK_fam_allocation_int=\count274
+\l__xeCJK_verb_case_int=\count275
+\l__xeCJK_verb_exspace_skip=\skip66
+
+(F:\MikTEX\tex/latex/fontspec\fontspec.sty
+(F:\MikTEX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2023-08-29 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+
+(F:\MikTEX\tex/latex/fontspec\fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count276
+\l__fontspec_language_int=\count277
+\l__fontspec_strnum_int=\count278
+\l__fontspec_tmp_int=\count279
+\l__fontspec_tmpa_int=\count280
+\l__fontspec_tmpb_int=\count281
+\l__fontspec_tmpc_int=\count282
+\l__fontspec_em_int=\count283
+\l__fontspec_emdef_int=\count284
+\l__fontspec_strong_int=\count285
+\l__fontspec_strongdef_int=\count286
+\l__fontspec_tmpa_dim=\dimen179
+\l__fontspec_tmpb_dim=\dimen180
+\l__fontspec_tmpc_dim=\dimen181
+
+(F:\MikTEX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(F:\MikTEX\tex/latex/fontspec\fontspec.cfg)))
+(F:\MikTEX\tex/xelatex/xecjk\xeCJK.cfg
+File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
+)) (F:\MikTEX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -172,499 +232,372 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/caption/cap
-tion.sty
-Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+(F:\MikTEX\tex/latex/caption\caption.sty
+Package: caption 2023/07/31 v3.6n Customizing captions (AR)
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/caption/cap
-tion3.sty
-Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
-\caption@tempdima=\dimen151
-\captionmargin=\dimen152
-\caption@leftmargin=\dimen153
-\caption@rightmargin=\dimen154
-\caption@width=\dimen155
-\caption@indent=\dimen156
-\caption@parindent=\dimen157
-\caption@hangindent=\dimen158
+(F:\MikTEX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen182
+\captionmargin=\dimen183
+\caption@leftmargin=\dimen184
+\caption@rightmargin=\dimen185
+\caption@width=\dimen186
+\caption@indent=\dimen187
+\caption@parindent=\dimen188
+\caption@hangindent=\dimen189
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count198
-\c@continuedfloat=\count199
+\c@caption@flags=\count287
+\c@continuedfloat=\count288
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/caption/sub
-caption.sty
-Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
-Package caption Info: New subtype `subfigure' on input line 239.
-\c@subfigure=\count266
-Package caption Info: New subtype `subtable' on input line 239.
-\c@subtable=\count267
+(F:\MikTEX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count289
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count290
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/tools/inden
-tfirst.sty
+(F:\MikTEX\tex/latex/tools\indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/setspace/se
-tspace.sty
+(F:\MikTEX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/titlesec/ti
-tlesec.sty
+(F:\MikTEX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box52
-\beforetitleunit=\skip59
-\aftertitleunit=\skip60
-\ttl@plus=\dimen159
-\ttl@minus=\dimen160
-\ttl@toksa=\toks18
-\titlewidth=\dimen161
-\titlewidthlast=\dimen162
-\titlewidthfirst=\dimen163
+\ttl@box=\box54
+\beforetitleunit=\skip67
+\aftertitleunit=\skip68
+\ttl@plus=\dimen190
+\ttl@minus=\dimen191
+\ttl@toksa=\toks19
+\titlewidth=\dimen192
+\titlewidthlast=\dimen193
+\titlewidthfirst=\dimen194
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/titlesec/ti
-tletoc.sty
+(F:\MikTEX\tex/latex/titlesec\titletoc.sty
 Package: titletoc 2021/07/05 v2.14 TOC entries
-\ttl@leftsep=\dimen164
+\ttl@leftsep=\dimen195
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/hyperref/hy
-perref.sty
-Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+(F:\MikTEX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/ltxcmds/l
-txcmds.sty
+(F:\MikTEX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/pdftexcmd
-s/pdftexcmds.sty
+(F:\MikTEX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/infwarerr
-/infwarerr.sty
+(F:\MikTEX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode not found.
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/kvsetkeys/k
-vsetkeys.sty
+(F:\MikTEX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/kvdefinek
-eys/kvdefinekeys.sty
+(F:\MikTEX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/pdfescape
-/pdfescape.sty
+(F:\MikTEX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/hycolor/hyc
-olor.sty
+(F:\MikTEX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/letltxmacro
-/letltxmacro.sty
+(F:\MikTEX\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/auxhook/aux
-hook.sty
+(F:\MikTEX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/hyperref/na
-meref.sty
-Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+(F:\MikTEX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-08-07 v2.53 Cross-referencing by name of section
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/refcount/re
-fcount.sty
+(F:\MikTEX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/gettitles
-tring/gettitlestring.sty
+(F:\MikTEX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/kvoptions/k
-voptions.sty
+(F:\MikTEX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count268
+\c@section@level=\count291
 )
-\@linkdim=\dimen165
-\Hy@linkcounter=\count269
-\Hy@pagecounter=\count270
+(F:\MikTEX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count292
+)
+\@linkdim=\dimen196
+\Hy@linkcounter=\count293
+\Hy@pagecounter=\count294
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/hyperref/pd
-1enc.def
-File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
+(F:\MikTEX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/intcalc/i
-ntcalc.sty
+(F:\MikTEX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/etexcmds/
-etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count271
+\Hy@SavedSpaceFactor=\count295
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/hyperref/pu
-enc.def
-File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
-Now handling font encoding PU ...
-... no UTF-8 mapping file for font encoding PU
+(F:\MikTEX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Hyper figures OFF on input line 4177.
-Package hyperref Info: Link nesting OFF on input line 4182.
-Package hyperref Info: Hyper index ON on input line 4185.
-Package hyperref Info: Plain pages OFF on input line 4192.
-Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Hyper figures OFF on input line 4167.
+Package hyperref Info: Link nesting OFF on input line 4172.
+Package hyperref Info: Hyper index ON on input line 4175.
+Package hyperref Info: Plain pages OFF on input line 4182.
+Package hyperref Info: Backreferencing OFF on input line 4187.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4425.
-\c@Hy@tempcnt=\count272
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
+Package hyperref Info: Bookmarks ON on input line 4434.
+\c@Hy@tempcnt=\count296
+ (F:\MikTEX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen166
+LaTeX Info: Redefining \url on input line 4772.
+\XeTeXLinkMargin=\dimen197
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/bitset/bi
-tset.sty
+(F:\MikTEX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/bigintcal
-c/bigintcalc.sty
+(F:\MikTEX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count273
-\Field@Width=\dimen167
-\Fld@charsize=\dimen168
-Package hyperref Info: Hyper figures OFF on input line 6042.
-Package hyperref Info: Link nesting OFF on input line 6047.
-Package hyperref Info: Hyper index ON on input line 6050.
-Package hyperref Info: backreferencing OFF on input line 6057.
-Package hyperref Info: Link coloring OFF on input line 6062.
-Package hyperref Info: Link coloring with OCG OFF on input line 6067.
-Package hyperref Info: PDF/A mode OFF on input line 6072.
+\Fld@menulength=\count297
+\Field@Width=\dimen198
+\Fld@charsize=\dimen199
+Package hyperref Info: Hyper figures OFF on input line 6051.
+Package hyperref Info: Link nesting OFF on input line 6056.
+Package hyperref Info: Hyper index ON on input line 6059.
+Package hyperref Info: backreferencing OFF on input line 6066.
+Package hyperref Info: Link coloring OFF on input line 6071.
+Package hyperref Info: Link coloring with OCG OFF on input line 6076.
+Package hyperref Info: PDF/A mode OFF on input line 6081.
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/atbegs
-hi-ltx.sty
+(F:\MikTEX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count274
-\c@Item=\count275
-\c@Hfootnote=\count276
+\Hy@abspage=\count298
+\c@Item=\count299
+\c@Hfootnote=\count300
 )
-Package hyperref Info: Driver (autodetected): hpdftex.
+Package hyperref Info: Driver (autodetected): hxetex.
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/hyperref/hp
-dftex.def
-File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+(F:\MikTEX\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2023-07-08 v7.01b Hyperref driver for XeTeX
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/atvery
-end-ltx.sty
+(F:\MikTEX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box55
+\c@Hy@AnnotLevel=\count301
+\HyField@AnnotCount=\count302
+\Fld@listcount=\count303
+\c@bookmark@seq@number=\count304
+
+(F:\MikTEX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(F:\MikTEX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count277
-\c@bookmark@seq@number=\count278
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/rerunfilech
-eck/rerunfilecheck.sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/generic/uniquecou
-nter/uniquecounter.sty
+(F:\MikTEX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip61
+\Hy@SectionHShift=\skip69
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/tocloft/toc
-loft.sty
+(F:\MikTEX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip62
-\cftbeforetoctitleskip=\skip63
-\cftaftertoctitleskip=\skip64
-\cftbeforepartskip=\skip65
-\cftpartnumwidth=\skip66
-\cftpartindent=\skip67
-\cftbeforechapskip=\skip68
-\cftchapindent=\skip69
-\cftchapnumwidth=\skip70
-\cftbeforesecskip=\skip71
-\cftsecindent=\skip72
-\cftsecnumwidth=\skip73
-\cftbeforesubsecskip=\skip74
-\cftsubsecindent=\skip75
-\cftsubsecnumwidth=\skip76
-\cftbeforesubsubsecskip=\skip77
-\cftsubsubsecindent=\skip78
-\cftsubsubsecnumwidth=\skip79
-\cftbeforeparaskip=\skip80
-\cftparaindent=\skip81
-\cftparanumwidth=\skip82
-\cftbeforesubparaskip=\skip83
-\cftsubparaindent=\skip84
-\cftsubparanumwidth=\skip85
-\cftbeforeloftitleskip=\skip86
-\cftafterloftitleskip=\skip87
-\cftbeforefigskip=\skip88
-\cftfigindent=\skip89
-\cftfignumwidth=\skip90
-\c@lofdepth=\count279
-\c@lotdepth=\count280
-\cftbeforelottitleskip=\skip91
-\cftafterlottitleskip=\skip92
-\cftbeforetabskip=\skip93
-\cfttabindent=\skip94
-\cfttabnumwidth=\skip95
+\cftparskip=\skip70
+\cftbeforetoctitleskip=\skip71
+\cftaftertoctitleskip=\skip72
+\cftbeforepartskip=\skip73
+\cftpartnumwidth=\skip74
+\cftpartindent=\skip75
+\cftbeforechapskip=\skip76
+\cftchapindent=\skip77
+\cftchapnumwidth=\skip78
+\cftbeforesecskip=\skip79
+\cftsecindent=\skip80
+\cftsecnumwidth=\skip81
+\cftbeforesubsecskip=\skip82
+\cftsubsecindent=\skip83
+\cftsubsecnumwidth=\skip84
+\cftbeforesubsubsecskip=\skip85
+\cftsubsubsecindent=\skip86
+\cftsubsubsecnumwidth=\skip87
+\cftbeforeparaskip=\skip88
+\cftparaindent=\skip89
+\cftparanumwidth=\skip90
+\cftbeforesubparaskip=\skip91
+\cftsubparaindent=\skip92
+\cftsubparanumwidth=\skip93
+\cftbeforeloftitleskip=\skip94
+\cftafterloftitleskip=\skip95
+\cftbeforefigskip=\skip96
+\cftfigindent=\skip97
+\cftfignumwidth=\skip98
+\c@lofdepth=\count305
+\c@lotdepth=\count306
+\cftbeforelottitleskip=\skip99
+\cftafterlottitleskip=\skip100
+\cftbeforetabskip=\skip101
+\cfttabindent=\skip102
+\cfttabnumwidth=\skip103
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/gbt7714/gbt
-7714.sty
+(F:\MikTEX\tex/latex/gbt7714\gbt7714.sty
 Package: gbt7714 2022/10/03 v2.1.5 GB/T 7714 BibTeX Style
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/natbib/natb
-ib.sty
+ (F:\MikTEX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip96
-\bibsep=\skip97
+\bibhang=\skip104
+\bibsep=\skip105
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count281
-))
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/tools/enume
-rate.sty
+\c@NAT@ctr=\count307
+)) (F:\MikTEX\tex/latex/tools\enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks19
+\@enLab=\toks20
 )
-! Undefined control sequence.
-l.62 \setmainfont
-                 {Times New Roman}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
+(fontspec)             New Roman' with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"Times New
+(fontspec)             Roman/OT:script=latn;language=dflt;+smcp;mapping=tex-tex
+t;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/B/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: <->"Times
+(fontspec)             New
+(fontspec)             Roman/B/OT:script=latn;language=dflt;+smcp;mapping=tex-t
+ext;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/I/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"Times New
+(fontspec)             Roman/I/OT:script=latn;language=dflt;+smcp;mapping=tex-t
+ext;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/BI/OT:script=latn;language=dflt;mapping=tex-text;"
+
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"Times New
+(fontspec)             Roman/BI/OT:script=latn;language=dflt;+smcp;mapping=tex-
+text;"
 
 
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.62 \setmainfont{T
-                   imes New Roman}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-l.63 \setsansfont
-                 {Times New Roman}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.64 \setCJKmainfont
-                    {simsun.ttc}[Path=./fonts/, AutoFakeSlant, AutoFakeBold=...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.65 \setCJKsansfont
-                    {simhei.ttf}[Path=./fonts/, AutoFakeSlant, AutoFakeBold=...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.66 \setCJKmonofont
-                    {Kaiti_GB2312.ttf}[Path=./fonts/, AutoFakeSlant, AutoFak...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.66 \setCJKmonofont{Kaiti_
-                           GB2312.ttf}[Path=./fonts/, AutoFakeSlant, AutoFak...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-6.
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/lm/ot1lmr.f
-d
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-6.
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/lm/omllmm.f
-d
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-66.
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/lm/omslmsy.
-fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-66.
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/lm/omxlmex.
-fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 66.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 66.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 66.
-
-! Extra }, or forgotten $.
-l.66 \setCJKmonofont{Kaiti_GB2312.ttf}
-                                      [Path=./fonts/, AutoFakeSlant, AutoFak...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Undefined control sequence.
-l.67 \newCJKfontfamily
-                      \declarationfont{simfang.ttf}[Path=./fonts/, AutoFakeS...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.67 \newCJKfontfamily\declarationfont
-                                      {simfang.ttf}[Path=./fonts/, AutoFakeS...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.76 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (18.35089pt too wide) in paragraph at lines 62--76
-\OT1/cmr/m/n/10 Fake-Bold=2] Kaiti$[]\OML/lmm/m/it/10 B\OT1/lmr/m/n/10 2312\OML
-/lmm/m/it/10 :ttf\OT1/lmr/m/n/10 [\OML/lmm/m/it/10 Path \OT1/lmr/m/n/10 = \OML/
-lmm/m/it/10 :=fonts=; AutoFakeSlant; AutoFakeBold \OT1/lmr/m/n/10 =
- []
+Package fontspec Info: Font family 'simsun.ttc(0)' created for font
+(fontspec)             'simsun.ttc' with options
+(fontspec)             [Script={CJK},Path={./fonts/},AutoFakeBold={2},AutoFakeS
+lant={0.167}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[./fonts/simsun.ttc]/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[./fonts/simsun.ttc]/OT:script=hani;language=dflt;em
+bolden=2;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[./fonts/simsun.ttc]/OT:script=hani;language=dflt;sl
+ant=0.167;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[./fonts/simsun.ttc]/OT:script=hani;language=dflt;em
+bolden=2;slant=0.167;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsmath/ams
-math.sty
-Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip98
+(F:\MikTEX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip106
 
 For additional information on amsmath, use the `?' option.
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsmath/ams
-text.sty
+(F:\MikTEX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsmath/ams
-gen.sty
+(F:\MikTEX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks20
-\ex@=\dimen169
+\@emptytoks=\toks21
+\ex@=\dimen256
 ))
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsmath/ams
-bsy.sty
+(F:\MikTEX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen170
+\pmbraise@=\dimen257
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsmath/ams
-opn.sty
+(F:\MikTEX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count282
+\inf@bad=\count308
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count283
-\leftroot@=\count284
+\uproot@=\count309
+\leftroot@=\count310
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count285
-\DOTSCASE@=\count286
+\classnum@=\count311
+\DOTSCASE@=\count312
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box53
-\strutbox@=\box54
+\Mathstrutbox@=\box56
+\strutbox@=\box57
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen171
+\big@size=\dimen258
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count287
+\macc@depth=\count313
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count288
-\dotsspace@=\muskip17
-\c@parentequation=\count289
-\dspbrk@lvl=\count290
-\tag@help=\toks21
-\row@=\count291
-\column@=\count292
-\maxfields@=\count293
-\andhelp@=\toks22
-\eqnshift@=\dimen172
-\alignsep@=\dimen173
-\tagshift@=\dimen174
-\tagwidth@=\dimen175
-\totwidth@=\dimen176
-\lineht@=\dimen177
-\@envbody=\toks23
-\multlinegap=\skip99
-\multlinetaggap=\skip100
-\mathdisplay@stack=\toks24
+\c@MaxMatrixCols=\count314
+\dotsspace@=\muskip18
+\c@parentequation=\count315
+\dspbrk@lvl=\count316
+\tag@help=\toks22
+\row@=\count317
+\column@=\count318
+\maxfields@=\count319
+\andhelp@=\toks23
+\eqnshift@=\dimen259
+\alignsep@=\dimen260
+\tagshift@=\dimen261
+\tagwidth@=\dimen262
+\totwidth@=\dimen263
+\lineht@=\dimen264
+\@envbody=\toks24
+\multlinegap=\skip107
+\multlinetaggap=\skip108
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsfonts/am
-sfonts.sty
+(F:\MikTEX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -672,71 +605,75 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsfonts/am
-ssymb.sty
+(F:\MikTEX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/booktabs/bo
-oktabs.sty
+(F:\MikTEX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen178
-\lightrulewidth=\dimen179
-\cmidrulewidth=\dimen180
-\belowrulesep=\dimen181
-\belowbottomsep=\dimen182
-\aboverulesep=\dimen183
-\abovetopsep=\dimen184
-\cmidrulesep=\dimen185
-\cmidrulekern=\dimen186
-\defaultaddspace=\dimen187
-\@cmidla=\count294
-\@cmidlb=\count295
-\@aboverulesep=\dimen188
-\@belowrulesep=\dimen189
-\@thisruleclass=\count296
-\@lastruleclass=\count297
-\@thisrulewidth=\dimen190
+\heavyrulewidth=\dimen265
+\lightrulewidth=\dimen266
+\cmidrulewidth=\dimen267
+\belowrulesep=\dimen268
+\belowbottomsep=\dimen269
+\aboverulesep=\dimen270
+\abovetopsep=\dimen271
+\cmidrulesep=\dimen272
+\cmidrulekern=\dimen273
+\defaultaddspace=\dimen274
+\@cmidla=\count320
+\@cmidlb=\count321
+\@aboverulesep=\dimen275
+\@belowrulesep=\dimen276
+\@thisruleclass=\count322
+\@lastruleclass=\count323
+\@thisrulewidth=\dimen277
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/multirow/mu
-ltirow.sty
+(F:\MikTEX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip101
-\multirow@cntb=\count298
-\multirow@dima=\skip102
-\bigstrutjot=\dimen191
+\multirow@colwidth=\skip109
+\multirow@cntb=\count324
+\multirow@dima=\skip110
+\bigstrutjot=\dimen278
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/tools/tabul
-arx.sty
+(F:\MikTEX\tex/latex/tools\tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/tools/array
-.sty
+ (F:\MikTEX\tex/latex/tools\array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen192
-\ar@mcellbox=\box55
-\extrarowheight=\dimen193
-\NC@list=\toks25
-\extratabsurround=\skip103
-\backup@length=\skip104
-\ar@cellbox=\box56
+\col@sep=\dimen279
+\ar@mcellbox=\box58
+\extrarowheight=\dimen280
+\NC@list=\toks26
+\extratabsurround=\skip111
+\backup@length=\skip112
+\ar@cellbox=\box59
 )
-\TX@col@width=\dimen194
-\TX@old@table=\dimen195
-\TX@old@col=\dimen196
-\TX@target=\dimen197
-\TX@delta=\dimen198
-\TX@cols=\count299
-\TX@ftn=\toks26
+\TX@col@width=\dimen281
+\TX@old@table=\dimen282
+\TX@old@col=\dimen283
+\TX@target=\dimen284
+\TX@delta=\dimen285
+\TX@cols=\count325
+\TX@ftn=\toks27
 )
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/float/float
-.sty
+(F:\MikTEX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count300
-\float@exts=\toks27
-\float@box=\box57
-\@float@everytoks=\toks28
-\@floatcapt=\box58
-) (./Thesis.aux)
+\c@float@type=\count326
+\float@exts=\toks28
+\float@box=\box60
+\@float@everytoks=\toks29
+\@floatcapt=\box61
+)
+
+LaTeX Warning: Unused global option(s):
+    [UTF8].
+
+(Thesis.aux (abstract.aux) (Introduction.aux) (Nomesh.aux)
+(Boundaryconditions.aux) (elasticHR.aux) (plateHR.aux) (TADAS.aux
+
+LaTeX Warning: Label `TADAS2' multiply defined.
+
+) (Conclusion.aux) (acknowledgments.aux) (appendixA.aux) (appendixB.aux)
+(appendixC.aux) (cv.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -748,6 +685,13 @@ LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+2.
+ (F:\MikTEX\tex/latex/base\ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
@@ -759,32 +703,32 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
+* driver: xetex
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(91.04872pt, 430.00462pt, 91.04872pt)
-* v-part:(T,H,B)=(108.12054pt, 556.47656pt, 108.12054pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=430.00462pt
-* \textheight=556.47656pt
-* \oddsidemargin=1.44614pt
-* \evensidemargin=38.30426pt
-* \topmargin=-6.94011pt
-* \headheight=12.0pt
+* h-part:(L,W,R)=(91.04872pt, 415.41043pt, 91.04872pt)
+* v-part:(T,H,B)=(108.12054pt, 628.80576pt, 108.12054pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=415.41043pt
+* \textheight=628.80576pt
+* \oddsidemargin=18.77873pt
+* \evensidemargin=18.77873pt
+* \topmargin=3.78307pt
+* \headheight=14.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
-* \footskip=25.29494pt
+* \footskip=28.45274pt
 * \marginparwidth=125.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
-* \voffset=0.0pt
+* \voffset=8.5359pt
 * \mag=1000
 * \@twocolumnfalse
 * \@twosidetrue
@@ -792,72 +736,40 @@ LaTeX Font Info:    ... okay on input line 22.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/context/base/mkii
-/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count301
-\scratchdimen=\dimen199
-\scratchbox=\box59
-\nofMPsegments=\count302
-\nofMParguments=\count303
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count304
-\MPscratchDim=\dimen256
-\MPnumerator=\count305
-\makeMPintoPDFobject=\count306
-\everyMPtoPDFconversion=\toks30
-)
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/epstopdf-pk
-g/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/latexconfig
-/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 22.
+(Thesis.out) (Thesis.out)
 \@outlinefile=\write3
 \openout3 = `Thesis.out'.
 
- [1{/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/fonts/map/pdftex/u
-pdmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/font
-s/enc/dvips/lm/lm-rm.enc}
-
-{/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/fonts/enc/dvips/lm/lm
--mathit.enc}]
 *geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: <default>
+* driver: xetex
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(68.28644pt, 483.4126pt, 62.59596pt)
-* v-part:(T,H,B)=(91.04872pt, 629.94394pt, 73.97733pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=483.4126pt
-* \textheight=629.94394pt
+* h-part:(L,W,R)=(68.28644pt, 466.62547pt, 62.59596pt)
+* v-part:(T,H,B)=(91.04872pt, 680.0208pt, 73.97733pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=466.62547pt
+* \textheight=680.0208pt
 * \oddsidemargin=-3.98355pt
 * \evensidemargin=-9.67403pt
-* \topmargin=-11.28876pt
-* \headheight=12.0pt
+* \topmargin=-13.28876pt
+* \headheight=14.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
-* \footskip=25.29494pt
+* \footskip=28.45274pt
 * \marginparwidth=125.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
-* \voffset=0.0pt
+* \voffset=8.5359pt
 * \mag=1000
 * \@twocolumnfalse
 * \@twosidetrue
@@ -865,79 +777,55 @@ s/enc/dvips/lm/lm-rm.enc}
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-24.
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/lm/ot1lmtt.
-fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-! LaTeX Error: Unicode character 学 (U+5B66)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 校 (U+6821)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 代 (U+4EE3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 码 (U+7801)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
+Package fontspec Info: Font family 'Kaiti_GB2312.ttf(0)' created for font
+(fontspec)             'Kaiti_GB2312.ttf' with options
+(fontspec)             [Script={CJK},Path={./fonts/},AutoFakeBold={2},AutoFakeS
+lant={0.167}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[./fonts/Kaiti_GB2312.ttf]/OT:script=hani;language=d
+flt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[./fonts/Kaiti_GB2312.ttf]/OT:script=hani;language=d
+flt;embolden=2;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[./fonts/Kaiti_GB2312.ttf]/OT:script=hani;language=d
+flt;slant=0.167;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[./fonts/Kaiti_GB2312.ttf]/OT:script=hani;language=d
+flt;embolden=2;slant=0.167;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 24.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
+4.
+ (F:\MikTEX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+4.
+
+(F:\MikTEX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+24.
+ (F:\MikTEX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+24.
+
+(F:\MikTEX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.5> on input line 24.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -946,562 +834,52 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5.25> on input line 24.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
 
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsfonts/um
-sa.fd
+ (F:\MikTEX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
 
 
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/amsfonts/um
-sb.fd
+(F:\MikTEX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-! LaTeX Error: Unicode character 分 (U+5206)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 类 (U+7C7B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 号 (U+53F7)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 研 (U+7814)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 究 (U+7A76)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 生 (U+751F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 学 (U+5B66)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 号 (U+53F7)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 密 (U+5BC6)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 集 (U+96C6)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-<covers/engineering_master.png, id=13, 594.9135pt x 209.2545pt>
-File: covers/engineering_master.png Graphic file (type png)
-<use covers/engineering_master.png>
-Package pdftex.def Info: covers/engineering_master.png  used on input line 24.
-(pdftex.def)             Requested size: 614.295pt x 216.08372pt.
-
-! LaTeX Error: Unicode character 基 (U+57FA)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 于 (U+4E8E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 赫 (U+8D6B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 林 (U+6797)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 格 (U+683C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 赖 (U+8D56)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 斯 (U+65AF)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 纳 (U+7EB3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 原 (U+539F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 理 (U+7406)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 的 (U+7684)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 变 (U+53D8)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 分 (U+5206)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 一 (U+4E00)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 致 (U+81F4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 型 (U+578B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 伽 (U+4F3D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 辽 (U+8FBD)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 金 (U+91D1)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 无 (U+65E0)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 网 (U+7F51)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 格 (U+683C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 法 (U+6CD5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-24.
-
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/lm/ot1lmss.
-fd
-File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-! LaTeX Error: Unicode character 作 (U+4F5C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 者 (U+8005)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 姓 (U+59D3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 名 (U+540D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 24.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 24.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 24.
+File: covers/engineering_master.png Graphic file (type bmp)
+<covers/engineering_master.png>
+
+Package fontspec Info: Font family 'simhei.ttf(0)' created for font
+(fontspec)             'simhei.ttf' with options
+(fontspec)             [Script={CJK},Path={./fonts/},AutoFakeBold={2},AutoFakeS
+lant={0.167}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[./fonts/simhei.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[./fonts/simhei.ttf]/OT:script=hani;language=dflt;em
+bolden=2;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[./fonts/simhei.ttf]/OT:script=hani;language=dflt;sl
+ant=0.167;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[./fonts/simhei.ttf]/OT:script=hani;language=dflt;em
+bolden=2;slant=0.167;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+
+Underfull \hbox (badness 10000) detected at line 24
+\TU/simhei.ttf(0)/b/n/14 作 者 姓 名
+ []
 
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 24.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1509,2770 +887,597 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9.79996> on input line 24.
 
-! LaTeX Error: Unicode character 吴 (U+5434)
-               not set up for use with LaTeX.
+Underfull \hbox (badness 10000) detected at line 24
+\TU/simhei.ttf(0)/b/n/14 指 导 教 师
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
 
+Underfull \hbox (badness 10000) detected at line 24
+\TU/simsun.ttc(0)/b/n/14 教 授
+ []
 
-! LaTeX Error: Unicode character 新 (U+65B0)
-               not set up for use with LaTeX.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
+Underfull \hbox (badness 10000) detected at line 24
+\TU/simhei.ttf(0)/b/n/14 合 作 教 师
+ []
 
 
-! LaTeX Error: Unicode character 瑜 (U+745C)
-               not set up for use with LaTeX.
+Underfull \hbox (badness 10000) detected at line 24
+\TU/simsun.ttc(0)/b/n/14 讲 师
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
 
+Underfull \hbox (badness 10000) detected at line 24
+\TU/simhei.ttf(0)/b/n/14 实 践 教 师
+ []
 
-! LaTeX Error: Unicode character 指 (U+6307)
-               not set up for use with LaTeX.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
+Underfull \hbox (badness 10000) detected at line 24
+\TU/simhei.ttf(0)/b/n/14 研 究 方 向
+ []
 
 
-! LaTeX Error: Unicode character 导 (U+5BFC)
-               not set up for use with LaTeX.
+Underfull \hbox (badness 10000) detected at line 24
+\TU/simhei.ttf(0)/b/n/14 所 在 学 院
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
+[1
 
 
-! LaTeX Error: Unicode character 教 (U+6559)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 师 (U+5E08)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 赵 (U+8D75)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 珧 (U+73E7)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 冰 (U+51B0)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 教 (U+6559)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 授 (U+6388)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 合 (U+5408)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 作 (U+4F5C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 教 (U+6559)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 师 (U+5E08)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 吴 (U+5434)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 俊 (U+4FCA)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 超 (U+8D85)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 讲 (U+8BB2)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 师 (U+5E08)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 实 (U+5B9E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 践 (U+8DF5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 教 (U+6559)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 师 (U+5E08)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 陈 (U+9648)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 连 (U+8FDE)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 健 (U+5065)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 工 (U+5DE5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 程 (U+7A0B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 师 (U+5E08)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 专 (U+4E13)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 业 (U+4E1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 学 (U+5B66)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 位 (U+4F4D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 类 (U+7C7B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 别 (U+522B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 全 (U+5168)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 日 (U+65E5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 制 (U+5236)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 专 (U+4E13)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 业 (U+4E1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 学 (U+5B66)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 位 (U+4F4D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 硕 (U+7855)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 士 (U+58EB)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 专 (U+4E13)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 业 (U+4E1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 学 (U+5B66)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 位 (U+4F4D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 领 (U+9886)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 域 (U+57DF)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 土 (U+571F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 木 (U+6728)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 水 (U+6C34)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 利 (U+5229)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 研 (U+7814)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 究 (U+7A76)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 方 (U+65B9)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 向 (U+5411)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 结 (U+7ED3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 构 (U+6784)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 体 (U+4F53)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 系 (U+7CFB)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 创 (U+521B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 新 (U+65B0)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 与 (U+4E0E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 工 (U+5DE5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 程 (U+7A0B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 应 (U+5E94)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 用 (U+7528)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 所 (U+6240)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 在 (U+5728)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 学 (U+5B66)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 院 (U+9662)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 土 (U+571F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 木 (U+6728)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 工 (U+5DE5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 程 (U+7A0B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 学 (U+5B66)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 院 (U+9662)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 论 (U+8BBA)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 文 (U+6587)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 提 (U+63D0)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 交 (U+4EA4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 日 (U+65E5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 期 (U+671F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ： (U+FF1A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 二 (U+4E8C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 〇 (U+3007)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 二 (U+4E8C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 四 (U+56DB)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 年 (U+5E74)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 三 (U+4E09)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 月 (U+6708)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 日 (U+65E5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \makecover
-               
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-[2
-
- <./covers/engineering_master.png>]
+]
 \openout2 = `abstract.aux'.
 
- (./abstract.tex
+ (abstract.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-! LaTeX Error: Unicode character 摘 (U+6458)
-               not set up for use with LaTeX.
+ [1
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \begin{abstract}
-                    
-You may provide a definition with
-\DeclareUnicodeCharacter 
 
 
-! LaTeX Error: Unicode character 要 (U+8981)
-               not set up for use with LaTeX.
+]
+[2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \begin{abstract}
-                    
-You may provide a definition with
-\DeclareUnicodeCharacter 
+ [3
 
 
-! LaTeX Error: Unicode character 无 (U+65E0)
-               not set up for use with LaTeX.
+]
+[4]) (Thesis.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 1.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无
-       网格法是结构数值仿真领域中一类新型分析方法，该...
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-You may provide a definition with
-\DeclareUnicodeCharacter 
+ [5
 
 
-! LaTeX Error: Unicode character 网 (U+7F51)
-               not set up for use with LaTeX.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网
-          格法是结构数值仿真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 格 (U+683C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格
-             法是结构数值仿真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 法 (U+6CD5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法
-                是结构数值仿真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 是 (U+662F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是
-                   结构数值仿真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 结 (U+7ED3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结
-                      构数值仿真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 构 (U+6784)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构
-                         数值仿真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 数 (U+6570)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构数
-                            值仿真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 值 (U+503C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构数值
-                               仿真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 仿 (U+4EFF)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构数值仿
-                                  真领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 真 (U+771F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构数值仿真
-                                     领域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 领 (U+9886)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构数值仿真领
-                                        域中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 域 (U+57DF)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构数值仿真领域
-                                           中一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 中 (U+4E2D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构数值仿真领域中
-                                              一类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 一 (U+4E00)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 无网格法是结构数值仿真领域中一
-                                                 类新型分析方法，该...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 类 (U+7C7B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�格法是结构数值仿真领域中一类
-                                                  新型分析方法，该�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 新 (U+65B0)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�法是结构数值仿真领域中一类新
-                                                  型分析方法，该方�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 型 (U+578B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�是结构数值仿真领域中一类新型
-                                                  分析方法，该方法�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 分 (U+5206)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�结构数值仿真领域中一类新型分
-                                                  析方法，该方法依�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 析 (U+6790)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�构数值仿真领域中一类新型分析
-                                                  方法，该方法依据�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 方 (U+65B9)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�数值仿真领域中一类新型分析方
-                                                  法，该方法依据离�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 法 (U+6CD5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�值仿真领域中一类新型分析方法
-                                                  ，该方法依据离散�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ， (U+FF0C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�仿真领域中一类新型分析方法，
-                                                  该方法依据离散节�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 该 (U+8BE5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�真领域中一类新型分析方法，该
-                                                  方法依据离散节点�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 方 (U+65B9)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�领域中一类新型分析方法，该方
-                                                  法依据离散节点信�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 法 (U+6CD5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�域中一类新型分析方法，该方法
-                                                  依据离散节点信息�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 依 (U+4F9D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�中一类新型分析方法，该方法依
-                                                  据离散节点信息直�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 据 (U+636E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�一类新型分析方法，该方法依据
-                                                  离散节点信息直接�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 离 (U+79BB)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�类新型分析方法，该方法依据离
-                                                  散节点信息直接在�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 散 (U+6563)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�新型分析方法，该方法依据离散
-                                                  节点信息直接在全�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 节 (U+8282)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�型分析方法，该方法依据离散节
-                                                  点信息直接在全域�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 点 (U+70B9)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�分析方法，该方法依据离散节点
-                                                  信息直接在全域上�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 信 (U+4FE1)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�析方法，该方法依据离散节点信
-                                                  息直接在全域上建�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 息 (U+606F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�方法，该方法依据离散节点信息
-                                                  直接在全域上建立�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 直 (U+76F4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�法，该方法依据离散节点信息直
-                                                  接在全域上建立高�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 接 (U+63A5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�，该方法依据离散节点信息直接
-                                                  在全域上建立高阶�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 在 (U+5728)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�该方法依据离散节点信息直接在
-                                                  全域上建立高阶光�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 全 (U+5168)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�方法依据离散节点信息直接在全
-                                                  域上建立高阶光滑�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 域 (U+57DF)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�法依据离散节点信息直接在全域
-                                                  上建立高阶光滑的�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 上 (U+4E0A)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�依据离散节点信息直接在全域上
-                                                  建立高阶光滑的形�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 建 (U+5EFA)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�据离散节点信息直接在全域上建
-                                                  立高阶光滑的形函�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 立 (U+7ACB)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�离散节点信息直接在全域上建立
-                                                  高阶光滑的形函数�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 高 (U+9AD8)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�散节点信息直接在全域上建立高
-                                                  阶光滑的形函数，�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 阶 (U+9636)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�节点信息直接在全域上建立高阶
-                                                  光滑的形函数，适�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 光 (U+5149)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�点信息直接在全域上建立高阶光
-                                                  滑的形函数，适用�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 滑 (U+6ED1)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�信息直接在全域上建立高阶光滑
-                                                  的形函数，适用于�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 的 (U+7684)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�息直接在全域上建立高阶光滑的
-                                                  形函数，适用于结�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 形 (U+5F62)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�直接在全域上建立高阶光滑的形
-                                                  函数，适用于结构�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 函 (U+51FD)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�接在全域上建立高阶光滑的形函
-                                                  数，适用于结构大�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 数 (U+6570)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�在全域上建立高阶光滑的形函数
-                                                  ，适用于结构大变�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ， (U+FF0C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�全域上建立高阶光滑的形函数，
-                                                  适用于结构大变形�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 适 (U+9002)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�域上建立高阶光滑的形函数，适
-                                                  用于结构大变形问�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 用 (U+7528)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�上建立高阶光滑的形函数，适用
-                                                  于结构大变形问题�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 于 (U+4E8E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�建立高阶光滑的形函数，适用于
-                                                  结构大变形问题、�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 结 (U+7ED3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�立高阶光滑的形函数，适用于结
-                                                  构大变形问题、极�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 构 (U+6784)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�高阶光滑的形函数，适用于结构
-                                                  大变形问题、极端�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 大 (U+5927)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�阶光滑的形函数，适用于结构大
-                                                  变形问题、极端破�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 变 (U+53D8)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�光滑的形函数，适用于结构大变
-                                                  形问题、极端破坏�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 形 (U+5F62)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�滑的形函数，适用于结构大变形
-                                                  问题、极端破坏问�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 问 (U+95EE)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�的形函数，适用于结构大变形问
-                                                  题、极端破坏问题�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 题 (U+9898)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�形函数，适用于结构大变形问题
-                                                  、极端破坏问题和�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 、 (U+3001)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�函数，适用于结构大变形问题、
-                                                  极端破坏问题和薄�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 极 (U+6781)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�数，适用于结构大变形问题、极
-                                                  端破坏问题和薄板�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 端 (U+7AEF)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�，适用于结构大变形问题、极端
-                                                  破坏问题和薄板高�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 破 (U+7834)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�适用于结构大变形问题、极端破
-                                                  坏问题和薄板高阶�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 坏 (U+574F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�用于结构大变形问题、极端破坏
-                                                  问题和薄板高阶问�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 问 (U+95EE)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�于结构大变形问题、极端破坏问
-                                                  题和薄板高阶问题。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 题 (U+9898)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�结构大变形问题、极端破坏问题
-                                                  和薄板高阶问题。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 和 (U+548C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�构大变形问题、极端破坏问题和
-                                                  薄板高阶问题。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 薄 (U+8584)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�大变形问题、极端破坏问题和薄
-                                                  板高阶问题。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 板 (U+677F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�变形问题、极端破坏问题和薄板
-                                                  高阶问题。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 高 (U+9AD8)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�形问题、极端破坏问题和薄板高
-                                                  阶问题。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 阶 (U+9636)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�问题、极端破坏问题和薄板高阶
-                                                  问题。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 问 (U+95EE)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�题、极端破坏问题和薄板高阶问
-                                                  题。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 题 (U+9898)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�、极端破坏问题和薄板高阶问题
-                                                  。
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 。 (U+3002)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...�极端破坏问题和薄板高阶问题。
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 在 (U+5728)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在
-       各类无网格法中，变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 各 (U+5404)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各
-          类无网格法中，变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 类 (U+7C7B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类
-             无网格法中，变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 无 (U+65E0)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无
-                网格法中，变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 网 (U+7F51)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网
-                   格法中，变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 格 (U+683C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格
-                      法中，变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 法 (U+6CD5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法
-                         中，变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 中 (U+4E2D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法中
-                            ，变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ， (U+FF0C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法中，
-                               变分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 变 (U+53D8)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法中，变
-                                  分一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 分 (U+5206)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法中，变分
-                                     一致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 一 (U+4E00)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法中，变分一
-                                        致型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 致 (U+81F4)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法中，变分一致
-                                           型伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 型 (U+578B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法中，变分一致型
-                                              伽辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 伽 (U+4F3D)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 在各类无网格法中，变分一致型伽
-                                                 辽金无网格法计算稳...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 辽 (U+8FBD)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�类无网格法中，变分一致型伽辽
-                                                  金无网格法计算稳�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 金 (U+91D1)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�无网格法中，变分一致型伽辽金
-                                                  无网格法计算稳定�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 无 (U+65E0)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�网格法中，变分一致型伽辽金无
-                                                  网格法计算稳定高�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 网 (U+7F51)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�格法中，变分一致型伽辽金无网
-                                                  格法计算稳定高效�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 格 (U+683C)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�法中，变分一致型伽辽金无网格
-                                                  法计算稳定高效，�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 法 (U+6CD5)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�中，变分一致型伽辽金无网格法
-                                                  计算稳定高效，可�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 计 (U+8BA1)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�，变分一致型伽辽金无网格法计
-                                                  算稳定高效，可保�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 算 (U+7B97)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�变分一致型伽辽金无网格法计算
-                                                  稳定高效，可保证�...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 稳 (U+7A33)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...�分一致型伽辽金无网格法计算稳
-                                                  定高效，可保证伽�...
-(That makes 100 errors; please try again.) 
+])
+\tf@toc=\write4
+\openout4 = `Thesis.toc'.
+
+
+[6]
+\openout2 = `Introduction.aux'.
+
+ (Introduction.tex
+Chapter 1.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6])
+[7]
+\openout2 = `Nomesh.aux'.
+
+ (Nomesh.tex [8
+
+
+
+
+]
+Chapter 2.
+File: Figure/nomesh/point.png Graphic file (type bmp)
+<Figure/nomesh/point.png>
+[9] [10]
+File: figure/nomesh/quadratic25/1.png Graphic file (type bmp)
+<figure/nomesh/quadratic25/1.png>
+File: figure/nomesh/cubic41/1.png Graphic file (type bmp)
+<figure/nomesh/cubic41/1.png>
+File: figure/nomesh/quartic61/1.png Graphic file (type bmp)
+<figure/nomesh/quartic61/1.png>
+File: figure/nomesh/quadratic25/2.png Graphic file (type bmp)
+<figure/nomesh/quadratic25/2.png>
+File: figure/nomesh/cubic41/2.png Graphic file (type bmp)
+<figure/nomesh/cubic41/2.png>
+File: figure/nomesh/quartic61/2.png Graphic file (type bmp)
+<figure/nomesh/quartic61/2.png>
+File: figure/nomesh/quadratic25/3.png Graphic file (type bmp)
+<figure/nomesh/quadratic25/3.png>
+File: figure/nomesh/cubic41/3.png Graphic file (type bmp)
+<figure/nomesh/cubic41/3.png>
+File: figure/nomesh/quartic61/3.png Graphic file (type bmp)
+<figure/nomesh/quartic61/3.png>
+File: figure/nomesh/quadratic25/4.png Graphic file (type bmp)
+<figure/nomesh/quadratic25/4.png>
+File: figure/nomesh/cubic41/4.png Graphic file (type bmp)
+<figure/nomesh/cubic41/4.png>
+File: figure/nomesh/quartic61/4.png Graphic file (type bmp)
+<figure/nomesh/quartic61/4.png>
+File: figure/nomesh/quadratic25/5.png Graphic file (type bmp)
+<figure/nomesh/quadratic25/5.png>
+File: figure/nomesh/cubic41/5.png Graphic file (type bmp)
+<figure/nomesh/cubic41/5.png>
+File: figure/nomesh/quartic61/5.png Graphic file (type bmp)
+<figure/nomesh/quartic61/5.png>
+File: figure/nomesh/quadratic25/6.png Graphic file (type bmp)
+<figure/nomesh/quadratic25/6.png>
+File: figure/nomesh/cubic41/6.png Graphic file (type bmp)
+<figure/nomesh/cubic41/6.png>
+File: figure/nomesh/quartic61/6.png Graphic file (type bmp)
+<figure/nomesh/quartic61/6.png>
+
+Overfull \hbox (26.18524pt too wide) in paragraph at lines 91--112
+ [][] 
+ []
+
+File: figure/nomesh/quadratic46/1.png Graphic file (type bmp)
+<figure/nomesh/quadratic46/1.png>
+File: figure/nomesh/cubic77/1.png Graphic file (type bmp)
+<figure/nomesh/cubic77/1.png>
+File: figure/nomesh/quartic116/1.png Graphic file (type bmp)
+<figure/nomesh/quartic116/1.png>
+File: figure/nomesh/quadratic46/2.png Graphic file (type bmp)
+<figure/nomesh/quadratic46/2.png>
+File: figure/nomesh/cubic77/2.png Graphic file (type bmp)
+<figure/nomesh/cubic77/2.png>
+File: figure/nomesh/quartic116/2.png Graphic file (type bmp)
+<figure/nomesh/quartic116/2.png>
+File: figure/nomesh/quadratic46/3.png Graphic file (type bmp)
+<figure/nomesh/quadratic46/3.png>
+File: figure/nomesh/cubic77/3.png Graphic file (type bmp)
+<figure/nomesh/cubic77/3.png>
+File: figure/nomesh/quartic116/3.png Graphic file (type bmp)
+<figure/nomesh/quartic116/3.png>
+File: figure/nomesh/quadratic46/4.png Graphic file (type bmp)
+<figure/nomesh/quadratic46/4.png>
+File: figure/nomesh/cubic77/4.png Graphic file (type bmp)
+<figure/nomesh/cubic77/4.png>
+File: figure/nomesh/quartic116/4.png Graphic file (type bmp)
+<figure/nomesh/quartic116/4.png>
+File: figure/nomesh/quadratic46/5.png Graphic file (type bmp)
+<figure/nomesh/quadratic46/5.png>
+File: figure/nomesh/cubic77/5.png Graphic file (type bmp)
+<figure/nomesh/cubic77/5.png>
+File: figure/nomesh/quartic116/5.png Graphic file (type bmp)
+<figure/nomesh/quartic116/5.png>
+File: figure/nomesh/quadratic46/6.png Graphic file (type bmp)
+<figure/nomesh/quadratic46/6.png>
+File: figure/nomesh/cubic77/6.png Graphic file (type bmp)
+<figure/nomesh/cubic77/6.png>
+File: figure/nomesh/quartic116/6.png Graphic file (type bmp)
+<figure/nomesh/quartic116/6.png>
+
+Overfull \hbox (26.18524pt too wide) in paragraph at lines 116--137
+ [][] 
+ []
+
+[11] [12] [13] [14] [15]
+File: figure/nomesh/plate.png Graphic file (type bmp)
+<figure/nomesh/plate.png>
+
+Overfull \hbox (9.23383pt too wide) in paragraph at lines 229--230
+ [][] 
+ []
+
+[16] [17]) [18]
+\openout2 = `Boundaryconditions.aux'.
+
+ (Boundaryconditions.tex
+Chapter 3.
+[19
+
+
+
+
+]
+Underfull \vbox (badness 1540) has occurred while \output is active []
+
+ [20]
+Underfull \vbox (badness 2932) has occurred while \output is active []
+
+ [21]
+[22] [23] [24]) [25]
+\openout2 = `elasticHR.aux'.
+
+ (elasticHR.tex [26
+
+
+
+
+]
+Chapter 4.
+[27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+[29]
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 121.
+
+[30] [31]
+File: figure/EHR/Eintegralscheme.png Graphic file (type bmp)
+<figure/EHR/Eintegralscheme.png>
+ [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+File: figure/EHR/patchtestmeshfree.png Graphic file (type bmp)
+<figure/EHR/patchtestmeshfree.png>
+
+[34] [35]
+File: figure/EHR/cantilever/cantilever.png Graphic file (type bmp)
+<figure/EHR/cantilever/cantilever.png>
+ [36]
+File: figure/EHR/cantilever/cantilever.mesh.png Graphic file (type bmp)
+<figure/EHR/cantilever/cantilever.mesh.png>
+File: figure/EHR/cantilever/L2.png Graphic file (type bmp)
+<figure/EHR/cantilever/L2.png>
+File: figure/EHR/cantilever/H1.png Graphic file (type bmp)
+<figure/EHR/cantilever/H1.png>
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 329.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11> on input line 329.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.69997> on input line 329.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.5> on input line 329.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+File: figure/EHR/cantilever/cputime.png Graphic file (type bmp)
+<figure/EHR/cantilever/cputime.png>
+File: figure/EHR/cantilever/efficiency.png Graphic file (type bmp)
+<figure/EHR/cantilever/efficiency.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+File: figure/EHR/hole/hole.png Graphic file (type bmp)
+<figure/EHR/hole/hole.png>
+
+[39]
+File: figure/EHR/hole/hole.mesh.png Graphic file (type bmp)
+<figure/EHR/hole/hole.mesh.png>
+ [40]
+File: figure/EHR/hole/L2.png Graphic file (type bmp)
+<figure/EHR/hole/L2.png>
+File: figure/EHR/hole/H1.png Graphic file (type bmp)
+<figure/EHR/hole/H1.png>
+File: figure/EHR/hole/cputime.png Graphic file (type bmp)
+<figure/EHR/hole/cputime.png>
+File: figure/EHR/hole/efficiency.png Graphic file (type bmp)
+<figure/EHR/hole/efficiency.png>
+File: figure/EHR/hole/sigmaxx.png Graphic file (type bmp)
+<figure/EHR/hole/sigmaxx.png>
+ [41])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+[43]
+\openout2 = `plateHR.aux'.
+
+ (plateHR.tex [44
+
+
+
+
+]
+Chapter 5.
+[45]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+[47]
+Overfull \hbox (12.36914pt too wide) detected at line 115
+[]
+ []
+
+File: figure/PHR/momentlisan.png Graphic file (type bmp)
+<figure/PHR/momentlisan.png>
+
+Underfull \vbox (badness 5008) has occurred while \output is active []
+
+ [48]
+Overfull \hbox (13.9202pt too wide) detected at line 143
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+[51]
+File: figure/PHR/fenpian.png Graphic file (type bmp)
+<figure/PHR/fenpian.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
+[53]
+File: figure/PHR/R/rectangular.png Graphic file (type bmp)
+<figure/PHR/R/rectangular.png>
+File: figure/PHR/R/rectangularmsh.png Graphic file (type bmp)
+<figure/PHR/R/rectangularmsh.png>
+ [54]
+File: figure/PHR/R/CL2.png Graphic file (type bmp)
+<figure/PHR/R/CL2.png>
+File: figure/PHR/R/CH1.png Graphic file (type bmp)
+<figure/PHR/R/CH1.png>
+File: figure/PHR/R/CH2.png Graphic file (type bmp)
+<figure/PHR/R/CH2.png>
+File: figure/PHR/R/CH3.png Graphic file (type bmp)
+<figure/PHR/R/CH3.png>
+ [55]
+File: figure/PHR/R/QL2.png Graphic file (type bmp)
+<figure/PHR/R/QL2.png>
+File: figure/PHR/R/QH1.png Graphic file (type bmp)
+<figure/PHR/R/QH1.png>
+File: figure/PHR/R/QH2.png Graphic file (type bmp)
+<figure/PHR/R/QH2.png>
+File: figure/PHR/R/QH3.png Graphic file (type bmp)
+<figure/PHR/R/QH3.png>
+File: figure/PHR/R/Ccputime.png Graphic file (type bmp)
+<figure/PHR/R/Ccputime.png>
+File: figure/PHR/R/Cefficiency.png Graphic file (type bmp)
+<figure/PHR/R/Cefficiency.png>
+ [56]
+File: figure/PHR/R/Qcputime.png Graphic file (type bmp)
+<figure/PHR/R/Qcputime.png>
+File: figure/PHR/R/Qefficiency.png Graphic file (type bmp)
+<figure/PHR/R/Qefficiency.png>
+File: figure/PHR/R/calpha.png Graphic file (type bmp)
+<figure/PHR/R/calpha.png>
+File: figure/PHR/R/qalpha.png Graphic file (type bmp)
+<figure/PHR/R/qalpha.png>
+ [57]
+File: figure/PHR/T/triangular.png Graphic file (type bmp)
+<figure/PHR/T/triangular.png>
+File: figure/PHR/T/triangularmsh.png Graphic file (type bmp)
+<figure/PHR/T/triangularmsh.png>
+File: figure/PHR/T/CL2.png Graphic file (type bmp)
+<figure/PHR/T/CL2.png>
+File: figure/PHR/T/CH1.png Graphic file (type bmp)
+<figure/PHR/T/CH1.png>
+File: figure/PHR/T/CH2.png Graphic file (type bmp)
+<figure/PHR/T/CH2.png>
+File: figure/PHR/T/CH3.png Graphic file (type bmp)
+<figure/PHR/T/CH3.png>
+ [58] [59]
+File: figure/PHR/T/QL2.png Graphic file (type bmp)
+<figure/PHR/T/QL2.png>
+File: figure/PHR/T/QH1.png Graphic file (type bmp)
+<figure/PHR/T/QH1.png>
+File: figure/PHR/T/QH2.png Graphic file (type bmp)
+<figure/PHR/T/QH2.png>
+File: figure/PHR/T/QH3.png Graphic file (type bmp)
+<figure/PHR/T/QH3.png>
+File: figure/PHR/T/Cefficiencyomega.png Graphic file (type bmp)
+<figure/PHR/T/Cefficiencyomega.png>
+File: figure/PHR/T/Cefficiencygamma.png Graphic file (type bmp)
+<figure/PHR/T/Cefficiencygamma.png>
+ [60]
+File: figure/PHR/T/Mxy.png Graphic file (type bmp)
+<figure/PHR/T/Mxy.png>
+File: figure/PHR/A/annular.png Graphic file (type bmp)
+<figure/PHR/A/annular.png>
+
+Underfull \vbox (badness 1281) has occurred while \output is active []
+
+ [61]
+File: figure/PHR/A/annularmsh.png Graphic file (type bmp)
+<figure/PHR/A/annularmsh.png>
+File: figure/PHR/A/QL2.png Graphic file (type bmp)
+<figure/PHR/A/QL2.png>
+File: figure/PHR/A/QH1.png Graphic file (type bmp)
+<figure/PHR/A/QH1.png>
+File: figure/PHR/A/QH2.png Graphic file (type bmp)
+<figure/PHR/A/QH2.png>
+File: figure/PHR/A/QH3.png Graphic file (type bmp)
+<figure/PHR/A/QH3.png>
+
+[62] [63]
+File: figure/PHR/A/Qcputime.png Graphic file (type bmp)
+<figure/PHR/A/Qcputime.png>
+File: figure/PHR/A/Qefficiency.png Graphic file (type bmp)
+<figure/PHR/A/Qefficiency.png>
+File: figure/PHR/A/Mxy.png Graphic file (type bmp)
+<figure/PHR/A/Mxy.png>
+File: figure/PHR/A/alpha.png Graphic file (type bmp)
+<figure/PHR/A/alpha.png>
+ [64]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [65])
+[66]
+\openout2 = `TADAS.aux'.
+
+ (TADAS.tex
+Chapter 6.
+File: figure/DAMPER/TADAS/1.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/1.png>
+File: figure/DAMPER/TADAS/2.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/2.png>
+File: figure/DAMPER/TADAS/3.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/3.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67
+
+
+
+
+]
+[68]
+File: figure/DAMPER/TADAS/M11.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/M11.png>
+File: figure/DAMPER/TADAS/M12.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/M12.png>
+File: figure/DAMPER/TADAS/M22.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/M22.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+File: figure/DAMPER/SLIT/1.png Graphic file (type bmp)
+<figure/DAMPER/SLIT/1.png>
+File: figure/DAMPER/SLIT/2.png Graphic file (type bmp)
+<figure/DAMPER/SLIT/2.png>
+File: figure/DAMPER/ADAS/1.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/1.png>
+File: figure/DAMPER/ADAS/2.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/2.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [70]
+[71]) [72]
+\openout2 = `Conclusion.aux'.
+
+ (Conclusion.tex
+Chapter 7.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [73
+
+
+
+
+])
+[74] (Thesis.bbl [75
+
+
+
+] [76] [77] [78] [79]) [80]
+\openout2 = `acknowledgments.aux'.
+
+ (acknowledgments.tex) [81
+
+
+
+]
+[82
+
+
+
+]
+\openout2 = `appendixA.aux'.
+
+ (appendixA.tex
+Appendix A.
+[83
+
+
+] [84] [85]) [86]
+\openout2 = `appendixB.aux'.
+
+ (appendixB.tex
+Appendix B.
+[87
+
+
+
+
+] [88]
+Overfull \hbox (28.93867pt too wide) detected at line 56
+[]
+ []
+
+[89]
+Overfull \hbox (13.7153pt too wide) detected at line 76
+[]
+ []
+
+[90]) [91]
+\openout2 = `appendixC.aux'.
+
+ (appendixC.tex [92
+
+
+
+
+]
+Appendix C.
+File: figure/E/point.png Graphic file (type bmp)
+<figure/E/point.png>
+File: figure/E/point2.png Graphic file (type bmp)
+<figure/E/point2.png>
+File: figure/E/point.png Graphic file (type bmp)
+<figure/E/point.png>
+File: figure/E/point2.png Graphic file (type bmp)
+<figure/E/point2.png>
+) [93] [94
+
+
+
+]
+\openout2 = `cv.aux'.
+
+ (cv.tex) [95
+
+
+
+] (Thesis.aux (abstract.aux) (Introduction.aux)
+(Nomesh.aux) (Boundaryconditions.aux) (elasticHR.aux) (plateHR.aux) (TADAS.aux)
+(Conclusion.aux) (acknowledgments.aux) (appendixA.aux) (appendixB.aux)
+(appendixC.aux) (cv.aux))
+ ***********
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2022/08/05>
+ ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: F4D418598032B1973F2943E0FE0E6281;6189.
+ ) 
 Here is how much of TeX's memory you used:
- 13463 strings out of 476025
- 220646 string characters out of 5779036
- 1854388 words of memory out of 5000000
- 33699 multiletter control sequences out of 15000+600000
- 573588 words of font info for 85 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 90i,8n,90p,659b,2958s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 19638 strings out of 410379
+ 416391 string characters out of 5795143
+ 1955432 words of memory out of 5000000
+ 40536 multiletter control sequences out of 15000+600000
+ 653073 words of font info for 180 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 89i,34n,99p,796b,602s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-!  ==> Fatal error occurred, no output PDF file produced!
+Output written on Thesis.pdf (102 pages).
