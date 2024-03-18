@@ -1,8 +1,8 @@
-\chapter{基于Hellinger-Reissner变分原理求解弹性力学问题}
+\chapter{弹性力学问题赫林格-赖斯纳原理变分一致伽辽金无网格法}
 本章针对弹性力学问题，基于Hellinger-Reissner变分原理提出了一种新型满足变分一致性的伽辽金无网格法。
 首先介绍Hellinger-Reissner变分原理及其所提方法的混合离散过程，其次介绍该方法的本质边界条件施加过程并与传统Nitsche法进行对比，最后通过典型弹性力学算例验证该方法的有效性。
-\section{Hellinger-Reissner变分原理}
-Hellinger-Ressiner变分原理\cite{钱伟长1985广义变分原理}是基于最小余能原理提出的，弹性力学问题强形式(\ref{elasticity problems})所对应的余能泛函表达式为：
+\section{弹性力学问题赫林格-赖斯纳变分原理}
+赫林格-赖斯纳变分原理\cite{钱伟长1985广义变分原理}是基于最小余能原理提出的，弹性力学问题强形式(\ref{elasticity problems})所对应的余能泛函表达式为：
 \begin{equation}
 \Pi_C(\sigma_{ij}) = \int_\Omega \frac{1}{2}\sigma_{ij}C_{ijkl}^{-1}\sigma_{kl} d\Omega - \int_{\Gamma^g} \sigma_{ij} n_j g_i d\Gamma
 \end{equation}
@@ -108,7 +108,7 @@ Hellinger-Reissner变分原理弱形式中的位移和应力采用混合离散�
 \end{equation} \par
 值得注意的是，式中$\tilde{\Psi}_{I,i}$即为再生光滑梯度\cite{wang2019}。根据再生光滑梯度理论框架，可以直接通过无网格形函数显式构造再生光滑梯度，从而避免了传统无网格形函数导数的复杂计算，提高了梯度计算效率。并且再生光滑梯度
 内嵌局部积分约束条件$\tilde{\pmb g}_{iI}$，从而保证算法的计算精度和误差收敛性。这意味着通过构造再生光滑梯度，可以确保在进行全域积分时满足积分约束条件，从而得到准确的结果，并保证算法的计算精度和误差收敛性。反之，Hellinger-Reissner变分原理的混合离散框架也完备了再生光滑梯度法的变分理论基础。\par
-\section{Hellinger-Reissner变分原理下的本质边界条件施加方法}
+\section{赫林格-赖斯纳变分原理下的本质边界条件施加方法}
 基于Hellinger-Reissner变分原理得到的弱形式(\ref{weak form1})中的积分项包括了在本质边界条件下的位移和应力的约束项，以及在自然边界条件下的外力和强制位移项。
 此时，通过对位移采用再生核近似，应力通过局部多项式近似的混合离散方式对Hellinger-Reissner变分原理的等效积分弱形式进行组装刚度矩阵。
 首先，将式(\ref{CH4-ui})、(\ref{CH4-sigma})代入弱形式(\ref{deltau})中得到：
@@ -408,7 +408,7 @@ $\pmb N$为法向量矩阵，其表达式为：
     \includegraphics[width=0.49\textwidth]{figure/EHR/hole/efficiency.png}
     \phantomcaption\label{Hefficiency}
 \end{subcaptiongroup}
-\caption{\centering{带孔无限大平板问题效率对比：\\\subref{Hcputime} 计算时间与节点数的关系；\subref{Hefficiency} 边界条件施加效率分析}}
+\caption{\centering{带孔无限大平板问题效率对比：\subref{Hcputime} 计算时间与节点数的关系；\subref{Hefficiency} 边界条件施加效率分析}}
 \end{figure} 
 \section{小结}
 本章介绍了一种基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解弹性力学问题。该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的位移和应力，实现了满足积分约束条件的一种本质边界条件施加方法。
