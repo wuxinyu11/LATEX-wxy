@@ -3,9 +3,11 @@
 不失为一般性，弹性力学问题的基本未知量为位移向量$\pmb{u}=\{u_i\},i=1,\dotsb,n_{sd}$，其静力平衡方程为：
 \begin{equation}\label{elasticity problems}
 \begin{split}
+\begin{cases}
     \sigma_{ij,j}+b_i=0&\text{in}\;\Omega\\
     \sigma_{ij}n_j=t_i&\text{on}\;\Gamma^t\\
     u_i=g_i&\text{on}\;\Gamma^g
+\end{cases}
 \end{split}
 \end{equation}
 其中$\pmb \sigma=[\sigma_{ij}]$为柯西应力，$\pmb{b}=\{b_i\}$为体力，$\Gamma^t \text{、}\Gamma^g$分别表示为自然和强制边界条件，$\Gamma^t\cup \Gamma^g=\Gamma,\Gamma^t\cap \Gamma^g=\varnothing$，$\pmb{t}=\{t_i\}$和$\pmb{g}=\{g_i\}$分别为自然边界和强制边界上给定的面力和位移，$\pmb{n}=\{n_i\}$是$\Gamma^{t}$的外法线方向。\par

@@ -39,7 +39,7 @@
 %---------------------------------------------------------------------------%
 %->> Load class and require packages
 %---------------------------------------------------------------------------%
-\LoadClass[twoside, openright]{book}
+\LoadClass[twoside, openright, UTF8]{book}
 \RequirePackage{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{fancyhdr}
@@ -246,7 +246,7 @@
     \chapter*{致\hspace{16pt}谢}
     \phantomsection
     \addcontentsline{toc}{chapter}{致\hspace{12pt}谢}
-    \indent\ttfamily\fontsize{12pt}{20pt}\selectfont
+    \indent\rmfamily\fontsize{12pt}{20pt}\selectfont
 }{\vspace{20pt}\par}
 
 \newenvironment{cv}{
