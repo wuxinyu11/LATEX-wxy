@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  17 MAR 2024 18:01
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  18 MAR 2024 15:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -676,31 +676,31 @@ LaTeX Warning: Label `TADAS2' multiply defined.
 (appendixC.aux) (cv.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
-2.
+3.
  (F:\MikTEX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -740,7 +740,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring OFF on input line 23.
 (Thesis.out) (Thesis.out)
 \@outlinefile=\write3
 \openout3 = `Thesis.out'.
@@ -803,52 +803,52 @@ flt;slant=0.167;"
 flt;embolden=2;slant=0.167;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 24.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 25.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-4.
+5.
  (F:\MikTEX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-4.
+5.
 
 (F:\MikTEX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-24.
+25.
  (F:\MikTEX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-24.
+25.
 
 (F:\MikTEX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.5> on input line 24.
+(Font)              <10.5> on input line 25.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.34996> on input line 24.
+(Font)              <7.34996> on input line 25.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.25> on input line 24.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+(Font)              <5.25> on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
  (F:\MikTEX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
 
 
 (F:\MikTEX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 24.
+(Font)              <10> on input line 25.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 24.
+(Font)              <7> on input line 25.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 24.
+(Font)              <5> on input line 25.
 File: covers/engineering_master.png Graphic file (type bmp)
 <covers/engineering_master.png>
 
@@ -877,47 +877,47 @@ bolden=2;slant=0.167;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 25
 \TU/simhei.ttf(0)/b/n/14 作 者 姓 名
  []
 
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 24.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 25.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 24.
+(Font)              <14> on input line 25.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9.79996> on input line 24.
+(Font)              <9.79996> on input line 25.
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 25
 \TU/simhei.ttf(0)/b/n/14 指 导 教 师
  []
 
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 25
 \TU/simsun.ttc(0)/b/n/14 教 授
  []
 
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 25
 \TU/simhei.ttf(0)/b/n/14 合 作 教 师
  []
 
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 25
 \TU/simsun.ttc(0)/b/n/14 讲 师
  []
 
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 25
 \TU/simhei.ttf(0)/b/n/14 实 践 教 师
  []
 
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 25
 \TU/simhei.ttf(0)/b/n/14 研 究 方 向
  []
 
 
-Underfull \hbox (badness 10000) detected at line 24
+Underfull \hbox (badness 10000) detected at line 25
 \TU/simhei.ttf(0)/b/n/14 所 在 学 院
  []
 
@@ -942,6 +942,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+Underfull \hbox (badness 6893) in paragraph at lines 34--34
+\TU/TimesNewRoman(0)/b/n/12 Keywords: \TU/TimesNewRoman(0)/m/n/12 Meshfree meth
+od;Hellinger-Reissner variational principle;Essential
+ []
+
 [4]) (Thesis.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 1.
@@ -1138,10 +1143,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figure/EHR/patchtestmeshfree.png Graphic file (type bmp)
 <figure/EHR/patchtestmeshfree.png>
 
-[34] [35]
+[34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
 File: figure/EHR/cantilever/cantilever.png Graphic file (type bmp)
 <figure/EHR/cantilever/cantilever.png>
- [36]
+
+[36]
 File: figure/EHR/cantilever/cantilever.mesh.png Graphic file (type bmp)
 <figure/EHR/cantilever/cantilever.mesh.png>
 File: figure/EHR/cantilever/L2.png Graphic file (type bmp)
@@ -1164,7 +1173,7 @@ File: figure/EHR/cantilever/cputime.png Graphic file (type bmp)
 File: figure/EHR/cantilever/efficiency.png Graphic file (type bmp)
 <figure/EHR/cantilever/efficiency.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2269) has occurred while \output is active []
 
  [38]
 File: figure/EHR/hole/hole.png Graphic file (type bmp)
@@ -1221,14 +1230,11 @@ Overfull \hbox (13.9202pt too wide) detected at line 143
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [49]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
-[51]
+[50]
 File: figure/PHR/fenpian.png Graphic file (type bmp)
 <figure/PHR/fenpian.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [51]
+Underfull \vbox (badness 2073) has occurred while \output is active []
 
  [52]
 [53]
@@ -1331,12 +1337,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (TADAS.tex
 Chapter 6.
-File: figure/DAMPER/TADAS/1.png Graphic file (type bmp)
-<figure/DAMPER/TADAS/1.png>
-File: figure/DAMPER/TADAS/2.png Graphic file (type bmp)
-<figure/DAMPER/TADAS/2.png>
-File: figure/DAMPER/TADAS/3.png Graphic file (type bmp)
-<figure/DAMPER/TADAS/3.png>
+File: figure/DAMPER/ADAS/1.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/1.png>
+File: figure/DAMPER/ADAS/2.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/2.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1346,7 +1350,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-[68]
+File: figure/DAMPER/TADAS/1.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/1.png>
+
+Underfull \vbox (badness 4060) has occurred while \output is active []
+
+ [68]
+File: figure/DAMPER/TADAS/2.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/2.png>
+File: figure/DAMPER/TADAS/3.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/3.png>
 File: figure/DAMPER/TADAS/M11.png Graphic file (type bmp)
 <figure/DAMPER/TADAS/M11.png>
 File: figure/DAMPER/TADAS/M12.png Graphic file (type bmp)
@@ -1354,22 +1367,19 @@ File: figure/DAMPER/TADAS/M12.png Graphic file (type bmp)
 File: figure/DAMPER/TADAS/M22.png Graphic file (type bmp)
 <figure/DAMPER/TADAS/M22.png>
 
+[69]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
+ [70]
 File: figure/DAMPER/SLIT/1.png Graphic file (type bmp)
 <figure/DAMPER/SLIT/1.png>
 File: figure/DAMPER/SLIT/2.png Graphic file (type bmp)
 <figure/DAMPER/SLIT/2.png>
-File: figure/DAMPER/ADAS/1.png Graphic file (type bmp)
-<figure/DAMPER/ADAS/1.png>
-File: figure/DAMPER/ADAS/2.png Graphic file (type bmp)
-<figure/DAMPER/ADAS/2.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2221) has occurred while \output is active []
 
- [70]
-[71]) [72]
+ [71])
+[72]
 \openout2 = `Conclusion.aux'.
 
  (Conclusion.tex
@@ -1382,20 +1392,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-])
-[74] (Thesis.bbl [75
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74])
+[75] (Thesis.bbl [76
 
 
 
-] [76] [77] [78] [79]) [80]
+] [77] [78] [79] [80] [81]) [82]
 \openout2 = `acknowledgments.aux'.
 
- (acknowledgments.tex) [81
+ (acknowledgments.tex)
+[83
 
 
 
-]
-[82
+] [84
 
 
 
@@ -1404,33 +1417,33 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (appendixA.tex
 Appendix A.
-[83
+[85
 
 
-] [84] [85]) [86]
+] [86] [87]) [88]
 \openout2 = `appendixB.aux'.
 
  (appendixB.tex
 Appendix B.
-[87
+[89
 
 
 
 
-] [88]
+] [90]
 Overfull \hbox (28.93867pt too wide) detected at line 56
 []
  []
 
-[89]
+[91]
 Overfull \hbox (13.7153pt too wide) detected at line 76
 []
  []
 
-[90]) [91]
+[92]) [93]
 \openout2 = `appendixC.aux'.
 
- (appendixC.tex [92
+ (appendixC.tex [94
 
 
 
@@ -1445,14 +1458,14 @@ File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
 <figure/E/point2.png>
-) [93] [94
+) [95] [96
 
 
 
 ]
 \openout2 = `cv.aux'.
 
- (cv.tex) [95
+ (cv.tex) [97
 
 
 
@@ -1469,15 +1482,15 @@ L3 programming layer <2022/08/05>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F4D418598032B1973F2943E0FE0E6281;6189.
+(rerunfilecheck)             Checksum: 8EFE9630BA08411527774CE8DC6DEC33;5967.
  ) 
 Here is how much of TeX's memory you used:
- 19638 strings out of 410379
- 416391 string characters out of 5795143
+ 19669 strings out of 410379
+ 417884 string characters out of 5795143
  1955432 words of memory out of 5000000
- 40536 multiletter control sequences out of 15000+600000
+ 40567 multiletter control sequences out of 15000+600000
  653073 words of font info for 180 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,34n,99p,796b,602s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,34n,99p,826b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (102 pages).
+Output written on Thesis.pdf (104 pages).

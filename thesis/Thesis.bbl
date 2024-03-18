@@ -1,4 +1,4 @@
-\begin{thebibliography}{76}
+\begin{thebibliography}{78}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -490,6 +490,12 @@ Ventsel E, Krauthammer T, Carrera E.
 \newblock 广义变分原理\allowbreak[M].
 \newblock 知识出版社, 1985.
 
+\bibitem[Basu et~al.(2016)Basu and Reddy]{basu2016}
+Basu D, Reddy P.
+\newblock A {{New Metallic Damper}} for {{Seismic Resilience}}: {{Analytical
+  Feasibility Study}}\allowbreak[J].
+\newblock Structures, 2016, 7: 165-183.
+
 \bibitem[Mohammadi et~al.(2017)Mohammadi, Nasri, and Ghaffary]{mohammadi2017}
 Mohammadi R~K, Nasri A, Ghaffary A.
 \newblock {{TADAS}} dampers in very large deformations\allowbreak[J].
@@ -502,5 +508,11 @@ Kim Y~J, Ahn T~S, Bae J~H, et~al.
   energy dissipation\allowbreak[J].
 \newblock International Journal of Steel Structures, 2016, 16\allowbreak (3):
   959-974.
+
+\bibitem[Oh et~al.(2009)Oh, Kim, and Ryu]{oh2009}
+Oh S~H, Kim Y~J, Ryu H~S.
+\newblock Seismic performance of steel structures with slit
+  dampers\allowbreak[J].
+\newblock Engineering Structures, 2009, 31\allowbreak (9): 1997-2008.
 
 \end{thebibliography}
