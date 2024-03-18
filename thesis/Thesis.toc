@@ -14,20 +14,20 @@
 \contentsline {section}{\numberline {3.2}罚函数法}{21}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Nitsche法}{22}{section.3.3}%
 \contentsline {section}{\numberline {3.4}小结}{25}{section.3.4}%
-\contentsline {chapter}{\numberline {4}基于Hellinger-Reissner变分原理求解弹性力学问题}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Hellinger-Reissner变分原理}{27}{section.4.1}%
+\contentsline {chapter}{\numberline {4}基于赫林格-赖斯纳变分原理求解弹性力学问题}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}赫林格-赖斯纳变分原理}{27}{section.4.1}%
 \contentsline {section}{\numberline {4.2}位移-应力混合离散}{28}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Hellinger-Reissner变分原理下的本质边界条件施加方法}{30}{section.4.3}%
+\contentsline {section}{\numberline {4.3}赫林格-赖斯纳变分原理下的本质边界条件施加方法}{30}{section.4.3}%
 \contentsline {section}{\numberline {4.4}优化的数值积分方案}{32}{section.4.4}%
 \contentsline {section}{\numberline {4.5}数值算例}{33}{section.4.5}%
 \contentsline {subsection}{\numberline {4.5.1}分片实验}{33}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}悬臂梁问题}{35}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.2}悬臂梁问题}{36}{subsection.4.5.2}%
 \contentsline {subsection}{\numberline {4.5.3}带孔无限大平板问题}{39}{subsection.4.5.3}%
 \contentsline {section}{\numberline {4.6}小结}{41}{section.4.6}%
-\contentsline {chapter}{\numberline {5}基于Hellinger-Reissner变分原理求解薄板问题}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Hellinger-Reissner变分原理}{45}{section.5.1}%
+\contentsline {chapter}{\numberline {5}基于赫林格-赖斯纳变分原理求解薄板问题}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}赫林格-赖斯纳变分原理}{45}{section.5.1}%
 \contentsline {section}{\numberline {5.2}挠度-弯矩混合离散}{46}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Hellinger-Reissner变分原理下的本质边界条件施加方法}{49}{section.5.3}%
+\contentsline {section}{\numberline {5.3}赫林格-赖斯纳变分原理下的本质边界条件施加方法}{49}{section.5.3}%
 \contentsline {section}{\numberline {5.4}数值算例}{51}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}分片实验}{51}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}简支方板问题}{53}{subsection.5.4.2}%
@@ -35,19 +35,19 @@
 \contentsline {subsection}{\numberline {5.4.4}简支环行板问题}{61}{subsection.5.4.4}%
 \contentsline {section}{\numberline {5.5}小结}{66}{section.5.5}%
 \contentsline {chapter}{\numberline {6}薄板型抗震阻尼器数值模拟分析}{67}{chapter.6}%
-\contentsline {section}{\numberline {6.1}TADAS阻尼器}{67}{section.6.1}%
-\contentsline {section}{\numberline {6.2}slit阻尼器}{70}{section.6.2}%
-\contentsline {section}{\numberline {6.3}ADAS阻尼器}{71}{section.6.3}%
-\contentsline {section}{\numberline {6.4}小结}{71}{section.6.4}%
+\contentsline {section}{\numberline {6.1}ADAS阻尼器}{67}{section.6.1}%
+\contentsline {section}{\numberline {6.2}TADAS阻尼器}{68}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Slit阻尼器}{71}{section.6.3}%
+\contentsline {section}{\numberline {6.4}小结}{72}{section.6.4}%
 \contentsline {chapter}{\numberline {7}结论与展望}{73}{chapter.7}%
 \contentsline {section}{\numberline {7.1}结论}{73}{section.7.1}%
-\contentsline {section}{\numberline {7.2}展望}{73}{section.7.2}%
-\contentsline {chapter}{参考文献}{80}{chapter*.51}%
-\contentsline {chapter}{致\hspace {12pt}谢}{81}{section*.53}%
+\contentsline {section}{\numberline {7.2}展望}{74}{section.7.2}%
+\contentsline {chapter}{参考文献}{82}{chapter*.51}%
+\contentsline {chapter}{致\hspace {12pt}谢}{83}{section*.53}%
 \renewcommand {\cftchappresnum }{附录}
 \renewcommand {\cftchapaftersnum }{}
-\contentsline {chapter}{\numberline {A}弹性力学问题HR变分原理的本质边界条件施加方法推导过程}{83}{appendix.A}%
-\contentsline {chapter}{\numberline {B}薄板问题HR变分原理的本质边界条件施加方法推导过程}{87}{appendix.B}%
-\contentsline {chapter}{\numberline {C}无网格法优化的数值积分方案}{93}{appendix.C}%
-\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{95}{appendix*.57}%
+\contentsline {chapter}{\numberline {A}弹性力学问题HR变分原理的本质边界条件施加方法推导过程}{85}{appendix.A}%
+\contentsline {chapter}{\numberline {B}薄板问题HR变分原理的本质边界条件施加方法推导过程}{89}{appendix.B}%
+\contentsline {chapter}{\numberline {C}无网格法优化的数值积分方案}{95}{appendix.C}%
+\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{97}{appendix*.57}%
 \contentsfinish 

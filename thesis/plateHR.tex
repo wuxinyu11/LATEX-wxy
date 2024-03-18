@@ -1,12 +1,12 @@
-\chapter{基于Hellinger-Reissner变分原理求解薄板问题}
-本章进一步针对薄板问题，基于Hellinger-Reissner变分原理提出了一种满足变分一致性的伽辽金无网格法。首先介绍了薄板问题时Hellinger-Reissner变分原理及其所提方法的混合离散过程，
+\chapter{基于赫林格-赖斯纳变分原理求解薄板问题}
+本章进一步针对薄板问题，基于赫林格-赖斯纳变分原理提出了一种满足变分一致性的伽辽金无网格法。首先介绍了薄板问题时赫林格-赖斯纳变分原理及其所提方法的混合离散过程，
 其次介绍该方法的本质边界条件施加过程并与传统Nitsche法进行对比，最后通过薄板算例验证该方法的变分一致性、计算精度和计算效率
-\section{Hellinger-Reissner变分原理}
+\section{赫林格-赖斯纳变分原理}
 根据最小余能原理，薄板问题强形式(\ref{P control equation})所对应的余能泛函表达式为：
 \begin{equation}
 \Pi_C(M_{\alpha\beta})=\int_{\Omega}\frac{1}{2}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}\bar{\theta}_nd\Gamma-p\bar{w}\vert_{\bf{x}\in{c_w}}
 \end{equation}
-与弹性力学问题类似，薄板问题的Hellinger-Reissner变分原理余能泛函具有挠度和弯矩两个变量，四阶薄板问题控制方程式(\ref{P control equation})对应的余能泛函表达式为：
+与弹性力学问题类似，薄板问题的赫林格-赖斯纳变分原理余能泛函具有挠度和弯矩两个变量，四阶薄板问题控制方程式(\ref{P control equation})对应的余能泛函表达式为：
 \begin{equation}\label{pfanhan}
 \begin{split}
     \Pi_{H\!R}(M_{\alpha\beta},w)&=\Pi_C(M_{\alpha\beta})+\int_{\Omega}w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega\\
@@ -14,7 +14,7 @@
     -\int_{\Gamma_V}w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-w(P-\bar{P})\vert_{\bf{x}\in{c_P}}
 \end{split}
 \end{equation}
-式(\ref{pfanhan})分别对$M_{\alpha\beta}$和$w$进行变分得到薄板问题Hellinger-Reissner变分原理的伽辽金弱形式：
+式(\ref{pfanhan})分别对$M_{\alpha\beta}$和$w$进行变分得到薄板问题赫林格-赖斯纳变分原理的伽辽金弱形式：
 \begin{equation}\label{Pweakfrom}
 \begin{split}
     \delta\Pi_{H\!R}(M_{\alpha\beta},w)=&\delta\Pi_C(M_{\alpha\beta})\\
@@ -40,7 +40,7 @@
     \end{split}
 \end{equation} 
 \section{挠度-弯矩混合离散}
-Hellinger-Reissner变分原理薄板弱形式中的挠度和弯矩采用混合离散进行近似。
+赫林格-赖斯纳变分原理薄板弱形式中的挠度和弯矩采用混合离散进行近似。
 首先，薄板挠度$w$采用无网格形函数(\ref{Pshapefunction})进行近似离散，近似的挠度$w^h$表达式可表示为：
 \begin{equation}\label{w}
     w^h(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{I}
@@ -127,9 +127,9 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
     \includegraphics[scale=0.5]{figure/PHR/momentlisan.png}
     \caption{背景积分域示意图}\label{Pintegralscheme}
 \end{figure}
-\section{Hellinger-Reissner变分原理下的本质边界条件施加方法}
-基于Hellinger-Reissner变分原理的薄板问题伽辽金弱形式(\ref{Pweakform})中的积分项包括了在本质边界条件下的弯矩的约束项，以及在自然边界条件下的挠度和集中荷载外力项。
-此时，通过对挠度采用再生核近似，弯矩通过局部多项式近似的混合离散方式对Hellinger-Reissner变分原理的薄板问题等效积分弱形式进行组装刚度矩阵。
+\section{赫林格-赖斯纳变分原理下的本质边界条件施加方法}
+基于赫林格-赖斯纳变分原理的薄板问题伽辽金弱形式(\ref{Pweakform})中的积分项包括了在本质边界条件下的弯矩的约束项，以及在自然边界条件下的挠度和集中荷载外力项。
+此时，通过对挠度采用再生核近似，弯矩通过局部多项式近似的混合离散方式对赫林格-赖斯纳变分原理的薄板问题等效积分弱形式进行组装刚度矩阵。
 首先，将挠度离散表达式(\ref{w})和弯矩离散表达式(\ref{moment})代入到弱形式(\ref{Pweakform2})中得到：
 \begin{equation}\label{CH5-1}
 \begin{split}
@@ -163,7 +163,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
     &=\sum_{J=1}^{N\!P}(\pmb{K}+\tilde{\pmb{K}}+\bar{\pmb{K}})\pmb d_J-\tilde{\pmb f}-\bar{\pmb f}
 \end{split}
 \end{equation}
-式中的最后一个等式通过引入式(\ref{PG})-(\ref{PBPSI})和(\ref{MVP})进行化简得到，具体详细的推导可参考附录B薄板HR变分原理的本质边界条件施加方法推导过程。根据式(\ref{CH5-2})和(\ref{Pzuzhuang})代入到式(\ref{CH5-1})中可得到Hellinger-Reissner变分原理下的薄板问题离散控制方程：
+式中的最后一个等式通过引入式(\ref{PG})-(\ref{PBPSI})和(\ref{MVP})进行化简得到，具体详细的推导可参考附录B薄板HR变分原理的本质边界条件施加方法推导过程。根据式(\ref{CH5-2})和(\ref{Pzuzhuang})代入到式(\ref{CH5-1})中可得到赫林格-赖斯纳变分原理下的薄板问题离散控制方程：
 \begin{equation}\label{equationP}
     (\pmb{K}+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}=\pmb{f}+\tilde{\pmb f}+\bar{\pmb f}
 \end{equation}
@@ -188,10 +188,10 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 \end{align}
 \end{subequations}
 \par
-Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2})中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和常用于解决薄板问题的满足变分一致性的本质边界条件施加方案Nitsche法(\ref{Pkv})中的$K_{IJ}^n$、$f_I^n$相比，具有相类似的表达式，
-同样都满足变分一致性，不同的是在Hellinger-Reissner变分原理离散过程中，用再生光滑梯度$\tilde{\Psi}_{I,\alpha\beta}$替换传统无网格形函数梯度$\Psi_{I,\alpha\beta}$，使得该方法无需计算复杂耗时的无网格形函数梯度，在处理薄板问题时有效提高计算效率。
-同样，基于Hellinger-Reissner变分原理的特点，薄板的离散控制方程式(\ref{PHR3})中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$中已经内嵌，相较于Nistche法(\ref{PKFs})中的稳定项$K^s_{IJ}$、$f^s_I$而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
-同样，根据Hellinger-Reissner变分原理在求解薄板问题过程中也用到了优化的数值积分方案见附录C无网格法优化的数值积分方案。
+赫林格-赖斯纳变分原理下的薄板问题离散控制方程式(\ref{PHR2})中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和常用于解决薄板问题的满足变分一致性的本质边界条件施加方案Nitsche法(\ref{Pkv})中的$K_{IJ}^n$、$f_I^n$相比，具有相类似的表达式，
+同样都满足变分一致性，不同的是在赫林格-赖斯纳变分原理离散过程中，用再生光滑梯度$\tilde{\Psi}_{I,\alpha\beta}$替换传统无网格形函数梯度$\Psi_{I,\alpha\beta}$，使得该方法无需计算复杂耗时的无网格形函数梯度，在处理薄板问题时有效提高计算效率。
+同样，基于赫林格-赖斯纳变分原理的特点，薄板的离散控制方程式(\ref{PHR3})中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$中已经内嵌，相较于Nistche法(\ref{PKFs})中的稳定项$K^s_{IJ}$、$f^s_I$而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
+同样，根据赫林格-赖斯纳变分原理在求解薄板问题过程中也用到了优化的数值积分方案见附录C无网格法优化的数值积分方案。
 \section{数值算例}
 \subsection{分片实验}
 关于薄板问题，采用二次、三次和四次高阶薄板分片实验验证采用传统高斯积分法和再生光滑梯度积分法的不同本质边界条件施加方法是否和二阶弹性力学问题相同
@@ -256,7 +256,7 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
 \end{table}\par
 表(\ref{cubic})和表(\ref{quartic})分别表示具有三次、四次基函数无网格法的薄板分片试验结果，从表中可以明显的看出，由于缺乏变分一致性
 传统高斯积分法“GI-Penalty”、“GI-Nitsche”和罚函数法“RKGSI-Penalty”都无法通过分片试验。只有满足变分一致性的再生光滑梯度积分法的“RKGSI-Nitsche”法和
-本章提出的Hellinger-Reissner变分原理的本质边界条件施加方案“RKGSI-HR”法可以通过分片试验，满足积分约束条件。
+本章提出的赫林格-赖斯纳变分原理的本质边界条件施加方案“RKGSI-HR”法可以通过分片试验，满足积分约束条件。
 \subsection{简支方板问题}
 如图(\ref{rectangular})所示，一简支方板的中性面区域为$\Omega=(0,1)\otimes(0,1)$，此时$\Omega$的长为$a=1$宽为$b=1$，材料系数分别为弯曲刚度$\bar{D}=1$、$\nu=0.3$。板面内分布如图所示纵向荷载:
 \begin{equation}
@@ -348,7 +348,7 @@ Hellinger-Reissner变分原理下的薄板问题离散控制方程式(\ref{PHR2}
 图(\ref{Ralpha})是分别验证简支方板问题在三次基函数和四次基函数时带有人工经验参数的罚函数法和Nitsche法的敏感度分析。
 从图中可以明显的看出，不同的经验参数对罚函数法的误差有着很大的影响，并且它的最优误差只在一小部分。
 Nitsche法的最优误差的人工经验参数的范围比较大，但人工经验参数值的大小仍然会影响误差结果的变化，
-并且随着网格的加密，人工经验参数的最优结果是在发生改变的。此时，提出的基于Hellinger-Reissner变分原理
+并且随着网格的加密，人工经验参数的最优结果是在发生改变的。此时，提出的基于赫林格-赖斯纳变分原理
 中由于内嵌了本质边界条件，无需人工经验参数来满足正定性，相较于同样满足积分约束条件的“RKGSI-Nitsche”法，提出的“RKGSI-HR”法的不因人工参数值的变化影响最优误差。
 \begin{figure}[H]
     \centering
@@ -465,7 +465,7 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 图(\ref{AQLH})为简支环行板问题的位移误差和能量误差对比图，从图中可以看出“RKGSI-HR”和“RKGSI-Nitsche”同样可以达到理论误差收敛率。
 图(\ref{AQcputime})为简支环行板问题在计算时间节点数和施加不同本质边界条件上的效率对比，从图中可以看出采用“RKGSI”时的效率明显高于“GI”法，
 与同样满足变分一致性的“RKGSI-Nitsche”法相比，“RKGSI-HR”法在施加过程中效率明显更高。
-同样根据简支环行板的弯矩云图(\ref{AMxy})也可以更进一步说明在解决薄板问题上，基于Hellinger-Reissner变分原理的本质边界条件施加方法拥有着更高的计算精度。
+同样根据简支环行板的弯矩云图(\ref{AMxy})也可以更进一步说明在解决薄板问题上，基于赫林格-赖斯纳变分原理的本质边界条件施加方法拥有着更高的计算精度。
 在简支环行板问题中，存在两个人工参数影响计算精度。从图(\ref{Aalpha})中可以看出，随着节点数的变化“RKGSI-Nitsche”法和“RKGSI-Penalty”法在达到最优精度时的人工参数值也在发生变化。
 而“RKGSI-HR”法中不涉及人工参数，因此随着节点数的增加，计算精度不会受到人工参数的影响，从而提高了一种更稳定和高效的计算方法。
 \begin{figure}[H]
@@ -508,13 +508,13 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \caption{简支环形板问题人工参数敏感性分析}\label{Aalpha}
 \end{figure}
 \section{小结}
-本章进一步介绍了基于Hellinger-Reissner变分原理的变分一致性本质边界条件施加方法，用于求解薄板问题。
-该方法通过采用混合离散近似Hellinger-Reissner变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。
+本章进一步介绍了基于赫林格-赖斯纳变分原理的变分一致性本质边界条件施加方法，用于求解薄板问题。
+该方法通过采用混合离散近似赫林格-赖斯纳变分原理弱形式中的挠度和弯矩，实现了满足积分约束条件用于求解高阶薄板问题的一种本质边界条件施加方法。
 其中，在离散平衡控制方程中，采用传统无网格形函数对挠度进行离散，弯矩则在每个背景积分域上近似为对应阶次的多项式。
-同样，在Hellinger-Reissner变分原理的框架下，该方法的离散平衡控制方程具有类似传统Nitsche法的表达式，可以可以视为再生光滑梯度积分法的一种新型Nitsche法。
+同样，在赫林格-赖斯纳变分原理的框架下，该方法的离散平衡控制方程具有类似传统Nitsche法的表达式，可以可以视为再生光滑梯度积分法的一种新型Nitsche法。
 相较于传统Nitsche法，该方法的修正变分项采用了无网格形函数和再生光滑梯度的混合离散，从而在确保变分一致性的同时避免了复杂且耗时的形函数导数计算，明显提高了计算效率，
-稳定项直接源于Hellinger-Reissner变分原理的弱形式，无需额外引入人工参数，有效提高无网格法在求解薄板问题的的计算精度。
-之后进一步通过分片实验和薄板典型算例验证所提方法基于Hellinger-Reissner变分原理施加本质边界条件的变分一致性、计算精度和计算效率。
+稳定项直接源于赫林格-赖斯纳变分原理的弱形式，无需额外引入人工参数，有效提高无网格法在求解薄板问题的的计算精度。
+之后进一步通过分片实验和薄板典型算例验证所提方法基于赫林格-赖斯纳变分原理施加本质边界条件的变分一致性、计算精度和计算效率。
 
 
 
