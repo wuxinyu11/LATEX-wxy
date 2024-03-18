@@ -42,12 +42,12 @@
 \contentsline {chapter}{\numberline {7}结论与展望}{73}{chapter.7}%
 \contentsline {section}{\numberline {7.1}结论}{73}{section.7.1}%
 \contentsline {section}{\numberline {7.2}展望}{74}{section.7.2}%
-\contentsline {chapter}{参考文献}{82}{chapter*.51}%
-\contentsline {chapter}{致\hspace {12pt}谢}{83}{section*.53}%
+\contentsline {chapter}{致\hspace {12pt}谢}{77}{section*.52}%
+\contentsline {chapter}{参考文献}{76}{section.7.2}%
 \renewcommand {\cftchappresnum }{附录}
 \renewcommand {\cftchapaftersnum }{}
-\contentsline {chapter}{\numberline {A}弹性力学问题HR变分原理的本质边界条件施加方法推导过程}{85}{appendix.A}%
-\contentsline {chapter}{\numberline {B}薄板问题HR变分原理的本质边界条件施加方法推导过程}{89}{appendix.B}%
-\contentsline {chapter}{\numberline {C}无网格法优化的数值积分方案}{95}{appendix.C}%
-\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{97}{appendix*.57}%
+\contentsline {chapter}{\numberline {A}弹性力学问题HR变分原理的本质边界条件施加方法推导过程}{79}{appendix.A}%
+\contentsline {chapter}{\numberline {B}薄板问题HR变分原理的本质边界条件施加方法推导过程}{83}{appendix.B}%
+\contentsline {chapter}{\numberline {C}无网格法优化的数值积分方案}{89}{appendix.C}%
+\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{91}{appendix*.56}%
 \contentsfinish 

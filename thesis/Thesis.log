@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2024.2.23)  18 MAR 2024 19:18
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Homebrew) (preloaded format=xelatex 2024.2.23)  18 MAR 2024 19:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2810,18 +2810,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [74]) [75] (./Thesis.bbl [76
-
-
-
-] [77] [78] [79] [80] [81]) [82]
+ [74]) [75] (./Thesis.bbl)
 \openout2 = `acknowledgments.aux'.
 
- (./acknowledgments.tex) [83
+ (./acknowledgments.tex [76
 
 
 
-] [84
+
+]) [77
+
+] [78
 
 
 
@@ -2831,58 +2830,58 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  (./appendixA.tex
 Appendix A.
 
-LaTeX Warning: Reference `inference' on page 85 undefined on input line 2.
+LaTeX Warning: Reference `inference' on page 79 undefined on input line 2.
 
-[85
+[79
 
 
 ]
 
-LaTeX Warning: Reference `Ehr11' on page 86 undefined on input line 21.
+LaTeX Warning: Reference `Ehr11' on page 80 undefined on input line 21.
 
 
-LaTeX Warning: Reference `Ehr21' on page 86 undefined on input line 35.
+LaTeX Warning: Reference `Ehr21' on page 80 undefined on input line 35.
 
-[86]
+[80]
 
-LaTeX Warning: Reference `Ehr31' on page 87 undefined on input line 50.
+LaTeX Warning: Reference `Ehr31' on page 81 undefined on input line 50.
 
 
-LaTeX Warning: Reference `Ehr22' on page 87 undefined on input line 63.
+LaTeX Warning: Reference `Ehr22' on page 81 undefined on input line 63.
 
-[87]
+[81]
 
-LaTeX Warning: Reference `Ehr32' on page 88 undefined on input line 76.
+LaTeX Warning: Reference `Ehr32' on page 82 undefined on input line 76.
 
-) [88]
+) [82]
 \openout2 = `appendixB.aux'.
 
  (./appendixB.tex
 Appendix B.
 
-LaTeX Warning: Reference `Pzuzhuang' on page 89 undefined on input line 2.
+LaTeX Warning: Reference `Pzuzhuang' on page 83 undefined on input line 2.
 
-[89
+[83
 
 
 
 
 ]
 
-LaTeX Warning: Reference `PHR11' on page 90 undefined on input line 19.
+LaTeX Warning: Reference `PHR11' on page 84 undefined on input line 19.
 
-[90]
+[84]
 
-LaTeX Warning: Reference `PHR21' on page 91 undefined on input line 31.
+LaTeX Warning: Reference `PHR21' on page 85 undefined on input line 31.
 
 
 Overfull \hbox (28.93867pt too wide) detected at line 56
 []
  []
 
-[91]
+[85]
 
-LaTeX Warning: Reference `PHR31' on page 92 undefined on input line 58.
+LaTeX Warning: Reference `PHR31' on page 86 undefined on input line 58.
 
 
 Overfull \hbox (13.7153pt too wide) detected at line 76
@@ -2890,16 +2889,16 @@ Overfull \hbox (13.7153pt too wide) detected at line 76
  []
 
 
-LaTeX Warning: Reference `PHR22' on page 92 undefined on input line 78.
+LaTeX Warning: Reference `PHR22' on page 86 undefined on input line 78.
 
-[92]
+[86]
 
-LaTeX Warning: Reference `PHR32' on page 93 undefined on input line 94.
+LaTeX Warning: Reference `PHR32' on page 87 undefined on input line 94.
 
-) [93]
+) [87]
 \openout2 = `appendixC.aux'.
 
- (./appendixC.tex [94
+ (./appendixC.tex [88
 
 
 
@@ -2907,10 +2906,10 @@ LaTeX Warning: Reference `PHR32' on page 93 undefined on input line 94.
 ]
 Appendix C.
 
-LaTeX Warning: Reference `Ctwo' on page 95 undefined on input line 2.
+LaTeX Warning: Reference `Ctwo' on page 89 undefined on input line 2.
 
 
-LaTeX Warning: Reference `Cfour' on page 95 undefined on input line 2.
+LaTeX Warning: Reference `Cfour' on page 89 undefined on input line 2.
 
 File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
@@ -2920,14 +2919,14 @@ File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
 <figure/E/point2.png>
-) [95] [96
+) [89] [90
 
 
 
 ]
 \openout2 = `cv.aux'.
 
- (./cv.tex) [97
+ (./cv.tex) [91
 
 
 
@@ -2935,12 +2934,7 @@ File: figure/E/point2.png Graphic file (type bmp)
 
 Package natbib Warning: There were undefined citations.
 
-(./Thesis.aux (./abstract.aux) (./Introduction.aux) (./Nomesh.aux) (./Boundaryconditions.aux) (./elasticHR.aux) (./plateHR.aux) (./TADAS.aux) (./Conclusion.aux)
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-(./acknowledgments.aux) (./appendixA.aux) (./appendixB.aux) (./appendixC.aux) (./cv.aux))
+(./Thesis.aux (./abstract.aux) (./Introduction.aux) (./Nomesh.aux) (./Boundaryconditions.aux) (./elasticHR.aux) (./plateHR.aux) (./TADAS.aux) (./Conclusion.aux) (./acknowledgments.aux) (./appendixA.aux) (./appendixB.aux) (./appendixC.aux) (./cv.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -2954,15 +2948,15 @@ Package rerunfilecheck Warning: File `Thesis.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `Thesis.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  8EFE9630BA08411527774CE8DC6DEC33;5967.
+(rerunfilecheck)             After:  DC22FE069620847EAF5FE51429B7FD48;5967.
  ) 
 Here is how much of TeX's memory you used:
- 19394 strings out of 476683
- 429875 string characters out of 5794344
+ 19158 strings out of 476683
+ 425381 string characters out of 5794344
  1887018 words of memory out of 5000000
- 39209 multiletter control sequences out of 15000+600000
+ 38973 multiletter control sequences out of 15000+600000
  607283 words of font info for 175 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 87i,34n,95p,827b,606s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,34n,95p,827b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.xdv (104 pages, 937312 bytes).
+Output written on Thesis.xdv (98 pages, 812064 bytes).
