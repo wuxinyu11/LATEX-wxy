@@ -47,7 +47,7 @@
 \end{equation}
 其中$d_I$表示与无网格节点$\pmb{x}_I$对应的节点系数。\par
 其次，弯矩分量$M_{\alpha\beta}$在每个背景积分域内假设为$(p-2)$阶多项式。
-如图(\ref{Pintegralscheme})所示，将薄板中面$\Omega$划分为一系列背景积分域$\Omega_C,C=1,2,\dotsb,n_C$，并且存在$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
+如图\ref{Pintegralscheme}所示，将薄板中面$\Omega$划分为一系列背景积分域$\Omega_C,C=1,2,\dotsb,n_C$，并且存在$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
 在背景积分单元$\Omega_C$内，假定弯矩分量$M_{\alpha\beta}$为多项式，近似的弯矩分量$M_{\alpha\beta}^h$：
 \begin{equation}\label{moment}
 \begin{split}
@@ -163,7 +163,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
     &=\sum_{J=1}^{N\!P}(\pmb{K}+\tilde{\pmb{K}}+\bar{\pmb{K}})\pmb d_J-\tilde{\pmb f}-\bar{\pmb f}
 \end{split}
 \end{equation}
-式中的最后一个等式通过引入式(\ref{PG})-(\ref{PBPSI})和(\ref{MVP})进行化简得到，具体详细的推导可参考附录B薄板HR变分原理的本质边界条件施加方法推导过程。根据式(\ref{CH5-2})和(\ref{Pzuzhuang})代入到式(\ref{CH5-1})中可得到赫林格-赖斯纳变分原理下的薄板问题离散控制方程：
+式中的最后一个等式通过引入式(\ref{PG})-(\ref{PBPSI})和(\ref{MVP})进行化简得到，具体详细的推导可参考附录B薄板问题赫林格-赖斯纳变分原理的本质边界条件施加方法推导过程。根据式(\ref{CH5-2})和(\ref{Pzuzhuang})代入到式(\ref{CH5-1})中可得到赫林格-赖斯纳变分原理下的薄板问题离散控制方程：
 \begin{equation}\label{equationP}
     (\pmb{K}+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}=\pmb{f}+\tilde{\pmb f}+\bar{\pmb f}
 \end{equation}
@@ -191,7 +191,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 赫林格-赖斯纳变分原理下的薄板问题离散控制方程式(\ref{PHR2})中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和常用于解决薄板问题的满足变分一致性的本质边界条件施加方案Nitsche法(\ref{Pkv})中的$K_{IJ}^n$、$f_I^n$相比，具有相类似的表达式，
 同样都满足变分一致性，不同的是在赫林格-赖斯纳变分原理离散过程中，用再生光滑梯度$\tilde{\Psi}_{I,\alpha\beta}$替换传统无网格形函数梯度$\Psi_{I,\alpha\beta}$，使得该方法无需计算复杂耗时的无网格形函数梯度，在处理薄板问题时有效提高计算效率。
 同样，基于赫林格-赖斯纳变分原理的特点，薄板的离散控制方程式(\ref{PHR3})中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$中已经内嵌，相较于Nistche法(\ref{PKFs})中的稳定项$K^s_{IJ}$、$f^s_I$而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
-同样，根据赫林格-赖斯纳变分原理在求解薄板问题过程中也用到了优化的数值积分方案见附录C无网格法优化的数值积分方案。
+同样，根据赫林格-赖斯纳变分原理在求解薄板问题过程中也用到了优化的数值积分方案见附录C再生光滑梯度优化的数值积分方案。
 \section{数值算例}
 \subsection{分片实验}
 关于薄板问题，采用二次、三次和四次高阶薄板分片实验验证采用传统高斯积分法和再生光滑梯度积分法的不同本质边界条件施加方法是否和二阶弹性力学问题相同
@@ -205,7 +205,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
     \end{cases}
 \end{split}
 \end{equation}\par
-如图所示(\ref{fenpian})，薄板问题的分片实验由49个无网格节点进行离散。针对三次基函数的无网格近似，采用二次和三次分片实验进行测试，核函数的相对影响域在三次基函数的情况下设为3.5；
+如图\ref{fenpian}所示，薄板问题的分片实验由49个无网格节点进行离散。针对三次基函数的无网格近似，采用二次和三次分片实验进行测试，核函数的相对影响域在三次基函数的情况下设为3.5；
 而四次基函数的无网格近似采用三次和四次分片实验进行测试，核函数的相对影响域在四次基函数的情况下设为4.5。\par
 \begin{figure}[H]
     \centering
@@ -224,7 +224,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 再生光滑梯度积分法“RKGSI”计算时采用的积分点数和高斯积分法一致。三次和四次基函数的无网格分片试验结果如下表：
 \begin{table}[H]
     \caption{\textbf{三次基函数无网格法分片实验结果}}
-    \centering\label{cubic}
+    \centering\label{PPcubic}
    \begin{tabular}{lcccc}
    \toprule
    & \multicolumn{2}{c}{二次分片实验} & \multicolumn{2}{c}{三次分片实验} \\ \cline{2-5}
@@ -240,7 +240,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
    \end{table}
 \begin{table}[H]
     \caption{\textbf{四次基函数无网格法分片实验结果}}
-    \centering\label{quartic}
+    \centering\label{PPquartic}
    \begin{tabular}{lcccc}
    \toprule
    & \multicolumn{2}{c}{三次分片实验} & \multicolumn{2}{c}{四次分片实验} \\ \cline{2-5}
@@ -254,11 +254,11 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 \bottomrule
 \end{tabular}
 \end{table}\par
-表(\ref{cubic})和表(\ref{quartic})分别表示具有三次、四次基函数无网格法的薄板分片试验结果，从表中可以明显的看出，由于缺乏变分一致性
+表\ref{PPcubic}和表\ref{PPquartic}分别表示具有三次、四次基函数无网格法的薄板分片试验结果，从表中可以明显的看出，由于缺乏变分一致性
 传统高斯积分法“GI-Penalty”、“GI-Nitsche”和罚函数法“RKGSI-Penalty”都无法通过分片试验。只有满足变分一致性的再生光滑梯度积分法的“RKGSI-Nitsche”法和
 本章提出的赫林格-赖斯纳变分原理的本质边界条件施加方案“RKGSI-HR”法可以通过分片试验，满足积分约束条件。
 \subsection{简支方板问题}
-如图(\ref{rectangular})所示，一简支方板的中性面区域为$\Omega=(0,1)\otimes(0,1)$，此时$\Omega$的长为$a=1$宽为$b=1$，材料系数分别为弯曲刚度$\bar{D}=1$、$\nu=0.3$。板面内分布如图所示纵向荷载:
+如图\ref{rectangular}所示，一简支方板的中性面区域为$\Omega=(0,1)\otimes(0,1)$，此时$\Omega$的长为$a=1$宽为$b=1$，材料系数分别为弯曲刚度$\bar{D}=1$、$\nu=0.3$。板面内分布如图所示纵向荷载:
 \begin{equation}
 \begin{split}
     \bar q=-\bar D(\frac{\pi^2}{a^2}+\frac{\pi^2}{b^2})\sin(\frac{\pi}{a}x)\sin(\frac{\pi}{b}y)
@@ -276,7 +276,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
     \includegraphics[scale=0.8]{figure/PHR/R/rectangular.png}
     \caption{简支方板问题模型}\label{rectangular}
 \end{figure}
-如图所示(\ref{rectangularmsh})，简支方板求解域采用均布的$11\times 11$、$21\times 21$、$41\times 41$、$81\times 81$的四个疏密不同的节点进行离散。
+如图所示\ref{rectangularmsh}，简支方板求解域采用均布的$11\times 11$、$21\times 21$、$41\times 41$、$81\times 81$的四个疏密不同的节点进行离散。
 此时对于采用三次基函数的简支方板问题其相对影响域取为3.5，采用四次基函数时其相对影响域则取为4.5。\par
 \begin{figure}[H]
 \centering
@@ -284,9 +284,9 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
     \caption{简支方板问题节点离散}\label{rectangularmsh}
 \end{figure}
 \newpage
- 图(\ref{RCLH})、图(\ref{RQLH})分别为简支方板问题在三次基函数和四次基函数时的位移误差和能量误差对比图。从图中可以明显看出即使采用高阶高斯积分法“GI”如三次基函数的13点高斯积分法和四次基函数的16点高斯积分，
+ 图\ref{RCLH}、图\ref{RQLH}分别为简支方板问题在三次基函数和四次基函数时的位移误差和能量误差对比图。从图中可以明显看出即使采用高阶高斯积分法“GI”如三次基函数的13点高斯积分法和四次基函数的16点高斯积分，
 计算精度都低于再生光滑梯度法“RKGSI”，并且和同样不满足变分一致性的罚函数法一样都无法达到理论误差收敛率。而“RKGSI-Nitsche”和“RKGSI-HR”法不管是在三次基函数还是四次基函数时都达到了误差收敛率。
-图(\ref{RCcputime})、图(\ref{RQcputime})是简支方板问题在三次基函数和四次基函数时分别计算节点数和与使用“GI”和“RKGSI”不同数值积分方法时的效率图。从整体来看采用“RKGSI”时的计算效率在三次基函数和四次基函数时都明显高于“GI”。  
+图\ref{RCcputime}、图\ref{RQcputime}是简支方板问题在三次基函数和四次基函数时分别计算节点数和与使用“GI”和“RKGSI”不同数值积分方法时的效率图。从整体来看采用“RKGSI”时的计算效率在三次基函数和四次基函数时都明显高于“GI”。  
 \begin{figure}[H]
     \centering
     \begin{subcaptiongroup}
@@ -345,7 +345,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 \caption{\centering{简支方板问题四次基函数效率对比：\\\subref{Qcputime}计算时间与节点数的关系；\subref{Cefficiency}本质边界条件施加效率分析}}
 \label{RQcputime}
 \end{figure}
-图(\ref{Ralpha})是分别验证简支方板问题在三次基函数和四次基函数时带有人工经验参数的罚函数法和Nitsche法的敏感度分析。
+图\ref{Ralpha}是分别验证简支方板问题在三次基函数和四次基函数时带有人工经验参数的罚函数法和Nitsche法的敏感度分析。
 从图中可以明显的看出，不同的经验参数对罚函数法的误差有着很大的影响，并且它的最优误差只在一小部分。
 Nitsche法的最优误差的人工经验参数的范围比较大，但人工经验参数值的大小仍然会影响误差结果的变化，
 并且随着网格的加密，人工经验参数的最优结果是在发生改变的。此时，提出的基于赫林格-赖斯纳变分原理
@@ -363,13 +363,13 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 \end{figure}
 \newpage
 \subsection{简支等边三角形板问题}
-考虑如图(\ref{triangular})所示简支等边三角形板，其中三角形板的高为$a=10$，均布荷载作用在板面内为$\bar{q}=1$，材料系数分别为弯曲刚度$\bar{D}=1$、泊松比$\nu=0.3$。该简支三角形板的精确解为：
+考虑如图\ref{triangular}所示简支等边三角形板，其中三角形板的高为$a=10$，均布荷载作用在板面内为$\bar{q}=1$，材料系数分别为弯曲刚度$\bar{D}=1$、泊松比$\nu=0.3$。该简支三角形板的精确解为：
 \begin{equation}
 \begin{split}
     w=\frac{\bar q}{64a\bar D}[x^3-3y^3x-a(x^2+y^2)+\frac{4}{27}a^3](\frac{4}{9}a^2-x^2-y^2)
 \end{split}
 \end{equation}\par
-如图(\ref{triangularmsh})所示，简支等边三角形板求解域分布采用均布离散的66、231、861和3321的四个疏密不同的节点进行离散。同样采用三次基函数时，简支等边三角形板问题的相对影响域取为3.5，四次基函数时其相对应影响域取为4.5进行数值分析。\par
+如图\ref{triangularmsh}所示，简支等边三角形板求解域分布采用均布离散的66、231、861和3321的四个疏密不同的节点进行离散。同样采用三次基函数时，简支等边三角形板问题的相对影响域取为3.5，四次基函数时其相对应影响域取为4.5进行数值分析。\par
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{figure/PHR/T/triangular.png}
@@ -380,14 +380,14 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.4]{figure/PHR/T/triangularmsh.png}
     \caption{简支等边三角形问题节点离散}\label{triangularmsh}
 \end{figure}
-图(\ref{TCLH})、图(\ref{TQLH})为简支等边三角形板问题分别在三次基函数和四次基函数的位移误差和能量误差对比图。
+图\ref{TCLH}、图\ref{TQLH}为简支等边三角形板问题分别在三次基函数和四次基函数的位移误差和能量误差对比图。
 从图中可以明显看出采用“RKGSI”得出的计算精度优于“GI”法，
 并且“RKGSI-HR”法都能够达到理论误差收敛率，满足积分约束条件。
-图(\ref{Tefficiency})是简支等边三角形板的薄板中面和本质边界条件施加效率分析图，从图中可以看出在薄板中面施加过程中，“RKGSI”所用的时间都明显少于“GI”；
+图\ref{Tefficiency}是简支等边三角形板的薄板中面和本质边界条件施加效率分析图，从图中可以看出在薄板中面施加过程中，“RKGSI”所用的时间都明显少于“GI”；
 而针对“RKGSI”在施加本质边界过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量中可以明显看出“RKGSI-Nistche”法所用的时间明显多于“RKGSI-HR”法，
 % 虽然“RKGSI-HR”和“RKGSI-Penalty”的计算效率相差不大，但“RKGSI-Penalty”由于不具有变分一致性无法达到理论误差收敛率。
 % 因此相较于传统的本质边界条件施加方法，“RKGSI-HR”不仅满足积分约束条件能够达到理论误差收敛率，提高计算精度，在计算时间上也用时较短，有效提高计算效率。
-图(\ref{TMxy})为简支等边三角形板问题的弯矩云图。从图中可以看出“RKGSI-HR”、“RKGSI-Nitsche”和“RKGSI-Penalty”和精确解之间几乎一致，进一步验证了所提方法能够有效提高计算精度。
+图\ref{TMxy}为简支等边三角形板问题的弯矩云图。从图中可以看出“RKGSI-HR”、“RKGSI-Nitsche”和“RKGSI-Penalty”和精确解之间几乎一致，进一步验证了所提方法能够有效提高计算精度。
 \begin{figure}[H]
     \centering
     \begin{subcaptiongroup}
@@ -431,7 +431,7 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[width=0.49\textwidth]{figure/PHR/T/Cefficiencygamma.png}
     \phantomcaption\label{Cefficiencygamma}
     \end{subcaptiongroup}
-\caption{\centering{简支等边三角形问题效率对比：\\\subref{Cefficiencyomega}薄板中面$\Omega$；\subref{Cefficiencygamma}本质边界条件$\Gamma_w,c_w$}}
+\caption{\centering{简支等边三角形问题效率对比：\subref{Cefficiencyomega}薄板中面$\Omega$；\subref{Cefficiencygamma}本质边界条件$\Gamma_w,c_w$}}
 \label{Tefficiency}
 \end{figure}
 \newpage
@@ -442,11 +442,11 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 \label{TMxy}
 \end{figure}  
 \subsection{简支环行板问题}
-一简支环行板如图(\ref{annular})所示，其中内外径分别为$a=2$、$b=1$。在环行板的内外径边缘处分别施加弯矩$m_i=2$、$m_0=1$，
+一简支环行板如图\ref{annular}所示，其中内外径分别为$a=2$、$b=1$。在环行板的内外径边缘处分别施加弯矩$m_i=2$、$m_0=1$，
 材料系数分别为抗弯刚度$\bar{D}=1$、泊松比为$\nu=0.3$。该简支环行板的精确解为：
 \begin{equation}
 \begin{split}
-    w=\frac{(m_i-m_0)a^2b^2}{\bar D(1-\nu)(a^2-b^2)}ln\frac{r}{a}+\frac{m_ib^2-m_oa^2}{2\bar D(1+\nu)(a^2-b^2)}(r^2-a^2)
+    w=\frac{(m_i-m_0)a^2b^2}{\bar D(1-\nu)(a^2-b^2)}\ln\frac{r}{a}+\frac{m_ib^2-m_oa^2}{2\bar D(1+\nu)(a^2-b^2)}(r^2-a^2)
 \end{split}
 \end{equation}
 其中：$r=\sqrt{x^2+y^2}$是点($x,y$)的极径。
@@ -455,18 +455,18 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
     \includegraphics[scale=0.7]{figure/PHR/A/annular.png}
     \caption{简支环形板问题模型}\label{annular}
 \end{figure}
-如图(\ref{annularmsh})所示，简支环形问题求解域通过采用均布的153、561、2145和8385四个疏密不同的节点进行离散，
+如图\ref{annularmsh}所示，简支环形问题求解域通过采用均布的153、561、2145和8385四个疏密不同的节点进行离散，
 该简支环行板采用四次基函数，取相对影响域为4.5进行数值分析。\par
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.45]{figure/PHR/A/annularmsh.png}
     \caption{简支环形板问题节点离散}\label{annularmsh}
 \end{figure}
-图(\ref{AQLH})为简支环行板问题的位移误差和能量误差对比图，从图中可以看出“RKGSI-HR”和“RKGSI-Nitsche”同样可以达到理论误差收敛率。
-图(\ref{AQcputime})为简支环行板问题在计算时间节点数和施加不同本质边界条件上的效率对比，从图中可以看出采用“RKGSI”时的效率明显高于“GI”法，
+图\ref{AQLH}为简支环行板问题的位移误差和能量误差对比图，从图中可以看出“RKGSI-HR”和“RKGSI-Nitsche”同样可以达到理论误差收敛率。
+图\ref{AQcputime}为简支环行板问题在计算时间节点数和施加不同本质边界条件上的效率对比，从图中可以看出采用“RKGSI”时的效率明显高于“GI”法，
 与同样满足变分一致性的“RKGSI-Nitsche”法相比，“RKGSI-HR”法在施加过程中效率明显更高。
-同样根据简支环行板的弯矩云图(\ref{AMxy})也可以更进一步说明在解决薄板问题上，基于赫林格-赖斯纳变分原理的本质边界条件施加方法拥有着更高的计算精度。
-在简支环行板问题中，存在两个人工参数影响计算精度。从图(\ref{Aalpha})中可以看出，随着节点数的变化“RKGSI-Nitsche”法和“RKGSI-Penalty”法在达到最优精度时的人工参数值也在发生变化。
+同样根据简支环行板的弯矩云图\ref{AMxy}也可以更进一步说明在解决薄板问题上，基于赫林格-赖斯纳变分原理的本质边界条件施加方法拥有着更高的计算精度。
+在简支环行板问题中，存在两个人工参数影响计算精度。从图\ref{Aalpha}中可以看出，随着节点数的变化“RKGSI-Nitsche”法和“RKGSI-Penalty”法在达到最优精度时的人工参数值也在发生变化。
 而“RKGSI-HR”法中不涉及人工参数，因此随着节点数的增加，计算精度不会受到人工参数的影响，从而提高了一种更稳定和高效的计算方法。
 \begin{figure}[H]
     \centering

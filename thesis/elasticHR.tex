@@ -12,7 +12,7 @@
     \Pi_{H\!R}(\sigma_{ij},u_i)=\Pi_C(\sigma_{ij})
     +\int_{\Omega}u_i(\sigma_{ij,j}+b_i)d\Omega-\int_{\Gamma^t}u_i(\sigma_{ij} n_j-t_i)d\Gamma
 \end{equation}
-需要注意的是，$\Pi_{HR}$中包含$\sigma_{ij}$和$u_i$双变量。式(\ref{Ehellinger})分别对$\sigma_{ij}$和$u_i$进行变分得到的伽辽金弱形式：
+需要注意的是，$\Pi_{H\!R}$中包含$\sigma_{ij}$和$u_i$双变量。式(\ref{Ehellinger})分别对$\sigma_{ij}$和$u_i$进行变分得到的伽辽金弱形式：
 \begin{equation}\label{weak form1}
 \begin{split} 
     \delta\Pi_{H\!R}(\sigma_{ij},u_i)&=\delta\Pi_C(\sigma_{ij})+\int_{\Omega}\delta\sigma_{ij,j}u_id\Omega-\int_{\Gamma^t}\delta\sigma_{ij}n_ju_id\Gamma\\
@@ -39,7 +39,7 @@
     u^h_i(\pmb{x})=\sum_{I=1}^{N\!P}\Psi_I(\pmb{x})d_{iI}
 \end{equation}
 其中$d_{iI}$表示与无网格节点$\pmb{x}_I$对应的节点系数。\par
-应力$\sigma_{ij}$在每个背景积分域内假设为$(p-1)$ 阶多项式。在二维情况下，如图(\ref{Eintegralscheme})所示，将求解域$\Omega$划分为一系列背景积分域$\Omega_C$，$C=1,2,\dotsb,N\!C$，$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
+应力$\sigma_{ij}$在每个背景积分域内假设为$(p-1)$ 阶多项式。在二维情况下，如图\ref{Eintegralscheme}所示，将求解域$\Omega$划分为一系列背景积分域$\Omega_C$，$C=1,2,\dotsb,N\!C$，$\cup_{C=1}^{N\!C}\Omega_C\thickapprox\Omega$。
 在背景积分域$\Omega_C$内，应力分量$\sigma_{ij}$的近似应力分量表达式$\sigma^h_{ij}$可表示为：
 \begin{equation}\label{CH4-sigma}
 \begin{split}
@@ -145,7 +145,7 @@
     &=\delta\pmb{d}^T(\pmb K+\tilde{\pmb K}+\bar{\pmb K})\pmb{d}-\delta\pmb{d}^T(\tilde{\pmb f}+\bar{\pmb f})
 \end{split}
 \end{equation}
-式中的最后一个等式通过引入式(\ref{g1})-(\ref{case2})进行化简得到，具体详细的推导过程可参考附录A弹性力学问题HR变分原理的本质边界条件施加方法推导过程。
+式中的最后一个等式通过引入式(\ref{g1})-(\ref{case2})进行化简得到，具体详细的推导过程可参考附录A弹性力学问题赫林格-赖斯纳变分原理的本质边界条件施加方法推导过程。
 根据式(\ref{1})和(\ref{inference})代入到式(\ref{CH4-1})中可得到赫林格-赖斯纳变分原理下的弹性力学问题离散控制方程：
 \begin{equation}\label{equationE}
     (\pmb{K}+\pmb{\tilde{K}}+\pmb{\bar{K}})\pmb{d}=\pmb{f}+\tilde{\pmb{f}}+\bar{\pmb{f}}
@@ -186,7 +186,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 更重要的是，赫林格-赖斯纳变分原理离散控制方程式(\ref{Ehr3})中的稳定项$\bar{\pmb K}$、$\bar{\pmb f}$和传统的Nitshche法(\ref{EKFs})中的稳定项$\pmb{K}^s$、$\pmb f^s$相比，无需引入罚函数项来满足正定性，不会因为人工参数的存在继而影响计算精度。
 \section{优化的数值积分方案}
 根据赫林格-赖斯纳变分原理在求解数值问题过程中是有一套优化过后的数值积分方案\cite{wang2019}，该数值积分方案是通过两个原则来优化的：(1)通过优化全局数值积分采样点总数确定局部背景积分域内积分采样点的数量；(2)通过满足变分一致性确定数值积分采样点位置和权重。
-如图(\ref{Eintegralscheme})所示，基于赫林格-赖斯纳变分原理下的本质边界条件施加方法
+如图\ref{Eintegralscheme}所示，基于赫林格-赖斯纳变分原理下的本质边界条件施加方法
 需要两套数值积分点，$\tilde{\pmb g}$和$\bar{\pmb g}$需要与$\tilde{\pmb{K}}$，$\bar{\pmb{K}}$，$\pmb{f}$，$\tilde{\pmb{f}}$和$\bar{\pmb{f}}$采用相同的一套数值积分点，
 式(\ref{g1})中的$\pmb{G}$和式(\ref{equationE})中$\pmb{K}$采用相同的数值积分方案。\par
 \begin{figure}[H]
@@ -197,7 +197,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 基于赫林格-赖斯纳变分原理的本质边界条件施加方法中，再生光滑梯度的构造过程需要计算积分点处的无网格形函数，此时为了减少形函数的计算量提高计算效率，采用无网格再生核光滑梯度积分法。
 无网格再生核光滑梯度积分法利用积分点在背景积分单元间的共享特性，优化整体求解数值过程中积分点的数量，从而提高计算效率。
 再生核光滑梯度积分法通过在背景积分单元上选择合适的积分点分布，使得积分点在不同单元之间共享，减少需要计算的积分点数量，进而保证计算精度的前提下进一步提高计算效率，
-具体的数值积分方案见附录C无网格法优化的数值积分方案。
+具体的数值积分方案见附录C再生光滑梯度优化的数值积分方案。
 \section{数值算例}
 \subsection{分片实验}
 首先采用线性、二次和三次弹性力学分片实验验证采用传统高斯积分法和再生光滑梯度积分法的不同本质边界条件施加方法下是否满足积分约束条件的情况。
@@ -210,7 +210,7 @@ $\pmb N$为法向量矩阵，其表达式为：
     \end{cases}
 \end{split}
 \end{equation}
-其中，$n=1,2,3$表示线性、二次和三次分片实验。如图(\ref{patchtestmeshfree})所示，分片实验采用$11\times 11$的非均匀节点离散求解域。针对二次基函数的无网格近似，分别采用线性和二次分片实验进行测试，核函数相对影响域在二次基函数情况下为2.5；
+其中，$n=1,2,3$表示线性、二次和三次分片实验。如图\ref{patchtestmeshfree}所示，分片实验采用$11\times 11$的非均匀节点离散求解域。针对二次基函数的无网格近似，分别采用线性和二次分片实验进行测试，核函数相对影响域在二次基函数情况下为2.5；
 三次基函数的无网格近似则分别采用二次和三次分片实验进行测试，核函数相对影响域在三次基函数情况下为3.5。\par
 分别采用位移误差$L_2$-Error和能量误差$H_1$-Error详细对比所提方法的计算精度
 \begin{equation}
@@ -234,7 +234,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 ；针对三次基函数的求解，高斯积分法“GI”的求解域$\Omega$的积分采用16点高斯积分点，边界$\Gamma$积分采用5点高斯积分点。采用二次和三次基函数的无网格法分片试验结果如下：\par
 \begin{table}[H]
 \caption{\textbf{二次基函数无网格法分片实验结果}}
-\centering
+\centering\label{EEquadratic}
 \begin{tabular}{lcccc}
    \toprule
 & \multicolumn{2}{c}{线性分片实验} & \multicolumn{2}{c}{二次分片实验} \\ \cline{2-5}
@@ -252,7 +252,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 \end{table}
 \begin{table}[H]
 \caption{\textbf{三次基函数无网格法分片实验结果}}
-\centering
+\centering\label{EEcubic}
 \begin{tabular}{lcccc}
    \toprule
 & \multicolumn{2}{c}{二次分片实验} & \multicolumn{2}{c}{三次分片实验} \\ \cline{2-5}
@@ -268,13 +268,13 @@ $\pmb N$为法向量矩阵，其表达式为：
    \bottomrule
 \end{tabular}
 \end{table}
-表3.3和表3.4分别为具有二次、三次基函数无网格法的分片试验结果，
+表\ref{EEquadratic}和表\ref{EEcubic}分别为具有二次、三次基函数无网格法的分片试验结果，
 从表中可以看出，由于传统高斯积分法不满足积分约束条件，所以即使采用高阶高斯积分的罚函数法“GI-Penalty”、拉格朗日乘子法“GI-LM”和Nitsche法“GI-Nitsche”均不能通过分片试验。
 当采用满足积分约束条件的再生光滑梯度积分法时，此时由于罚函数法“RKGSI-Penalty”不具有变分一致性，也无法通过分片试验；
 拉格朗日乘子法“RKGSI-LM”由于其拉格朗日乘子采用线性形函数进行离散，无法与再生光滑梯度相匹配，也无法通过分片试验；
 当采用Nitsche法“RKGSI-Nitsche”和基于赫林格-赖斯纳变分原理“RKGSI-HR”的本质边界条件施加方法时，均可以通过分片试验，即满足积分约束条件。
 \subsection{悬臂梁问题}
-首先考虑经典弹性力学二维悬臂梁问题，如图(\ref{cantilever})所示，悬臂梁的长和宽分别为$L=48$，$D=12$，同时悬臂梁的左端为固定支座，
+首先考虑经典弹性力学二维悬臂梁问题，如图\ref{cantilever}所示，悬臂梁的长和宽分别为$L=48$，$D=12$，同时悬臂梁的左端为固定支座，
 右端沿着$y$轴正方向施加外部荷载$P=1000$。悬臂梁的材料系数为杨氏模量$E=3\times10^6$、泊松比$\nu=0.3$。
 根据圣维南原理和平面应力假设，悬臂梁问题的解析解为：
 \begin{equation}
@@ -300,19 +300,19 @@ $\pmb N$为法向量矩阵，其表达式为：
     \includegraphics[scale=0.7]{figure/EHR/cantilever/cantilever.png}
     \caption{悬臂梁问题模型}\label{cantilever}
 \end{figure}
-如图(\ref{cantilever})所示，悬臂梁的左端施加自然边界条件$\Gamma^t$，右端施加本质边界条件$\Gamma^g$。
-悬臂梁求解域分别通过图(\ref{cantilever.mesh})所示采用四个疏密不同的节点进行离散。对于采用二次基函数的悬臂梁算例问题，传统高斯积分法采用13点高斯积分，核函数的相对影响域为2.5。
+如图\ref{cantilever}所示，悬臂梁的左端施加自然边界条件$\Gamma^t$，右端施加本质边界条件$\Gamma^g$。
+悬臂梁求解域分别通过图\ref{cantilever.mesh}所示采用四个疏密不同的节点进行离散。对于采用二次基函数的悬臂梁算例问题，传统高斯积分法采用13点高斯积分，核函数的相对影响域为2.5。
 \newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{figure/EHR/cantilever/cantilever.mesh.png}
     \caption{悬臂梁问题节点模型}\label{cantilever.mesh}
 \end{figure}
-图(\ref{ECLH})为悬臂梁问题的位移误差和能量误差对比图。从图中可以看出采用再生光滑梯度积分法“RKGSI”的本质边界条件施加方法的计算精度优于采用高斯积分法“GI”的本质条件施加方法，
+图\ref{ECLH}为悬臂梁问题的位移误差和能量误差对比图。从图中可以看出采用再生光滑梯度积分法“RKGSI”的本质边界条件施加方法的计算精度优于采用高斯积分法“GI”的本质条件施加方法，
 并且由于传统高斯积分法和采用再生光滑梯度积分法的罚函数法“RKGSI-Penalty”和拉格朗日乘子法“RKGSI-LM”不具有变分一致性，无法达到理论误差收敛率，而基于赫林格-赖斯纳变分原理下的本质边界条件施加方法“RKGSI-HR”和Nitshce法“RKGSI-Nitsche”均可达到理论误差收敛率，但相较于“RKGSI-Nitsche”法，所提出的“RKGSI-HR”法无需引入人工参数。
 \par
-图(\ref{ECcputime})为悬臂梁问题的节点数和计算时间的效率对比和本质边界条件施加效率对比图。从整体来看采用传统高斯积分法“GI”的计算效率明显低于再生光滑梯度积分法“RKGSI”，耗时高于再生光滑梯度积分法。
-图(\ref{ECefficiency})为悬臂梁问题的本质边界条件施加效率分析对比图。该图为施加本质边界$\Gamma^g$过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量所用时间对比图。
+图\ref{ECcputime}为悬臂梁问题的节点数和计算时间的效率对比和本质边界条件施加效率对比图。从整体来看采用传统高斯积分法“GI”的计算效率明显低于再生光滑梯度积分法“RKGSI”，耗时高于再生光滑梯度积分法。
+图\ref{ECefficiency}为悬臂梁问题的本质边界条件施加效率分析对比图。该图为施加本质边界$\Gamma^g$过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量所用时间对比图。
 由图可知，罚函数法和拉格朗日乘子法在计算形函数及其梯度这部分所用的时间相同且所用时间最少，这是由于罚函数法和拉格朗日乘子法在数值计算过程中只需要计算无网格形函数本身，无需计算无网格形函数梯度，
 而“RKGSI-HR”法也无需计算无网格形函数梯度，但需要计算再生光滑梯度，“RKGSI-Nitsche”法这部分所用的时间是罚函数法和拉格朗日乘子法的5.6倍，而“RKGSI-HR”法是1.6倍，“RKGSI-HR”法的计算效率高于“RKGSI-Nitsche”法。
 组装相应的刚度矩阵和力向量这部分所用的时间上，“RKGSI-Nitsche”法和“RKGSI-HR”法计算效率基本相同。
@@ -340,7 +340,7 @@ $\pmb N$为法向量矩阵，其表达式为：
 \caption{悬臂梁问题效率对比：\subref{ECcputime} 计算时间与节点数的关系；\subref{ECefficiency} 边界条件施加效率分析}
 \end{figure}
 \subsection{带孔无限大平板问题}
-考虑经典的带孔无限大平板问题，如图(\ref{hole})所示，板的的中心存在一半径为$a=1$的圆形小孔，同时平板的无穷远处沿$x$轴方向施加均布荷载$T=1000$。
+考虑经典的带孔无限大平板问题，如图\ref{hole}所示，板的的中心存在一半径为$a=1$的圆形小孔，同时平板的无穷远处沿$x$轴方向施加均布荷载$T=1000$。
 板的材料系数为杨氏模量$E=3\times10^6$、泊松比$\nu=0.3$。根据Michell解可以得到该带孔无限大平板问题的解析解为：
 \begin{equation}
 \begin{split}
@@ -366,27 +366,27 @@ $\pmb N$为法向量矩阵，其表达式为：
 \end{cases}
 \end{split}
 \end{equation}\par
-如图(\ref{hole})所示，根据带孔无限大平板的对称性，取边长$b=5$的四分之一的方形域作为研究对象。
+如图\ref{hole}所示，根据带孔无限大平板的对称性，取边长$b=5$的四分之一的方形域作为研究对象。
 方形域的上端和右端以及圆孔的边界施加自然边界条件$\Gamma^t$，而方形域的左端和下端约束法向位移，施加本质边界条件$\Gamma^g$。
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{figure/EHR/hole/hole.png}
     \caption{带孔无限大平板问题模型}\label{hole}
 \end{figure}
-该求解域分别通过图(\ref{hole.mesh})所示采用的四个疏密不同的节点进行离散。
+该求解域分别通过图\ref{hole.mesh}所示采用的四个疏密不同的节点进行离散。
 对于采用三次基函数的带孔无限大平板算例问题，传统高斯积分法采用16点高斯积分，核函数的相对影响域为3.5。\par
 \begin{figure}[H]
 \centering
  \includegraphics[scale=0.8]{figure/EHR/hole/hole.mesh.png}
    \caption{带孔无限大平板问题无网格离散}\label{hole.mesh}
 \end{figure}
-图(\ref{EHLH})为带孔无限大平板问题的位移和能量误差对比图。
+图\ref{EHLH}为带孔无限大平板问题的位移和能量误差对比图。
 从图中可以看出传统高斯积分法由于不具有变分一致性，导致“GI-Penalty”法、“GI-LM”法、“GI-Nitsche”法均无法达到理论误差收敛率。
 基于赫林格-赖斯纳变分原理的本质边界条件施加方法“RKGSI-HR”和“RKGSI-Nitsche”法满足变分一致性能够达到理论误差收敛率。
 虽然“RKGSI-LM”法无法通过分片实验不满足变分一致性，但由于拉格朗日乘子法具有较高的精度也能达到理论误差收敛率。
-图(\ref{Hcputime})、(\ref{Hefficiency})为带孔无限大平板问题的效率对比图。
+图\ref{Hcputime}、\ref{Hefficiency}为带孔无限大平板问题的效率对比图。
 从图中可以看出随着无网格节点数的增加，采用再生光滑梯度积分法“RKGSI”的效率明显高于传统高斯积分法“GI”,在施加本质边界条件的过程中，“HR”法不仅满足变分一致性同时计算效率还高于传统的“Nitsche”法。
-最后，图(\ref{sigmaxx})为带孔无限大平板问题的应力云图，从图中可以看出“RKGSI-Penalty”法和精确解之间是有差异的，
+最后，图\ref{sigmaxx}为带孔无限大平板问题的应力云图，从图中可以看出“RKGSI-Penalty”法和精确解之间是有差异的，
 而“RKGSI-Nitsche”法和“RKGSI-HR”法是和精确解几乎相同。但“Nitsche”法是需要依靠人工经验参数并且计算效率也低于“HR”法。
 \newpage
 \begin{figure}[H]
@@ -420,6 +420,6 @@ $\pmb N$为法向量矩阵，其表达式为：
 结果表明，该方法在保持变分一致性的同时，能够提供较高的计算精度，并且相比传统Nitsche法也有效的提高了计算效率。
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.55]{figure/EHR/hole/sigmaxx.png}
+    \includegraphics[scale=1.1]{figure/EHR/hole/sigmaxx.png}
 \caption{带孔无限大平板问题$\sigma_{xx}$应力云图}\label{sigmaxx}
 \end{figure}

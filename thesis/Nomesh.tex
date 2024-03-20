@@ -1,7 +1,7 @@
-\chapter{无网格近似理论}
+\chapter{再生核近似伽辽金无网格法}
 本章以再生核无网格法为例对伽辽金无网格法进行介绍，详细说明无网格形函数及其导数的构造过程，讨论无网格形函数的插值性。同时，介绍伽辽金无网格法在弹性力学问题和薄板问题上的应用。
-\section{再生核无网格近似}
-如图(\ref{nomeshpoint})所示的问题为例，无网格近似将求解域$\Omega$及其边界$\Gamma$离散为一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$，
+\section{再生核近似}
+如图\ref{nomeshpoint}所示的问题为例，无网格近似将求解域$\Omega$及其边界$\Gamma$离散为一系列无网格节点$\{\pmb{x}_I\}^{N\!P}_{I=1}$，
 $N\!P$表示无网格节点数量。每个无网格节点$\pmb{x}_I$对应的形函数为$\Psi_I(\pmb{x})$，形函数影响域为$supp(\pmb{x}_I)$，
 并要求影响域的覆盖域需包含求解域$\Omega$，即$\Omega\subseteq^{N\!P}_{I=1}supp(\pmb{x}_I)$。
 考虑求解域$\Omega$内的一个变量$u(\pmb{x})$，其对应的无网格近似函数$u^h(\pmb{x})$可表示为：
@@ -136,7 +136,7 @@ $\Psi_{,yy}$&\begin{subcaptiongroup}\raisebox{-0.5\height}{\includegraphics[widt
 \end{tabular}
 \caption{\textbf{二维边界点无网格形函数及其导数图}}\label{gradient2}
 \end{figure}
-图(\ref{gradient1})、(\ref{gradient2})中分别为内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)\ne\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
+图\ref{gradient1}、\ref{gradient2}中分别为内部节点和边界点处的无网格形函数及其导数图，从图中可知，无网格形函数具有全域高阶连续光滑的特点。但其无论是内部节点或边界点上的形函数在本点处均不具备插值性，即$\Psi_I(\pmb{x}_J)\ne\delta_{IJ}$。这将导致无网格法无法像有限元一样直接施加本质边界条件，需通过弱形式施加本质边界条件。
 \section{伽辽金无网格法}
 \subsection{弹性力学问题}
 不失为一般性，弹性力学问题的平衡微分方程为：
@@ -212,7 +212,7 @@ $\varepsilon_{ij}$为应变张量的分量，根据小变形假设，应变$\var
 \end{equation}
 \end{itemize}
 \subsection{薄板问题}
-考虑如图(\ref{plate})所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。在Kirchhoff薄板假设下\cite{ventsel2002}，薄板中面的剪切变形可忽略不计，此时平衡微分方程可退化为如下形式：
+考虑如图\ref{plate}所示薄板区域$\bar \Omega$，其中板厚为$h$，$\Omega$为薄板中面。在Kirchhoff薄板假设下\cite{ventsel2002}，薄板中面的剪切变形可忽略不计，此时平衡微分方程可退化为如下形式：
 \begin{equation}
     \begin{cases}\label{P control equation}
         M_{\alpha\beta,\alpha\beta}+\bar q=0&\mathrm{in} \; \Omega\\
