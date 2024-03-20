@@ -305,8 +305,8 @@
 \let\oldbibliography\bibliography
 \renewcommand{\bibliography}[1]{
     \markboth{参考文献}{}
-    \rmfamily\fontsize{10.5pt}{16pt}\selectfont\oldbibliography{#1}
     \addcontentsline{toc}{chapter}{参考文献}
+    \rmfamily\fontsize{10.5pt}{16pt}\selectfont\oldbibliography{#1}
 }
 %- TOC
 \tocloftpagestyle{fancy}

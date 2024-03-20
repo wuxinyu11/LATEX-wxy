@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  20 MAR 2024 14:42
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  20 MAR 2024 15:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1175,4 +1175,386 @@ File: figure/EHR/hole/hole.png Graphic file (type bmp)
 <figure/EHR/hole/hole.png>
 
 [37]
-File: figure/EHR/hole/ho
+File: figure/EHR/hole/hole.mesh.png Graphic file (type bmp)
+<figure/EHR/hole/hole.mesh.png>
+ [38]
+File: figure/EHR/hole/L2.png Graphic file (type bmp)
+<figure/EHR/hole/L2.png>
+File: figure/EHR/hole/H1.png Graphic file (type bmp)
+<figure/EHR/hole/H1.png>
+File: figure/EHR/hole/cputime.png Graphic file (type bmp)
+<figure/EHR/hole/cputime.png>
+File: figure/EHR/hole/efficiency.png Graphic file (type bmp)
+<figure/EHR/hole/efficiency.png>
+File: figure/EHR/hole/sigmaxx.png Graphic file (type bmp)
+<figure/EHR/hole/sigmaxx.png>
+ [39])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
+[41]
+\openout2 = `plateHR.aux'.
+
+ (plateHR.tex [42
+
+
+
+
+]
+Chapter 5.
+[43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
+[45]
+Overfull \hbox (12.36914pt too wide) detected at line 115
+[]
+ []
+
+File: figure/PHR/momentlisan.png Graphic file (type bmp)
+<figure/PHR/momentlisan.png>
+
+Underfull \vbox (badness 5008) has occurred while \output is active []
+
+ [46]
+Overfull \hbox (13.9202pt too wide) detected at line 143
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+[49]
+File: figure/PHR/fenpian.png Graphic file (type bmp)
+<figure/PHR/fenpian.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+[51]
+File: figure/PHR/R/rectangular.png Graphic file (type bmp)
+<figure/PHR/R/rectangular.png>
+File: figure/PHR/R/rectangularmsh.png Graphic file (type bmp)
+<figure/PHR/R/rectangularmsh.png>
+ [52]
+File: figure/PHR/R/CL2.png Graphic file (type bmp)
+<figure/PHR/R/CL2.png>
+File: figure/PHR/R/CH1.png Graphic file (type bmp)
+<figure/PHR/R/CH1.png>
+File: figure/PHR/R/CH2.png Graphic file (type bmp)
+<figure/PHR/R/CH2.png>
+File: figure/PHR/R/CH3.png Graphic file (type bmp)
+<figure/PHR/R/CH3.png>
+ [53]
+File: figure/PHR/R/QL2.png Graphic file (type bmp)
+<figure/PHR/R/QL2.png>
+File: figure/PHR/R/QH1.png Graphic file (type bmp)
+<figure/PHR/R/QH1.png>
+File: figure/PHR/R/QH2.png Graphic file (type bmp)
+<figure/PHR/R/QH2.png>
+File: figure/PHR/R/QH3.png Graphic file (type bmp)
+<figure/PHR/R/QH3.png>
+File: figure/PHR/R/Ccputime.png Graphic file (type bmp)
+<figure/PHR/R/Ccputime.png>
+File: figure/PHR/R/Cefficiency.png Graphic file (type bmp)
+<figure/PHR/R/Cefficiency.png>
+ [54]
+File: figure/PHR/R/Qcputime.png Graphic file (type bmp)
+<figure/PHR/R/Qcputime.png>
+File: figure/PHR/R/Qefficiency.png Graphic file (type bmp)
+<figure/PHR/R/Qefficiency.png>
+File: figure/PHR/R/calpha.png Graphic file (type bmp)
+<figure/PHR/R/calpha.png>
+File: figure/PHR/R/qalpha.png Graphic file (type bmp)
+<figure/PHR/R/qalpha.png>
+ [55]
+File: figure/PHR/T/triangular.png Graphic file (type bmp)
+<figure/PHR/T/triangular.png>
+File: figure/PHR/T/triangularmsh.png Graphic file (type bmp)
+<figure/PHR/T/triangularmsh.png>
+File: figure/PHR/T/CL2.png Graphic file (type bmp)
+<figure/PHR/T/CL2.png>
+File: figure/PHR/T/CH1.png Graphic file (type bmp)
+<figure/PHR/T/CH1.png>
+File: figure/PHR/T/CH2.png Graphic file (type bmp)
+<figure/PHR/T/CH2.png>
+File: figure/PHR/T/CH3.png Graphic file (type bmp)
+<figure/PHR/T/CH3.png>
+ [56] [57]
+File: figure/PHR/T/QL2.png Graphic file (type bmp)
+<figure/PHR/T/QL2.png>
+File: figure/PHR/T/QH1.png Graphic file (type bmp)
+<figure/PHR/T/QH1.png>
+File: figure/PHR/T/QH2.png Graphic file (type bmp)
+<figure/PHR/T/QH2.png>
+File: figure/PHR/T/QH3.png Graphic file (type bmp)
+<figure/PHR/T/QH3.png>
+File: figure/PHR/T/Cefficiencyomega.png Graphic file (type bmp)
+<figure/PHR/T/Cefficiencyomega.png>
+File: figure/PHR/T/Cefficiencygamma.png Graphic file (type bmp)
+<figure/PHR/T/Cefficiencygamma.png>
+ [58]
+File: figure/PHR/T/Mxy.png Graphic file (type bmp)
+<figure/PHR/T/Mxy.png>
+File: figure/PHR/A/annular.png Graphic file (type bmp)
+<figure/PHR/A/annular.png>
+
+Underfull \vbox (badness 1281) has occurred while \output is active []
+
+ [59]
+File: figure/PHR/A/annularmsh.png Graphic file (type bmp)
+<figure/PHR/A/annularmsh.png>
+File: figure/PHR/A/QL2.png Graphic file (type bmp)
+<figure/PHR/A/QL2.png>
+File: figure/PHR/A/QH1.png Graphic file (type bmp)
+<figure/PHR/A/QH1.png>
+File: figure/PHR/A/QH2.png Graphic file (type bmp)
+<figure/PHR/A/QH2.png>
+File: figure/PHR/A/QH3.png Graphic file (type bmp)
+<figure/PHR/A/QH3.png>
+
+[60] [61]
+File: figure/PHR/A/Qcputime.png Graphic file (type bmp)
+<figure/PHR/A/Qcputime.png>
+File: figure/PHR/A/Qefficiency.png Graphic file (type bmp)
+<figure/PHR/A/Qefficiency.png>
+File: figure/PHR/A/Mxy.png Graphic file (type bmp)
+<figure/PHR/A/Mxy.png>
+File: figure/PHR/A/alpha.png Graphic file (type bmp)
+<figure/PHR/A/alpha.png>
+ [62]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63])
+[64]
+\openout2 = `DAMPER.aux'.
+
+ (DAMPER.tex
+Chapter 6.
+File: figure/DAMPER/SLIT/1.png Graphic file (type bmp)
+<figure/DAMPER/SLIT/1.png>
+File: figure/DAMPER/SLIT/slit damper_msh.png Graphic file (type bmp)
+<figure/DAMPER/SLIT/slit damper_msh.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [65
+
+
+
+
+]
+File: figure/DAMPER/slit/M11.png Graphic file (type bmp)
+<figure/DAMPER/slit/M11.png>
+File: figure/DAMPER/slit/M12.png Graphic file (type bmp)
+<figure/DAMPER/slit/M12.png>
+File: figure/DAMPER/slit/M22.png Graphic file (type bmp)
+<figure/DAMPER/slit/M22.png>
+
+Overfull \hbox (66.43016pt too wide) in paragraph at lines 38--41
+ [][] 
+ []
+
+
+Overfull \hbox (66.43016pt too wide) in paragraph at lines 38--41
+ [] 
+ []
+
+
+Overfull \hbox (66.43016pt too wide) in paragraph at lines 38--41
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
+File: figure/DAMPER/Honeycomb/1.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/1.png>
+File: figure/DAMPER/Honeycomb/honeycomb_damper_msh.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/honeycomb_damper_msh.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67]
+File: figure/DAMPER/Honeycomb/M11.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/M11.png>
+File: figure/DAMPER/Honeycomb/M12.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/M12.png>
+File: figure/DAMPER/Honeycomb/M22.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/M22.png>
+
+Overfull \hbox (66.43016pt too wide) in paragraph at lines 76--79
+ [][] 
+ []
+
+
+Overfull \hbox (66.43016pt too wide) in paragraph at lines 76--79
+ [] 
+ []
+
+
+Overfull \hbox (66.43016pt too wide) in paragraph at lines 76--79
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68]
+File: figure/DAMPER/ADAS/1.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/1.png>
+File: figure/DAMPER/ADAS/ADAS damper_msh.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/ADAS damper_msh.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+File: figure/DAMPER/ADAS/M11.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/M11.png>
+File: figure/DAMPER/ADAS/M12.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/M12.png>
+File: figure/DAMPER/ADAS/M22.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/M22.png>
+
+Underfull \vbox (badness 3138) has occurred while \output is active []
+
+ [70]
+File: figure/DAMPER/TADAS/1.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/1.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71]
+File: figure/DAMPER/TADAS/TADAS dampers_msh.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/TADAS dampers_msh.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [72]
+File: figure/DAMPER/TADAS/M11.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/M11.png>
+File: figure/DAMPER/TADAS/M12.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/M12.png>
+File: figure/DAMPER/TADAS/M22.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/M22.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [73])
+[74]
+\openout2 = `Conclusion.aux'.
+
+ (Conclusion.tex
+Chapter 7.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75
+
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76])
+[77] (Thesis.bbl [78
+
+
+
+] [79] [80] [81] [82]) [83]
+\openout2 = `acknowledgments.aux'.
+
+ (acknowledgments.tex [84
+
+
+])
+[85
+
+] [86
+
+
+
+]
+\openout2 = `appendixA.aux'.
+
+ (appendixA.tex
+Appendix A.
+[87
+
+
+] [88] [89]) [90]
+\openout2 = `appendixB.aux'.
+
+ (appendixB.tex
+Appendix B.
+[91
+
+
+
+
+] [92]
+Overfull \hbox (28.93867pt too wide) detected at line 56
+[]
+ []
+
+[93]
+Overfull \hbox (13.7153pt too wide) detected at line 76
+[]
+ []
+
+[94]) [95]
+\openout2 = `appendixC.aux'.
+
+ (appendixC.tex [96
+
+
+
+
+]
+Appendix C.
+File: figure/E/point.png Graphic file (type bmp)
+<figure/E/point.png>
+File: figure/E/point2.png Graphic file (type bmp)
+<figure/E/point2.png>
+File: figure/E/point.png Graphic file (type bmp)
+<figure/E/point.png>
+File: figure/E/point2.png Graphic file (type bmp)
+<figure/E/point2.png>
+) [97] [98
+
+
+
+]
+\openout2 = `cv.aux'.
+
+ (cv.tex) [99
+
+
+
+] (Thesis.aux (abstract.aux) (Introduction.aux)
+(Nomesh.aux) (Boundaryconditions.aux) (elasticHR.aux) (plateHR.aux) (DAMPER.aux
+) (Conclusion.aux) (acknowledgments.aux) (appendixA.aux) (appendixB.aux)
+(appendixC.aux) (cv.aux))
+ ***********
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2022/08/05>
+ ***********
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: B3CC89DE4002512BA2159AF8BB165BCF;6097.
+ ) 
+Here is how much of TeX's memory you used:
+ 19796 strings out of 410379
+ 420480 string characters out of 5795143
+ 1956432 words of memory out of 5000000
+ 40676 multiletter control sequences out of 15000+600000
+ 653089 words of font info for 182 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 89i,34n,99p,826b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on Thesis.pdf (106 pages).
