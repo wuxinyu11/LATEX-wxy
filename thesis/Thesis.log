@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  20 MAR 2024 15:19
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  21 MAR 2024 20:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1119,14 +1119,10 @@ Underfull \vbox (badness 2932) has occurred while \output is active []
 
 ]
 Chapter 4.
-[25]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
-[27]
+[25] [26] [27]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 121.
+(amsmath)                trying to recover with `aligned' on input line 122.
 
 [28] [29]
 File: figure/EHR/Eintegralscheme.png Graphic file (type bmp)
@@ -1138,27 +1134,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figure/EHR/patchtestmeshfree.png Graphic file (type bmp)
 <figure/EHR/patchtestmeshfree.png>
 
-[32]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
+[32] [33]
 File: figure/EHR/cantilever/cantilever.png Graphic file (type bmp)
 <figure/EHR/cantilever/cantilever.png>
-
-[34]
+ [34]
 File: figure/EHR/cantilever/cantilever.mesh.png Graphic file (type bmp)
 <figure/EHR/cantilever/cantilever.mesh.png>
 File: figure/EHR/cantilever/L2.png Graphic file (type bmp)
 <figure/EHR/cantilever/L2.png>
 File: figure/EHR/cantilever/H1.png Graphic file (type bmp)
 <figure/EHR/cantilever/H1.png>
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 329.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 331.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 329.
+(Font)              <11> on input line 331.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 329.
+(Font)              <7.69997> on input line 331.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 329.
+(Font)              <5.5> on input line 331.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1202,12 +1194,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 5.
-[43]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44]
-[45]
-Overfull \hbox (12.36914pt too wide) detected at line 115
+[43] [44] [45]
+Overfull \hbox (12.36914pt too wide) detected at line 116
 []
  []
 
@@ -1217,7 +1205,7 @@ File: figure/PHR/momentlisan.png Graphic file (type bmp)
 Underfull \vbox (badness 5008) has occurred while \output is active []
 
  [46]
-Overfull \hbox (13.9202pt too wide) detected at line 143
+Overfull \hbox (13.9202pt too wide) detected at line 144
 []
  []
 
@@ -1335,12 +1323,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (DAMPER.tex
 Chapter 6.
-File: figure/DAMPER/SLIT/1.png Graphic file (type bmp)
-<figure/DAMPER/SLIT/1.png>
-File: figure/DAMPER/SLIT/slit damper_msh.png Graphic file (type bmp)
-<figure/DAMPER/SLIT/slit damper_msh.png>
+File: figure/DAMPER/Honeycomb/1.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/1.png>
+File: figure/DAMPER/Honeycomb/2.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/2.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2582) has occurred while \output is active []
 
  [65
 
@@ -1348,72 +1336,63 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-File: figure/DAMPER/slit/M11.png Graphic file (type bmp)
-<figure/DAMPER/slit/M11.png>
-File: figure/DAMPER/slit/M12.png Graphic file (type bmp)
-<figure/DAMPER/slit/M12.png>
-File: figure/DAMPER/slit/M22.png Graphic file (type bmp)
-<figure/DAMPER/slit/M22.png>
-
-Overfull \hbox (66.43016pt too wide) in paragraph at lines 38--41
- [][] 
- []
-
-
-Overfull \hbox (66.43016pt too wide) in paragraph at lines 38--41
- [] 
- []
-
-
-Overfull \hbox (66.43016pt too wide) in paragraph at lines 38--41
- [] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [66]
-File: figure/DAMPER/Honeycomb/1.png Graphic file (type bmp)
-<figure/DAMPER/Honeycomb/1.png>
 File: figure/DAMPER/Honeycomb/honeycomb_damper_msh.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/honeycomb_damper_msh.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (8.42084pt too wide) in paragraph at lines 20--21
+ [][] 
+ []
 
- [67]
+File: figure/DAMPER/Honeycomb/honeycomb_damperx.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/honeycomb_damperx.png>
 File: figure/DAMPER/Honeycomb/M11.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/M11.png>
 File: figure/DAMPER/Honeycomb/M12.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/M12.png>
 File: figure/DAMPER/Honeycomb/M22.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/M22.png>
+[66]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (66.43016pt too wide) in paragraph at lines 76--79
- [][] 
- []
-
-
-Overfull \hbox (66.43016pt too wide) in paragraph at lines 76--79
- [] 
- []
-
-
-Overfull \hbox (66.43016pt too wide) in paragraph at lines 76--79
- [] 
- []
-
+ [67]
+File: figure/DAMPER/SLIT/1.png Graphic file (type bmp)
+<figure/DAMPER/SLIT/1.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [68]
+File: figure/DAMPER/SLIT/2.png Graphic file (type bmp)
+<figure/DAMPER/SLIT/2.png>
+
+[69]
+File: figure/DAMPER/SLIT/slit damper_msh.png Graphic file (type bmp)
+<figure/DAMPER/SLIT/slit damper_msh.png>
+File: figure/DAMPER/SLIT/slit-x.png Graphic file (type bmp)
+<figure/DAMPER/SLIT/slit-x.png>
+ [70]
+File: figure/DAMPER/slit/M11.png Graphic file (type bmp)
+<figure/DAMPER/slit/M11.png>
+File: figure/DAMPER/slit/M12.png Graphic file (type bmp)
+<figure/DAMPER/slit/M12.png>
+File: figure/DAMPER/slit/M22.png Graphic file (type bmp)
+<figure/DAMPER/slit/M22.png>
 File: figure/DAMPER/ADAS/1.png Graphic file (type bmp)
 <figure/DAMPER/ADAS/1.png>
-File: figure/DAMPER/ADAS/ADAS damper_msh.png Graphic file (type bmp)
-<figure/DAMPER/ADAS/ADAS damper_msh.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
+ [71]
+[72]
+File: figure/DAMPER/ADAS/ADAS damper_msh.png Graphic file (type bmp)
+<figure/DAMPER/ADAS/ADAS damper_msh.png>
+File: figure/DAMPER/TADAS/1.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/1.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [73]
+File: figure/DAMPER/TADAS/TADAS dampers_msh.png Graphic file (type bmp)
+<figure/DAMPER/TADAS/TADAS dampers_msh.png>
 File: figure/DAMPER/ADAS/M11.png Graphic file (type bmp)
 <figure/DAMPER/ADAS/M11.png>
 File: figure/DAMPER/ADAS/M12.png Graphic file (type bmp)
@@ -1421,21 +1400,9 @@ File: figure/DAMPER/ADAS/M12.png Graphic file (type bmp)
 File: figure/DAMPER/ADAS/M22.png Graphic file (type bmp)
 <figure/DAMPER/ADAS/M22.png>
 
-Underfull \vbox (badness 3138) has occurred while \output is active []
-
- [70]
-File: figure/DAMPER/TADAS/1.png Graphic file (type bmp)
-<figure/DAMPER/TADAS/1.png>
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71]
-File: figure/DAMPER/TADAS/TADAS dampers_msh.png Graphic file (type bmp)
-<figure/DAMPER/TADAS/TADAS dampers_msh.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [72]
+ [74]
 File: figure/DAMPER/TADAS/M11.png Graphic file (type bmp)
 <figure/DAMPER/TADAS/M11.png>
 File: figure/DAMPER/TADAS/M12.png Graphic file (type bmp)
@@ -1445,38 +1412,41 @@ File: figure/DAMPER/TADAS/M22.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73])
-[74]
-\openout2 = `Conclusion.aux'.
-
- (Conclusion.tex
-Chapter 7.
-
+ [75]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75
+ [76])
+[77]
+\openout2 = `Conclusion.aux'.
+
+ (Conclusion.tex [78
 
 
 
 
 ]
+Chapter 7.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76])
-[77] (Thesis.bbl [78
+ [79]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [80])
+[81] (Thesis.bbl [82
 
 
 
-] [79] [80] [81] [82]) [83]
+] [83] [84] [85] [86]) [87]
 \openout2 = `acknowledgments.aux'.
 
- (acknowledgments.tex [84
+ (acknowledgments.tex [88
 
 
 ])
-[85
+[89
 
-] [86
+] [90
 
 
 
@@ -1485,33 +1455,33 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (appendixA.tex
 Appendix A.
-[87
+[91
 
 
-] [88] [89]) [90]
+] [92] [93]) [94]
 \openout2 = `appendixB.aux'.
 
  (appendixB.tex
 Appendix B.
-[91
+[95
 
 
 
 
-] [92]
+] [96]
 Overfull \hbox (28.93867pt too wide) detected at line 56
 []
  []
 
-[93]
+[97]
 Overfull \hbox (13.7153pt too wide) detected at line 76
 []
  []
 
-[94]) [95]
+[98]) [99]
 \openout2 = `appendixC.aux'.
 
- (appendixC.tex [96
+ (appendixC.tex [100
 
 
 
@@ -1526,14 +1496,14 @@ File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
 <figure/E/point2.png>
-) [97] [98
+) [101] [102
 
 
 
 ]
 \openout2 = `cv.aux'.
 
- (cv.tex) [99
+ (cv.tex) [103
 
 
 
@@ -1546,15 +1516,15 @@ LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B3CC89DE4002512BA2159AF8BB165BCF;6097.
+(rerunfilecheck)             Checksum: E3612FB74C6E4F1640F5F8F28D44D818;6097.
  ) 
 Here is how much of TeX's memory you used:
- 19796 strings out of 410379
- 420480 string characters out of 5795143
+ 19843 strings out of 410379
+ 422371 string characters out of 5795143
  1956432 words of memory out of 5000000
- 40676 multiletter control sequences out of 15000+600000
+ 40721 multiletter control sequences out of 15000+600000
  653089 words of font info for 182 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,34n,99p,826b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (106 pages).
+Output written on Thesis.pdf (110 pages).

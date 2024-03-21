@@ -55,6 +55,7 @@
 \end{split}
 \end{equation}
 其中$\pmb{p}^{[p-2]}(\pmb x)$是$(p-2)$阶的单项式向量，$\pmb{a}_{\alpha\beta}$为弯矩分量$M_{\alpha\beta}$在积分域$\Omega_C$内的常系数向量。此时将离散的弯矩分量表达式(\ref{moment})代入式(\ref{Pweakform1})同时根据式(\ref{MVP})和线弹性本构关系式(\ref{Malphabeta})可以得到：
+\newpage
 \begin{equation}
 \begin{split}
     &\int_{\Omega}\delta\pmb{a}_{\alpha\beta}^T\pmb{p}^{[p-2]}D^{-1}_{\alpha\beta\gamma\eta}\pmb{a}_{\gamma\eta}^T\pmb{p}^{[p-2]}d\Omega=\\
@@ -190,7 +191,7 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 \par
 赫林格-赖斯纳变分原理下的薄板问题离散控制方程式(\ref{PHR2})中的修正变分项$\tilde{K}_{IJ}$、$\tilde{f}_I$和常用于解决薄板问题的满足变分一致性的本质边界条件施加方案Nitsche法(\ref{Pkv})中的$K_{IJ}^n$、$f_I^n$相比，具有相类似的表达式，
 同样都满足变分一致性，不同的是在赫林格-赖斯纳变分原理离散过程中，用再生光滑梯度$\tilde{\Psi}_{I,\alpha\beta}$替换传统无网格形函数梯度$\Psi_{I,\alpha\beta}$，使得该方法无需计算复杂耗时的无网格形函数梯度，在处理薄板问题时有效提高计算效率。
-同样，基于赫林格-赖斯纳变分原理的特点，薄板的离散控制方程式(\ref{PHR3})中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$中已经内嵌，相较于Nistche法(\ref{PKFs})中的稳定项$K^s_{IJ}$、$f^s_I$而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
+同样，基于赫林格-赖斯纳变分原理的特点，薄板的离散控制方程式(\ref{PHR3})中的稳定项$\bar{K}_{IJ}$、$\bar{f}_I$中已经内嵌，相较于Nitsche法(\ref{PKFs})中的稳定项$K^s_{IJ}$、$f^s_I$而言不需要引入罚函数项，不会因为人工参数的存在继而影响计算精度。
 同样，根据赫林格-赖斯纳变分原理在求解薄板问题过程中也用到了优化的数值积分方案见附录C再生光滑梯度优化的数值积分方案。
 \section{数值算例}
 \subsection{分片实验}
@@ -384,7 +385,7 @@ Nitsche法的最优误差的人工经验参数的范围比较大，但人工经�
 从图中可以明显看出采用“RKGSI”得出的计算精度优于“GI”法，
 并且“RKGSI-HR”法都能够达到理论误差收敛率，满足积分约束条件。
 图\ref{Tefficiency}是简支等边三角形板的薄板中面和本质边界条件施加效率分析图，从图中可以看出在薄板中面施加过程中，“RKGSI”所用的时间都明显少于“GI”；
-而针对“RKGSI”在施加本质边界过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量中可以明显看出“RKGSI-Nistche”法所用的时间明显多于“RKGSI-HR”法，
+而针对“RKGSI”在施加本质边界过程中计算形函数及梯度和组装相对应的刚度矩阵和力向量中可以明显看出“RKGSI-Nitsche”法所用的时间明显多于“RKGSI-HR”法，
 % 虽然“RKGSI-HR”和“RKGSI-Penalty”的计算效率相差不大，但“RKGSI-Penalty”由于不具有变分一致性无法达到理论误差收敛率。
 % 因此相较于传统的本质边界条件施加方法，“RKGSI-HR”不仅满足积分约束条件能够达到理论误差收敛率，提高计算精度，在计算时间上也用时较短，有效提高计算效率。
 图\ref{TMxy}为简支等边三角形板问题的弯矩云图。从图中可以看出“RKGSI-HR”、“RKGSI-Nitsche”和“RKGSI-Penalty”和精确解之间几乎一致，进一步验证了所提方法能够有效提高计算精度。

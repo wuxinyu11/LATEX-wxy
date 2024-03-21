@@ -34,20 +34,20 @@
 \contentsline {subsection}{\numberline {5.4.4}简支环行板问题}{59}{subsection.5.4.4}%
 \contentsline {section}{\numberline {5.5}小结}{64}{section.5.5}%
 \contentsline {chapter}{\numberline {6}薄板型抗震阻尼器数值模拟分析}{65}{chapter.6}%
-\contentsline {section}{\numberline {6.1}狭缝阻尼器}{65}{section.6.1}%
-\contentsline {section}{\numberline {6.2}蜂窝阻尼器}{67}{section.6.2}%
-\contentsline {section}{\numberline {6.3}ADAS阻尼器}{69}{section.6.3}%
-\contentsline {section}{\numberline {6.4}TADAS阻尼器}{72}{section.6.4}%
-\contentsline {section}{\numberline {6.5}小结}{73}{section.6.5}%
-\contentsline {chapter}{\numberline {7}结论与展望}{75}{chapter.7}%
-\contentsline {section}{\numberline {7.1}结论}{75}{section.7.1}%
-\contentsline {section}{\numberline {7.2}展望}{76}{section.7.2}%
-\contentsline {chapter}{参考文献}{78}{section.7.2}%
-\contentsline {chapter}{致\hspace {12pt}谢}{85}{section*.59}%
+\contentsline {section}{\numberline {6.1}蜂窝阻尼器}{65}{section.6.1}%
+\contentsline {section}{\numberline {6.2}狭缝阻尼器}{68}{section.6.2}%
+\contentsline {section}{\numberline {6.3}ADAS阻尼器}{71}{section.6.3}%
+\contentsline {section}{\numberline {6.4}TADAS阻尼器}{73}{section.6.4}%
+\contentsline {section}{\numberline {6.5}小结}{75}{section.6.5}%
+\contentsline {chapter}{\numberline {7}结论与展望}{79}{chapter.7}%
+\contentsline {section}{\numberline {7.1}结论}{79}{section.7.1}%
+\contentsline {section}{\numberline {7.2}展望}{80}{section.7.2}%
+\contentsline {chapter}{参考文献}{82}{section.7.2}%
+\contentsline {chapter}{致\hspace {12pt}谢}{89}{section*.63}%
 \renewcommand {\cftchappresnum }{附录}
 \renewcommand {\cftchapaftersnum }{}
-\contentsline {chapter}{\numberline {A}弹性力学问题赫林格-赖斯纳原理的本质边界条件施加过程推导}{87}{appendix.A}%
-\contentsline {chapter}{\numberline {B}薄板问题赫林格-赖斯纳原理的本质边界条件施加过程推导}{91}{appendix.B}%
-\contentsline {chapter}{\numberline {C}再生光滑梯度优化的数值积分方案}{97}{appendix.C}%
-\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{99}{appendix*.63}%
+\contentsline {chapter}{\numberline {A}弹性力学问题赫林格-赖斯纳原理的本质边界条件施加过程推导}{91}{appendix.A}%
+\contentsline {chapter}{\numberline {B}薄板问题赫林格-赖斯纳原理的本质边界条件施加过程推导}{95}{appendix.B}%
+\contentsline {chapter}{\numberline {C}再生光滑梯度优化的数值积分方案}{101}{appendix.C}%
+\contentsline {chapter}{个人简历、在学期间发表的学术论文与研究成果}{103}{appendix*.67}%
 \contentsfinish 
