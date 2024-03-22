@@ -17,13 +17,12 @@
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{figure/DAMPER/Honeycomb/honeycomb_damper_msh.png}
+    \includegraphics[scale=0.65]{figure/DAMPER/Honeycomb/honeycomb_damper_msh.png}
     \caption{蜂窝阻尼器及其无网格离散模型}\label{Honeycombmsh}
 \end{figure}
 使用52372个有限元薄板单元进行精细离散分析，得到该问题的位移参照。图\ref{honeycomb_damperx}为不同本质边界条件下的位移精度对比。
 $u_f$表示$C$点处有限元离散分析的位移计算结果，$u_c$为不同本质边界条件下得出的位移计算结果。
-从图中可以看出HR法的计算精度优于罚函数法、Nitsche法，
-同时，根据应力云图\ref{HoneycombM}，可以看出HR方法没有出现明显的波动现象。
+从图中可以看出本文提出的赫林格-赖斯纳原理的变分一致型伽辽金无网格法(HR)的计算精度优于罚函数法、Nitsche法。同时，根据应力云图\ref{HoneycombM}，可以看出HR方法没有出现明显的波动现象。
 \newpage
 \begin{figure}[H]
     \centering
@@ -32,9 +31,9 @@ $u_f$表示$C$点处有限元离散分析的位移计算结果，$u_c$为不同�
 \end{figure}
 \begin{figure}[H]
     \centering
-        \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/M11.png}
-        \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/M12.png}
-        \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/M22.png}
+        \includegraphics[scale=0.55]{figure/DAMPER/Honeycomb/M11.png}
+        \includegraphics[scale=0.55]{figure/DAMPER/Honeycomb/M12.png}
+        \includegraphics[scale=0.55]{figure/DAMPER/Honeycomb/M22.png}
     \caption{蜂窝阻尼器应力云图(位移放大4E3倍)}\label{HoneycombM}
 \end{figure}
 \section{狭缝阻尼器}
@@ -47,32 +46,32 @@ $u_f$表示$C$点处有限元离散分析的位移计算结果，$u_c$为不同�
 \end{figure}
 图\ref{slit2}是狭缝阻尼器示意图，材料系数分别为杨氏模量$E=2\times 10^{11}$Pa、泊松比$\nu=0.3$。同时，对上端施加本质边界条件，下部施加外部荷载$P=100000$N的自然边界条件。
 狭缝阻尼器求解域通过如图\ref{slitmsh}所示采用79、256和580三个疏密不同的节点进行离散。对于采用三次基函数的狭缝阻尼器，无网格影响域取为3.5。
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/DAMPER/SLIT/2.png}
     \caption{狭缝阻尼器模型图}\label{slit2}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.65]{figure/DAMPER/SLIT/slit damper_msh.png}
+    \includegraphics[scale=0.7]{figure/DAMPER/SLIT/slit damper_msh.png}
     \caption{狭缝阻尼器及其无网格离散模型}\label{slitmsh}
 \end{figure}
 对狭缝阻尼器使用 49204个有限元薄板单元进行精细离散分析，得到该问题的位移参照。图\ref{slitx}为不同本质边界条件下的位移精度对比。
 $u_f$表示$C$点处有限元离散分析的位移计算结果，$u_c$为不同本质边界条件下得出的位移计算结果。
-从图中可以看出采用三次基函数时狭缝阻尼器的HR法也明显优于其他两种常见的本质边界条件施加方法，
+从图中可以看出采用三次基函数时狭缝阻尼器的HR法也明显优于罚函数法、Nitsche法。
 图\ref{slitM}为狭缝阻尼器的应力云图，进一步说明HR方法具有稳定的计算精度。
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{figure/DAMPER/SLIT/slit-x.png}
-    \caption{狭缝阻尼器位移误差对比}\label{slitx}
-\end{figure}
 \newpage
 \begin{figure}[H]
     \centering
-        \includegraphics[scale=0.5]{figure/DAMPER/slit/M11.png}
-        \includegraphics[scale=0.5]{figure/DAMPER/slit/M12.png}
-        \includegraphics[scale=0.5]{figure/DAMPER/slit/M22.png}
+    \includegraphics[scale=0.45]{figure/DAMPER/SLIT/slit-x.png}
+    \caption{狭缝阻尼器位移误差对比}\label{slitx}
+\end{figure}
+\begin{figure}[H]
+    \centering
+        \includegraphics[scale=0.55]{figure/DAMPER/slit/M11.png}
+        \includegraphics[scale=0.55]{figure/DAMPER/slit/M12.png}
+        \includegraphics[scale=0.55]{figure/DAMPER/slit/M22.png}
     \caption{狭缝阻尼器应力云图(位移放大2E3倍)}\label{slitM}
 \end{figure}
 \section{ADAS阻尼器}
@@ -84,7 +83,7 @@ $u_f$表示$C$点处有限元离散分析的位移计算结果，$u_c$为不同�
     \caption{实验装置示意图\cite{basu2016}}\label{ADAS1}
 \end{figure}
 如图\ref{ADASmsh}所示，ADAS阻尼器的上端设为简支固定，施加本质边界条件$\Gamma^g$，下端施加外部荷载$P=100000$N，厚度为5mm。ADAS阻尼器钢板的料系数分别为杨氏模量$E=2\times 10^{11}$Pa、泊松比$\nu=0.3$。ADAS阻尼器求解域采用如图所示187个非均匀节点进行离散，通过采用三次基函数，取其影响域为3.5进行无网格数值分析。
-图\ref{ADASM}为施加不同本质边界条件下的ADAS阻尼器受到平面外变形的弯矩云图，从图中可以看出罚函数法和Nitsche法以及所提方法HR法对比，出现明显的波动现象，Nitsche法和HR法拥有几乎相同的弯矩云图，但Nitsche法的计算效率低于HR法，因此所提方法HR法在计算薄板型ADAS阻尼器不仅提高计算精度还有效提高计算效率。
+图\ref{ADASM}为施加不同本质边界条件下的ADAS阻尼器受到平面外变形的弯矩云图，从图中可以看出罚函数法和Nitsche法以及所提方法HR法对比，出现明显的波动现象，Nitsche法和HR法拥有几乎相同的弯矩云图。
 \newpage
 \begin{figure}[H]
     \centering
@@ -96,12 +95,13 @@ ADAS阻尼器的适用性有限，一旦发生横向变形，板将受到张力�
 为了改善ADAS阻尼器的缺点，三角板(TADAS)阻尼器被开发出来，相较于传统的ADAS阻尼器具有不受重力荷载的影响，但构造比ADAS阻尼器复杂。
 图\ref{TADAS1}为一个带有TADAS阻尼器的实验装置\cite{mohammadi2017}，为常在道路、住房和城市中心建造的一层框架大比例模型，
 该框架高3000mm，跨度4000mm，框架柱采用标准的双IPE180型钢材，梁的工字截面由三块4000mm$\times$200mm$\times$12mm的钢板连续焊接而成。支撑体系统一采用双100mm$\times$100mm$\times$20mm角度，柱基座使用销连接。
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{figure/DAMPER/TADAS/1.png}
     \caption{实验装置示意图\cite{mohammadi2017}}\label{TADAS1}
 \end{figure}
-如图\ref{TADASmsh}所示，ADAS阻尼器通过刚性焊接到顶板施加本质边界条件$\Gamma^g$，下端施加$P=100000$N的力施加自然边界条件$\Gamma^t$使其受到平面外变形。TADAS阻尼器的材料系数为杨氏模量$E=2\times 10^{11}$Pa、泊松比$\nu=0.3$。
+如图\ref{TADASmsh}所示，TADAS阻尼器通过刚性焊接到顶板施加本质边界条件$\Gamma^g$，下端施加$P=100000$N的力施加自然边界条件$\Gamma^t$使其受到平面外变形。TADAS阻尼器的材料系数为杨氏模量$E=2\times 10^{11}$Pa、泊松比$\nu=0.3$。
 该阻尼器通过采用345个节点进行离散，采用高阶的四次基函数进行求解，核函数的影响域取其为4.5。
 图\ref{TADASM}为TADAS阻尼器三角形板的弯矩应力云图，从弯矩云图可以看出相较于罚函数法(RKGSI-Penalty)，所提方法(RKGSI-HR)拥有更稳定的弯矩云图，有效提高计算精度。
 \begin{figure}[H]

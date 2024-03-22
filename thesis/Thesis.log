@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  22 MAR 2024 11:27
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  22 MAR 2024 15:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1342,7 +1342,7 @@ Underfull \vbox (badness 2556) has occurred while \output is active []
 File: figure/DAMPER/Honeycomb/honeycomb_damper_msh.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/honeycomb_damper_msh.png>
 
-Overfull \hbox (8.42084pt too wide) in paragraph at lines 20--21
+Overfull \hbox (9.59305pt too wide) in paragraph at lines 20--21
  [][] 
  []
 
@@ -1356,24 +1356,30 @@ File: figure/DAMPER/Honeycomb/M12.png Graphic file (type bmp)
 File: figure/DAMPER/Honeycomb/M22.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/M22.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (24.77748pt too wide) in paragraph at lines 34--37
+ [][] 
+ []
 
- [67]
+
+Overfull \hbox (19.21216pt too wide) in paragraph at lines 34--37
+ [] 
+ []
+
+
+Overfull \hbox (24.77748pt too wide) in paragraph at lines 34--37
+ [] 
+ []
+
 File: figure/DAMPER/SLIT/1.png Graphic file (type bmp)
 <figure/DAMPER/SLIT/1.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [68]
+[67] [68]
 File: figure/DAMPER/SLIT/2.png Graphic file (type bmp)
 <figure/DAMPER/SLIT/2.png>
-
-[69]
 File: figure/DAMPER/SLIT/slit damper_msh.png Graphic file (type bmp)
 <figure/DAMPER/SLIT/slit damper_msh.png>
+ [69]
 File: figure/DAMPER/SLIT/slit-x.png Graphic file (type bmp)
 <figure/DAMPER/SLIT/slit-x.png>
- [70]
 File: figure/DAMPER/slit/M11.png Graphic file (type bmp)
 <figure/DAMPER/slit/M11.png>
 File: figure/DAMPER/slit/M12.png Graphic file (type bmp)
@@ -1383,18 +1389,15 @@ File: figure/DAMPER/slit/M22.png Graphic file (type bmp)
 File: figure/DAMPER/ADAS/1.png Graphic file (type bmp)
 <figure/DAMPER/ADAS/1.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1158) has occurred while \output is active []
 
- [71]
-[72]
+ [70]
+[71]
 File: figure/DAMPER/ADAS/ADAS damper_msh.png Graphic file (type bmp)
 <figure/DAMPER/ADAS/ADAS damper_msh.png>
+ [72]
 File: figure/DAMPER/TADAS/1.png Graphic file (type bmp)
 <figure/DAMPER/TADAS/1.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [73]
 File: figure/DAMPER/TADAS/TADAS dampers_msh.png Graphic file (type bmp)
 <figure/DAMPER/TADAS/TADAS dampers_msh.png>
 File: figure/DAMPER/ADAS/M11.png Graphic file (type bmp)
@@ -1406,7 +1409,7 @@ File: figure/DAMPER/ADAS/M22.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [74]
+ [73]
 File: figure/DAMPER/TADAS/M11.png Graphic file (type bmp)
 <figure/DAMPER/TADAS/M11.png>
 File: figure/DAMPER/TADAS/M12.png Graphic file (type bmp)
@@ -1416,41 +1419,41 @@ File: figure/DAMPER/TADAS/M22.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75]
+ [74]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76])
-[77]
+ [75])
+[76]
 \openout2 = `Conclusion.aux'.
 
- (Conclusion.tex [78
+ (Conclusion.tex
+Chapter 7.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77
 
 
 
 
 ]
-Chapter 7.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [80])
-[81] (Thesis.bbl [82
+ [78])
+[79] (Thesis.bbl [80
 
 
 
-] [83] [84] [85] [86]) [87]
+] [81] [82] [83] [84]) [85]
 \openout2 = `acknowledgments.aux'.
 
- (acknowledgments.tex [88
+ (acknowledgments.tex [86
 
 
 ])
-[89
+[87
 
-] [90
+] [88
 
 
 
@@ -1459,33 +1462,33 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (appendixA.tex
 Appendix A.
-[91
+[89
 
 
-] [92] [93]) [94]
+] [90] [91]) [92]
 \openout2 = `appendixB.aux'.
 
  (appendixB.tex
 Appendix B.
-[95
+[93
 
 
 
 
-] [96]
+] [94]
 Overfull \hbox (28.93867pt too wide) detected at line 56
 []
  []
 
-[97]
+[95]
 Overfull \hbox (13.7153pt too wide) detected at line 76
 []
  []
 
-[98]) [99]
+[96]) [97]
 \openout2 = `appendixC.aux'.
 
- (appendixC.tex [100
+ (appendixC.tex [98
 
 
 
@@ -1500,14 +1503,14 @@ File: figure/E/point.png Graphic file (type bmp)
 <figure/E/point.png>
 File: figure/E/point2.png Graphic file (type bmp)
 <figure/E/point2.png>
-) [101] [102
+) [99] [100
 
 
 
 ]
 \openout2 = `cv.aux'.
 
- (cv.tex) [103
+ (cv.tex) [101
 
 
 
@@ -1531,4 +1534,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  89i,34n,99p,826b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (110 pages).
+Output written on Thesis.pdf (108 pages).

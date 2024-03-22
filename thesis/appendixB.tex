@@ -42,15 +42,15 @@
     \pmb{p}^{[p-2]T}\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}n_{\alpha}n_{\beta}d\Gamma
     -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}
     \tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}n_{\eta}\Psi_{J,n}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\Psi_I\pmb{p}^{[p-2]T}\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}n_{\alpha}s_{\beta}]]_{x\in{c_w}\cap{c_C}}
-    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
+    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\Psi_I\pmb{p}^{[p-2]T}\pmb G^{-1}\tilde{\pmb g}_{\gamma\eta J}n_{\alpha}s_{\beta}]]_{\pmb x\in{c_w}\cap{c_C}}
+    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\Psi_J]]_{\pmb x\in{c_w}\cap{c_C}}\\
     &=-\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(-D_{\alpha\beta\gamma\eta}(n_{\alpha}\frac{\partial}{\partial x_{\beta}}+s_{\alpha}n_{\beta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\tilde{\Psi}_{J,\gamma\eta}d\Gamma\\
     &-\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma\\
     &+\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}(-D_{\alpha\beta\gamma\eta}n_{\alpha}n_{\beta})\tilde{\Psi}_{J,\gamma\eta}d\Gamma
     +\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma\\
-    &+\sum_{C=1}^{N\!C}[[\Psi_I(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\tilde{\Psi}_{J,\gamma\eta}]]_{x\in{c_w}\cap{c_C}}+\sum_{C=1}^{N\!C}[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
-    &=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{x\in{c_w}}\\
-    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
+    &+\sum_{C=1}^{N\!C}[[\Psi_I(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\tilde{\Psi}_{J,\gamma\eta}]]_{\pmb x\in{c_w}\cap{c_C}}+\sum_{C=1}^{N\!C}[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{\pmb x\in{c_w}\cap{c_C}}\\
+    &=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{\pmb x\in{c_w}}\\
+    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{\pmb x\in{c_w}}\\
     &=\tilde{\pmb K}
 \end{split}
 \end{equation}
@@ -66,11 +66,11 @@
     &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}
     \bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}n_{
     \eta}\Psi_{J,n}d\Gamma
-    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
+    -\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}[[\bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\Psi_J]]_{\pmb x\in{c_w}\cap{c_C}}\\
     &=\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma\\
     &-\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma
-    -[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}\cap{c_C}}\\
-    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{x\in{c_w}}\\
+    -[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta})\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{\pmb x\in{c_w}\cap{c_C}}\\
+    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{\pmb x\in{c_w}}\\
     &=\bar{\pmb K}
 \end{split}
 \end{equation}
@@ -83,10 +83,10 @@
     &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\gamma}
     \tilde{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}_{,\eta}+\tilde{\pmb g}_{\alpha\beta I}^T
     \pmb G^{-1}\pmb{p}^{[p-2]}_{,\xi}s_{\gamma}n_{\eta}s_{\xi})\bar{w}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_{C}}}\tilde{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}n_{\eta}\bar{\theta}_nd\Gamma-[[\tilde{\pmb g}_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\bar{w}]]_{x\in{c_w}\cap{c_C}}\\
+    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_{C}}}\tilde{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}n_{\eta}\bar{\theta}_nd\Gamma-[[\tilde{\pmb g}_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\bar{w}]]_{\pmb x\in{c_w}\cap{c_C}}\\
     &=-\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma\\
-    &+\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma-[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta}\tilde{\Psi}_{I,\alpha\beta}\bar{w})]]_{x\in{c_w}\cap{c_C}}\\
-    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}\\
+    &+\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma-[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta}\tilde{\Psi}_{I,\alpha\beta}\bar{w})]]_{\pmb x\in{c_w}\cap{c_C}}\\
+    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{\pmb x\in{c_w}}\\
     &=\tilde{\pmb f}
 \end{split}
 \end{equation}
@@ -99,10 +99,10 @@
     &=\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\eta}
     \bar{\pmb g}_{\alpha\beta I}^T\pmb G^{-1}\pmb{p}^{[p-2]}_{,\gamma}+\bar{\pmb g}_{\alpha\beta I}^T
    \pmb G^{-1}\pmb{p}^{[p-2]}_{,\xi}s_{\gamma}n_{\eta}s_{\xi})\bar{w}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_{C}}}\bar{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}n_{\eta}\bar{\theta}_nd\Gamma-[[\bar{\pmb g}_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\bar{w}]]_{x\in{c_w}\cap{c_C}}\\
+    &-\sum_{C=1}^{N\!C}D_{\alpha\beta\gamma\eta}\int_{{\Gamma_{\theta}}\cap{\Gamma_{C}}}\bar{\pmb g}^T_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}n_{\eta}\bar{\theta}_nd\Gamma-[[\bar{\pmb g}_{\alpha\beta I}\pmb G^{-1}\pmb{p}^{[p-2]}n_{\gamma}s_{\eta}\bar{w}]]_{\pmb x\in{c_w}\cap{c_C}}\\
     &=\sum_{C=1}^{N\!C}\int_{{\Gamma_w}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}(n_{\gamma}\frac{\partial}{\partial x_{\eta}}+s_{\gamma}n_{\eta}s_{\xi}\frac{\partial}{\partial x_{\xi}}))\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma\\
-    &-\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma-[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta}\bar{\Psi}_{I,\alpha\beta}\bar{w})]]_{x\in{c_w}\cap{c_C}}\\
-    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{x\in{c_w}}\\
+    &-\sum_{C=1}^{N\!C}\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}(-D_{\alpha\beta\gamma\eta}n_{\gamma}n_{\eta})\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma-[[(-D_{\alpha\beta\gamma\eta}n_{\gamma}s_{\eta}\bar{\Psi}_{I,\alpha\beta}\bar{w})]]_{\pmb x\in{c_w}\cap{c_C}}\\
+    &=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{\pmb x\in{c_w}}\\
     &=\bar{\pmb f}
 \end{split}
 \end{equation}
