@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  22 MAR 2024 15:50
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  22 MAR 2024 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -943,11 +943,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Underfull \hbox (badness 6893) in paragraph at lines 34--34
-\TU/TimesNewRoman(0)/b/n/12 Keywords: \TU/TimesNewRoman(0)/m/n/12 Meshfree meth
-od;Hellinger-Reissner variational principle;Essential
- []
-
 [4]) (Thesis.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 1.
@@ -1212,14 +1207,7 @@ Overfull \hbox (12.89175pt too wide) detected at line 144
 []
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
-[49]
+[47] [48] [49]
 File: figure/PHR/fenpian.png Graphic file (type bmp)
 <figure/PHR/fenpian.png>
 
@@ -1370,9 +1358,10 @@ Overfull \hbox (24.77748pt too wide) in paragraph at lines 34--37
  [] 
  []
 
+[67]
 File: figure/DAMPER/SLIT/1.png Graphic file (type bmp)
 <figure/DAMPER/SLIT/1.png>
-[67] [68]
+ [68]
 File: figure/DAMPER/SLIT/2.png Graphic file (type bmp)
 <figure/DAMPER/SLIT/2.png>
 File: figure/DAMPER/SLIT/slit damper_msh.png Graphic file (type bmp)
@@ -1386,13 +1375,10 @@ File: figure/DAMPER/slit/M12.png Graphic file (type bmp)
 <figure/DAMPER/slit/M12.png>
 File: figure/DAMPER/slit/M22.png Graphic file (type bmp)
 <figure/DAMPER/slit/M22.png>
+ [70]
 File: figure/DAMPER/ADAS/1.png Graphic file (type bmp)
 <figure/DAMPER/ADAS/1.png>
-
-Underfull \vbox (badness 1158) has occurred while \output is active []
-
- [70]
-[71]
+ [71]
 File: figure/DAMPER/ADAS/ADAS damper_msh.png Graphic file (type bmp)
 <figure/DAMPER/ADAS/ADAS damper_msh.png>
  [72]
