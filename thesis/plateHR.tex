@@ -4,39 +4,39 @@
 \section{赫林格-赖斯纳变分原理}
 根据最小余能原理，薄板问题强形式(\ref{P control equation})所对应的余能泛函表达式为：
 \begin{equation}
-\Pi_C(M_{\alpha\beta})=\int_{\Omega}\frac{1}{2}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}\bar{\theta}_nd\Gamma-p\bar{w}\vert_{\bf{x}\in{c_w}}
+\Pi_C(M_{\alpha\beta})=\int_{\Omega}\frac{1}{2}M_{\alpha\beta}C^{-1}_{\alpha\beta\gamma\eta}M_{\gamma\eta}d\Omega-\int_{\Gamma_w}V_{\pmb n}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}M_{\pmb{nn}}\bar{\theta}_nd\Gamma-p\bar{w}\vert_{\pmb{x}\in{c_w}}
 \end{equation}
 与弹性力学问题类似，薄板问题的赫林格-赖斯纳变分原理余能泛函具有挠度和弯矩两个变量，四阶薄板问题控制方程式(\ref{P control equation})对应的余能泛函表达式为：
 \begin{equation}\label{pfanhan}
 \begin{split}
     \Pi_{H\!R}(M_{\alpha\beta},w)&=\Pi_C(M_{\alpha\beta})+\int_{\Omega}w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega\\
     &+\int_{\Gamma_M}w_{,\pmb n}(M_{\pmb{nn}}-\bar{M}_{\pmb{nn}})d\Gamma
-    -\int_{\Gamma_V}w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-w(P-\bar{P})\vert_{\bf{x}\in{c_P}}
+    -\int_{\Gamma_V}w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-w(P-\bar{P})\vert_{\pmb{x}\in{c_P}}
 \end{split}
 \end{equation}
 式(\ref{pfanhan})分别对$M_{\alpha\beta}$和$w$进行变分得到薄板问题赫林格-赖斯纳变分原理的伽辽金弱形式：
 \begin{equation}\label{Pweakfrom}
 \begin{split}
     \delta\Pi_{H\!R}(M_{\alpha\beta},w)=&\delta\Pi_C(M_{\alpha\beta})\\
-    &+\int_{\Omega}\delta M_{\alpha\beta,\alpha\beta}wd\Omega+\int_{\Gamma_M}\delta M_{\pmb{nn}}w_{,\pmb n}d\Gamma-\int_{\Gamma_V}\delta V_{\pmb n}wd\Gamma-\delta Pw\vert_{\bf{x}\in{c_P}}\\
-    &+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega+\int_{\Gamma_M}\delta w_{,n}(M_{nn}-\bar{M}_{nn})d\Gamma\\
-    &-\int_{\Gamma_V}\delta w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-\delta w(P-\bar{P})\vert_{\bf{x}\in{c_P}}\\
+    &+\int_{\Omega}\delta M_{\alpha\beta,\alpha\beta}wd\Omega+\int_{\Gamma_M}\delta M_{\pmb{nn}}w_{,\pmb n}d\Gamma-\int_{\Gamma_V}\delta V_{\pmb n}wd\Gamma-\delta Pw\vert_{\pmb{x}\in{c_P}}\\
+    &+\int_{\Omega}\delta w(M_{\alpha\beta,\alpha\beta}+\bar{q})d\Omega+\int_{\Gamma_M}\delta w_{,n}(M_{\pmb{nn}}-\bar{M}_{\pmb{nn}})d\Gamma\\
+    &-\int_{\Gamma_V}\delta w(V_{\pmb n}-\bar{V}_{\pmb n})d\Gamma-\delta w(P-\bar{P})\vert_{\pmb{x}\in{c_P}}\\
     &=0
 \end{split}
 \end{equation}\par
 根据变分项$\delta M_{\alpha\beta}$和$\delta w$的任意性和几何关系式(\ref{PGeometric relationships})进一步将上式改写为以下两式：
 \begin{equation}\label{Pweakform1}
     \begin{split}
-        \int_\Omega {\delta {M_{\alpha \beta }}D_{\alpha \beta \gamma \eta }^{ - 1}{M_{\gamma \eta }}d\Omega }&=\int_\Gamma  {\delta {V_{\bf{n}}}wd\Gamma }  - \int_\Gamma  {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }+{\left. {\delta Pw} \right|_{{\bf{x}} \in c}} - \int_\Omega  {\delta {M_{\alpha \beta ,\alpha \beta }}wd\Omega } \\
-        &-\int_{{\Gamma _w}} {\delta {V_{\bf{n}}}wd\Gamma }  + \int_{{\Gamma _\theta }} {\delta {M_{{\bf{nn}}}}{w_{,{\bf{n}}}}d\Gamma }  - {\left. {\delta Pw} \right|_{{\bf{x}} \in {c_w}}}\\
-        &+\int_{{\Gamma _w}} {\delta {V_{\bf{n}}}\bar wd\Gamma }  - \int_{{\Gamma _\theta }} {\delta {M_{{\bf{nn}}}}{{\bar \theta }_{\bf{n}}}d\Gamma }  + {\left. {\delta P\bar w} \right|_{{\bf{x}} \in {c_w}}}
+        \int_\Omega {\delta {M_{\alpha \beta }}D_{\alpha \beta \gamma \eta }^{ - 1}{M_{\gamma \eta }}d\Omega }&=\int_\Gamma  {\delta {V_{\pmb{n}}}wd\Gamma }  - \int_\Gamma  {\delta {M_{{\pmb{nn}}}}{w_{,{\pmb{n}}}}d\Gamma }+{\left. {\delta Pw} \right|_{{\pmb{x}} \in c}} - \int_\Omega  {\delta {M_{\alpha \beta ,\alpha \beta }}wd\Omega } \\
+        &-\int_{{\Gamma _w}} {\delta {V_{\pmb{n}}}wd\Gamma }  + \int_{{\Gamma _\theta }} {\delta {M_{{\pmb{nn}}}}{w_{,{\pmb{n}}}}d\Gamma }  - {\left. {\delta Pw} \right|_{{\pmb{x}} \in {c_w}}}\\
+        &+\int_{{\Gamma _w}} {\delta {V_{\pmb{n}}}\bar wd\Gamma }  - \int_{{\Gamma _\theta }} {\delta {M_{{\pmb{nn}}}}{{\bar \theta }_{\pmb{n}}}d\Gamma }  + {\left. {\delta P\bar w} \right|_{{\pmb{x}} \in {c_w}}}
     \end{split}
 \end{equation}
 \begin{equation}
         \begin{split}\label{Pweakform2}
-            &\int_\Gamma  {\delta w{V_{\bf{n}}}d\Gamma } - \int_\Gamma  {\delta {w_{,{\bf{n}}}}{M_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta wP} \right|_{{\bf{x}} \in c}} - \int_\Omega  {\delta w{M_{\alpha \beta ,\alpha\beta}}d\Omega }\\
-            &- \int_{{\Gamma _w}} {\delta w{V_{\bf{n}}}d\Gamma }  + \int_{{\Gamma _\theta }} {\delta {w_{,{\bf{n}}}}{M_{{\bf{nn}}}}d\Gamma }  - {\left. {\delta wP} \right|_{{\bf{x}} \in {c_w}}}\\
-            &= \int_{{\Gamma _V}} {\delta w{{\bar V}_{\bf{n}}}d\Gamma }  - \int_{{\Gamma _M}} {\delta {w_{,{\bf{n}}}}{{\bar M}_{{\bf{nn}}}}d\Gamma }  + {\left. {\delta w\bar P} \right|_{{\bf{x}} \in {c_P}}} + \int_\Omega  {\delta w\bar qd\Omega} 
+            &\int_\Gamma  {\delta w{V_{\pmb{n}}}d\Gamma } - \int_\Gamma  {\delta {w_{,{\pmb{n}}}}{M_{{\pmb{nn}}}}d\Gamma }  + {\left. {\delta wP} \right|_{{\pmb{x}} \in c}} - \int_\Omega  {\delta w{M_{\alpha \beta ,\alpha\beta}}d\Omega }\\
+            &- \int_{{\Gamma _w}} {\delta w{V_{\pmb{n}}}d\Gamma }  + \int_{{\Gamma _\theta }} {\delta {w_{,{\pmb{n}}}}{M_{{\pmb{nn}}}}d\Gamma }  - {\left. {\delta wP} \right|_{{\pmb{x}} \in {c_w}}}\\
+            &= \int_{{\Gamma _V}} {\delta w{{\bar V}_{\pmb{n}}}d\Gamma }  - \int_{{\Gamma _M}} {\delta {w_{,{\pmb{n}}}}{{\bar M}_{{\pmb{nn}}}}d\Gamma }  + {\left. {\delta w\bar P} \right|_{{\pmb{x}} \in {c_P}}} + \int_\Omega  {\delta w\bar qd\Omega} 
     \end{split}
 \end{equation} 
 \section{挠度-弯矩混合离散}
@@ -61,14 +61,14 @@
     &\int_{\Omega}\delta\pmb{a}_{\alpha\beta}^T\pmb{p}^{[p-2]}D^{-1}_{\alpha\beta\gamma\eta}\pmb{a}_{\gamma\eta}^T\pmb{p}^{[p-2]}d\Omega=\\
     &-\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}wd\Gamma
     +\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}w_{,\pmb{n}}d\Gamma\\
-    &-D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}w\vert_{x\in c}
+    &-D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}w\vert_{\pmb x\in c}
     -\int_{\Omega}\delta\pmb{a}_{\alpha\beta,\alpha\beta}^T\pmb{p}^{[p-2]}wd\Omega\\
     &+\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}d\Gamma
     -\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}w_{,\pmb{n}}d\Gamma\\
-    &+D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}wx\vert_{x\in{c_w}}
+    &+D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}wx\vert_{\pmb x\in{c_w}}
     -\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}\bar{w}d\Gamma\\
     &+\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}\bar{\theta}_{\pmb{n}}d\Gamma
-    -D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}\bar{w}\vert_{x\in{c_w}}
+    -D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\delta\pmb{a}_{,\alpha\beta}^T\pmb{p}^{[p-2]}\bar{w}\vert_{\pmb x\in{c_w}}
 \end{split}
 \end{equation}
 进一步将等式两边同时消去$\delta\pmb{a}^T_{\alpha\beta}$得到：
@@ -77,14 +77,14 @@
         &\int_{\Omega}\pmb{p}^{[p-2]}D^{-1}_{\alpha\beta\gamma\eta}\pmb{a}_{\gamma\eta}^T\pmb{p}^{[p-2]}d\Omega=\\
         &-\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\pmb{p}^{[p-2]}wd\Gamma
         +\int_{\Gamma}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\pmb{p}^{[p-2]}w_{,\pmb{n}}d\Gamma\\
-        &-D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}w\vert_{x\in c}
+        &-D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}w\vert_{\pmb x\in c}
         -\int_{\Omega}\delta\pmb{a}_{\alpha\beta,\alpha\beta}^T\pmb{p}^{[p-2]}wd\Omega\\
         &+\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\pmb{p}^{[p-2]}d\Gamma
         -\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\pmb{p}^{[p-2]}w_{,\pmb{n}}d\Gamma\\
-        &+D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}wx\vert_{x\in{c_w}}
+        &+D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}wx\vert_{\pmb x\in{c_w}}
         -\int_{\Gamma_w}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{V}_{\alpha\beta}\pmb{p}^{[p-2]}\bar{w}d\Gamma\\
         &+\int_{\Gamma_{\theta}}D_{\alpha\beta\gamma\eta}^{-1}\mathcal{M}_{\alpha\beta}\pmb{p}^{[p-2]}\bar{\theta}_{\pmb{n}}d\Gamma
-        -D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}\bar{w}\vert_{x\in{c_w}}
+        -D_{\alpha\beta\gamma\eta}^{-1}\mathcal{P}_{\alpha\beta}\pmb{p}^{[p-2]}\bar{w}\vert_{\pmb x\in{c_w}}
 \end{split}
 \end{equation}
 对上式进行移项可以得到常系数向量$\pmb{a}_{\alpha\beta}$的具体表达式：
@@ -99,11 +99,11 @@
 \begin{align}
 \label{PG}\pmb{G}&=\int_{\Omega_C}\pmb{p}^{[p-2]}\pmb{p}^{[p-2]T}d\Omega\\
 \label{Pg1}\tilde{\pmb g}_{\alpha\beta I}&=\int_{\Gamma_C}\Psi_{I,n}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}d\Gamma-\int_{\Gamma_C}\Psi_I(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma \nonumber\\
-&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\bf{x}\in c_C}+\int_{\Omega_C}\Psi_I\pmb{p}^{[p-2]}_{,\alpha\beta}d\Omega\\
+&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\pmb{x}\in c_C}+\int_{\Omega_C}\Psi_I\pmb{p}^{[p-2]}_{,\alpha\beta}d\Omega\\
 \label{Pg2}\bar{\pmb g}_{\alpha\beta I}&=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\Psi_{I,n}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}d\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}\Psi_I(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})d\Gamma\nonumber\\
-&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\bf{x}\in{c_w}\cap{c_C}}\\
+&+[[\Psi_I\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\pmb{x}\in{c_w}\cap{c_C}}\\
 \label{Pg3}\hat{\pmb g}_{\alpha\beta I}&=\int_{{\Gamma_{\theta}}\cap{\Gamma_C}}\pmb{p}^{[p-2]}n_{\alpha}n_{\beta}\bar{\theta}_nd\Gamma-\int_{{\Gamma_w}\cap{\Gamma_C}}(n_{\alpha}\pmb{p}^{[p-2]}_{,\beta}+\pmb{p}^{[p-2]}_{,\gamma}s_{\alpha}n_{\beta}s_{\gamma})\bar{w}d\Gamma\nonumber\\
-&+[[\bar{w}\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\bf{x}\in{c_w}\cap{c_C}}
+&+[[\bar{w}\pmb{p}^{[p-2]}n_{\alpha}s_{\beta}]]\vert_{\pmb{x}\in{c_w}\cap{c_C}}
 \end{align}
 \end{subequations}
 式中$\Gamma_C$是$\Omega_C$的边界，此时将$\pmb{a}_{\alpha\beta}$代入到式(\ref{moment})中得到近似的弯矩分量$M^h_{\alpha\beta}(\pmb{x})$的表达式：
@@ -134,12 +134,12 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 首先，将挠度离散表达式(\ref{w})和弯矩离散表达式(\ref{moment})代入到弱形式(\ref{Pweakform2})中得到：
 \begin{equation}\label{CH5-1}
 \begin{split}
-    &\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma-\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma+\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{\bf{x}\in c}\\
+    &\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma-\int_{\Gamma}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma+\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{\pmb{x}\in c}\\
     &-\int_{\Omega}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\pmb{a}^T_{\alpha\beta,\alpha\beta}\pmb{p}^{[p-2]}d\Omega-\int_{\Gamma_w}\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{V}_{\alpha\beta}w_{,\alpha\beta}d\Gamma\\
     &+\int_{\Gamma_{\theta}}\sum_{I=1}^{N\!P}\Psi_{I,n}\delta{d_I}\mathcal{M}_{\alpha\beta}w_{,\alpha\beta}d\Gamma
-    -\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{\bf{x}\in c_w}\\
+    -\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\mathcal{P}_{\alpha\beta}w_{,\alpha\beta}\vert_{\pmb{x}\in c_w}\\
     &=\sum_{I=1}^{N\!P}\int_{\Gamma_V}\Psi_I\delta{d_I}\bar{V}_{\pmb n}d\Gamma-\sum_{I=1}^{N\!P}\int_{\Gamma_M}\Psi_{I,n}\delta{d_I}\bar{M}_{\pmb{nn}}d\Gamma
-    +\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\bar{P}\vert_{\bf{x}\in{c_P}}+\sum_{I=1}^{N\!P}\int_{\Omega}\Psi_I\delta{d_I}\bar{q}d\Omega
+    +\sum_{I=1}^{N\!P}\Psi_I\delta{d_I}\bar{P}\vert_{\pmb{x}\in{c_P}}+\sum_{I=1}^{N\!P}\int_{\Omega}\Psi_I\delta{d_I}\bar{q}d\Omega
 \end{split}
 \end{equation}
 其次引入式(\ref{MVP1})并根据薄板问题线弹性本构关系式(\ref{Malphabeta})将上式改写为：
@@ -172,20 +172,20 @@ $\tilde{\pmb g}_{\alpha\beta I}$是指在薄板问题中由再生光滑梯度法
 \begin{subequations}\label{PHR1}
 \begin{align}
     \label{PHR11}K_{IJ}&=\int_{\Omega}\tilde{\Psi}_{I,\alpha\beta}D_{\alpha\beta\gamma\eta}\tilde{\Psi}_{J,\gamma\eta}d\Omega \\
-    \label{PHR12}f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{\bf{x}\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
+    \label{PHR12}f_I&=\int_{\Gamma_V}\Psi_I\bar{V}_{\pmb{n}}d\Gamma-\int_{\Gamma_M}\Psi_{I,\pmb{n}}\bar{M}_{\pmb{nn}}d\Gamma+\Psi_I\bar{P}\vert_{\pmb{x}\in c_P}+\int_{\Omega}\Psi_I\bar{q}d\Omega
 \end{align}
 \end{subequations}
 \begin{subequations}\label{PHR2}
 \begin{align}
-    \label{PHR21} \tilde{K}_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{\bf{x}\in{c_w}}\nonumber\\
-    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{\bf{x}\in{c_w}} \\
-    \label{PHR22}   \tilde{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{\bf{x}\in{c_w}}
+    \label{PHR21} \tilde{K}_{IJ}&=-\int_{\Gamma_w}\Psi_I\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+\int_{\Gamma_{\theta}}\Psi_{I,n}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}d\Gamma+[[\Psi_I\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{J,\alpha\beta}]]_{\pmb{x}\in{c_w}}\nonumber\\
+    &-\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\Psi_J]]_{\pmb{x}\in{c_w}} \\
+    \label{PHR22}   \tilde{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\tilde{\Psi}_{I,\alpha\beta}\bar{w}]]_{\pmb{x}\in{c_w}}
 \end{align}
 \end{subequations}
 \begin{subequations}\label{PHR3}
 \begin{align}
-    \label{PHR31}   \bar{K}_{IJ}&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{\bf{x}\in{c_w}}\\
-    \label{PHR32}  \bar{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{\bf{x}\in{c_w}}
+    \label{PHR31}   \bar{K}_{IJ}&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_Jd\Gamma-\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_{J,n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\Psi_J]]_{\pmb{x}\in{c_w}}\\
+    \label{PHR32}  \bar{f}_I&=\int_{\Gamma_w}\mathcal{V}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}d\Gamma+\int_{\Gamma_{\theta}}\mathcal{M}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{\theta}_{\pmb n}d\Gamma+[[\mathcal{P}_{\alpha\beta}\bar{\Psi}_{I,\alpha\beta}\bar{w}]]_{\pmb{x}\in{c_w}}
 \end{align}
 \end{subequations}
 \par

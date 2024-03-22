@@ -2,14 +2,14 @@
 在建筑和工程结构中，振动是一个常见的问题，其可能会导致结构的疲劳破坏等问题，传统方法中通过采用增加结构的刚度或使用阻尼器减小结构的振动响应。本章对工程应用中常见的四种薄板型抗震阻尼器进行数值仿真分析，对本文所提方法赫林格-赖斯纳变分一致型伽辽金无网格法进行验证，通过对三种不同本质边界条件施加方法得出的应力云图进行分析得出所提方法具有更高的鲁棒性和稳定性。
 \section{蜂窝阻尼器}
 蜂窝(Honeycomb)阻尼器通过内部的蜂窝结构和材料的摩擦耗能来提供阻尼效果，相较于传统的阻尼器，蜂窝阻尼器具有更高的阻尼能力，能够有效地减少结构振动幅度，具有高阻尼能力、宽频响特性和轻量化设计等特点，适用于需要控制结构振动的工程应用。
-图\ref{Honeycomb1}为带有蜂窝阻尼器的实验装置示意图及模型图。
+图\ref{Honeycomb1}为带有蜂窝阻尼器简化的实验装置示意图。
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{figure/DAMPER/Honeycomb/1.png}
     \caption{实验装置示意图\cite{javanmardi2020}}\label{Honeycomb1}
 \end{figure}
-图\ref{Honeycomb2}为蜂窝阻尼器的具体尺寸，厚度取为10，材料系数分别为杨氏模量$E=2\times 10^{11}$、泊松比$\nu=0.3$。蜂窝阻尼器的上端固定施加本质边界条件$\Gamma^g$,下端受到来自外部荷载$P=100000$施加自然边界条件$\Gamma^t$。
-蜂窝阻尼器求解分别通过如图\ref{Honeycombmsh}所示采用18、208、445、781、1227和1879六个疏密不同的节点进行离散，该平面内变形通过采用二次基函数，核函数的相对影响域为2.5。
+图\ref{Honeycomb2}为蜂窝阻尼器的几何模型，厚度取为10mm，材料系数分别为杨氏模量$E=2\times 10^{11}$Pa、泊松比$\nu=0.3$。蜂窝阻尼器的上端固定施加本质边界条件$\Gamma^g$，下端受到来自外部荷载$P=100000$N施加自然边界条件$\Gamma^t$。
+蜂窝阻尼器求解分别通过如图\ref{Honeycombmsh}所示采用78、208和445三个疏密不同的节点进行离散，该平面内变形通过采用二次基函数，核函数的相对影响域为2.5进行数值分析。
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/2.png}
@@ -20,12 +20,14 @@
     \includegraphics[scale=0.6]{figure/DAMPER/Honeycomb/honeycomb_damper_msh.png}
     \caption{蜂窝阻尼器及其无网格离散模型}\label{Honeycombmsh}
 \end{figure}
-图\ref{honeycomb_damperx}为蜂窝阻尼器$C$点处受到$x$方向不同本质边界条件得出的位移误差对比图。$u_f$指用有限元网格算法得出的参考解。
-从图中可以看出本文所提方法赫林格-赖斯纳变分一致型伽辽金无网格法(HR)和常见的本质边界条件施加方法“Nitsche”、罚函数法(Penalty)对比具有更高的计算精度。
+使用52372个有限元薄板单元进行精细离散分析，得到该问题的位移参照。图\ref{honeycomb_damperx}为不同本质边界条件下的位移精度对比。
+$u_f$表示$C$点处有限元离散分析的位移计算结果，$u_c$为不同本质边界条件下得出的位移计算结果。
+从图中可以看出HR法的计算精度优于罚函数法、Nitsche法，
 同时，根据应力云图\ref{HoneycombM}，可以看出HR方法没有出现明显的波动现象。
+\newpage
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/honeycomb_damperx.png}
+    \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/honeycomb_damper_x.png}
     \caption{蜂窝阻尼器位移误差对比}\label{honeycomb_damperx}
 \end{figure}
 \begin{figure}[H]
@@ -33,7 +35,7 @@
         \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/M11.png}
         \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/M12.png}
         \includegraphics[scale=0.5]{figure/DAMPER/Honeycomb/M22.png}
-    \caption{蜂窝阻尼器弯矩云图(位移放大4E3倍)}\label{HoneycombM}
+    \caption{蜂窝阻尼器应力云图(位移放大4E3倍)}\label{HoneycombM}
 \end{figure}
 \section{狭缝阻尼器}
 狭缝(slit)阻尼器通过在建筑结构中引入缝隙，进而吸收和耗散振动能量，从而有效减少结构的振动响应，同时狭缝阻尼器的结构相对简单，由一系列平行的缝隙组成，可以根据具体的需求进行设计和调整，并且狭缝阻尼器通常采用钢材或高性能复合材料制造，具有良好的耐久性和抗腐蚀性能，在工程实践应用中越来越广泛。
@@ -43,8 +45,8 @@
     \includegraphics[scale=0.7]{figure/DAMPER/SLIT/1.png}
     \caption{实验装置示意图\cite{oh2009}}\label{slit1}
 \end{figure}
-图\ref{slit2}是狭缝阻尼器示意图，材料系数分别为杨氏模量$E=2\times 10^{11}$、泊松比$\nu=0.3$。同时，对上端施加本质边界条件，下部施加外部荷载$P=100000$的自然边界条件。
-狭缝阻尼器求解域通过如图\ref{slitmsh}所示采用六个疏密不同的节点进行离散。对于采用三次基函数的狭缝阻尼器，无网格影响域取为3.5。
+图\ref{slit2}是狭缝阻尼器示意图，材料系数分别为杨氏模量$E=2\times 10^{11}$Pa、泊松比$\nu=0.3$。同时，对上端施加本质边界条件，下部施加外部荷载$P=100000$N的自然边界条件。
+狭缝阻尼器求解域通过如图\ref{slitmsh}所示采用79、256和580三个疏密不同的节点进行离散。对于采用三次基函数的狭缝阻尼器，无网格影响域取为3.5。
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/DAMPER/SLIT/2.png}
@@ -56,8 +58,10 @@
     \includegraphics[scale=0.65]{figure/DAMPER/SLIT/slit damper_msh.png}
     \caption{狭缝阻尼器及其无网格离散模型}\label{slitmsh}
 \end{figure}
-图\ref{slitx}为三阶的狭缝阻尼器$C$点处的$x$方向的位移误差对比图，也可以看出HR法相较于其他的本质边界条件施加方法计算精度更高，收敛效果越快。
-图\ref{slitM}为狭缝阻尼器的应力云图，进一步说明HR方法具有稳定的计算精度。。
+对狭缝阻尼器使用 49204个有限元薄板单元进行精细离散分析，得到该问题的位移参照。图\ref{slitx}为不同本质边界条件下的位移精度对比。
+$u_f$表示$C$点处有限元离散分析的位移计算结果，$u_c$为不同本质边界条件下得出的位移计算结果。
+从图中可以看出采用三次基函数时狭缝阻尼器的HR法也明显优于其他两种常见的本质边界条件施加方法，
+图\ref{slitM}为狭缝阻尼器的应力云图，进一步说明HR方法具有稳定的计算精度。
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figure/DAMPER/SLIT/slit-x.png}
@@ -69,7 +73,7 @@
         \includegraphics[scale=0.5]{figure/DAMPER/slit/M11.png}
         \includegraphics[scale=0.5]{figure/DAMPER/slit/M12.png}
         \includegraphics[scale=0.5]{figure/DAMPER/slit/M22.png}
-    \caption{狭缝阻尼器弯矩云图(位移放大2E3倍)}\label{slitM}
+    \caption{狭缝阻尼器应力云图(位移放大2E3倍)}\label{slitM}
 \end{figure}
 \section{ADAS阻尼器}
 图\ref{ADAS1}为ADAS阻尼器与裸框架实验装置示意图。ADAS阻尼器是一种基于能量耗散原理的被动控制装置，通过在结构中引入附加的阻尼力来吸收和耗散结构的振动能量，能够有效地减小结构的振动幅值和振动周期，从而显著改善结构的振动响应，
@@ -79,25 +83,25 @@
     \includegraphics[scale=0.6]{figure/DAMPER/ADAS/1.png}
     \caption{实验装置示意图\cite{basu2016}}\label{ADAS1}
 \end{figure}
-如图\ref{ADASmsh}所示，ADAS阻尼器的上端设为简支固定，施加本质边界条件$\Gamma^g$，下端施加外部荷载$P=100000$，厚度为5。ADAS阻尼器钢板的料系数分别为杨氏模量$E=2\times 10^{11}$、泊松比$\nu=0.3$。ADAS阻尼器求解域采用如图所示187个非均匀节点进行离散，通过采用三次基函数，取其影响域为3.5进行无网格数值分析。
+如图\ref{ADASmsh}所示，ADAS阻尼器的上端设为简支固定，施加本质边界条件$\Gamma^g$，下端施加外部荷载$P=100000$N，厚度为5mm。ADAS阻尼器钢板的料系数分别为杨氏模量$E=2\times 10^{11}$Pa、泊松比$\nu=0.3$。ADAS阻尼器求解域采用如图所示187个非均匀节点进行离散，通过采用三次基函数，取其影响域为3.5进行无网格数值分析。
 图\ref{ADASM}为施加不同本质边界条件下的ADAS阻尼器受到平面外变形的弯矩云图，从图中可以看出罚函数法和Nitsche法以及所提方法HR法对比，出现明显的波动现象，Nitsche法和HR法拥有几乎相同的弯矩云图，但Nitsche法的计算效率低于HR法，因此所提方法HR法在计算薄板型ADAS阻尼器不仅提高计算精度还有效提高计算效率。
 \newpage
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{figure/DAMPER/ADAS/ADAS damper_msh.png}
+    \includegraphics[scale=0.45]{figure/DAMPER/ADAS/ADAS damper_msh.png}
     \caption{ADAS阻尼器及其无网格离散模型}\label{ADASmsh}
 \end{figure}
 \section{TADAS阻尼器}
 ADAS阻尼器的适用性有限，一旦发生横向变形，板将受到张力的影响，导致ADAS的“颈部”X部分容易失效，导致该设备的有效性降低。
 为了改善ADAS阻尼器的缺点，三角板(TADAS)阻尼器被开发出来，相较于传统的ADAS阻尼器具有不受重力荷载的影响，但构造比ADAS阻尼器复杂。
 图\ref{TADAS1}为一个带有TADAS阻尼器的实验装置\cite{mohammadi2017}，为常在道路、住房和城市中心建造的一层框架大比例模型，
-该框架高3000，跨度4000，框架柱采用标准的双IPE180型钢材，梁的工字截面由三块$4000\times200\times12$的钢板连续焊接而成。支撑体系统一采用双$100\times100\times20$角度，柱基座使用销连接。
+该框架高3000mm，跨度4000mm，框架柱采用标准的双IPE180型钢材，梁的工字截面由三块4000mm$\times$200mm$\times$12mm的钢板连续焊接而成。支撑体系统一采用双100mm$\times$100mm$\times$20mm角度，柱基座使用销连接。
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{figure/DAMPER/TADAS/1.png}
     \caption{实验装置示意图\cite{mohammadi2017}}\label{TADAS1}
 \end{figure}
-如图\ref{TADASmsh}所示，ADAS阻尼器通过刚性焊接到顶板施加本质边界条件$\Gamma^g$，下端施加$P=100000$的力施加自然边界条件$\Gamma^t$使其受到平面外变形。TADAS阻尼器的材料系数为杨氏模量$E=2\times 10^{11}$、泊松比$\nu=0.3$。
+如图\ref{TADASmsh}所示，ADAS阻尼器通过刚性焊接到顶板施加本质边界条件$\Gamma^g$，下端施加$P=100000$N的力施加自然边界条件$\Gamma^t$使其受到平面外变形。TADAS阻尼器的材料系数为杨氏模量$E=2\times 10^{11}$Pa、泊松比$\nu=0.3$。
 该阻尼器通过采用345个节点进行离散，采用高阶的四次基函数进行求解，核函数的影响域取其为4.5。
 图\ref{TADASM}为TADAS阻尼器三角形板的弯矩应力云图，从弯矩云图可以看出相较于罚函数法(RKGSI-Penalty)，所提方法(RKGSI-HR)拥有更稳定的弯矩云图，有效提高计算精度。
 \begin{figure}[H]

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  21 MAR 2024 20:43
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2023.9.13)  22 MAR 2024 11:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -608,6 +608,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (F:\MikTEX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
+(F:\MikTEX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
 (F:\MikTEX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen265
@@ -1205,7 +1208,7 @@ File: figure/PHR/momentlisan.png Graphic file (type bmp)
 Underfull \vbox (badness 5008) has occurred while \output is active []
 
  [46]
-Overfull \hbox (13.9202pt too wide) detected at line 144
+Overfull \hbox (12.89175pt too wide) detected at line 144
 []
  []
 
@@ -1328,7 +1331,7 @@ File: figure/DAMPER/Honeycomb/1.png Graphic file (type bmp)
 File: figure/DAMPER/Honeycomb/2.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/2.png>
 
-Underfull \vbox (badness 2582) has occurred while \output is active []
+Underfull \vbox (badness 2556) has occurred while \output is active []
 
  [65
 
@@ -1343,15 +1346,16 @@ Overfull \hbox (8.42084pt too wide) in paragraph at lines 20--21
  [][] 
  []
 
-File: figure/DAMPER/Honeycomb/honeycomb_damperx.png Graphic file (type bmp)
-<figure/DAMPER/Honeycomb/honeycomb_damperx.png>
+[66]
+File: figure/DAMPER/Honeycomb/honeycomb_damper_x.png Graphic file (type bmp)
+<figure/DAMPER/Honeycomb/honeycomb_damper_x.png>
 File: figure/DAMPER/Honeycomb/M11.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/M11.png>
 File: figure/DAMPER/Honeycomb/M12.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/M12.png>
 File: figure/DAMPER/Honeycomb/M22.png Graphic file (type bmp)
 <figure/DAMPER/Honeycomb/M22.png>
-[66]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67]
@@ -1519,11 +1523,11 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: E3612FB74C6E4F1640F5F8F28D44D818;6097.
  ) 
 Here is how much of TeX's memory you used:
- 19843 strings out of 410379
- 422371 string characters out of 5795143
+ 19850 strings out of 410379
+ 422155 string characters out of 5795143
  1956432 words of memory out of 5000000
- 40721 multiletter control sequences out of 15000+600000
- 653089 words of font info for 182 fonts, out of 8000000 for 9000
+ 40728 multiletter control sequences out of 15000+600000
+ 626619 words of font info for 173 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,34n,99p,826b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
